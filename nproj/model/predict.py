@@ -5,9 +5,8 @@ deliberately simple — a recency-weighted rolling average with a normal-
 approximation quantile band — so the pipeline (db -> model -> site export)
 is real and working end to end before investing in the fuller model
 described below. It only produces a projection for a player once there are
-real game logs for them in player_game_logs; see scripts/seed_jokic.py for
-how those get seeded today (nba_api ingest is blocked from this sandbox —
-see nproj/ingest/nba_stats.py's docstring).
+real game logs for them in player_game_logs, which nproj/pipeline.py loads
+from ESPN (see nproj/ingest/espn.py).
 
 Planned upgrade path (see the planning doc's Model approach section): a
 LightGBM point estimate + quantile models per stat, same family as the K
@@ -64,18 +63,21 @@ def _player_game_log(con, player_id, stat, before_date=None):
     return [r["v"] for r in con.execute(q, params).fetchall()]
 
 
-def train(con, quick: bool = False):
+def train(con, before_date: str | None = None):
     """Compute and cache each tracked player's per-stat (mean, std) from
     their game log so far, stored in kv as model:<player_id>:<stat>. Cheap
     enough to just recompute from scratch each run rather than persisting a
-    real trained model artifact — this is descriptive stats, not ML."""
+    real trained model artifact — this is descriptive stats, not ML.
+
+    before_date (YYYY-MM-DD) ignores games on or after that date, so a test
+    run for a past slate doesn't peek at the games it's projecting."""
     from .. import db
 
     player_ids = [r["player_id"] for r in con.execute("SELECT DISTINCT player_id FROM player_game_logs")]
     trained = 0
     for pid in player_ids:
         for stat in config.TARGET_STATS:
-            values = _player_game_log(con, pid, stat)
+            values = _player_game_log(con, pid, stat, before_date)
             if len(values) < MIN_GAMES_FOR_MODEL:
                 continue
             mean, std = _weighted_stats(values)
@@ -129,7 +131,7 @@ def project_date(con, date_s: str):
     return written
 
 
-def project_triple_double_prob(con, player_id, season_hit_rate=None):
+def project_triple_double_prob(con, player_id, season_hit_rate=None, before_date=None):
     """Rough triple-double probability for the Jokic tracker: blends the
     season-long empirical hit rate (stable, but slow to react) with the
     empirical hit rate over the player's last games actually in the db
@@ -144,8 +146,8 @@ def project_triple_double_prob(con, player_id, season_hit_rate=None):
     """
     rows = con.execute(
         """SELECT points, rebounds, assists FROM player_game_logs
-           WHERE player_id = ? ORDER BY date DESC LIMIT ?""",
-        (player_id, MAX_GAMES_CONSIDERED),
+           WHERE player_id = ? AND (? IS NULL OR date < ?) ORDER BY date DESC LIMIT ?""",
+        (player_id, before_date, before_date, MAX_GAMES_CONSIDERED),
     ).fetchall()
     if not rows:
         return season_hit_rate

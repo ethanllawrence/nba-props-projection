@@ -1,9 +1,6 @@
 requests
-nba_api            # stats.nba.com client — only usable somewhere with real internet
-                   # access (e.g. GitHub Actions), not from this dev sandbox; see
-                   # nproj/ingest/nba_stats.py's docstring
-pandas             # nba_api dependency, also used directly for data frames it returns
-numpy              # nba_api dependency
-# Uncomment as each phase is built out (see README.md Build phases):
+tzdata             # time zone data for zoneinfo on Windows (Linux runners already have it)
+# nba_api          # only for nproj/ingest/nba_stats.py, which is no longer used: stats.nba.com
+                   # is unreachable from GitHub Actions (see nproj/ingest/espn.py docstring)
 # lightgbm         # phase 2 — real model, replacing the phase-1 rolling-average baseline
-# pyyaml           # if workflow-wiring tests are added, like the K Board's
+# pytest           # tests/ also run as plain scripts: python tests/test_pipeline_offline.py

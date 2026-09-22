@@ -1,112 +1,197 @@
 """Regenerate docs/data/*.json from the database.
 
-STATUS: real for the slice of data that's actually real right now (Jokic,
-seeded via scripts/seed_jokic.py — see nproj/ingest/nba_stats.py's docstring
-for why the rest of the league isn't backfilled from this sandbox yet).
-For every other player, this intentionally LEAVES the existing hand-written
-mock numbers in docs/data/today.json alone rather than inventing projections
-for players with no real game log in the database — a missing model isn't
-the same thing as a zero, and overwriting good-enough mock data with a
-worse guess would be a regression, not progress.
+today.json: rebuilt from scratch whenever the date has a real slate. One
+row per player who is on a roster for tonight, isn't listed as out, and is
+averaging at least MIN_MINUTES_FOR_BOARD over his recent games (so deep
+bench players don't flood the table). On a night with no games (offseason,
+All-Star break) the existing file is left alone.
 
-Current site schema (see docs/assets/app.js): each player has
-stats.{points,rebounds,assists} = {proj, line, book}. This export only ever
-touches `proj` — `line`/`book` stay whatever they already are until The
-Odds API is wired in (see nproj/ingest/odds.py), since there's no live prop
-line to replace them with yet.
+Book lines: none yet. Until The Odds API is wired in (nproj/ingest/odds.py),
+every stat is written with line/book = null, and the site shows the
+projection without edge coloring.
+
+jokic.json: season summary, recent games and the triple-double call are
+all recomputed from his real ESPN game log. The "market" price is still
+hand-typed until odds are wired in.
 """
 import json
 from datetime import datetime, timezone
 
 from .. import config
+from ..pipeline import JOKIC_ESPN_ID
+
+MIN_MINUTES_FOR_BOARD = 20.0
+MINUTES_LOOKBACK = 10
 
 
 def _load(path):
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         return json.load(f)
 
 
 def _save(path, data):
-    with open(path, "w") as f:
-        json.dump(data, f, indent=2)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
         f.write("\n")
 
 
+def _now():
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
 def export_all(con, date_s: str):
-    from ..model import predict
+    n_board = _export_today_board(con, date_s)
+    jokic = _export_jokic(con, date_s)
+    return {"today_board_players": n_board, "jokic_updated": jokic}
 
-    updated_players = []
-    updated_players += _export_today_board(con, date_s)
-    jokic_updated = _export_jokic_call(con)
 
-    return {"today_board_players_updated": updated_players, "jokic_call_updated": jokic_updated}
+def _recent_minutes(con, player_id, date_s):
+    rows = con.execute(
+        """SELECT minutes FROM player_game_logs
+           WHERE player_id=? AND date < ? AND minutes IS NOT NULL
+           ORDER BY date DESC LIMIT ?""",
+        (player_id, date_s, MINUTES_LOOKBACK),
+    ).fetchall()
+    return sum(r["minutes"] for r in rows) / len(rows) if rows else 0.0
+
+
+def _time_et(tipoff_utc):
+    from ..ingest.espn import et_date
+    try:
+        return et_date(tipoff_utc).strftime("%I:%M %p").lstrip("0")
+    except (TypeError, ValueError, AttributeError):
+        return ""
 
 
 def _export_today_board(con, date_s: str):
-    path = config.SITE_DATA_DIR / "today.json"
-    data = _load(path)
+    rows = con.execute(
+        """SELECT pp.player_id, pp.status, p.name, p.team, g.home_team, g.away_team, g.tipoff_utc
+           FROM probable_players pp
+           JOIN players p ON p.player_id = pp.player_id
+           JOIN games g ON g.game_id = pp.game_id
+           WHERE pp.date = ? AND COALESCE(pp.status, '') != 'out'""",
+        (date_s,),
+    ).fetchall()
+    if not rows:
+        return 0
 
-    players_by_name = {p["name"]: p["player_id"]
-                        for p in con.execute("SELECT player_id, name FROM players").fetchall()}
-
-    updated = []
-    for player in data["players"]:
-        pid = players_by_name.get(player["player"])
-        if not pid:
-            continue  # no real data for this player yet — leave their mock row alone
-
-        changed_any = False
+    players = []
+    for r in rows:
+        stats = {}
         for stat in config.TARGET_STATS:
-            row = con.execute(
+            proj = con.execute(
                 "SELECT point FROM projections WHERE player_id=? AND date=? AND stat=?",
-                (pid, date_s, stat),
+                (r["player_id"], date_s, stat),
             ).fetchone()
-            if not row or row["point"] is None:
-                continue
-            if stat in player["stats"]:
-                player["stats"][stat]["proj"] = row["point"]
-                changed_any = True
-        if changed_any:
-            updated.append(player["player"])
+            if proj and proj["point"] is not None:
+                stats[stat] = {"proj": proj["point"], "line": None, "book": None}
+        if len(stats) < len(config.TARGET_STATS):
+            continue
+        if _recent_minutes(con, r["player_id"], date_s) < MIN_MINUTES_FOR_BOARD:
+            continue
+        home = r["team"] == r["home_team"]
+        players.append({
+            "player": r["name"],
+            "team": r["team"],
+            "opp": r["away_team"] if home else r["home_team"],
+            "home": home,
+            "time_et": _time_et(r["tipoff_utc"]),
+            "status": r["status"] if r["status"] not in (None, "active") else None,
+            "stats": stats,
+        })
 
-    if updated:
-        data["generated_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-        data["note"] = (
-            "MOCKUP DATA, partially real. " + ", ".join(updated) + "'s points/rebounds/assists "
-            "projections are now real model output (recency-weighted rolling average of real "
-            "game logs — see nproj/model/predict.py), not hand-typed. Everyone else's "
-            "projections, and all book lines for everyone including " + ", ".join(updated) +
-            ", are still illustrative — no real game log backfilled for other players yet, and "
-            "no live odds feed wired up yet. PRA is the sum of the three lines."
-        )
-        _save(path, data)
-    return updated
+    players.sort(key=lambda p: -p["stats"]["points"]["proj"])
+    _save(config.SITE_DATA_DIR / "today.json", {
+        "generated_at": _now(),
+        "date": date_s,
+        "note": ("Projections are real: a recency-weighted average of each player's ESPN game "
+                 "log (this season plus last). No sportsbook lines yet, so there's no edge "
+                 "coloring until The Odds API is wired in."),
+        "players": players,
+    })
+    return len(players)
 
 
-def _export_jokic_call(con):
+def _season_label(season):
+    return f"{season - 1}-{str(season)[-2:]}"
+
+
+def _export_jokic(con, date_s: str):
     from ..model import predict
 
     path = config.SITE_DATA_DIR / "jokic.json"
     data = _load(path)
-    jokic_id = next(
-        (p["player_id"] for p in con.execute("SELECT player_id, name FROM players").fetchall()
-         if p["name"] == "Nikola Jokic"),
-        None,
-    )
-    if not jokic_id:
+    before = json.loads(json.dumps(data))
+
+    logs = con.execute(
+        """SELECT date, opp, points, rebounds, assists, season, playoff FROM player_game_logs
+           WHERE player_id=? AND date < ? ORDER BY date DESC""",
+        (JOKIC_ESPN_ID, date_s),
+    ).fetchall()
+    if not logs:
         return False
 
-    season_hit_rate = data["season_summary"]["hit_rate"]
-    prob = predict.project_triple_double_prob(con, jokic_id, season_hit_rate=season_hit_rate)
-    if prob is None:
-        return False
+    def is_td(g):
+        return g["points"] >= 10 and g["rebounds"] >= 10 and g["assists"] >= 10
 
-    data["tonight"]["td_projection"]["model_prob"] = prob
-    data["tonight"]["td_projection"]["note"] = (
-        f"Real, but a placeholder method: {season_hit_rate * 100:.1f}% season hit rate blended "
-        "60/40 with the empirical hit rate over games actually in the database, NOT a real joint "
-        "probability model across points/rebounds/assists. See planning doc / methodology page."
-    )
-    data["tonight"]["call"] = "yes" if prob >= 0.5 else "no"
+    # Season summary: most recent season with regular-season games.
+    reg = [g for g in logs if not g["playoff"]]
+    if reg:
+        season = reg[0]["season"]
+        games = [g for g in reg if g["season"] == season]
+        n = len(games)
+        tds = sum(1 for g in games if is_td(g))
+        summary = data.get("season_summary", {})
+        if summary.get("season_label", "")[:7] != _season_label(season):
+            summary.pop("fun_fact", None)  # hand-written for an earlier season
+        summary.update({
+            "season_label": _season_label(season),
+            "games_played": n,
+            "triple_doubles": tds,
+            "hit_rate": round(tds / n, 3),
+            "ppg": round(sum(g["points"] for g in games) / n, 1),
+            "rpg": round(sum(g["rebounds"] for g in games) / n, 1),
+            "apg": round(sum(g["assists"] for g in games) / n, 1),
+        })
+        data["season_summary"] = summary
+
+    data["recent_games"] = [
+        {"date": g["date"], "opp": g["opp"], "pts": g["points"], "reb": g["rebounds"],
+         "ast": g["assists"], "triple_double": is_td(g)}
+        for g in logs[:10]
+    ]
+
+    season_rate = data["season_summary"]["hit_rate"]
+    prob = predict.project_triple_double_prob(con, JOKIC_ESPN_ID, season_hit_rate=season_rate,
+                                              before_date=date_s)
+    tonight = data.get("tonight") or {}
+    game = con.execute(
+        """SELECT g.home_team, g.away_team, g.tipoff_utc FROM probable_players pp
+           JOIN games g ON g.game_id = pp.game_id
+           WHERE pp.player_id=? AND pp.date=?""",
+        (JOKIC_ESPN_ID, date_s),
+    ).fetchone()
+    if game:
+        home = game["home_team"] == "DEN"
+        tonight["opp"] = f"vs {game['away_team']}" if home else f"@ {game['home_team']}"
+        tonight["time_et"] = _time_et(game["tipoff_utc"])
+    else:
+        tonight["opp"] = None  # Denver is off; the page says so instead of a stale matchup
+        tonight["time_et"] = None
+    if prob is not None:
+        tonight["call"] = "yes" if prob >= 0.5 else "no"
+        tonight.setdefault("td_projection", {})
+        tonight["td_projection"]["model_prob"] = prob
+        tonight["td_projection"]["note"] = (
+            f"Placeholder method: his {season_rate * 100:.1f}% season hit rate blended 60/40 with "
+            "his hit rate over his last 20 games. Not a real joint model of points, rebounds and "
+            "assists yet. See the methodology page."
+        )
+    data["tonight"] = tonight
+    if {**data, "generated_at": None} == {**before, "generated_at": None}:
+        return False  # nothing new (e.g. offseason); skip so the daily run doesn't commit noise
+    data["generated_at"] = _now()
+    data["note"] = ("Season summary, recent games and the model call come from Jokic's real ESPN "
+                    "game log. The market price is still a placeholder until odds are wired in.")
     _save(path, data)
     return True

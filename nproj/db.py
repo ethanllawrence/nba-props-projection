@@ -23,7 +23,8 @@ CREATE TABLE IF NOT EXISTS games (
 CREATE TABLE IF NOT EXISTS players (
     player_id TEXT PRIMARY KEY,
     name TEXT NOT NULL,
-    team TEXT
+    team TEXT,
+    status TEXT                -- ESPN roster/injury status: active, day-to-day, out
 );
 
 -- One row per player per game actually played (backfill + daily ingest).
@@ -38,6 +39,8 @@ CREATE TABLE IF NOT EXISTS player_game_logs (
     rebounds INTEGER,
     assists INTEGER,
     threes INTEGER,
+    season INTEGER,            -- ESPN season year: 2026 = 2025-26
+    playoff INTEGER DEFAULT 0,
     PRIMARY KEY (game_id, player_id)
 );
 
@@ -86,11 +89,27 @@ def session():
     con = sqlite3.connect(config.DB_PATH)
     con.row_factory = sqlite3.Row
     con.executescript(SCHEMA)
+    _migrate(con)
     try:
         yield con
         con.commit()
     finally:
         con.close()
+
+
+# Columns added after the first schema; ALTER them onto older local databases.
+_ADDED_COLUMNS = [
+    ("player_game_logs", "season", "INTEGER"),
+    ("player_game_logs", "playoff", "INTEGER DEFAULT 0"),
+    ("players", "status", "TEXT"),
+]
+
+
+def _migrate(con):
+    for table, col, decl in _ADDED_COLUMNS:
+        have = {r[1] for r in con.execute(f"PRAGMA table_info({table})")}
+        if col not in have:
+            con.execute(f"ALTER TABLE {table} ADD COLUMN {col} {decl}")
 
 
 def get_kv(con, key):

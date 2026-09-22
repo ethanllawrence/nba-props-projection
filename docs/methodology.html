@@ -25,8 +25,8 @@
     <p>A hobby model projecting NBA player points, rebounds, assists, and PRA (points +
     rebounds + assists combined), compared against sportsbook lines, ranking any
     positive-expected-value edges — the same approach as the K Board's MLB strikeout model,
-    adapted for basketball. This page, like the rest of this site, is currently a design
-    mockup: the layout and interactions are real, the data is not.</p>
+    adapted for basketball. Projections come from real game logs; sportsbook lines are not
+    wired in yet (see the last section).</p>
 
     <h2>Today board</h2>
     <p>Table-only by design, not cards: a full NBA slate runs 20+ meaningfully-projected
@@ -49,18 +49,6 @@
     projection is that stat's current book line, priced off FanDuel or DraftKings
     (occasionally bet365) rather than shopped across a wide book list, since those are the
     only ones actually in play day to day.</p>
-
-    <h2>Jokic TD tracker</h2>
-    <p>A separate tab tracking Nikola Jokic's triple-double prop specifically — his favorite
-    bet and a fun one to track on its own, given how often it hits. The page leads with a
-    single call: bet the triple-double yes or no tonight, based on whether the model gives it
-    better or worse than even odds — that call matters more here than the edge math, so it's
-    the headline rather than a footnote. The model probability and market price sit underneath
-    as supporting detail. The season summary and recent-games log below that are Jokic's real
-    2025-26 numbers; the "Bet TD" call itself is a placeholder until a real triple-double model
-    exists (a proper one needs a joint probability across points/rebounds/assists, not three
-    independent point estimates multiplied together — see the planning doc for more on why
-    that's harder than it sounds).</p>
 
     <h2>Parlay of the Day</h2>
     <p>A separate tab surfacing 3-4 alt-line legs, combined to roughly +200 to +300 odds. This
@@ -85,17 +73,16 @@
     than it sounds.</p>
 
     <h2>What's real vs. still a stub</h2>
-    <p>Nikola Jokic's row on the Today board and his "Bet TD" call are genuine model output —
-    a recency-weighted rolling average over his real 2025-26 game log, computed and exported by
-    the actual Python pipeline (<code>nproj/</code>). Everyone else's numbers, every book line
-    and every Parlay of the Day leg are still hand-typed mockup data. The real blocker on
-    expanding that: <code>stats.nba.com</code> isn't reachable from the development sandbox
-    this project is currently built in, so full-league backfill needs to run somewhere with
-    normal internet access (a GitHub Actions workflow, already scaffolded and waiting) before
-    it can happen for real. Still ahead after that: live sportsbook lines via The Odds API, a
-    real (LightGBM) model in place of the rolling-average baseline, automated Parlay-of-the-Day
-    leg selection (right now the daily pick is manually curated), a real day-rollover clock, and
-    a settlement/results/performance page.</p>
+    <p>Every projection on the Today board is real model output: a recency-weighted average
+    of each player's game log (this season plus last, so early-season numbers aren't built on
+    three games), pulled from ESPN's public stats feed by a GitHub Actions job that runs twice
+    a day. Players listed as out, or averaging under 20 minutes, are left off the board. The
+    Jokic tab's season summary, recent games and triple-double call come from the same feed.
+    Still mock: every sportsbook line (the board shows "no line" and skips edge colors until
+    The Odds API is wired in), the Jokic tab's market price, and the whole Parlay of the Day
+    tab. Still ahead: live lines, a real (LightGBM) model in place of the rolling-average
+    baseline, automated Parlay of the Day picks, a settled day-rollover clock, and a
+    results/performance page.</p>
     <p>See the planning doc for the full build-phase roadmap and open decisions.</p>
   </div>
 

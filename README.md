@@ -23,64 +23,45 @@ what exists in this repo right now vs. what's still a stub.
   blowout/minutes risk) rather than best expected value, combined to roughly +200 to +300
   odds, with per-leg reasoning and a win/loss history log. Leg selection is manually curated
   today — see `nproj/model/parlay.py` for the intended automated criteria, not yet wired up.
-- `nproj/` — the Python pipeline. `config.py`, `util.py` (odds math + board-day clock,
-  lifted from the K Board's `kproj/util.py`), `db.py` (SQLite schema), `cli.py`
-  (`python -m nproj init|daily|export|status`), and now a working, if very simple,
-  `model/predict.py` + `export/site_export.py` — see **Real vs. mock data** below for
-  exactly what that does and doesn't cover today.
-- `.github/workflows/daily.yml` — a workflow skeleton with the K Board's *dense* backstop
-  cron pattern already in place. Still disabled (`if: false`) until real ingest can run
-  (see **The network blocker**).
+- `nproj/` — the Python pipeline: `ingest/espn.py` (schedule, rosters, game logs),
+  `pipeline.py` (ingest into SQLite), `model/predict.py` (projections),
+  `export/site_export.py` (writes `docs/data/*.json`), `cli.py`
+  (`python -m nproj init|daily|backfill|export|status`).
+- `.github/workflows/daily.yml` — runs `python -m nproj daily` at 8 AM and 3 PM Arizona
+  time and commits the refreshed JSON. Run it by hand with a past date (e.g. 2026-03-10)
+  to test without touching the live site.
+- `tests/test_pipeline_offline.py` — end-to-end test on fake ESPN data; runs before every
+  daily run.
 
-## Real vs. mock data (as of the last pipeline run)
+## Data source: ESPN (since 2026-09-22)
 
-Nikola Jokic's row on the Today board is now genuine model output: his points/rebounds/
-assists projections come from a recency-weighted rolling average over his real 2025-26
-game log, computed by `nproj/model/predict.py` and written by `nproj/export/site_export.py`.
-The Jokic tab's "Bet TD" call and probability are also computed for real, from a blend of
-his season-long hit rate and his recent-game hit rate (see that file's docstring — it's an
-explicitly-labeled placeholder method, not a real joint probability model yet).
+GitHub Actions runners can't reach NBA's own feeds. Tested with
+`.github/workflows/nba-api-check.yml`: stats.nba.com hangs until timeout, cdn.nba.com and
+site.api.espn.com return 403, and **site.web.api.espn.com returns 200**. So all ingest uses
+that one host (see the docstring in `nproj/ingest/espn.py`). It's free and needs no key,
+but it's unofficial and undocumented, so parsers skip bad rows instead of crashing.
 
-Everyone else on the Today board, and every book line/edge for every player including
-Jokic, is still the original hand-typed mockup — there's no real game log for them in the
-database yet, and no live odds feed. Exporting real data never overwrites a player's mock
-row with an invented one; it only touches players who actually have a model behind them.
+`nproj/ingest/nba_stats.py` (nba_api) and `scripts/seed_jokic.py` are retired and kept only
+for reference.
 
-To reproduce the real Jokic numbers from scratch: `python -m nproj init`, then
-`python -m scripts.seed_jokic` (loads his real recent-games log, already sourced into
-`docs/data/jokic.json`, into the database — a stopgap for `nba_api` backfill, see below),
-then `python -m nproj daily`.
+## Real vs. mock data
 
-## The network blocker (read this before trying to backfill the rest of the league)
+**Real once the daily workflow runs on a game day:** every Today board projection
+(recency-weighted average of each player's game log, this season plus last; players listed
+as out or averaging under 20 minutes are left off), and the whole Jokic tab except the
+market price.
 
-`nproj/ingest/nba_stats.py` is written for real — correct `nba_api` calls for schedule,
-box scores, full game logs, and rosters — but **stats.nba.com is not reachable from this
-dev sandbox**. A live call fails at the sandbox's outbound proxy with a 403 before it ever
-reaches NBA's servers; confirmed directly, it's a network policy block on this environment,
-not a bug in the code or in `nba_api` itself. Two ways forward:
-
-1. **Run the real ingest from `.github/workflows/daily.yml` instead of this sandbox** —
-   GitHub-hosted runners have normal internet access, and that was always the intended home
-   for the live pipeline anyway (see the planning doc). This sandbox was only ever meant for
-   building and testing the site/framework.
-2. If Robin's org allows it, ask about widening this session's network egress
-   (Admin settings → Capabilities) to include `stats.nba.com`, if faster local iteration
-   against real data is worth it before wiring up Actions.
-
-Nothing about this blocks writing correct code now — it just means the code above is
-untested against a live response and needs a first real run from wherever it actually gets
-network access.
+**Still mock:** all sportsbook lines (none until The Odds API is wired in, so the board shows
+"no line" and no edge colors), the Jokic tab's market price, and the whole Parlay of the Day
+tab. Until the 2026-27 season starts, `docs/data/today.json` keeps the hand-typed mockup,
+because the daily run leaves it alone on dates with no games.
 
 ## What's still a stub
 
-- `nproj/ingest/nba_stats.py` — code is real, but see **The network blocker** above; needs
-  its first live run from somewhere with real internet access
-- `nproj/ingest/odds.py` — The Odds API player-points/rebounds/assists props, budget-gated
-- `nproj/model/predict.py` — currently a recency-weighted rolling average (real, working,
-  deliberately simple); the planned LightGBM + quantile model is still ahead, see that
-  file's docstring for the feature list
-- Rebounds/assists/PRA all use the same baseline model as points now (the code is
-  stat-agnostic), but none of them have real game-log data behind them except Jokic
+- `nproj/ingest/odds.py` — The Odds API player props, budget-gated
+- `nproj/model/predict.py` — a recency-weighted rolling average (real, deliberately simple);
+  the planned LightGBM + quantile model is still ahead, see that file's docstring
+- `nproj/model/parlay.py` — Parlay of the Day selection criteria, not automated
 
 ## Build phases
 
@@ -89,12 +70,10 @@ decisions — full-slate vs. shortlist coverage, Odds API budget sharing with th
 rollover-hour choice. Short version:
 
 0. Setup (repo skeleton — done)
-1. Backfill historical player game logs — **blocked on network access, see above**;
-   proven for one player (Jokic) via a manual seed as a stopgap
+1. Historical player game logs — **done via ESPN** (`python -m nproj backfill --season 2026`)
 2. First model (points/rebounds/assists point estimate + quantiles) — **baseline version
    done** (recency-weighted average), LightGBM upgrade still ahead
-3. Live board (no odds yet, just projections) — **done for Jokic**, pending real backfill
-   for everyone else
+3. Live board (no odds yet, just projections) — **built**, goes live with the first game day
 4. Odds & edges (wire in The Odds API)
 5. Scheduling hardened (real rollover hour, freshness gate, verified budget)
 6. Scoreboard & polish (settlement, performance page)

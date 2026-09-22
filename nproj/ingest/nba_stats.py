@@ -1,4 +1,10 @@
-"""Ingest from stats.nba.com via the nba_api package (free, MIT-licensed).
+"""NOT USED ANYMORE (2026-09-22): replaced by nproj/ingest/espn.py.
+
+GitHub Actions runners can't reach stats.nba.com either (the request hangs
+until it times out), so this module was never run for real. Kept for
+reference in case NBA's feeds become reachable later.
+
+Original notes: ingest from stats.nba.com via the nba_api package (free, MIT-licensed).
 
 STATUS: real implementation, but UNTESTED FROM THIS SANDBOX. stats.nba.com
 is not on this cloud sandbox's outbound network allowlist — a live call from

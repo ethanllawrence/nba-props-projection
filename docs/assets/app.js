@@ -1,4 +1,4 @@
-/* Today board renderer — NBA points/rebounds/assists props (mockup). Condensed
+/* Today board renderer — NBA points/rebounds/assists props. Condensed
    table: one row per player, one colored cell per stat (proj vs. book line),
    sortable by clicking any stat column to surface the highest projections. */
 const $ = (s, el = document) => el.querySelector(s);
@@ -39,9 +39,11 @@ let sortState = { key: "points", dir: "desc" };
 function praOf(player) {
   const s = player.stats;
   if (!s || !s.points || !s.rebounds || !s.assists) return null;
+  const lines = [s.points.line, s.rebounds.line, s.assists.line];
   return {
     proj: s.points.proj + s.rebounds.proj + s.assists.proj,
-    line: s.points.line + s.rebounds.line + s.assists.line,
+    // No PRA line unless all three individual lines exist.
+    line: lines.every((l) => l != null) ? lines.reduce((a, b) => a + b, 0) : null,
   };
 }
 
@@ -67,18 +69,20 @@ function sortPlayers(list) {
 function statCell(stat, extraCls) {
   const cls = extraCls ? ` ${extraCls}` : "";
   if (!stat) return `<td class="num${cls}"><span class="dim">—</span></td>`;
-  const edge = edgeOf(stat);
-  const edgeCls = edgeClass(edge);
+  const hasLine = stat.line != null;
+  // No book line yet (odds not wired in): show the projection uncolored.
+  const edgeCls = hasLine ? edgeClass(edgeOf(stat)) : "";
   return `<td class="num${cls}">
     <div class="stat-cell">
       <div class="num ${edgeCls}">${stat.proj.toFixed(1)}</div>
-      <div class="line">L ${stat.line.toFixed(1)}</div>
+      <div class="line">${hasLine ? "L " + stat.line.toFixed(1) : "no line"}</div>
     </div>
   </td>`;
 }
 
 function tableRow(p) {
-  const nameCell = `<td><div class="pn">${esc(p.player)}</div>
+  const tag = p.status ? ` <span class="dim">(${esc(p.status)})</span>` : "";
+  const nameCell = `<td><div class="pn">${esc(p.player)}${tag}</div>
     <div class="pm">${esc(p.team)} ${p.home ? "vs" : "@"} ${esc(p.opp)} · ${esc(p.time_et)}</div></td>`;
   const cells = STAT_COLS.map((c) => statCell(statOf(p, c.key), c.key === "pra" ? "pra-cell" : "")).join("");
   return `<tr>${nameCell}${cells}</tr>`;
@@ -95,11 +99,15 @@ function tableView(players) {
       const cls = ["num", c.cls, active ? "sort-on" : ""].filter(Boolean).join(" ");
       return `<th data-key="${c.key}" class="${cls}">${esc(c.label)}${arrow}</th>`;
     }).join("");
-  return `<div class="legend">
+  const anyLines = players.some((p) => Object.values(p.stats || {}).some((s) => s && s.line != null));
+  const legend = anyLines
+    ? `<div class="legend">
       <span><span class="sw g"></span>edge (over)</span>
       <span><span class="sw o"></span>near the book</span>
       <span><span class="sw r"></span>edge (under)</span>
-    </div>
+    </div>`
+    : `<div class="legend"><span>Projections only. Book lines and edge colors arrive once odds are wired in.</span></div>`;
+  return `${legend}
     <div class="board-tbl-wrap today-tbl-wrap"><div class="board-tbl today-tbl">
       <table class="t"><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table>
     </div></div>`;
@@ -115,6 +123,7 @@ async function main() {
   }
   const upd = new Date(data.generated_at);
   $("#subtitle").textContent = `${data.date} · updated ${upd.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
+  if (data.note) $("#note").textContent = data.note + " Tap a column header to sort.";
   const players = data.players || [];
 
   const render = () => {

@@ -40,11 +40,13 @@ function tonightCall(t) {
   const pct = Math.round(p.model_prob * 100);
   return `
     <div class="call-hero">
-      <div class="call-meta">Nikola Jokic · DEN ${esc(t.opp)} · ${esc(t.time_et)}</div>
+      <div class="call-meta">${t.opp
+        ? `Nikola Jokic · DEN ${esc(t.opp)} · ${esc(t.time_et)}`
+        : "Nikola Jokic · no game today · call for his next game"}</div>
       <div class="call-badge ${isYes ? "call-yes" : "call-no"}">Bet TD: ${isYes ? "YES" : "NO"}</div>
       <div class="call-prob">Model gives it <b>${pct}%</b> to be a triple-double</div>
-      <div class="call-market">Market: ${mkt.side === "yes" ? "Yes" : "No"}
-        ${mkt.odds > 0 ? "+" + mkt.odds : mkt.odds} · ${esc(mkt.book)}</div>
+      ${mkt ? `<div class="call-market">Market: ${mkt.side === "yes" ? "Yes" : "No"}
+        ${mkt.odds > 0 ? "+" + mkt.odds : mkt.odds} · ${esc(mkt.book)}</div>` : ""}
     </div>
     <div class="noedge" style="margin:-8px 0 16px">${esc(p.note)}</div>`;
 }
@@ -82,11 +84,13 @@ async function main() {
   }
   const upd = new Date(data.generated_at);
   $("#subtitle").textContent = `updated ${upd.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
+  if (data.note) $("#note").textContent = data.note;
   const streak = currentStreak(data.recent_games || []);
   $("#jokic-body").innerHTML =
     tonightCall(data.tonight) +
     summaryTiles(data.season_summary, streak) +
-    `<div class="notice" style="margin:12px 0">${esc(data.season_summary.fun_fact)}</div>` +
+    (data.season_summary.fun_fact
+      ? `<div class="notice" style="margin:12px 0">${esc(data.season_summary.fun_fact)}</div>` : "") +
     recentGamesTable(data.recent_games || []);
 }
 main();
