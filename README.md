@@ -7,11 +7,16 @@ what exists in this repo right now vs. what's still a stub.
 
 ## What's actually built
 
-- `docs/` — the site itself. **Real, working front end** (cards/table toggle, sorting,
-  filtering, the same visual design as the K Board) served from **mock data**:
-  `docs/data/today.json` uses ten real NBA players' actual 2024-25 season scoring
-  averages as placeholder projections, with made-up sportsbook lines/edges layered on
-  top purely to preview the layout. No live pipeline produces this file yet.
+- `docs/` — the site itself. **Real, working front end**, table-only (no card view — a
+  full NBA slate runs 20+ meaningfully-projected players a night, so a sortable table beats
+  scrolling cards), served from **mock data**: `docs/data/today.json` uses ten real NBA
+  players' actual recent-season scoring averages as placeholder projections, with made-up
+  sportsbook lines/edges layered on top purely to preview the layout. No live pipeline
+  produces this file yet.
+- `docs/jokic.html` + `docs/data/jokic.json` — a separate **Jokic triple-double tracker**
+  tab: season summary tiles, a real recent-games log, and a placeholder "tonight" TD
+  projection. The season summary and recent games are Jokic's **real 2025-26 numbers**
+  (34 triple-doubles in 65 games); only the "tonight" projection is made up.
 - `nproj/` — the Python package skeleton: `config.py`, `util.py` (odds math + board-day
   clock, lifted directly from the K Board's `kproj/util.py`), `db.py` (SQLite schema),
   and `cli.py` (`python -m nproj init|daily|export|status`). `init` and `status` work.

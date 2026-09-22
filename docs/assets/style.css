@@ -121,11 +121,20 @@ footer.site { color: var(--dim); font-size: 11.5px; line-height: 1.6; margin-top
   background: linear-gradient(to right, transparent, var(--bg) 92%); pointer-events: none;
   border-radius: 0 12px 12px 0; }
 @media (min-width: 640px) { .board-tbl-wrap::after { display: none; } }
+/* A narrower table (e.g. Jokic tracker's date/stat-line/TD? table) doesn't need
+   the Today board's wide min-width — let it size to its own content instead. */
+.board-tbl.compact-tbl table.t { min-width: 0; }
+.board-tbl.compact-tbl { overflow-x: visible; }
+/* Today board specifically: at phone width, drop p10-p90 and pts-line columns
+   (positions 3 and 5) to fit without horizontal scroll. Scoped to .today-tbl
+   rather than .board-tbl generally — other tables reusing .board-tbl (like the
+   Jokic tracker's recent-games table) have a different column layout and
+   should just scroll instead of losing arbitrary columns by position. */
 @media (max-width: 480px) {
-  .board-tbl th:nth-child(3), .board-tbl td:nth-child(3),
-  .board-tbl th:nth-child(5), .board-tbl td:nth-child(5) { display: none; }
-  .board-tbl table.t { min-width: 0; }
-  .board-tbl-wrap::after { display: none; }
+  .today-tbl th:nth-child(3), .today-tbl td:nth-child(3),
+  .today-tbl th:nth-child(5), .today-tbl td:nth-child(5) { display: none; }
+  .today-tbl table.t { min-width: 0; }
+  .today-tbl-wrap::after { display: none; }
 }
 
 /* Signals page */

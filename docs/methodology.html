@@ -15,6 +15,7 @@
   </header>
   <nav class="tabs">
     <a href="index.html">Today</a>
+    <a href="jokic.html">Jokic TD</a>
     <a href="methodology.html" class="active">Methodology</a>
   </nav>
 
@@ -25,11 +26,26 @@
     MLB strikeout model, adapted for basketball. This page, like the rest of this site, is
     currently a design mockup: the layout and interactions are real, the data is not.</p>
 
+    <h2>Today board</h2>
+    <p>Table-only by design, not cards: a full NBA slate runs 20+ meaningfully-projected
+    players a night (vs. the K Board's ~15 probable starters), so a scannable sortable table
+    beats scrolling through cards. Sort any column; the "Top edges" summary above it always
+    shows the biggest model-vs-book gaps regardless of sort.</p>
+
+    <h2>Jokic TD tracker</h2>
+    <p>A separate tab tracking Nikola Jokic's triple-double prop specifically — his favorite
+    bet and a fun one to track on its own, given how often it hits. The season summary and
+    recent-games log there are his real 2025-26 numbers; the "Tonight" projection is a
+    placeholder until a real triple-double model exists (a proper one needs a joint
+    probability across points/rebounds/assists, not three independent point estimates
+    multiplied together — see the planning doc for more on why that's harder than it sounds).</p>
+
     <h2>What's not built yet</h2>
     <ul>
       <li>Data ingest from nba_api (schedule, box scores, player game logs)</li>
-      <li>The projection model itself (point estimate + quantiles)</li>
-      <li>Live sportsbook points-prop lines via The Odds API</li>
+      <li>The points projection model itself (point estimate + quantiles)</li>
+      <li>A real triple-double probability model for the Jokic tracker</li>
+      <li>Live sportsbook points-prop and TD lines via The Odds API</li>
       <li>A day-rollover clock and scheduled GitHub Actions pipeline</li>
       <li>A settlement/results/performance page</li>
     </ul>
