@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>PTS Board — Methodology</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <h1>🏀 PTS Board</h1>
+    <span class="sub">methodology (draft)</span>
+  </header>
+  <nav class="tabs">
+    <a href="index.html">Today</a>
+    <a href="methodology.html" class="active">Methodology</a>
+  </nav>
+
+  <div class="prose">
+    <h2>What this is (planned)</h2>
+    <p>A hobby model projecting NBA player points, compared against sportsbook over/under
+    lines, ranking any positive-expected-value edges — the same approach as the K Board's
+    MLB strikeout model, adapted for basketball. This page, like the rest of this site, is
+    currently a design mockup: the layout and interactions are real, the data is not.</p>
+
+    <h2>What's not built yet</h2>
+    <ul>
+      <li>Data ingest from nba_api (schedule, box scores, player game logs)</li>
+      <li>The projection model itself (point estimate + quantiles)</li>
+      <li>Live sportsbook points-prop lines via The Odds API</li>
+      <li>A day-rollover clock and scheduled GitHub Actions pipeline</li>
+      <li>A settlement/results/performance page</li>
+    </ul>
+    <p>See the planning doc for the full build-phase roadmap and open decisions.</p>
+  </div>
+
+  <footer class="site">
+    Model output, not betting advice. For entertainment among friends.
+    If gambling stops being fun: 1-800-GAMBLER.
+  </footer>
+</div>
+</body>
+</html>

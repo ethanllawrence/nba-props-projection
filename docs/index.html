@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>PTS Board — Today</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <h1>🏀 PTS Board</h1>
+    <span class="sub" id="subtitle">loading…</span>
+  </header>
+  <nav class="tabs">
+    <a href="index.html" class="active">Today</a>
+    <a href="methodology.html">Methodology</a>
+  </nav>
+  <div class="chiprow">
+    <div class="chips">
+      <span class="chip on" data-f="all">All players</span>
+      <span class="chip" data-f="edges">+EV edges only</span>
+    </div>
+    <div class="chips view-chips">
+      <span class="chip" data-v="cards">Cards</span>
+      <span class="chip" data-v="table">Table</span>
+    </div>
+  </div>
+  <div class="notice" style="margin-bottom:14px">
+    Mockup — placeholder data using real players' 2024-25 season averages to preview the layout.
+    No live model or odds feed is wired up yet.
+  </div>
+  <div id="summary"></div>
+  <div id="board"></div>
+  <footer class="site">
+    Model output, not betting advice. For entertainment among friends.
+    If gambling stops being fun: 1-800-GAMBLER. Projections are probabilistic —
+    expect misses; judge the model on its full record once one exists.
+  </footer>
+</div>
+<script src="assets/app.js?v=1"></script>
+</body>
+</html>
