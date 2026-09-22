@@ -13,8 +13,11 @@ MODELS_DIR = Path(os.environ.get("NPROJ_MODELS_DIR", ROOT / "models"))
 SITE_DATA_DIR = Path(os.environ.get("NPROJ_SITE_DATA", ROOT / "docs" / "data"))
 LINES_CSV = Path(os.environ.get("NPROJ_LINES_CSV", ROOT / "lines" / "manual_lines.csv"))
 
-# --- Target stat (phase 1: points only; see planning doc for phase-2 stats)
-TARGET_STAT = os.environ.get("NPROJ_TARGET_STAT", "points")
+# --- Target stats. Points was the phase-1 target; the site has since moved
+#     to points+rebounds+assists (PRA) together, so the model needs all three.
+TARGET_STATS = [s for s in os.environ.get(
+    "NPROJ_TARGET_STATS", "points,rebounds,assists",
+).split(",") if s]
 
 # --- The Odds API (same vendor/account as the K Board; see planning doc —
 #     player props are fetched PER EVENT, not in one bulk call like game
@@ -40,10 +43,12 @@ QUANTILES = [0.10, 0.25, 0.50, 0.75, 0.90]
 
 # --- Edge scoring (same math as the K Board — de-vig, Kelly, EV — is stat-
 #     agnostic, so nproj/util.py's odds-math functions are lifted verbatim)
-MAJOR_BOOKS = {"draftkings", "fanduel", "betmgm", "caesars"}
+# Robin only actually bets on FanDuel and DraftKings, occasionally bet365 —
+# unlike the K Board, don't bother shopping/weighting a wide book list here.
+MAJOR_BOOKS = {"draftkings", "fanduel"}
 PREFERRED_BOOKS = [b for b in os.environ.get(
     "NPROJ_PREFERRED_BOOKS",
-    "draftkings,fanduel,betmgm,caesars,betrivers,bovada,betonlineag",
+    "fanduel,draftkings,bet365",
 ).split(",") if b]
 BOOK_WEIGHT_MAJOR = 1.0
 BOOK_WEIGHT_OTHER = 0.7

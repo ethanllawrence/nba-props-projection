@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-22T02:15:00Z",
+  "generated_at": "2026-09-22T06:45:10Z",
   "date": "2026-10-22",
-  "note": "MOCKUP DATA. Points are recent-season averages (a mix of sourced 2024-25 and 2025-26 figures, real). Rebounds/assists are illustrative estimates in a realistic range per player, NOT verified stats. Book lines are made up to preview the color coding, priced off FanDuel/DraftKings (occasionally bet365) rather than a shopped best-of-many-books line, since that's what's actually bettable day to day. PRA is the sum of the three individual lines, not a separate combo line yet. No live model or odds feed is wired up yet; no games are actually scheduled on this date.",
+  "note": "MOCKUP DATA, partially real. Nikola Jokic's points/rebounds/assists projections are now real model output (recency-weighted rolling average of real game logs \u2014 see nproj/model/predict.py), not hand-typed. Everyone else's projections, and all book lines for everyone including Nikola Jokic, are still illustrative \u2014 no real game log backfilled for other players yet, and no live odds feed wired up yet. PRA is the sum of the three lines.",
   "players": [
     {
       "player": "Shai Gilgeous-Alexander",
@@ -59,12 +59,12 @@
       "time_et": "9:30 PM",
       "stats": {
         "points": {
-          "proj": 27.7,
+          "proj": 25.5,
           "line": 26.5,
           "book": "FanDuel"
         },
         "rebounds": {
-          "proj": 12.9,
+          "proj": 13.9,
           "line": 12.5,
           "book": "FanDuel"
         },

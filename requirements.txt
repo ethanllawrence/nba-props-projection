@@ -1,7 +1,9 @@
 requests
+nba_api            # stats.nba.com client — only usable somewhere with real internet
+                   # access (e.g. GitHub Actions), not from this dev sandbox; see
+                   # nproj/ingest/nba_stats.py's docstring
+pandas             # nba_api dependency, also used directly for data frames it returns
+numpy              # nba_api dependency
 # Uncomment as each phase is built out (see README.md Build phases):
-# nba_api          # phase 0/1 — stats.nba.com client
-# lightgbm         # phase 2 — model
-# pandas
-# numpy
+# lightgbm         # phase 2 — real model, replacing the phase-1 rolling-average baseline
 # pyyaml           # if workflow-wiring tests are added, like the K Board's

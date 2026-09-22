@@ -23,27 +23,32 @@ def cmd_init(_args) -> None:
 
 
 def cmd_daily(_args) -> None:
+    from . import util
     from .export.site_export import export_all
     from .ingest.nba_stats import fetch_box_scores, fetch_schedule  # noqa: F401
     from .ingest.odds import fetch_points_props  # noqa: F401
-    from .model.predict import project_date
+    from .model import predict
 
+    date_s = util.iso(util.board_date())
     with db.session() as con:
-        # TODO, in order: fetch_schedule -> fetch_box_scores for finished
-        # games -> fetch_points_props (budget-gated) -> project_date ->
-        # export_all. See the K Board's kproj/cli.py cmd_daily for the
-        # reference shape (gating, ordering, print statements).
-        project_date(con, "TODO")
-        export_all(con, "TODO")
-    print("[daily] done")
+        # TODO once nba_stats/odds ingest can actually reach the network
+        # (blocked from this sandbox today — see nproj/ingest/nba_stats.py):
+        # fetch_schedule -> fetch_box_scores for finished games ->
+        # fetch_points_props (budget-gated), THEN the two calls below.
+        predict.train(con)
+        predict.project_date(con, date_s)
+        result = export_all(con, date_s)
+    print(f"[daily] projected/exported for {date_s}: {result}")
 
 
 def cmd_export(_args) -> None:
+    from . import util
     from .export.site_export import export_all
 
+    date_s = util.iso(util.board_date())
     with db.session() as con:
-        export_all(con, "TODO")
-    print("[export] site JSON refreshed")
+        result = export_all(con, date_s)
+    print(f"[export] site JSON refreshed for {date_s}: {result}")
 
 
 def cmd_status(_args) -> None:
