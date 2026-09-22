@@ -19,18 +19,29 @@ TARGET_STATS = [s for s in os.environ.get(
     "NPROJ_TARGET_STATS", "points,rebounds,assists",
 ).split(",") if s]
 
-# --- The Odds API (same vendor/account as the K Board; see planning doc —
-#     player props are fetched PER EVENT, not in one bulk call like game
-#     lines, so the credit math is much tighter than MLB's. Confirm actual
-#     spend against ODDS_MONTHLY_BUDGET before turning on props for a full
-#     slate of games.)
-ODDS_API_KEY = os.environ.get("ODDS_API_KEY", "")          # empty = skip odds ingestion
+# --- The Odds API (same account as the K Board, free plan, shared budget).
+#     Player props are billed per game: cost = markets returned x regions,
+#     and up to 10 bookmakers count as one region. The /sports and /events
+#     endpoints are free. See nproj/ingest/odds.py for the rationing logic.
+ODDS_API_KEY = os.environ.get("ODDS_API_KEY", "")          # empty = skip odds entirely
 ODDS_API_BASE = "https://api.the-odds-api.com/v4"
 ODDS_SPORT_KEY = "basketball_nba"
-ODDS_MONTHLY_BUDGET = 500                                   # shared free-tier plan w/ the K Board
-ODDS_BUDGET_FLOOR = 60
-ODDS_PROPS_MARKET = "player_points"
-ODDS_MODE = os.environ.get("NPROJ_ODDS_MODE", "auto")       # auto|props|off
+# off (default) | props. The daily workflow turns props on for the morning run only.
+ODDS_MODE = os.environ.get("NPROJ_ODDS_MODE", "off")
+# Credits never touched by this project, left for the K Board.
+ODDS_BUDGET_FLOOR = int(os.environ.get("NPROJ_ODDS_FLOOR", "60"))
+# Share of the remaining (above-floor) credits NBA may plan to use over the rest
+# of the month; the rest is left for the K Board. Raise it once MLB is done.
+ODDS_NBA_SHARE = float(os.environ.get("NPROJ_ODDS_SHARE", "0.5"))
+# Day of month the plan's credits reset.
+ODDS_RESET_DAY = int(os.environ.get("NPROJ_ODDS_RESET_DAY", "1"))
+# Markets in priority order: when credits are tight, only the first few get
+# fetched. PRA first, since it's the site's namesake and one line covers all three.
+ODDS_MARKETS = [m for m in os.environ.get(
+    "NPROJ_ODDS_MARKETS",
+    "player_points_rebounds_assists,player_points,player_rebounds,player_assists",
+).split(",") if m]
+ODDS_JOKIC_TD = os.environ.get("NPROJ_ODDS_JOKIC_TD", "1") == "1"   # +1 credit on Denver game days
 
 # --- NBA Stats (free, via nba_api / stats.nba.com — see nproj/ingest/nba_stats.py)
 NBA_STATS_USER_AGENT = "nproj-personal-hobby/0.1"
@@ -48,7 +59,7 @@ QUANTILES = [0.10, 0.25, 0.50, 0.75, 0.90]
 MAJOR_BOOKS = {"draftkings", "fanduel"}
 PREFERRED_BOOKS = [b for b in os.environ.get(
     "NPROJ_PREFERRED_BOOKS",
-    "fanduel,draftkings,bet365",
+    "fanduel,draftkings",
 ).split(",") if b]
 BOOK_WEIGHT_MAJOR = 1.0
 BOOK_WEIGHT_OTHER = 0.7

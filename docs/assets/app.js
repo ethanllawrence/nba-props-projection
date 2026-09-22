@@ -32,18 +32,18 @@ const STAT_COLS = [
 
 let sortState = { key: "points", dir: "desc" };
 
-/* PRA (points + rebounds + assists) isn't its own field in the data — it's
-   derived by summing the three individual proj/line values. Some books do
-   post a real PRA combo line separately from the sum of the individual
-   props; until we're pulling one, the sum is the honest approximation. */
+/* PRA (points + rebounds + assists): the projection is the sum of the three.
+   The line is the book's real PRA line (stats.pra) when one was pulled,
+   otherwise the sum of the three individual lines. */
 function praOf(player) {
   const s = player.stats;
   if (!s || !s.points || !s.rebounds || !s.assists) return null;
   const lines = [s.points.line, s.rebounds.line, s.assists.line];
+  const summed = lines.every((l) => l != null) ? lines.reduce((a, b) => a + b, 0) : null;
   return {
     proj: s.points.proj + s.rebounds.proj + s.assists.proj,
-    // No PRA line unless all three individual lines exist.
-    line: lines.every((l) => l != null) ? lines.reduce((a, b) => a + b, 0) : null,
+    // A real PRA line from the book wins; otherwise the sum of the three lines, if all exist.
+    line: s.pra && s.pra.line != null ? s.pra.line : summed,
   };
 }
 

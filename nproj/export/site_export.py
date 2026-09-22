@@ -6,21 +6,27 @@ averaging at least MIN_MINUTES_FOR_BOARD over his recent games (so deep
 bench players don't flood the table). On a night with no games (offseason,
 All-Star break) the existing file is left alone.
 
-Book lines: none yet. Until The Odds API is wired in (nproj/ingest/odds.py),
-every stat is written with line/book = null, and the site shows the
-projection without edge coloring.
+Book lines come from docs/data/lines.json (written by the morning odds
+run, see nproj/ingest/odds.py). Stats with no posted line get line = null,
+and the site shows those projections uncolored. A real PRA line, when
+posted, goes in stats.pra; otherwise the page sums the three lines.
+
+The board keeps at most MAX_BOARD_PLAYERS rows: players with any posted line
+first (books only post props for players who matter), then by projected PRA.
 
 jokic.json: season summary, recent games and the triple-double call are
-all recomputed from his real ESPN game log. The "market" price is still
-hand-typed until odds are wired in.
+all recomputed from his real ESPN game log. The market price is his
+triple-double Yes price when the odds run fetched it, otherwise null.
 """
 import json
 from datetime import datetime, timezone
 
 from .. import config
+from ..ingest.odds import load_lines, norm_name
 from ..pipeline import JOKIC_ESPN_ID
 
 MIN_MINUTES_FOR_BOARD = 20.0
+MAX_BOARD_PLAYERS = 60
 MINUTES_LOOKBACK = 10
 
 
@@ -75,8 +81,12 @@ def _export_today_board(con, date_s: str):
     if not rows:
         return 0
 
+    book = load_lines(date_s)
+    all_lines = book.get("lines", {})
+
     players = []
     for r in rows:
+        mine = all_lines.get(norm_name(r["name"]), {})
         stats = {}
         for stat in config.TARGET_STATS:
             proj = con.execute(
@@ -84,9 +94,14 @@ def _export_today_board(con, date_s: str):
                 (r["player_id"], date_s, stat),
             ).fetchone()
             if proj and proj["point"] is not None:
-                stats[stat] = {"proj": proj["point"], "line": None, "book": None}
+                ln = mine.get(stat, {})
+                stats[stat] = {"proj": proj["point"], "line": ln.get("line"), "book": ln.get("book"),
+                               "over": ln.get("over"), "under": ln.get("under")}
         if len(stats) < len(config.TARGET_STATS):
             continue
+        if "pra" in mine:
+            stats["pra"] = {"line": mine["pra"].get("line"), "book": mine["pra"].get("book"),
+                            "over": mine["pra"].get("over"), "under": mine["pra"].get("under")}
         if _recent_minutes(con, r["player_id"], date_s) < MIN_MINUTES_FOR_BOARD:
             continue
         home = r["team"] == r["home_team"]
@@ -100,13 +115,27 @@ def _export_today_board(con, date_s: str):
             "stats": stats,
         })
 
+    def has_line(p):
+        return any(v.get("line") is not None for v in p["stats"].values())
+
+    def pra(p):
+        return sum(p["stats"][k]["proj"] for k in ("points", "rebounds", "assists"))
+
+    players.sort(key=lambda p: (not has_line(p), -pra(p)))
+    players = players[:MAX_BOARD_PLAYERS]
     players.sort(key=lambda p: -p["stats"]["points"]["proj"])
+    n_lined = sum(1 for p in players if has_line(p))
+    if n_lined:
+        lines_note = (f"Lines from FanDuel/DraftKings, pulled once each morning "
+                      f"({n_lined} of {len(players)} players have at least one line).")
+    else:
+        lines_note = "No sportsbook lines for this date, so projections are shown uncolored."
     _save(config.SITE_DATA_DIR / "today.json", {
         "generated_at": _now(),
         "date": date_s,
         "note": ("Projections are real: a recency-weighted average of each player's ESPN game "
-                 "log (this season plus last). No sportsbook lines yet, so there's no edge "
-                 "coloring until The Odds API is wired in."),
+                 "log (this season plus last). " + lines_note),
+        "lines_fetched_at": book.get("fetched_at"),
         "players": players,
     })
     return len(players)
@@ -187,11 +216,14 @@ def _export_jokic(con, date_s: str):
             "his hit rate over his last 20 games. Not a real joint model of points, rebounds and "
             "assists yet. See the methodology page."
         )
+    td = load_lines(date_s).get("jokic_td") if game else None
+    tonight["market"] = {"side": "yes", "odds": td["odds"], "book": td["book"]} if td else None
     data["tonight"] = tonight
     if {**data, "generated_at": None} == {**before, "generated_at": None}:
         return False  # nothing new (e.g. offseason); skip so the daily run doesn't commit noise
     data["generated_at"] = _now()
     data["note"] = ("Season summary, recent games and the model call come from Jokic's real ESPN "
-                    "game log. The market price is still a placeholder until odds are wired in.")
+                    "game log. The market price is his triple-double Yes price from the morning "
+                    "odds pull, when there was room in the budget for it.")
     _save(path, data)
     return True

@@ -51,14 +51,19 @@ for reference.
 as out or averaging under 20 minutes are left off), and the whole Jokic tab except the
 market price.
 
-**Still mock:** all sportsbook lines (none until The Odds API is wired in, so the board shows
-"no line" and no edge colors), the Jokic tab's market price, and the whole Parlay of the Day
-tab. Until the 2026-27 season starts, `docs/data/today.json` keeps the hand-typed mockup,
+**Book lines (since 2026-09-22):** `nproj/ingest/odds.py` pulls FanDuel/DraftKings prop lines
+once a day (the 8 AM Arizona workflow run) into `docs/data/lines.json`; the 3 PM run reuses
+them for free. The account is a free plan shared with the K Board, so spending is rationed:
+today's allowance = `NPROJ_ODDS_SHARE` x (credits remaining - `NPROJ_ODDS_FLOOR`) / days
+until reset. Markets are bought in priority order (PRA, points, rebounds, assists) as far as
+the allowance covers the whole slate, plus Jokic's triple-double Yes price on Denver game
+days if there's room. `python -m nproj odds-status` checks the balance for free.
+
+**Still mock:** the whole Parlay of the Day tab. Until the 2026-27 season starts, `docs/data/today.json` keeps the hand-typed mockup,
 because the daily run leaves it alone on dates with no games.
 
 ## What's still a stub
 
-- `nproj/ingest/odds.py` — The Odds API player props, budget-gated
 - `nproj/model/predict.py` — a recency-weighted rolling average (real, deliberately simple);
   the planned LightGBM + quantile model is still ahead, see that file's docstring
 - `nproj/model/parlay.py` — Parlay of the Day selection criteria, not automated

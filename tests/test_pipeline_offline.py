@@ -127,3 +127,120 @@ def test_daily_offline():
 
 if __name__ == "__main__":
     test_daily_offline()
+
+
+# ---------------------------------------------------------------- odds ----
+class FakeResp:
+    def __init__(self, body, remaining):
+        self._body, self.status_code = body, 200
+        self.headers = {"x-requests-remaining": str(remaining), "x-requests-used": "100"}
+        self.text = ""
+
+    def json(self):
+        return self._body
+
+
+def fake_odds_api(start_remaining=440):
+    state = {"remaining": start_remaining, "calls": []}
+
+    def get(url, params=None, timeout=None):
+        state["calls"].append((url, dict(params or {})))
+        if url.endswith("/sports"):
+            return FakeResp([], state["remaining"])
+        if url.endswith("/events"):
+            return FakeResp([
+                {"id": "e1", "home_team": "Denver Nuggets", "away_team": "Oklahoma City Thunder",
+                 "commence_time": "2026-03-11T02:00:00Z"},
+                {"id": "e2", "home_team": "Philadelphia 76ers", "away_team": "Memphis Grizzlies",
+                 "commence_time": "2026-03-10T23:00:00Z"},
+                {"id": "other-day", "home_team": "Utah Jazz", "away_team": "LA Clippers",
+                 "commence_time": "2026-03-12T02:00:00Z"},
+            ], state["remaining"])
+        markets = params["markets"].split(",")
+        state["remaining"] -= len(markets)
+        eid = url.split("/events/")[1].split("/")[0]
+        who = "Nikola Jokić" if eid == "e1" else "Player 20-0"
+        mk = []
+        for m in markets:
+            if m == "player_triple_double":
+                mk.append({"key": m, "outcomes": [{"name": "Yes", "description": who, "price": 120}]})
+            else:
+                base = {"player_points_rebounds_assists": 49.5, "player_points": 26.5}.get(m, 9.5)
+                mk.append({"key": m, "outcomes": [
+                    {"name": "Over", "description": who, "price": -115, "point": base},
+                    {"name": "Under", "description": who, "price": -105, "point": base}]})
+        # DraftKings listed first but FanDuel preferred: parser must pick FanDuel
+        dk = {"key": "draftkings", "title": "DraftKings",
+              "markets": [{"key": markets[0], "outcomes": [
+                  {"name": "Over", "description": who, "price": -110, "point": 99.5}]}]}
+        return FakeResp({"bookmakers": [dk, {"key": "fanduel", "title": "FanDuel", "markets": mk}]},
+                        state["remaining"])
+    return get, state
+
+
+def test_odds_rationing_and_board():
+    from datetime import date
+    from nproj import config
+    from nproj.ingest import odds
+
+    # allowance math: (440 - 60) * 0.5 / 22 days = 8
+    assert odds.days_until_reset(date(2026, 3, 10)) == 22
+    assert odds.daily_allowance(440, date(2026, 3, 10)) == int(0.5 * 380 / 22)
+    assert odds.plan(2, 9, ["a", "b", "c", "d"]) == (["a", "b", "c", "d"], 2)
+    assert odds.plan(8, 9, ["a", "b"]) == (["a"], 8)
+    assert odds.plan(12, 9, ["a", "b"]) == (["a"], 9)       # partial: first 9 games only
+    assert odds.plan(5, 0, ["a"]) == (["a"], 0)
+    assert odds.norm_name("Jaren Jackson Jr.") == "jaren jackson"
+    assert odds.norm_name("Nikola Jokić") == "nikola jokic"
+
+    tmp = Path(tempfile.mkdtemp())
+    site = tmp / "site"
+    shutil.copytree(ROOT / "docs" / "data", site)
+    import os
+    import importlib
+    os.environ.update(NPROJ_DB=str(tmp / "t.db"), NPROJ_DATA_DIR=str(tmp), NPROJ_SITE_DATA=str(site),
+                      NPROJ_ODDS_MODE="props", ODDS_API_KEY="test", NPROJ_ODDS_SHARE="0.5")
+    importlib.reload(config)
+    from nproj import cli, pipeline
+    from nproj.ingest import espn
+    espn._get = fake_get
+    pipeline.REQUEST_PAUSE = 0
+    get, state = fake_odds_api(440)
+    odds.requests.get = get
+
+    cli.main(["daily", "--date", "2026-03-10"])
+
+    ln = json.loads((site / "lines.json").read_text())
+    allowance = odds.daily_allowance(440, date(2026, 3, 10))       # 8 -> 4 markets x 2 games
+    assert ln["games_on_slate"] == 2 and ln["markets"] == config.ODDS_MARKETS[:min(4, allowance // 2)]
+    assert ln["credits_spent"] <= allowance
+    assert ln["lines"]["nikola jokic"]["pra"]["book"] == "FanDuel"
+    assert ln["lines"]["nikola jokic"]["pra"]["line"] == 49.5
+
+    today = json.loads((site / "today.json").read_text())
+    jok = next(p for p in today["players"] if p["player"] == "Nikola Jokic")
+    assert jok["stats"]["pra"]["line"] == 49.5
+    assert jok["stats"]["points"]["line"] == 26.5 and jok["stats"]["points"]["over"] == -115
+    assert len(today["players"]) <= 60
+    lined = {p["player"] for p in today["players"]
+             if any(v.get("line") is not None for v in p["stats"].values())}
+    assert lined == {"Nikola Jokic", "Player 20-0"}, lined
+
+    jk = json.loads((site / "jokic.json").read_text())
+    if config.ODDS_JOKIC_TD and len(ln["markets"]) * 2 + 1 <= allowance:
+        assert jk["tonight"]["market"] == {"side": "yes", "odds": 120, "book": "FanDuel"}
+
+    # Afternoon run: odds off, lines must survive without any paid call
+    os.environ["NPROJ_ODDS_MODE"] = "off"
+    importlib.reload(config)
+    n_paid = sum(1 for u, _ in state["calls"] if "/odds" in u)
+    cli.main(["daily", "--date", "2026-03-10"])
+    assert sum(1 for u, _ in state["calls"] if "/odds" in u) == n_paid
+    today2 = json.loads((site / "today.json").read_text())
+    jok2 = next(p for p in today2["players"] if p["player"] == "Nikola Jokic")
+    assert jok2["stats"]["pra"]["line"] == 49.5
+    print("OK odds:", {k: ln[k] for k in ("markets", "credits_spent", "credits_remaining")})
+
+
+if __name__ == "__main__":
+    test_odds_rationing_and_board()

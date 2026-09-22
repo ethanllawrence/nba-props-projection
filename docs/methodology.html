@@ -78,9 +78,10 @@
     three games), pulled from ESPN's public stats feed by a GitHub Actions job that runs twice
     a day. Players listed as out, or averaging under 20 minutes, are left off the board. The
     Jokic tab's season summary, recent games and triple-double call come from the same feed.
-    Still mock: every sportsbook line (the board shows "no line" and skips edge colors until
-    The Odds API is wired in), the Jokic tab's market price, and the whole Parlay of the Day
-    tab. Still ahead: live lines, a real (LightGBM) model in place of the rolling-average
+    Book lines come from FanDuel and DraftKings via The Odds API, pulled once each morning on a
+    tight free-plan budget: the combined PRA line first, then points, rebounds and assists as
+    credits allow, so on busy nights some stats show "no line" and stay uncolored. Still mock:
+    the whole Parlay of the Day tab. Still ahead: a real (LightGBM) model in place of the rolling-average
     baseline, automated Parlay of the Day picks, a settled day-rollover clock, and a
     results/performance page.</p>
     <p>See the planning doc for the full build-phase roadmap and open decisions.</p>
