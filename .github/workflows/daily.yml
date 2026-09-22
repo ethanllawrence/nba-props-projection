@@ -1,0 +1,89 @@
+# Daily board: pull tonight's slate and game logs from ESPN, project, and
+# commit the refreshed docs/data/*.json so GitHub Pages serves them.
+#
+# Runs twice a day (8 AM and 3 PM Arizona time). The second run picks up
+# injury news. Offseason days change nothing, so nothing gets committed.
+#
+# Test run: Actions tab -> "Daily board" -> Run workflow, and enter a past
+# date like 2026-03-10. Test runs print what the board WOULD show and never
+# commit, so the live site stays as it is.
+
+name: Daily board
+
+on:
+  schedule:
+    - cron: "0 15 * * *"   # 8:00 AM Arizona (UTC-7, no daylight saving)
+    - cron: "0 22 * * *"   # 3:00 PM Arizona
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Test date YYYY-MM-DD (leave blank for a real run that updates the site)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-board
+  cancel-in-progress: false
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Offline test (fake ESPN data)
+        run: python tests/test_pipeline_offline.py
+
+      - name: Run the pipeline
+        env:
+          TEST_DATE: ${{ github.event.inputs.date }}
+        run: |
+          if [ -n "$TEST_DATE" ]; then
+            python -m nproj daily --date "$TEST_DATE"
+          else
+            python -m nproj daily
+          fi
+
+      - name: Show the board, then commit (real runs only)
+        env:
+          TEST_DATE: ${{ github.event.inputs.date }}
+        run: |
+          python - <<'EOF'
+          import json
+          d = json.load(open("docs/data/today.json"))
+          print(f"Board for {d['date']}: {len(d['players'])} players")
+          for p in d["players"][:25]:
+              s = p["stats"]
+              pra = s["points"]["proj"] + s["rebounds"]["proj"] + s["assists"]["proj"]
+              print(f"  {p['player']:<28} {p['team']:>3} {'vs' if p['home'] else ' @'} {p['opp']:<3}"
+                    f"  {s['points']['proj']:5.1f} pts {s['rebounds']['proj']:5.1f} reb"
+                    f" {s['assists']['proj']:5.1f} ast  PRA {pra:5.1f}")
+          j = json.load(open("docs/data/jokic.json"))
+          print("Jokic:", j["season_summary"], "| call:", j["tonight"].get("call"),
+                j["tonight"].get("td_projection", {}).get("model_prob"))
+          EOF
+          if [ -n "$TEST_DATE" ]; then
+            echo "Test run for $TEST_DATE: not committing."
+            exit 0
+          fi
+          if git diff --quiet -- docs/data; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data
+          git commit -m "Daily board $(TZ=America/Phoenix date +%Y-%m-%d)"
+          git push
