@@ -29,8 +29,19 @@
     <h2>Today board</h2>
     <p>Table-only by design, not cards: a full NBA slate runs 20+ meaningfully-projected
     players a night (vs. the K Board's ~15 probable starters), so a scannable sortable table
-    beats scrolling through cards. Sort any column; the "Top edges" summary above it always
-    shows the biggest model-vs-book gaps regardless of sort.</p>
+    beats scrolling through cards. One row per player, one column each for points, rebounds
+    and assists — tap any of those headers to sort the whole slate by that stat's projection,
+    so "who's projected for the most points/rebounds/assists tonight" is a single tap away.</p>
+
+    <h2>Edge coloring</h2>
+    <p>Each projected number is colored by how far it sits from that stat's book line, as a
+    percentage of the line: <span class="pos">green</span> when the projection clears the
+    line by 6% or more (model likes the over), <span class="neg">red</span> when it's 6% or
+    more under the line (model likes the under), and <span class="neu">gold</span> in between,
+    where the model roughly agrees with the market. A relative (percentage) threshold, rather
+    than a fixed point gap, is what lets one rule work sensibly across points, rebounds and
+    assists despite their very different typical ranges. The small number under each
+    projection is that stat's current book line.</p>
 
     <h2>Jokic TD tracker</h2>
     <p>A separate tab tracking Nikola Jokic's triple-double prop specifically — his favorite

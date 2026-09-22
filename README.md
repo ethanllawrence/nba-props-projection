@@ -9,10 +9,12 @@ what exists in this repo right now vs. what's still a stub.
 
 - `docs/` — the site itself. **Real, working front end**, table-only (no card view — a
   full NBA slate runs 20+ meaningfully-projected players a night, so a sortable table beats
-  scrolling cards), served from **mock data**: `docs/data/today.json` uses ten real NBA
-  players' actual recent-season scoring averages as placeholder projections, with made-up
-  sportsbook lines/edges layered on top purely to preview the layout. No live pipeline
-  produces this file yet.
+  scrolling cards), served from **mock data**: `docs/data/today.json` covers ten real NBA
+  players with a condensed points/rebounds/assists table — one column per stat, each cell
+  colored green/gold/red by how far the projection sits from that stat's book line, sortable
+  by tapping any stat column header. Points are mostly real recent-season averages; rebounds,
+  assists and all book lines/edges are illustrative estimates to preview the layout, not
+  verified stats. No live pipeline produces this file yet.
 - `docs/jokic.html` + `docs/data/jokic.json` — a separate **Jokic triple-double tracker**
   tab: season summary tiles, a real recent-games log, and a placeholder "tonight" TD
   projection. The season summary and recent games are Jokic's **real 2025-26 numbers**

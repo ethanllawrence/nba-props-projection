@@ -78,6 +78,19 @@ table.t th { text-align: left; color: var(--dim); font-weight: 500; padding: 6px
   border-bottom: 1px solid var(--line); font-size: 11.5px; text-transform: uppercase; }
 table.t td { padding: 7px 6px; border-bottom: 1px solid var(--card2); }
 .pos { color: var(--green); } .neg { color: var(--red); } .dim { color: var(--dim); }
+.neu { color: var(--gold); }
+
+/* Condensed points/rebounds/assists board */
+.today-tbl .stat-cell { line-height: 1.25; }
+.today-tbl .stat-cell .num { font-weight: 700; font-variant-numeric: tabular-nums; }
+.today-tbl .stat-cell .line { font-size: 10.5px; color: var(--dim); font-weight: 400; }
+.today-tbl th[data-key] { cursor: pointer; user-select: none; }
+.today-tbl th.sort-on { color: var(--text); }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 11.5px; color: var(--dim);
+  margin: 2px 0 12px; }
+.legend .sw { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 5px; }
+.legend .sw.g { background: var(--green); } .legend .sw.o { background: var(--gold); }
+.legend .sw.r { background: var(--red); }
 canvas { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
   padding: 8px; margin-bottom: 12px; }
 footer.site { color: var(--dim); font-size: 11.5px; line-height: 1.6; margin-top: 28px;
@@ -125,16 +138,13 @@ footer.site { color: var(--dim); font-size: 11.5px; line-height: 1.6; margin-top
    the Today board's wide min-width — let it size to its own content instead. */
 .board-tbl.compact-tbl table.t { min-width: 0; }
 .board-tbl.compact-tbl { overflow-x: visible; }
-/* Today board specifically: at phone width, drop p10-p90 and pts-line columns
-   (positions 3 and 5) to fit without horizontal scroll. Scoped to .today-tbl
-   rather than .board-tbl generally — other tables reusing .board-tbl (like the
-   Jokic tracker's recent-games table) have a different column layout and
-   should just scroll instead of losing arbitrary columns by position. */
-@media (max-width: 480px) {
-  .today-tbl th:nth-child(3), .today-tbl td:nth-child(3),
-  .today-tbl th:nth-child(5), .today-tbl td:nth-child(5) { display: none; }
-  .today-tbl table.t { min-width: 0; }
-  .today-tbl-wrap::after { display: none; }
+/* Today board: Player | Points | Rebounds | Assists is only 4 narrow columns,
+   so unlike the old 6-column layout it fits phone width without dropping any
+   columns — just let it size to content instead of the wide min-width. */
+.today-tbl table.t { min-width: 0; }
+.today-tbl-wrap::after { display: none; }
+@media (max-width: 380px) {
+  .today-tbl .stat-cell .line { display: none; }
 }
 
 /* Signals page */
