@@ -4,6 +4,10 @@
 # Runs twice a day (8 AM and 3 PM Arizona time). The second run picks up
 # injury news. Offseason days change nothing, so nothing gets committed.
 #
+# Odds: only the 8 AM run buys prop lines (The Odds API, shared free plan,
+# rationed in nproj/ingest/odds.py). The 3 PM run reuses them for free.
+# Every run prints the credit balance, which is a free call.
+#
 # Test run: Actions tab -> "Daily board" -> Run workflow, and enter a past
 # date like 2026-03-10. Test runs print what the board WOULD show and never
 # commit, so the live site stays as it is.
@@ -20,6 +24,11 @@ on:
         description: "Test date YYYY-MM-DD (leave blank for a real run that updates the site)"
         required: false
         default: ""
+      odds:
+        description: "Real runs only: also buy today's prop lines (spends credits)"
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write
@@ -46,9 +55,20 @@ jobs:
       - name: Offline test (fake ESPN data)
         run: python tests/test_pipeline_offline.py
 
+      - name: Odds API credits (free call)
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python -m nproj odds-status || echo "odds-status failed; the board still runs"
+
       - name: Run the pipeline
         env:
           TEST_DATE: ${{ github.event.inputs.date }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          # props on the 8 AM scheduled run, or a manual real run with the box ticked
+          NPROJ_ODDS_MODE: ${{ (github.event.schedule == '0 15 * * *' || (github.event.inputs.odds == 'true' && github.event.inputs.date == '')) && 'props' || 'off' }}
+          # Share of spare credits NBA may use; the rest is left for the K Board.
+          # Set a repo variable NPROJ_ODDS_SHARE (e.g. 0.8) once MLB is done.
+          NPROJ_ODDS_SHARE: ${{ vars.NPROJ_ODDS_SHARE || '0.5' }}
         run: |
           if [ -n "$TEST_DATE" ]; then
             python -m nproj daily --date "$TEST_DATE"
