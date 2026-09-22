@@ -1,5 +1,6 @@
-# Manual connectivity test: can a GitHub-hosted runner reach stats.nba.com?
+# Manual connectivity test: which NBA data sources can a GitHub runner reach?
 # Run from the Actions tab -> "NBA API check" -> "Run workflow". Changes nothing.
+# Run #1 (2026-09-22): stats.nba.com hung until every retry timed out (~9 min).
 
 name: NBA API check
 
@@ -9,40 +10,34 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Call stats.nba.com through nproj's real ingest code
-        env:
-          PYTHONUNBUFFERED: "1"
+      - name: Try each source once, 20s timeout, no retries
         run: |
-          python - <<'EOF'
-          import time
-          from nproj.ingest import nba_stats
+          python3 - <<'EOF'
+          import json, time, urllib.request
 
-          JOKIC_ID = "203999"
-          checks = {
-              "Jokic 2025-26 game log": lambda: nba_stats.fetch_player_game_log(JOKIC_ID, "2025-26"),
-              "Denver roster": lambda: nba_stats.fetch_rosters(team_id=1610612743),
+          UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+          SOURCES = {
+              "stats.nba.com (browser headers)":
+                  ("https://stats.nba.com/stats/playergamelog?PlayerID=203999&Season=2025-26&SeasonType=Regular%20Season",
+                   {"User-Agent": UA, "Referer": "https://www.nba.com/", "Origin": "https://www.nba.com",
+                    "Accept": "application/json, text/plain, */*"}),
+              "cdn.nba.com schedule":
+                  ("https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json", {"User-Agent": UA}),
+              "ESPN scoreboard":
+                  ("https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20260310", {"User-Agent": UA}),
+              "ESPN Jokic game log":
+                  ("https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3112335/gamelog?season=2026",
+                   {"User-Agent": UA}),
           }
-          failed = 0
-          for label, fn in checks.items():
+          for label, (url, headers) in SOURCES.items():
               t0 = time.time()
               try:
-                  rows = fn()
-                  print(f"PASS  {label}: {len(rows)} rows in {time.time() - t0:.1f}s")
-                  if rows:
-                      print(f"      sample: {rows[0]}")
+                  with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=20) as r:
+                      body = r.read()
+                  json.loads(body)
+                  print(f"PASS  {label}: HTTP {r.status}, {len(body):,} bytes in {time.time() - t0:.1f}s")
               except Exception as exc:
-                  failed += 1
                   print(f"FAIL  {label} after {time.time() - t0:.1f}s: {type(exc).__name__}: {exc}")
-          raise SystemExit(1 if failed else 0)
           EOF
