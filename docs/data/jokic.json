@@ -24,10 +24,11 @@
   ],
   "tonight": {
     "opp": "@ OKC", "time_et": "9:30 PM",
+    "call": "yes",
     "td_projection": {
-      "model_prob": 0.52,
+      "model_prob": 0.58,
       "note": "Placeholder probability — a real TD model needs its own logic (joint distribution across pts/reb/ast, not three independent point estimates). See planning doc."
     },
-    "book_line": {"side": "yes", "odds": -135, "book": "DraftKings", "books": 5}
+    "market": {"side": "yes", "odds": -135, "book": "DraftKings"}
   }
 }

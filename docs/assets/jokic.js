@@ -29,27 +29,24 @@ function summaryTiles(sum, streak) {
     </div>`;
 }
 
-function tonightCard(t) {
+/* The headline: do we expect a triple-double tonight, yes or no. The model
+   probability and market price are supporting detail underneath, not the
+   lead — the call itself is what matters most here, not the edge math. */
+function tonightCall(t) {
   if (!t) return "";
   const p = t.td_projection;
-  const bk = t.book_line;
+  const mkt = t.market;
+  const isYes = t.call === "yes";
+  const pct = Math.round(p.model_prob * 100);
   return `
-    <h2 class="sec">Tonight</h2>
-    <div class="card">
-      <div class="top">
-        <div class="who">
-          <div class="name">Nikola Jokic</div>
-          <div class="meta">DEN ${esc(t.opp)} · ${esc(t.time_et)}</div>
-        </div>
-        <div class="pt"><div class="num">${Math.round(p.model_prob * 100)}%</div><div class="lbl">TD prob</div></div>
-      </div>
-      <div class="mkt">
-        <span class="mkt-item">Triple-double <b>${bk.side === "yes" ? "Yes" : "No"}</b>
-          <span class="dim">${bk.odds > 0 ? "+" + bk.odds : bk.odds} · ${esc(bk.book)}</span></span>
-        <span class="mkt-src">${bk.books} book${bk.books === 1 ? "" : "s"}</span>
-      </div>
-      <div class="noedge">${esc(p.note)}</div>
-    </div>`;
+    <div class="call-hero">
+      <div class="call-meta">Nikola Jokic · DEN ${esc(t.opp)} · ${esc(t.time_et)}</div>
+      <div class="call-badge ${isYes ? "call-yes" : "call-no"}">Bet TD: ${isYes ? "YES" : "NO"}</div>
+      <div class="call-prob">Model gives it <b>${pct}%</b> to be a triple-double</div>
+      <div class="call-market">Market: ${mkt.side === "yes" ? "Yes" : "No"}
+        ${mkt.odds > 0 ? "+" + mkt.odds : mkt.odds} · ${esc(mkt.book)}</div>
+    </div>
+    <div class="noedge" style="margin:-8px 0 16px">${esc(p.note)}</div>`;
 }
 
 function gameRow(g) {
@@ -87,9 +84,9 @@ async function main() {
   $("#subtitle").textContent = `updated ${upd.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
   const streak = currentStreak(data.recent_games || []);
   $("#jokic-body").innerHTML =
+    tonightCall(data.tonight) +
     summaryTiles(data.season_summary, streak) +
     `<div class="notice" style="margin:12px 0">${esc(data.season_summary.fun_fact)}</div>` +
-    tonightCard(data.tonight) +
     recentGamesTable(data.recent_games || []);
 }
 main();

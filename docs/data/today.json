@@ -1,86 +1,246 @@
 {
   "generated_at": "2026-09-22T02:15:00Z",
   "date": "2026-10-22",
-  "note": "MOCKUP DATA. Points are recent-season averages (a mix of sourced 2024-25 and 2025-26 figures, real). Rebounds/assists are illustrative estimates in a realistic range per player, NOT verified stats. Book lines and edges are made up to preview the color coding. No live model or odds feed is wired up yet; no games are actually scheduled on this date.",
+  "note": "MOCKUP DATA. Points are recent-season averages (a mix of sourced 2024-25 and 2025-26 figures, real). Rebounds/assists are illustrative estimates in a realistic range per player, NOT verified stats. Book lines are made up to preview the color coding, priced off FanDuel/DraftKings (occasionally bet365) rather than a shopped best-of-many-books line, since that's what's actually bettable day to day. PRA is the sum of the three individual lines, not a separate combo line yet. No live model or odds feed is wired up yet; no games are actually scheduled on this date.",
   "players": [
     {
-      "player": "Shai Gilgeous-Alexander", "team": "OKC", "opp": "DEN", "home": true, "time_et": "9:30 PM",
+      "player": "Shai Gilgeous-Alexander",
+      "team": "OKC",
+      "opp": "DEN",
+      "home": true,
+      "time_et": "9:30 PM",
       "stats": {
-        "points":   {"proj": 31.1, "line": 29.5, "books": 6},
-        "rebounds": {"proj": 5.2,  "line": 5.5,  "books": 6},
-        "assists":  {"proj": 6.3,  "line": 6.0,  "books": 6}
+        "points": {
+          "proj": 31.1,
+          "line": 29.5,
+          "book": "FanDuel"
+        },
+        "rebounds": {
+          "proj": 5.2,
+          "line": 5.5,
+          "book": "FanDuel"
+        },
+        "assists": {
+          "proj": 6.3,
+          "line": 6.0,
+          "book": "FanDuel"
+        }
       }
     },
     {
-      "player": "Giannis Antetokounmpo", "team": "MIL", "opp": "CHI", "home": false, "time_et": "8:00 PM",
+      "player": "Giannis Antetokounmpo",
+      "team": "MIL",
+      "opp": "CHI",
+      "home": false,
+      "time_et": "8:00 PM",
       "stats": {
-        "points":   {"proj": 30.4, "line": 29.5, "books": 7},
-        "rebounds": {"proj": 11.9, "line": 10.5, "books": 7},
-        "assists":  {"proj": 6.5,  "line": 6.5,  "books": 7}
+        "points": {
+          "proj": 30.4,
+          "line": 29.5,
+          "book": "DraftKings"
+        },
+        "rebounds": {
+          "proj": 11.9,
+          "line": 10.5,
+          "book": "DraftKings"
+        },
+        "assists": {
+          "proj": 6.5,
+          "line": 6.5,
+          "book": "DraftKings"
+        }
       }
     },
     {
-      "player": "Nikola Jokic", "team": "DEN", "opp": "OKC", "home": false, "time_et": "9:30 PM",
+      "player": "Nikola Jokic",
+      "team": "DEN",
+      "opp": "OKC",
+      "home": false,
+      "time_et": "9:30 PM",
       "stats": {
-        "points":   {"proj": 27.7, "line": 26.5, "books": 6},
-        "rebounds": {"proj": 12.9, "line": 12.5, "books": 6},
-        "assists":  {"proj": 10.7, "line": 9.5,  "books": 6}
+        "points": {
+          "proj": 27.7,
+          "line": 26.5,
+          "book": "FanDuel"
+        },
+        "rebounds": {
+          "proj": 12.9,
+          "line": 12.5,
+          "book": "FanDuel"
+        },
+        "assists": {
+          "proj": 10.7,
+          "line": 9.5,
+          "book": "FanDuel"
+        }
       }
     },
     {
-      "player": "Anthony Edwards", "team": "MIN", "opp": "PHX", "home": true, "time_et": "10:00 PM",
+      "player": "Anthony Edwards",
+      "team": "MIN",
+      "opp": "PHX",
+      "home": true,
+      "time_et": "10:00 PM",
       "stats": {
-        "points":   {"proj": 28.8, "line": 28.5, "books": 8},
-        "rebounds": {"proj": 5.4,  "line": 5.5,  "books": 8},
-        "assists":  {"proj": 4.7,  "line": 4.5,  "books": 8}
+        "points": {
+          "proj": 28.8,
+          "line": 28.5,
+          "book": "DraftKings"
+        },
+        "rebounds": {
+          "proj": 5.4,
+          "line": 5.5,
+          "book": "DraftKings"
+        },
+        "assists": {
+          "proj": 4.7,
+          "line": 4.5,
+          "book": "DraftKings"
+        }
       }
     },
     {
-      "player": "Jayson Tatum", "team": "BOS", "opp": "MIA", "home": true, "time_et": "7:30 PM",
+      "player": "Jayson Tatum",
+      "team": "BOS",
+      "opp": "MIA",
+      "home": true,
+      "time_et": "7:30 PM",
       "stats": {
-        "points":   {"proj": 26.8, "line": 27.5, "books": 7},
-        "rebounds": {"proj": 8.7,  "line": 8.5,  "books": 7},
-        "assists":  {"proj": 6.0,  "line": 6.0,  "books": 7}
+        "points": {
+          "proj": 26.8,
+          "line": 27.5,
+          "book": "FanDuel"
+        },
+        "rebounds": {
+          "proj": 8.7,
+          "line": 8.5,
+          "book": "FanDuel"
+        },
+        "assists": {
+          "proj": 6.0,
+          "line": 6.0,
+          "book": "FanDuel"
+        }
       }
     },
     {
-      "player": "Kevin Durant", "team": "PHX", "opp": "MIN", "home": false, "time_et": "10:00 PM",
+      "player": "Kevin Durant",
+      "team": "PHX",
+      "opp": "MIN",
+      "home": false,
+      "time_et": "10:00 PM",
       "stats": {
-        "points":   {"proj": 26.0, "line": 26.5, "books": 6},
-        "rebounds": {"proj": 6.2,  "line": 6.5,  "books": 6},
-        "assists":  {"proj": 4.2,  "line": 4.5,  "books": 6}
+        "points": {
+          "proj": 26.0,
+          "line": 26.5,
+          "book": "bet365"
+        },
+        "rebounds": {
+          "proj": 6.2,
+          "line": 6.5,
+          "book": "bet365"
+        },
+        "assists": {
+          "proj": 4.2,
+          "line": 4.5,
+          "book": "bet365"
+        }
       }
     },
     {
-      "player": "Cade Cunningham", "team": "DET", "opp": "CLE", "home": true, "time_et": "7:00 PM",
+      "player": "Cade Cunningham",
+      "team": "DET",
+      "opp": "CLE",
+      "home": true,
+      "time_et": "7:00 PM",
       "stats": {
-        "points":   {"proj": 23.9, "line": 22.5, "books": 5},
-        "rebounds": {"proj": 6.1,  "line": 6.0,  "books": 5},
-        "assists":  {"proj": 9.1,  "line": 8.0,  "books": 5}
+        "points": {
+          "proj": 23.9,
+          "line": 22.5,
+          "book": "DraftKings"
+        },
+        "rebounds": {
+          "proj": 6.1,
+          "line": 6.0,
+          "book": "DraftKings"
+        },
+        "assists": {
+          "proj": 9.1,
+          "line": 8.0,
+          "book": "DraftKings"
+        }
       }
     },
     {
-      "player": "Jalen Brunson", "team": "NYK", "opp": "BKN", "home": true, "time_et": "7:30 PM",
+      "player": "Jalen Brunson",
+      "team": "NYK",
+      "opp": "BKN",
+      "home": true,
+      "time_et": "7:30 PM",
       "stats": {
-        "points":   {"proj": 26.0, "line": 25.5, "books": 7},
-        "rebounds": {"proj": 3.6,  "line": 3.5,  "books": 7},
-        "assists":  {"proj": 7.3,  "line": 7.0,  "books": 7}
+        "points": {
+          "proj": 26.0,
+          "line": 25.5,
+          "book": "FanDuel"
+        },
+        "rebounds": {
+          "proj": 3.6,
+          "line": 3.5,
+          "book": "FanDuel"
+        },
+        "assists": {
+          "proj": 7.3,
+          "line": 7.0,
+          "book": "FanDuel"
+        }
       }
     },
     {
-      "player": "Devin Booker", "team": "PHX", "opp": "MIN", "home": false, "time_et": "10:00 PM",
+      "player": "Devin Booker",
+      "team": "PHX",
+      "opp": "MIN",
+      "home": false,
+      "time_et": "10:00 PM",
       "stats": {
-        "points":   {"proj": 26.1, "line": 27.0, "books": 6},
-        "rebounds": {"proj": 4.4,  "line": 4.5,  "books": 6},
-        "assists":  {"proj": 7.1,  "line": 6.5,  "books": 6}
+        "points": {
+          "proj": 26.1,
+          "line": 27.0,
+          "book": "DraftKings"
+        },
+        "rebounds": {
+          "proj": 4.4,
+          "line": 4.5,
+          "book": "DraftKings"
+        },
+        "assists": {
+          "proj": 7.1,
+          "line": 6.5,
+          "book": "DraftKings"
+        }
       }
     },
     {
-      "player": "Damian Lillard", "team": "MIL", "opp": "CHI", "home": false, "time_et": "8:00 PM",
+      "player": "Damian Lillard",
+      "team": "MIL",
+      "opp": "CHI",
+      "home": false,
+      "time_et": "8:00 PM",
       "stats": {
-        "points":   {"proj": 24.9, "line": 24.5, "books": 5},
-        "rebounds": {"proj": 4.3,  "line": 4.5,  "books": 5},
-        "assists":  {"proj": 7.0,  "line": 6.5,  "books": 5}
+        "points": {
+          "proj": 24.9,
+          "line": 24.5,
+          "book": "FanDuel"
+        },
+        "rebounds": {
+          "proj": 4.3,
+          "line": 4.5,
+          "book": "FanDuel"
+        },
+        "assists": {
+          "proj": 7.0,
+          "line": 6.5,
+          "book": "FanDuel"
+        }
       }
     }
   ]

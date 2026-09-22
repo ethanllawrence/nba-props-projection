@@ -27,12 +27,30 @@ const STAT_COLS = [
   { key: "points", label: "Points" },
   { key: "rebounds", label: "Reb" },
   { key: "assists", label: "Ast" },
+  { key: "pra", label: "PRA", cls: "pra-col" },
 ];
 
 let sortState = { key: "points", dir: "desc" };
 
+/* PRA (points + rebounds + assists) isn't its own field in the data — it's
+   derived by summing the three individual proj/line values. Some books do
+   post a real PRA combo line separately from the sum of the individual
+   props; until we're pulling one, the sum is the honest approximation. */
+function praOf(player) {
+  const s = player.stats;
+  if (!s || !s.points || !s.rebounds || !s.assists) return null;
+  return {
+    proj: s.points.proj + s.rebounds.proj + s.assists.proj,
+    line: s.points.line + s.rebounds.line + s.assists.line,
+  };
+}
+
+function statOf(player, key) {
+  return key === "pra" ? praOf(player) : player.stats && player.stats[key];
+}
+
 function statValue(player, key) {
-  const s = player.stats && player.stats[key];
+  const s = statOf(player, key);
   return s ? s.proj : -1;
 }
 
@@ -46,14 +64,15 @@ function sortPlayers(list) {
   });
 }
 
-function statCell(stat) {
-  if (!stat) return `<td class="num"><span class="dim">—</span></td>`;
+function statCell(stat, extraCls) {
+  const cls = extraCls ? ` ${extraCls}` : "";
+  if (!stat) return `<td class="num${cls}"><span class="dim">—</span></td>`;
   const edge = edgeOf(stat);
-  const cls = edgeClass(edge);
-  return `<td class="num">
+  const edgeCls = edgeClass(edge);
+  return `<td class="num${cls}">
     <div class="stat-cell">
-      <div class="num ${cls}">${stat.proj.toFixed(1)}</div>
-      <div class="line">L ${stat.line.toFixed(1)} <span class="dim">· ${stat.books}bk</span></div>
+      <div class="num ${edgeCls}">${stat.proj.toFixed(1)}</div>
+      <div class="line">L ${stat.line.toFixed(1)}</div>
     </div>
   </td>`;
 }
@@ -61,7 +80,7 @@ function statCell(stat) {
 function tableRow(p) {
   const nameCell = `<td><div class="pn">${esc(p.player)}</div>
     <div class="pm">${esc(p.team)} ${p.home ? "vs" : "@"} ${esc(p.opp)} · ${esc(p.time_et)}</div></td>`;
-  const cells = STAT_COLS.map((c) => statCell(p.stats && p.stats[c.key])).join("");
+  const cells = STAT_COLS.map((c) => statCell(statOf(p, c.key), c.key === "pra" ? "pra-cell" : "")).join("");
   return `<tr>${nameCell}${cells}</tr>`;
 }
 
@@ -73,7 +92,8 @@ function tableView(players) {
     STAT_COLS.map((c) => {
       const active = c.key === sortState.key;
       const arrow = active ? (sortState.dir === "asc" ? " ↑" : " ↓") : "";
-      return `<th data-key="${c.key}" class="num${active ? " sort-on" : ""}">${esc(c.label)}${arrow}</th>`;
+      const cls = ["num", c.cls, active ? "sort-on" : ""].filter(Boolean).join(" ");
+      return `<th data-key="${c.key}" class="${cls}">${esc(c.label)}${arrow}</th>`;
     }).join("");
   return `<div class="legend">
       <span><span class="sw g"></span>edge (over)</span>

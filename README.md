@@ -1,4 +1,4 @@
-# PTS Board — NBA Points Projections (skeleton)
+# PRAjections — NBA Points/Rebounds/Assists Projections (skeleton)
 
 Sibling project to [mlb-k-projection](https://github.com/akillam1/mlb-k-projection) (the K
 Board), built the same way: free, self-hosted on GitHub Pages, SQLite + Python pipeline,
@@ -10,15 +10,20 @@ what exists in this repo right now vs. what's still a stub.
 - `docs/` — the site itself. **Real, working front end**, table-only (no card view — a
   full NBA slate runs 20+ meaningfully-projected players a night, so a sortable table beats
   scrolling cards), served from **mock data**: `docs/data/today.json` covers ten real NBA
-  players with a condensed points/rebounds/assists table — one column per stat, each cell
+  players with a condensed points/rebounds/assists/PRA table — one column per stat, each cell
   colored green/gold/red by how far the projection sits from that stat's book line, sortable
-  by tapping any stat column header. Points are mostly real recent-season averages; rebounds,
-  assists and all book lines/edges are illustrative estimates to preview the layout, not
-  verified stats. No live pipeline produces this file yet.
+  by tapping any stat column header. PRA (points+rebounds+assists) is currently just the sum
+  of the three individual lines, not a separately-priced combo line yet. Points are mostly
+  real recent-season averages; rebounds, assists and all book lines/edges are illustrative
+  estimates to preview the layout, not verified stats — priced off FanDuel/DraftKings
+  (occasionally bet365), the books Robin actually uses, rather than a shopped best-of-many
+  line. No live pipeline produces this file yet.
 - `docs/jokic.html` + `docs/data/jokic.json` — a separate **Jokic triple-double tracker**
-  tab: season summary tiles, a real recent-games log, and a placeholder "tonight" TD
-  projection. The season summary and recent games are Jokic's **real 2025-26 numbers**
-  (34 triple-doubles in 65 games); only the "tonight" projection is made up.
+  tab, built around a single headline call — bet the triple-double yes or no tonight — with
+  the model probability and market price underneath as supporting detail, then season summary
+  tiles and a real recent-games log below that. The season summary and recent games are
+  Jokic's **real 2025-26 numbers** (34 triple-doubles in 65 games); only the "tonight" call
+  itself is made up.
 - `nproj/` — the Python package skeleton: `config.py`, `util.py` (odds math + board-day
   clock, lifted directly from the K Board's `kproj/util.py`), `db.py` (SQLite schema),
   and `cli.py` (`python -m nproj init|daily|export|status`). `init` and `status` work.
