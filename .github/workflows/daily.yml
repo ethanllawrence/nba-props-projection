@@ -1,13 +1,16 @@
 # Daily board: pull tonight's slate and game logs from ESPN, project, and
 # commit the refreshed docs/data/*.json so GitHub Pages serves them.
 #
-# Runs three times a day, Arizona time: 8 AM (buys odds, settles last night),
-# 3 PM (picks up injury news), and 8 PM (flips the board to tomorrow's slate,
-# projections only; lines come the next morning). Offseason runs only
-# refresh a small heartbeat file.
+# Runs three times a day, Arizona time: 6 AM (adds last night's box scores
+# to history/, buys odds, settles last night), 3 PM (picks up injury news),
+# and 8 PM (flips the board to tomorrow's slate, projections only; lines come
+# the next morning). Every run retrains the PRA model on history/ (~1 min).
+# Offseason runs only refresh a small heartbeat file.
 #
-# Odds: only the 8 AM run buys prop lines (The Odds API, shared free plan,
-# rationed in nproj/ingest/odds.py). The 3 PM run reuses them for free.
+# Odds: only the 6 AM run buys prop lines (The Odds API, shared free plan,
+# rationed in nproj/ingest/odds.py), as early as possible because the
+# backtest found the model's edge is against early lines. The 3 PM run
+# reuses them for free.
 # Every run prints the credit balance, which is a free call.
 #
 # Test run: Actions tab -> "Daily board" -> Run workflow, and enter a past
@@ -18,7 +21,7 @@ name: Daily board
 
 on:
   schedule:
-    - cron: "0 15 * * *"   # 8:00 AM Arizona (UTC-7, no daylight saving)
+    - cron: "0 13 * * *"   # 6:00 AM Arizona (UTC-7, no daylight saving)
     - cron: "0 22 * * *"   # 3:00 PM Arizona
     - cron: "0 3 * * *"    # 8:00 PM Arizona: board flips to tomorrow
   workflow_dispatch:
@@ -43,7 +46,7 @@ concurrency:
 jobs:
   daily:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
@@ -59,6 +62,7 @@ jobs:
         run: |
           python tests/test_pipeline_offline.py
           python tests/test_history_parsers.py
+          python tests/test_model_live.py
 
       - name: Odds API credits (free call)
         env:
@@ -69,8 +73,8 @@ jobs:
         env:
           TEST_DATE: ${{ github.event.inputs.date }}
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-          # props on the 8 AM scheduled run, or a manual real run with the box ticked
-          NPROJ_ODDS_MODE: ${{ (github.event.schedule == '0 15 * * *' || (github.event.inputs.odds == 'true' && github.event.inputs.date == '')) && 'props' || 'off' }}
+          # props on the 6 AM scheduled run, or a manual real run with the box ticked
+          NPROJ_ODDS_MODE: ${{ (github.event.schedule == '0 13 * * *' || (github.event.inputs.odds == 'true' && github.event.inputs.date == '')) && 'props' || 'off' }}
           # Share of spare credits NBA may use; the rest is left for the K Board.
           # Set a repo variable NPROJ_ODDS_SHARE (e.g. 0.8) once MLB is done.
           NPROJ_ODDS_SHARE: ${{ vars.NPROJ_ODDS_SHARE || '0.5' }}
@@ -90,13 +94,15 @@ jobs:
           d = json.load(open("docs/data/today.json"))
           if d.get("unmatched_lines"):
               print("WARNING unmatched sportsbook names:", ", ".join(d["unmatched_lines"]))
-          print(f"Board for {d['date']}: {len(d['players'])} players")
+          print(f"Board for {d['date']} ({d.get('model', 'baseline')}): {len(d['players'])} players")
           for p in d["players"][:25]:
               s = p["stats"]
-              pra = s["points"]["proj"] + s["rebounds"]["proj"] + s["assists"]["proj"]
+              pra = (s.get("pra") or {}).get("proj") or sum(s[k]["proj"] for k in ("points", "rebounds", "assists"))
+              calls = [f"{k} {v['call']}" for k, v in s.items() if v.get("call")]
               print(f"  {p['player']:<28} {p['team']:>3} {'vs' if p['home'] else ' @'} {p['opp']:<3}"
                     f"  {s['points']['proj']:5.1f} pts {s['rebounds']['proj']:5.1f} reb"
-                    f" {s['assists']['proj']:5.1f} ast  PRA {pra:5.1f}")
+                    f" {s['assists']['proj']:5.1f} ast  PRA {pra:5.1f}"
+                    f"  {p.get('minutes') or 0:4.1f} min  {' '.join(calls)}")
           j = json.load(open("docs/data/jokic.json"))
           print("Jokic:", j["season_summary"], "| call:", j["tonight"].get("call"),
                 j["tonight"].get("td_projection", {}).get("model_prob"))
@@ -105,7 +111,7 @@ jobs:
             echo "Test run for $TEST_DATE: not committing."
             exit 0
           fi
-          git add docs/data            # includes new files (status/results/lines.json)
+          git add docs/data history    # site data + new box scores (incl. new files)
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
