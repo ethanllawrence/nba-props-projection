@@ -116,11 +116,42 @@ def _team_games(games):
     tg = pd.concat([home, away], ignore_index=True)[
         ["game_id", "date", "season", "team", "opp", "home_flag", "spread_team", "total"]]
     tg = tg.sort_values(["team", "date"])
+    tg = _fill_missing_lines(tg)
     tg["rest_days"] = tg.groupby("team")["date"].diff().dt.days.clip(upper=7)
     tg["b2b"] = (tg["rest_days"] == 1).astype(int)
     tg["implied_team_pts"] = (tg["total"] - tg["spread_team"]) / 2
     tg["abs_spread"] = tg["spread_team"].abs()
     return tg
+
+
+HOME_EDGE = 1.5       # points of spread a home court is typically worth
+
+
+def _fill_missing_lines(tg):
+    """Estimate the spread and total when a game has none (ESPN drops the
+    line for finished games, and a slate can be built before lines post).
+    The model learned that 'no line' meant an odd game and shrank every
+    projection, so a missing line is replaced by what the two teams' recent
+    lines imply: each team's average spread (rating relative to the league)
+    and average implied points, from games before this one only."""
+    tg = tg.copy()
+    g = tg.groupby("team", sort=False)
+    implied = (tg["total"] - tg["spread_team"]) / 2
+    tg["_imp_prev"] = implied.groupby(tg["team"]).transform(
+        lambda x: x.shift().ewm(halflife=10, ignore_na=True).mean())
+    tg["_sp_prev"] = g["spread_team"].transform(
+        lambda x: x.shift().ewm(halflife=10, ignore_na=True).mean())
+    opp = tg[["game_id", "team", "_imp_prev", "_sp_prev"]].rename(
+        columns={"team": "opp", "_imp_prev": "_imp_opp", "_sp_prev": "_sp_opp"})
+    tg = tg.merge(opp, on=["game_id", "opp"], how="left")
+    miss = tg["total"].isna() | tg["spread_team"].isna()
+    league_total = tg["total"].median() if tg["total"].notna().any() else 228.0
+    est_total = (tg["_imp_prev"] + tg["_imp_opp"]).fillna(league_total)
+    est_spread = (tg["_sp_prev"] - tg["_sp_opp"]).fillna(0.0)
+    est_spread = est_spread + np.where(tg["home_flag"] == 1, -HOME_EDGE, HOME_EDGE)
+    tg.loc[miss, "total"] = est_total[miss].round(1)
+    tg.loc[miss, "spread_team"] = est_spread[miss].clip(-20, 20).round(1)
+    return tg.drop(columns=["_imp_prev", "_sp_prev", "_imp_opp", "_sp_opp"]).sort_values(["team", "date"])
 
 
 def _opp_allowed(played, games):

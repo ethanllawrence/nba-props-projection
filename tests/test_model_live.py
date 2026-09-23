@@ -36,9 +36,9 @@ def test_live_model():
     b, g = box[box.date == DATE], games[games.date == DATE]
     with db.session() as con:
         for i, (_, r) in enumerate(g.iterrows()):
-            # past games come back from ESPN with no line: the first game
-            # has none here, like the real Actions run that hit this
-            sp, tot = (None, None) if i == 0 else (r.spread_home, r.total)
+            # past games come back from ESPN with no line (and a slate can be
+            # built before lines post): every other game has none here
+            sp, tot = (None, None) if i % 2 == 0 else (r.spread_home, r.total)
             con.execute("INSERT INTO games (game_id,date,home_team,away_team,status,spread_home,total,"
                         "tipoff_utc) VALUES (?,?,?,?,?,?,?,?)",
                         (r.game_id, DATE, r.home, r.away, "Scheduled", sp, tot,
@@ -56,6 +56,9 @@ def test_live_model():
                 if p in live.PROJ]
         mae = sum(errs) / len(errs)
         assert 3.0 < mae < 6.5, mae                       # sane, not leaking the answer
+        # a missing line once shrank everyone to ~17 pts: the top scorer
+        # on this slate (Luka) must still project like a star
+        assert max(v["points"] for v in live.PROJ.values()) > 25, "projections shrunk"
         top = sorted(live.PROJ, key=lambda p: -live.PROJ[p]["points"])[:6]
         # lines: two below the projection, two above, two right at it
         lines = {}
