@@ -1,6 +1,7 @@
 requests
 tzdata             # time zone data for zoneinfo on Windows (Linux runners already have it)
-# nba_api          # only for nproj/ingest/nba_stats.py, which is no longer used: stats.nba.com
-                   # is unreachable from GitHub Actions (see nproj/ingest/espn.py docstring)
-# lightgbm         # phase 2 — real model, replacing the phase-1 rolling-average baseline
-# pytest           # tests/ also run as plain scripts: python tests/test_pipeline_offline.py
+pandas             # model features + backtest
+numpy
+scipy              # negative binomial for over/under probabilities
+lightgbm           # the PRA model (nproj/model/pra_model.py)
+# nba_api          # retired: stats.nba.com is unreachable from GitHub Actions

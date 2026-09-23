@@ -1,0 +1,347 @@
+{
+  "rows_with_lines": 58328,
+  "by_stat": {
+    "assists": {
+      "n": 13872,
+      "mae_model": 1.517,
+      "mae_old_method": 1.536,
+      "mae_book_line": 1.499,
+      "bias_model": -0.021
+    },
+    "points": {
+      "n": 14397,
+      "mae_model": 5.135,
+      "mae_old_method": 5.218,
+      "mae_book_line": 4.929,
+      "bias_model": -0.069
+    },
+    "pra": {
+      "n": 15580,
+      "mae_model": 6.571,
+      "mae_old_method": 6.707,
+      "mae_book_line": 6.206,
+      "bias_model": -0.188
+    },
+    "rebounds": {
+      "n": 14479,
+      "mae_model": 2.015,
+      "mae_old_method": 2.044,
+      "mae_book_line": 1.981,
+      "bias_model": -0.049
+    }
+  },
+  "betting": {
+    "model_margin_0.00": {
+      "bets": 41681,
+      "wins": 21289,
+      "hit_rate": 0.5108,
+      "roi": -0.0396,
+      "units": -1649.5,
+      "by_stat": {
+        "points": {
+          "bets": 10647,
+          "wins": 5485,
+          "hit_rate": 0.5152,
+          "roi": -0.0356,
+          "units": -379.3
+        },
+        "rebounds": {
+          "bets": 10129,
+          "wins": 5208,
+          "hit_rate": 0.5142,
+          "roi": -0.0333,
+          "units": -337.0
+        },
+        "assists": {
+          "bets": 9390,
+          "wins": 4754,
+          "hit_rate": 0.5063,
+          "roi": -0.0389,
+          "units": -365.0
+        },
+        "pra": {
+          "bets": 11515,
+          "wins": 5842,
+          "hit_rate": 0.5073,
+          "roi": -0.0494,
+          "units": -568.3
+        }
+      }
+    },
+    "model_margin_0.02": {
+      "bets": 33269,
+      "wins": 16971,
+      "hit_rate": 0.5101,
+      "roi": -0.0397,
+      "units": -1320.4,
+      "by_stat": {
+        "points": {
+          "bets": 8624,
+          "wins": 4409,
+          "hit_rate": 0.5112,
+          "roi": -0.0426,
+          "units": -367.6
+        },
+        "rebounds": {
+          "bets": 7905,
+          "wins": 4080,
+          "hit_rate": 0.5161,
+          "roi": -0.0288,
+          "units": -227.8
+        },
+        "assists": {
+          "bets": 7387,
+          "wins": 3723,
+          "hit_rate": 0.504,
+          "roi": -0.0395,
+          "units": -292.1
+        },
+        "pra": {
+          "bets": 9353,
+          "wins": 4759,
+          "hit_rate": 0.5088,
+          "roi": -0.0463,
+          "units": -432.8
+        }
+      }
+    },
+    "model_margin_0.04": {
+      "bets": 26048,
+      "wins": 13326,
+      "hit_rate": 0.5116,
+      "roi": -0.0363,
+      "units": -946.1,
+      "by_stat": {
+        "points": {
+          "bets": 6869,
+          "wins": 3524,
+          "hit_rate": 0.513,
+          "roi": -0.0392,
+          "units": -269.0
+        },
+        "rebounds": {
+          "bets": 6124,
+          "wins": 3165,
+          "hit_rate": 0.5168,
+          "roi": -0.0268,
+          "units": -163.8
+        },
+        "assists": {
+          "bets": 5607,
+          "wins": 2837,
+          "hit_rate": 0.506,
+          "roi": -0.0334,
+          "units": -187.5
+        },
+        "pra": {
+          "bets": 7448,
+          "wins": 3800,
+          "hit_rate": 0.5102,
+          "roi": -0.0437,
+          "units": -325.7
+        }
+      }
+    },
+    "model_margin_0.06": {
+      "bets": 20007,
+      "wins": 10234,
+      "hit_rate": 0.5115,
+      "roi": -0.0368,
+      "units": -736.5,
+      "by_stat": {
+        "points": {
+          "bets": 5337,
+          "wins": 2735,
+          "hit_rate": 0.5125,
+          "roi": -0.0401,
+          "units": -214.2
+        },
+        "rebounds": {
+          "bets": 4642,
+          "wins": 2402,
+          "hit_rate": 0.5174,
+          "roi": -0.0263,
+          "units": -121.9
+        },
+        "assists": {
+          "bets": 4193,
+          "wins": 2135,
+          "hit_rate": 0.5092,
+          "roi": -0.0281,
+          "units": -118.0
+        },
+        "pra": {
+          "bets": 5835,
+          "wins": 2962,
+          "hit_rate": 0.5076,
+          "roi": -0.0484,
+          "units": -282.3
+        }
+      }
+    },
+    "model_margin_0.08": {
+      "bets": 15223,
+      "wins": 7819,
+      "hit_rate": 0.5136,
+      "roi": -0.0327,
+      "units": -497.5,
+      "by_stat": {
+        "points": {
+          "bets": 4104,
+          "wins": 2089,
+          "hit_rate": 0.509,
+          "roi": -0.046,
+          "units": -188.8
+        },
+        "rebounds": {
+          "bets": 3519,
+          "wins": 1851,
+          "hit_rate": 0.526,
+          "roi": -0.0093,
+          "units": -32.8
+        },
+        "assists": {
+          "bets": 3100,
+          "wins": 1581,
+          "hit_rate": 0.51,
+          "roi": -0.0278,
+          "units": -86.0
+        },
+        "pra": {
+          "bets": 4500,
+          "wins": 2298,
+          "hit_rate": 0.5107,
+          "roi": -0.0422,
+          "units": -189.9
+        }
+      }
+    },
+    "model_margin_0.10": {
+      "bets": 11495,
+      "wins": 5902,
+      "hit_rate": 0.5134,
+      "roi": -0.0327,
+      "units": -376.1,
+      "by_stat": {
+        "points": {
+          "bets": 3103,
+          "wins": 1587,
+          "hit_rate": 0.5114,
+          "roi": -0.0412,
+          "units": -128.0
+        },
+        "rebounds": {
+          "bets": 2672,
+          "wins": 1417,
+          "hit_rate": 0.5303,
+          "roi": -0.0004,
+          "units": -1.0
+        },
+        "assists": {
+          "bets": 2261,
+          "wins": 1143,
+          "hit_rate": 0.5055,
+          "roi": -0.0358,
+          "units": -81.0
+        },
+        "pra": {
+          "bets": 3459,
+          "wins": 1755,
+          "hit_rate": 0.5074,
+          "roi": -0.048,
+          "units": -166.2
+        }
+      }
+    },
+    "old_site_rule_6pct": {
+      "bets": 41496,
+      "wins": 21716,
+      "hit_rate": 0.5233,
+      "roi": -0.0584,
+      "units": -2421.9
+    },
+    "model_6pct_rule": {
+      "bets": 39777,
+      "wins": 20930,
+      "hit_rate": 0.5262,
+      "roi": -0.0559,
+      "units": -2225.4
+    }
+  },
+  "calibration": {
+    "(0.0, 0.3]": {
+      "n": 4843,
+      "predicted": 0.228,
+      "actual": 0.452
+    },
+    "(0.3, 0.4]": {
+      "n": 11901,
+      "predicted": 0.359,
+      "actual": 0.455
+    },
+    "(0.4, 0.45]": {
+      "n": 10622,
+      "predicted": 0.426,
+      "actual": 0.478
+    },
+    "(0.45, 0.5]": {
+      "n": 11313,
+      "predicted": 0.475,
+      "actual": 0.481
+    },
+    "(0.5, 0.55]": {
+      "n": 8895,
+      "predicted": 0.523,
+      "actual": 0.501
+    },
+    "(0.55, 0.6]": {
+      "n": 5565,
+      "predicted": 0.572,
+      "actual": 0.519
+    },
+    "(0.6, 0.7]": {
+      "n": 4224,
+      "predicted": 0.64,
+      "actual": 0.547
+    },
+    "(0.7, 1.0]": {
+      "n": 965,
+      "predicted": 0.756,
+      "actual": 0.583
+    }
+  },
+  "all_games_mae": {
+    "points": {
+      "model": 4.568,
+      "old_method": 4.66
+    },
+    "rebounds": {
+      "model": 1.891,
+      "old_method": 1.926
+    },
+    "assists": {
+      "model": 1.332,
+      "old_method": 1.352
+    },
+    "pra": {
+      "model": 6.002,
+      "old_method": 6.169
+    }
+  },
+  "by_season_model_margin_0.04": {
+    "2025": {
+      "bets": 20479,
+      "wins": 10507,
+      "hit_rate": 0.5131,
+      "roi": -0.0336,
+      "units": -688.1
+    },
+    "2026": {
+      "bets": 5569,
+      "wins": 2819,
+      "hit_rate": 0.5062,
+      "roi": -0.0463,
+      "units": -258.0
+    }
+  }
+}
