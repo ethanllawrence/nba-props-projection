@@ -4,11 +4,15 @@ Commands
   init                  create the database schema
   daily [--date D]      full game-day cycle: pull tonight's slate and game
                         logs from ESPN, project, export site JSON, settle
-                        yesterday's Parlay of the Day and pick today's
+                        yesterday's Parlay of the Day and pick today's,
+                        grade last night's board (results.json)
   backfill --season S   every rostered player's game log for one ESPN
                         season year (2026 = 2025-26); not needed daily
   export [--date D]     regenerate site JSON only, from what's in the db
   odds-status           check the Odds API key and credits left (free call)
+  history --season S    historical box scores, spreads and prop lines for one
+    [--out DIR]         season (for model training/backtests), gzipped CSV
+    [--limit N]         in DIR/S/ (default history/); --limit for a quick test
   status                quick database status
 
 Odds: `daily` pulls prop lines only when NPROJ_ODDS_MODE=props and
@@ -56,6 +60,13 @@ def cmd_daily(args) -> None:
             print(f"[parlay] {parlay.update(con, date_s, allow_spend=spend)}")
         except Exception as exc:  # noqa: BLE001 - a parlay problem must never block the board
             print(f"[parlay] FAILED: {exc}")
+        try:
+            from . import results
+            print(f"[results] {results.update(con, date_s)}")
+        except Exception as exc:  # noqa: BLE001
+            print(f"[results] FAILED: {exc}")
+    from .export.status import write_status
+    print(f"[status] {write_status(date_s, slate['games'])}")
     print(f"[daily] trained {trained} player-stats, wrote {projected} projections, exported {result}")
     if slate["games"] == 0:
         print("[daily] no games on this date, so today.json was left as it was")
@@ -93,6 +104,11 @@ def cmd_odds_status(_args) -> None:
           f"{odds.days_until_reset(today)} days to reset; NBA allowance today = "
           f"{odds.daily_allowance(remaining, today)} credits "
           f"(floor {config.ODDS_BUDGET_FLOOR}, share {config.ODDS_NBA_SHARE})")
+
+
+def cmd_history(args) -> None:
+    from .ingest.espn_history import backfill_season
+    backfill_season(args.season, args.out, limit=args.limit)
 
 
 def cmd_backfill(args) -> None:
@@ -135,10 +151,14 @@ def main(argv=None) -> int:
     e = sub.add_parser("export")
     e.add_argument("--date", help="YYYY-MM-DD (default: board date)")
     sub.add_parser("odds-status")
+    h = sub.add_parser("history")
+    h.add_argument("--season", type=int, required=True)
+    h.add_argument("--out", default="history")
+    h.add_argument("--limit", type=int, default=None)
     sub.add_parser("status")
     args = p.parse_args(argv)
     {"init": cmd_init, "daily": cmd_daily, "backfill": cmd_backfill,
-     "export": cmd_export, "odds-status": cmd_odds_status, "status": cmd_status}[args.cmd](args)
+     "export": cmd_export, "odds-status": cmd_odds_status, "history": cmd_history, "status": cmd_status}[args.cmd](args)
     return 0
 
 

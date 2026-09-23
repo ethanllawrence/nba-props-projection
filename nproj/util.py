@@ -53,6 +53,17 @@ def board_date(now: datetime | None = None) -> date:
     return d + timedelta(days=1) if n.hour >= config.BOARD_ROLLOVER_HOUR else d
 
 
+def day_is_final(date_s: str, now: datetime | None = None) -> bool:
+    """True once every game dated date_s (US Eastern) is surely over: 4 AM
+    Eastern the next morning. Used before grading results or a parlay, so the
+    8 PM Arizona run (which flips the board to tomorrow) never grades a night
+    whose late games are still being played."""
+    et = ZoneInfo(config.ET_ZONE)
+    n = (now or datetime.now(timezone.utc)).astimezone(et)
+    cutoff = datetime.combine(date.fromisoformat(date_s) + timedelta(days=1), dtime(4, 0), et)
+    return n >= cutoff
+
+
 def board_prev_date(now: datetime | None = None) -> date:
     return board_date(now) - timedelta(days=1)
 

@@ -32,7 +32,7 @@ import math
 from datetime import datetime, timezone
 from statistics import NormalDist
 
-from .. import config
+from .. import config, util
 from ..ingest import odds
 from ..model import predict
 
@@ -131,13 +131,14 @@ def candidates(con, date_s, saved):
     """Every qualifying main-line option: one dict per player/stat/side."""
     from ..export.site_export import _time_et
 
-    lines = saved.get("lines", {})
     spreads = saved.get("spreads", {})
+    slate = _slate(con, date_s)
+    matched, _ = odds.match_lines([r["name"] for r in slate], saved.get("lines", {}))
     out = []
-    for r in _slate(con, date_s):
+    for r in slate:
         if (r["status"] or "active") != "active":
             continue  # out, day-to-day, questionable: minutes too uncertain
-        mine = lines.get(odds.norm_name(r["name"]))
+        mine = matched.get(r["name"])
         if not mine:
             continue
         conf, avg_min = minutes_confidence(con, r["player_id"], date_s)
@@ -175,12 +176,12 @@ def candidates(con, date_s, saved):
 def alt_options(cands, saved):
     """For over candidates with an alt ladder: the highest alt line below the
     main line that the model is still ALT_TARGET_PROB sure of."""
-    alts = saved.get("alts", {})
+    alt_by_name, _ = odds.match_lines({c["player"] for c in cands}, saved.get("alts", {}))
     out = []
     for c in cands:
         if c["side"] != "over":
             continue
-        ladder = alts.get(odds.norm_name(c["player"]), {}).get(c["stat"], [])
+        ladder = alt_by_name.get(c["player"], {}).get(c["stat"], [])
         best = None
         for step in ladder:
             if step["line"] >= c["book_line"] or step.get("over") is None:
@@ -295,7 +296,7 @@ def settle(con, parlay):
 
     from .. import pipeline
     for leg in parlay["legs"]:
-        pipeline.load_player_logs(con, leg["player_id"], _date.fromisoformat(parlay["date"]))
+        pipeline.load_player_logs(con, leg["player_id"], _date.fromisoformat(parlay["date"]), seasons=1)
     results = []
     for leg in parlay["legs"]:
         actual = _actual(con, leg["player_id"], parlay["date"], leg["stat"])
@@ -330,9 +331,14 @@ def update(con, date_s, allow_spend=False):
     mock = "MOCKUP" in (data.get("note") or "")
     today_json = data.get("today")
 
-    # 1. settle a finished real parlay
+    # 1. settle a finished real parlay. A parlay from an earlier date whose
+    #    games may still be running (the 8 PM run flips the board to tomorrow)
+    #    stays up untouched until it can be graded.
     if (not mock and today_json and today_json.get("legs")
             and today_json.get("status") == "pending" and today_json["date"] < date_s):
+        if not util.day_is_final(today_json["date"]):
+            log["waiting_to_settle"] = today_json["date"]
+            return log
         settled = settle(con, today_json)
         data.setdefault("history", []).append(settled)
         data["history"] = data["history"][-HISTORY_KEEP:]

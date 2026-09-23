@@ -314,6 +314,23 @@ def _fresh_env(odds_mode, remaining):
     return site, state
 
 
+def test_results_pure():
+    from nproj import results as R
+    from nproj import util
+    from datetime import datetime, timezone
+    assert R.call_for(28.0, 25.5) == "over" and R.call_for(24.0, 25.5) is None
+    assert R.call_for(22.0, 25.5) == "under" and R.call_for(10, None) is None
+    assert R.grade_call("over", 25.5, 26) == "win" and R.grade_call("under", 25.5, 26) == "loss"
+    # 8 PM Arizona on game night (03:00 UTC next day) is NOT final; 8 AM next morning is
+    assert not util.day_is_final("2026-03-10", datetime(2026, 3, 11, 3, 0, tzinfo=timezone.utc))
+    assert util.day_is_final("2026-03-10", datetime(2026, 3, 11, 15, 0, tzinfo=timezone.utc))
+    snap = R.snapshot_from_board({"date": "2026-03-10", "players": [
+        {"player_id": "1", "player": "A", "team": "DEN", "stats": {
+            "points": {"proj": 20, "line": 18.5}, "rebounds": {"proj": 5, "line": 5.5},
+            "assists": {"proj": 5, "line": None}, "pra": {"line": 29.5}}}]})
+    assert snap["players"][0]["stats"]["pra"] == {"proj": 30, "line": 29.5}
+
+
 def test_parlay_pure():
     from nproj.model import parlay as P
     assert P.combined_odds([-110, -110]) == 264
@@ -394,11 +411,22 @@ def test_parlay_daily_and_settle():
         assert leg["actual"] is not None
         assert leg["hit"] == (leg["actual"] > leg["line"] if leg["side"] == "over"
                               else leg["actual"] < leg["line"])
+    # results: last night's board graded against the same box scores
+    res = json.loads((site / "results.json").read_text())
+    night = res["nights"][-1]
+    assert night["date"] == "2026-03-10" and night["players_graded"] >= 1
+    assert all(night["mae"][k] is not None for k in ("points", "rebounds", "assists", "pra"))
+    for c in res["calls"]:
+        assert c["result"] == ("win" if (c["actual"] > c["line"]) == (c["side"] == "over") else "loss")
+    assert res["summary"]["nights"] == 1
+    assert res["pending"] is None or res["pending"]["date"] == "2026-03-11"
+    print("OK results:", night["calls"], night["mae"])
     print("OK parlay:", t["combined_odds"], [(l["player"], l["stat"], l["side"], l["line"], l["line_type"],
                                               l["odds"], l["prob"]) for l in t["legs"]], "->", h["result"])
 
 
 if __name__ == "__main__":
     test_odds_rationing_and_board()
+    test_results_pure()
     test_parlay_pure()
     test_parlay_daily_and_settle()

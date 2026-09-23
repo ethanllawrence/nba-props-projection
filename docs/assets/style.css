@@ -200,3 +200,8 @@ footer.site { color: var(--dim); font-size: 11.5px; line-height: 1.6; margin-top
 .post .parsed { margin-left: auto; font-size: 10.5px; color: var(--green); }
 .post .txt { color: var(--dim); word-break: break-word; }
 .post a { color: var(--accent); text-decoration: none; }
+
+/* Stale-data warning (assets/stale.js) */
+.stale-banner { background: rgba(255, 95, 95, .12); border: 1px solid var(--red); color: var(--text);
+  border-radius: 10px; padding: 9px 12px; font-size: 13px; margin: 0 0 12px; }
+@media (max-width: 420px) { nav.tabs a { font-size: 12.5px; padding: 9px 2px; } }

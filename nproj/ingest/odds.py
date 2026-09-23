@@ -69,6 +69,57 @@ def norm_name(name):
     return " ".join(s.split())
 
 
+# Known spelling differences between ESPN and the sportsbooks, both sides
+# already run through norm_name. Add pairs here when the run log's
+# "unmatched lines" warning names one.
+NAME_ALIASES = {
+    "nic claxton": "nicolas claxton",
+    "herb jones": "herbert jones",
+    "cam johnson": "cameron johnson",
+    "og anunoby": "o g anunoby",
+    "alex sarr": "alexandre sarr",
+}
+
+
+def _short_key(n):
+    parts = n.split()
+    return (parts[0][0], parts[-1]) if len(parts) >= 2 else None
+
+
+def match_lines(espn_names, lines):
+    """Pair each ESPN player name with his entry in `lines` (keyed by
+    norm_name of the sportsbook's spelling). Exact match first, then known
+    aliases, then first initial + last name when that's unique on both
+    sides. -> ({espn_name: line_entry}, [sportsbook names left unmatched])."""
+    by_short = {}
+    for k in lines:
+        sk = _short_key(k)
+        if sk:
+            by_short.setdefault(sk, []).append(k)
+    rev_alias = {v: k for k, v in NAME_ALIASES.items()}
+    espn_short = {}
+    for name in espn_names:
+        sk = _short_key(norm_name(name))
+        if sk:
+            espn_short[sk] = espn_short.get(sk, 0) + 1
+
+    matched, used = {}, set()
+    for name in espn_names:
+        n = norm_name(name)
+        for cand in (n, NAME_ALIASES.get(n), rev_alias.get(n)):
+            if cand and cand in lines:
+                matched[name] = lines[cand]
+                used.add(cand)
+                break
+        else:
+            sk = _short_key(n)
+            hits = by_short.get(sk, []) if sk else []
+            if len(hits) == 1 and espn_short.get(sk) == 1 and hits[0] not in used:
+                matched[name] = lines[hits[0]]
+                used.add(hits[0])
+    return matched, sorted(k for k in lines if k not in used)
+
+
 class Quota:
     """Latest usage numbers from response headers."""
     remaining = None

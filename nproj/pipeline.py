@@ -49,13 +49,14 @@ def upsert_logs(con, rows, season):
     return len(rows)
 
 
-def load_player_logs(con, player_id, on_date: date):
+def load_player_logs(con, player_id, on_date: date, seasons=2):
     """This season's and last season's games for one player. Last season
     matters most in October/November, when a player has only a handful of
-    games; the model's recency weighting phases it out as the year goes on."""
+    games; the model's recency weighting phases it out as the year goes on.
+    seasons=1 fetches only the current season (enough for grading a night)."""
     season = espn.season_year(on_date)
     n = 0
-    for s in (season, season - 1):
+    for s in (season, season - 1)[:seasons]:
         try:
             n += upsert_logs(con, espn.fetch_player_game_log(player_id, s), s)
         except RuntimeError as exc:

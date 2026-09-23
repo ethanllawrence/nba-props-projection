@@ -22,7 +22,7 @@ import json
 from datetime import datetime, timezone
 
 from .. import config
-from ..ingest.odds import load_lines, norm_name
+from ..ingest.odds import load_lines, match_lines
 from ..pipeline import JOKIC_ESPN_ID
 
 MIN_MINUTES_FOR_BOARD = 20.0
@@ -82,11 +82,18 @@ def _export_today_board(con, date_s: str):
         return 0
 
     book = load_lines(date_s)
-    all_lines = book.get("lines", {})
+    everyone = [x["name"] for x in con.execute(
+        """SELECT p.name FROM probable_players pp JOIN players p ON p.player_id = pp.player_id
+           WHERE pp.date = ?""", (date_s,))]          # incl. players ruled out
+    matched, unmatched = match_lines(everyone, book.get("lines", {}))
+    if unmatched:
+        print(f"[warn] {len(unmatched)} sportsbook names with a line but no ESPN match "
+              f"(add them to NAME_ALIASES in nproj/ingest/odds.py if they're real players "
+              f"on tonight's slate): {', '.join(unmatched)}")
 
     players = []
     for r in rows:
-        mine = all_lines.get(norm_name(r["name"]), {})
+        mine = matched.get(r["name"], {})
         stats = {}
         for stat in config.TARGET_STATS:
             proj = con.execute(
@@ -107,6 +114,7 @@ def _export_today_board(con, date_s: str):
         home = r["team"] == r["home_team"]
         players.append({
             "player": r["name"],
+            "player_id": r["player_id"],
             "team": r["team"],
             "opp": r["away_team"] if home else r["home_team"],
             "home": home,
@@ -136,6 +144,7 @@ def _export_today_board(con, date_s: str):
         "note": ("Projections are real: a recency-weighted average of each player's ESPN game "
                  "log (this season plus last). " + lines_note),
         "lines_fetched_at": book.get("fetched_at"),
+        "unmatched_lines": unmatched,
         "players": players,
     })
     return len(players)

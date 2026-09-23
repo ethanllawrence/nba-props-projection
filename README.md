@@ -31,6 +31,25 @@ what exists in this repo right now vs. what's still a stub.
 - `tests/test_pipeline_offline.py` — end-to-end test on fake ESPN data; runs before every
   daily run.
 
+## Results, safety checks, clock (since 2026-09-22)
+
+- `nproj/results.py` + `docs/results.html`: each morning grades last night's board (MAE per
+  stat, and the record of every 6%+ edge call vs. the line; 52.4% breaks even at -110).
+- Name matching between ESPN and sportsbooks: exact, then `NAME_ALIASES`, then first
+  initial + last name. Unmatched sportsbook names are printed as warnings in the run log.
+- `docs/data/status.json` heartbeat + `docs/assets/stale.js`: every page shows a warning
+  banner if the data is more than 30 hours old.
+- Board flips to the next day at 8 PM Arizona (third daily run). Results and parlays are
+  only graded once a night's games are final (`util.day_is_final`).
+
+## Historical data for the model (`python -m nproj history`)
+
+`nproj/ingest/espn_history.py` + `.github/workflows/backfill.yml` download 2023-24 through
+2025-26: every game's box score (incl. starters/DNPs), the spread and total, and ESPN's
+archived sportsbook prop lines (DraftKings 2023-24, ESPN BET 2024-25 and early 2025-26) into
+`history/<season>/{games,box,props}.csv.gz`. That's what the real model is trained and
+backtested on.
+
 ## Data source: ESPN (since 2026-09-22)
 
 GitHub Actions runners can't reach NBA's own feeds. Tested with

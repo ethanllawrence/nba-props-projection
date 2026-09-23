@@ -69,9 +69,9 @@ MIN_EV_DISPLAY = 0.0
 ET_ZONE = "America/New_York"
 
 # --- Board clock ---------------------------------------------------------
-# TODO: decide the rollover hour deliberately (see planning doc's Open
-# questions — NBA West Coast night games can run past midnight ET, later
-# than MLB's latest starts, so this should NOT default to copying the K
-# Board's 7 PM AZ without checking against a real NBA schedule first).
+# Robin's choice (2026-09-22): the site flips to the next day's slate at 8 PM
+# Arizona time. The workflow has an 8 PM run so the flip actually shows up.
+# Settling results/parlays does NOT follow this clock: a day is only graded
+# once its games are over (see util.day_is_final).
 BOARD_ZONE = os.environ.get("NPROJ_BOARD_ZONE", "America/Phoenix")
-BOARD_ROLLOVER_HOUR = int(os.environ.get("NPROJ_BOARD_ROLLOVER_HOUR", "21"))   # placeholder: 9 PM AZ
+BOARD_ROLLOVER_HOUR = int(os.environ.get("NPROJ_BOARD_ROLLOVER_HOUR", "20"))   # 8 PM AZ
