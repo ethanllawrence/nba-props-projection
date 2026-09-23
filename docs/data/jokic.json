@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-22T02:15:00Z",
-  "note": "MOCKUP DATA \u2014 season summary and recent-games log are REAL 2025-26 regular season numbers (Jokic's actual final averages and game log). 'Tonight' projection is placeholder \u2014 no live model or odds feed wired up yet.",
+  "generated_at": "2026-09-23T19:26:19Z",
+  "note": "Season summary, recent games and the model call come from Jokic's real ESPN game log. The market price is his triple-double Yes price from the morning odds pull, when there was room in the budget for it.",
   "season_summary": {
-    "season_label": "2025-26 (most recent completed season)",
+    "season_label": "2025-26",
     "games_played": 65,
     "triple_doubles": 34,
     "hit_rate": 0.523,
@@ -12,6 +12,54 @@
     "fun_fact": "Jokic became the 2nd player in NBA history to average a triple-double in back-to-back seasons."
   },
   "recent_games": [
+    {
+      "date": "2026-04-30",
+      "opp": "@ MIN",
+      "pts": 28,
+      "reb": 9,
+      "ast": 10,
+      "triple_double": false
+    },
+    {
+      "date": "2026-04-27",
+      "opp": "vs MIN",
+      "pts": 27,
+      "reb": 12,
+      "ast": 16,
+      "triple_double": true
+    },
+    {
+      "date": "2026-04-25",
+      "opp": "@ MIN",
+      "pts": 24,
+      "reb": 15,
+      "ast": 9,
+      "triple_double": false
+    },
+    {
+      "date": "2026-04-23",
+      "opp": "@ MIN",
+      "pts": 27,
+      "reb": 15,
+      "ast": 3,
+      "triple_double": false
+    },
+    {
+      "date": "2026-04-20",
+      "opp": "vs MIN",
+      "pts": 24,
+      "reb": 15,
+      "ast": 8,
+      "triple_double": false
+    },
+    {
+      "date": "2026-04-18",
+      "opp": "vs MIN",
+      "pts": 25,
+      "reb": 13,
+      "ast": 11,
+      "triple_double": true
+    },
     {
       "date": "2026-04-12",
       "opp": "@ SAS",
@@ -43,60 +91,16 @@
       "reb": 8,
       "ast": 13,
       "triple_double": false
-    },
-    {
-      "date": "2026-04-01",
-      "opp": "@ UTA",
-      "pts": 15,
-      "reb": 17,
-      "ast": 12,
-      "triple_double": true
-    },
-    {
-      "date": "2026-03-29",
-      "opp": "vs GSW",
-      "pts": 25,
-      "reb": 15,
-      "ast": 8,
-      "triple_double": false
-    },
-    {
-      "date": "2026-03-27",
-      "opp": "vs UTA",
-      "pts": 33,
-      "reb": 15,
-      "ast": 12,
-      "triple_double": true
-    },
-    {
-      "date": "2026-03-25",
-      "opp": "vs DAL",
-      "pts": 23,
-      "reb": 21,
-      "ast": 19,
-      "triple_double": true
-    },
-    {
-      "date": "2026-03-24",
-      "opp": "@ PHX",
-      "pts": 23,
-      "reb": 17,
-      "ast": 17,
-      "triple_double": true
     }
   ],
   "tonight": {
-    "opp": "@ OKC",
-    "time_et": "9:30 PM",
+    "opp": null,
+    "time_et": null,
     "call": "yes",
     "td_projection": {
-      "model_prob": 0.58,
-      "note": "Real, but a placeholder method: 52.3% season hit rate blended 60/40 with the empirical hit rate over games actually in the database, NOT a real joint probability model across points/rebounds/assists. See planning doc / methodology page."
+      "model_prob": 0.514,
+      "note": "Placeholder method: his 52.3% season hit rate blended 60/40 with his hit rate over his last 20 games. Not a real joint model of points, rebounds and assists yet. See the methodology page."
     },
-    "market": {
-      "side": "yes",
-      "odds": -135,
-      "book": "DraftKings"
-    }
+    "market": null
   }
 }
