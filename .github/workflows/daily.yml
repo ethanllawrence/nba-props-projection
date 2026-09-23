@@ -1,8 +1,10 @@
 # Daily board: pull tonight's slate and game logs from ESPN, project, and
 # commit the refreshed docs/data/*.json so GitHub Pages serves them.
 #
-# Runs twice a day (8 AM and 3 PM Arizona time). The second run picks up
-# injury news. Offseason days change nothing, so nothing gets committed.
+# Runs three times a day, Arizona time: 8 AM (buys odds, settles last night),
+# 3 PM (picks up injury news), and 8 PM (flips the board to tomorrow's slate,
+# projections only; lines come the next morning). Offseason runs only
+# refresh a small heartbeat file.
 #
 # Odds: only the 8 AM run buys prop lines (The Odds API, shared free plan,
 # rationed in nproj/ingest/odds.py). The 3 PM run reuses them for free.
@@ -18,6 +20,7 @@ on:
   schedule:
     - cron: "0 15 * * *"   # 8:00 AM Arizona (UTC-7, no daylight saving)
     - cron: "0 22 * * *"   # 3:00 PM Arizona
+    - cron: "0 3 * * *"    # 8:00 PM Arizona: board flips to tomorrow
   workflow_dispatch:
     inputs:
       date:
@@ -52,8 +55,10 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Offline test (fake ESPN data)
-        run: python tests/test_pipeline_offline.py
+      - name: Offline tests (fake ESPN data + real ESPN samples)
+        run: |
+          python tests/test_pipeline_offline.py
+          python tests/test_history_parsers.py
 
       - name: Odds API credits (free call)
         env:
@@ -83,6 +88,8 @@ jobs:
           python - <<'EOF'
           import json
           d = json.load(open("docs/data/today.json"))
+          if d.get("unmatched_lines"):
+              print("WARNING unmatched sportsbook names:", ", ".join(d["unmatched_lines"]))
           print(f"Board for {d['date']}: {len(d['players'])} players")
           for p in d["players"][:25]:
               s = p["stats"]
@@ -98,12 +105,13 @@ jobs:
             echo "Test run for $TEST_DATE: not committing."
             exit 0
           fi
-          if git diff --quiet -- docs/data; then
+          git add docs/data            # includes new files (status/results/lines.json)
+          if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data
-          git commit -m "Daily board $(TZ=America/Phoenix date +%Y-%m-%d)"
+          git commit -m "Daily board $(TZ=America/Phoenix date '+%Y-%m-%d %H:%M')"
+          git pull --rebase
           git push
