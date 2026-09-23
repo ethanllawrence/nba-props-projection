@@ -36,6 +36,12 @@ MARKET_TO_STAT = {
     "player_points_rebounds_assists": "pra",
 }
 TD_MARKET = "player_triple_double"
+ALT_MARKET = {
+    "points": "player_points_alternate",
+    "rebounds": "player_rebounds_alternate",
+    "assists": "player_assists_alternate",
+    "pra": "player_points_rebounds_assists_alternate",
+}
 
 # Odds API uses full team names; the rest of the pipeline uses abbreviations.
 TEAM_ABBR = {
@@ -209,6 +215,8 @@ def refresh_lines(date_s, jokic_name="Nikola Jokic", jokic_team="DEN"):
     out = {
         "date": date_s,
         "fetched_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "allowance": allowance,
+        "events": events,
         "games_on_slate": len(events),
         "games_fetched": min(n_full, len(events)),
         "markets": markets,
@@ -221,6 +229,71 @@ def refresh_lines(date_s, jokic_name="Nikola Jokic", jokic_team="DEN"):
     return {k: out[k] for k in ("games_on_slate", "games_fetched", "markets",
                                 "credits_spent", "credits_remaining")} | {
         "allowance": allowance, "remaining_before": remaining, "players_with_lines": len(all_lines)}
+
+
+def leftover_credits(saved):
+    """Credits from today's allowance not used by the main pull (or by
+    extras already bought). Parlay extras (spreads, alt lines) spend these."""
+    return max(0, saved.get("allowance", 0) - saved.get("credits_spent", 0)
+               - saved.get("extras_spent", 0))
+
+
+def spend_extra(saved, fn, *args):
+    """Run one paid call, charge its actual cost to extras_spent."""
+    before = Quota.remaining
+    result = fn(*args)
+    if before is not None and Quota.remaining is not None:
+        saved["extras_spent"] = saved.get("extras_spent", 0) + before - Quota.remaining
+        saved["credits_remaining"] = Quota.remaining
+    return result
+
+
+def fetch_spreads(date_s):
+    """One bulk call for every game's point spread: 1 market x 1 region = 1
+    credit for the whole slate. -> {team_abbr: spread}, e.g. {"DEN": -4.5}."""
+    from .espn import et_date
+    data = _get(f"/sports/{config.ODDS_SPORT_KEY}/odds", regions="us", markets="spreads",
+                bookmakers=",".join(config.PREFERRED_BOOKS), oddsFormat="american")
+    rank = {b: i for i, b in enumerate(config.PREFERRED_BOOKS)}
+    out = {}
+    for ev in data:
+        if et_date(ev["commence_time"]).strftime("%Y-%m-%d") != date_s:
+            continue
+        for bk in sorted(ev.get("bookmakers", []), key=lambda b: rank.get(b.get("key"), 99)):
+            m = next((m for m in bk.get("markets", []) if m.get("key") == "spreads"), None)
+            if not m:
+                continue
+            for o in m.get("outcomes", []):
+                team = TEAM_ABBR.get(o.get("name"), o.get("name"))
+                if o.get("point") is not None:
+                    out.setdefault(team, o["point"])
+            break
+    return out
+
+
+def fetch_alt_props(event_id, stats):
+    """Alt-line Over prices for the given stats in one game. Costs 1 credit
+    per stat. -> {norm_name: {stat: [{"line", "over", "book"}, ...]}}"""
+    data = fetch_event_props(event_id, [ALT_MARKET[s] for s in stats])
+    rank = {b: i for i, b in enumerate(config.PREFERRED_BOOKS)}
+    rev = {v: k for k, v in ALT_MARKET.items()}
+    out = {}
+    for bk in sorted(data.get("bookmakers", []), key=lambda b: rank.get(b.get("key"), 99)):
+        title = bk.get("title") or bk.get("key")
+        for m in bk.get("markets", []):
+            stat = rev.get(m.get("key"))
+            if not stat:
+                continue
+            per_player = {}
+            for o in m.get("outcomes", []):
+                who = norm_name(o.get("description"))
+                if o.get("name") != "Over" or not who or o.get("point") is None:
+                    continue
+                per_player.setdefault(who, []).append(
+                    {"line": o["point"], "over": o.get("price"), "book": title})
+            for who, ladder in per_player.items():
+                out.setdefault(who, {}).setdefault(stat, sorted(ladder, key=lambda x: x["line"]))
+    return out
 
 
 def lines_path():

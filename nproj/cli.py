@@ -3,7 +3,8 @@
 Commands
   init                  create the database schema
   daily [--date D]      full game-day cycle: pull tonight's slate and game
-                        logs from ESPN, project, export site JSON
+                        logs from ESPN, project, export site JSON, settle
+                        yesterday's Parlay of the Day and pick today's
   backfill --season S   every rostered player's game log for one ESPN
                         season year (2026 = 2025-26); not needed daily
   export [--date D]     regenerate site JSON only, from what's in the db
@@ -49,6 +50,12 @@ def cmd_daily(args) -> None:
         trained = predict.train(con, before_date=date_s)
         projected = predict.project_date(con, date_s)
         result = export_all(con, date_s)
+        try:
+            from .model import parlay
+            spend = config.ODDS_MODE == "props" and bool(config.ODDS_API_KEY)
+            print(f"[parlay] {parlay.update(con, date_s, allow_spend=spend)}")
+        except Exception as exc:  # noqa: BLE001 - a parlay problem must never block the board
+            print(f"[parlay] FAILED: {exc}")
     print(f"[daily] trained {trained} player-stats, wrote {projected} projections, exported {result}")
     if slate["games"] == 0:
         print("[daily] no games on this date, so today.json was left as it was")

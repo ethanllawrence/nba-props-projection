@@ -18,11 +18,9 @@ what exists in this repo right now vs. what's still a stub.
   tab, built around a single headline call — bet the triple-double yes or no tonight — with
   the model probability and market price underneath as supporting detail, then season summary
   tiles and a real recent-games log below that.
-- `docs/parlay.html` + `docs/data/parlay.json` — a **Parlay of the Day** tab: 3-4 alt-line
-  legs picked for high conviction (projection clears the alt line by a wide margin, low
-  blowout/minutes risk) rather than best expected value, combined to roughly +200 to +300
-  odds, with per-leg reasoning and a win/loss history log. Leg selection is manually curated
-  today — see `nproj/model/parlay.py` for the intended automated criteria, not yet wired up.
+- `docs/parlay.html` + `docs/data/parlay.json` — a **Parlay of the Day** tab: 2-4 legs picked
+  automatically for high conviction (not best expected value), combined to roughly +200 to
+  +300, with per-leg reasoning and a settled win/loss history. See the Parlay section below.
 - `nproj/` — the Python pipeline: `ingest/espn.py` (schedule, rosters, game logs),
   `pipeline.py` (ingest into SQLite), `model/predict.py` (projections),
   `export/site_export.py` (writes `docs/data/*.json`), `cli.py`
@@ -59,14 +57,20 @@ until reset. Markets are bought in priority order (PRA, points, rebounds, assist
 the allowance covers the whole slate, plus Jokic's triple-double Yes price on Denver game
 days if there's room. `python -m nproj odds-status` checks the balance for free.
 
-**Still mock:** the whole Parlay of the Day tab. Until the 2026-27 season starts, `docs/data/today.json` keeps the hand-typed mockup,
+**Parlay of the Day (since 2026-09-22):** `nproj/model/parlay.py` picks it automatically in
+the daily run and settles the previous day's from real box scores. Legs need a 62%+ model
+chance (normal approximation over recent games, shrunk 15% toward 50%), steady minutes, no
+injury tag, and a spread under 12. Leftover odds credits buy the slate's spreads (1 credit)
+and then alt-line ladders for the top candidates (max 4 credits); alt legs use the highest
+alt line with a 78%+ model chance. Greedy by confidence, 1 leg per player, 2 per game, until
++200 to +320; no parlay if it can't reach +150. The hand-made preview in `parlay.json` is
+replaced on the first real game day. Until the 2026-27 season starts, `docs/data/today.json` keeps the hand-typed mockup,
 because the daily run leaves it alone on dates with no games.
 
 ## What's still a stub
 
 - `nproj/model/predict.py` — a recency-weighted rolling average (real, deliberately simple);
   the planned LightGBM + quantile model is still ahead, see that file's docstring
-- `nproj/model/parlay.py` — Parlay of the Day selection criteria, not automated
 
 ## Build phases
 

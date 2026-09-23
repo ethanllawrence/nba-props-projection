@@ -242,5 +242,163 @@ def test_odds_rationing_and_board():
     print("OK odds:", {k: ln[k] for k in ("markets", "credits_spent", "credits_remaining")})
 
 
+
+# -------------------------------------------------------------- parlay ----
+def fake_odds_full(start_remaining):
+    """Odds API fake with lines for every rostered player, alt ladders and spreads."""
+    state = {"remaining": start_remaining, "calls": []}
+    rosters = {"e1": ["Nikola Jokic"] + [f"Player {t}-{i}" for t in ("7", "25") for i in range(4)],
+               "e2": [f"Player {t}-{i}" for t in ("20", "29") for i in range(4)]}
+    main = {"player_points": 16.5, "player_rebounds": 5.5, "player_assists": 4.5,
+            "player_points_rebounds_assists": 27.5}
+    alt = {"player_points_alternate": [(10.5, -500), (12.5, -300), (14.5, -220)],
+           "player_rebounds_alternate": [(3.5, -400), (4.5, -250)],
+           "player_assists_alternate": [(2.5, -400), (3.5, -250)],
+           "player_points_rebounds_assists_alternate": [(20.5, -350), (23.5, -240)]}
+
+    def get(url, params=None, timeout=None):
+        state["calls"].append((url, dict(params or {})))
+        if url.endswith("/sports"):
+            return FakeResp([], state["remaining"])
+        if url.endswith("/events"):
+            return FakeResp([
+                {"id": "e1", "home_team": "Denver Nuggets", "away_team": "Oklahoma City Thunder",
+                 "commence_time": "2026-03-11T02:00:00Z"},
+                {"id": "e2", "home_team": "Philadelphia 76ers", "away_team": "Memphis Grizzlies",
+                 "commence_time": "2026-03-10T23:00:00Z"}], state["remaining"])
+        if url.endswith("/basketball_nba/odds"):   # bulk spreads
+            state["remaining"] -= 1
+            return FakeResp([
+                {"commence_time": "2026-03-11T02:00:00Z", "bookmakers": [{"key": "fanduel", "markets": [
+                    {"key": "spreads", "outcomes": [{"name": "Denver Nuggets", "point": -3.5},
+                                                    {"name": "Oklahoma City Thunder", "point": 3.5}]}]}]},
+                {"commence_time": "2026-03-10T23:00:00Z", "bookmakers": [{"key": "fanduel", "markets": [
+                    {"key": "spreads", "outcomes": [{"name": "Philadelphia 76ers", "point": -9.5},
+                                                    {"name": "Memphis Grizzlies", "point": 9.5}]}]}]},
+            ], state["remaining"])
+        markets = params["markets"].split(",")
+        state["remaining"] -= len(markets)
+        eid = url.split("/events/")[1].split("/")[0]
+        mk = []
+        for m in markets:
+            outs = []
+            for who in rosters[eid]:
+                if m in main:
+                    outs += [{"name": "Over", "description": who, "price": -115, "point": main[m]},
+                             {"name": "Under", "description": who, "price": -105, "point": main[m]}]
+                elif m in alt:
+                    outs += [{"name": "Over", "description": who, "price": pr, "point": pt}
+                             for pt, pr in alt[m]]
+            mk.append({"key": m, "outcomes": outs})
+        return FakeResp({"bookmakers": [{"key": "fanduel", "title": "FanDuel", "markets": mk}]},
+                        state["remaining"])
+    return get, state
+
+
+def _fresh_env(odds_mode, remaining):
+    import os
+    import importlib
+    tmp = Path(tempfile.mkdtemp())
+    site = tmp / "site"
+    shutil.copytree(ROOT / "docs" / "data", site)
+    os.environ.update(NPROJ_DB=str(tmp / "t.db"), NPROJ_DATA_DIR=str(tmp), NPROJ_SITE_DATA=str(site),
+                      NPROJ_ODDS_MODE=odds_mode, ODDS_API_KEY="test", NPROJ_ODDS_SHARE="0.5")
+    from nproj import config
+    importlib.reload(config)
+    from nproj import pipeline
+    from nproj.ingest import espn, odds
+    espn._get = fake_get
+    pipeline.REQUEST_PAUSE = 0
+    get, state = fake_odds_full(remaining)
+    odds.requests.get = get
+    return site, state
+
+
+def test_parlay_pure():
+    from nproj.model import parlay as P
+    assert P.combined_odds([-110, -110]) == 264
+    assert P.combined_odds([-250, -250, -250]) == 174
+    assert P.blowout_risk(None) == "unknown" and P.blowout_risk(-13.5) == "high"
+    assert P.blowout_risk(4) == "low" and P.blowout_risk(-8) == "medium"
+    base = {"game_id": "g", "line_type": "main"}
+    opts = [dict(base, player_id=f"p{i}", game_id=f"g{i}", prob=0.9 - i * 0.01, odds=-250)
+            for i in range(6)]
+    legs, price = P.select_legs(opts)
+    assert len(legs) == 4 and 200 <= price <= 320, (len(legs), price)
+    legs, price = P.select_legs([dict(base, player_id="a", game_id="g1", prob=0.8, odds=-120),
+                                 dict(base, player_id="a", game_id="g1", prob=0.7, odds=-120)])
+    assert legs == [] and price is None        # one player can't carry a parlay
+    same_game = [dict(base, player_id=f"p{i}", game_id="g1", prob=0.9, odds=-200) for i in range(4)]
+    legs, _ = P.select_legs(same_game)
+    assert len(legs) <= 2
+
+
+def test_parlay_daily_and_settle():
+    from datetime import date
+    site, state = _fresh_env("props", 700)      # allowance (700-60)*.5/22 = 14
+    from nproj import cli
+    from nproj.ingest import odds
+    cli.main(["daily", "--date", "2026-03-10"])
+
+    ln = json.loads((site / "lines.json").read_text())
+    allowance = odds.daily_allowance(700, date(2026, 3, 10))
+    assert ln["credits_spent"] + ln.get("extras_spent", 0) <= allowance, ln
+    assert ln["spreads"]["DEN"] == -3.5 and ln["spreads"]["PHI"] == -9.5
+
+    pj = json.loads((site / "parlay.json").read_text())
+    assert pj["history"] == [], "mock history must be dropped on the first real day"
+    t = pj["today"]
+    assert t and t["status"] == "pending" and 2 <= len(t["legs"]) <= 4, pj
+    assert 150 <= t["combined_odds"] <= 320
+    assert len({l["player_id"] for l in t["legs"]}) == len(t["legs"])
+    risk = {l["team"]: l["blowout_risk"] for l in t["legs"]}
+    assert all(risk.get(tm, "medium") == "medium" for tm in ("PHI", "MEM"))
+    # a high-blowout-risk game is excluded from candidates entirely
+    from nproj import db
+    from nproj.model import parlay as P
+    with db.session() as con:
+        blow = dict(ln, spreads={"PHI": -13.5, "MEM": 13.5, "DEN": -3.5, "OKC": 3.5})
+        assert all(c["team"] not in ("PHI", "MEM") for c in P.candidates(con, "2026-03-10", blow))
+    assert all(l["reasoning"] and 0 < l["prob"] < 1 for l in t["legs"])
+    if ln.get("alts"):
+        assert any(l["line_type"] == "alt" for l in t["legs"])
+    n_paid = sum(1 for u, _ in state["calls"] if u.endswith("/odds"))
+
+    # afternoon: nothing bought, parlay still there
+    import os, importlib
+    os.environ["NPROJ_ODDS_MODE"] = "off"
+    from nproj import config
+    importlib.reload(config)
+    cli.main(["daily", "--date", "2026-03-10"])
+    assert sum(1 for u, _ in state["calls"] if u.endswith("/odds")) == n_paid
+    assert json.loads((site / "parlay.json").read_text())["today"]["legs"]
+
+    # settle: give every leg player a real game on 2026-03-10, then run the next day
+    from nproj.ingest import espn
+    orig = espn.fetch_player_game_log
+
+    def with_game(pid, season):
+        rows = orig(pid, season)
+        if season == 2026:
+            rows.append({"game_id": f"x{pid}", "player_id": pid, "date": "2026-03-10", "team": "DEN",
+                         "opp": "vs OKC", "minutes": 34.0, "points": 40, "rebounds": 12,
+                         "assists": 11, "threes": 2, "playoff": False})
+        return rows
+    espn.fetch_player_game_log = with_game
+    cli.main(["daily", "--date", "2026-03-11"])
+    espn.fetch_player_game_log = orig
+    pj = json.loads((site / "parlay.json").read_text())
+    h = pj["history"][-1]
+    assert h["date"] == "2026-03-10" and h["result"] in ("win", "loss")
+    for leg in h["legs"]:
+        assert leg["actual"] is not None
+        assert leg["hit"] == (leg["actual"] > leg["line"] if leg["side"] == "over"
+                              else leg["actual"] < leg["line"])
+    print("OK parlay:", t["combined_odds"], [(l["player"], l["stat"], l["side"], l["line"], l["line_type"],
+                                              l["odds"], l["prob"]) for l in t["legs"]], "->", h["result"])
+
+
 if __name__ == "__main__":
     test_odds_rationing_and_board()
+    test_parlay_pure()
+    test_parlay_daily_and_settle()

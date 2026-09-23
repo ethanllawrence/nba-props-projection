@@ -1,14 +1,15 @@
-/* Parlay of the Day — 3-4 high-conviction alt-line legs picked for a strong
-   model edge with low blowout/minutes risk, not for the best expected value.
-   Tracks whether each day's parlay actually hit. See nproj/model/parlay.py
-   for the (not yet automated) selection criteria this is meant to reflect. */
+/* Parlay of the Day — 2-4 high-conviction legs (alt lines when the budget
+   allowed buying them, main lines otherwise), picked automatically for model
+   confidence with low blowout/minutes risk, not for the best expected value.
+   Settled the next morning. Selection logic: nproj/model/parlay.py. */
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
 const fmtOdds = (o) => (o > 0 ? "+" + o : String(o));
-const statLabel = { points: "Points", rebounds: "Rebounds", assists: "Assists" };
-const statAbbr = { points: "Pts", rebounds: "Reb", assists: "Ast" };
+const statLabel = { points: "Points", rebounds: "Rebounds", assists: "Assists", pra: "Pts+Reb+Ast" };
+const statAbbr = { points: "Pts", rebounds: "Reb", assists: "Ast", pra: "PRA" };
+const lineOf = (leg) => leg.line ?? leg.alt_line;
 
 function parlayHero(t) {
   const statusCls = { pending: "win-wait", win: "win-go", loss: "win-off" }[t.status] || "win-wait";
@@ -24,18 +25,20 @@ function parlayHero(t) {
 
 function trackRecord(history) {
   if (!history.length) return "";
-  const wins = history.filter((h) => h.result === "win").length;
-  const losses = history.filter((h) => h.result === "loss").length;
-  const hitRate = Math.round((wins / history.length) * 100);
+  const graded = history.filter((h) => h.result === "win" || h.result === "loss");
+  if (!graded.length) return "";
+  const wins = graded.filter((h) => h.result === "win").length;
+  const losses = graded.length - wins;
+  const hitRate = Math.round((wins / graded.length) * 100);
   let streak = 0;
-  for (const h of history.slice().reverse()) {
+  for (const h of graded.slice().reverse()) {
     if (h.result === "win") streak++;
     else break;
   }
   return `
     <div class="tiles">
       <div class="tile"><div class="v">${wins}-${losses}</div><div class="k">Record</div>
-        <div class="s">last ${history.length} parlays</div></div>
+        <div class="s">last ${graded.length} parlays</div></div>
       <div class="tile"><div class="v">${hitRate}%</div><div class="k">Hit rate</div>
         <div class="s">all legs must hit</div></div>
       <div class="tile"><div class="v">${streak}</div><div class="k">Current streak</div>
@@ -44,28 +47,33 @@ function trackRecord(history) {
 }
 
 function riskBadge(level) {
+  if (level === "unknown") return `<span class="badge conf-mid">no spread today</span>`;
   const cls = { low: "conf-high", medium: "conf-mid", high: "conf-low" }[level] || "conf-mid";
   return `<span class="badge ${cls}">${esc(level)} blowout risk</span>`;
 }
 
 function legCard(leg) {
   const sideArrow = leg.side === "over" ? "▲ O" : "▼ U";
-  const edgePct = ((leg.proj - leg.alt_line) / leg.alt_line * 100).toFixed(0);
+  const line = lineOf(leg);
+  const isAlt = (leg.line_type || "alt") === "alt";
+  const where = leg.home === undefined ? "vs" : leg.home ? "vs" : "@";
+  const lineInfo = isAlt ? `vs. full line ${leg.book_line} · alt ${line}` : `vs. line ${line}`;
+  const probTxt = leg.prob != null ? ` · model ${Math.round(leg.prob * 100)}%` : "";
   return `
     <div class="card">
       <div class="top">
         <div class="who">
           <div class="name">${esc(leg.player)}</div>
-          <div class="meta">${esc(leg.team)} vs ${esc(leg.opp)} · ${esc(leg.time_et)}</div>
+          <div class="meta">${esc(leg.team)} ${where} ${esc(leg.opp)} · ${esc(leg.time_et)}</div>
         </div>
         <div class="pt">
-          <div class="num pos">${sideArrow} ${leg.alt_line}</div>
+          <div class="num pos">${sideArrow} ${line}</div>
           <div class="lbl">${esc(statLabel[leg.stat] || leg.stat)}</div>
         </div>
       </div>
       <div class="mkt">
         <span class="mkt-item">Model proj <b>${leg.proj}</b>
-          <span class="dim">vs. full line ${leg.book_line} · alt ${leg.alt_line} (+${edgePct}%)</span></span>
+          <span class="dim">${lineInfo}${probTxt}</span></span>
         <span class="mkt-src">${fmtOdds(leg.odds)} · ${esc(leg.book)}</span>
       </div>
       <div class="badges">
@@ -78,16 +86,17 @@ function legCard(leg) {
 
 function historyRow(h) {
   const hits = h.legs.filter((l) => l.hit).length;
-  const cls = h.result === "win" ? "win-go" : "win-off";
+  const cls = { win: "win-go", loss: "win-off" }[h.result] || "win-wait";
+  const label = { win: "HIT", loss: "MISS", void: "VOID" }[h.result] || "—";
   const legSummary = h.legs.map((l) =>
-    `${esc(l.player.split(" ").slice(-1)[0])} ${l.side === "over" ? "O" : "U"}${l.alt_line}
-     ${statAbbr[l.stat] || l.stat} ${l.hit ? "✓" : "✗"}`
+    `${esc(l.player.split(" ").slice(-1)[0])} ${l.side === "over" ? "O" : "U"}${lineOf(l)}
+     ${statAbbr[l.stat] || l.stat} ${l.void ? "void" : l.hit ? "✓" : "✗"}`
   ).join(" · ");
   return `<tr>
     <td><div class="pn">${esc(h.date)}</div><div class="pm">${esc(legSummary)}</div></td>
     <td class="num">${fmtOdds(h.combined_odds)}</td>
     <td class="num dim">${hits}/${h.legs.length}</td>
-    <td><span class="win ${cls}">${h.result === "win" ? "HIT" : "MISS"}</span></td>
+    <td><span class="win ${cls}">${label}</span></td>
   </tr>`;
 }
 
@@ -115,10 +124,11 @@ async function main() {
   const upd = new Date(data.generated_at);
   $("#subtitle").textContent = `updated ${upd.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
   const history = data.history || [];
-  $("#parlay-body").innerHTML =
-    parlayHero(data.today) +
-    data.today.legs.map(legCard).join("") +
-    trackRecord(history) +
-    historyTable(history);
+  if (data.note && $("#note")) $("#note").textContent = data.note;
+  const todayHtml = data.today && data.today.legs && data.today.legs.length
+    ? parlayHero(data.today) + data.today.legs.map(legCard).join("")
+    : `<div class="notice" style="margin:12px 0">${esc(data.no_parlay_reason ||
+        "No parlay yet today. It's picked each morning once the day's lines are in.")}</div>`;
+  $("#parlay-body").innerHTML = todayHtml + trackRecord(history) + historyTable(history);
 }
 main();
