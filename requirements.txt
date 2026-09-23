@@ -4,4 +4,5 @@ pandas             # model features + backtest
 numpy
 scipy              # negative binomial for over/under probabilities
 lightgbm           # the PRA model (nproj/model/pra_model.py)
+scikit-learn       # required by lightgbm's LGBMRegressor interface
 # nba_api          # retired: stats.nba.com is unreachable from GitHub Actions
