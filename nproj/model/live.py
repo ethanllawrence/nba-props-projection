@@ -111,8 +111,9 @@ def _upcoming(con, date_s):
         games[f"up-{r['game_id']}"] = {"game_id": f"up-{r['game_id']}", "date": pd.Timestamp(date_s),
                                        "season": 0, "playoff": 0, "home": r["home_team"],
                                        "away": r["away_team"], "home_score": np.nan,
-                                       "away_score": np.nan, "spread_home": r["spread_home"],
-                                       "total": r["total"]}
+                                       "away_score": np.nan,
+                                       "spread_home": np.nan if r["spread_home"] is None else float(r["spread_home"]),
+                                       "total": np.nan if r["total"] is None else float(r["total"])}
     up = pd.DataFrame(out)
     if len(up):
         up["played"] = 1 - up["dnp"]

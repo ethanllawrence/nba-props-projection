@@ -105,6 +105,8 @@ def _asof(left, right, by, cols):
 def _team_games(games):
     """One row per team per game with schedule and betting context."""
     games = games.copy()
+    for c in ("total", "spread_home"):     # missing lines arrive as None
+        games[c] = pd.to_numeric(games[c], errors="coerce")
     bad = ~games["total"].between(180, 280) | (games["spread_home"].abs() > 25)
     games.loc[bad, ["total", "spread_home"]] = np.nan   # a few feeds carry half-game or junk lines
     home = games.assign(team=games.home, opp=games.away, home_flag=1,

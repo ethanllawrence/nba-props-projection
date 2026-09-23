@@ -35,10 +35,13 @@ def test_live_model():
     box, games, _ = F.load_history(hist)
     b, g = box[box.date == DATE], games[games.date == DATE]
     with db.session() as con:
-        for _, r in g.iterrows():
+        for i, (_, r) in enumerate(g.iterrows()):
+            # past games come back from ESPN with no line: the first game
+            # has none here, like the real Actions run that hit this
+            sp, tot = (None, None) if i == 0 else (r.spread_home, r.total)
             con.execute("INSERT INTO games (game_id,date,home_team,away_team,status,spread_home,total,"
                         "tipoff_utc) VALUES (?,?,?,?,?,?,?,?)",
-                        (r.game_id, DATE, r.home, r.away, "Scheduled", r.spread_home, r.total,
+                        (r.game_id, DATE, r.home, r.away, "Scheduled", sp, tot,
                          "2026-03-11T00:00Z"))
         for _, r in b.iterrows():
             st = "out" if r.dnp == 1 and "COACH" not in str(r.dnp_reason) else "active"
