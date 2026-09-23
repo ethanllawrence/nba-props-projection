@@ -12,16 +12,24 @@ leg's chance is the model's probability blended with the sportsbook price
 number (no negative-value legs). If the model didn't run, it falls back to
 each player's recent games on a normal curve, pulled 15% toward a coin flip.
 
+Overs only (Robin, 2026-09-23: "something to cheer for"). PARLAY_SIDES
+(env NPROJ_PARLAY_SIDES, default "over") can bring unders back. Alt overs
+are the heart of it: a lower line the model is at least MODEL_ALT_PROB sure
+of, at a shorter price. Main-line overs qualify only at MODEL_MIN_PROB_MAIN.
+"Most likely overs", not value (Robin's choice, 2026-09-23): legs are ranked
+by chance of hitting, with no fair-price rule, so expect a small long-run
+loss of about the sportsbook's margin. Two guards keep it sensible: the
+model's own projection must be above the line (it agrees it's an over), and
+no leg priced shorter than MIN_LEG_ODDS (a -475 leg barely moves the payout).
+
 Budget (see nproj/ingest/odds.py): the main prop lines are already bought
-by the morning odds run. Whatever is left of the day's allowance buys, in
-order:
-  1. point spreads for the whole slate (1 credit), for the blowout check;
-  2. alt-line ladders for the best few over candidates (1 credit per
-     game per stat, at most MAX_ALT_CREDITS). With an alt ladder, a leg
-     can use a lower line the model is ~80% sure of, at a shorter price,
-     which is the original alt-line design. Without one, legs use the
-     main line, so fewer legs reach the target price.
-Nothing is bought outside the morning run.
+by the morning odds run. Whatever is left of the day's allowance buys
+alt-line ladders for the most promising overs (1 credit per game per stat,
+at most MAX_ALT_CREDITS), picked by the model's chance at the MAIN line
+whether or not that clears the main-line bar, since a player at 50% on the
+main line can be 80% on a lower alt. Spreads for the blowout check come
+free from ESPN's schedule; the Odds API is only asked for them (1 credit)
+when ESPN has none. Nothing is bought outside the morning run.
 
 State lives in docs/data/parlay.json (committed): today's parlay and the
 settled history. The daily run is stateless, so settling re-pulls the
@@ -41,9 +49,10 @@ STAT_LABEL = {"points": "points", "rebounds": "rebounds", "assists": "assists", 
 
 MIN_PROB_MAIN = 0.62        # fallback method: chance needed for a main-line leg
 ALT_TARGET_PROB = 0.78      # fallback method: highest alt line at least this likely
-MODEL_MIN_PROB_MAIN = 0.55  # PRA model: blended chance needed for a main-line leg
-MODEL_ALT_PROB = 0.70       # PRA model: highest alt line at least this likely...
-MODEL_MIN_EDGE = 0.0        # ...and never worse than a fair price
+MODEL_MIN_PROB_MAIN = 0.60  # PRA model: blended chance needed for a main-line over
+MODEL_ALT_PROB = 0.70       # PRA model: highest alt line at least this likely
+MODEL_MIN_EDGE = None       # no fair-price rule ("most likely overs"); a number brings it back
+MIN_LEG_ODDS = -350         # skip legs priced shorter than this
 SHRINK = 0.85               # pull probabilities toward 50%; small samples overstate certainty
 MIN_GAMES = 8               # need at least this many recent games to trust the spread
 MIN_LEGS, MAX_LEGS = 2, 4
@@ -51,6 +60,8 @@ TARGET_LO, TARGET_HI = 200, 320
 MIN_ACCEPT = 150            # below this combined price, skip the day rather than force it
 MAX_PER_GAME = 2
 MAX_ALT_CREDITS = 4
+import os as _os
+PARLAY_SIDES = tuple(x for x in _os.environ.get("NPROJ_PARLAY_SIDES", "over").split(",") if x)
 HISTORY_KEEP = 60
 
 _N = NormalDist()
@@ -130,11 +141,23 @@ def _slate(con, date_s):
            WHERE pp.date = ?""", (date_s,)).fetchall()
 
 
-def candidates(con, date_s, saved):
-    """Every qualifying main-line option: one dict per player/stat/side."""
+def espn_spreads(con, date_s):
+    """Team -> point spread from ESPN's schedule (free). Home spread is
+    stored per game; the away team gets the opposite."""
+    out = {}
+    for g in con.execute("SELECT home_team, away_team, spread_home FROM games WHERE date=?", (date_s,)):
+        if g["spread_home"] is not None:
+            out[g["home_team"]], out[g["away_team"]] = g["spread_home"], -g["spread_home"]
+    return out
+
+
+def candidates(con, date_s, saved, qualify=True):
+    """Main-line options, one dict per player/stat/side. qualify=False keeps
+    every over with a line (no probability bar): the pool alt lines are
+    bought for and searched in."""
     from ..export.site_export import _time_et
 
-    spreads = saved.get("spreads", {})
+    spreads = saved.get("spreads") or espn_spreads(con, date_s)
     slate = _slate(con, date_s)
     matched, _ = odds.match_lines([r["name"] for r in slate], saved.get("lines", {}))
     out = []
@@ -183,9 +206,14 @@ def candidates(con, date_s, saved):
                 p_over, floor = prob_over(mean, std, ln["line"]), MIN_PROB_MAIN
             for side, p, price in (("over", p_over, ln.get("over")),
                                    ("under", 1 - p_over, ln.get("under"))):
-                if price is None or p < floor:
+                if side not in PARLAY_SIDES and qualify:
                     continue
-                if model_on and p - live.implied(price) < MODEL_MIN_EDGE:
+                if not qualify and side != "over":
+                    continue
+                if price is None:
+                    continue
+                if qualify and not _leg_ok(p, floor, price, mean, ln["line"], side,
+                                           model_on and MODEL_MIN_EDGE is not None):
                     continue
                 out.append({**base, "stat": stat, "side": side, "line": ln["line"],
                             "book_line": ln["line"], "line_type": "main", "odds": int(price),
@@ -195,9 +223,23 @@ def candidates(con, date_s, saved):
     return out
 
 
+def _leg_ok(p, floor, price, proj, line, side, check_edge=False):
+    """A leg qualifies: likely enough, not priced too short, and the model's
+    own projection on the leg's side of the line."""
+    if p < floor or int(price) < MIN_LEG_ODDS:
+        return False
+    if (side == "over" and proj <= line) or (side == "under" and proj >= line):
+        return False
+    if check_edge:
+        from . import live
+        return p - live.implied(price) >= MODEL_MIN_EDGE
+    return True
+
+
 def alt_options(cands, saved):
-    """For over candidates with an alt ladder: the highest alt line below the
-    main line that the model is still ALT_TARGET_PROB sure of."""
+    """For over options with an alt ladder (pass the unqualified pool, see
+    candidates): the highest alt line below the main line that the model is
+    still MODEL_ALT_PROB sure of (ALT_TARGET_PROB without the model)."""
     alt_by_name, _ = odds.match_lines({c["player"] for c in cands}, saved.get("alts", {}))
     out = []
     for c in cands:
@@ -211,7 +253,9 @@ def alt_options(cands, saved):
             if c.get("model"):
                 from . import live
                 view = live.assess(c["player_id"], c["stat"], step["line"], step["over"], None)
-                p, ok = view["p_over"], view["edge"] >= MODEL_MIN_EDGE and view["p_over"] >= MODEL_ALT_PROB
+                p = view["p_over"]
+                ok = _leg_ok(p, MODEL_ALT_PROB, step["over"], c["proj"], step["line"], "over",
+                             MODEL_MIN_EDGE is not None)
             else:
                 p = prob_over(c["proj"], c["std"], step["line"])
                 ok = p >= ALT_TARGET_PROB
@@ -229,6 +273,8 @@ def buy_extras(con, date_s, saved):
     """Spend leftover morning credits on spreads, then alt ladders. Returns a
     short log dict. Changes `saved` in place and re-saves lines.json."""
     log = {"leftover_before": odds.leftover_credits(saved)}
+    if "spreads" not in saved and espn_spreads(con, date_s):
+        saved["spreads"] = espn_spreads(con, date_s)      # free, keeps the credit for alts
     if odds.leftover_credits(saved) >= 1 and "spreads" not in saved:
         try:
             saved["spreads"] = odds.spend_extra(saved, odds.fetch_spreads, date_s)
@@ -239,8 +285,7 @@ def buy_extras(con, date_s, saved):
     if "alts" not in saved:
         budget = min(MAX_ALT_CREDITS, odds.leftover_credits(saved))
         wanted = {}  # event_id -> [stats]
-        overs = sorted((c for c in candidates(con, date_s, saved) if c["side"] == "over"),
-                       key=lambda c: -c["prob"])
+        overs = sorted(candidates(con, date_s, saved, qualify=False), key=lambda c: -c["prob"])
         for c in overs:
             if budget <= 0:
                 break
@@ -391,7 +436,8 @@ def update(con, date_s, allow_spend=False):
         if allow_spend:
             log["extras"] = buy_extras(con, date_s, saved)
         cands = candidates(con, date_s, saved)
-        legs, price = select_legs(cands + alt_options(cands, saved))
+        pool = candidates(con, date_s, saved, qualify=False)
+        legs, price = select_legs(cands + alt_options(pool, saved))
         log["candidates"] = len(cands)
         if legs:
             data["today"] = {"date": date_s, "combined_odds": price, "status": "pending",
@@ -404,13 +450,17 @@ def update(con, date_s, allow_spend=False):
             data["today"] = None
             data["no_parlay_date"] = date_s
             data["no_parlay_reason"] = (
-                "No parlay today: not enough legs cleared the conviction bar "
-                f"({len(cands)} qualifying options) to reach +{TARGET_LO} without forcing it.")
+                "No parlay today: not enough overs cleared the conviction bar "
+                f"({len(cands)} main-line overs, {len(alt_options(pool, saved))} alt overs "
+                f"qualified) to reach +{TARGET_LO} without forcing it.")
             log["parlay"] = None
-        data["note"] = ("Picked automatically each morning from the Today board's projections "
-                        "and FanDuel/DraftKings lines: legs the model gives a high chance to hit, "
-                        "with steady minutes and no blowout risk. Settled the next morning from "
-                        "the real box scores.")
+        data["note"] = ("Overs only, picked automatically each morning from the Today board's "
+                        "projections and FanDuel/DraftKings lines: alt-line overs the model is at "
+                        "least 70% sure of when the budget bought alt lines, main-line overs at 60%+ "
+                        "otherwise, from players with steady minutes and no blowout risk. Ranked by "
+                        "chance of hitting, not value, so over time expect to lose about the "
+                        "sportsbook's cut; it's for fun. Legs stay fixed once picked. Settled the "
+                        "next morning from the real box scores.")
 
     after = json.dumps({k: v for k, v in data.items() if k != "generated_at"}, sort_keys=True)
     if after != before:

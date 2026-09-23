@@ -91,6 +91,47 @@ def assess(player_id, stat, line, over_price=None, under_price=None):
     return {"p_over": round(p, 3), "call": call, "edge": round(edge, 3)}
 
 
+TD_PATH = Path(__file__).parent / "td_calibration.json"
+TD_SIMS = 40000
+
+
+def td_probability(player_id, corr=None, seed=7):
+    """Chance of 10+ points, rebounds and assists tonight, from the model's
+    three projections and their count distributions (see pra_model), drawn
+    TOGETHER: a Gaussian copula ties them with the correlation measured on
+    held-out games (td_calibration.json), because a big-minutes night lifts
+    all three. Multiplying three separate chances would ignore that.
+    -> float or None."""
+    from scipy import stats as st
+    pr = PROJ.get(str(player_id))
+    if not pr or not all(k in pr for k in ("points", "rebounds", "assists")):
+        return None
+    if corr is None:
+        try:
+            corr = json.loads(TD_PATH.read_text())["corr"]
+        except (OSError, ValueError, KeyError):
+            corr = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+    rng = np.random.default_rng(seed)
+    z = rng.multivariate_normal(np.zeros(3), np.array(corr, dtype=float), size=TD_SIMS)
+    u = st.norm.cdf(z)
+    hit = np.ones(TD_SIMS, dtype=bool)
+    for i, stat in enumerate(("points", "rebounds", "assists")):
+        hit &= _nb_ppf(u[:, i], pr[stat], *pr["var"][stat]) >= 10
+    return float(hit.mean())
+
+
+def _nb_ppf(u, mu, a, b):
+    """Quantiles of the count distribution used everywhere else (NB with
+    Var = a*mu + b*mu^2, Poisson when not over-dispersed)."""
+    from scipy import stats as st
+    mu = max(float(mu), 0.05)
+    var = a * mu + b * mu ** 2
+    if var <= mu * 1.0001:
+        return st.poisson.ppf(u, mu)
+    n, q = mu ** 2 / (var - mu), mu / var
+    return st.nbinom.ppf(u, n, q)
+
+
 def _upcoming(con, date_s):
     rows = con.execute(
         """SELECT pp.player_id, pp.game_id, pp.status, p.name, p.team,

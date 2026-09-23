@@ -131,33 +131,30 @@ def project_date(con, date_s: str):
     return written
 
 
-def project_triple_double_prob(con, player_id, season_hit_rate=None, before_date=None):
-    """Rough triple-double probability for the Jokic tracker: blends the
-    season-long empirical hit rate (stable, but slow to react) with the
-    empirical hit rate over the player's last games actually in the db
-    (reactive, but noisy over a small sample) — NOT a real joint model.
+TD_WINDOW = 80   # games in the triple-double hit rate
 
-    A real version needs the joint distribution across points/rebounds/
-    assists (they're correlated — a big-assist game often means a lower-
-    usage, lower-scoring game for a ball-dominant player), not three
-    independent marginals multiplied together, let alone this blend. See
-    the planning doc and docs/methodology.html for why that's a separate,
-    harder modeling problem than the points/rebounds/assists baseline above.
+
+def project_triple_double_prob(con, player_id, season_hit_rate=None, before_date=None):
+    """Triple-double chance for the Jokic tracker: halfway between his hit
+    rate over his last TD_WINDOW games (regular season and playoffs) and 50%.
+
+    Tested 2026-09-23 on 2024-25 and 2025-26 (scripts/td_backtest.py): no
+    method predicted his nightly triple-doubles better than a coin flip. The
+    PRA model's rebounds/assists projections drawn together (a copula,
+    nproj/model/live.td_probability) came out about 10 points too low, and
+    the old 60/40 blend of season rate and last-20 rate chased hot and cold
+    streaks and called only 41% of 2025-26 games right. His raw 80-game rate
+    ran about 5 points low both seasons (his rate kept rising); pulled halfway
+    to 50% it scored like a coin flip (Brier 0.2514 both seasons) with its
+    average within a few points of the truth. So that's the number shown, and
+    the yes/no call is made against the sportsbook price (site_export).
     """
     rows = con.execute(
         """SELECT points, rebounds, assists FROM player_game_logs
            WHERE player_id = ? AND (? IS NULL OR date < ?) ORDER BY date DESC LIMIT ?""",
-        (player_id, before_date, before_date, MAX_GAMES_CONSIDERED),
+        (player_id, before_date, before_date, TD_WINDOW),
     ).fetchall()
-    if not rows:
+    if len(rows) < 20:
         return season_hit_rate
-
-    recent_hits = sum(1 for r in rows if r["points"] >= 10 and r["rebounds"] >= 10 and r["assists"] >= 10)
-    recent_rate = recent_hits / len(rows)
-
-    if season_hit_rate is None:
-        return round(recent_rate, 3)
-
-    # Season rate is the larger, more stable sample — weight it higher.
-    blended = 0.6 * season_hit_rate + 0.4 * recent_rate
-    return round(blended, 3)
+    hits = sum(1 for r in rows if r["points"] >= 10 and r["rebounds"] >= 10 and r["assists"] >= 10)
+    return round((hits / len(rows) + 0.5) / 2, 3)

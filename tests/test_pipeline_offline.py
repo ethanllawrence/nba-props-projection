@@ -372,6 +372,7 @@ def test_parlay_daily_and_settle():
     t = pj["today"]
     assert t and t["status"] == "pending" and 2 <= len(t["legs"]) <= 4, pj
     assert 150 <= t["combined_odds"] <= 320
+    assert all(l["side"] == "over" for l in t["legs"]), "parlay is overs only"
     assert len({l["player_id"] for l in t["legs"]}) == len(t["legs"])
     risk = {l["team"]: l["blowout_risk"] for l in t["legs"]}
     assert all(risk.get(tm, "medium") == "medium" for tm in ("PHI", "MEM"))

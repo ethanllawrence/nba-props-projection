@@ -1,6 +1,7 @@
 /* Jokic triple-double tracker — season counter + recent games + tonight's projection.
    Season summary and recent games are Jokic's real 2025-26 numbers (see docs/data/jokic.json's
-   note). "Tonight" is a placeholder until a real TD model exists. */
+   note). The call is his long-run triple-double rate against the Yes price;
+   see nproj/model/predict.project_triple_double_prob for why. */
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -44,7 +45,8 @@ function tonightCall(t) {
         ? `Nikola Jokic · DEN ${esc(t.opp)} · ${esc(t.time_et)}`
         : "Nikola Jokic · no game today · call for his next game"}</div>
       <div class="call-badge ${isYes ? "call-yes" : "call-no"}">Bet TD: ${isYes ? "YES" : "NO"}</div>
-      <div class="call-prob">Model gives it <b>${pct}%</b> to be a triple-double</div>
+      <div class="call-prob">His chance: about <b>${pct}%</b>${p.break_even != null
+        ? ` · price needs ${Math.round(p.break_even * 100)}%` : ""}</div>
       ${mkt ? `<div class="call-market">Market: ${mkt.side === "yes" ? "Yes" : "No"}
         ${mkt.odds > 0 ? "+" + mkt.odds : mkt.odds} · ${esc(mkt.book)}</div>` : ""}
     </div>

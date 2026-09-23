@@ -59,6 +59,12 @@ def test_live_model():
         # a missing line once shrank everyone to ~17 pts: the top scorer
         # on this slate (Luka) must still project like a star
         assert max(v["points"] for v in live.PROJ.values()) > 25, "projections shrunk"
+        # triple-double chance: drawing points/rebounds/assists together
+        # (positive correlation) must beat multiplying them separately
+        tdp = max(live.PROJ, key=lambda p: min(live.PROJ[p]["rebounds"], live.PROJ[p]["assists"]))
+        p_joint = live.td_probability(tdp)
+        p_indep = live.td_probability(tdp, corr=[[1, 0, 0], [0, 1, 0], [0, 0, 1]])
+        assert 0 < p_indep < p_joint < 1, (p_indep, p_joint)
         top = sorted(live.PROJ, key=lambda p: -live.PROJ[p]["points"])[:6]
         # lines: two below the projection, two above, two right at it
         lines = {}
@@ -81,8 +87,12 @@ def test_live_model():
         from nproj.ingest.odds import load_lines
         from nproj.model import parlay
         cands = parlay.candidates(con, DATE, load_lines(DATE))
-        assert cands and all(c["model"] for c in cands)
-        assert all(c["prob"] >= parlay.MODEL_MIN_PROB_MAIN for c in cands)
+        pool = parlay.candidates(con, DATE, load_lines(DATE), qualify=False)
+        # the pool alt lines are bought for: every over with a line, model-driven
+        assert pool and all(c["model"] and c["side"] == "over" for c in pool)
+        # qualified main-line legs: overs only, 60%+, projection above the line
+        assert all(c["side"] == "over" and c["prob"] >= parlay.MODEL_MIN_PROB_MAIN
+                   and c["proj"] > c["line"] and c["odds"] >= parlay.MIN_LEG_ODDS for c in cands)
     board = json.loads((site / "today.json").read_text())
     assert board["model"] == "lightgbm" and n > 20
     lined = [p for p in board["players"] if p["stats"]["points"].get("line") is not None]

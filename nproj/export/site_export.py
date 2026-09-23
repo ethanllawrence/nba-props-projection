@@ -233,17 +233,31 @@ def _export_jokic(con, date_s: str):
     else:
         tonight["opp"] = None  # Denver is off; the page says so instead of a stale matchup
         tonight["time_et"] = None
-    if prob is not None:
-        tonight["call"] = "yes" if prob >= 0.5 else "no"
-        tonight.setdefault("td_projection", {})
-        tonight["td_projection"]["model_prob"] = prob
-        tonight["td_projection"]["note"] = (
-            f"Placeholder method: his {season_rate * 100:.1f}% season hit rate blended 60/40 with "
-            "his hit rate over his last 20 games. Not a real joint model of points, rebounds and "
-            "assists yet. See the methodology page."
-        )
     td = load_lines(date_s).get("jokic_td") if game else None
     tonight["market"] = {"side": "yes", "odds": td["odds"], "book": td["book"]} if td else None
+    if prob is not None:
+        from ..model.live import implied
+        n_games = predict.TD_WINDOW
+        tp = tonight.setdefault("td_projection", {})
+        tp["model_prob"] = prob
+        if td:
+            # the call is made against the price: yes when the price pays more
+            # than his chance deserves
+            be = implied(int(td["odds"]))
+            tonight["call"] = "yes" if prob > be else "no"
+            tp["break_even"] = round(be, 3)
+            why = (f"The Yes price ({int(td['odds']):+d}) needs {be * 100:.0f}% to break even, so the call "
+                   f"is {'YES' if prob > be else 'NO'}.")
+        else:
+            tonight["call"] = "yes" if prob >= 0.5 else "no"
+            tp.pop("break_even", None)
+            why = "No Yes price today, so the call is just whether his chance is above 50%."
+        tp["note"] = (
+            f"His chance is halfway between his triple-double rate over his last {n_games} games "
+            "and 50%. We tested "
+            "fancier versions (the PRA model's rebound and assist projections, recent-form blends) "
+            "on the last two seasons and none predicted his nightly triple-doubles better than a "
+            "coin flip, so his long-run rate pulled toward 50/50 is the honest number. " + why)
     data["tonight"] = tonight
     if {**data, "generated_at": None} == {**before, "generated_at": None}:
         return False  # nothing new (e.g. offseason); skip so the daily run doesn't commit noise

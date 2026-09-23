@@ -1,0 +1,60 @@
+{
+ "2025": {
+  "games": 82,
+  "actual_rate": 0.427,
+  "coin": {
+   "mean": 0.5,
+   "brier": 0.25,
+   "logloss": 0.6931,
+   "calls_right": 0.427
+  },
+  "rate80": {
+   "mean": 0.382,
+   "brier": 0.2598,
+   "logloss": 0.7151,
+   "calls_right": 0.573
+  },
+  "blend": {
+   "mean": 0.457,
+   "brier": 0.2596,
+   "logloss": 0.7136,
+   "calls_right": 0.524
+  },
+  "half": {
+   "mean": 0.439,
+   "brier": 0.2514
+  }
+ },
+ "2026": {
+  "games": 71,
+  "actual_rate": 0.493,
+  "coin": {
+   "mean": 0.5,
+   "brier": 0.25,
+   "logloss": 0.6931,
+   "calls_right": 0.493
+  },
+  "rate80": {
+   "mean": 0.433,
+   "brier": 0.2551,
+   "logloss": 0.7035,
+   "calls_right": 0.507
+  },
+  "blend": {
+   "mean": 0.479,
+   "brier": 0.2656,
+   "logloss": 0.7247,
+   "calls_right": 0.408
+  },
+  "model": {
+   "mean": 0.357,
+   "brier": 0.2576,
+   "logloss": 0.7106,
+   "calls_right": 0.521
+  },
+  "half": {
+   "mean": 0.467,
+   "brier": 0.2514
+  }
+ }
+}

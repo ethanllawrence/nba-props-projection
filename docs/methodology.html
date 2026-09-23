@@ -77,33 +77,42 @@
     the line, would have lost about 6% of every dollar bet in the backtest.)</p>
 
     <h2>Parlay of the Day</h2>
-    <p>Picked automatically every morning, 2-4 legs combined to roughly +200 to +300. It's about
-    conviction: legs that should hit often, not long shots. Each leg's chance is the model's
-    blended probability (see Edge coloring), and a leg has to be at least a fair price by that
-    number. Main-line legs need 55% or better; when the day's odds budget has credits left, it
-    also buys alt-line prices for the best few candidates and uses the highest alt line the model
-    is at least 70% sure of. Legs only come from players with steady minutes and no injury tag,
-    and never from a game with a double-digit point spread, where starters often sit the fourth
-    quarter. Legs are added in order of model confidence, at most one per
-    player and two per game, until the price reaches the target; if it can't get there without
-    forcing weak legs, there's no parlay that day. The next morning each leg is graded against
-    the real box score (a player who didn't play is void, like a sportsbook would do it), and
-    the History section keeps the running record. Once picked, the legs never change during the
-    day, since you may already have bet them. If a later injury check finds that a leg's player
-    was ruled out or its projection moved against the leg, the leg gets a flag instead.</p>
+    <p>Picked automatically every morning: 2-4 overs combined to roughly +200 to +300, overs
+    only, so every leg is something to cheer for. Legs are the overs most likely to hit, not the
+    best value: alt-line overs the model gives at least a 70% chance (the highest such alt line
+    for the player) when the day's leftover odds budget bought alt lines, and main-line overs at
+    60%+. Each leg's chance is the model's blended probability (see Edge coloring), the model's
+    own projection has to be above the line, and no leg is priced shorter than -350 (those barely
+    move the payout). Because legs are ranked by likelihood rather than price, expect to lose
+    roughly the sportsbook's cut over time; it's built for fun, not profit. Legs only come from
+    players with steady minutes and no injury tag, never from a game with a double-digit spread,
+    at most one per player and two per game. If it can't reach +150 without forcing weak legs,
+    there's no parlay that day. In a replay of November 2025 with main lines only, that happened
+    on 6 of 10 nights, and the 4 parlays it did make were mostly low assist and rebound overs;
+    alt lines on better players are what make it work, and the budget buys a few games' worth
+    each morning. The next morning each leg is graded against the real box score (a player who
+    didn't play is void, like a sportsbook would do it), and the History section keeps the
+    running record. Once picked, the legs never change during the day, since you may already
+    have bet them. If a later injury check finds that a leg's player was ruled out or its
+    projection moved against the leg, the leg gets a flag instead.</p>
 
     <h2>Jokic TD tracker</h2>
-    <p>A separate tab tracking Nikola Jokic's triple-double prop specifically — his favorite
-    bet and a fun one to track on its own, given how often it hits. The page leads with a
-    single call: bet the triple-double yes or no tonight, based on whether the model gives it
-    better or worse than even odds — that call matters more here than the edge math, so it's
-    the headline rather than a footnote. The model probability and market price sit underneath
-    as supporting detail. The season summary and recent-games log below that are Jokic's real
-    2025-26 numbers; the triple-double probability itself is a real but deliberately simple
-    placeholder (a blend of his season hit rate and recent-game hit rate) until a proper joint
-    probability model across points/rebounds/assists exists, rather than three independent
-    point estimates multiplied together — see the planning doc for more on why that's harder
-    than it sounds.</p>
+    <p>A separate tab for Nikola Jokic's triple-double prop. It leads with one call: bet the
+    triple-double Yes tonight, or don't. His chance is halfway between his triple-double rate
+    over his last 80 games and 50%. The call compares that chance to the sportsbook's Yes price: Yes when the price pays
+    more than his chance deserves (for example +130, which needs 43%, when he's at 46%), No
+    otherwise. With no price that day, it's Yes only above 50%.</p>
+    <p>Why not something fancier? We tested it. Since 10 points is nearly automatic for him (97%
+    of games), a triple-double comes down to 10 rebounds and 10 assists on the same night, and the
+    main model already projects both, so we drew them together from the model (they rise and fall
+    together, mostly through minutes). Replayed on 2024-25 and 2025-26 with the model trained only
+    on earlier games, it ran about 10 points low, and neither it nor a recent-form blend (the
+    site's old method, which called only 41% of 2025-26 games right by chasing streaks)
+    predicted his nightly triple-doubles better than a coin flip. On any given night he's close
+    to 50/50. His raw 80-game rate ran about 5 points low in both seasons (his rate kept rising),
+    and pulling it halfway to 50% scored as well as a coin flip with an average close to what
+    actually happened, so that's the number shown, and the price is where any edge would be.
+    The test script is in the repo (scripts/td_backtest.py) to re-run as seasons go on.</p>
 
     <h2>Results</h2>
     <p>Every morning, last night's board is graded against the real box scores. Two things are
