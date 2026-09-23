@@ -1,18 +1,19 @@
 # One-off: download 3 seasons of NBA history (box scores, spreads, and the
 # sportsbook prop lines ESPN kept) for training and backtesting the model.
-# Actions tab -> "Backfill history" -> Run workflow.
-#   limit = 20  : quick test, 20 games per season, prints counts, commits nothing
-#   limit blank : the real thing (roughly 30-60 min), commits history/<season>/
+# Actions tab -> "Backfill history" -> Run workflow, then pick a mode:
+#   full : every game of all three seasons, commits history/<season>/ (default)
+#   test : 20 games per season, prints counts, commits nothing
 
 name: Backfill history
 
 on:
   workflow_dispatch:
     inputs:
-      limit:
-        description: "Games per season (blank = all; try 20 first as a test)"
-        required: false
-        default: "20"
+      mode:
+        description: "full = download everything and save it; test = 20 games per season, saves nothing"
+        type: choice
+        options: [full, test]
+        default: full
 
 permissions:
   contents: write
@@ -34,7 +35,7 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Download season ${{ matrix.season }}
         env:
-          LIMIT: ${{ github.event.inputs.limit }}
+          LIMIT: ${{ github.event.inputs.mode == 'test' && '20' || '' }}
         run: |
           if [ -n "$LIMIT" ]; then
             python -m nproj history --season ${{ matrix.season }} --out history --limit "$LIMIT"
@@ -50,7 +51,7 @@ jobs:
 
   commit:
     needs: season
-    if: ${{ always() && github.event.inputs.limit == '' }}
+    if: ${{ always() && github.event.inputs.mode != 'test' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
