@@ -27,6 +27,42 @@ const STAT_COLS = [
 
 let sortState = { key: "points", dir: "desc" };
 
+/* Injury check (nproj/injury_check.py): later runs compare against the
+   morning board and list who was ruled out/cleared and whose projection
+   moved. Moved cells get a small arrow with the change. */
+const MOVE_MIN = { points: 1.5, rebounds: 1.0, assists: 1.0, pra: 2.0 };
+const clock = (iso) => new Date(iso).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+const STAT_ABBR = { points: "pts", rebounds: "reb", assists: "ast", pra: "PRA" };
+
+function checkBanner(ic) {
+  if (!ic) {
+    return `<div class="check-box calm">Injury checks run about an hour before each tip-off.
+      Anything that changes after this board (a player ruled out, projections moving because of it)
+      will show up here, so check back before games start.</div>`;
+  }
+  const head = `Injury check ${clock(ic.checked_at)} · changes since ${esc(ic.since_label || "this morning's board")}
+    (${clock(ic.since)})`;
+  const changes = ic.status_changes || [];
+  const moves = ic.moves || [];
+  if (!changes.length && !moves.length) {
+    return `<div class="check-box calm"><b>${head}</b>
+      <div>No status changes or projection moves. The morning numbers still stand.</div></div>`;
+  }
+  const st = changes.slice(0, 12).map((c) =>
+    `<li><b>${esc(c.player)}</b> (${esc(c.team)}): ${esc(c.from)} → <b class="${c.to === "out" ? "neg" : c.to === "active" ? "pos" : ""}">${esc(c.to)}</b></li>`).join("");
+  const mv = moves.slice(0, 8).map((m) => {
+    const parts = Object.entries(m.delta || {}).filter(([k, d]) => Math.abs(d) >= MOVE_MIN[k])
+      .map(([k, d]) => `${STAT_ABBR[k]} ${m.from[k]} → ${m.to[k]} <span class="mv ${d > 0 ? "up" : "down"}">${d > 0 ? "▲" : "▼"}${Math.abs(d).toFixed(1)}</span>`);
+    const flips = Object.entries(m.call_flips || {}).map(([k, f]) =>
+      `${STAT_ABBR[k]} edge ${f.from || "none"} → ${f.to || "none"}`);
+    return `<li><b>${esc(m.player)}</b> (${esc(m.team)}): ${parts.concat(flips).join(" · ")}</li>`;
+  }).join("");
+  return `<div class="check-box"><b>${head}</b>
+    ${st ? `<div class="ck-sub">Status changes</div><ul>${st}</ul>` : ""}
+    ${mv ? `<div class="ck-sub">Projections that moved</div><ul>${mv}</ul>` : ""}
+  </div>`;
+}
+
 /* PRA: the model's own PRA projection and the book's real PRA line when
    they exist; otherwise the sums of the three stats and three lines. */
 function praOf(player) {
@@ -63,7 +99,12 @@ function sortPlayers(list) {
   });
 }
 
-function statCell(stat, extraCls) {
+function moveTag(delta, key) {
+  if (delta == null || Math.abs(delta) < MOVE_MIN[key]) return "";
+  return ` <span class="mv ${delta > 0 ? "up" : "down"}" title="since the morning board">${delta > 0 ? "▲" : "▼"}${Math.abs(delta).toFixed(1)}</span>`;
+}
+
+function statCell(stat, extraCls, delta, key) {
   const cls = extraCls ? ` ${extraCls}` : "";
   if (!stat) return `<td class="num${cls}"><span class="dim">—</span></td>`;
   const hasLine = stat.line != null;
@@ -76,7 +117,7 @@ function statCell(stat, extraCls) {
   }
   return `<td class="num${cls}">
     <div class="stat-cell">
-      <div class="num ${edgeCls}">${stat.proj.toFixed(1)}</div>
+      <div class="num ${edgeCls}">${stat.proj.toFixed(1)}${moveTag(delta, key)}</div>
       <div class="line">${sub}</div>
     </div>
   </td>`;
@@ -86,8 +127,10 @@ function tableRow(p) {
   const tag = p.status ? ` <span class="dim">(${esc(p.status)})</span>` : "";
   const nameCell = `<td><div class="pn">${esc(p.player)}${tag}</div>
     <div class="pm">${esc(p.team)} ${p.home ? "vs" : "@"} ${esc(p.opp)} · ${esc(p.time_et)}</div></td>`;
-  const cells = STAT_COLS.map((c) => statCell(statOf(p, c.key), c.key === "pra" ? "pra-cell" : "")).join("");
-  return `<tr>${nameCell}${cells}</tr>`;
+  const d = (p.since && p.since.delta) || {};
+  const cells = STAT_COLS.map((c) => statCell(statOf(p, c.key), c.key === "pra" ? "pra-cell" : "",
+    d[c.key], c.key)).join("");
+  return `<tr${p.since ? ' class="moved"' : ""}>${nameCell}${cells}</tr>`;
 }
 
 function tableView(players) {
@@ -133,7 +176,7 @@ async function main() {
       $("#board").innerHTML = '<div class="notice">No players on the slate.</div>';
       return;
     }
-    $("#board").innerHTML = tableView(players);
+    $("#board").innerHTML = checkBanner(data.injury_check) + tableView(players);
     $("#board").querySelectorAll("th[data-key]").forEach((th) => th.addEventListener("click", () => {
       const key = th.dataset.key;
       sortState = key === sortState.key

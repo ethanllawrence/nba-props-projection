@@ -52,6 +52,23 @@ function riskBadge(level) {
   return `<span class="badge ${cls}">${esc(level)} blowout risk</span>`;
 }
 
+/* Injury check flags (nproj/injury_check.py). Legs never change after the
+   morning pick; a flag means something moved since then. */
+function checkNote(c) {
+  if (!c) return "";
+  const bits = [];
+  if (c.kind === "status" || c.to) {
+    bits.push(c.to === "out"
+      ? "Ruled <b>OUT</b> since this morning. Most books void a leg when the player doesn't play; check yours."
+      : `Status changed since this morning: ${esc(c.from || "active")} → <b>${esc(c.to)}</b>. Check before tip-off.`);
+  }
+  if (c.proj_from != null) {
+    bits.push(`Projection moved ${c.proj_from} → <b>${c.proj_to}</b> since this morning,
+      ${c.against ? "<span class=\"neg\">against this leg</span>" : "<span class=\"pos\">in this leg's favor</span>"}.`);
+  }
+  return `<div class="check-box" style="margin:9px 0 0">${bits.join("<br>")}</div>`;
+}
+
 function legCard(leg) {
   const sideArrow = leg.side === "over" ? "▲ O" : "▼ U";
   const line = lineOf(leg);
@@ -80,6 +97,7 @@ function legCard(leg) {
         ${riskBadge(leg.blowout_risk)}
         <span class="badge conf-high">${esc(leg.minutes_confidence)} minutes confidence</span>
       </div>
+      ${checkNote(leg.check)}
       <div class="noedge" style="margin-top:9px">${esc(leg.reasoning)}</div>
     </div>`;
 }

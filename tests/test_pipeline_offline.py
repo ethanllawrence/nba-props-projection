@@ -393,7 +393,14 @@ def test_parlay_daily_and_settle():
     importlib.reload(config)
     cli.main(["daily", "--date", "2026-03-10"])
     assert sum(1 for u, _ in state["calls"] if u.endswith("/odds")) == n_paid
-    assert json.loads((site / "parlay.json").read_text())["today"]["legs"]
+    after = json.loads((site / "parlay.json").read_text())["today"]
+    # locked: the afternoon run never swaps legs you may already have bet
+    strip = lambda legs: [{k: v for k, v in l.items() if k != "check"} for l in legs]  # noqa: E731
+    assert strip(after["legs"]) == strip(t["legs"]) and after["combined_odds"] == t["combined_odds"]
+    # the morning run took the injury-check checkpoint; the afternoon run compared to it
+    cp = json.loads((site / "checkpoint.json").read_text())
+    assert cp["date"] == "2026-03-10" and cp["label"] == "this morning's board"
+    assert "injury_check" in json.loads((site / "today.json").read_text())
 
     # settle: give every leg player a real game on 2026-03-10, then run the next day
     from nproj.ingest import espn

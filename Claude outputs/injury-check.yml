@@ -1,0 +1,86 @@
+# Injury check: re-checks ESPN rosters shortly before games tip off and flags
+# what changed since the morning board (players ruled out or cleared, and
+# projections that moved because of it). See nproj/injury_check.py.
+#
+# Fires every 30 minutes from 9 AM to 7:30 PM Arizona time. Each firing asks
+# ESPN for tonight's schedule (one free call) and does the full refresh ONLY
+# if a game tips off within the next 10-80 minutes and there hasn't been a
+# check in the last 20 minutes. Otherwise it exits in about a minute. So
+# each game gets one or two checks in the hour before tip-off, and the
+# timing follows the real tip times (weekend matinees, late West Coast games,
+# daylight saving in the East) without changing this file.
+#
+# Never buys odds. Manual run: Actions -> "Injury check" -> Run workflow
+# (tick "force" to refresh now even if nothing tips soon).
+
+name: Injury check
+
+on:
+  schedule:
+    - cron: "0,30 16-23 * * *"   # 9:00 AM - 4:30 PM Arizona (UTC-7)
+    - cron: "0,30 0-2 * * *"     # 5:00 PM - 7:30 PM Arizona
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Refresh now even if no game tips off soon"
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-board          # same group as Daily board: never two runs pushing at once
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Check rosters if a game tips off soon
+        env:
+          NPROJ_ODDS_MODE: "off"
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            python -m nproj injury-check --force
+          else
+            python -m nproj injury-check
+          fi
+
+      - name: Commit (only if something changed)
+        run: |
+          python - <<'EOF'
+          import json
+          d = json.load(open("docs/data/today.json"))
+          ic = d.get("injury_check")
+          if ic:
+              print(f"Injury check {ic['checked_at']} vs {ic.get('since_label')}:")
+              for c in ic["status_changes"]:
+                  print(f"  {c['player']} ({c['team']}): {c['from']} -> {c['to']}")
+              for m in ic["moves"][:8]:
+                  print(f"  {m['player']} ({m['team']}): PRA {m['from'].get('pra')} -> {m['to'].get('pra')}")
+              if not ic["status_changes"] and not ic["moves"]:
+                  print("  no changes since the morning board")
+          EOF
+          git add docs/data history
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Injury check $(TZ=America/Phoenix date '+%Y-%m-%d %H:%M')"
+          git pull --rebase
+          git push

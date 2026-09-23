@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>PRAjections — Methodology</title>
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v=2">
 </head>
 <body>
 <div class="wrap">
@@ -22,12 +22,12 @@
   </nav>
 
   <div class="prose">
-    <h2>What this is (planned)</h2>
+    <h2>What this is</h2>
     <p>A hobby model projecting NBA player points, rebounds, assists, and PRA (points +
     rebounds + assists combined), compared against sportsbook lines, ranking any
     positive-expected-value edges — the same approach as the K Board's MLB strikeout model,
-    adapted for basketball. Projections come from real game logs; sportsbook lines are not
-    wired in yet (see the last section).</p>
+    adapted for basketball. Projections come from a model trained on real box scores, compared
+    against FanDuel/DraftKings lines pulled each morning.</p>
 
     <h2>The model</h2>
     <p>Every projection comes from a machine-learning model (gradient-boosted trees, LightGBM)
@@ -53,6 +53,18 @@
     rebounds, assists, and PRA; tap any header to sort by that projection. Players projected for
     fewer than 18 minutes are left off.</p>
 
+    <h2>Injury checks</h2>
+    <p>Lines are pulled early (best prices, boosts), so the board you bet from is the morning
+    one. Injury news keeps coming after that: under NBA rules, teams file a game-day report
+    around midday and must update a player's status as soon as a decision is made, so late
+    scratches land in the hour or two before tip-off. The site saves the morning board and then
+    re-checks ESPN rosters at 3 PM Arizona time and about an hour before each game tips. Each
+    check re-runs the model and shows a box at the top of Today: who was ruled out (or cleared)
+    since the morning, and whose projections moved because of it. Moved cells get a small
+    <span class="pos">▲</span>/<span class="neg">▼</span> with the change. If nothing changed,
+    the box says so. ESPN can lag the official report by a few minutes, so treat a quiet check
+    right before tip-off as "probably fine," not a guarantee.</p>
+
     <h2>Edge coloring</h2>
     <p>Under each projection is the book line (FanDuel or DraftKings) and the model's chance of
     the over or under. That chance isn't the raw model alone: in testing, the raw model was
@@ -76,7 +88,9 @@
     player and two per game, until the price reaches the target; if it can't get there without
     forcing weak legs, there's no parlay that day. The next morning each leg is graded against
     the real box score (a player who didn't play is void, like a sportsbook would do it), and
-    the History section keeps the running record.</p>
+    the History section keeps the running record. Once picked, the legs never change during the
+    day, since you may already have bet them. If a later injury check finds that a leg's player
+    was ruled out or its projection moved against the leg, the leg gets a flag instead.</p>
 
     <h2>Jokic TD tracker</h2>
     <p>A separate tab tracking Nikola Jokic's triple-double prop specifically — his favorite
@@ -94,8 +108,8 @@
     <h2>Results</h2>
     <p>Every morning, last night's board is graded against the real box scores. Two things are
     tracked. First, accuracy: how many points, rebounds, assists and PRA each projection missed
-    by on average. Second, the edge calls: every green or red cell (a projection 6% or more off
-    the book line) counts as a call on the over or under. At standard -110 pricing a call needs
+    by on average. Second, the edge calls: every green or red cell (see Edge coloring) counts as a
+    call on the over or under. At standard -110 pricing a call needs
     to win 52.4% of the time just to break even, so that's the bar the hit rate is judged
     against. The board flips to the next day's slate at 8 PM Arizona time, but a night is only
     graded once all its games are over.</p>
@@ -104,9 +118,9 @@
     <p>Real: the projections and probabilities above, rosters and injury statuses from ESPN, and
     FanDuel/DraftKings lines pulled early each morning on a tight free-plan budget (the combined
     PRA line first, then points, rebounds and assists as credits allow, so on busy nights some
-    stats show "no line"). Box scores are added to the model's data every morning. Still ahead: a
-    dedicated minutes model, a late injury check closer to tip-off, and a proper joint model for
-    the Jokic triple-double call (still a simple hit-rate blend).</p>
+    stats show "no line"). Box scores are added to the model's data every morning, and injury checks run before tip-off.
+    Still ahead: better minutes information (confirmed starting lineups), and a proper joint
+    model for the Jokic triple-double call (still a simple hit-rate blend).</p>
     <p>See the planning doc for the full build-phase roadmap and open decisions.</p>
   </div>
 

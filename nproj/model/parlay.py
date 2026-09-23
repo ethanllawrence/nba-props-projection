@@ -378,7 +378,14 @@ def update(con, date_s, allow_spend=False):
     # 2. build today's parlay, only when today has a slate with lines
     saved = odds.load_lines(date_s)
     has_slate = con.execute("SELECT 1 FROM probable_players WHERE date=?", (date_s,)).fetchone()
-    if has_slate and saved.get("lines"):
+    today_json = data.get("today")
+    locked = (not mock and ((today_json and today_json.get("date") == date_s)
+                            or data.get("no_parlay_date") == date_s))
+    if locked:
+        # picked this morning: legs never change after that (you may have bet
+        # them). Later runs only flag changed legs (nproj/injury_check.py).
+        log["locked"] = date_s
+    elif has_slate and saved.get("lines"):
         if mock:  # first real game day: drop the hand-made preview
             data = {"history": []}
         if allow_spend:
@@ -390,10 +397,12 @@ def update(con, date_s, allow_spend=False):
             data["today"] = {"date": date_s, "combined_odds": price, "status": "pending",
                              "legs": [_public_leg(l) for l in legs]}
             data.pop("no_parlay_reason", None)
+            data.pop("no_parlay_date", None)
             log["parlay"] = {"legs": len(legs), "odds": price,
                              "alt_legs": sum(1 for l in legs if l["line_type"] == "alt")}
         else:
             data["today"] = None
+            data["no_parlay_date"] = date_s
             data["no_parlay_reason"] = (
                 "No parlay today: not enough legs cleared the conviction bar "
                 f"({len(cands)} qualifying options) to reach +{TARGET_LO} without forcing it.")

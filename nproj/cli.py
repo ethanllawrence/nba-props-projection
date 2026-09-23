@@ -70,6 +70,11 @@ def cmd_daily(args) -> None:
             print(f"[results] {results.update(con, date_s)}")
         except Exception as exc:  # noqa: BLE001
             print(f"[results] FAILED: {exc}")
+        try:
+            from . import injury_check
+            print(f"[injury-check] {injury_check.update(con, date_s, morning=config.ODDS_MODE == 'props')}")
+        except Exception as exc:  # noqa: BLE001 - never block the board
+            print(f"[injury-check] FAILED: {exc}")
     from .export.status import write_status
     print(f"[status] {write_status(date_s, slate['games'])}")
     print(f"[daily] trained {trained} player-stats, wrote {projected} projections, exported {result}")
@@ -123,6 +128,22 @@ def _maybe_odds(date_s, n_games):
         print(f"[odds] {odds.refresh_lines(date_s)}")
     except Exception as exc:  # noqa: BLE001 - odds trouble must never block the board
         print(f"[odds] FAILED, board will show no lines: {exc}")
+
+
+def cmd_injury_check(args) -> None:
+    """The half-hourly 'Injury check' workflow: run the full refresh only
+    when a game tips off soon (see nproj/injury_check.py), else exit fast."""
+    from . import injury_check, util
+    from .ingest import espn
+    date_s = util.board_date().isoformat()
+    games = espn.fetch_schedule(date_s)
+    go, why = injury_check.due(games, injury_check.last_check(date_s))
+    if args.force and games:
+        go, why = True, "forced"
+    print(f"[injury-check] {date_s}: {'running' if go else 'skipping'} ({why})")
+    if go:
+        args.date = None
+        cmd_daily(args)
 
 
 def cmd_odds_status(_args) -> None:
@@ -186,6 +207,8 @@ def main(argv=None) -> int:
     e = sub.add_parser("export")
     e.add_argument("--date", help="YYYY-MM-DD (default: board date)")
     sub.add_parser("odds-status")
+    ic = sub.add_parser("injury-check")
+    ic.add_argument("--force", action="store_true", help="refresh now even if no game tips soon")
     h = sub.add_parser("history")
     h.add_argument("--season", type=int, required=True)
     h.add_argument("--out", default="history")
@@ -193,7 +216,8 @@ def main(argv=None) -> int:
     sub.add_parser("status")
     args = p.parse_args(argv)
     {"init": cmd_init, "daily": cmd_daily, "backfill": cmd_backfill,
-     "export": cmd_export, "odds-status": cmd_odds_status, "history": cmd_history, "status": cmd_status}[args.cmd](args)
+     "export": cmd_export, "odds-status": cmd_odds_status,
+     "injury-check": cmd_injury_check, "history": cmd_history, "status": cmd_status}[args.cmd](args)
     return 0
 
 
