@@ -63,6 +63,7 @@ jobs:
           python tests/test_pipeline_offline.py
           python tests/test_history_parsers.py
           python tests/test_model_live.py
+          python tests/test_injury_check.py
 
       - name: Odds API credits (free call)
         env:
