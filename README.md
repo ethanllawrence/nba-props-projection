@@ -42,6 +42,21 @@ what exists in this repo right now vs. what's still a stub.
 - Board flips to the next day at 8 PM Arizona (third daily run). Results and parlays are
   only graded once a night's games are final (`util.day_is_final`).
 
+## The PRA model (live since 2026-09-22)
+
+- `nproj/model/features.py`: pre-game features from one box-score table (form, per-minute
+  rates, usage, starter rate, rest/b2b, spread/total/implied team points, opponent allowed,
+  teammates out). Same code for backtests and tonight's slate.
+- `nproj/model/pra_model.py`: LightGBM (poisson) per stat + minutes, negative-binomial
+  spread for P(over).
+- `nproj/model/live.py`: every daily run trains on `history/`, projects tonight, and writes
+  projections. Site probabilities blend model and market (`calibration.json`, fitted on the
+  backtest); a cell is colored when that beats the price's break-even by 2+ points.
+- `nproj/ingest/box_store.py`: each morning appends last night's box scores to
+  `history/<season>/` (committed by the workflow), so the model keeps learning in-season.
+- `scripts/backtest.py`: monthly walk-forward backtest vs real historical lines
+  (reports in `reports/`). `NPROJ_MODEL=baseline` falls back to the old recent average.
+
 ## Historical data for the model (`python -m nproj history`)
 
 `nproj/ingest/espn_history.py` + `.github/workflows/backfill.yml` download 2023-24 through

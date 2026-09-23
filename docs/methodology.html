@@ -29,38 +29,50 @@
     adapted for basketball. Projections come from real game logs; sportsbook lines are not
     wired in yet (see the last section).</p>
 
+    <h2>The model</h2>
+    <p>Every projection comes from a machine-learning model (gradient-boosted trees, LightGBM)
+    trained on three full seasons of box scores, 2023-24 through 2025-26, and retrained every
+    run with the newest games. For each player it looks at: his recent form over short and long
+    stretches (points, rebounds, assists, minutes, and the shot volume behind them, per game and
+    per minute); how often he's been starting; days of rest and back-to-backs; home or away; the
+    game's point spread and total, which capture pace, the expected score, and blowout risk;
+    what tonight's opponent has been allowing; and which teammates are ruled out tonight, since
+    their minutes and shots have to go somewhere. Separate models project points, rebounds,
+    assists, PRA and minutes, and each projection comes with a spread of likely outcomes, so the
+    site can put a probability on any line.</p>
+    <p>It was tested the honest way: train only on games before a given month, project that
+    month blind, repeat for every month from November 2024 to June 2026, and compare to the real
+    sportsbook lines from those games. The model was more accurate than the old recent-average
+    method on every stat and more accurate than the books' opening lines, but the books' closing
+    lines (after the day's news and money) were more accurate still. Most of the model's edge
+    over opening lines came from reacting to injuries, so lines are pulled early in the day.</p>
+
     <h2>Today board</h2>
-    <p>Table-only by design, not cards: a full NBA slate runs 20+ meaningfully-projected
-    players a night (vs. the K Board's ~15 probable starters), so a scannable sortable table
-    beats scrolling through cards. One row per player, one column each for points, rebounds,
-    assists, and PRA — tap any of those headers to sort the whole slate by that stat's
-    projection, so "who's projected for the most points/rebounds/assists/PRA tonight" is a
-    single tap away. PRA is currently just the sum of the three individual lines rather than
-    a separately-priced combo line; that'll change once real odds are wired in and a book
-    actually posts one.</p>
+    <p>Table-only by design: a full slate runs 20+ meaningfully-projected players a night, so a
+    sortable table beats scrolling cards. One row per player, one column each for points,
+    rebounds, assists, and PRA; tap any header to sort by that projection. Players projected for
+    fewer than 18 minutes are left off.</p>
 
     <h2>Edge coloring</h2>
-    <p>Each projected number is colored by how far it sits from that stat's book line, as a
-    percentage of the line: <span class="pos">green</span> when the projection clears the
-    line by 6% or more (model likes the over), <span class="neg">red</span> when it's 6% or
-    more under the line (model likes the under), and <span class="neu">gold</span> in between,
-    where the model roughly agrees with the market. A relative (percentage) threshold, rather
-    than a fixed point gap, is what lets one rule work sensibly across points, rebounds,
-    assists and PRA despite their very different typical ranges. The small number under each
-    projection is that stat's current book line, priced off FanDuel or DraftKings
-    (occasionally bet365) rather than shopped across a wide book list, since those are the
-    only ones actually in play day to day.</p>
+    <p>Under each projection is the book line (FanDuel or DraftKings) and the model's chance of
+    the over or under. That chance isn't the raw model alone: in testing, the raw model was
+    overconfident (when it said 75%, the over hit about 57% of the time), so its view is blended
+    with the chance implied by the sportsbook's prices, using weights fitted on the backtest. A
+    cell is <span class="pos">green</span> when that blended chance of the over beats the
+    price's break-even by 2 or more percentage points, <span class="neg">red</span> for the
+    under, and <span class="neu">gold</span> when there's a line but no edge. Expect only a
+    handful of colored cells a night; that's on purpose. (The old rule, coloring anything 6% off
+    the line, would have lost about 6% of every dollar bet in the backtest.)</p>
 
     <h2>Parlay of the Day</h2>
-    <p>Picked automatically every morning, 2-4 legs combined to roughly +200 to +300. This
-    isn't an expected-value play like the Today board's edges; it's about conviction. For each
-    player with a posted line, the model turns his recent games into a chance of clearing that
-    line (then pulls that chance 15% back toward a coin flip, since a 20-game sample overstates
-    certainty). A leg qualifies at 62% or better, only for players with steady minutes and no
-    injury tag, and never from a game with a double-digit point spread, where starters often
-    sit the fourth quarter. When the day's odds budget has credits left, it also buys alt-line
-    prices for the best few candidates and uses the highest alt line the model is about 80%
-    sure of, at a shorter price. Legs are added in order of model confidence, at most one per
+    <p>Picked automatically every morning, 2-4 legs combined to roughly +200 to +300. It's about
+    conviction: legs that should hit often, not long shots. Each leg's chance is the model's
+    blended probability (see Edge coloring), and a leg has to be at least a fair price by that
+    number. Main-line legs need 55% or better; when the day's odds budget has credits left, it
+    also buys alt-line prices for the best few candidates and uses the highest alt line the model
+    is at least 70% sure of. Legs only come from players with steady minutes and no injury tag,
+    and never from a game with a double-digit point spread, where starters often sit the fourth
+    quarter. Legs are added in order of model confidence, at most one per
     player and two per game, until the price reaches the target; if it can't get there without
     forcing weak legs, there's no parlay that day. The next morning each leg is graded against
     the real box score (a player who didn't play is void, like a sportsbook would do it), and
@@ -89,17 +101,12 @@
     graded once all its games are over.</p>
 
     <h2>What's real vs. still a stub</h2>
-    <p>Every projection on the Today board is real model output: a recency-weighted average
-    of each player's game log (this season plus last, so early-season numbers aren't built on
-    three games), pulled from ESPN's public stats feed by a GitHub Actions job that runs twice
-    a day. Players listed as out, or averaging under 20 minutes, are left off the board. The
-    Jokic tab's season summary, recent games and triple-double call come from the same feed.
-    Book lines come from FanDuel and DraftKings via The Odds API, pulled once each morning on a
-    tight free-plan budget: the combined PRA line first, then points, rebounds and assists as
-    credits allow, so on busy nights some stats show "no line" and stay uncolored. Still ahead:
-    a real (LightGBM) model in place of the rolling-average
-    baseline, a settled day-rollover clock, and a results/performance page for the Today
-    board.</p>
+    <p>Real: the projections and probabilities above, rosters and injury statuses from ESPN, and
+    FanDuel/DraftKings lines pulled early each morning on a tight free-plan budget (the combined
+    PRA line first, then points, rebounds and assists as credits allow, so on busy nights some
+    stats show "no line"). Box scores are added to the model's data every morning. Still ahead: a
+    dedicated minutes model, a late injury check closer to tip-off, and a proper joint model for
+    the Jokic triple-double call (still a simple hit-rate blend).</p>
     <p>See the planning doc for the full build-phase roadmap and open decisions.</p>
   </div>
 

@@ -13,9 +13,10 @@ Flow (every daily run):
 
 What gets graded, per player/stat with a posted projection:
   - accuracy: absolute error (MAE) and signed error (bias) vs. the actual stat;
-  - edge calls: any stat whose projection sits 6%+ from the book line (the
-    board's green/red cells). Over call wins if actual > line, under call
-    wins if actual < line. At -110 juice, 52.4% is break-even.
+  - edge calls: the board's green/red cells (the model's call; boards from
+    before the model used "projection 6%+ off the line"). Over call wins if
+    actual > line, under call wins if actual < line. At -110 juice, 52.4%
+    is break-even.
 Players who didn't play are skipped.
 
 State: docs/data/results.json (committed). Nightly summaries are kept for
@@ -52,23 +53,35 @@ def _save(data):
 
 
 def snapshot_from_board(board):
-    """today.json -> the compact per-player record grading needs."""
+    """today.json -> the compact per-player record grading needs. Keeps the
+    model's call when the board has one (newer boards), so grading counts
+    exactly the cells that were colored."""
+    model_board = board.get("model") == "lightgbm"
     players = []
     for p in board.get("players", []):
         if not p.get("player_id"):
             continue
         s = p.get("stats", {})
-        stats = {k: {"proj": s[k]["proj"], "line": s[k].get("line")}
-                 for k in ("points", "rebounds", "assists") if k in s}
+        stats = {}
+        for k in ("points", "rebounds", "assists"):
+            if k in s:
+                stats[k] = {"proj": s[k]["proj"], "line": s[k].get("line")}
+                if model_board:
+                    stats[k]["call"] = s[k].get("call")
         if len(stats) == 3:
-            pra_line = (s.get("pra") or {}).get("line")
+            pra = s.get("pra") or {}
+            pra_line = pra.get("line")
             if pra_line is None and all(stats[k]["line"] is not None for k in stats):
                 pra_line = sum(stats[k]["line"] for k in stats)
-            stats["pra"] = {"proj": round(sum(stats[k]["proj"] for k in ("points", "rebounds", "assists")), 1),
-                            "line": pra_line}
+            pra_proj = pra.get("proj")
+            if pra_proj is None:
+                pra_proj = round(sum(stats[k]["proj"] for k in ("points", "rebounds", "assists")), 1)
+            stats["pra"] = {"proj": pra_proj, "line": pra_line}
+            if model_board:
+                stats["pra"]["call"] = pra.get("call")
         players.append({"player_id": p["player_id"], "player": p["player"], "team": p.get("team"),
                         "stats": stats})
-    return {"date": board["date"], "players": players}
+    return {"date": board["date"], "players": players, "model": board.get("model", "baseline")}
 
 
 def call_for(proj, line):
@@ -112,7 +125,8 @@ def grade_night(con, snap, load_logs=True):
         graded += 1
         for k, v in p["stats"].items():
             errs[k].append(v["proj"] - act[k])
-            side = call_for(v["proj"], v["line"])
+            # model boards: the colored cells; older boards: the 6% rule
+            side = v.get("call") if "call" in v else call_for(v["proj"], v["line"])
             if side:
                 calls.append({"date": d, "player": p["player"], "team": p.get("team"), "stat": k,
                               "side": side, "proj": v["proj"], "line": v["line"], "actual": act[k],

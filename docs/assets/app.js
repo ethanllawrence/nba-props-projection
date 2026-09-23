@@ -5,21 +5,16 @@ const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
-/* Edge = (proj - line) / line, as a fraction. Green when the model likes the
-   over meaningfully, red when it likes the under meaningfully, gold/neutral
-   when it's close to the book. One relative threshold works across points,
-   rebounds and assists despite their very different natural scales. */
-const EDGE_THRESHOLD = 0.06;
-
-function edgeOf(stat) {
-  if (!stat || stat.line == null || !stat.line) return null;
-  return (stat.proj - stat.line) / stat.line;
-}
-
-function edgeClass(edge) {
-  if (edge == null) return "dim";
-  if (edge >= EDGE_THRESHOLD) return "pos";
-  if (edge <= -EDGE_THRESHOLD) return "neg";
+/* Coloring comes from the model, not a flat rule: each stat with a book
+   line carries p_over (the model's chance of the over, blended with the
+   market price, see nproj/model/live.py) and call ("over"/"under"/null).
+   Green = the model likes the over enough to beat the price, red = the
+   under, gold = there's a line but no edge. Older data without p_over
+   (before the model) shows uncolored. */
+function edgeClass(stat) {
+  if (!stat || stat.line == null || stat.p_over == null) return "";
+  if (stat.call === "over") return "pos";
+  if (stat.call === "under") return "neg";
   return "neu";
 }
 
@@ -32,18 +27,20 @@ const STAT_COLS = [
 
 let sortState = { key: "points", dir: "desc" };
 
-/* PRA (points + rebounds + assists): the projection is the sum of the three.
-   The line is the book's real PRA line (stats.pra) when one was pulled,
-   otherwise the sum of the three individual lines. */
+/* PRA: the model's own PRA projection and the book's real PRA line when
+   they exist; otherwise the sums of the three stats and three lines. */
 function praOf(player) {
   const s = player.stats;
   if (!s || !s.points || !s.rebounds || !s.assists) return null;
+  if (s.pra && s.pra.proj != null) {
+    if (s.pra.line != null) return s.pra;
+    const lines = [s.points.line, s.rebounds.line, s.assists.line];
+    return { ...s.pra, line: lines.every((l) => l != null) ? lines.reduce((a, b) => a + b, 0) : null };
+  }
   const lines = [s.points.line, s.rebounds.line, s.assists.line];
-  const summed = lines.every((l) => l != null) ? lines.reduce((a, b) => a + b, 0) : null;
   return {
     proj: s.points.proj + s.rebounds.proj + s.assists.proj,
-    // A real PRA line from the book wins; otherwise the sum of the three lines, if all exist.
-    line: s.pra && s.pra.line != null ? s.pra.line : summed,
+    line: lines.every((l) => l != null) ? lines.reduce((a, b) => a + b, 0) : null,
   };
 }
 
@@ -70,12 +67,17 @@ function statCell(stat, extraCls) {
   const cls = extraCls ? ` ${extraCls}` : "";
   if (!stat) return `<td class="num${cls}"><span class="dim">—</span></td>`;
   const hasLine = stat.line != null;
-  // No book line yet (odds not wired in): show the projection uncolored.
-  const edgeCls = hasLine ? edgeClass(edgeOf(stat)) : "";
+  const edgeCls = edgeClass(stat);
+  let sub = hasLine ? "L " + stat.line.toFixed(1) : "no line";
+  if (hasLine && stat.p_over != null) {
+    const pick = stat.call === "under" || (!stat.call && stat.p_over < 0.5)
+      ? `U ${Math.round((1 - stat.p_over) * 100)}%` : `O ${Math.round(stat.p_over * 100)}%`;
+    sub += ` · ${pick}`;
+  }
   return `<td class="num${cls}">
     <div class="stat-cell">
       <div class="num ${edgeCls}">${stat.proj.toFixed(1)}</div>
-      <div class="line">${hasLine ? "L " + stat.line.toFixed(1) : "no line"}</div>
+      <div class="line">${sub}</div>
     </div>
   </td>`;
 }
@@ -99,14 +101,14 @@ function tableView(players) {
       const cls = ["num", c.cls, active ? "sort-on" : ""].filter(Boolean).join(" ");
       return `<th data-key="${c.key}" class="${cls}">${esc(c.label)}${arrow}</th>`;
     }).join("");
-  const anyLines = players.some((p) => Object.values(p.stats || {}).some((s) => s && s.line != null));
+  const anyLines = players.some((p) => Object.values(p.stats || {}).some((s) => s && s.p_over != null));
   const legend = anyLines
     ? `<div class="legend">
-      <span><span class="sw g"></span>edge (over)</span>
-      <span><span class="sw o"></span>near the book</span>
-      <span><span class="sw r"></span>edge (under)</span>
+      <span><span class="sw g"></span>model edge: over</span>
+      <span><span class="sw o"></span>no edge vs. price</span>
+      <span><span class="sw r"></span>model edge: under</span>
     </div>`
-    : `<div class="legend"><span>Projections only. Book lines and edge colors arrive once odds are wired in.</span></div>`;
+    : `<div class="legend"><span>Projections only: no book lines for this slate yet.</span></div>`;
   return `${legend}
     <div class="board-tbl-wrap today-tbl-wrap"><div class="board-tbl today-tbl">
       <table class="t"><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table>

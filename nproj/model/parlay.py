@@ -6,11 +6,11 @@ of hitting, the player's minutes are steady, and the game isn't likely to
 be a blowout. Legs are then added in order of model probability until the
 combined price reaches the target range.
 
-How the model probability works: each player's recent games (same recency
-weighting as the Today board) give a mean and spread for the stat; the
-chance of clearing a line is read off a normal curve, then pulled 15% of
-the way back toward a coin flip, because a 20-game sample overstates how
-sure anyone can be.
+How the probability works: when the PRA model ran (the normal case), each
+leg's chance is the model's probability blended with the sportsbook price
+(nproj/model/live.py), and a leg must also be at least a fair price by that
+number (no negative-value legs). If the model didn't run, it falls back to
+each player's recent games on a normal curve, pulled 15% toward a coin flip.
 
 Budget (see nproj/ingest/odds.py): the main prop lines are already bought
 by the morning odds run. Whatever is left of the day's allowance buys, in
@@ -39,8 +39,11 @@ from ..model import predict
 STATS = ("points", "rebounds", "assists", "pra")
 STAT_LABEL = {"points": "points", "rebounds": "rebounds", "assists": "assists", "pra": "PRA"}
 
-MIN_PROB_MAIN = 0.62        # model chance needed for a main-line leg
-ALT_TARGET_PROB = 0.78      # take the highest alt line the model is at least this sure of
+MIN_PROB_MAIN = 0.62        # fallback method: chance needed for a main-line leg
+ALT_TARGET_PROB = 0.78      # fallback method: highest alt line at least this likely
+MODEL_MIN_PROB_MAIN = 0.55  # PRA model: blended chance needed for a main-line leg
+MODEL_ALT_PROB = 0.70       # PRA model: highest alt line at least this likely...
+MODEL_MIN_EDGE = 0.0        # ...and never worse than a fair price
 SHRINK = 0.85               # pull probabilities toward 50%; small samples overstate certainty
 MIN_GAMES = 8               # need at least this many recent games to trust the spread
 MIN_LEGS, MAX_LEGS = 2, 4
@@ -141,7 +144,13 @@ def candidates(con, date_s, saved):
         mine = matched.get(r["name"])
         if not mine:
             continue
-        conf, avg_min = minutes_confidence(con, r["player_id"], date_s)
+        from . import live
+        model_on = str(r["player_id"]) in live.PROJ
+        if model_on:        # the model's own minutes projection
+            m = live.PROJ[str(r["player_id"])]["minutes"]
+            conf, avg_min = ("high" if m >= 30 else "medium" if m >= 24 else "low"), m
+        else:
+            conf, avg_min = minutes_confidence(con, r["player_id"], date_s)
         if conf == "low":
             continue
         risk = blowout_risk(spreads.get(r["team"]))
@@ -152,24 +161,37 @@ def candidates(con, date_s, saved):
             "player": r["name"], "player_id": r["player_id"], "game_id": r["game_id"],
             "team": r["team"], "opp": r["away_team"] if home else r["home_team"], "home": home,
             "time_et": _time_et(r["tipoff_utc"]), "minutes_confidence": conf,
-            "avg_minutes": round(avg_min, 1), "blowout_risk": risk,
+            "avg_minutes": round(avg_min, 1), "minutes_source": "model" if model_on else "recent",
+            "blowout_risk": risk,
             "spread": spreads.get(r["team"]),
         }
         for stat in STATS:
             ln = mine.get(stat)
-            dist = distribution(con, r["player_id"], stat, date_s)
-            if not ln or ln.get("line") is None or not dist:
+            if not ln or ln.get("line") is None:
                 continue
-            mean, std = dist
-            p_over = prob_over(mean, std, ln["line"])
+            if model_on:
+                view = live.assess(r["player_id"], stat, ln["line"], ln.get("over"), ln.get("under"))
+                if not view:
+                    continue
+                mean, std = live.PROJ[str(r["player_id"])][stat], None
+                p_over, floor = view["p_over"], MODEL_MIN_PROB_MAIN
+            else:
+                dist = distribution(con, r["player_id"], stat, date_s)
+                if not dist:
+                    continue
+                mean, std = dist
+                p_over, floor = prob_over(mean, std, ln["line"]), MIN_PROB_MAIN
             for side, p, price in (("over", p_over, ln.get("over")),
                                    ("under", 1 - p_over, ln.get("under"))):
-                if price is None or p < MIN_PROB_MAIN:
+                if price is None or p < floor:
+                    continue
+                if model_on and p - live.implied(price) < MODEL_MIN_EDGE:
                     continue
                 out.append({**base, "stat": stat, "side": side, "line": ln["line"],
                             "book_line": ln["line"], "line_type": "main", "odds": int(price),
                             "book": ln.get("book"), "prob": round(p, 3),
-                            "proj": round(mean, 1), "std": round(std, 2)})
+                            "proj": round(mean, 1), "std": round(std, 2) if std else None,
+                            "model": model_on})
     return out
 
 
@@ -186,8 +208,14 @@ def alt_options(cands, saved):
         for step in ladder:
             if step["line"] >= c["book_line"] or step.get("over") is None:
                 continue
-            p = prob_over(c["proj"], c["std"], step["line"])
-            if p >= ALT_TARGET_PROB and (best is None or step["line"] > best[0]["line"]):
+            if c.get("model"):
+                from . import live
+                view = live.assess(c["player_id"], c["stat"], step["line"], step["over"], None)
+                p, ok = view["p_over"], view["edge"] >= MODEL_MIN_EDGE and view["p_over"] >= MODEL_ALT_PROB
+            else:
+                p = prob_over(c["proj"], c["std"], step["line"])
+                ok = p >= ALT_TARGET_PROB
+            if ok and (best is None or step["line"] > best[0]["line"]):
                 best = (step, p)
         if best:
             step, p = best
@@ -267,9 +295,11 @@ def reasoning(leg):
                  if leg["line_type"] == "alt" else f"the {leg['line']} line")
     spread = ("no spread pulled today" if leg["spread"] is None else
               f"{leg['team']} {leg['spread']:+g} spread, {leg['blowout_risk']} blowout risk")
+    mins = (f"Projected for {leg['avg_minutes']} minutes" if leg.get("minutes_source") == "model"
+            else f"Averaging {leg['avg_minutes']} minutes over his last 10 games")
     return (f"Model projects {leg['proj']} {stat} and gives him a {round(leg['prob'] * 100)}% "
-            f"chance to {word} {line_desc}. Averaging {leg['avg_minutes']} minutes over his last "
-            f"10 games ({leg['minutes_confidence']} minutes confidence); {spread}.")
+            f"chance to {word} {line_desc}. {mins} ({leg['minutes_confidence']} minutes "
+            f"confidence); {spread}.")
 
 
 def _public_leg(leg):

@@ -17,7 +17,9 @@ CREATE TABLE IF NOT EXISTS games (
     home_team TEXT NOT NULL,
     away_team TEXT NOT NULL,
     status TEXT,
-    tipoff_utc TEXT
+    tipoff_utc TEXT,
+    spread_home REAL,          -- home team's line, negative = home favored
+    total REAL
 );
 
 CREATE TABLE IF NOT EXISTS players (
@@ -99,6 +101,8 @@ def session():
 
 # Columns added after the first schema; ALTER them onto older local databases.
 _ADDED_COLUMNS = [
+    ("games", "spread_home", "REAL"),
+    ("games", "total", "REAL"),
     ("player_game_logs", "season", "INTEGER"),
     ("player_game_logs", "playoff", "INTEGER DEFAULT 0"),
     ("players", "status", "TEXT"),

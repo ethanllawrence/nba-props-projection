@@ -25,7 +25,7 @@ from .. import config
 from ..ingest.odds import load_lines, match_lines
 from ..pipeline import JOKIC_ESPN_ID
 
-MIN_MINUTES_FOR_BOARD = 20.0
+MIN_MINUTES_FOR_BOARD = 18.0
 MAX_BOARD_PLAYERS = 60
 MINUTES_LOOKBACK = 10
 
@@ -91,58 +91,75 @@ def _export_today_board(con, date_s: str):
               f"(add them to NAME_ALIASES in nproj/ingest/odds.py if they're real players "
               f"on tonight's slate): {', '.join(unmatched)}")
 
+    from ..model import live
+    use_model = bool(live.PROJ)
+
+    def proj_of(pid, stat):
+        row = con.execute("SELECT point FROM projections WHERE player_id=? AND date=? AND stat=?",
+                          (pid, date_s, stat)).fetchone()
+        return row["point"] if row and row["point"] is not None else None
+
     players = []
     for r in rows:
+        pid = r["player_id"]
         mine = matched.get(r["name"], {})
         stats = {}
-        for stat in config.TARGET_STATS:
-            proj = con.execute(
-                "SELECT point FROM projections WHERE player_id=? AND date=? AND stat=?",
-                (r["player_id"], date_s, stat),
-            ).fetchone()
-            if proj and proj["point"] is not None:
-                ln = mine.get(stat, {})
-                stats[stat] = {"proj": proj["point"], "line": ln.get("line"), "book": ln.get("book"),
-                               "over": ln.get("over"), "under": ln.get("under")}
-        if len(stats) < len(config.TARGET_STATS):
+        for stat in list(config.TARGET_STATS) + ["pra"]:
+            proj = proj_of(pid, stat)
+            if proj is None and stat == "pra" and all(k in stats for k in config.TARGET_STATS):
+                proj = round(sum(stats[k]["proj"] for k in config.TARGET_STATS), 1)
+            if proj is None:
+                continue
+            ln = mine.get(stat, {})
+            entry = {"proj": proj, "line": ln.get("line"), "book": ln.get("book"),
+                     "over": ln.get("over"), "under": ln.get("under")}
+            if use_model and ln.get("line") is not None:
+                view = live.assess(pid, stat, ln["line"], ln.get("over"), ln.get("under"))
+                if view:
+                    entry.update(view)
+            stats[stat] = entry
+        if not all(k in stats for k in config.TARGET_STATS):
             continue
-        if "pra" in mine:
-            stats["pra"] = {"line": mine["pra"].get("line"), "book": mine["pra"].get("book"),
-                            "over": mine["pra"].get("over"), "under": mine["pra"].get("under")}
-        if _recent_minutes(con, r["player_id"], date_s) < MIN_MINUTES_FOR_BOARD:
+        minutes = proj_of(pid, "minutes") if use_model else None
+        if (minutes if minutes is not None else _recent_minutes(con, pid, date_s)) < MIN_MINUTES_FOR_BOARD:
             continue
         home = r["team"] == r["home_team"]
         players.append({
             "player": r["name"],
-            "player_id": r["player_id"],
+            "player_id": pid,
             "team": r["team"],
             "opp": r["away_team"] if home else r["home_team"],
             "home": home,
             "time_et": _time_et(r["tipoff_utc"]),
             "status": r["status"] if r["status"] not in (None, "active") else None,
+            "minutes": minutes,
             "stats": stats,
         })
 
     def has_line(p):
         return any(v.get("line") is not None for v in p["stats"].values())
 
-    def pra(p):
-        return sum(p["stats"][k]["proj"] for k in ("points", "rebounds", "assists"))
-
-    players.sort(key=lambda p: (not has_line(p), -pra(p)))
+    players.sort(key=lambda p: (not has_line(p), -p["stats"]["pra"]["proj"]))
     players = players[:MAX_BOARD_PLAYERS]
     players.sort(key=lambda p: -p["stats"]["points"]["proj"])
     n_lined = sum(1 for p in players if has_line(p))
+    n_calls = sum(1 for p in players for v in p["stats"].values() if v.get("call"))
     if n_lined:
-        lines_note = (f"Lines from FanDuel/DraftKings, pulled once each morning "
-                      f"({n_lined} of {len(players)} players have at least one line).")
+        lines_note = (f"Lines from FanDuel/DraftKings, pulled each morning ({n_lined} of "
+                      f"{len(players)} players have at least one). ")
+        lines_note += (f"{n_calls} cells are colored: the model's chance beats the price's "
+                       f"break-even by {round(live.EDGE_MIN * 100)}+ points."
+                       if use_model else "No model probabilities today, so nothing is colored.")
     else:
-        lines_note = "No sportsbook lines for this date, so projections are shown uncolored."
+        lines_note = "No sportsbook lines for this date yet, so nothing is colored."
+    method = ("Projections come from the PRA model (LightGBM trained on three seasons: recent form, "
+              "minutes, opponent, pace and spread, rest, and teammates out). " if use_model else
+              "Projections are a recency-weighted average of recent games (the model didn't run). ")
     _save(config.SITE_DATA_DIR / "today.json", {
         "generated_at": _now(),
         "date": date_s,
-        "note": ("Projections are real: a recency-weighted average of each player's ESPN game "
-                 "log (this season plus last). " + lines_note),
+        "model": "lightgbm" if use_model else "baseline",
+        "note": method + lines_note,
         "lines_fetched_at": book.get("fetched_at"),
         "unmatched_lines": unmatched,
         "players": players,

@@ -34,7 +34,8 @@ HL_SHORT, HL_LONG = 3, 12          # halflives in games for the recent-form aver
 # ------------------------------------------------------------------ load ----
 def load_history(root="history", seasons=None):
     root = Path(root)
-    seasons = seasons or sorted(int(p.name) for p in root.iterdir() if p.name.isdigit())
+    seasons = seasons or sorted(int(p.name) for p in root.iterdir()
+                                if p.name.isdigit() and (p / "box.csv.gz").exists())
     box, games, props = [], [], []
     for s in seasons:
         box.append(pd.read_csv(root / str(s) / "box.csv.gz", dtype={"game_id": str, "player_id": str}))
@@ -134,9 +135,14 @@ def _opp_allowed(played, games):
 
 
 # ----------------------------------------------------------------- build ----
-def build(box, games):
+def build(box, games, upcoming=None):
     """-> DataFrame, one row per player-game in `box` (played or not), with
-    pre-game features and the actual outcome columns."""
+    pre-game features and the actual outcome columns.
+
+    upcoming: optional rows for games not played yet (same columns as box,
+    stats empty, `played` preset to 1 unless the player is ruled out). They
+    get features from `box` only and are returned at the end of the frame;
+    their games (with spread/total) must be included in `games`."""
     box = box.copy()
     box["played"] = ((box["dnp"] == 0) & (box["minutes"].fillna(0) > 0)).astype(int)
     played = box[box["played"] == 1].copy()
@@ -145,6 +151,8 @@ def build(box, games):
 
     form = _player_form(played)
     fcols = [c for c in form.columns if c not in ("player_id", "date", "season")]
+    if upcoming is not None and len(upcoming):
+        box = pd.concat([box, upcoming], ignore_index=True)
     df = box.join(_asof(box, form, "player_id", fcols))
 
     tg = _team_games(games)

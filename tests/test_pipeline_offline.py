@@ -10,6 +10,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
+import os  # noqa: E402
+# these tests cover the plumbing with fake ESPN data: keep the recent-average
+# projections and don't touch history/ (tests/test_model_live.py covers the model)
+os.environ.setdefault("NPROJ_MODEL", "baseline")
+os.environ.setdefault("NPROJ_BOX_STORE", "0")
 
 NAMES = ["minutes", "fieldGoalsMade-fieldGoalsAttempted", "fieldGoalPct",
          "threePointFieldGoalsMade-threePointFieldGoalsAttempted", "threePointPct",
@@ -112,7 +117,7 @@ def test_daily_offline():
     assert "Nikola Jokic" in names
     assert not any(n.endswith("-2") for n in names), "players listed as out must be excluded"
     for p in today["players"]:
-        assert set(p["stats"]) == {"points", "rebounds", "assists"}
+        assert set(p["stats"]) == {"points", "rebounds", "assists", "pra"}
         assert all(s["line"] is None for s in p["stats"].values())
     jok = next(p for p in today["players"] if p["player"] == "Nikola Jokic")
     assert jok["home"] is True and jok["opp"] == "OKC"

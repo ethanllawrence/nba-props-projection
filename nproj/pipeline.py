@@ -17,10 +17,12 @@ REQUEST_PAUSE = 0.15  # seconds between game-log calls; be polite to ESPN
 
 def upsert_game(con, g):
     con.execute(
-        """INSERT INTO games (game_id, date, home_team, away_team, status, tipoff_utc)
-           VALUES (?,?,?,?,?,?)
-           ON CONFLICT(game_id) DO UPDATE SET status=excluded.status, tipoff_utc=excluded.tipoff_utc""",
-        (g["game_id"], g["date"], g["home_team"], g["away_team"], g["status"], g["tipoff_utc"]),
+        """INSERT INTO games (game_id, date, home_team, away_team, status, tipoff_utc, spread_home, total)
+           VALUES (?,?,?,?,?,?,?,?)
+           ON CONFLICT(game_id) DO UPDATE SET status=excluded.status, tipoff_utc=excluded.tipoff_utc,
+             spread_home=excluded.spread_home, total=excluded.total""",
+        (g["game_id"], g["date"], g["home_team"], g["away_team"], g["status"], g["tipoff_utc"],
+         g.get("spread_home"), g.get("total")),
     )
 
 

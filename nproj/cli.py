@@ -44,6 +44,8 @@ def cmd_daily(args) -> None:
     from .export.site_export import export_all
     from .model import predict
 
+    from .model import live
+    live.PROJ.clear()
     date_s = _date(args)
     with db.session() as con:
         slate = pipeline.refresh_slate(con, date_s)
@@ -51,8 +53,11 @@ def cmd_daily(args) -> None:
               f"{slate['logs']} game-log rows")
         pipeline.refresh_jokic(con, date_s)
         _maybe_odds(date_s, slate["games"])
+        _maybe_store()
         trained = predict.train(con, before_date=date_s)
-        projected = predict.project_date(con, date_s)
+        projected = predict.project_date(con, date_s)     # baseline first, model overwrites
+        if slate["games"]:
+            _maybe_model(con, date_s)
         result = export_all(con, date_s)
         try:
             from .model import parlay
@@ -70,6 +75,36 @@ def cmd_daily(args) -> None:
     print(f"[daily] trained {trained} player-stats, wrote {projected} projections, exported {result}")
     if slate["games"] == 0:
         print("[daily] no games on this date, so today.json was left as it was")
+
+
+def _maybe_store():
+    """Append last night's box scores to history/ (skipped with NPROJ_BOX_STORE=0)."""
+    import os
+    from datetime import date
+
+    if os.environ.get("NPROJ_BOX_STORE", "1") == "0":
+        return
+    from .ingest import box_store
+    from .model.live import HISTORY_ROOT
+    try:
+        print(f"[store] {box_store.update(HISTORY_ROOT, date.today())}")
+    except Exception as exc:  # noqa: BLE001
+        print(f"[store] FAILED: {exc}")
+
+
+def _maybe_model(con, date_s):
+    """The PRA model (NPROJ_MODEL=baseline keeps the old recent average)."""
+    import os
+    if os.environ.get("NPROJ_MODEL", "lightgbm") == "baseline":
+        print("[model] baseline requested; skipping the PRA model")
+        return
+    try:
+        from .model import live
+        print(f"[model] {live.run(con, date_s)}")
+    except Exception as exc:  # noqa: BLE001 - fall back to the baseline projections
+        import traceback
+        traceback.print_exc()
+        print(f"[model] FAILED, board uses the recent-average baseline: {exc}")
 
 
 def _maybe_odds(date_s, n_games):

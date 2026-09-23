@@ -113,6 +113,7 @@ def fetch_schedule(date_s):
         if "home" not in side or "away" not in side:
             continue
         tip = et_date(e["date"])
+        spread_home, total = _game_odds(comp, abbr(side["home"]["team"]["abbreviation"]))
         games.append({
             "game_id": str(e["id"]),
             "date": tip.strftime("%Y-%m-%d"),
@@ -123,8 +124,33 @@ def fetch_schedule(date_s):
             "status": ((e.get("status") or {}).get("type") or {}).get("description"),
             "tipoff_utc": e["date"],
             "time_et": tip.strftime("%I:%M %p").lstrip("0"),
+            "spread_home": spread_home,
+            "total": total,
         })
     return games
+
+
+def _game_odds(comp, home_abbr):
+    """Spread (home team's line, negative = home favored) and total from a
+    scoreboard competition, when ESPN has posted odds. -> (spread, total)."""
+    o = (comp.get("odds") or [{}])[0]
+    total = o.get("overUnder")
+    spread = o.get("spread")
+    details = o.get("details") or ""
+    if details and " " in details:            # "PHI -4.5": favorite and its line
+        fav, _, num = details.rpartition(" ")
+        try:
+            v = float(num)
+            spread = v if abbr(fav) == home_abbr else -v
+        except ValueError:
+            pass
+    elif details.upper() == "EVEN":
+        spread = 0.0
+    try:
+        return (float(spread) if spread is not None else None,
+                float(total) if total is not None else None)
+    except (TypeError, ValueError):
+        return None, None
 
 
 # ---------- Game logs ----------
