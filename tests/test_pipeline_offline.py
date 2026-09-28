@@ -121,6 +121,11 @@ def test_daily_offline():
         assert all(s["line"] is None for s in p["stats"].values())
     jok = next(p for p in today["players"] if p["player"] == "Nikola Jokic")
     assert jok["home"] is True and jok["opp"] == "OKC"
+    # last 5 games under each name: at most 5, oldest first, all before tonight
+    for p in today["players"]:
+        l5 = p["last5"]
+        assert 0 < len(l5) <= 5 and [g["date"] for g in l5] == sorted(g["date"] for g in l5)
+        assert all(g["date"] < "2026-03-10" and g["pra"] == g["pts"] + g["reb"] + g["ast"] for g in l5)
 
     jk = json.loads((site / "jokic.json").read_text())
     assert jk["tonight"]["opp"] == "vs OKC"

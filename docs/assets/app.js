@@ -123,10 +123,32 @@ function statCell(stat, extraCls, delta, key) {
   </td>`;
 }
 
+/* Last 5 PRA under the player's name, oldest to newest (same idea as the
+   K Board's last-5 strikeouts). With a PRA line, each game is green if it
+   would have cleared tonight's line, red if not. Hover (or tap, on a
+   phone) a number for that game's date and points/rebounds/assists. */
+const shortDate = (d) => {
+  const [y, m, day] = String(d).split("-").map(Number);
+  return new Date(y, m - 1, day).toLocaleDateString([], { month: "short", day: "numeric" });
+};
+
+function last5(p) {
+  const g = p.last5 || [];
+  if (!g.length) return "";
+  const pra = praOf(p);
+  const line = pra && pra.line;
+  const chips = g.map((x) => {
+    const cls = line == null ? "" : x.pra > line ? " hit" : " miss";
+    const tip = `${shortDate(x.date)} · ${x.pts} pts, ${x.reb} reb, ${x.ast} ast`;
+    return `<span class="l5c${cls}" tabindex="0" data-tip="${esc(tip)}" aria-label="PRA ${x.pra}, ${esc(tip)}">${x.pra}</span>`;
+  }).join("");
+  return `<div class="l5"><span class="l5k">L5 PRA</span>${chips}</div>`;
+}
+
 function tableRow(p) {
   const tag = p.status ? ` <span class="dim">(${esc(p.status)})</span>` : "";
   const nameCell = `<td><div class="pn">${esc(p.player)}${tag}</div>
-    <div class="pm">${esc(p.team)} ${p.home ? "vs" : "@"} ${esc(p.opp)} · ${esc(p.time_et)}</div></td>`;
+    <div class="pm">${esc(p.team)} ${p.home ? "vs" : "@"} ${esc(p.opp)} · ${esc(p.time_et)}</div>${last5(p)}</td>`;
   const d = (p.since && p.since.delta) || {};
   const cells = STAT_COLS.map((c) => statCell(statOf(p, c.key), c.key === "pra" ? "pra-cell" : "",
     d[c.key], c.key)).join("");

@@ -216,3 +216,17 @@ footer.site { color: var(--dim); font-size: 11.5px; line-height: 1.6; margin-top
 .mv { font-size: 10.5px; font-weight: 600; margin-left: 2px; white-space: nowrap; }
 .mv.up { color: var(--green); } .mv.down { color: var(--red); }
 tr.moved td:first-child { box-shadow: inset 3px 0 var(--gold); }
+
+/* last 5 PRA chips under the player name (Today table) */
+.l5 { display: flex; gap: 3px; align-items: center; margin-top: 4px; white-space: nowrap; }
+.l5k { color: var(--dim); font-size: 9.5px; letter-spacing: .3px; margin-right: 2px; }
+.l5c { position: relative; font-size: 10.5px; min-width: 20px; text-align: center; padding: 1px 3px;
+  border-radius: 4px; background: var(--card2); color: var(--dim); font-variant-numeric: tabular-nums;
+  cursor: default; outline: none; }
+.l5c.hit { color: var(--green); } .l5c.miss { color: var(--red); }
+/* game detail on hover, or on tap (focus) for phones */
+.l5c[data-tip]:hover::after, .l5c[data-tip]:focus::after {
+  content: attr(data-tip); position: absolute; left: 0; bottom: calc(100% + 4px); z-index: 5;
+  background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 6px;
+  padding: 3px 7px; font-size: 11px; font-weight: 400; white-space: nowrap; pointer-events: none; }
+.l5c:focus { box-shadow: 0 0 0 1px var(--line); }

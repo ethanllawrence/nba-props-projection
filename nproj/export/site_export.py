@@ -124,6 +124,10 @@ def _export_today_board(con, date_s: str):
         if (minutes if minutes is not None else _recent_minutes(con, pid, date_s)) < MIN_MINUTES_FOR_BOARD:
             continue
         home = r["team"] == r["home_team"]
+        recent = con.execute(
+            """SELECT date, points, rebounds, assists FROM player_game_logs
+               WHERE player_id=? AND date < ? AND minutes > 0 ORDER BY date DESC LIMIT 5""",
+            (pid, date_s)).fetchall()
         players.append({
             "player": r["name"],
             "player_id": pid,
@@ -134,6 +138,10 @@ def _export_today_board(con, date_s: str):
             "status": r["status"] if r["status"] not in (None, "active") else None,
             "minutes": minutes,
             "stats": stats,
+            # last 5 games played, oldest first (the Today table shows PRA)
+            "last5": [{"date": g["date"], "pts": g["points"], "reb": g["rebounds"],
+                       "ast": g["assists"], "pra": g["points"] + g["rebounds"] + g["assists"]}
+                      for g in reversed(recent)],
         })
 
     def has_line(p):
