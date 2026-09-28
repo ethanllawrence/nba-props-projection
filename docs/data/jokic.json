@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T19:26:19Z",
+  "generated_at": "2026-09-24T00:08:17Z",
   "note": "Season summary, recent games and the model call come from Jokic's real ESPN game log. The market price is his triple-double Yes price from the morning odds pull, when there was room in the budget for it.",
   "season_summary": {
     "season_label": "2025-26",
@@ -98,8 +98,8 @@
     "time_et": null,
     "call": "yes",
     "td_projection": {
-      "model_prob": 0.514,
-      "note": "Placeholder method: his 52.3% season hit rate blended 60/40 with his hit rate over his last 20 games. Not a real joint model of points, rebounds and assists yet. See the methodology page."
+      "model_prob": 0.504,
+      "note": "His chance is halfway between his triple-double rate over his last 80 games and 50%. We tested fancier versions (the PRA model's rebound and assist projections, recent-form blends) on the last two seasons and none predicted his nightly triple-doubles better than a coin flip, so his long-run rate pulled toward 50/50 is the honest number. No Yes price today, so the call is just whether his chance is above 50%."
     },
     "market": null
   }
