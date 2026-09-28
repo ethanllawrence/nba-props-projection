@@ -1,7 +1,7 @@
 {
   "generated_at": "2026-09-22T06:45:10Z",
   "date": "2026-10-22",
-  "note": "MOCKUP DATA, partially real. Nikola Jokic's points/rebounds/assists projections are now real model output (recency-weighted rolling average of real game logs \u2014 see nproj/model/predict.py), not hand-typed. Everyone else's projections, and all book lines for everyone including Nikola Jokic, are still illustrative \u2014 no real game log backfilled for other players yet, and no live odds feed wired up yet. PRA is the sum of the three lines.",
+  "note": "MOCKUP DATA, partially real. Nikola Jokic's points/rebounds/assists projections are now real model output (recency-weighted rolling average of real game logs — see nproj/model/predict.py), not hand-typed. Everyone else's projections, and all book lines for everyone including Nikola Jokic, are still illustrative — no real game log backfilled for other players yet, and no live odds feed wired up yet. PRA is the sum of the three lines. The last-5 PRA numbers under each name are real: each player's final 5 games of 2025-26 (tap or hover a number for that game's date and points/rebounds/assists).",
   "players": [
     {
       "player": "Shai Gilgeous-Alexander",
@@ -25,7 +25,44 @@
           "line": 6.0,
           "book": "FanDuel"
         }
-      }
+      },
+      "last5": [
+        {
+          "date": "2026-05-22",
+          "pts": 26,
+          "reb": 2,
+          "ast": 12,
+          "pra": 40
+        },
+        {
+          "date": "2026-05-24",
+          "pts": 19,
+          "reb": 4,
+          "ast": 7,
+          "pra": 30
+        },
+        {
+          "date": "2026-05-26",
+          "pts": 32,
+          "reb": 2,
+          "ast": 9,
+          "pra": 43
+        },
+        {
+          "date": "2026-05-28",
+          "pts": 15,
+          "reb": 1,
+          "ast": 4,
+          "pra": 20
+        },
+        {
+          "date": "2026-05-30",
+          "pts": 35,
+          "reb": 4,
+          "ast": 9,
+          "pra": 48
+        }
+      ]
     },
     {
       "player": "Giannis Antetokounmpo",
@@ -49,7 +86,44 @@
           "line": 6.5,
           "book": "DraftKings"
         }
-      }
+      },
+      "last5": [
+        {
+          "date": "2026-03-04",
+          "pts": 24,
+          "reb": 5,
+          "ast": 4,
+          "pra": 33
+        },
+        {
+          "date": "2026-03-07",
+          "pts": 27,
+          "reb": 9,
+          "ast": 8,
+          "pra": 44
+        },
+        {
+          "date": "2026-03-10",
+          "pts": 22,
+          "reb": 6,
+          "ast": 3,
+          "pra": 31
+        },
+        {
+          "date": "2026-03-12",
+          "pts": 31,
+          "reb": 6,
+          "ast": 3,
+          "pra": 40
+        },
+        {
+          "date": "2026-03-15",
+          "pts": 31,
+          "reb": 14,
+          "ast": 8,
+          "pra": 53
+        }
+      ]
     },
     {
       "player": "Nikola Jokic",
@@ -73,7 +147,44 @@
           "line": 9.5,
           "book": "FanDuel"
         }
-      }
+      },
+      "last5": [
+        {
+          "date": "2026-04-20",
+          "pts": 24,
+          "reb": 15,
+          "ast": 8,
+          "pra": 47
+        },
+        {
+          "date": "2026-04-23",
+          "pts": 27,
+          "reb": 15,
+          "ast": 3,
+          "pra": 45
+        },
+        {
+          "date": "2026-04-25",
+          "pts": 24,
+          "reb": 15,
+          "ast": 9,
+          "pra": 48
+        },
+        {
+          "date": "2026-04-27",
+          "pts": 27,
+          "reb": 12,
+          "ast": 16,
+          "pra": 55
+        },
+        {
+          "date": "2026-04-30",
+          "pts": 28,
+          "reb": 9,
+          "ast": 10,
+          "pra": 47
+        }
+      ]
     },
     {
       "player": "Anthony Edwards",
@@ -97,7 +208,44 @@
           "line": 4.5,
           "book": "DraftKings"
         }
-      }
+      },
+      "last5": [
+        {
+          "date": "2026-05-06",
+          "pts": 12,
+          "reb": 3,
+          "ast": 0,
+          "pra": 15
+        },
+        {
+          "date": "2026-05-08",
+          "pts": 32,
+          "reb": 14,
+          "ast": 6,
+          "pra": 52
+        },
+        {
+          "date": "2026-05-10",
+          "pts": 36,
+          "reb": 6,
+          "ast": 2,
+          "pra": 44
+        },
+        {
+          "date": "2026-05-12",
+          "pts": 20,
+          "reb": 2,
+          "ast": 2,
+          "pra": 24
+        },
+        {
+          "date": "2026-05-15",
+          "pts": 24,
+          "reb": 2,
+          "ast": 2,
+          "pra": 28
+        }
+      ]
     },
     {
       "player": "Jayson Tatum",
@@ -121,7 +269,44 @@
           "line": 6.0,
           "book": "FanDuel"
         }
-      }
+      },
+      "last5": [
+        {
+          "date": "2026-04-21",
+          "pts": 19,
+          "reb": 14,
+          "ast": 9,
+          "pra": 42
+        },
+        {
+          "date": "2026-04-24",
+          "pts": 25,
+          "reb": 5,
+          "ast": 7,
+          "pra": 37
+        },
+        {
+          "date": "2026-04-26",
+          "pts": 30,
+          "reb": 7,
+          "ast": 11,
+          "pra": 48
+        },
+        {
+          "date": "2026-04-28",
+          "pts": 24,
+          "reb": 16,
+          "ast": 4,
+          "pra": 44
+        },
+        {
+          "date": "2026-04-30",
+          "pts": 17,
+          "reb": 11,
+          "ast": 3,
+          "pra": 31
+        }
+      ]
     },
     {
       "player": "Kevin Durant",
@@ -145,7 +330,44 @@
           "line": 4.5,
           "book": "bet365"
         }
-      }
+      },
+      "last5": [
+        {
+          "date": "2026-04-05",
+          "pts": 31,
+          "reb": 8,
+          "ast": 8,
+          "pra": 47
+        },
+        {
+          "date": "2026-04-07",
+          "pts": 24,
+          "reb": 4,
+          "ast": 3,
+          "pra": 31
+        },
+        {
+          "date": "2026-04-09",
+          "pts": 29,
+          "reb": 7,
+          "ast": 5,
+          "pra": 41
+        },
+        {
+          "date": "2026-04-10",
+          "pts": 33,
+          "reb": 7,
+          "ast": 7,
+          "pra": 47
+        },
+        {
+          "date": "2026-04-21",
+          "pts": 23,
+          "reb": 6,
+          "ast": 4,
+          "pra": 33
+        }
+      ]
     },
     {
       "player": "Cade Cunningham",
@@ -169,7 +391,44 @@
           "line": 8.0,
           "book": "DraftKings"
         }
-      }
+      },
+      "last5": [
+        {
+          "date": "2026-05-09",
+          "pts": 27,
+          "reb": 10,
+          "ast": 10,
+          "pra": 47
+        },
+        {
+          "date": "2026-05-11",
+          "pts": 19,
+          "reb": 3,
+          "ast": 6,
+          "pra": 28
+        },
+        {
+          "date": "2026-05-13",
+          "pts": 39,
+          "reb": 7,
+          "ast": 9,
+          "pra": 55
+        },
+        {
+          "date": "2026-05-15",
+          "pts": 21,
+          "reb": 2,
+          "ast": 8,
+          "pra": 31
+        },
+        {
+          "date": "2026-05-17",
+          "pts": 13,
+          "reb": 4,
+          "ast": 5,
+          "pra": 22
+        }
+      ]
     },
     {
       "player": "Jalen Brunson",
@@ -193,7 +452,44 @@
           "line": 7.0,
           "book": "FanDuel"
         }
-      }
+      },
+      "last5": [
+        {
+          "date": "2026-06-03",
+          "pts": 30,
+          "reb": 3,
+          "ast": 2,
+          "pra": 35
+        },
+        {
+          "date": "2026-06-05",
+          "pts": 20,
+          "reb": 5,
+          "ast": 6,
+          "pra": 31
+        },
+        {
+          "date": "2026-06-08",
+          "pts": 32,
+          "reb": 5,
+          "ast": 5,
+          "pra": 42
+        },
+        {
+          "date": "2026-06-10",
+          "pts": 36,
+          "reb": 5,
+          "ast": 7,
+          "pra": 48
+        },
+        {
+          "date": "2026-06-13",
+          "pts": 45,
+          "reb": 3,
+          "ast": 3,
+          "pra": 51
+        }
+      ]
     },
     {
       "player": "Devin Booker",
@@ -217,7 +513,44 @@
           "line": 6.5,
           "book": "DraftKings"
         }
-      }
+      },
+      "last5": [
+        {
+          "date": "2026-04-08",
+          "pts": 37,
+          "reb": 5,
+          "ast": 9,
+          "pra": 51
+        },
+        {
+          "date": "2026-04-19",
+          "pts": 23,
+          "reb": 6,
+          "ast": 2,
+          "pra": 31
+        },
+        {
+          "date": "2026-04-22",
+          "pts": 22,
+          "reb": 7,
+          "ast": 4,
+          "pra": 33
+        },
+        {
+          "date": "2026-04-25",
+          "pts": 16,
+          "reb": 4,
+          "ast": 7,
+          "pra": 27
+        },
+        {
+          "date": "2026-04-27",
+          "pts": 24,
+          "reb": 0,
+          "ast": 6,
+          "pra": 30
+        }
+      ]
     },
     {
       "player": "Damian Lillard",
@@ -241,7 +574,44 @@
           "line": 6.5,
           "book": "FanDuel"
         }
-      }
+      },
+      "last5": [
+        {
+          "date": "2025-03-16",
+          "pts": 19,
+          "reb": 1,
+          "ast": 2,
+          "pra": 22
+        },
+        {
+          "date": "2025-03-18",
+          "pts": 16,
+          "reb": 3,
+          "ast": 4,
+          "pra": 23
+        },
+        {
+          "date": "2025-04-22",
+          "pts": 14,
+          "reb": 3,
+          "ast": 7,
+          "pra": 24
+        },
+        {
+          "date": "2025-04-25",
+          "pts": 7,
+          "reb": 3,
+          "ast": 5,
+          "pra": 15
+        },
+        {
+          "date": "2025-04-27",
+          "pts": 0,
+          "reb": 2,
+          "ast": 2,
+          "pra": 4
+        }
+      ]
     }
   ]
 }
