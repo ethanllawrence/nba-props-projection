@@ -26,6 +26,7 @@ const STAT_COLS = [
 ];
 
 let sortState = { key: "points", dir: "desc" };
+let earlyView = false;   // early look: no lines exist yet, so cells show the projection only
 
 /* Injury check (nproj/injury_check.py): later runs compare against the
    morning board and list who was ruled out/cleared and whose projection
@@ -109,7 +110,7 @@ function statCell(stat, extraCls, delta, key) {
   if (!stat) return `<td class="num${cls}"><span class="dim">—</span></td>`;
   const hasLine = stat.line != null;
   const edgeCls = edgeClass(stat);
-  let sub = hasLine ? "L " + stat.line.toFixed(1) : "no line";
+  let sub = hasLine ? "L " + stat.line.toFixed(1) : earlyView ? "&nbsp;" : "no line";
   if (hasLine && stat.p_over != null) {
     const pick = stat.call === "under" || (!stat.call && stat.p_over < 0.5)
       ? `U ${Math.round((1 - stat.p_over) * 100)}%` : `O ${Math.round(stat.p_over * 100)}%`;
@@ -173,32 +174,63 @@ function tableView(players) {
       <span><span class="sw o"></span>no edge vs. price</span>
       <span><span class="sw r"></span>model edge: under</span>
     </div>`
-    : `<div class="legend"><span>Projections only: no book lines for this slate yet.</span></div>`;
+    : `<div class="legend"><span>${earlyView ? "Early look: model projections only. Lines arrive the morning of the games."
+      : "Projections only: no book lines for this slate yet."}</span></div>`;
   return `${legend}
     <div class="board-tbl-wrap today-tbl-wrap"><div class="board-tbl today-tbl">
       <table class="t"><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table>
     </div></div>`;
 }
 
-async function main() {
-  let data;
+/* Today vs. Early look (docs/data/tomorrow.json: the next game day's model
+   projections, before lines exist). The Today board is the default; the
+   early look opens first when today's board is stale or the offseason
+   preview. */
+const azToday = () => new Date().toLocaleDateString("en-CA", { timeZone: "America/Phoenix" });
+const niceDate = (d) => {
+  const [y, m, day] = String(d).split("-").map(Number);
+  return new Date(y, m - 1, day).toLocaleDateString([], { weekday: "short", month: "short", day: "numeric" });
+};
+
+async function getJson(name) {
   try {
-    data = await (await fetch("data/today.json?_=" + Date.now())).json();
+    return await (await fetch(`data/${name}?_=` + Date.now())).json();
   } catch {
+    return null;
+  }
+}
+
+async function main() {
+  const [today, early] = await Promise.all([getJson("today.json"), getJson("tomorrow.json")]);
+  if (!today && !early) {
     $("#board").innerHTML = '<div class="notice">No data yet.</div>';
     return;
   }
-  const upd = new Date(data.generated_at);
-  $("#subtitle").textContent = `${data.date} · updated ${upd.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
-  if (data.note) $("#note").textContent = data.note + " Tap a column header to sort.";
-  const players = data.players || [];
+  const earlyOk = early && early.players && early.players.length && early.date >= azToday()
+    && (!today || early.date > today.date || /MOCKUP/.test(today.note || ""));
+  const todayStale = !today || today.date < azToday() || /MOCKUP/.test(today.note || "");
+  let view = earlyOk && todayStale ? "early" : "today";
 
   const render = () => {
-    if (!players.length) {
-      $("#board").innerHTML = '<div class="notice">No players on the slate.</div>';
-      return;
-    }
-    $("#board").innerHTML = checkBanner(data.injury_check) + tableView(players);
+    const data = view === "early" ? early : today;
+    earlyView = view === "early";
+    const chips = earlyOk
+      ? `<div class="view-chips" style="margin-bottom:12px">
+          <button class="chip ${view === "today" ? "on" : ""}" data-view="today">Today${today ? " · " + esc(niceDate(today.date)) : ""}</button>
+          <button class="chip ${view === "early" ? "on" : ""}" data-view="early">Early look · ${esc(niceDate(early.date))}</button>
+        </div>` : "";
+    const upd = new Date(data.generated_at);
+    $("#subtitle").textContent = `${data.date} · updated ${upd.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
+    $("#note").textContent = (data.note || "") + " Tap a column header to sort.";
+    const players = data.players || [];
+    const body = !players.length
+      ? '<div class="notice">No players on the slate.</div>'
+      : (view === "today" ? checkBanner(data.injury_check) : "") + tableView(players);
+    $("#board").innerHTML = chips + body;
+    $("#board").querySelectorAll("[data-view]").forEach((b) => b.addEventListener("click", () => {
+      view = b.dataset.view;
+      render();
+    }));
     $("#board").querySelectorAll("th[data-key]").forEach((th) => th.addEventListener("click", () => {
       const key = th.dataset.key;
       sortState = key === sortState.key

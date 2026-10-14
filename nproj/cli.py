@@ -75,11 +75,49 @@ def cmd_daily(args) -> None:
             print(f"[injury-check] {injury_check.update(con, date_s, morning=config.ODDS_MODE == 'props')}")
         except Exception as exc:  # noqa: BLE001 - never block the board
             print(f"[injury-check] FAILED: {exc}")
+        if getattr(args, "early_look", True):
+            try:
+                print(f"[early-look] {_early_look(con, date_s)}")
+            except Exception as exc:  # noqa: BLE001 - never block the board
+                import traceback
+                traceback.print_exc()
+                print(f"[early-look] FAILED: {exc}")
     from .export.status import write_status
     print(f"[status] {write_status(date_s, slate['games'])}")
     print(f"[daily] trained {trained} player-stats, wrote {projected} projections, exported {result}")
     if slate["games"] == 0:
         print("[daily] no games on this date, so today.json was left as it was")
+
+
+EARLY_LOOK_DAYS = 10   # look this far ahead for the next game day
+
+
+def _early_look(con, date_s):
+    """Project the next game day after date_s (docs/data/tomorrow.json).
+    Runs after everything for today is written, because it retrains the
+    model for that date (live.PROJ then holds the early-look projections)."""
+    import os
+    from datetime import date, timedelta
+    from . import pipeline
+    from .export.site_export import export_early_look
+    from .model import live, predict
+    nxt = None
+    for i in range(1, EARLY_LOOK_DAYS + 1):
+        d = (date.fromisoformat(date_s) + timedelta(days=i)).isoformat()
+        slate = pipeline.refresh_slate(con, d)
+        if slate["games"]:
+            nxt = d
+            break
+    if not nxt:
+        return {"skipped": f"no games in the next {EARLY_LOOK_DAYS} days"}
+    predict.train(con, before_date=nxt)
+    predict.project_date(con, nxt)
+    live.PROJ.clear()
+    if os.environ.get("NPROJ_MODEL", "lightgbm") != "baseline":
+        _maybe_model(con, nxt)
+    n = export_early_look(con, nxt)
+    return {"date": nxt, "games": slate["games"], "players": n,
+            "model": "lightgbm" if live.PROJ else "baseline"}
 
 
 def _maybe_store():
@@ -143,6 +181,7 @@ def cmd_injury_check(args) -> None:
     print(f"[injury-check] {date_s}: {'running' if go else 'skipping'} ({why})")
     if go:
         args.date = None
+        args.early_look = False
         cmd_daily(args)
 
 

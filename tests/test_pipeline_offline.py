@@ -57,6 +57,14 @@ def fake_gamelog(pid, season):
 
 
 def fake_get(path, params=None, retries=3):
+    if path.endswith("/scoreboard") and (params or {}).get("dates") not in (None, "20260310"):
+        # any other date: the same two matchups a day later, with their own game ids
+        # (like the real schedule), so the early look has a separate slate
+        d = (params or {})["dates"]
+        nxt = f"{d[:4]}-{d[4:6]}-{int(d[6:]) + 1:02d}"
+        ev = fake_get(path, {"dates": "20260310"})["events"]
+        return {"events": [dict(e, id=f"{e['id']}-{d}", date=e["date"].replace("2026-03-11", nxt).replace(
+            "2026-03-10", f"{d[:4]}-{d[4:6]}-{d[6:]}")) for e in ev]}
     if path.endswith("/scoreboard"):
         return {"events": [
             {"id": "g1", "date": "2026-03-11T02:00Z", "season": {"type": 2},
@@ -121,6 +129,10 @@ def test_daily_offline():
         assert all(s["line"] is None for s in p["stats"].values())
     jok = next(p for p in today["players"] if p["player"] == "Nikola Jokic")
     assert jok["home"] is True and jok["opp"] == "OKC"
+    # early look: the next game day after the board date, model/baseline only, no lines
+    early = json.loads((site / "tomorrow.json").read_text())
+    assert early["early_look"] is True and early["date"] > "2026-03-10", early.get("date")
+    assert early["players"] and all(v["line"] is None for p in early["players"] for v in p["stats"].values())
     # last 5 games under each name: at most 5, oldest first, all before tonight
     for p in today["players"]:
         l5 = p["last5"]

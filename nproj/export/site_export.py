@@ -69,7 +69,13 @@ def _time_et(tipoff_utc):
         return ""
 
 
-def _export_today_board(con, date_s: str):
+def export_early_look(con, date_s: str):
+    """docs/data/tomorrow.json: the next game day's projections (model only,
+    no sportsbook lines yet), built by the same code as the Today board."""
+    return _export_today_board(con, date_s, path=config.SITE_DATA_DIR / "tomorrow.json", early=True)
+
+
+def _export_today_board(con, date_s: str, path=None, early=False):
     rows = con.execute(
         """SELECT pp.player_id, pp.status, p.name, p.team, g.home_team, g.away_team, g.tipoff_utc
            FROM probable_players pp
@@ -163,9 +169,14 @@ def _export_today_board(con, date_s: str):
     method = ("Projections come from the PRA model (LightGBM trained on three seasons: recent form, "
               "minutes, opponent, pace and spread, rest, and teammates out). " if use_model else
               "Projections are a recency-weighted average of recent games (the model didn't run). ")
-    _save(config.SITE_DATA_DIR / "today.json", {
+    if early:
+        lines_note = ("Early look: projections from today's rosters and injury reports, before any "
+                      "sportsbook lines exist. Expect changes as injury news comes in; the Today board "
+                      "takes over at 8 PM Arizona time the night before.")
+    _save(path or config.SITE_DATA_DIR / "today.json", {
         "generated_at": _now(),
         "date": date_s,
+        "early_look": early,
         "model": "lightgbm" if use_model else "baseline",
         "note": method + lines_note,
         "lines_fetched_at": book.get("fetched_at"),
