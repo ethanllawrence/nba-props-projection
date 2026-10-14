@@ -432,11 +432,23 @@ def test_parlay_daily_and_settle():
                          "assists": 11, "threes": 2, "playoff": False})
         return rows
     espn.fetch_player_game_log = with_game
+    # an early-look parlay for 2026-03-10 (made the day before) gets graded too:
+    # Jokic 35+ PRA hits (40+12+11), 70+ PRA misses
+    from nproj.model import parlay as Pm
+    Pm.save_early("2026-03-10", {"date": "2026-03-10", "status": "pending", "combined_prob": 0.6,
+                                 "fair_odds": -150, "legs": [
+        {"player": "Nikola Jokic", "player_id": "3112335", "stat": "pra", "milestone": 35, "prob": 0.8,
+         "side": "over", "line": 34.5},
+        {"player": "Nikola Jokic", "player_id": "3112335", "stat": "pra", "milestone": 70, "prob": 0.8,
+         "side": "over", "line": 69.5}]})
     cli.main(["daily", "--date", "2026-03-11"])
     espn.fetch_player_game_log = orig
     pj = json.loads((site / "parlay.json").read_text())
     h = pj["history"][-1]
     assert h["date"] == "2026-03-10" and h["result"] in ("win", "loss")
+    eh = pj["early_history"][-1]
+    assert eh["date"] == "2026-03-10" and eh["result"] == "loss", eh
+    assert [l["hit"] for l in eh["legs"]] == [True, False] and "2026-03-10" not in pj.get("early", {})
     for leg in h["legs"]:
         assert leg["actual"] is not None
         assert leg["hit"] == (leg["actual"] > leg["line"] if leg["side"] == "over"

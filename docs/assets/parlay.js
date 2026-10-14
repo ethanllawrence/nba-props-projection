@@ -131,6 +131,51 @@ function historyTable(history) {
     </div></div>`;
 }
 
+/* Early-look parlay (nproj/model/early_parlay.py): milestone overs picked
+   from the next game day's early-look projections, before lines exist. */
+const niceDate = (d) => {
+  const [y, m, day] = String(d).split("-").map(Number);
+  return new Date(y, m - 1, day).toLocaleDateString([], { weekday: "short", month: "short", day: "numeric" });
+};
+const statShort = { pra: "PRA", points: "points", rebounds: "rebounds", assists: "assists" };
+
+function earlyLegRow(l) {
+  return `<tr>
+    <td><div class="pn">${esc(l.player)}</div>
+      <div class="pm">${esc(l.team)} ${l.home ? "vs" : "@"} ${esc(l.opp)} · proj ${l.proj} ${esc(statShort[l.stat])}</div></td>
+    <td class="num"><span class="pos" style="font-weight:700">${l.milestone}+ ${esc(statShort[l.stat])}</span></td>
+    <td class="num">${Math.round(l.prob * 100)}%</td>
+  </tr>`;
+}
+
+function earlySection(early, hist) {
+  const picks = Object.values(early || {}).sort((a, b) => (a.date < b.date ? -1 : 1));
+  const graded = (hist || []).filter((h) => h.result === "win" || h.result === "loss");
+  const w = graded.filter((h) => h.result === "win").length;
+  const rec = graded.length ? ` · record ${w}-${graded.length - w}` : "";
+  if (!picks.length && !graded.length) return "";
+  const cards = picks.map((p) => {
+    if (!p.legs || !p.legs.length) {
+      return `<div class="notice" style="margin:8px 0">${esc(niceDate(p.date))}: ${esc(p.note || "No early-look parlay.")}</div>`;
+    }
+    const fair = p.fair_odds > 0 ? "+" + p.fair_odds : String(p.fair_odds);
+    return `<div class="card">
+      <div class="call-meta" style="margin-bottom:6px">${esc(niceDate(p.date))} · ${p.legs.length} legs ·
+        model chance all hit <b>${Math.round(p.combined_prob * 100)}%</b> (fair ${fair})</div>
+      <div class="board-tbl-wrap"><div class="board-tbl compact-tbl"><table class="t">
+        <thead><tr><th>Player</th><th class="num">Leg</th><th class="num">Model</th></tr></thead>
+        <tbody>${p.legs.map(earlyLegRow).join("")}</tbody></table></div></div>
+    </div>`;
+  }).join("");
+  return `<h2 class="sec">Early look parlay${rec}</h2>
+    <div class="noedge" style="margin:-4px 0 10px">Strong-conviction milestone overs (like 30+ PRA) for the
+      biggest names, picked from the early-look projections before lines exist: each leg is a milestone
+      the model gives 78-86%. Re-picked with each update until the day before; graded the next morning.
+      ${esc((picks.find((p) => p.note && p.legs && p.legs.length) || {}).note || "")}
+      Books pay less than the fair price shown.</div>
+    ${cards}`;
+}
+
 async function main() {
   let data;
   try {
@@ -147,6 +192,10 @@ async function main() {
     ? parlayHero(data.today) + data.today.legs.map(legCard).join("")
     : `<div class="notice" style="margin:12px 0">${esc(data.no_parlay_reason ||
         "No parlay yet today. It's picked each morning once the day's lines are in.")}</div>`;
-  $("#parlay-body").innerHTML = todayHtml + trackRecord(history) + historyTable(history);
+  const early = earlySection(data.early, data.early_history);
+  const preview = /MOCKUP/.test(data.note || "") || !(data.today && data.today.legs && data.today.legs.length);
+  $("#parlay-body").innerHTML = preview
+    ? early + todayHtml + trackRecord(history) + historyTable(history)
+    : todayHtml + early + trackRecord(history) + historyTable(history);
 }
 main();

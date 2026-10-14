@@ -116,8 +116,12 @@ def _early_look(con, date_s):
     if os.environ.get("NPROJ_MODEL", "lightgbm") != "baseline":
         _maybe_model(con, nxt)
     n = export_early_look(con, nxt)
-    return {"date": nxt, "games": slate["games"], "players": n,
-            "model": "lightgbm" if live.PROJ else "baseline"}
+    log = {"date": nxt, "games": slate["games"], "players": n,
+           "model": "lightgbm" if live.PROJ else "baseline"}
+    if live.PROJ:     # the early-look parlay needs the model's distributions
+        from .model import early_parlay, parlay
+        log["parlay"] = parlay.save_early(nxt, early_parlay.pick(con, nxt, live.PROJ))
+    return log
 
 
 def _maybe_store():

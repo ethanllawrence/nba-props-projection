@@ -3,6 +3,8 @@ from history/ (as if it were tonight), train on everything before it, and
 check the projections, probabilities and the board export. Uses a small
 tree count so it runs in about a minute."""
 import json
+
+import numpy as np
 import os
 import shutil
 import sys
@@ -65,6 +67,14 @@ def test_live_model():
         p_joint = live.td_probability(tdp)
         p_indep = live.td_probability(tdp, corr=[[1, 0, 0], [0, 1, 0], [0, 0, 1]])
         assert 0 < p_indep < p_joint < 1, (p_indep, p_joint)
+        # early-look parlay: milestone overs in the conviction band, stars first
+        from nproj.model import early_parlay as EP
+        ep = EP.pick(con, DATE, live.PROJ)
+        assert ep and EP.MIN_LEGS <= len(ep["legs"]) <= EP.N_LEGS, ep
+        assert all(EP.BAND_LO <= l["prob"] <= EP.BAND_HI and l["side"] == "over" for l in ep["legs"])
+        assert len({l["player_id"] for l in ep["legs"]}) == len(ep["legs"])
+        assert all(sum(x["game_id"] == l["game_id"] for x in ep["legs"]) <= EP.MAX_PER_GAME for l in ep["legs"])
+        assert abs(ep["combined_prob"] - np.prod([l["prob"] for l in ep["legs"]])) < 0.002
         top = sorted(live.PROJ, key=lambda p: -live.PROJ[p]["points"])[:6]
         # lines: two below the projection, two above, two right at it
         lines = {}

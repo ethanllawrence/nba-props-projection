@@ -395,6 +395,26 @@ def _load(path):
         return {"history": []}
 
 
+def save_early(date_s, pick):
+    """Store (or replace) the early-look parlay for date_s in parlay.json.
+    Re-picked on every daily run until that date becomes today's board."""
+    path = config.SITE_DATA_DIR / "parlay.json"
+    data = _load(path)
+    early = data.setdefault("early", {})
+    before = json.dumps(early.get(date_s), sort_keys=True)
+    early[date_s] = pick or {"date": date_s, "legs": [], "status": "none",
+                             "note": "No early-look parlay: not enough stars cleared the conviction band."}
+    after = json.dumps({k: v for k, v in early[date_s].items() if k != "picked_at"}, sort_keys=True)
+    was = json.loads(before) if before != "null" else None
+    if was and json.dumps({k: v for k, v in was.items() if k != "picked_at"}, sort_keys=True) == after:
+        return {"unchanged": date_s}
+    data["generated_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+    return {"saved": date_s, "legs": len(early[date_s]["legs"])}
+
+
 def update(con, date_s, allow_spend=False):
     """Settle any finished parlay, then build (or rebuild) today's. Writes
     docs/data/parlay.json only when something changed. -> summary dict."""
@@ -405,6 +425,17 @@ def update(con, date_s, allow_spend=False):
 
     mock = "MOCKUP" in (data.get("note") or "")
     today_json = data.get("today")
+
+    # 0. grade finished early-look parlays (nproj/model/early_parlay.py)
+    for d, ep in sorted((data.get("early") or {}).items()):
+        if d < date_s and ep and ep.get("legs") and util.day_is_final(d):
+            settled = settle(con, ep)
+            data.setdefault("early_history", []).append(settled)
+            data["early_history"] = data["early_history"][-HISTORY_KEEP:]
+            del data["early"][d]
+            log.setdefault("early_settled", []).append({"date": d, "result": settled["result"]})
+        elif d < date_s and not (ep and ep.get("legs")):
+            del data["early"][d]
 
     # 1. settle a finished real parlay. A parlay from an earlier date whose
     #    games may still be running (the 8 PM run flips the board to tomorrow)
@@ -431,8 +462,8 @@ def update(con, date_s, allow_spend=False):
         # them). Later runs only flag changed legs (nproj/injury_check.py).
         log["locked"] = date_s
     elif has_slate and saved.get("lines"):
-        if mock:  # first real game day: drop the hand-made preview
-            data = {"history": []}
+        if mock:  # first real game day: drop the hand-made preview (keep early-look parlays)
+            data = {"history": [], **{k: data[k] for k in ("early", "early_history") if k in data}}
         if allow_spend:
             log["extras"] = buy_extras(con, date_s, saved)
         cands = candidates(con, date_s, saved)
