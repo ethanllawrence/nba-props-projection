@@ -23,29 +23,6 @@ function parlayHero(t) {
     </div>`;
 }
 
-function trackRecord(history) {
-  if (!history.length) return "";
-  const graded = history.filter((h) => h.result === "win" || h.result === "loss");
-  if (!graded.length) return "";
-  const wins = graded.filter((h) => h.result === "win").length;
-  const losses = graded.length - wins;
-  const hitRate = Math.round((wins / graded.length) * 100);
-  let streak = 0;
-  for (const h of graded.slice().reverse()) {
-    if (h.result === "win") streak++;
-    else break;
-  }
-  return `
-    <div class="tiles">
-      <div class="tile"><div class="v">${wins}-${losses}</div><div class="k">Record</div>
-        <div class="s">last ${graded.length} parlays</div></div>
-      <div class="tile"><div class="v">${hitRate}%</div><div class="k">Hit rate</div>
-        <div class="s">all legs must hit</div></div>
-      <div class="tile"><div class="v">${streak}</div><div class="k">Current streak</div>
-        <div class="s">${streak > 0 ? "wins in a row" : "snapped last parlay"}</div></div>
-    </div>`;
-}
-
 function riskBadge(level) {
   if (level === "unknown") return `<span class="badge conf-mid">no spread today</span>`;
   const cls = { low: "conf-high", medium: "conf-mid", high: "conf-low" }[level] || "conf-mid";
@@ -146,37 +123,44 @@ function earlyLegRow(l) {
     <td><div class="pn">${esc(l.player)}</div>
       <div class="pm">${esc(l.team)} ${l.home ? "vs" : "@"} ${esc(l.opp)} · proj ${l.proj} ${esc(statShort[l.stat])}</div></td>
     <td class="num"><div class="pos" style="font-weight:700">${ms}+ ${esc(statShort[l.stat])}</div>
-      <div class="pm">${fmtOdds(l.odds)} ${esc(l.book || "")}</div></td>
-    <td class="num">${Math.round(l.model_prob * 100)}%
-      <div class="pm">book ${Math.round(l.book_prob * 100)}% · <span class="${gap >= 0 ? "pos" : "neg"}">${gap >= 0 ? "+" : ""}${gap}</span></div></td>
+      <div class="pm">${fmtOdds(l.odds)} ${esc(l.book || "")}</div>
+      <div class="pm">model ${Math.round(l.model_prob * 100)}% · book ${Math.round(l.book_prob * 100)}%
+        <span class="${gap >= 0 ? "pos" : "neg"}">(${gap >= 0 ? "+" : ""}${gap})</span></div></td>
   </tr>`;
 }
 
-function earlySection(early, hist) {
+function earlyCards(early) {
   const picks = Object.values(early || {}).sort((a, b) => (a.date < b.date ? -1 : 1));
-  const graded = (hist || []).filter((h) => h.result === "win" || h.result === "loss");
-  const w = graded.filter((h) => h.result === "win").length;
-  const rec = graded.length ? ` · record ${w}-${graded.length - w}` : "";
-  if (!picks.length && !graded.length) return "";
-  const cards = picks.map((p) => {
+  if (!picks.length) {
+    return `<div class="notice" style="margin:8px 0">The early look parlay appears once the next game
+      day's alt lines are bought, a day or two before the games.</div>`;
+  }
+  return picks.map((p) => {
     if (!p.legs || !p.legs.length) {
-      return `<div class="notice" style="margin:8px 0">${esc(niceDate(p.date))}: ${esc(p.note || "No early-look parlay.")}</div>`;
+      return `<div class="notice" style="margin:8px 0">${esc(niceDate(p.date))}: ${esc(p.note || "No early look parlay.")}</div>`;
     }
     return `<div class="card">
       <div class="call-meta" style="margin-bottom:6px">${esc(niceDate(p.date))} · ${p.legs.length} legs ·
-        <b>${fmtOdds(p.combined_odds)}</b> on the book · model chance all hit ${Math.round(p.model_prob * 100)}%
-        (book ${Math.round(p.book_prob * 100)}%)</div>
+        <b>${fmtOdds(p.combined_odds)}</b> on the book · all legs hit: model ${Math.round(p.model_prob * 100)}%,
+        book ${Math.round(p.book_prob * 100)}%</div>
       <div class="board-tbl-wrap"><div class="board-tbl compact-tbl"><table class="t">
-        <thead><tr><th>Player</th><th class="num">Leg</th><th class="num">Model</th></tr></thead>
+        <thead><tr><th>Player</th><th class="num">Leg</th></tr></thead>
         <tbody>${p.legs.map(earlyLegRow).join("")}</tbody></table></div></div>
     </div>`;
   }).join("");
-  return `<h2 class="sec">Early look parlay${rec}</h2>
-    <div class="noedge" style="margin:-4px 0 10px">3-4 star overs at about +200 real odds, picked from
-      FanDuel/DraftKings alt lines for the next game day. Legs are priced -150 to -300; the model vetoes
-      any leg it rates well below the book and ranks the rest by how much more it likes them than the
-      book does (the +/- number). Graded the next morning.</div>
-    ${cards}`;
+}
+
+function record(hist) {
+  const graded = (hist || []).filter((h) => h.result === "win" || h.result === "loss");
+  const w = graded.filter((h) => h.result === "win").length;
+  return { w, l: graded.length - w, n: graded.length };
+}
+
+function recordTiles(main, early) {
+  const tile = (r, label) => `<div class="tile"><div class="v">${r.n ? `${r.w}-${r.l}` : "—"}</div>
+    <div class="k">${label}</div>
+    <div class="s">${r.n ? `${Math.round((r.w / r.n) * 100)}% hit · every leg must hit` : "no graded parlays yet"}</div></div>`;
+  return `<div class="tiles">${tile(record(main), "Parlay of the Day")}${tile(record(early), "Early look parlay")}</div>`;
 }
 
 async function main() {
@@ -189,16 +173,30 @@ async function main() {
   }
   const upd = new Date(data.generated_at);
   $("#subtitle").textContent = `updated ${upd.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
-  const history = data.history || [];
-  if (data.note && $("#note")) $("#note").textContent = data.note;
-  const todayHtml = data.today && data.today.legs && data.today.legs.length
-    ? parlayHero(data.today) + data.today.legs.map(legCard).join("")
-    : `<div class="notice" style="margin:12px 0">${esc(data.no_parlay_reason ||
-        "No parlay yet today. It's picked each morning once the day's lines are in.")}</div>`;
-  const early = earlySection(data.early, data.early_history);
-  const preview = /MOCKUP/.test(data.note || "") || !(data.today && data.today.legs && data.today.legs.length);
-  $("#parlay-body").innerHTML = preview
-    ? early + todayHtml + trackRecord(history) + historyTable(history)
-    : todayHtml + early + trackRecord(history) + historyTable(history);
+  // the hand-made preview from before opening night is never shown; it's
+  // replaced in the data on the first real game day
+  const mock = /MOCKUP/.test(data.note || "");
+  const history = mock ? [] : (data.history || []);
+  const t = !mock && data.today && data.today.legs && data.today.legs.length ? data.today : null;
+  const tonight = t
+    ? parlayHero(t) + t.legs.map(legCard).join("")
+      + (data.note ? `<div class="noedge" style="margin:4px 0 12px">${esc(data.note)}</div>` : "")
+    : `<div class="notice" style="margin:8px 0">${esc((!mock && data.no_parlay_reason) ||
+        "No Parlay of the Day yet. It's picked each morning at 6 AM Arizona time from that day's lines; " +
+        "the first one comes on opening day.")}</div>`;
+  const earlyHist = data.early_history || [];
+  $("#parlay-body").innerHTML = `
+    <h2 class="sec">Tonight · Parlay of the Day</h2>
+    ${tonight}
+    <h2 class="sec">Next game day · Early look parlay</h2>
+    <div class="noedge" style="margin:-4px 0 10px">3-4 star overs at about +200 real odds from FanDuel/DraftKings
+      alt lines. The model drops legs it rates well below the book and picks the combination it likes most
+      relative to the book (the +/- number). Prices are from when the lines were bought, so check them
+      before betting.</div>
+    ${earlyCards(data.early)}
+    <h2 class="sec">Track record</h2>
+    ${recordTiles(history, earlyHist)}
+    ${history.length ? historyTable(history).replace('<h2 class="sec">History</h2>', '<h2 class="sec">Parlay of the Day history</h2>') : ""}
+    ${earlyHist.length ? historyTable(earlyHist).replace('<h2 class="sec">History</h2>', '<h2 class="sec">Early look history</h2>') : ""}`;
 }
 main();

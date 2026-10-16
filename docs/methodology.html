@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>PRAjections — Methodology</title>
-<link rel="stylesheet" href="assets/style.css?v=3">
+<link rel="stylesheet" href="assets/style.css?v=4">
 </head>
 <body>
 <div class="wrap">
@@ -24,10 +24,11 @@
   <div class="prose">
     <h2>What this is</h2>
     <p>A hobby model projecting NBA player points, rebounds, assists, and PRA (points +
-    rebounds + assists combined), compared against sportsbook lines, ranking any
-    positive-expected-value edges — the same approach as the K Board's MLB strikeout model,
-    adapted for basketball. Projections come from a model trained on real box scores, compared
-    against FanDuel/DraftKings lines pulled each morning.</p>
+    rebounds + assists combined), built the same way as the K Board's MLB strikeout model and
+    adapted for basketball. Projections come from a model trained on three seasons of real box
+    scores and are compared against FanDuel/DraftKings lines pulled each morning. The site is
+    honest about what the model can and can't do: it is a careful projection, not a proven way to
+    beat the books (see The model and Results).</p>
 
     <h2>The model</h2>
     <p>Every projection comes from a machine-learning model (gradient-boosted trees, LightGBM)
@@ -155,14 +156,17 @@
     against. The board flips to the next day's slate at 8 PM Arizona time, but a night is only
     graded once all its games are over.</p>
 
-    <h2>What's real vs. still a stub</h2>
-    <p>Real: the projections and probabilities above, rosters and injury statuses from ESPN, and
-    FanDuel/DraftKings lines pulled early each morning on a tight free-plan budget (the combined
-    PRA line first, then points, rebounds and assists as credits allow, so on busy nights some
-    stats show "no line"). Box scores are added to the model's data every morning, and injury checks run before tip-off.
-    Still ahead: better minutes information (confirmed starting lineups), and a proper joint
-    model for the Jokic triple-double call (still a simple hit-rate blend).</p>
-    <p>See the planning doc for the full build-phase roadmap and open decisions.</p>
+    <h2>Data and schedule</h2>
+    <p>Rosters, injury statuses, schedules and box scores come from ESPN. Sportsbook lines come from
+    FanDuel/DraftKings through a free odds plan with a tight monthly budget: each morning buys the
+    combined PRA line first, then points, rebounds and assists as credits allow, so on busy nights
+    some stats show "no line". Spare credits go to alt lines for the parlays. The site updates at
+    6 AM Arizona time (lines, last night's grading), 3 PM, and about an hour before each game
+    tips (injury checks), and flips to the next day's slate at 8 PM.</p>
+    <p>Known limits: early in a season the model leans on last season's games (including the
+    playoffs), so projections for stars can run low for the first few weeks, and players who
+    changed teams are projected in their old role until they've played a few games. Still ahead:
+    confirmed starting lineups, which would sharpen minutes projections more than anything else.</p>
   </div>
 
   <footer class="site">

@@ -147,9 +147,10 @@ function last5(p) {
 }
 
 function tableRow(p) {
-  const tag = p.status ? ` <span class="dim">(${esc(p.status)})</span>` : "";
-  const nameCell = `<td><div class="pn">${esc(p.player)}${tag}</div>
-    <div class="pm">${esc(p.team)} ${p.home ? "vs" : "@"} ${esc(p.opp)} · ${esc(p.time_et)}</div>${last5(p)}</td>`;
+  // injury status goes on the second line so long names don't widen the table
+  const tag = p.status ? ` · <span class="status-tag">${esc(p.status)}</span>` : "";
+  const nameCell = `<td><div class="pn">${esc(p.player)}</div>
+    <div class="pm">${esc(p.team)} ${p.home ? "vs" : "@"} ${esc(p.opp)} · ${esc(p.time_et)}${tag}</div>${last5(p)}</td>`;
   const d = (p.since && p.since.delta) || {};
   const cells = STAT_COLS.map((c) => statCell(statOf(p, c.key), c.key === "pra" ? "pra-cell" : "",
     d[c.key], c.key)).join("");
@@ -206,17 +207,21 @@ async function main() {
     $("#board").innerHTML = '<div class="notice">No data yet.</div>';
     return;
   }
+  const todayMock = !today || /MOCKUP/.test(today.note || "");   // pre-season preview board
   const earlyOk = early && early.players && early.players.length && early.date >= azToday()
-    && (!today || early.date > today.date || /MOCKUP/.test(today.note || ""));
-  const todayStale = !today || today.date < azToday() || /MOCKUP/.test(today.note || "");
+    && (todayMock || early.date > today.date);
+  const todayStale = todayMock || today.date < azToday();
   let view = earlyOk && todayStale ? "early" : "today";
 
   const render = () => {
     const data = view === "early" ? early : today;
     earlyView = view === "early";
+    const todayChip = todayMock
+      ? `<button class="chip" disabled title="Tonight's board starts on opening day">Today · starts opening day</button>`
+      : `<button class="chip ${view === "today" ? "on" : ""}" data-view="today">Today · ${esc(niceDate(today.date))}</button>`;
     const chips = earlyOk
       ? `<div class="view-chips" style="margin-bottom:12px">
-          <button class="chip ${view === "today" ? "on" : ""}" data-view="today">Today${today ? " · " + esc(niceDate(today.date)) : ""}</button>
+          ${todayChip}
           <button class="chip ${view === "early" ? "on" : ""}" data-view="early">Early look · ${esc(niceDate(early.date))}</button>
         </div>` : "";
     const upd = new Date(data.generated_at);
