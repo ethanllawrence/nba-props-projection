@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T15:11:17Z",
+  "generated_at": "2026-10-16T15:30:22Z",
   "note": "MOCKUP DATA. Legs are picked from the same players/projections shown on the Today board, but the selection logic itself (conviction screening, blowout-risk check) is not automated yet — see nproj/model/parlay.py. Alt lines, odds, and the whole history log below are made up to preview the layout. No live model or odds feed is wired up yet.",
   "today": {
     "date": "2026-10-22",
@@ -247,10 +247,65 @@
   "early": {
     "2026-10-20": {
       "date": "2026-10-20",
-      "legs": [],
-      "status": "none",
-      "picked_at": "2026-10-16T15:11:17Z",
-      "note": "No early-look parlay: 1 overs passed the price range and the model's veto, not enough to reach +150 with 3-4 legs."
+      "legs": [
+        {
+          "player": "Tyrese Maxey",
+          "player_id": "4431678",
+          "team": "PHI",
+          "opp": "NYK",
+          "home": false,
+          "game_id": "401909089",
+          "side": "over",
+          "stat": "points",
+          "line": 17.5,
+          "odds": -235,
+          "book": "DraftKings",
+          "model_prob": 0.668,
+          "book_prob": 0.671,
+          "gap": -0.003,
+          "proj": 21.8
+        },
+        {
+          "player": "Jalen Brunson",
+          "player_id": "3934672",
+          "team": "NYK",
+          "opp": "PHI",
+          "home": true,
+          "game_id": "401909089",
+          "side": "over",
+          "stat": "points",
+          "line": 24.5,
+          "odds": -146,
+          "book": "FanDuel",
+          "model_prob": 0.544,
+          "book_prob": 0.568,
+          "gap": -0.023,
+          "proj": 26.4
+        },
+        {
+          "player": "OG Anunoby",
+          "player_id": "3934719",
+          "team": "NYK",
+          "opp": "PHI",
+          "home": true,
+          "game_id": "401909089",
+          "side": "over",
+          "stat": "pra",
+          "line": 19.5,
+          "odds": -379,
+          "book": "DraftKings",
+          "model_prob": 0.729,
+          "book_prob": 0.757,
+          "gap": -0.028,
+          "proj": 26.1
+        }
+      ],
+      "combined_odds": 204,
+      "model_prob": 0.265,
+      "book_prob": 0.289,
+      "status": "pending",
+      "picked_at": "2026-10-16T15:30:22Z",
+      "candidates": 11
     }
   }
 }
