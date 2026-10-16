@@ -127,11 +127,23 @@ def _early_look(con, date_s):
                 "SELECT team FROM players WHERE player_id=?", (pid,))]
             order = list(dict.fromkeys(teams))          # games with the most top players first
             try:
-                log["alt_lines"] = odds.refresh_early_alts(date_s, nxt, order)
+                # a manual run with the odds box ticked buys now, however far out
+                manual = os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
+                log["alt_lines"] = odds.refresh_early_alts(date_s, nxt, order, force=manual)
             except Exception as exc:  # noqa: BLE001 - prices are optional
                 log["alt_lines"] = {"error": str(exc)}
         alts = odds.load_early_lines(nxt).get("alts", {})
-        log["parlay"] = parlay.save_early(nxt, early_parlay.pick(con, nxt, live.PROJ, alts))
+        ep = early_parlay.pick(con, nxt, live.PROJ, alts)
+        log["parlay"] = parlay.save_early(nxt, ep)
+        if ep.get("legs"):      # readable in the Actions log
+            print(f"[early-parlay] {nxt}: {ep['combined_odds']:+d} on the book, model {ep['model_prob']:.0%}"
+                  f" vs book {ep['book_prob']:.0%} ({ep.get('candidates')} candidate legs)")
+            for l in ep["legs"]:
+                print(f"    {l['player']:<26} over {l['line']} {l['stat']:<6} {l['odds']:+d} {l['book']:<10}"
+                      f" model {l['model_prob']:.0%} book {l['book_prob']:.0%} gap {l['gap']:+.0%}"
+                      f" (proj {l['proj']})")
+        else:
+            print(f"[early-parlay] {nxt}: {ep.get('note')}")
     return log
 
 

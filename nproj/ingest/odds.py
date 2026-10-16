@@ -394,14 +394,16 @@ def load_early_lines(date_s):
     return data if data.get("date") == date_s else {}
 
 
-def refresh_early_alts(board_date_s, game_date_s, team_order=()):
+def refresh_early_alts(board_date_s, game_date_s, team_order=(), force=False):
     """Buy alt ladders for game_date_s if due and affordable. team_order:
     team abbreviations, most important first (games with the top projected
-    players are bought first). -> log dict."""
+    players are bought first). force: a manual odds run (Robin asked for
+    prices now) skips the days-ahead wait; the budget still applies.
+    -> log dict."""
     if load_early_lines(game_date_s).get("alts"):
         return {"skipped": f"already bought for {game_date_s}"}
     ahead = (date.fromisoformat(game_date_s) - date.fromisoformat(board_date_s)).days
-    if ahead > EARLY_DAYS_AHEAD:
+    if ahead > EARLY_DAYS_AHEAD and not force:
         return {"skipped": f"{game_date_s} is {ahead} days out (buying starts {EARLY_DAYS_AHEAD} days ahead)"}
     saved = load_lines(board_date_s)
     if saved:

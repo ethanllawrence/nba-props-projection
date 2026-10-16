@@ -495,6 +495,11 @@ def _early_alts_checks(site, odds, calls):
 
     log = odds.refresh_early_alts("2026-10-16", "2026-10-20", ["OKC", "NYK"])
     assert "days out" in log["skipped"] and not calls, log
+    # a manual odds run (force) buys now even 4 days out; then reset for the scheduled path
+    log = odds.refresh_early_alts("2026-10-16", "2026-10-20", ["OKC", "NYK"], force=True)
+    assert calls == ["e2", "e1", "e0"], (calls, log)
+    (site / "early_lines.json").unlink()
+    calls.clear()
     log = odds.refresh_early_alts("2026-10-18", "2026-10-20", ["OKC", "NYK"])
     assert calls == ["e2", "e1", "e0"] and log["credits"] == 6, (calls, log)     # capped at 6 credits
     saved = odds.load_early_lines("2026-10-20")
