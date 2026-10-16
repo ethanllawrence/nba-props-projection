@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T14:59:19Z",
+  "generated_at": "2026-10-16T15:11:17Z",
   "note": "MOCKUP DATA. Legs are picked from the same players/projections shown on the Today board, but the selection logic itself (conviction screening, blowout-risk check) is not automated yet — see nproj/model/parlay.py. Alt lines, odds, and the whole history log below are made up to preview the layout. No live model or odds feed is wired up yet.",
   "today": {
     "date": "2026-10-22",
@@ -248,9 +248,9 @@
     "2026-10-20": {
       "date": "2026-10-20",
       "legs": [],
-      "status": "waiting",
-      "picked_at": "2026-10-16T14:59:19Z",
-      "note": "Waiting for alt-line prices. They're bought on the morning run once the games are within 2 days."
+      "status": "none",
+      "picked_at": "2026-10-16T15:11:17Z",
+      "note": "No early-look parlay: 1 overs passed the price range and the model's veto, not enough to reach +150 with 3-4 legs."
     }
   }
 }
