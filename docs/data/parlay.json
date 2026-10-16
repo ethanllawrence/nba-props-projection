@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T00:00:48Z",
+  "generated_at": "2026-10-16T14:59:19Z",
   "note": "MOCKUP DATA. Legs are picked from the same players/projections shown on the Today board, but the selection logic itself (conviction screening, blowout-risk check) is not automated yet — see nproj/model/parlay.py. Alt lines, odds, and the whole history log below are made up to preview the layout. No live model or odds feed is wired up yet.",
   "today": {
     "date": "2026-10-22",
@@ -247,69 +247,10 @@
   "early": {
     "2026-10-20": {
       "date": "2026-10-20",
-      "legs": [
-        {
-          "player": "Jalen Brunson",
-          "player_id": "3934672",
-          "team": "NYK",
-          "opp": "PHI",
-          "home": true,
-          "game_id": "401909089",
-          "stat": "pra",
-          "milestone": 25,
-          "prob": 0.828,
-          "proj": 36.8,
-          "side": "over",
-          "line": 24.5
-        },
-        {
-          "player": "Victor Wembanyama",
-          "player_id": "5104157",
-          "team": "SAS",
-          "opp": "OKC",
-          "home": true,
-          "game_id": "401909090",
-          "stat": "pra",
-          "milestone": 25,
-          "prob": 0.79,
-          "proj": 35.1,
-          "side": "over",
-          "line": 24.5
-        },
-        {
-          "player": "Jayson Tatum",
-          "player_id": "4065648",
-          "team": "BOS",
-          "opp": "DET",
-          "home": false,
-          "game_id": "401909088",
-          "stat": "pra",
-          "milestone": 25,
-          "prob": 0.789,
-          "proj": 35.1,
-          "side": "over",
-          "line": 24.5
-        },
-        {
-          "player": "Shai Gilgeous-Alexander",
-          "player_id": "4278073",
-          "team": "OKC",
-          "opp": "SAS",
-          "home": false,
-          "game_id": "401909090",
-          "stat": "points",
-          "milestone": 15,
-          "prob": 0.845,
-          "proj": 24.2,
-          "side": "over",
-          "line": 14.5
-        }
-      ],
-      "combined_prob": 0.436,
-      "fair_odds": 129,
-      "status": "pending",
-      "picked_at": "2026-10-16T00:00:48Z",
-      "note": "Replayed on every night of 2024-25 and 2025-26 (model trained only on earlier games), this rule's four-leg parlay hit 63% of nights in both seasons; the model predicted about 45%, so its chances run cautious for stars."
+      "legs": [],
+      "status": "waiting",
+      "picked_at": "2026-10-16T14:59:19Z",
+      "note": "Waiting for alt-line prices. They're bought on the morning run once the games are within 2 days."
     }
   }
 }
