@@ -119,8 +119,19 @@ def _early_look(con, date_s):
     log = {"date": nxt, "games": slate["games"], "players": n,
            "model": "lightgbm" if live.PROJ else "baseline"}
     if live.PROJ:     # the early-look parlay needs the model's distributions
+        from .ingest import odds
         from .model import early_parlay, parlay
-        log["parlay"] = parlay.save_early(nxt, early_parlay.pick(con, nxt, live.PROJ))
+        if config.ODDS_MODE == "props" and config.ODDS_API_KEY:     # morning odds run only
+            top = sorted(live.PROJ.items(), key=lambda kv: -kv[1]["pra"])[:early_parlay.POOL_TOP]
+            teams = [r["team"] for pid, _ in top for r in con.execute(
+                "SELECT team FROM players WHERE player_id=?", (pid,))]
+            order = list(dict.fromkeys(teams))          # games with the most top players first
+            try:
+                log["alt_lines"] = odds.refresh_early_alts(date_s, nxt, order)
+            except Exception as exc:  # noqa: BLE001 - prices are optional
+                log["alt_lines"] = {"error": str(exc)}
+        alts = odds.load_early_lines(nxt).get("alts", {})
+        log["parlay"] = parlay.save_early(nxt, early_parlay.pick(con, nxt, live.PROJ, alts))
     return log
 
 

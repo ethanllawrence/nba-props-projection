@@ -67,14 +67,33 @@ def test_live_model():
         p_joint = live.td_probability(tdp)
         p_indep = live.td_probability(tdp, corr=[[1, 0, 0], [0, 1, 0], [0, 0, 1]])
         assert 0 < p_indep < p_joint < 1, (p_indep, p_joint)
-        # early-look parlay: milestone overs in the conviction band, stars first
+        # early-look parlay: real alt prices + model veto/ranking, about +200 real odds
         from nproj.model import early_parlay as EP
-        ep = EP.pick(con, DATE, live.PROJ)
-        assert ep and EP.MIN_LEGS <= len(ep["legs"]) <= EP.N_LEGS, ep
-        assert all(EP.BAND_LO <= l["prob"] <= EP.BAND_HI and l["side"] == "over" for l in ep["legs"])
-        assert len({l["player_id"] for l in ep["legs"]}) == len(ep["legs"])
-        assert all(sum(x["game_id"] == l["game_id"] for x in ep["legs"]) <= EP.MAX_PER_GAME for l in ep["legs"])
-        assert abs(ep["combined_prob"] - np.prod([l["prob"] for l in ep["legs"]])) < 0.002
+        from nproj.ingest.odds import norm_name
+        assert EP.pick(con, DATE, live.PROJ, {})["status"] == "waiting"
+        names = dict(con.execute("SELECT player_id, name FROM players").fetchall())
+        stars = sorted(live.PROJ, key=lambda p: -live.PROJ[p]["pra"])[:10]
+        alts = {}
+        for i, pid in enumerate(stars):
+            mu = live.PROJ[pid]["pra"]
+            ladder = [{"line": round(mu) - 8.5, "over": -400, "book": "FanDuel"},
+                      {"line": round(mu) - 5.5, "over": -260, "book": "FanDuel"},
+                      {"line": round(mu) - 2.5, "over": -160, "book": "FanDuel"}]
+            if i == 0:      # a trap: the book is far surer than the model -> vetoed
+                ladder = [{"line": round(mu) - 1.5, "over": -300, "book": "FanDuel"}]
+            alts[norm_name(names[pid])] = {"pra": ladder}
+        ep = EP.pick(con, DATE, live.PROJ, alts)
+        legs = ep["legs"]
+        assert ep["status"] == "pending" and EP.MIN_LEGS <= len(legs) <= EP.MAX_LEGS, ep
+        assert stars[0] not in {l["player_id"] for l in legs}, "trap leg must be vetoed"
+        assert all(EP.LEG_ODDS[0] <= l["odds"] <= EP.LEG_ODDS[1] and l["gap"] >= EP.VETO
+                   and l["proj"] > l["line"] and l["side"] == "over" for l in legs)
+        assert EP.MIN_ACCEPT <= ep["combined_odds"] <= EP.TARGET_HI
+        assert ep["combined_odds"] == EP.combined_odds([l["odds"] for l in legs])
+        assert len({l["player_id"] for l in legs}) == len(legs)
+        assert all(sum(x["game_id"] == l["game_id"] for x in legs) <= EP.MAX_PER_GAME for l in legs)
+        assert [l["gap"] for l in legs] == sorted((l["gap"] for l in legs), reverse=True)
+        print("OK early parlay:", ep["combined_odds"], [(l["player"], l["line"], l["odds"], l["gap"]) for l in legs])
         top = sorted(live.PROJ, key=lambda p: -live.PROJ[p]["points"])[:6]
         # lines: two below the projection, two above, two right at it
         lines = {}

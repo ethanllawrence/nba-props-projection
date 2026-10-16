@@ -467,7 +467,52 @@ def test_parlay_daily_and_settle():
                                               l["odds"], l["prob"]) for l in t["legs"]], "->", h["result"])
 
 
+def test_early_alts():
+    """Early-look alt lines: bought once per game day, only within 2 days, games
+    with the top players first, inside the budget, charged to today's budget."""
+    site, _ = _fresh_env("props", 700)
+    from nproj.ingest import odds
+    evs = [{"event_id": f"e{i}", "home": h, "away": a, "commence_time": "2026-10-21T00:00:00Z"}
+           for i, (h, a) in enumerate([("BOS", "DET"), ("NYK", "PHI"), ("SAS", "OKC"), ("LAL", "GSW")])]
+    calls = []
+
+    def fake_alts(eid, stats):
+        calls.append(eid)
+        odds.Quota.remaining -= len(stats)
+        return {f"star {eid}": {"pra": [{"line": 29.5, "over": -250, "book": "FanDuel"}]}}
+    orig = (odds.fetch_events, odds.fetch_alt_props, odds.check_quota, odds.Quota.remaining)
+    odds.fetch_events = lambda d: [dict(e) for e in evs]
+    odds.fetch_alt_props = fake_alts
+    odds.check_quota = lambda: (odds.Quota.remaining, 100)
+    odds.Quota.remaining = 400
+    try:
+        _early_alts_checks(site, odds, calls)
+    finally:
+        odds.fetch_events, odds.fetch_alt_props, odds.check_quota, odds.Quota.remaining = orig
+
+
+def _early_alts_checks(site, odds, calls):
+
+    log = odds.refresh_early_alts("2026-10-16", "2026-10-20", ["OKC", "NYK"])
+    assert "days out" in log["skipped"] and not calls, log
+    log = odds.refresh_early_alts("2026-10-18", "2026-10-20", ["OKC", "NYK"])
+    assert calls == ["e2", "e1", "e0"] and log["credits"] == 6, (calls, log)     # capped at 6 credits
+    saved = odds.load_early_lines("2026-10-20")
+    assert saved["games"][0] == "OKC @ SAS" and "star e2" in saved["alts"]
+    assert "already bought" in odds.refresh_early_alts("2026-10-18", "2026-10-20")["skipped"]
+
+    # on a game day, only today's leftover credits are used, and they're charged to today
+    (site / "early_lines.json").unlink()
+    odds.save_lines({"date": "2026-10-19", "allowance": 12, "credits_spent": 9, "extras_spent": 0})
+    calls.clear()
+    log = odds.refresh_early_alts("2026-10-19", "2026-10-20", ["OKC"])
+    assert calls == ["e2"] and log["credits"] == 2, log                          # 3 left -> one game
+    assert odds.load_lines("2026-10-19")["extras_spent"] == 2
+    print("OK early alts:", log)
+
+
 if __name__ == "__main__":
+    test_early_alts()
     test_odds_rationing_and_board()
     test_results_pure()
     test_parlay_pure()

@@ -366,3 +366,74 @@ def load_lines(date_s):
         return {}
     return data if data.get("date") == date_s else {}
 
+
+
+# ------------------------------------------------------- early-look alt lines ----
+# The early-look parlay (nproj/model/early_parlay.py) is built from real alt-line
+# prices for the NEXT game day. They're bought once per game day, on the morning
+# odds run, once that day is within EARLY_DAYS_AHEAD days (books post star
+# props a day or two ahead), from what's left of today's allowance after
+# today's own lines and parlay extras, at most EARLY_MAX_CREDITS. Each game
+# costs one credit per stat (PRA and points alt ladders = 2 credits).
+EARLY_DAYS_AHEAD = 2
+EARLY_MAX_CREDITS = 6
+EARLY_STATS = ("pra", "points")
+
+
+def early_lines_path():
+    return config.SITE_DATA_DIR / "early_lines.json"
+
+
+def load_early_lines(date_s):
+    """Early alt ladders saved for date_s, or {}."""
+    try:
+        with open(early_lines_path(), encoding="utf-8") as f:
+            data = json.load(f)
+    except (OSError, ValueError):
+        return {}
+    return data if data.get("date") == date_s else {}
+
+
+def refresh_early_alts(board_date_s, game_date_s, team_order=()):
+    """Buy alt ladders for game_date_s if due and affordable. team_order:
+    team abbreviations, most important first (games with the top projected
+    players are bought first). -> log dict."""
+    if load_early_lines(game_date_s).get("alts"):
+        return {"skipped": f"already bought for {game_date_s}"}
+    ahead = (date.fromisoformat(game_date_s) - date.fromisoformat(board_date_s)).days
+    if ahead > EARLY_DAYS_AHEAD:
+        return {"skipped": f"{game_date_s} is {ahead} days out (buying starts {EARLY_DAYS_AHEAD} days ahead)"}
+    saved = load_lines(board_date_s)
+    if saved:
+        budget = leftover_credits(saved)
+    else:                                  # no slate today (offseason, off day): today's allowance
+        remaining, _ = check_quota()
+        budget = daily_allowance(remaining, date.fromisoformat(board_date_s))
+    budget = min(budget, EARLY_MAX_CREDITS)
+    per_game = len(EARLY_STATS)
+    if budget < per_game:
+        return {"skipped": f"budget {budget} credits, need {per_game} per game"}
+    events = fetch_events(game_date_s)
+    rank = {t: i for i, t in enumerate(team_order)}
+    events.sort(key=lambda e: min(rank.get(e["home"], 99), rank.get(e["away"], 99)))
+    alts, spent, bought = {}, 0, []
+    for ev in events:
+        if budget - spent < per_game:
+            break
+        before = Quota.remaining
+        got = fetch_alt_props(ev["event_id"], list(EARLY_STATS))
+        cost = (before - Quota.remaining) if before is not None and Quota.remaining is not None else per_game
+        spent += cost
+        bought.append(f"{ev['away']} @ {ev['home']}")
+        for who, per_stat in got.items():
+            alts.setdefault(who, {}).update(per_stat)
+    if saved:                              # charge today's budget so nothing double-spends
+        saved["extras_spent"] = saved.get("extras_spent", 0) + spent
+        saved["credits_remaining"] = Quota.remaining
+        save_lines(saved)
+    data = {"date": game_date_s, "fetched_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "credits_spent": spent, "games": bought, "alts": alts}
+    with open(early_lines_path(), "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+    return {"bought": bought, "credits": spent, "players": len(alts)}

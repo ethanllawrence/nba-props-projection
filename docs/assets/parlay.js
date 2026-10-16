@@ -140,11 +140,15 @@ const niceDate = (d) => {
 const statShort = { pra: "PRA", points: "points", rebounds: "rebounds", assists: "assists" };
 
 function earlyLegRow(l) {
+  const ms = Math.floor(l.line) + 1;                  // 29.5 -> 30+
+  const gap = Math.round(l.gap * 100);
   return `<tr>
     <td><div class="pn">${esc(l.player)}</div>
       <div class="pm">${esc(l.team)} ${l.home ? "vs" : "@"} ${esc(l.opp)} · proj ${l.proj} ${esc(statShort[l.stat])}</div></td>
-    <td class="num"><span class="pos" style="font-weight:700">${l.milestone}+ ${esc(statShort[l.stat])}</span></td>
-    <td class="num">${Math.round(l.prob * 100)}%</td>
+    <td class="num"><div class="pos" style="font-weight:700">${ms}+ ${esc(statShort[l.stat])}</div>
+      <div class="pm">${fmtOdds(l.odds)} ${esc(l.book || "")}</div></td>
+    <td class="num">${Math.round(l.model_prob * 100)}%
+      <div class="pm">book ${Math.round(l.book_prob * 100)}% · <span class="${gap >= 0 ? "pos" : "neg"}">${gap >= 0 ? "+" : ""}${gap}</span></div></td>
   </tr>`;
 }
 
@@ -158,21 +162,20 @@ function earlySection(early, hist) {
     if (!p.legs || !p.legs.length) {
       return `<div class="notice" style="margin:8px 0">${esc(niceDate(p.date))}: ${esc(p.note || "No early-look parlay.")}</div>`;
     }
-    const fair = p.fair_odds > 0 ? "+" + p.fair_odds : String(p.fair_odds);
     return `<div class="card">
       <div class="call-meta" style="margin-bottom:6px">${esc(niceDate(p.date))} · ${p.legs.length} legs ·
-        model chance all hit <b>${Math.round(p.combined_prob * 100)}%</b> (fair ${fair})</div>
+        <b>${fmtOdds(p.combined_odds)}</b> on the book · model chance all hit ${Math.round(p.model_prob * 100)}%
+        (book ${Math.round(p.book_prob * 100)}%)</div>
       <div class="board-tbl-wrap"><div class="board-tbl compact-tbl"><table class="t">
         <thead><tr><th>Player</th><th class="num">Leg</th><th class="num">Model</th></tr></thead>
         <tbody>${p.legs.map(earlyLegRow).join("")}</tbody></table></div></div>
     </div>`;
   }).join("");
   return `<h2 class="sec">Early look parlay${rec}</h2>
-    <div class="noedge" style="margin:-4px 0 10px">Strong-conviction milestone overs (like 30+ PRA) for the
-      biggest names, picked from the early-look projections before lines exist: each leg is a milestone
-      the model gives 78-86%. Re-picked with each update until the day before; graded the next morning.
-      ${esc((picks.find((p) => p.note && p.legs && p.legs.length) || {}).note || "")}
-      Books pay less than the fair price shown.</div>
+    <div class="noedge" style="margin:-4px 0 10px">3-4 star overs at about +200 real odds, picked from
+      FanDuel/DraftKings alt lines for the next game day. Legs are priced -150 to -300; the model vetoes
+      any leg it rates well below the book and ranks the rest by how much more it likes them than the
+      book does (the +/- number). Graded the next morning.</div>
     ${cards}`;
 }
 
