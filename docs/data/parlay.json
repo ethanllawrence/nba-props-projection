@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T00:14:06Z",
+  "generated_at": "2026-10-16T00:00:48Z",
   "note": "MOCKUP DATA. Legs are picked from the same players/projections shown on the Today board, but the selection logic itself (conviction screening, blowout-risk check) is not automated yet — see nproj/model/parlay.py. Alt lines, odds, and the whole history log below are made up to preview the layout. No live model or odds feed is wired up yet.",
   "today": {
     "date": "2026-10-22",
@@ -249,6 +249,20 @@
       "date": "2026-10-20",
       "legs": [
         {
+          "player": "Jalen Brunson",
+          "player_id": "3934672",
+          "team": "NYK",
+          "opp": "PHI",
+          "home": true,
+          "game_id": "401909089",
+          "stat": "pra",
+          "milestone": 25,
+          "prob": 0.828,
+          "proj": 36.8,
+          "side": "over",
+          "line": 24.5
+        },
+        {
           "player": "Victor Wembanyama",
           "player_id": "5104157",
           "team": "SAS",
@@ -289,26 +303,12 @@
           "proj": 24.2,
           "side": "over",
           "line": 14.5
-        },
-        {
-          "player": "Cade Cunningham",
-          "player_id": "4432166",
-          "team": "DET",
-          "opp": "BOS",
-          "home": true,
-          "game_id": "401909088",
-          "stat": "assists",
-          "milestone": 4,
-          "prob": 0.848,
-          "proj": 6.4,
-          "side": "over",
-          "line": 3.5
         }
       ],
-      "combined_prob": 0.447,
-      "fair_odds": 124,
+      "combined_prob": 0.436,
+      "fair_odds": 129,
       "status": "pending",
-      "picked_at": "2026-10-15T00:14:06Z",
+      "picked_at": "2026-10-16T00:00:48Z",
       "note": "Replayed on every night of 2024-25 and 2025-26 (model trained only on earlier games), this rule's four-leg parlay hit 63% of nights in both seasons; the model predicted about 45%, so its chances run cautious for stars."
     }
   }
