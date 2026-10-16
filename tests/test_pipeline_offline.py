@@ -97,6 +97,7 @@ def test_daily_offline():
     tmp = Path(tempfile.mkdtemp())
     site = tmp / "site"
     shutil.copytree(ROOT / "docs" / "data", site)
+    (site / "early_lines.json").unlink(missing_ok=True)
     import os
     os.environ["NPROJ_DB"] = str(tmp / "t.db")
     os.environ["NPROJ_DATA_DIR"] = str(tmp)
@@ -218,6 +219,7 @@ def test_odds_rationing_and_board():
     tmp = Path(tempfile.mkdtemp())
     site = tmp / "site"
     shutil.copytree(ROOT / "docs" / "data", site)
+    (site / "early_lines.json").unlink(missing_ok=True)
     import os
     import importlib
     os.environ.update(NPROJ_DB=str(tmp / "t.db"), NPROJ_DATA_DIR=str(tmp), NPROJ_SITE_DATA=str(site),
@@ -323,6 +325,8 @@ def _fresh_env(odds_mode, remaining):
     tmp = Path(tempfile.mkdtemp())
     site = tmp / "site"
     shutil.copytree(ROOT / "docs" / "data", site)
+    # start clean: the live site may hold real early-look prices (bought for a real date)
+    (site / "early_lines.json").unlink(missing_ok=True)
     os.environ.update(NPROJ_DB=str(tmp / "t.db"), NPROJ_DATA_DIR=str(tmp), NPROJ_SITE_DATA=str(site),
                       NPROJ_ODDS_MODE=odds_mode, ODDS_API_KEY="test", NPROJ_ODDS_SHARE="0.5")
     from nproj import config
