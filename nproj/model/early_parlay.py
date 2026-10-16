@@ -17,14 +17,19 @@ How it works:
      -150, so 3-4 legs land near +200), where the model projects above the line.
      For each: the model's chance (star-calibrated, star_calibration.json) and
      the book's chance (price with its cut removed). gap = model - book.
-  4. Veto: drop legs the model rates more than VETO below the book. Evidence
-     (archived main lines, star overs, 7,057 bets): when the model was 10+
-     points below the book, overs hit 44.5% vs the book's 49.8% (-16% return);
-     at +3 to +8 points above, they hit 54% (+1.8%). The model's disagreement
-     is most useful for spotting traps.
-  5. Each player's best leg (largest gap), then legs in order of gap, one per
-     player, at most MAX_PER_GAME per game, until the real combined odds reach
-     TARGET_LO (never past TARGET_HI), 3-4 legs. Short of MIN_ACCEPT -> none.
+     Players who just changed teams are skipped until they have 3 of their
+     last 5 games with the new team (the model still sees their old role).
+  4. Veto: drop legs the model rates more than 10 points below the book.
+     Evidence (archived main lines, star overs, 7,057 bets): 10+ points below,
+     overs hit 44.5% vs the book's 49.8% (-16% return); 3-10 below, 50.3% vs
+     49.7% (-5%, about the book's normal cut); +3 to +8 above, 54% (+1.8%).
+     Only the 10+ group was a real trap, so that's the cutoff (it was 3
+     points at first, which on opening-night lines left a single leg).
+  5. Of all qualifying legs, the 3-4 leg combination (one per player, at most
+     MAX_PER_GAME per game) whose real combined odds land at +TARGET_LO to
+     +TARGET_HI with the largest total gap; if none, the best at +MIN_ACCEPT to
+     +TARGET_LO; otherwise no parlay. (Picking each player's single best leg and
+     adding greedily could end with four -400 legs at +144 and no parlay.)
 
 Saved in docs/data/parlay.json under "early" and graded the next morning
 ("early_history"), like the main parlay.
@@ -40,12 +45,14 @@ from .pra_model import prob_over
 
 POOL_TOP = 30
 MIN_MINUTES = 30.0
-LEG_ODDS = (-300, -150)          # price range for a leg (American odds)
+LEG_ODDS = (-400, -120)          # price range for a leg (American odds); alt ladders step
+                                 # 5 points at a time, so prices jump (Brunson 30+ PRA -390,
+                                 # 35+ -146): a narrower window missed both
 TARGET_LO, TARGET_HI = 200, 320
 MIN_ACCEPT = 150
 MIN_LEGS, MAX_LEGS = 3, 4
-MAX_PER_GAME = 2
-VETO = -0.03                     # model may be at most 3 points below the book
+MAX_PER_GAME = 3                 # same-game legs weren't more correlated in the replay
+VETO = -0.10                     # drop legs the model rates 10+ points below the book
 ALT_HOLD = 1.045                 # typical book cut on one-sided alt prices
 STAR_CAL = json.loads((Path(__file__).parent / "star_calibration.json").read_text())
 
@@ -76,7 +83,8 @@ def model_chance(pr, stat, line):
 
 
 def candidates(con, date_s, proj, alts):
-    """Best qualifying leg per pool player. alts: {norm_name: {stat: ladder}}."""
+    """Every qualifying leg for pool players, best gap first.
+    alts: {norm_name: {stat: ladder}}."""
     from ..ingest import odds
     rows = con.execute(
         """SELECT pp.player_id, pp.game_id, pp.status, p.name, p.team, g.home_team, g.away_team
@@ -86,13 +94,16 @@ def candidates(con, date_s, proj, alts):
     for r in rows:
         pr = proj.get(str(r["player_id"]))
         if (pr and (r["status"] or "active") == "active" and pr.get("minutes", 0) >= MIN_MINUTES
-                and pr.get("has_history", True)):
+                and pr.get("has_history", True) and not pr.get("new_team")):
             pool.append((pr["pra"], r, pr))
     pool = sorted(pool, key=lambda x: -x[0])[:POOL_TOP]
     matched, _ = odds.match_lines([r["name"] for _, r, _ in pool], alts)
     out = []
     for _, r, pr in pool:
-        best = None
+        home = r["team"] == r["home_team"]
+        who = {"player": r["name"], "player_id": str(r["player_id"]), "team": r["team"],
+               "opp": r["away_team"] if home else r["home_team"], "home": home,
+               "game_id": str(r["game_id"]), "side": "over"}
         for stat, ladder in (matched.get(r["name"]) or {}).items():
             if stat not in pr:
                 continue
@@ -103,38 +114,44 @@ def candidates(con, date_s, proj, alts):
                 if pr[stat] <= line:
                     continue            # the model must project over the line
                 pm, pb = model_chance(pr, stat, line), book_chance(price)
-                gap = pm - pb
-                if gap < VETO:
+                if pm - pb < VETO:
                     continue
-                leg = {"stat": stat, "line": line, "odds": int(price), "book": step.get("book"),
-                       "model_prob": round(pm, 3), "book_prob": round(pb, 3), "gap": round(gap, 3),
-                       "proj": round(float(pr[stat]), 1)}
-                if best is None or gap > best["gap"]:
-                    best = leg
-        if best:
-            home = r["team"] == r["home_team"]
-            out.append({"player": r["name"], "player_id": str(r["player_id"]), "team": r["team"],
-                        "opp": r["away_team"] if home else r["home_team"], "home": home,
-                        "game_id": str(r["game_id"]), "side": "over", **best})
+                out.append({**who, "stat": stat, "line": line, "odds": int(price), "book": step.get("book"),
+                            "model_prob": round(pm, 3), "book_prob": round(pb, 3), "gap": round(pm - pb, 3),
+                            "proj": round(float(pr[stat]), 1)})
     return sorted(out, key=lambda c: -c["gap"])
 
 
+SEARCH_TOP = 24          # best-gap legs considered when combining
+
+
 def select(cands):
-    legs, per_game = [], {}
-    for c in cands:
-        if per_game.get(c["game_id"], 0) >= MAX_PER_GAME:
-            continue
-        if legs and combined_odds([l["odds"] for l in legs] + [c["odds"]]) > TARGET_HI:
-            continue
-        legs.append(c)
-        per_game[c["game_id"]] = per_game.get(c["game_id"], 0) + 1
-        price = combined_odds([l["odds"] for l in legs])
-        if (len(legs) >= MIN_LEGS and price >= TARGET_LO) or len(legs) == MAX_LEGS:
-            break
-    if len(legs) < MIN_LEGS:
+    """The 3-4 leg combination (one leg per player, at most MAX_PER_GAME per
+    game) whose REAL combined odds land in +TARGET_LO..+TARGET_HI and that the
+    model likes most relative to the book (largest total gap). If none lands
+    in that range, the best one between +MIN_ACCEPT and +TARGET_LO."""
+    from itertools import combinations
+    pool = cands[:SEARCH_TOP]
+    best, fallback = None, None
+    for n in range(MIN_LEGS, MAX_LEGS + 1):
+        for combo in combinations(pool, n):
+            if len({c["player_id"] for c in combo}) < n:
+                continue
+            games = [c["game_id"] for c in combo]
+            if max(games.count(g) for g in games) > MAX_PER_GAME:
+                continue
+            price = combined_odds([c["odds"] for c in combo])
+            score = sum(c["gap"] for c in combo)
+            if TARGET_LO <= price <= TARGET_HI:
+                if best is None or score > best[0]:
+                    best = (score, combo, price)
+            elif MIN_ACCEPT <= price < TARGET_LO:
+                if fallback is None or score > fallback[0]:
+                    fallback = (score, combo, price)
+    pick = best or fallback
+    if not pick:
         return [], None
-    price = combined_odds([l["odds"] for l in legs])
-    return (legs, price) if price >= MIN_ACCEPT else ([], None)
+    return sorted(pick[1], key=lambda c: -c["gap"]), pick[2]
 
 
 def pick(con, date_s, proj, alts):
@@ -149,7 +166,7 @@ def pick(con, date_s, proj, alts):
     if not legs:
         return {"date": date_s, "legs": [], "status": "none", "picked_at": now,
                 "note": f"No early-look parlay: {len(cands)} overs passed the price range and the "
-                        f"model's veto, not enough to reach +{MIN_ACCEPT} with {MIN_LEGS}-{MAX_LEGS} legs."}
+                        f"model's veto, but no {MIN_LEGS}-{MAX_LEGS} leg combination reaches +{MIN_ACCEPT}."}
     model_all = float(np.prod([l["model_prob"] for l in legs]))
     return {"date": date_s, "legs": legs, "combined_odds": price, "model_prob": round(model_all, 3),
             "book_prob": round(float(np.prod([l["book_prob"] for l in legs])), 3),

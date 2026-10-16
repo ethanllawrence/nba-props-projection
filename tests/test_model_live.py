@@ -93,6 +93,15 @@ def test_live_model():
         assert len({l["player_id"] for l in legs}) == len(legs)
         assert all(sum(x["game_id"] == l["game_id"] for x in legs) <= EP.MAX_PER_GAME for l in legs)
         assert [l["gap"] for l in legs] == sorted((l["gap"] for l in legs), reverse=True)
+        # the chosen combination has the largest total gap among in-range combinations
+        from itertools import combinations
+        cands = EP.candidates(con, DATE, live.PROJ, alts)
+        best = max((sum(c["gap"] for c in k) for n in (3, 4) for k in combinations(cands[:EP.SEARCH_TOP], n)
+                    if len({c["player_id"] for c in k}) == n
+                    and EP.TARGET_LO <= EP.combined_odds([c["odds"] for c in k]) <= EP.TARGET_HI
+                    and max([c["game_id"] for c in k].count(g) for g in {c["game_id"] for c in k}) <= EP.MAX_PER_GAME),
+                   default=None)
+        assert best is None or abs(sum(l["gap"] for l in legs) - best) < 1e-9
         print("OK early parlay:", ep["combined_odds"], [(l["player"], l["line"], l["odds"], l["gap"]) for l in legs])
         top = sorted(live.PROJ, key=lambda p: -live.PROJ[p]["points"])[:6]
         # lines: two below the projection, two above, two right at it

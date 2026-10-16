@@ -108,21 +108,25 @@
     <p>A second parlay for the next game day: 3-4 star overs at about +200 to +320 real sportsbook
     odds, built from books and model together. On the morning run, once that game day is within two
     days, the site buys FanDuel/DraftKings alt-line prices for PRA and points (a few credits from the
-    day's spare budget, games with the top projected players first). From the night's top 30 players
-    by projected PRA (30+ projected minutes, not on the injury report), each alt over priced between
-    -300 and -150 that the model projects the player to clear gets two chances: the book's (its price
-    with the book's cut removed) and the model's (adjusted with a correction fitted on two seasons of
-    star milestones, since the raw model runs a little cautious on stars). The model then acts as a
-    filter. Any leg it rates more than 3 points below the book is dropped, and the rest are ranked by
-    how much more the model likes them than the book does. Legs are added in that order, one per
-    player and at most two per game, until the real combined odds reach +200 (never past +320). Fewer
-    than three legs, or under +150, means no early parlay that day. It's graded the next morning.</p>
+    day's spare budget, games with the top projected players first). The pool is the night's top 30
+    players by projected PRA, with 30+ projected minutes and not on the injury report. Players who
+    just changed teams sit out until 3 of their last 5 games are with the new team, because the
+    model still sees their old role. Every alt over priced between -400 and -120 that the model
+    projects the player to clear gets two chances. The book's is its price with the book's cut
+    removed. The model's is adjusted by a correction fitted on two seasons of star milestones, since
+    the raw model runs a little cautious on stars. Any leg the model rates 10+ points below the book
+    is dropped. Of the rest, the site takes the 3-4 leg combination (one leg per player, at most
+    three per game) whose real combined odds land at +200 to +320 and that the model likes most
+    relative to the book. If nothing lands there, it takes the best one from +150 to +200; below
+    that, there's no early parlay. It's graded the next morning.</p>
     <p>Why the model works as a filter: on archived main lines for star overs (7,057 bets), when the
     model rated the over 10+ points below the book, it hit 44.5% against the book's 49.8%, a 16% loss.
-    When the model rated it 3-8 points above the book, it hit 54% (+1.8%). So the model is most useful
-    for avoiding traps. It isn't proven to beat the books. (A first version picked legs by model chance
-    alone. The books priced those legs at -1100 to -7000, because they rate stars as much safer than
-    the model does, so prices now come first.)</p>
+    3-10 points below did about as well as the book (-5%, roughly the book's normal cut), and 3-8
+    points above hit 54% (+1.8%). So the model is most useful for avoiding traps. It isn't proven to
+    beat the books. Two earlier versions taught the price rules. Picking legs by model chance alone
+    led to legs the books priced at -1100 to -7000. Then a -300 to -150 price window missed the real
+    star legs, because alt ladders move 5 points at a time and prices jump (Brunson 30+ PRA -390, 35+
+    -146).</p>
 
     <h2>Jokic TD tracker</h2>
     <p>A separate tab for Nikola Jokic's triple-double prop. It leads with one call: bet the

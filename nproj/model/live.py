@@ -178,6 +178,10 @@ def run(con, date_s, history_root=None):
     tonight = tonight[tonight["played"] == 1]
     pred = model.predict(tonight)
     PROJ.clear()
+    # who just changed teams: fewer than 3 of his last 5 games with tonight's team
+    # (his form and "teammates out" inputs still describe the old role)
+    recent = hist[hist["played"] == 1].sort_values("date").groupby("player_id").tail(5)
+    teams5 = recent.groupby("player_id")["team"].apply(list).to_dict()
     written = 0
     for idx, r in tonight.iterrows():
         pid = str(r["player_id"])
@@ -186,7 +190,8 @@ def run(con, date_s, history_root=None):
         PROJ[pid] = {"points": p["points_proj"], "rebounds": p["rebounds_proj"],
                      "assists": p["assists_proj"], "pra": p["pra_proj"],
                      "minutes": p["minutes_proj"], "var": dict(model.var),
-                     "has_history": bool(pd.notna(r.get("minutes_ewm_l")))}
+                     "has_history": bool(pd.notna(r.get("minutes_ewm_l"))),
+                     "new_team": sum(t == r["team"] for t in teams5.get(pid, [])) < 3}
         for stat in ("points", "rebounds", "assists", "pra", "minutes"):
             con.execute(
                 """INSERT INTO projections (game_id, player_id, date, stat, point, generated_at)
