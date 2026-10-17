@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T15:30:22Z",
+  "generated_at": "2026-10-17T00:06:23Z",
   "note": "MOCKUP DATA. Legs are picked from the same players/projections shown on the Today board, but the selection logic itself (conviction screening, blowout-risk check) is not automated yet — see nproj/model/parlay.py. Alt lines, odds, and the whole history log below are made up to preview the layout. No live model or odds feed is wired up yet.",
   "today": {
     "date": "2026-10-22",
@@ -266,6 +266,23 @@
           "proj": 21.8
         },
         {
+          "player": "Joel Embiid",
+          "player_id": "3059318",
+          "team": "PHI",
+          "opp": "NYK",
+          "home": false,
+          "game_id": "401909089",
+          "side": "over",
+          "stat": "points",
+          "line": 19.5,
+          "odds": -215,
+          "book": "FanDuel",
+          "model_prob": 0.639,
+          "book_prob": 0.653,
+          "gap": -0.014,
+          "proj": 23.3
+        },
+        {
           "player": "Jalen Brunson",
           "player_id": "3934672",
           "team": "NYK",
@@ -281,31 +298,14 @@
           "book_prob": 0.568,
           "gap": -0.023,
           "proj": 26.4
-        },
-        {
-          "player": "OG Anunoby",
-          "player_id": "3934719",
-          "team": "NYK",
-          "opp": "PHI",
-          "home": true,
-          "game_id": "401909089",
-          "side": "over",
-          "stat": "pra",
-          "line": 19.5,
-          "odds": -379,
-          "book": "DraftKings",
-          "model_prob": 0.729,
-          "book_prob": 0.757,
-          "gap": -0.028,
-          "proj": 26.1
         }
       ],
-      "combined_odds": 204,
-      "model_prob": 0.265,
-      "book_prob": 0.289,
+      "combined_odds": 252,
+      "model_prob": 0.232,
+      "book_prob": 0.249,
       "status": "pending",
-      "picked_at": "2026-10-16T15:30:22Z",
-      "candidates": 11
+      "picked_at": "2026-10-17T00:06:23Z",
+      "candidates": 14
     }
   }
 }

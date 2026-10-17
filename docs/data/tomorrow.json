@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T17:11:35Z",
+  "generated_at": "2026-10-17T00:06:23Z",
   "date": "2026-10-20",
   "early_look": true,
   "model": "lightgbm",
@@ -168,7 +168,7 @@
       "opp": "NYK",
       "home": false,
       "time_et": "7:00 PM",
-      "status": "day-to-day",
+      "status": null,
       "minutes": 33.3,
       "stats": {
         "points": {
@@ -245,7 +245,7 @@
       "opp": "NYK",
       "home": false,
       "time_et": "7:00 PM",
-      "status": "day-to-day",
+      "status": null,
       "minutes": 31.8,
       "stats": {
         "points": {
@@ -476,8 +476,8 @@
       "opp": "DET",
       "home": false,
       "time_et": "3:00 PM",
-      "status": null,
-      "minutes": 32.3,
+      "status": "day-to-day",
+      "minutes": 32.4,
       "stats": {
         "points": {
           "proj": 21.2,
@@ -547,90 +547,13 @@
       ]
     },
     {
-      "player": "Cade Cunningham",
-      "player_id": "4432166",
-      "team": "DET",
-      "opp": "BOS",
-      "home": true,
-      "time_et": "3:00 PM",
-      "status": null,
-      "minutes": 32.4,
-      "stats": {
-        "points": {
-          "proj": 21.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 4.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 6.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 32.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-05-09",
-          "pts": 27,
-          "reb": 10,
-          "ast": 10,
-          "pra": 47
-        },
-        {
-          "date": "2026-05-11",
-          "pts": 19,
-          "reb": 3,
-          "ast": 6,
-          "pra": 28
-        },
-        {
-          "date": "2026-05-13",
-          "pts": 39,
-          "reb": 7,
-          "ast": 9,
-          "pra": 55
-        },
-        {
-          "date": "2026-05-15",
-          "pts": 21,
-          "reb": 2,
-          "ast": 8,
-          "pra": 31
-        },
-        {
-          "date": "2026-05-17",
-          "pts": 13,
-          "reb": 4,
-          "ast": 5,
-          "pra": 22
-        }
-      ]
-    },
-    {
       "player": "LeBron James",
       "player_id": "1966",
       "team": "PHI",
       "opp": "NYK",
       "home": false,
       "time_et": "7:00 PM",
-      "status": "day-to-day",
+      "status": null,
       "minutes": 33.2,
       "stats": {
         "points": {
@@ -697,6 +620,83 @@
           "reb": 12,
           "ast": 3,
           "pra": 39
+        }
+      ]
+    },
+    {
+      "player": "Cade Cunningham",
+      "player_id": "4432166",
+      "team": "DET",
+      "opp": "BOS",
+      "home": true,
+      "time_et": "3:00 PM",
+      "status": null,
+      "minutes": 32.7,
+      "stats": {
+        "points": {
+          "proj": 20.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 4.5,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 6.4,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 32.6,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-05-09",
+          "pts": 27,
+          "reb": 10,
+          "ast": 10,
+          "pra": 47
+        },
+        {
+          "date": "2026-05-11",
+          "pts": 19,
+          "reb": 3,
+          "ast": 6,
+          "pra": 28
+        },
+        {
+          "date": "2026-05-13",
+          "pts": 39,
+          "reb": 7,
+          "ast": 9,
+          "pra": 55
+        },
+        {
+          "date": "2026-05-15",
+          "pts": 21,
+          "reb": 2,
+          "ast": 8,
+          "pra": 31
+        },
+        {
+          "date": "2026-05-17",
+          "pts": 13,
+          "reb": 4,
+          "ast": 5,
+          "pra": 22
         }
       ]
     },
@@ -1169,8 +1169,8 @@
       "opp": "DET",
       "home": false,
       "time_et": "3:00 PM",
-      "status": null,
-      "minutes": 29.7,
+      "status": "day-to-day",
+      "minutes": 29.9,
       "stats": {
         "points": {
           "proj": 13.9,
@@ -1246,7 +1246,7 @@
       "opp": "NYK",
       "home": false,
       "time_et": "7:00 PM",
-      "status": null,
+      "status": "day-to-day",
       "minutes": 31.6,
       "stats": {
         "points": {
@@ -1323,8 +1323,8 @@
       "opp": "DET",
       "home": false,
       "time_et": "3:00 PM",
-      "status": null,
-      "minutes": 29.9,
+      "status": "day-to-day",
+      "minutes": 30.2,
       "stats": {
         "points": {
           "proj": 13.1,
@@ -1477,8 +1477,8 @@
       "opp": "DET",
       "home": false,
       "time_et": "3:00 PM",
-      "status": null,
-      "minutes": 28.9,
+      "status": "day-to-day",
+      "minutes": 29.3,
       "stats": {
         "points": {
           "proj": 12.0,
@@ -1632,7 +1632,7 @@
       "home": true,
       "time_et": "3:00 PM",
       "status": null,
-      "minutes": 24.5,
+      "minutes": 24.6,
       "stats": {
         "points": {
           "proj": 11.4,
@@ -1786,7 +1786,7 @@
       "home": false,
       "time_et": "3:00 PM",
       "status": "day-to-day",
-      "minutes": 22.0,
+      "minutes": 22.3,
       "stats": {
         "points": {
           "proj": 11.2,
@@ -2017,7 +2017,7 @@
       "home": true,
       "time_et": "3:00 PM",
       "status": null,
-      "minutes": 22.4,
+      "minutes": 22.7,
       "stats": {
         "points": {
           "proj": 10.7,
@@ -2324,7 +2324,7 @@
       "opp": "OKC",
       "home": true,
       "time_et": "9:30 PM",
-      "status": "day-to-day",
+      "status": null,
       "minutes": 26.4,
       "stats": {
         "points": {
@@ -2556,7 +2556,7 @@
       "home": true,
       "time_et": "3:00 PM",
       "status": null,
-      "minutes": 24.7,
+      "minutes": 24.8,
       "stats": {
         "points": {
           "proj": 9.3,
@@ -2633,7 +2633,7 @@
       "home": true,
       "time_et": "3:00 PM",
       "status": null,
-      "minutes": 24.5,
+      "minutes": 24.7,
       "stats": {
         "points": {
           "proj": 9.1,
@@ -2940,8 +2940,8 @@
       "opp": "DET",
       "home": false,
       "time_et": "3:00 PM",
-      "status": null,
-      "minutes": 22.2,
+      "status": "day-to-day",
+      "minutes": 22.3,
       "stats": {
         "points": {
           "proj": 7.9,
@@ -3094,7 +3094,7 @@
       "opp": "OKC",
       "home": true,
       "time_et": "9:30 PM",
-      "status": "day-to-day",
+      "status": null,
       "minutes": 18.5,
       "stats": {
         "points": {
@@ -3171,7 +3171,7 @@
       "opp": "NYK",
       "home": false,
       "time_et": "7:00 PM",
-      "status": "day-to-day",
+      "status": null,
       "minutes": 20.2,
       "stats": {
         "points": {
@@ -3402,8 +3402,8 @@
       "opp": "DET",
       "home": false,
       "time_et": "3:00 PM",
-      "status": null,
-      "minutes": 22.6,
+      "status": "day-to-day",
+      "minutes": 22.5,
       "stats": {
         "points": {
           "proj": 7.0,
