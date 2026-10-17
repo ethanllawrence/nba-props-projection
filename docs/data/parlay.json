@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T00:06:23Z",
+  "generated_at": "2026-10-17T23:40:51Z",
   "note": "MOCKUP DATA. Legs are picked from the same players/projections shown on the Today board, but the selection logic itself (conviction screening, blowout-risk check) is not automated yet — see nproj/model/parlay.py. Alt lines, odds, and the whole history log below are made up to preview the layout. No live model or odds feed is wired up yet.",
   "today": {
     "date": "2026-10-22",
@@ -290,22 +290,22 @@
           "home": true,
           "game_id": "401909089",
           "side": "over",
-          "stat": "points",
-          "line": 24.5,
+          "stat": "pra",
+          "line": 34.5,
           "odds": -146,
           "book": "FanDuel",
-          "model_prob": 0.544,
+          "model_prob": 0.475,
           "book_prob": 0.568,
-          "gap": -0.023,
-          "proj": 26.4
+          "gap": -0.093,
+          "proj": 34.9
         }
       ],
       "combined_odds": 252,
-      "model_prob": 0.232,
+      "model_prob": 0.203,
       "book_prob": 0.249,
       "status": "pending",
-      "picked_at": "2026-10-17T00:06:23Z",
-      "candidates": 14
+      "picked_at": "2026-10-17T23:40:51Z",
+      "candidates": 8
     }
   }
 }
