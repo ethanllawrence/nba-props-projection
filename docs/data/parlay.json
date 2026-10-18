@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T23:40:51Z",
+  "generated_at": "2026-10-18T16:22:14Z",
   "note": "MOCKUP DATA. Legs are picked from the same players/projections shown on the Today board, but the selection logic itself (conviction screening, blowout-risk check) is not automated yet — see nproj/model/parlay.py. Alt lines, odds, and the whole history log below are made up to preview the layout. No live model or odds feed is wired up yet.",
   "today": {
     "date": "2026-10-22",
@@ -260,10 +260,10 @@
           "line": 17.5,
           "odds": -235,
           "book": "DraftKings",
-          "model_prob": 0.668,
+          "model_prob": 0.674,
           "book_prob": 0.671,
-          "gap": -0.003,
-          "proj": 21.8
+          "gap": 0.003,
+          "proj": 21.9
         },
         {
           "player": "Joel Embiid",
@@ -277,10 +277,10 @@
           "line": 19.5,
           "odds": -215,
           "book": "FanDuel",
-          "model_prob": 0.639,
+          "model_prob": 0.646,
           "book_prob": 0.653,
-          "gap": -0.014,
-          "proj": 23.3
+          "gap": -0.007,
+          "proj": 23.5
         },
         {
           "player": "Jalen Brunson",
@@ -294,17 +294,17 @@
           "line": 34.5,
           "odds": -146,
           "book": "FanDuel",
-          "model_prob": 0.475,
+          "model_prob": 0.477,
           "book_prob": 0.568,
-          "gap": -0.093,
+          "gap": -0.091,
           "proj": 34.9
         }
       ],
       "combined_odds": 252,
-      "model_prob": 0.203,
+      "model_prob": 0.208,
       "book_prob": 0.249,
       "status": "pending",
-      "picked_at": "2026-10-17T23:40:51Z",
+      "picked_at": "2026-10-18T16:22:14Z",
       "candidates": 8
     }
   }
