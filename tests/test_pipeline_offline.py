@@ -408,6 +408,17 @@ def test_parlay_daily_and_settle():
         assert any(l["line_type"] == "alt" for l in t["legs"])
     n_paid = sum(1 for u, _ in state["calls"] if u.endswith("/odds"))
 
+    # a late duplicate morning run (props mode again) must not buy today's lines twice
+    import os as _os
+    paid_before = sum(1 for u, _ in state["calls"] if u.endswith("/odds"))
+    event = _os.environ.pop("GITHUB_EVENT_NAME", None)     # behave like a scheduled run
+    try:
+        cli.main(["daily", "--date", "2026-03-10"])
+    finally:
+        if event is not None:
+            _os.environ["GITHUB_EVENT_NAME"] = event
+    assert sum(1 for u, _ in state["calls"] if u.endswith("/odds")) == paid_before, "bought twice"
+
     # afternoon: nothing bought, parlay still there
     import os, importlib
     os.environ["NPROJ_ODDS_MODE"] = "off"

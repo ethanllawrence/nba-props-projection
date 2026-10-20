@@ -189,6 +189,13 @@ def _maybe_odds(date_s, n_games):
     if n_games == 0:
         print("[odds] skipped (no games, no credits spent)")
         return
+    import os
+    manual = os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
+    if odds.load_lines(date_s).get("lines") and not manual:
+        # GitHub sometimes runs a scheduled job hours late; if lines for today
+        # were already bought (e.g. by a manual run), don't buy them twice
+        print(f"[odds] skipped (lines for {date_s} already bought; a manual run with the odds box re-buys)")
+        return
     try:
         print(f"[odds] {odds.refresh_lines(date_s)}")
     except Exception as exc:  # noqa: BLE001 - odds trouble must never block the board
