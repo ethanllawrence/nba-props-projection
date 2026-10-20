@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-20T08:03:01Z",
+  "generated_at": "2026-10-20T13:46:02Z",
   "date": "2026-10-20",
   "early_look": false,
   "model": "lightgbm",
-  "note": "Projections come from the PRA model (LightGBM trained on three seasons: recent form, minutes, opponent, pace and spread, rest, and teammates out). No sportsbook lines for this date yet, so nothing is colored.",
-  "lines_fetched_at": null,
+  "note": "Projections come from the PRA model (LightGBM trained on three seasons: recent form, minutes, opponent, pace and spread, rest, and teammates out). Lines from FanDuel/DraftKings, pulled each morning (37 of 44 players have at least one). 6 cells are colored: the model's chance beats the price's break-even by 2+ points.",
+  "lines_fetched_at": "2026-10-20T13:45:37Z",
   "unmatched_lines": [],
   "players": [
     {
@@ -15,35 +15,47 @@
       "home": false,
       "time_et": "9:30 PM",
       "status": null,
-      "minutes": 35.0,
+      "minutes": 35.3,
       "stats": {
         "points": {
-          "proj": 26.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "proj": 26.5,
+          "line": 29.5,
+          "book": "FanDuel",
+          "over": -120,
+          "under": -110,
+          "p_over": 0.483,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 3.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": -162,
+          "under": 122,
+          "p_over": 0.553,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
-          "proj": 7.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "proj": 7.1,
+          "line": 6.5,
+          "book": "FanDuel",
+          "over": 102,
+          "under": -136,
+          "p_over": 0.465,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 36.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 40.5,
+          "book": "FanDuel",
+          "over": -114,
+          "under": -114,
+          "p_over": 0.474,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -96,31 +108,43 @@
       "stats": {
         "points": {
           "proj": 25.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 20.5,
+          "book": "FanDuel",
+          "over": -120,
+          "under": -110,
+          "p_over": 0.529,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 6.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 5.5,
+          "book": "FanDuel",
+          "over": -132,
+          "under": 100,
+          "p_over": 0.534,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 4.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": -102,
+          "under": -130,
+          "p_over": 0.474,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 35.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 30.5,
+          "book": "FanDuel",
+          "over": -106,
+          "under": -125,
+          "p_over": 0.496,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -173,31 +197,43 @@
       "stats": {
         "points": {
           "proj": 25.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 22.5,
+          "book": "FanDuel",
+          "over": -114,
+          "under": -114,
+          "p_over": 0.504,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 7.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 7.5,
+          "book": "FanDuel",
+          "over": -122,
+          "under": -108,
+          "p_over": 0.498,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 4.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": 118,
+          "under": -158,
+          "p_over": 0.439,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 36.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 33.5,
+          "book": "FanDuel",
+          "over": -122,
+          "under": -108,
+          "p_over": 0.516,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -250,31 +286,43 @@
       "stats": {
         "points": {
           "proj": 24.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 26.5,
+          "book": "FanDuel",
+          "over": -104,
+          "under": -128,
+          "p_over": 0.456,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
-          "proj": 11.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "proj": 10.9,
+          "line": 11.5,
+          "book": "FanDuel",
+          "over": -118,
+          "under": -112,
+          "p_over": 0.489,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 2.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": 118,
+          "under": -158,
+          "p_over": 0.401,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
-          "proj": 39.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "proj": 39.2,
+          "line": 41.5,
+          "book": "FanDuel",
+          "over": -110,
+          "under": -120,
+          "p_over": 0.47,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -323,35 +371,47 @@
       "home": false,
       "time_et": "3:00 PM",
       "status": null,
-      "minutes": 35.9,
+      "minutes": 36.1,
       "stats": {
         "points": {
-          "proj": 24.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "proj": 24.4,
+          "line": 26.5,
+          "book": "FanDuel",
+          "over": -122,
+          "under": -108,
+          "p_over": 0.491,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 8.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 8.5,
+          "book": "FanDuel",
+          "over": -122,
+          "under": -108,
+          "p_over": 0.51,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 5.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 5.5,
+          "book": "FanDuel",
+          "over": -125,
+          "under": -106,
+          "p_over": 0.506,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 39.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 41.5,
+          "book": "FanDuel",
+          "over": -118,
+          "under": -112,
+          "p_over": 0.487,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -404,31 +464,43 @@
       "stats": {
         "points": {
           "proj": 24.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 26.5,
+          "book": "FanDuel",
+          "over": -106,
+          "under": -125,
+          "p_over": 0.458,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 3.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": 116,
+          "under": -154,
+          "p_over": 0.416,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 5.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 6.5,
+          "book": "FanDuel",
+          "over": -118,
+          "under": -112,
+          "p_over": 0.48,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 34.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 36.5,
+          "book": "FanDuel",
+          "over": -112,
+          "under": -118,
+          "p_over": 0.477,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -481,31 +553,43 @@
       "stats": {
         "points": {
           "proj": 22.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 21.5,
+          "book": "FanDuel",
+          "over": 102,
+          "under": -136,
+          "p_over": 0.46,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 4.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": -104,
+          "under": -128,
+          "p_over": 0.478,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 4.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 4.5,
+          "book": "FanDuel",
+          "over": -130,
+          "under": -102,
+          "p_over": 0.522,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 31.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 29.5,
+          "book": "FanDuel",
+          "over": -112,
+          "under": -118,
+          "p_over": 0.494,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -558,31 +642,43 @@
       "stats": {
         "points": {
           "proj": 21.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 15.5,
+          "book": "FanDuel",
+          "over": -112,
+          "under": -118,
+          "p_over": 0.521,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 6.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 6.5,
+          "book": "FanDuel",
+          "over": 116,
+          "under": -154,
+          "p_over": 0.427,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 5.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 7.5,
+          "book": "FanDuel",
+          "over": -130,
+          "under": -102,
+          "p_over": 0.482,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 34.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 29.5,
+          "book": "FanDuel",
+          "over": -125,
+          "under": -106,
+          "p_over": 0.531,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -631,35 +727,47 @@
       "home": true,
       "time_et": "3:00 PM",
       "status": null,
-      "minutes": 32.4,
+      "minutes": 32.7,
       "stats": {
         "points": {
-          "proj": 20.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "proj": 20.6,
+          "line": 23.5,
+          "book": "FanDuel",
+          "over": -132,
+          "under": 100,
+          "p_over": 0.501,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 4.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 5.5,
+          "book": "FanDuel",
+          "over": 124,
+          "under": -166,
+          "p_over": 0.388,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 6.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 8.5,
+          "book": "FanDuel",
+          "over": -125,
+          "under": -106,
+          "p_over": 0.469,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 32.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 38.5,
+          "book": "FanDuel",
+          "over": -114,
+          "under": -114,
+          "p_over": 0.46,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -712,31 +820,43 @@
       "stats": {
         "points": {
           "proj": 17.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 15.5,
+          "book": "FanDuel",
+          "over": -132,
+          "under": 100,
+          "p_over": 0.531,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 5.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 5.5,
+          "book": "FanDuel",
+          "over": 110,
+          "under": -146,
+          "p_over": 0.436,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 5.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 6.5,
+          "book": "FanDuel",
+          "over": -110,
+          "under": -120,
+          "p_over": 0.468,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 29.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 28.5,
+          "book": "FanDuel",
+          "over": -106,
+          "under": -125,
+          "p_over": 0.477,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -789,31 +909,43 @@
       "stats": {
         "points": {
           "proj": 15.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 16.5,
+          "book": "FanDuel",
+          "over": -132,
+          "under": 100,
+          "p_over": 0.513,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 5.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 5.5,
+          "book": "FanDuel",
+          "over": 116,
+          "under": -154,
+          "p_over": 0.416,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 1.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 1.5,
+          "book": "DraftKings",
+          "over": -143,
+          "under": 109,
+          "p_over": 0.543,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 24.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 24.5,
+          "book": "FanDuel",
+          "over": -108,
+          "under": -122,
+          "p_over": 0.473,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -865,32 +997,44 @@
       "minutes": 34.0,
       "stats": {
         "points": {
-          "proj": 15.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "proj": 15.5,
+          "line": 14.5,
+          "book": "FanDuel",
+          "over": -125,
+          "under": -106,
+          "p_over": 0.512,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 3.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": -104,
+          "under": -128,
+          "p_over": 0.467,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 5.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 5.5,
+          "book": "FanDuel",
+          "over": 128,
+          "under": -172,
+          "p_over": 0.401,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 24.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 23.5,
+          "book": "FanDuel",
+          "over": -114,
+          "under": -114,
+          "p_over": 0.495,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -939,35 +1083,47 @@
       "home": false,
       "time_et": "3:00 PM",
       "status": null,
-      "minutes": 33.5,
+      "minutes": 33.7,
       "stats": {
         "points": {
           "proj": 15.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 15.5,
+          "book": "FanDuel",
+          "over": -136,
+          "under": 102,
+          "p_over": 0.519,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 4.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 4.5,
+          "book": "FanDuel",
+          "over": 116,
+          "under": -154,
+          "p_over": 0.422,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 2.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": 114,
+          "under": -152,
+          "p_over": 0.412,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 21.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 23.5,
+          "book": "FanDuel",
+          "over": -128,
+          "under": -104,
+          "p_over": 0.502,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -1016,35 +1172,47 @@
       "home": true,
       "time_et": "9:30 PM",
       "status": null,
-      "minutes": 28.1,
+      "minutes": 28.3,
       "stats": {
         "points": {
           "proj": 14.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 15.5,
+          "book": "FanDuel",
+          "over": -104,
+          "under": -128,
+          "p_over": 0.458,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 5.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 4.5,
+          "book": "FanDuel",
+          "over": -138,
+          "under": 104,
+          "p_over": 0.546,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 2.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": -174,
+          "under": 130,
+          "p_over": 0.555,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 22.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 24.5,
+          "book": "FanDuel",
+          "over": -110,
+          "under": -120,
+          "p_over": 0.469,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -1097,31 +1265,43 @@
       "stats": {
         "points": {
           "proj": 14.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 18.5,
+          "book": "FanDuel",
+          "over": -110,
+          "under": -120,
+          "p_over": 0.448,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 10.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 11.5,
+          "book": "FanDuel",
+          "over": -108,
+          "under": -122,
+          "p_over": 0.457,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 3.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 4.5,
+          "book": "FanDuel",
+          "over": -154,
+          "under": 116,
+          "p_over": 0.526,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 28.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 35.5,
+          "book": "FanDuel",
+          "over": -104,
+          "under": -128,
+          "p_over": 0.432,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -1163,83 +1343,6 @@
       ]
     },
     {
-      "player": "Payton Pritchard",
-      "player_id": "4066354",
-      "team": "BOS",
-      "opp": "DET",
-      "home": false,
-      "time_et": "3:00 PM",
-      "status": null,
-      "minutes": 32.8,
-      "stats": {
-        "points": {
-          "proj": 13.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 3.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 3.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 19.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-04-24",
-          "pts": 15,
-          "reb": 4,
-          "ast": 2,
-          "pra": 21
-        },
-        {
-          "date": "2026-04-26",
-          "pts": 32,
-          "reb": 4,
-          "ast": 5,
-          "pra": 41
-        },
-        {
-          "date": "2026-04-28",
-          "pts": 12,
-          "reb": 2,
-          "ast": 6,
-          "pra": 20
-        },
-        {
-          "date": "2026-04-30",
-          "pts": 14,
-          "reb": 3,
-          "ast": 5,
-          "pra": 22
-        },
-        {
-          "date": "2026-05-02",
-          "pts": 13,
-          "reb": 5,
-          "ast": 7,
-          "pra": 25
-        }
-      ]
-    },
-    {
       "player": "VJ Edgecombe",
       "player_id": "5124612",
       "team": "PHI",
@@ -1251,31 +1354,43 @@
       "stats": {
         "points": {
           "proj": 13.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 11.5,
+          "book": "FanDuel",
+          "over": -122,
+          "under": -108,
+          "p_over": 0.517,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 5.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 5.5,
+          "book": "FanDuel",
+          "over": 114,
+          "under": -152,
+          "p_over": 0.431,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 3.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 2.5,
+          "book": "FanDuel",
+          "over": -128,
+          "under": -104,
+          "p_over": 0.531,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 21.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 19.5,
+          "book": "FanDuel",
+          "over": -125,
+          "under": -106,
+          "p_over": 0.52,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -1317,6 +1432,95 @@
       ]
     },
     {
+      "player": "Payton Pritchard",
+      "player_id": "4066354",
+      "team": "BOS",
+      "opp": "DET",
+      "home": false,
+      "time_et": "3:00 PM",
+      "status": null,
+      "minutes": 33.0,
+      "stats": {
+        "points": {
+          "proj": 13.6,
+          "line": 15.5,
+          "book": "FanDuel",
+          "over": -118,
+          "under": -112,
+          "p_over": 0.478,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 3.3,
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": 128,
+          "under": -172,
+          "p_over": 0.396,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 3.8,
+          "line": 4.5,
+          "book": "FanDuel",
+          "over": 104,
+          "under": -138,
+          "p_over": 0.432,
+          "call": null,
+          "edge": 0.0
+        },
+        "pra": {
+          "proj": 19.6,
+          "line": 23.5,
+          "book": "FanDuel",
+          "over": -114,
+          "under": -114,
+          "p_over": 0.465,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-04-24",
+          "pts": 15,
+          "reb": 4,
+          "ast": 2,
+          "pra": 21
+        },
+        {
+          "date": "2026-04-26",
+          "pts": 32,
+          "reb": 4,
+          "ast": 5,
+          "pra": 41
+        },
+        {
+          "date": "2026-04-28",
+          "pts": 12,
+          "reb": 2,
+          "ast": 6,
+          "pra": 20
+        },
+        {
+          "date": "2026-04-30",
+          "pts": 14,
+          "reb": 3,
+          "ast": 5,
+          "pra": 22
+        },
+        {
+          "date": "2026-05-02",
+          "pts": 13,
+          "reb": 5,
+          "ast": 7,
+          "pra": 25
+        }
+      ]
+    },
+    {
       "player": "Derrick White",
       "player_id": "3078576",
       "team": "BOS",
@@ -1324,35 +1528,47 @@
       "home": false,
       "time_et": "3:00 PM",
       "status": null,
-      "minutes": 33.2,
+      "minutes": 33.5,
       "stats": {
         "points": {
           "proj": 12.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 15.5,
+          "book": "FanDuel",
+          "over": -112,
+          "under": -118,
+          "p_over": 0.461,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 3.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": -110,
+          "under": -122,
+          "p_over": 0.484,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 3.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 4.5,
+          "book": "FanDuel",
+          "over": 110,
+          "under": -146,
+          "p_over": 0.399,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 19.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 23.5,
+          "book": "FanDuel",
+          "over": -114,
+          "under": -114,
+          "p_over": 0.461,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -1404,32 +1620,44 @@
       "minutes": 20.2,
       "stats": {
         "points": {
-          "proj": 12.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "proj": 12.0,
+          "line": 18.5,
+          "book": "FanDuel",
+          "over": -112,
+          "under": -118,
+          "p_over": 0.432,
+          "call": "under",
+          "edge": 0.026
         },
         "rebounds": {
           "proj": 3.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 4.5,
+          "book": "FanDuel",
+          "over": -118,
+          "under": -112,
+          "p_over": 0.46,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 2.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 4.5,
+          "book": "FanDuel",
+          "over": -118,
+          "under": -112,
+          "p_over": 0.45,
+          "call": "under",
+          "edge": 0.022
         },
         "pra": {
           "proj": 18.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 27.5,
+          "book": "FanDuel",
+          "over": -128,
+          "under": -104,
+          "p_over": 0.457,
+          "call": "under",
+          "edge": 0.033
         }
       },
       "last5": [
@@ -1478,35 +1706,47 @@
       "home": true,
       "time_et": "9:30 PM",
       "status": null,
-      "minutes": 35.0,
+      "minutes": 35.1,
       "stats": {
         "points": {
           "proj": 11.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 12.5,
+          "book": "FanDuel",
+          "over": -106,
+          "under": -125,
+          "p_over": 0.463,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 5.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": -160,
+          "under": 120,
+          "p_over": 0.6,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 2.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 2.5,
+          "book": "DraftKings",
+          "over": 118,
+          "under": -156,
+          "p_over": 0.413,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 19.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 18.5,
+          "book": "FanDuel",
+          "over": -128,
+          "under": -104,
+          "p_over": 0.517,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -1559,31 +1799,43 @@
       "stats": {
         "points": {
           "proj": 11.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 12.5,
+          "book": "FanDuel",
+          "over": -120,
+          "under": -110,
+          "p_over": 0.49,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 7.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 7.5,
+          "book": "FanDuel",
+          "over": -144,
+          "under": 108,
+          "p_over": 0.538,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 1.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 1.5,
+          "book": "FanDuel",
+          "over": 134,
+          "under": -180,
+          "p_over": 0.378,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 20.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 22.5,
+          "book": "FanDuel",
+          "over": -106,
+          "under": -125,
+          "p_over": 0.46,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -1636,31 +1888,43 @@
       "stats": {
         "points": {
           "proj": 11.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 13.5,
+          "book": "FanDuel",
+          "over": -106,
+          "under": -125,
+          "p_over": 0.454,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 3.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": -114,
+          "under": -114,
+          "p_over": 0.478,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 2.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 2.5,
+          "book": "DraftKings",
+          "over": -177,
+          "under": 134,
+          "p_over": 0.59,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 18.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 20.5,
+          "book": "FanDuel",
+          "over": -104,
+          "under": -128,
+          "p_over": 0.45,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -1709,35 +1973,47 @@
       "home": true,
       "time_et": "3:00 PM",
       "status": null,
-      "minutes": 24.5,
+      "minutes": 24.6,
       "stats": {
         "points": {
           "proj": 11.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 16.5,
+          "book": "FanDuel",
+          "over": -132,
+          "under": 100,
+          "p_over": 0.476,
+          "call": "under",
+          "edge": 0.024
         },
         "rebounds": {
           "proj": 7.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 9.5,
+          "book": "FanDuel",
+          "over": -146,
+          "under": 110,
+          "p_over": 0.499,
+          "call": "under",
+          "edge": 0.025
         },
         "assists": {
           "proj": 2.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 2.5,
+          "book": "DraftKings",
+          "over": 147,
+          "under": -196,
+          "p_over": 0.356,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 20.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 29.5,
+          "book": "FanDuel",
+          "over": -110,
+          "under": -120,
+          "p_over": 0.427,
+          "call": "under",
+          "edge": 0.028
         }
       },
       "last5": [
@@ -1790,17 +2066,23 @@
       "stats": {
         "points": {
           "proj": 11.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 8.5,
+          "book": "FanDuel",
+          "over": -128,
+          "under": -104,
+          "p_over": 0.532,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 5.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 4.5,
+          "book": "DraftKings",
+          "over": -128,
+          "under": -102,
+          "p_over": 0.538,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 1.5,
@@ -1944,31 +2226,43 @@
       "stats": {
         "points": {
           "proj": 10.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 11.5,
+          "book": "FanDuel",
+          "over": -125,
+          "under": -106,
+          "p_over": 0.496,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 3.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": 142,
+          "under": -192,
+          "p_over": 0.369,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 2.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 2.5,
+          "book": "FanDuel",
+          "over": -174,
+          "under": 130,
+          "p_over": 0.587,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 16.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 18.5,
+          "book": "FanDuel",
+          "over": -108,
+          "under": -122,
+          "p_over": 0.463,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -2017,35 +2311,47 @@
       "home": true,
       "time_et": "3:00 PM",
       "status": null,
-      "minutes": 22.4,
+      "minutes": 22.7,
       "stats": {
         "points": {
-          "proj": 10.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "proj": 10.6,
+          "line": 7.5,
+          "book": "FanDuel",
+          "over": -130,
+          "under": -102,
+          "p_over": 0.541,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 2.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 2.5,
+          "book": "DraftKings",
+          "over": 135,
+          "under": -179,
+          "p_over": 0.397,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 3.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": -102,
+          "under": -130,
+          "p_over": 0.45,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 16.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 13.5,
+          "book": "FanDuel",
+          "over": -122,
+          "under": -108,
+          "p_over": 0.516,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -2098,10 +2404,13 @@
       "stats": {
         "points": {
           "proj": 10.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 7.5,
+          "book": "FanDuel",
+          "over": -118,
+          "under": -112,
+          "p_over": 0.519,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 2.1,
@@ -2175,31 +2484,43 @@
       "stats": {
         "points": {
           "proj": 10.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 10.5,
+          "book": "FanDuel",
+          "over": -132,
+          "under": 100,
+          "p_over": 0.515,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 7.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 7.5,
+          "book": "FanDuel",
+          "over": -122,
+          "under": -108,
+          "p_over": 0.5,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 4.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 4.5,
+          "book": "FanDuel",
+          "over": 116,
+          "under": -154,
+          "p_over": 0.417,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 21.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 23.5,
+          "book": "FanDuel",
+          "over": -112,
+          "under": -118,
+          "p_over": 0.473,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -2251,32 +2572,44 @@
       "minutes": 21.6,
       "stats": {
         "points": {
-          "proj": 10.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "proj": 10.3,
+          "line": 11.5,
+          "book": "FanDuel",
+          "over": -114,
+          "under": -114,
+          "p_over": 0.475,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 4.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 4.5,
+          "book": "FanDuel",
+          "over": -154,
+          "under": 116,
+          "p_over": 0.561,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 1.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 1.5,
+          "book": "FanDuel",
+          "over": 136,
+          "under": -182,
+          "p_over": 0.365,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 16.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 17.5,
+          "book": "FanDuel",
+          "over": -130,
+          "under": -102,
+          "p_over": 0.508,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -2325,35 +2658,47 @@
       "home": false,
       "time_et": "9:30 PM",
       "status": null,
-      "minutes": 18.9,
+      "minutes": 19.0,
       "stats": {
         "points": {
-          "proj": 9.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "proj": 9.8,
+          "line": 9.5,
+          "book": "FanDuel",
+          "over": -118,
+          "under": -112,
+          "p_over": 0.493,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 2.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 2.5,
+          "book": "DraftKings",
+          "over": 109,
+          "under": -144,
+          "p_over": 0.429,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 1.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 1.5,
+          "book": "FanDuel",
+          "over": 124,
+          "under": -166,
+          "p_over": 0.387,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 11.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 13.5,
+          "book": "FanDuel",
+          "over": -108,
+          "under": -122,
+          "p_over": 0.46,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -2402,7 +2747,7 @@
       "home": true,
       "time_et": "3:00 PM",
       "status": "day-to-day",
-      "minutes": 24.7,
+      "minutes": 24.8,
       "stats": {
         "points": {
           "proj": 9.3,
@@ -2419,7 +2764,7 @@
           "under": null
         },
         "assists": {
-          "proj": 2.2,
+          "proj": 2.3,
           "line": null,
           "book": null,
           "over": null,
@@ -2479,35 +2824,47 @@
       "home": true,
       "time_et": "3:00 PM",
       "status": null,
-      "minutes": 24.6,
+      "minutes": 24.8,
       "stats": {
         "points": {
           "proj": 9.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 10.5,
+          "book": "FanDuel",
+          "over": -106,
+          "under": -125,
+          "p_over": 0.454,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 2.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 2.5,
+          "book": "DraftKings",
+          "over": 100,
+          "under": -132,
+          "p_over": 0.445,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 1.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 1.5,
+          "book": "FanDuel",
+          "over": -140,
+          "under": 106,
+          "p_over": 0.531,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 12.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 14.5,
+          "book": "FanDuel",
+          "over": -112,
+          "under": -118,
+          "p_over": 0.468,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -2556,7 +2913,7 @@
       "home": false,
       "time_et": "9:30 PM",
       "status": null,
-      "minutes": 21.3,
+      "minutes": 21.4,
       "stats": {
         "points": {
           "proj": 8.8,
@@ -2637,17 +2994,23 @@
       "stats": {
         "points": {
           "proj": 8.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 9.5,
+          "book": "FanDuel",
+          "over": 100,
+          "under": -132,
+          "p_over": 0.442,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 6.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 7.5,
+          "book": "DraftKings",
+          "over": -104,
+          "under": -127,
+          "p_over": 0.456,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 1.3,
@@ -2791,31 +3154,43 @@
       "stats": {
         "points": {
           "proj": 8.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 10.5,
+          "book": "FanDuel",
+          "over": -102,
+          "under": -130,
+          "p_over": 0.434,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 5.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 6.5,
+          "book": "FanDuel",
+          "over": 102,
+          "under": -136,
+          "p_over": 0.433,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 2.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": -102,
+          "under": -130,
+          "p_over": 0.434,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 16.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 20.5,
+          "book": "FanDuel",
+          "over": -112,
+          "under": -118,
+          "p_over": 0.454,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -2868,31 +3243,43 @@
       "stats": {
         "points": {
           "proj": 8.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 9.5,
+          "book": "FanDuel",
+          "over": -125,
+          "under": -106,
+          "p_over": 0.488,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 3.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": -114,
+          "under": -114,
+          "p_over": 0.49,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 2.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 2.5,
+          "book": "DraftKings",
+          "over": -137,
+          "under": 104,
+          "p_over": 0.511,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 14.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 16.5,
+          "book": "FanDuel",
+          "over": -112,
+          "under": -118,
+          "p_over": 0.463,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -2930,6 +3317,89 @@
           "reb": 7,
           "ast": 4,
           "pra": 28
+        }
+      ]
+    },
+    {
+      "player": "Keldon Johnson",
+      "player_id": "4395723",
+      "team": "SAS",
+      "opp": "OKC",
+      "home": true,
+      "time_et": "9:30 PM",
+      "status": null,
+      "minutes": 18.6,
+      "stats": {
+        "points": {
+          "proj": 7.8,
+          "line": 7.5,
+          "book": "FanDuel",
+          "over": -136,
+          "under": 102,
+          "p_over": 0.522,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 3.1,
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": -138,
+          "under": 104,
+          "p_over": 0.517,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 0.8,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 11.2,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-06-03",
+          "pts": 3,
+          "reb": 0,
+          "ast": 0,
+          "pra": 3
+        },
+        {
+          "date": "2026-06-05",
+          "pts": 3,
+          "reb": 4,
+          "ast": 2,
+          "pra": 9
+        },
+        {
+          "date": "2026-06-08",
+          "pts": 7,
+          "reb": 2,
+          "ast": 0,
+          "pra": 9
+        },
+        {
+          "date": "2026-06-10",
+          "pts": 2,
+          "reb": 4,
+          "ast": 1,
+          "pra": 7
+        },
+        {
+          "date": "2026-06-13",
+          "pts": 7,
+          "reb": 5,
+          "ast": 0,
+          "pra": 12
         }
       ]
     },
@@ -3011,83 +3481,6 @@
       ]
     },
     {
-      "player": "Keldon Johnson",
-      "player_id": "4395723",
-      "team": "SAS",
-      "opp": "OKC",
-      "home": true,
-      "time_et": "9:30 PM",
-      "status": null,
-      "minutes": 18.4,
-      "stats": {
-        "points": {
-          "proj": 7.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 3.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 0.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 11.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-06-03",
-          "pts": 3,
-          "reb": 0,
-          "ast": 0,
-          "pra": 3
-        },
-        {
-          "date": "2026-06-05",
-          "pts": 3,
-          "reb": 4,
-          "ast": 2,
-          "pra": 9
-        },
-        {
-          "date": "2026-06-08",
-          "pts": 7,
-          "reb": 2,
-          "ast": 0,
-          "pra": 9
-        },
-        {
-          "date": "2026-06-10",
-          "pts": 2,
-          "reb": 4,
-          "ast": 1,
-          "pra": 7
-        },
-        {
-          "date": "2026-06-13",
-          "pts": 7,
-          "reb": 5,
-          "ast": 0,
-          "pra": 12
-        }
-      ]
-    },
-    {
       "player": "Isaiah Hartenstein",
       "player_id": "4222252",
       "team": "OKC",
@@ -3095,35 +3488,47 @@
       "home": false,
       "time_et": "9:30 PM",
       "status": null,
-      "minutes": 18.9,
+      "minutes": 19.0,
       "stats": {
         "points": {
           "proj": 7.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 7.5,
+          "book": "FanDuel",
+          "over": -114,
+          "under": -114,
+          "p_over": 0.484,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
-          "proj": 7.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "proj": 7.3,
+          "line": 8.5,
+          "book": "FanDuel",
+          "over": 100,
+          "under": -132,
+          "p_over": 0.44,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 2.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 2.5,
+          "book": "FanDuel",
+          "over": 104,
+          "under": -138,
+          "p_over": 0.438,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 16.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 18.5,
+          "book": "FanDuel",
+          "over": -120,
+          "under": -110,
+          "p_over": 0.486,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -3172,7 +3577,7 @@
       "home": false,
       "time_et": "3:00 PM",
       "status": null,
-      "minutes": 23.6,
+      "minutes": 23.4,
       "stats": {
         "points": {
           "proj": 7.3,
@@ -3253,10 +3658,13 @@
       "stats": {
         "points": {
           "proj": 6.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 7.5,
+          "book": "FanDuel",
+          "over": -118,
+          "under": -112,
+          "p_over": 0.482,
+          "call": null,
+          "edge": 0.0
         },
         "rebounds": {
           "proj": 1.5,
