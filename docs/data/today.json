@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-20T13:46:02Z",
+  "generated_at": "2026-10-20T17:47:31Z",
   "date": "2026-10-20",
   "early_look": false,
   "model": "lightgbm",
-  "note": "Projections come from the PRA model (LightGBM trained on three seasons: recent form, minutes, opponent, pace and spread, rest, and teammates out). Lines from FanDuel/DraftKings, pulled each morning (37 of 44 players have at least one). 6 cells are colored: the model's chance beats the price's break-even by 2+ points.",
+  "note": "Projections come from the PRA model (LightGBM trained on three seasons: recent form, minutes, opponent, pace and spread, rest, and teammates out). Lines from FanDuel/DraftKings, pulled each morning (37 of 43 players have at least one). 3 cells are colored: the model's chance beats the price's break-even by 2+ points.",
   "lines_fetched_at": "2026-10-20T13:45:37Z",
   "unmatched_lines": [],
   "players": [
@@ -371,7 +371,7 @@
       "home": false,
       "time_et": "3:00 PM",
       "status": null,
-      "minutes": 36.1,
+      "minutes": 36.0,
       "stats": {
         "points": {
           "proj": 24.4,
@@ -483,12 +483,12 @@
           "edge": 0.0
         },
         "assists": {
-          "proj": 5.7,
+          "proj": 5.8,
           "line": 6.5,
           "book": "FanDuel",
           "over": -118,
           "under": -112,
-          "p_over": 0.48,
+          "p_over": 0.481,
           "call": null,
           "edge": 0.0
         },
@@ -538,6 +538,95 @@
           "reb": 3,
           "ast": 3,
           "pra": 51
+        }
+      ]
+    },
+    {
+      "player": "Cade Cunningham",
+      "player_id": "4432166",
+      "team": "DET",
+      "opp": "BOS",
+      "home": true,
+      "time_et": "3:00 PM",
+      "status": null,
+      "minutes": 37.6,
+      "stats": {
+        "points": {
+          "proj": 24.2,
+          "line": 23.5,
+          "book": "FanDuel",
+          "over": -132,
+          "under": 100,
+          "p_over": 0.523,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 5.0,
+          "line": 5.5,
+          "book": "FanDuel",
+          "over": 124,
+          "under": -166,
+          "p_over": 0.401,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 7.3,
+          "line": 8.5,
+          "book": "FanDuel",
+          "over": -125,
+          "under": -106,
+          "p_over": 0.488,
+          "call": null,
+          "edge": 0.0
+        },
+        "pra": {
+          "proj": 37.0,
+          "line": 38.5,
+          "book": "FanDuel",
+          "over": -114,
+          "under": -114,
+          "p_over": 0.483,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-05-09",
+          "pts": 27,
+          "reb": 10,
+          "ast": 10,
+          "pra": 47
+        },
+        {
+          "date": "2026-05-11",
+          "pts": 19,
+          "reb": 3,
+          "ast": 6,
+          "pra": 28
+        },
+        {
+          "date": "2026-05-13",
+          "pts": 39,
+          "reb": 7,
+          "ast": 9,
+          "pra": 55
+        },
+        {
+          "date": "2026-05-15",
+          "pts": 21,
+          "reb": 2,
+          "ast": 8,
+          "pra": 31
+        },
+        {
+          "date": "2026-05-17",
+          "pts": 13,
+          "reb": 4,
+          "ast": 5,
+          "pra": 22
         }
       ]
     },
@@ -716,95 +805,6 @@
           "reb": 12,
           "ast": 3,
           "pra": 39
-        }
-      ]
-    },
-    {
-      "player": "Cade Cunningham",
-      "player_id": "4432166",
-      "team": "DET",
-      "opp": "BOS",
-      "home": true,
-      "time_et": "3:00 PM",
-      "status": null,
-      "minutes": 32.7,
-      "stats": {
-        "points": {
-          "proj": 20.6,
-          "line": 23.5,
-          "book": "FanDuel",
-          "over": -132,
-          "under": 100,
-          "p_over": 0.501,
-          "call": null,
-          "edge": 0.0
-        },
-        "rebounds": {
-          "proj": 4.5,
-          "line": 5.5,
-          "book": "FanDuel",
-          "over": 124,
-          "under": -166,
-          "p_over": 0.388,
-          "call": null,
-          "edge": 0.0
-        },
-        "assists": {
-          "proj": 6.4,
-          "line": 8.5,
-          "book": "FanDuel",
-          "over": -125,
-          "under": -106,
-          "p_over": 0.469,
-          "call": null,
-          "edge": 0.0
-        },
-        "pra": {
-          "proj": 32.0,
-          "line": 38.5,
-          "book": "FanDuel",
-          "over": -114,
-          "under": -114,
-          "p_over": 0.46,
-          "call": null,
-          "edge": 0.0
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-05-09",
-          "pts": 27,
-          "reb": 10,
-          "ast": 10,
-          "pra": 47
-        },
-        {
-          "date": "2026-05-11",
-          "pts": 19,
-          "reb": 3,
-          "ast": 6,
-          "pra": 28
-        },
-        {
-          "date": "2026-05-13",
-          "pts": 39,
-          "reb": 7,
-          "ast": 9,
-          "pra": 55
-        },
-        {
-          "date": "2026-05-15",
-          "pts": 21,
-          "reb": 2,
-          "ast": 8,
-          "pra": 31
-        },
-        {
-          "date": "2026-05-17",
-          "pts": 13,
-          "reb": 4,
-          "ast": 5,
-          "pra": 22
         }
       ]
     },
@@ -1264,12 +1264,12 @@
       "minutes": 26.0,
       "stats": {
         "points": {
-          "proj": 14.3,
+          "proj": 14.2,
           "line": 18.5,
           "book": "FanDuel",
           "over": -110,
           "under": -120,
-          "p_over": 0.448,
+          "p_over": 0.447,
           "call": null,
           "edge": 0.0
         },
@@ -1472,12 +1472,12 @@
           "edge": 0.0
         },
         "pra": {
-          "proj": 19.6,
+          "proj": 19.7,
           "line": 23.5,
           "book": "FanDuel",
           "over": -114,
           "under": -114,
-          "p_over": 0.465,
+          "p_over": 0.466,
           "call": null,
           "edge": 0.0
         }
@@ -1528,7 +1528,7 @@
       "home": false,
       "time_et": "3:00 PM",
       "status": null,
-      "minutes": 33.5,
+      "minutes": 33.4,
       "stats": {
         "points": {
           "proj": 12.9,
@@ -1695,6 +1695,95 @@
           "reb": 0,
           "ast": 1,
           "pra": 2
+        }
+      ]
+    },
+    {
+      "player": "Jalen Duren",
+      "player_id": "4433621",
+      "team": "DET",
+      "opp": "BOS",
+      "home": true,
+      "time_et": "3:00 PM",
+      "status": null,
+      "minutes": 28.6,
+      "stats": {
+        "points": {
+          "proj": 11.9,
+          "line": 16.5,
+          "book": "FanDuel",
+          "over": -132,
+          "under": 100,
+          "p_over": 0.482,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 8.1,
+          "line": 9.5,
+          "book": "FanDuel",
+          "over": -146,
+          "under": 110,
+          "p_over": 0.52,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 2.1,
+          "line": 2.5,
+          "book": "DraftKings",
+          "over": 147,
+          "under": -196,
+          "p_over": 0.359,
+          "call": null,
+          "edge": 0.0
+        },
+        "pra": {
+          "proj": 22.8,
+          "line": 29.5,
+          "book": "FanDuel",
+          "over": -110,
+          "under": -120,
+          "p_over": 0.444,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-05-09",
+          "pts": 11,
+          "reb": 4,
+          "ast": 1,
+          "pra": 16
+        },
+        {
+          "date": "2026-05-11",
+          "pts": 8,
+          "reb": 2,
+          "ast": 2,
+          "pra": 12
+        },
+        {
+          "date": "2026-05-13",
+          "pts": 9,
+          "reb": 5,
+          "ast": 4,
+          "pra": 18
+        },
+        {
+          "date": "2026-05-15",
+          "pts": 15,
+          "reb": 11,
+          "ast": 0,
+          "pra": 26
+        },
+        {
+          "date": "2026-05-17",
+          "pts": 7,
+          "reb": 9,
+          "ast": 3,
+          "pra": 19
         }
       ]
     },
@@ -1877,6 +1966,95 @@
       ]
     },
     {
+      "player": "Daniss Jenkins",
+      "player_id": "5107199",
+      "team": "DET",
+      "opp": "BOS",
+      "home": true,
+      "time_et": "3:00 PM",
+      "status": null,
+      "minutes": 26.7,
+      "stats": {
+        "points": {
+          "proj": 11.7,
+          "line": 7.5,
+          "book": "FanDuel",
+          "over": -130,
+          "under": -102,
+          "p_over": 0.551,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 3.0,
+          "line": 2.5,
+          "book": "DraftKings",
+          "over": 135,
+          "under": -179,
+          "p_over": 0.404,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 3.3,
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": -102,
+          "under": -130,
+          "p_over": 0.456,
+          "call": null,
+          "edge": 0.0
+        },
+        "pra": {
+          "proj": 18.2,
+          "line": 13.5,
+          "book": "FanDuel",
+          "over": -122,
+          "under": -108,
+          "p_over": 0.531,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-05-09",
+          "pts": 2,
+          "reb": 1,
+          "ast": 3,
+          "pra": 6
+        },
+        {
+          "date": "2026-05-11",
+          "pts": 2,
+          "reb": 3,
+          "ast": 3,
+          "pra": 8
+        },
+        {
+          "date": "2026-05-13",
+          "pts": 19,
+          "reb": 2,
+          "ast": 3,
+          "pra": 24
+        },
+        {
+          "date": "2026-05-15",
+          "pts": 15,
+          "reb": 3,
+          "ast": 3,
+          "pra": 21
+        },
+        {
+          "date": "2026-05-17",
+          "pts": 17,
+          "reb": 3,
+          "ast": 5,
+          "pra": 25
+        }
+      ]
+    },
+    {
       "player": "Mikal Bridges",
       "player_id": "3147657",
       "team": "NYK",
@@ -1966,95 +2144,6 @@
       ]
     },
     {
-      "player": "Jalen Duren",
-      "player_id": "4433621",
-      "team": "DET",
-      "opp": "BOS",
-      "home": true,
-      "time_et": "3:00 PM",
-      "status": null,
-      "minutes": 24.6,
-      "stats": {
-        "points": {
-          "proj": 11.3,
-          "line": 16.5,
-          "book": "FanDuel",
-          "over": -132,
-          "under": 100,
-          "p_over": 0.476,
-          "call": "under",
-          "edge": 0.024
-        },
-        "rebounds": {
-          "proj": 7.0,
-          "line": 9.5,
-          "book": "FanDuel",
-          "over": -146,
-          "under": 110,
-          "p_over": 0.499,
-          "call": "under",
-          "edge": 0.025
-        },
-        "assists": {
-          "proj": 2.0,
-          "line": 2.5,
-          "book": "DraftKings",
-          "over": 147,
-          "under": -196,
-          "p_over": 0.356,
-          "call": null,
-          "edge": 0.0
-        },
-        "pra": {
-          "proj": 20.0,
-          "line": 29.5,
-          "book": "FanDuel",
-          "over": -110,
-          "under": -120,
-          "p_over": 0.427,
-          "call": "under",
-          "edge": 0.028
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-05-09",
-          "pts": 11,
-          "reb": 4,
-          "ast": 1,
-          "pra": 16
-        },
-        {
-          "date": "2026-05-11",
-          "pts": 8,
-          "reb": 2,
-          "ast": 2,
-          "pra": 12
-        },
-        {
-          "date": "2026-05-13",
-          "pts": 9,
-          "reb": 5,
-          "ast": 4,
-          "pra": 18
-        },
-        {
-          "date": "2026-05-15",
-          "pts": 15,
-          "reb": 11,
-          "ast": 0,
-          "pra": 26
-        },
-        {
-          "date": "2026-05-17",
-          "pts": 7,
-          "reb": 9,
-          "ast": 3,
-          "pra": 19
-        }
-      ]
-    },
-    {
       "player": "Julian Champagnie",
       "player_id": "4592479",
       "team": "SAS",
@@ -2138,6 +2227,95 @@
       ]
     },
     {
+      "player": "John Collins",
+      "player_id": "3908845",
+      "team": "DET",
+      "opp": "BOS",
+      "home": true,
+      "time_et": "3:00 PM",
+      "status": null,
+      "minutes": 24.1,
+      "stats": {
+        "points": {
+          "proj": 11.1,
+          "line": 11.5,
+          "book": "FanDuel",
+          "over": -114,
+          "under": -114,
+          "p_over": 0.482,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 5.6,
+          "line": 4.5,
+          "book": "FanDuel",
+          "over": -154,
+          "under": 116,
+          "p_over": 0.574,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 1.0,
+          "line": 1.5,
+          "book": "FanDuel",
+          "over": 136,
+          "under": -182,
+          "p_over": 0.365,
+          "call": null,
+          "edge": 0.0
+        },
+        "pra": {
+          "proj": 18.2,
+          "line": 17.5,
+          "book": "FanDuel",
+          "over": -130,
+          "under": -102,
+          "p_over": 0.518,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-04-07",
+          "pts": 12,
+          "reb": 7,
+          "ast": 1,
+          "pra": 20
+        },
+        {
+          "date": "2026-04-08",
+          "pts": 12,
+          "reb": 9,
+          "ast": 3,
+          "pra": 24
+        },
+        {
+          "date": "2026-04-10",
+          "pts": 0,
+          "reb": 2,
+          "ast": 0,
+          "pra": 2
+        },
+        {
+          "date": "2026-04-12",
+          "pts": 18,
+          "reb": 9,
+          "ast": 0,
+          "pra": 27
+        },
+        {
+          "date": "2026-04-15",
+          "pts": 11,
+          "reb": 9,
+          "ast": 0,
+          "pra": 20
+        }
+      ]
+    },
+    {
       "player": "Rayan Rupert",
       "player_id": "5099752",
       "team": "PHI",
@@ -2148,7 +2326,7 @@
       "minutes": 28.7,
       "stats": {
         "points": {
-          "proj": 11.0,
+          "proj": 11.1,
           "line": null,
           "book": null,
           "over": null,
@@ -2300,95 +2478,6 @@
           "reb": 5,
           "ast": 1,
           "pra": 8
-        }
-      ]
-    },
-    {
-      "player": "Daniss Jenkins",
-      "player_id": "5107199",
-      "team": "DET",
-      "opp": "BOS",
-      "home": true,
-      "time_et": "3:00 PM",
-      "status": null,
-      "minutes": 22.7,
-      "stats": {
-        "points": {
-          "proj": 10.6,
-          "line": 7.5,
-          "book": "FanDuel",
-          "over": -130,
-          "under": -102,
-          "p_over": 0.541,
-          "call": null,
-          "edge": 0.0
-        },
-        "rebounds": {
-          "proj": 2.8,
-          "line": 2.5,
-          "book": "DraftKings",
-          "over": 135,
-          "under": -179,
-          "p_over": 0.397,
-          "call": null,
-          "edge": 0.0
-        },
-        "assists": {
-          "proj": 3.1,
-          "line": 3.5,
-          "book": "FanDuel",
-          "over": -102,
-          "under": -130,
-          "p_over": 0.45,
-          "call": null,
-          "edge": 0.0
-        },
-        "pra": {
-          "proj": 16.0,
-          "line": 13.5,
-          "book": "FanDuel",
-          "over": -122,
-          "under": -108,
-          "p_over": 0.516,
-          "call": null,
-          "edge": 0.0
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-05-09",
-          "pts": 2,
-          "reb": 1,
-          "ast": 3,
-          "pra": 6
-        },
-        {
-          "date": "2026-05-11",
-          "pts": 2,
-          "reb": 3,
-          "ast": 3,
-          "pra": 8
-        },
-        {
-          "date": "2026-05-13",
-          "pts": 19,
-          "reb": 2,
-          "ast": 3,
-          "pra": 24
-        },
-        {
-          "date": "2026-05-15",
-          "pts": 15,
-          "reb": 3,
-          "ast": 3,
-          "pra": 21
-        },
-        {
-          "date": "2026-05-17",
-          "pts": 17,
-          "reb": 3,
-          "ast": 5,
-          "pra": 25
         }
       ]
     },
@@ -2562,95 +2651,6 @@
       ]
     },
     {
-      "player": "John Collins",
-      "player_id": "3908845",
-      "team": "DET",
-      "opp": "BOS",
-      "home": true,
-      "time_et": "3:00 PM",
-      "status": null,
-      "minutes": 21.6,
-      "stats": {
-        "points": {
-          "proj": 10.3,
-          "line": 11.5,
-          "book": "FanDuel",
-          "over": -114,
-          "under": -114,
-          "p_over": 0.475,
-          "call": null,
-          "edge": 0.0
-        },
-        "rebounds": {
-          "proj": 4.9,
-          "line": 4.5,
-          "book": "FanDuel",
-          "over": -154,
-          "under": 116,
-          "p_over": 0.561,
-          "call": null,
-          "edge": 0.0
-        },
-        "assists": {
-          "proj": 1.0,
-          "line": 1.5,
-          "book": "FanDuel",
-          "over": 136,
-          "under": -182,
-          "p_over": 0.365,
-          "call": null,
-          "edge": 0.0
-        },
-        "pra": {
-          "proj": 16.7,
-          "line": 17.5,
-          "book": "FanDuel",
-          "over": -130,
-          "under": -102,
-          "p_over": 0.508,
-          "call": null,
-          "edge": 0.0
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-04-07",
-          "pts": 12,
-          "reb": 7,
-          "ast": 1,
-          "pra": 20
-        },
-        {
-          "date": "2026-04-08",
-          "pts": 12,
-          "reb": 9,
-          "ast": 3,
-          "pra": 24
-        },
-        {
-          "date": "2026-04-10",
-          "pts": 0,
-          "reb": 2,
-          "ast": 0,
-          "pra": 2
-        },
-        {
-          "date": "2026-04-12",
-          "pts": 18,
-          "reb": 9,
-          "ast": 0,
-          "pra": 27
-        },
-        {
-          "date": "2026-04-15",
-          "pts": 11,
-          "reb": 9,
-          "ast": 0,
-          "pra": 20
-        }
-      ]
-    },
-    {
       "player": "Jared McCain",
       "player_id": "4683778",
       "team": "OKC",
@@ -2740,83 +2740,6 @@
       ]
     },
     {
-      "player": "Taurean Prince",
-      "player_id": "2990962",
-      "team": "DET",
-      "opp": "BOS",
-      "home": true,
-      "time_et": "3:00 PM",
-      "status": "day-to-day",
-      "minutes": 24.8,
-      "stats": {
-        "points": {
-          "proj": 9.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 3.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 2.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 15.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-04-05",
-          "pts": 19,
-          "reb": 3,
-          "ast": 3,
-          "pra": 25
-        },
-        {
-          "date": "2026-04-07",
-          "pts": 16,
-          "reb": 11,
-          "ast": 4,
-          "pra": 31
-        },
-        {
-          "date": "2026-04-08",
-          "pts": 15,
-          "reb": 2,
-          "ast": 2,
-          "pra": 19
-        },
-        {
-          "date": "2026-04-10",
-          "pts": 18,
-          "reb": 10,
-          "ast": 5,
-          "pra": 33
-        },
-        {
-          "date": "2026-04-12",
-          "pts": 14,
-          "reb": 5,
-          "ast": 2,
-          "pra": 21
-        }
-      ]
-    },
-    {
       "player": "Duncan Robinson",
       "player_id": "3157465",
       "team": "DET",
@@ -2824,25 +2747,25 @@
       "home": true,
       "time_et": "3:00 PM",
       "status": null,
-      "minutes": 24.8,
+      "minutes": 26.3,
       "stats": {
         "points": {
-          "proj": 9.1,
+          "proj": 9.4,
           "line": 10.5,
           "book": "FanDuel",
           "over": -106,
           "under": -125,
-          "p_over": 0.454,
+          "p_over": 0.457,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
-          "proj": 2.2,
+          "proj": 2.3,
           "line": 2.5,
           "book": "DraftKings",
           "over": 100,
           "under": -132,
-          "p_over": 0.445,
+          "p_over": 0.448,
           "call": null,
           "edge": 0.0
         },
@@ -2857,12 +2780,12 @@
           "edge": 0.0
         },
         "pra": {
-          "proj": 12.8,
+          "proj": 13.1,
           "line": 14.5,
           "book": "FanDuel",
           "over": -112,
           "under": -118,
-          "p_over": 0.468,
+          "p_over": 0.47,
           "call": null,
           "edge": 0.0
         }
@@ -2983,6 +2906,172 @@
       ]
     },
     {
+      "player": "Elijah Harkless",
+      "player_id": "4397449",
+      "team": "DET",
+      "opp": "BOS",
+      "home": true,
+      "time_et": "3:00 PM",
+      "status": null,
+      "minutes": 27.2,
+      "stats": {
+        "points": {
+          "proj": 8.6,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 2.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 3.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 14.8,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-03-21",
+          "pts": 15,
+          "reb": 4,
+          "ast": 5,
+          "pra": 24
+        },
+        {
+          "date": "2026-03-23",
+          "pts": 9,
+          "reb": 2,
+          "ast": 4,
+          "pra": 15
+        },
+        {
+          "date": "2026-03-25",
+          "pts": 10,
+          "reb": 3,
+          "ast": 6,
+          "pra": 19
+        },
+        {
+          "date": "2026-03-27",
+          "pts": 11,
+          "reb": 4,
+          "ast": 2,
+          "pra": 17
+        },
+        {
+          "date": "2026-03-28",
+          "pts": 4,
+          "reb": 5,
+          "ast": 5,
+          "pra": 14
+        }
+      ]
+    },
+    {
+      "player": "Ausar Thompson",
+      "player_id": "4684742",
+      "team": "DET",
+      "opp": "BOS",
+      "home": true,
+      "time_et": "3:00 PM",
+      "status": null,
+      "minutes": 28.3,
+      "stats": {
+        "points": {
+          "proj": 8.5,
+          "line": 10.5,
+          "book": "FanDuel",
+          "over": -102,
+          "under": -130,
+          "p_over": 0.439,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 6.4,
+          "line": 6.5,
+          "book": "FanDuel",
+          "over": 102,
+          "under": -136,
+          "p_over": 0.452,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 2.8,
+          "line": 3.5,
+          "book": "FanDuel",
+          "over": -102,
+          "under": -130,
+          "p_over": 0.439,
+          "call": null,
+          "edge": 0.0
+        },
+        "pra": {
+          "proj": 17.9,
+          "line": 20.5,
+          "book": "FanDuel",
+          "over": -112,
+          "under": -118,
+          "p_over": 0.466,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-05-09",
+          "pts": 9,
+          "reb": 7,
+          "ast": 5,
+          "pra": 21
+        },
+        {
+          "date": "2026-05-11",
+          "pts": 4,
+          "reb": 4,
+          "ast": 1,
+          "pra": 9
+        },
+        {
+          "date": "2026-05-13",
+          "pts": 6,
+          "reb": 7,
+          "ast": 5,
+          "pra": 18
+        },
+        {
+          "date": "2026-05-15",
+          "pts": 10,
+          "reb": 9,
+          "ast": 4,
+          "pra": 23
+        },
+        {
+          "date": "2026-05-17",
+          "pts": 5,
+          "reb": 7,
+          "ast": 0,
+          "pra": 12
+        }
+      ]
+    },
+    {
       "player": "Neemias Queta",
       "player_id": "4397424",
       "team": "BOS",
@@ -3062,172 +3151,6 @@
           "reb": 12,
           "ast": 1,
           "pra": 30
-        }
-      ]
-    },
-    {
-      "player": "Elijah Harkless",
-      "player_id": "4397449",
-      "team": "DET",
-      "opp": "BOS",
-      "home": true,
-      "time_et": "3:00 PM",
-      "status": null,
-      "minutes": 23.9,
-      "stats": {
-        "points": {
-          "proj": 8.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 2.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 3.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 13.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-03-21",
-          "pts": 15,
-          "reb": 4,
-          "ast": 5,
-          "pra": 24
-        },
-        {
-          "date": "2026-03-23",
-          "pts": 9,
-          "reb": 2,
-          "ast": 4,
-          "pra": 15
-        },
-        {
-          "date": "2026-03-25",
-          "pts": 10,
-          "reb": 3,
-          "ast": 6,
-          "pra": 19
-        },
-        {
-          "date": "2026-03-27",
-          "pts": 11,
-          "reb": 4,
-          "ast": 2,
-          "pra": 17
-        },
-        {
-          "date": "2026-03-28",
-          "pts": 4,
-          "reb": 5,
-          "ast": 5,
-          "pra": 14
-        }
-      ]
-    },
-    {
-      "player": "Ausar Thompson",
-      "player_id": "4684742",
-      "team": "DET",
-      "opp": "BOS",
-      "home": true,
-      "time_et": "3:00 PM",
-      "status": null,
-      "minutes": 24.3,
-      "stats": {
-        "points": {
-          "proj": 8.0,
-          "line": 10.5,
-          "book": "FanDuel",
-          "over": -102,
-          "under": -130,
-          "p_over": 0.434,
-          "call": null,
-          "edge": 0.0
-        },
-        "rebounds": {
-          "proj": 5.5,
-          "line": 6.5,
-          "book": "FanDuel",
-          "over": 102,
-          "under": -136,
-          "p_over": 0.433,
-          "call": null,
-          "edge": 0.0
-        },
-        "assists": {
-          "proj": 2.6,
-          "line": 3.5,
-          "book": "FanDuel",
-          "over": -102,
-          "under": -130,
-          "p_over": 0.434,
-          "call": null,
-          "edge": 0.0
-        },
-        "pra": {
-          "proj": 16.1,
-          "line": 20.5,
-          "book": "FanDuel",
-          "over": -112,
-          "under": -118,
-          "p_over": 0.454,
-          "call": null,
-          "edge": 0.0
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-05-09",
-          "pts": 9,
-          "reb": 7,
-          "ast": 5,
-          "pra": 21
-        },
-        {
-          "date": "2026-05-11",
-          "pts": 4,
-          "reb": 4,
-          "ast": 1,
-          "pra": 9
-        },
-        {
-          "date": "2026-05-13",
-          "pts": 6,
-          "reb": 7,
-          "ast": 5,
-          "pra": 18
-        },
-        {
-          "date": "2026-05-15",
-          "pts": 10,
-          "reb": 9,
-          "ast": 4,
-          "pra": 23
-        },
-        {
-          "date": "2026-05-17",
-          "pts": 5,
-          "reb": 7,
-          "ast": 0,
-          "pra": 12
         }
       ]
     },
@@ -3577,7 +3500,7 @@
       "home": false,
       "time_et": "3:00 PM",
       "status": null,
-      "minutes": 23.4,
+      "minutes": 23.6,
       "stats": {
         "points": {
           "proj": 7.3,
@@ -3737,7 +3660,7 @@
       "minutes": 20.0,
       "stats": {
         "points": {
-          "proj": 3.3,
+          "proj": 3.2,
           "line": null,
           "book": null,
           "over": null,
