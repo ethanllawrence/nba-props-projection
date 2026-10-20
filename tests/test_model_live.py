@@ -93,15 +93,16 @@ def test_live_model():
         assert len({l["player_id"] for l in legs}) == len(legs)
         assert all(sum(x["game_id"] == l["game_id"] for x in legs) <= EP.MAX_PER_GAME for l in legs)
         assert [l["gap"] for l in legs] == sorted((l["gap"] for l in legs), reverse=True)
-        # the chosen combination has the largest total gap among in-range combinations
+        # the chosen combination has the largest total CAPPED gap among in-range combinations
         from itertools import combinations
         cands = EP.candidates(con, DATE, live.PROJ, alts)
-        best = max((sum(c["gap"] for c in k) for n in (3, 4) for k in combinations(cands[:EP.SEARCH_TOP], n)
+        capped = lambda k: round(sum(min(c["gap"], EP.GAP_CAP) for c in k), 4)
+        best = max((capped(k) for n in (3, 4) for k in combinations(cands[:EP.SEARCH_TOP], n)
                     if len({c["player_id"] for c in k}) == n
                     and EP.TARGET_LO <= EP.combined_odds([c["odds"] for c in k]) <= EP.TARGET_HI
                     and max([c["game_id"] for c in k].count(g) for g in {c["game_id"] for c in k}) <= EP.MAX_PER_GAME),
                    default=None)
-        assert best is None or abs(sum(l["gap"] for l in legs) - best) < 1e-9
+        assert best is None or abs(capped(legs) - best) < 1e-9
         print("OK early parlay:", ep["combined_odds"], [(l["player"], l["line"], l["odds"], l["gap"]) for l in legs])
         top = sorted(live.PROJ, key=lambda p: -live.PROJ[p]["points"])[:6]
         # lines: two below the projection, two above, two right at it
@@ -131,6 +132,29 @@ def test_live_model():
         # qualified main-line legs: overs only, 60%+, projection above the line
         assert all(c["side"] == "over" and c["prob"] >= parlay.MODEL_MIN_PROB_MAIN
                    and c["proj"] > c["line"] and c["odds"] >= parlay.MIN_LEG_ODDS for c in cands)
+
+        # Parlay of the Day, price-first: the same engine on today's prices
+        (site / "parlay.json").write_text(json.dumps({"history": []}))
+        (site / "early_lines.json").unlink(missing_ok=True)
+        (site / "lines.json").write_text(json.dumps(
+            {"date": DATE, "lines": {norm_name(k): v for k, v in lines.items()}, "alts": alts}))
+        con.execute("UPDATE games SET tipoff_utc='2030-01-01T00:00Z'")
+        log_p = parlay.update(con, DATE)
+        pj = json.loads((site / "parlay.json").read_text())["today"]
+        assert pj["method"] == "price-first" and 3 <= len(pj["legs"]) <= 4, (log_p, pj)
+        assert all(l["side"] == "over" and l["book_prob"] and "gap" in l and l["reasoning"] for l in pj["legs"])
+        assert parlay.update(con, DATE).get("locked") == DATE            # a later run doesn't change it
+        # manual top-up re-pick: the first leg's game has started -> re-picked without it
+        gone = next(l["game_id"] for l in pj["legs"])
+        con.execute("UPDATE games SET tipoff_utc='2020-01-01T00:00Z' WHERE game_id=?", (gone,))
+        log_r = parlay.update(con, DATE, repick=True)
+        pr = json.loads((site / "parlay.json").read_text())["today"]
+        if log_r.get("repicked"):
+            assert all(l["game_id"] != gone for l in pr["legs"]) and pr["replaced"]["legs"], pr
+        else:
+            assert pr["legs"] == pj["legs"]                              # nothing found: morning pick stays
+        print("OK price-first parlay:", pj["combined_odds"], [(l["player"], l["line"], l["odds"]) for l in pj["legs"]],
+              "| repick:", log_r.get("repicked") or log_r.get("repick"))
     board = json.loads((site / "today.json").read_text())
     assert board["model"] == "lightgbm" and n > 20
     lined = [p for p in board["players"] if p["stats"]["points"].get("line") is not None]

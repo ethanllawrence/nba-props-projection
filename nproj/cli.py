@@ -46,6 +46,7 @@ def cmd_daily(args) -> None:
 
     from .model import live
     live.PROJ.clear()
+    TOPUP.clear()
     date_s = _date(args)
     with db.session() as con:
         slate = pipeline.refresh_slate(con, date_s)
@@ -61,8 +62,8 @@ def cmd_daily(args) -> None:
         result = export_all(con, date_s)
         try:
             from .model import parlay
-            spend = config.ODDS_MODE == "props" and bool(config.ODDS_API_KEY)
-            print(f"[parlay] {parlay.update(con, date_s, allow_spend=spend)}")
+            spend = config.ODDS_MODE == "props" and bool(config.ODDS_API_KEY) and not TOPUP
+            print(f"[parlay] {parlay.update(con, date_s, allow_spend=spend, repick=bool(TOPUP))}")
         except Exception as exc:  # noqa: BLE001 - a parlay problem must never block the board
             print(f"[parlay] FAILED: {exc}")
         try:
@@ -132,7 +133,8 @@ def _early_look(con, date_s):
             try:
                 # a manual run with the odds box ticked buys now, however far out
                 manual = os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
-                log["alt_lines"] = odds.refresh_early_alts(date_s, nxt, order, force=manual)
+                budget = max(0, TOPUP["budget"] - TOPUP["spent"]) if TOPUP else None
+                log["alt_lines"] = odds.refresh_early_alts(date_s, nxt, order, force=manual, budget=budget)
             except Exception as exc:  # noqa: BLE001 - prices are optional
                 log["alt_lines"] = {"error": str(exc)}
         alts = odds.load_early_lines(nxt).get("alts", {})
@@ -184,6 +186,23 @@ def _maybe_model(con, date_s):
         print(f"[model] FAILED, board uses the recent-average baseline: {exc}")
 
 
+TOPUP = {}      # set by a manual top-up run (see _maybe_odds)
+
+
+def _board_team_order(date_s):
+    """Teams on today's board, the ones with the top projected PRA first."""
+    import json
+    try:
+        with open(config.SITE_DATA_DIR / "today.json", encoding="utf-8") as f:
+            board = json.load(f)
+    except (OSError, ValueError):
+        return []
+    if board.get("date") != date_s:
+        return []
+    players = sorted(board.get("players", []), key=lambda p: -((p.get("stats") or {}).get("pra") or {}).get("proj", 0))
+    return list(dict.fromkeys(p["team"] for p in players))
+
+
 def _maybe_odds(date_s, n_games):
     from .ingest import odds
 
@@ -197,10 +216,27 @@ def _maybe_odds(date_s, n_games):
         print("[odds] skipped (no games, no credits spent)")
         return
     if odds.load_lines(date_s).get("lines"):
-        # GitHub sometimes runs a scheduled job hours late, and a manual run
-        # with the odds box may only be after tomorrow's early-look prices:
-        # either way today's lines are never bought twice
-        print(f"[odds] skipped (lines for {date_s} already bought)")
+        # today's main lines are never bought twice (GitHub sometimes runs a
+        # scheduled job hours late). A MANUAL run with the odds box is a
+        # top-up instead: fresh alt ladders for games not started yet (today's
+        # parlay is re-picked from them), then the next game day's early-look
+        # ladders, from a fresh day's allowance.
+        import os
+        from datetime import datetime, timedelta, timezone
+        from .model import parlay
+        if os.environ.get("GITHUB_EVENT_NAME") != "workflow_dispatch":
+            print(f"[odds] skipped (lines for {date_s} already bought)")
+            return
+        budget = odds.topup_allowance(date_s)
+        try:
+            order = _board_team_order(date_s)
+            not_before = datetime.now(timezone.utc) + timedelta(minutes=parlay.REPICK_LEAD_MIN)
+            log = odds.refresh_today_alts(date_s, budget, order, not_before)
+        except Exception as exc:  # noqa: BLE001
+            print(f"[odds] top-up FAILED: {exc}")
+            return
+        TOPUP.update(budget=budget, spent=log.get("spent", 0))
+        print(f"[odds] top-up (today's lines already bought): budget {budget}, {log}")
         return
     try:
         print(f"[odds] {odds.refresh_lines(date_s)}")

@@ -45,15 +45,33 @@ function legRow(leg) {
       <div class="pm" style="white-space:normal">${esc(shortRisk[leg.blowout_risk] || "")} · ${esc(leg.minutes_confidence)} minutes confidence</div></td>
     <td class="num"><div class="pos" style="font-weight:700">${side} ${line} ${esc(statAbbr[leg.stat] || leg.stat)}</div>
       <div class="pm">${fmtOdds(leg.odds)} ${esc(leg.book || "")}</div>
-      <div class="pm">model ${leg.prob != null ? Math.round(leg.prob * 100) + "%" : "?"}${isAlt && leg.book_line != null ? ` · full line ${leg.book_line}` : ""}</div></td>
+      <div class="pm">${leg.book_prob != null ? gapTxt(leg) : `model ${leg.prob != null ? Math.round(leg.prob * 100) + "%" : "?"}`}${isAlt && leg.book_line != null ? ` · full line ${leg.book_line}` : ""}</div></td>
   </tr>${note}`;
+}
+
+function gapTxt(l) {
+  const gap = Math.round(l.gap * 100);
+  return `model ${Math.round(l.prob * 100)}% · book ${Math.round(l.book_prob * 100)}%
+    <span class="${gap >= 0 ? "pos" : "neg"}">(${gap >= 0 ? "+" : ""}${gap})</span>`;
+}
+
+function replacedNote(t) {
+  if (!t.replaced) return "";
+  const r = t.replaced;
+  const at = t.picked_at ? new Date(t.picked_at).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) : "";
+  const legs = (r.legs || []).map((l) => `${esc(l.player.split(" ").slice(-1)[0])} O${l.line} ${esc(statAbbr[l.stat] || l.stat)}`).join(", ");
+  return `<div class="dim" style="margin-top:8px;font-size:12px;line-height:1.4">Re-picked ${esc(at)} from fresh prices
+    (games not started yet). This morning's pick, ${fmtOdds(r.combined_odds)} (${legs}), is replaced and not graded.</div>`;
 }
 
 function parlayCard(t) {
   const statusCls = { pending: "win-wait", win: "win-go", loss: "win-off" }[t.status] || "win-wait";
   const statusLabel = { pending: "PENDING", win: "HIT", loss: "MISS" }[t.status] || "PENDING";
   const probs = t.legs.map((l) => l.prob).filter((x) => x != null);
-  const all = probs.length === t.legs.length ? ` · all legs hit: model ${Math.round(probs.reduce((a, b) => a * b, 1) * 100)}%` : "";
+  const books = t.legs.map((l) => l.book_prob).filter((x) => x != null);
+  const pct = (xs) => Math.round(xs.reduce((a, b) => a * b, 1) * 100);
+  const all = probs.length === t.legs.length
+    ? ` · all legs hit: model ${pct(probs)}%${books.length === t.legs.length ? `, book ${pct(books)}%` : ""}` : "";
   return `<div class="card">
     <div class="call-meta" style="margin-bottom:6px;display:flex;justify-content:space-between;gap:8px;align-items:baseline">
       <span>${esc(niceDate(t.date))} · ${t.legs.length} legs · <b>${fmtOdds(t.combined_odds)}</b> on the book${all}</span>
@@ -61,6 +79,7 @@ function parlayCard(t) {
     <div class="board-tbl-wrap"><div class="board-tbl compact-tbl"><table class="t">
       <thead><tr><th>Player</th><th class="num">Leg</th></tr></thead>
       <tbody>${t.legs.map(legRow).join("")}</tbody></table></div></div>
+    ${replacedNote(t)}
   </div>`;
 }
 

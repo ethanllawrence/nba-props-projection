@@ -30,6 +30,18 @@ How it works:
      +TARGET_HI with the largest total gap; if none, the best at +MIN_ACCEPT to
      +TARGET_LO; otherwise no parlay. (Picking each player's single best leg and
      adding greedily could end with four -400 legs at +144 and no parlay.)
+     Each leg's gap counts at most GAP_CAP (+8 points). Evidence (2026-10-20,
+     archived main lines, star overs, 14,396 bets, walk-forward projections):
+       gap +3 to +8:  hit 53.1% vs book 49.9%  (model said 55%)
+       gap +8 to +15: hit 53.0% vs book 49.9%  (model said 61%)
+       gap +15 up:    hit 52.0% vs book 49.3%  (model said 71%)
+     Beyond about +8 a bigger gap is NOT a bigger edge: the model is just
+     overconfident there (often the book knows about a minutes limit the model
+     can't see). So a +20 gap is scored like +8, and ties go to the
+     combination the book itself rates likeliest to hit.
+
+The same engine picks the morning Parlay of the Day (nproj/model/parlay.py,
+price_first) from today's prices.
 
 Saved in docs/data/parlay.json under "early" and graded the next morning
 ("early_history"), like the main parlay.
@@ -53,6 +65,8 @@ MIN_ACCEPT = 150
 MIN_LEGS, MAX_LEGS = 3, 4
 MAX_PER_GAME = 3                 # same-game legs weren't more correlated in the replay
 VETO = -0.10                     # drop legs the model rates 10+ points below the book
+GAP_CAP = 0.08                   # a gap above +8 points scores like +8 (see 5. above)
+BLOWOUT_SPREAD = 12              # skip games with a spread this big (when a spread is known)
 ALT_HOLD = 1.045                 # typical book cut on one-sided alt prices
 STAR_CAL = json.loads((Path(__file__).parent / "star_calibration.json").read_text())
 
@@ -82,16 +96,35 @@ def model_chance(pr, stat, line):
     return 1 / (1 + math.exp(-z))
 
 
-def candidates(con, date_s, proj, alts):
+def _tip(t):
+    if not t:
+        return None
+    try:
+        d = datetime.fromisoformat(str(t).replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    return d if d.tzinfo else d.replace(tzinfo=timezone.utc)
+
+
+def candidates(con, date_s, proj, alts, spreads=None, not_before=None):
     """Every qualifying leg for pool players, best gap first.
-    alts: {norm_name: {stat: ladder}}."""
+    alts: {norm_name: {stat: ladder}}. spreads: {team: spread} to skip
+    blowout games. not_before: UTC datetime; skip games tipping before it."""
     from ..ingest import odds
     rows = con.execute(
-        """SELECT pp.player_id, pp.game_id, pp.status, p.name, p.team, g.home_team, g.away_team
+        """SELECT pp.player_id, pp.game_id, pp.status, p.name, p.team, g.home_team, g.away_team,
+                  g.tipoff_utc
            FROM probable_players pp JOIN players p ON p.player_id = pp.player_id
            JOIN games g ON g.game_id = pp.game_id WHERE pp.date = ?""", (date_s,)).fetchall()
+    spreads = spreads or {}
     pool = []
     for r in rows:
+        tip = _tip(r["tipoff_utc"])
+        if not_before is not None and tip is not None and tip <= not_before:
+            continue
+        sp = spreads.get(r["team"])
+        if sp is not None and abs(sp) >= BLOWOUT_SPREAD:
+            continue
         pr = proj.get(str(r["player_id"]))
         if (pr and (r["status"] or "active") == "active" and pr.get("minutes", 0) >= MIN_MINUTES
                 and pr.get("has_history", True) and not pr.get("new_team")):
@@ -103,7 +136,7 @@ def candidates(con, date_s, proj, alts):
         home = r["team"] == r["home_team"]
         who = {"player": r["name"], "player_id": str(r["player_id"]), "team": r["team"],
                "opp": r["away_team"] if home else r["home_team"], "home": home,
-               "game_id": str(r["game_id"]), "side": "over"}
+               "game_id": str(r["game_id"]), "side": "over", "tipoff_utc": r["tipoff_utc"]}
         for stat, ladder in (matched.get(r["name"]) or {}).items():
             if stat not in pr:
                 continue
@@ -119,7 +152,8 @@ def candidates(con, date_s, proj, alts):
                 out.append({**who, "stat": stat, "line": line, "odds": int(price), "book": step.get("book"),
                             "model_prob": round(pm, 3), "book_prob": round(pb, 3), "gap": round(pm - pb, 3),
                             "proj": round(float(pr[stat]), 1)})
-    return sorted(out, key=lambda c: -c["gap"])
+    # capped gap first, then the book's own chance (safer legs first on ties)
+    return sorted(out, key=lambda c: (-min(c["gap"], GAP_CAP), -c["book_prob"]))
 
 
 SEARCH_TOP = 24          # best-gap legs considered when combining
@@ -133,6 +167,7 @@ def select(cands):
     from itertools import combinations
     pool = cands[:SEARCH_TOP]
     best, fallback = None, None
+    cap = lambda g: min(g, GAP_CAP)
     for n in range(MIN_LEGS, MAX_LEGS + 1):
         for combo in combinations(pool, n):
             if len({c["player_id"] for c in combo}) < n:
@@ -141,7 +176,8 @@ def select(cands):
             if max(games.count(g) for g in games) > MAX_PER_GAME:
                 continue
             price = combined_odds([c["odds"] for c in combo])
-            score = sum(c["gap"] for c in combo)
+            score = (round(sum(cap(c["gap"]) for c in combo), 4),
+                     math.prod(c["book_prob"] for c in combo))
             if TARGET_LO <= price <= TARGET_HI:
                 if best is None or score > best[0]:
                     best = (score, combo, price)
@@ -154,14 +190,14 @@ def select(cands):
     return sorted(pick[1], key=lambda c: -c["gap"]), pick[2]
 
 
-def pick(con, date_s, proj, alts):
+def pick(con, date_s, proj, alts, spreads=None):
     """-> parlay dict (legs may be empty, with the reason in note)."""
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     if not alts:
         return {"date": date_s, "legs": [], "status": "waiting", "picked_at": now,
                 "note": "Waiting for alt-line prices. They're bought on the morning run once the "
                         "games are within 2 days."}
-    cands = candidates(con, date_s, proj, alts)
+    cands = candidates(con, date_s, proj, alts, spreads)
     legs, price = select(cands)
     if not legs:
         return {"date": date_s, "legs": [], "status": "none", "picked_at": now,

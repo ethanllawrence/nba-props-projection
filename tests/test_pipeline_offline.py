@@ -235,9 +235,11 @@ def test_odds_rationing_and_board():
     cli.main(["daily", "--date", "2026-03-10"])
 
     ln = json.loads((site / "lines.json").read_text())
-    allowance = odds.daily_allowance(440, date(2026, 3, 10))       # 8 -> 4 markets x 2 games
-    assert ln["games_on_slate"] == 2 and ln["markets"] == config.ODDS_MARKETS[:min(4, allowance // 2)]
-    assert ln["credits_spent"] <= allowance
+    allowance = odds.daily_allowance(440, date(2026, 3, 10))
+    main = allowance - odds.early_reserve(allowance)               # reserve kept for the early look
+    assert ln["early_reserve"] == odds.early_reserve(allowance)
+    assert ln["games_on_slate"] == 2 and ln["markets"] == config.ODDS_MARKETS[:min(4, main // 2)]
+    assert ln["credits_spent"] <= main
     assert ln["lines"]["nikola jokic"]["pra"]["book"] == "FanDuel"
     assert ln["lines"]["nikola jokic"]["pra"]["line"] == 49.5
 
@@ -251,7 +253,7 @@ def test_odds_rationing_and_board():
     assert lined == {"Nikola Jokic", "Player 20-0"}, lined
 
     jk = json.loads((site / "jokic.json").read_text())
-    if config.ODDS_JOKIC_TD and len(ln["markets"]) * 2 + 1 <= allowance:
+    if config.ODDS_JOKIC_TD and len(ln["markets"]) * 2 + 1 <= main:
         assert jk["tonight"]["market"] == {"side": "yes", "odds": 120, "book": "FanDuel"}
 
     # Afternoon run: odds off, lines must survive without any paid call
@@ -543,6 +545,21 @@ def _early_alts_checks(site, odds, calls):
     log = odds.refresh_early_alts("2026-10-19", "2026-10-20", ["OKC"], force=True)
     assert len(calls) == 4 and log["credits"] == 8, log
     assert odds.load_lines("2026-10-19")["extras_spent"] == 9
+
+    # manual top-up for TODAY: all-stat ladders for games not started, top teams first, within budget
+    from datetime import datetime, timezone
+    odds.save_lines({"date": "2026-10-20", "allowance": 12, "credits_spent": 12, "extras_spent": 0,
+                     "lines": {"x": {}}, "alts": {"old player": {"points": [{"line": 9.5, "over": -300}]}}})
+    evs_today = [dict(e, commence_time=t) for e, t in zip(
+        [{"event_id": "a", "home": "BOS", "away": "DET"}, {"event_id": "b", "home": "NYK", "away": "PHI"},
+         {"event_id": "c", "home": "SAS", "away": "OKC"}],
+        ["2026-10-20T19:00:00Z", "2026-10-20T23:00:00Z", "2026-10-21T01:30:00Z"])]
+    odds.fetch_events = lambda d: [dict(e) for e in evs_today]
+    calls.clear()
+    log = odds.refresh_today_alts("2026-10-20", 9, ["NYK"], datetime(2026, 10, 20, 21, 0, tzinfo=timezone.utc))
+    assert calls == ["b", "c"] and log["spent"] == 8, log          # BOS-DET already started
+    saved = odds.load_lines("2026-10-20")
+    assert "star b" in saved["alts"] and "old player" in saved["alts"] and saved["extras_spent"] == 8
     print("OK early alts:", log)
 
 

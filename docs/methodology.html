@@ -86,24 +86,21 @@
     the line, would have lost about 6% of every dollar bet in the backtest.)</p>
 
     <h2>Parlay of the Day</h2>
-    <p>Picked automatically every morning: 2-4 overs combined to roughly +200 to +300, overs
-    only, so every leg is something to cheer for. Legs are the overs most likely to hit, not the
-    best value: alt-line overs the model gives at least a 70% chance (the highest such alt line
-    for the player) when the day's leftover odds budget bought alt lines, and main-line overs at
-    60%+. Each leg's chance is the model's blended probability (see Edge coloring), the model's
-    own projection has to be above the line, and no leg is priced shorter than -350 (those barely
-    move the payout). Because legs are ranked by likelihood rather than price, expect to lose
-    roughly the sportsbook's cut over time; it's built for fun, not profit. Legs only come from
-    players with steady minutes and no injury tag, never from a game with a double-digit spread,
-    at most one per player and two per game. If it can't reach +150 without forcing weak legs,
-    there's no parlay that day. In a replay of November 2025 with main lines only, that happened
-    on 6 of 10 nights, and the 4 parlays it did make were mostly low assist and rebound overs;
-    alt lines on better players are what make it work, and the budget buys a few games' worth
-    each morning. The next morning each leg is graded against the real box score (a player who
-    didn't play is void, like a sportsbook would do it), and the History section keeps the
-    running record. Once picked, the legs never change during the day, since you may already
-    have bet them. If a later injury check finds that a leg's player was ruled out or its
-    projection moved against the leg, the leg gets a flag instead.</p>
+    <p>Picked automatically every morning with the same rules as the early look parlay below,
+    applied to that day's prices: 3-4 overs at about +200 to +320 real FanDuel/DraftKings odds, from
+    the night's top projected players, no game with a 12+ point spread. Prices come from, oldest to
+    newest, the early-look alt ladders bought the day before (PRA and points), the morning's main
+    lines, and the morning's alt ladders; a newer price for the same line wins. (Opening day, Oct 20,
+    used an older "most likely overs" rule that ranked legs by the model's chance alone; it picked
+    role players' rebound and assist overs.)</p>
+    <p>Once picked, the legs don't change during the day, since you may already have bet them. One
+    exception: a manual run with the odds box ticked, after the morning lines were bought, is a
+    top-up. It buys fresh alt ladders (all four stats) for games that haven't started, re-picks the
+    parlay from games tipping at least 15 minutes later, and buys the next game day's early-look
+    ladders, all from a fresh day's budget. The page then shows the morning pick as replaced; only
+    the re-pick is graded. If a later injury check finds that a leg's player was ruled out or its
+    projection moved against the leg, the leg gets a flag. Each leg is graded the next morning
+    against the real box score (a player who didn't play is void, like a sportsbook would do it).</p>
 
     <h2>Early look parlay</h2>
     <p>A second parlay for the next game day: 3-4 star overs at about +200 to +320 real sportsbook
@@ -124,7 +121,11 @@
     model rated the over 10+ points below the book, it hit 44.5% against the book's 49.8%, a 16% loss.
     3-10 points below did about as well as the book (-5%, roughly the book's normal cut), and 3-8
     points above hit 54% (+1.8%). So the model is most useful for avoiding traps. It isn't proven to
-    beat the books. Two earlier versions taught the price rules. Picking legs by model chance alone
+    beat the books. A wider re-check (14,396 star overs, Oct 20) showed bigger gaps aren't bigger edges:
+    +3 to +8 hit 53.1% vs the book's 49.9%, +8 to +15 hit 53.0%, and +15 or more hit 52.0%, even though
+    the model claimed 61% and 71% for those. A huge gap usually means the book knows something the
+    model can't see, like a minutes limit. So when ranking combinations, any gap above +8 counts as +8,
+    and ties go to the combination the book itself rates likeliest to hit. Two earlier versions taught the price rules. Picking legs by model chance alone
     led to legs the books priced at -1100 to -7000. Then a -300 to -150 price window missed the real
     star legs, because alt ladders move 5 points at a time and prices jump (Brunson 30+ PRA -390, 35+
     -146).</p>

@@ -244,12 +244,16 @@ def refresh_lines(date_s, jokic_name="Nikola Jokic", jokic_team="DEN"):
     remaining, used = check_quota()
     allowance = daily_allowance(remaining, today)
     events = fetch_events(date_s)
-    markets, n_full = plan(len(events), allowance, config.ODDS_MARKETS)
+    # keep some of today's allowance for tomorrow's early-look alt ladders
+    # (bought later in this run); without it a big slate leaves them nothing
+    reserve = early_reserve(allowance)
+    main_allowance = allowance - reserve
+    markets, n_full = plan(len(events), main_allowance, config.ODDS_MARKETS)
 
     all_lines, td_price = {}, None
     spent = 0
     jokic_key = norm_name(jokic_name)
-    room_for_td = config.ODDS_JOKIC_TD and len(markets) * n_full + 1 <= allowance
+    room_for_td = config.ODDS_JOKIC_TD and len(markets) * n_full + 1 <= main_allowance
     for ev in events[:n_full]:
         mk = list(markets)
         if room_for_td and jokic_team in (ev["home"], ev["away"]):
@@ -267,6 +271,7 @@ def refresh_lines(date_s, jokic_name="Nikola Jokic", jokic_team="DEN"):
         "date": date_s,
         "fetched_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "allowance": allowance,
+        "early_reserve": reserve,
         "events": events,
         "games_on_slate": len(events),
         "games_fetched": min(n_full, len(events)),
@@ -282,11 +287,22 @@ def refresh_lines(date_s, jokic_name="Nikola Jokic", jokic_team="DEN"):
         "allowance": allowance, "remaining_before": remaining, "players_with_lines": len(all_lines)}
 
 
-def leftover_credits(saved):
+def early_reserve(allowance):
+    """Credits held back each morning for the next game day's early-look alt
+    ladders: a third of the allowance, at most EARLY_MAX_CREDITS, in whole
+    games (2 credits each)."""
+    return min(EARLY_MAX_CREDITS, allowance // 3) // len(EARLY_STATS) * len(EARLY_STATS)
+
+
+def leftover_credits(saved, include_reserve=False):
     """Credits from today's allowance not used by the main pull (or by
-    extras already bought). Parlay extras (spreads, alt lines) spend these."""
-    return max(0, saved.get("allowance", 0) - saved.get("credits_spent", 0)
-               - saved.get("extras_spent", 0))
+    extras already bought). Parlay extras (spreads, alt lines) spend these;
+    the early-look reserve is only for the early-look purchase."""
+    left = (saved.get("allowance", 0) - saved.get("credits_spent", 0)
+            - saved.get("extras_spent", 0))
+    if not include_reserve:
+        left -= saved.get("early_reserve", 0)
+    return max(0, left)
 
 
 def spend_extra(saved, fn, *args):
@@ -398,11 +414,12 @@ def load_early_lines(date_s):
     return data if data.get("date") == date_s else {}
 
 
-def refresh_early_alts(board_date_s, game_date_s, team_order=(), force=False):
+def refresh_early_alts(board_date_s, game_date_s, team_order=(), force=False, budget=None):
     """Buy alt ladders for game_date_s if due and affordable. team_order:
     team abbreviations, most important first (games with the top projected
     players are bought first). force: a manual odds run (Robin asked for
     prices now) skips the days-ahead wait; the budget still applies.
+    budget: credits to use (a manual top-up passes what it has left).
     -> log dict."""
     if load_early_lines(game_date_s).get("alts"):
         return {"skipped": f"already bought for {game_date_s}"}
@@ -410,11 +427,12 @@ def refresh_early_alts(board_date_s, game_date_s, team_order=(), force=False):
     if ahead > EARLY_DAYS_AHEAD and not force:
         return {"skipped": f"{game_date_s} is {ahead} days out (buying starts {EARLY_DAYS_AHEAD} days ahead)"}
     saved = load_lines(board_date_s)
-    if saved and not force:
-        budget = leftover_credits(saved)
+    if budget is not None:
+        pass
+    elif saved and not force:
+        budget = leftover_credits(saved, include_reserve=True)
     else:                                  # no slate today (offseason, off day): today's allowance
-        remaining, _ = check_quota()
-        budget = daily_allowance(remaining, date.fromisoformat(board_date_s))
+        budget = topup_allowance(board_date_s)
     budget = min(budget, EARLY_MAX_CREDITS)
     per_game = len(EARLY_STATS)
     if budget < per_game:
@@ -443,3 +461,54 @@ def refresh_early_alts(board_date_s, game_date_s, team_order=(), force=False):
         json.dump(data, f, indent=2, ensure_ascii=False)
         f.write("\n")
     return {"bought": bought, "credits": spent, "players": len(alts)}
+
+
+# ------------------------------------------------------------ manual top-up ----
+# A manual "Daily board" run with the odds box ticked, after today's lines were
+# already bought, is a TOP-UP: fresh alt ladders (all four stats) for today's
+# games that haven't started, so today's parlay can be re-picked from current
+# prices, then the next game day's early-look ladders. It spends a fresh day's
+# allowance (the same share formula), never today's main lines again.
+TOPUP_STATS = ("pra", "points", "rebounds", "assists")
+
+
+def topup_allowance(date_s):
+    remaining, _ = check_quota()
+    return daily_allowance(remaining, date.fromisoformat(date_s))
+
+
+def refresh_today_alts(date_s, budget, team_order=(), not_before=None):
+    """Buy all-stat alt ladders for today's games tipping after not_before
+    (UTC datetime), games with the top players first, within budget. Merges
+    them into lines.json "alts" (newer prices win). -> log dict with "spent"."""
+    saved = load_lines(date_s)
+    if not saved.get("lines"):
+        return {"skipped": "no lines for today yet", "spent": 0}
+    per_game = len(TOPUP_STATS)
+    events = fetch_events(date_s)
+    if not_before is not None:
+        events = [e for e in events
+                  if datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00")) > not_before]
+    rank = {t: i for i, t in enumerate(team_order)}
+    events.sort(key=lambda e: min(rank.get(e["home"], 99), rank.get(e["away"], 99)))
+    alts = saved.get("alts") or {}
+    spent, bought = 0, []
+    for ev in events:
+        if budget - spent < per_game:
+            break
+        before = Quota.remaining
+        got = fetch_alt_props(ev["event_id"], list(TOPUP_STATS))
+        cost = (before - Quota.remaining) if before is not None and Quota.remaining is not None else per_game
+        spent += cost
+        bought.append(f"{ev['away']} @ {ev['home']}")
+        for who, per_stat in got.items():
+            alts.setdefault(who, {}).update(per_stat)
+    if not events:
+        return {"skipped": "every game has started", "spent": 0}
+    saved["alts"] = alts
+    saved["alts_fetched_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    saved["topup"] = {"at": saved["alts_fetched_at"], "games": bought, "credits": spent}
+    saved["extras_spent"] = saved.get("extras_spent", 0) + spent
+    saved["credits_remaining"] = Quota.remaining
+    save_lines(saved)
+    return {"bought": bought, "spent": spent, "players": len(alts)}
