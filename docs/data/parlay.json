@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T15:30:22Z",
+  "generated_at": "2026-10-20T08:05:45Z",
   "note": "MOCKUP DATA. Legs are picked from the same players/projections shown on the Today board, but the selection logic itself (conviction screening, blowout-risk check) is not automated yet — see nproj/model/parlay.py. Alt lines, odds, and the whole history log below are made up to preview the layout. No live model or odds feed is wired up yet.",
   "today": {
     "date": "2026-10-22",
@@ -249,6 +249,40 @@
       "date": "2026-10-20",
       "legs": [
         {
+          "player": "Stephon Castle",
+          "player_id": "4845367",
+          "team": "SAS",
+          "opp": "OKC",
+          "home": true,
+          "game_id": "401909090",
+          "side": "over",
+          "stat": "pra",
+          "line": 19.5,
+          "odds": -392,
+          "book": "DraftKings",
+          "model_prob": 0.84,
+          "book_prob": 0.762,
+          "gap": 0.078,
+          "proj": 29.9
+        },
+        {
+          "player": "Joel Embiid",
+          "player_id": "3059318",
+          "team": "PHI",
+          "opp": "NYK",
+          "home": false,
+          "game_id": "401909089",
+          "side": "over",
+          "stat": "points",
+          "line": 19.5,
+          "odds": -215,
+          "book": "FanDuel",
+          "model_prob": 0.719,
+          "book_prob": 0.653,
+          "gap": 0.066,
+          "proj": 25.2
+        },
+        {
           "player": "Tyrese Maxey",
           "player_id": "4431678",
           "team": "PHI",
@@ -257,55 +291,28 @@
           "game_id": "401909089",
           "side": "over",
           "stat": "points",
-          "line": 17.5,
-          "odds": -235,
-          "book": "DraftKings",
-          "model_prob": 0.668,
-          "book_prob": 0.671,
-          "gap": -0.003,
-          "proj": 21.8
-        },
-        {
-          "player": "Jalen Brunson",
-          "player_id": "3934672",
-          "team": "NYK",
-          "opp": "PHI",
-          "home": true,
-          "game_id": "401909089",
-          "side": "over",
-          "stat": "points",
-          "line": 24.5,
-          "odds": -146,
-          "book": "FanDuel",
-          "model_prob": 0.544,
-          "book_prob": 0.568,
-          "gap": -0.023,
-          "proj": 26.4
-        },
-        {
-          "player": "OG Anunoby",
-          "player_id": "3934719",
-          "team": "NYK",
-          "opp": "PHI",
-          "home": true,
-          "game_id": "401909089",
-          "side": "over",
-          "stat": "pra",
           "line": 19.5,
-          "odds": -379,
+          "odds": -159,
           "book": "DraftKings",
-          "model_prob": 0.729,
-          "book_prob": 0.757,
-          "gap": -0.028,
-          "proj": 26.1
+          "model_prob": 0.618,
+          "book_prob": 0.587,
+          "gap": 0.031,
+          "proj": 22.8
         }
       ],
-      "combined_odds": 204,
-      "model_prob": 0.265,
-      "book_prob": 0.289,
+      "combined_odds": 200,
+      "model_prob": 0.373,
+      "book_prob": 0.292,
       "status": "pending",
-      "picked_at": "2026-10-16T15:30:22Z",
-      "candidates": 11
+      "picked_at": "2026-10-20T00:51:47Z",
+      "candidates": 18
+    },
+    "2026-10-21": {
+      "date": "2026-10-21",
+      "legs": [],
+      "status": "waiting",
+      "picked_at": "2026-10-20T08:05:45Z",
+      "note": "Waiting for alt-line prices. They're bought on the morning run once the games are within 2 days."
     }
   }
 }
