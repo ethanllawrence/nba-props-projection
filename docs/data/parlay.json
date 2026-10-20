@@ -1,249 +1,5 @@
 {
-  "generated_at": "2026-10-20T08:05:45Z",
-  "note": "MOCKUP DATA. Legs are picked from the same players/projections shown on the Today board, but the selection logic itself (conviction screening, blowout-risk check) is not automated yet — see nproj/model/parlay.py. Alt lines, odds, and the whole history log below are made up to preview the layout. No live model or odds feed is wired up yet.",
-  "today": {
-    "date": "2026-10-22",
-    "combined_odds": 288,
-    "status": "pending",
-    "legs": [
-      {
-        "player": "Nikola Jokic",
-        "team": "DEN",
-        "opp": "OKC",
-        "time_et": "9:30 PM",
-        "stat": "rebounds",
-        "side": "over",
-        "alt_line": 10.5,
-        "proj": 13.9,
-        "book_line": 12.5,
-        "odds": -180,
-        "book": "FanDuel",
-        "blowout_risk": "low",
-        "minutes_confidence": "high",
-        "reasoning": "Model projects 13.9 boards, well clear of even the full book line (12.5) — the 10.5 alt line leaves a wide cushion. OKC ranks near the bottom of the league in defensive rebounding rate allowed to opposing centers. Jokic rarely loses minutes to a lopsided score, so blowout risk doesn't move this one much."
-      },
-      {
-        "player": "Shai Gilgeous-Alexander",
-        "team": "OKC",
-        "opp": "DEN",
-        "time_et": "9:30 PM",
-        "stat": "points",
-        "side": "over",
-        "alt_line": 27.5,
-        "proj": 31.1,
-        "book_line": 29.5,
-        "odds": -175,
-        "book": "DraftKings",
-        "blowout_risk": "low",
-        "minutes_confidence": "high",
-        "reasoning": "OKC's offense runs through SGA creating his own shot; model has him at 31.1 against a 29.5 book line, and the 27.5 alt adds a real buffer underneath that. This is a competitive matchup on paper, so minutes/usage risk from a blowout is low."
-      },
-      {
-        "player": "Giannis Antetokounmpo",
-        "team": "MIL",
-        "opp": "CHI",
-        "time_et": "8:00 PM",
-        "stat": "rebounds",
-        "side": "over",
-        "alt_line": 9.5,
-        "proj": 11.9,
-        "book_line": 10.5,
-        "odds": -170,
-        "book": "FanDuel",
-        "blowout_risk": "medium",
-        "minutes_confidence": "high",
-        "reasoning": "Milwaukee should win the rebounding battle clearly here; model projects 11.9 boards, comfortably above both the book line and the 9.5 alt. Chicago is a weaker opponent, so there's some blowout risk trimming his 4th-quarter minutes — the biggest risk factor in this parlay, but the cushion between projection and alt line is large enough to absorb a shortened game."
-      }
-    ]
-  },
-  "history": [
-    {
-      "date": "2026-10-15",
-      "combined_odds": 265,
-      "result": "win",
-      "legs": [
-        {
-          "player": "Nikola Jokic",
-          "stat": "assists",
-          "side": "over",
-          "alt_line": 8.5,
-          "actual": 13,
-          "hit": true
-        },
-        {
-          "player": "Jayson Tatum",
-          "stat": "points",
-          "side": "over",
-          "alt_line": 24.5,
-          "actual": 29,
-          "hit": true
-        },
-        {
-          "player": "Anthony Edwards",
-          "stat": "points",
-          "side": "over",
-          "alt_line": 25.5,
-          "actual": 27,
-          "hit": true
-        }
-      ]
-    },
-    {
-      "date": "2026-10-16",
-      "combined_odds": 302,
-      "result": "loss",
-      "legs": [
-        {
-          "player": "Giannis Antetokounmpo",
-          "stat": "points",
-          "side": "over",
-          "alt_line": 27.5,
-          "actual": 24,
-          "hit": false
-        },
-        {
-          "player": "Devin Booker",
-          "stat": "assists",
-          "side": "over",
-          "alt_line": 5.5,
-          "actual": 7,
-          "hit": true
-        },
-        {
-          "player": "Jalen Brunson",
-          "stat": "points",
-          "side": "over",
-          "alt_line": 23.5,
-          "actual": 26,
-          "hit": true
-        }
-      ]
-    },
-    {
-      "date": "2026-10-17",
-      "combined_odds": 244,
-      "result": "win",
-      "legs": [
-        {
-          "player": "Nikola Jokic",
-          "stat": "rebounds",
-          "side": "over",
-          "alt_line": 10.5,
-          "actual": 15,
-          "hit": true
-        },
-        {
-          "player": "Kevin Durant",
-          "stat": "points",
-          "side": "over",
-          "alt_line": 23.5,
-          "actual": 25,
-          "hit": true
-        },
-        {
-          "player": "Cade Cunningham",
-          "stat": "assists",
-          "side": "over",
-          "alt_line": 7.5,
-          "actual": 9,
-          "hit": true
-        }
-      ]
-    },
-    {
-      "date": "2026-10-18",
-      "combined_odds": 288,
-      "result": "win",
-      "legs": [
-        {
-          "player": "Shai Gilgeous-Alexander",
-          "stat": "points",
-          "side": "over",
-          "alt_line": 27.5,
-          "actual": 33,
-          "hit": true
-        },
-        {
-          "player": "Nikola Jokic",
-          "stat": "points",
-          "side": "over",
-          "alt_line": 23.5,
-          "actual": 30,
-          "hit": true
-        },
-        {
-          "player": "Damian Lillard",
-          "stat": "points",
-          "side": "over",
-          "alt_line": 22.5,
-          "actual": 25,
-          "hit": true
-        }
-      ]
-    },
-    {
-      "date": "2026-10-19",
-      "combined_odds": 256,
-      "result": "loss",
-      "legs": [
-        {
-          "player": "Anthony Edwards",
-          "stat": "rebounds",
-          "side": "over",
-          "alt_line": 4.5,
-          "actual": 4,
-          "hit": false
-        },
-        {
-          "player": "Jayson Tatum",
-          "stat": "rebounds",
-          "side": "over",
-          "alt_line": 7.5,
-          "actual": 9,
-          "hit": true
-        },
-        {
-          "player": "Jalen Brunson",
-          "stat": "assists",
-          "side": "over",
-          "alt_line": 5.5,
-          "actual": 8,
-          "hit": true
-        }
-      ]
-    },
-    {
-      "date": "2026-10-20",
-      "combined_odds": 277,
-      "result": "win",
-      "legs": [
-        {
-          "player": "Giannis Antetokounmpo",
-          "stat": "rebounds",
-          "side": "over",
-          "alt_line": 9.5,
-          "actual": 13,
-          "hit": true
-        },
-        {
-          "player": "Nikola Jokic",
-          "stat": "assists",
-          "side": "over",
-          "alt_line": 8.5,
-          "actual": 11,
-          "hit": true
-        },
-        {
-          "player": "Devin Booker",
-          "stat": "points",
-          "side": "over",
-          "alt_line": 24.5,
-          "actual": 27,
-          "hit": true
-        }
-      ]
-    }
-  ],
+  "history": [],
   "early": {
     "2026-10-20": {
       "date": "2026-10-20",
@@ -314,5 +70,94 @@
       "picked_at": "2026-10-20T08:05:45Z",
       "note": "Waiting for alt-line prices. They're bought on the morning run once the games are within 2 days."
     }
-  }
+  },
+  "today": {
+    "date": "2026-10-20",
+    "combined_odds": 225,
+    "status": "pending",
+    "legs": [
+      {
+        "player": "Dylan Harper",
+        "player_id": "5037871",
+        "team": "SAS",
+        "opp": "OKC",
+        "home": true,
+        "time_et": "9:30 PM",
+        "stat": "rebounds",
+        "side": "over",
+        "line": 3.5,
+        "line_type": "alt",
+        "book_line": 4.5,
+        "proj": 5.4,
+        "prob": 0.738,
+        "odds": -310,
+        "book": "FanDuel",
+        "blowout_risk": "low",
+        "minutes_confidence": "medium",
+        "reasoning": "Model projects 5.4 rebounds and gives him a 74% chance to clear the 3.5 alt line (full line 4.5). Projected for 28.3 minutes (medium minutes confidence); SAS -1.5 spread, low blowout risk."
+      },
+      {
+        "player": "Julian Champagnie",
+        "player_id": "4592479",
+        "team": "SAS",
+        "opp": "OKC",
+        "home": true,
+        "time_et": "9:30 PM",
+        "stat": "rebounds",
+        "side": "over",
+        "line": 3.5,
+        "line_type": "alt",
+        "book_line": 4.5,
+        "proj": 5.7,
+        "prob": 0.726,
+        "odds": -280,
+        "book": "FanDuel",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "reasoning": "Model projects 5.7 rebounds and gives him a 73% chance to clear the 3.5 alt line (full line 4.5). Projected for 31.2 minutes (high minutes confidence); SAS -1.5 spread, low blowout risk."
+      },
+      {
+        "player": "Tyrese Maxey",
+        "player_id": "4431678",
+        "team": "PHI",
+        "opp": "NYK",
+        "home": false,
+        "time_et": "7:00 PM",
+        "stat": "assists",
+        "side": "over",
+        "line": 3.5,
+        "line_type": "alt",
+        "book_line": 4.5,
+        "proj": 4.8,
+        "prob": 0.719,
+        "odds": -290,
+        "book": "FanDuel",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "reasoning": "Model projects 4.8 assists and gives him a 72% chance to clear the 3.5 alt line (full line 4.5). Projected for 36.9 minutes (high minutes confidence); PHI +4.5 spread, low blowout risk."
+      },
+      {
+        "player": "Karl-Anthony Towns",
+        "player_id": "3136195",
+        "team": "NYK",
+        "opp": "PHI",
+        "home": true,
+        "time_et": "7:00 PM",
+        "stat": "rebounds",
+        "side": "over",
+        "line": 9.5,
+        "line_type": "alt",
+        "book_line": 11.5,
+        "proj": 10.1,
+        "prob": 0.702,
+        "odds": -290,
+        "book": "FanDuel",
+        "blowout_risk": "low",
+        "minutes_confidence": "medium",
+        "reasoning": "Model projects 10.1 rebounds and gives him a 70% chance to clear the 9.5 alt line (full line 11.5). Projected for 26.0 minutes (medium minutes confidence); NYK -4.5 spread, low blowout risk."
+      }
+    ]
+  },
+  "note": "Overs only, picked automatically each morning from the Today board's projections and FanDuel/DraftKings lines: alt-line overs the model is at least 70% sure of when the budget bought alt lines, main-line overs at 60%+ otherwise, from players with steady minutes and no blowout risk. Ranked by chance of hitting, not value, so over time expect to lose about the sportsbook's cut; it's for fun. Legs stay fixed once picked. Settled the next morning from the real box scores.",
+  "generated_at": "2026-10-20T13:46:03Z"
 }
