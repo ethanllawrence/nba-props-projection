@@ -11,24 +11,6 @@ const statLabel = { points: "Points", rebounds: "Rebounds", assists: "Assists", 
 const statAbbr = { points: "Pts", rebounds: "Reb", assists: "Ast", pra: "PRA" };
 const lineOf = (leg) => leg.line ?? leg.alt_line;
 
-function parlayHero(t) {
-  const statusCls = { pending: "win-wait", win: "win-go", loss: "win-off" }[t.status] || "win-wait";
-  const statusLabel = { pending: "PENDING", win: "HIT", loss: "MISS" }[t.status] || "PENDING";
-  return `
-    <div class="call-hero">
-      <div class="call-meta">Parlay of the Day · ${esc(t.date)} · ${t.legs.length} legs</div>
-      <div class="call-badge" style="background:transparent;border:2px solid var(--line);color:var(--text);
-        font-size:26px;padding-top:6px;padding-bottom:6px">${fmtOdds(t.combined_odds)}</div>
-      <div class="call-prob"><span class="win ${statusCls}">${statusLabel}</span></div>
-    </div>`;
-}
-
-function riskBadge(level) {
-  if (level === "unknown") return `<span class="badge conf-mid">no spread today</span>`;
-  const cls = { low: "conf-high", medium: "conf-mid", high: "conf-low" }[level] || "conf-mid";
-  return `<span class="badge ${cls}">${esc(level)} blowout risk</span>`;
-}
-
 /* Injury check flags (nproj/injury_check.py). Legs never change after the
    morning pick; a flag means something moved since then. */
 function checkNote(c) {
@@ -46,37 +28,40 @@ function checkNote(c) {
   return `<div class="check-box" style="margin:9px 0 0">${bits.join("<br>")}</div>`;
 }
 
-function legCard(leg) {
-  const sideArrow = leg.side === "over" ? "▲ O" : "▼ U";
+/* Parlay of the Day as one compact card, laid out like the early look
+   parlay: a header with the price, then one row per leg. */
+const shortRisk = { low: "low blowout risk", medium: "medium blowout risk", high: "high blowout risk",
+  unknown: "no spread" };
+
+function legRow(leg) {
   const line = lineOf(leg);
   const isAlt = (leg.line_type || "alt") === "alt";
-  const where = leg.home === undefined ? "vs" : leg.home ? "vs" : "@";
-  const lineInfo = isAlt ? `vs. full line ${leg.book_line} · alt ${line}` : `vs. line ${line}`;
-  const probTxt = leg.prob != null ? ` · model ${Math.round(leg.prob * 100)}%` : "";
-  return `
-    <div class="card">
-      <div class="top">
-        <div class="who">
-          <div class="name">${esc(leg.player)}</div>
-          <div class="meta">${esc(leg.team)} ${where} ${esc(leg.opp)} · ${esc(leg.time_et)}</div>
-        </div>
-        <div class="pt">
-          <div class="num pos">${sideArrow} ${line}</div>
-          <div class="lbl">${esc(statLabel[leg.stat] || leg.stat)}</div>
-        </div>
-      </div>
-      <div class="mkt">
-        <span class="mkt-item">Model proj <b>${leg.proj}</b>
-          <span class="dim">${lineInfo}${probTxt}</span></span>
-        <span class="mkt-src">${fmtOdds(leg.odds)} · ${esc(leg.book)}</span>
-      </div>
-      <div class="badges">
-        ${riskBadge(leg.blowout_risk)}
-        <span class="badge conf-high">${esc(leg.minutes_confidence)} minutes confidence</span>
-      </div>
-      ${checkNote(leg.check)}
-      <div class="noedge" style="margin-top:9px">${esc(leg.reasoning)}</div>
-    </div>`;
+  const where = leg.home ? "vs" : "@";
+  const side = leg.side === "over" ? "O" : "U";
+  const note = leg.check ? `<tr><td colspan="2" style="padding-top:0">${checkNote(leg.check)}</td></tr>` : "";
+  return `<tr title="${esc(leg.reasoning)}">
+    <td><div class="pn">${esc(leg.player)}</div>
+      <div class="pm" style="white-space:normal">${esc(leg.team)} ${where} ${esc(leg.opp)} · ${esc(leg.time_et)} · proj ${leg.proj} ${esc(statShort[leg.stat])}</div>
+      <div class="pm" style="white-space:normal">${esc(shortRisk[leg.blowout_risk] || "")} · ${esc(leg.minutes_confidence)} minutes confidence</div></td>
+    <td class="num"><div class="pos" style="font-weight:700">${side} ${line} ${esc(statAbbr[leg.stat] || leg.stat)}</div>
+      <div class="pm">${fmtOdds(leg.odds)} ${esc(leg.book || "")}</div>
+      <div class="pm">model ${leg.prob != null ? Math.round(leg.prob * 100) + "%" : "?"}${isAlt && leg.book_line != null ? ` · full line ${leg.book_line}` : ""}</div></td>
+  </tr>${note}`;
+}
+
+function parlayCard(t) {
+  const statusCls = { pending: "win-wait", win: "win-go", loss: "win-off" }[t.status] || "win-wait";
+  const statusLabel = { pending: "PENDING", win: "HIT", loss: "MISS" }[t.status] || "PENDING";
+  const probs = t.legs.map((l) => l.prob).filter((x) => x != null);
+  const all = probs.length === t.legs.length ? ` · all legs hit: model ${Math.round(probs.reduce((a, b) => a * b, 1) * 100)}%` : "";
+  return `<div class="card">
+    <div class="call-meta" style="margin-bottom:6px;display:flex;justify-content:space-between;gap:8px;align-items:baseline">
+      <span>${esc(niceDate(t.date))} · ${t.legs.length} legs · <b>${fmtOdds(t.combined_odds)}</b> on the book${all}</span>
+      <span class="win ${statusCls}">${statusLabel}</span></div>
+    <div class="board-tbl-wrap"><div class="board-tbl compact-tbl"><table class="t">
+      <thead><tr><th>Player</th><th class="num">Leg</th></tr></thead>
+      <tbody>${t.legs.map(legRow).join("")}</tbody></table></div></div>
+  </div>`;
 }
 
 function historyRow(h) {
@@ -180,7 +165,7 @@ async function main() {
   const history = mock ? [] : (data.history || []);
   const t = !mock && data.today && data.today.legs && data.today.legs.length ? data.today : null;
   const tonight = t
-    ? parlayHero(t) + t.legs.map(legCard).join("")
+    ? parlayCard(t)
       + (data.note ? `<div class="noedge" style="margin:4px 0 12px">${esc(data.note)}</div>` : "")
     : `<div class="notice" style="margin:8px 0">${esc((!mock && data.no_parlay_reason) ||
         "No Parlay of the Day yet. It's picked each morning at 6 AM Arizona time from that day's lines; " +

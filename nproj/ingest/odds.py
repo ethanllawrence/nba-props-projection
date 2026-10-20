@@ -374,9 +374,13 @@ def load_lines(date_s):
 # odds run, once that day is within EARLY_DAYS_AHEAD days (books post star
 # props a day or two ahead), from what's left of today's allowance after
 # today's own lines and parlay extras, at most EARLY_MAX_CREDITS. Each game
-# costs one credit per stat (PRA and points alt ladders = 2 credits).
+# costs one credit per stat (PRA and points alt ladders = 2 credits), so 10
+# credits covers the 5 games with the most top players.
+# A manual run (Robin asked for prices now) uses a fresh day's allowance from
+# the remaining credits instead of this morning's leftovers, so a budget-starved
+# morning can be topped up mid-day without re-buying today's lines.
 EARLY_DAYS_AHEAD = 2
-EARLY_MAX_CREDITS = 6
+EARLY_MAX_CREDITS = 10
 EARLY_STATS = ("pra", "points")
 
 
@@ -406,7 +410,7 @@ def refresh_early_alts(board_date_s, game_date_s, team_order=(), force=False):
     if ahead > EARLY_DAYS_AHEAD and not force:
         return {"skipped": f"{game_date_s} is {ahead} days out (buying starts {EARLY_DAYS_AHEAD} days ahead)"}
     saved = load_lines(board_date_s)
-    if saved:
+    if saved and not force:
         budget = leftover_credits(saved)
     else:                                  # no slate today (offseason, off day): today's allowance
         remaining, _ = check_quota()

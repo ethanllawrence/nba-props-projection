@@ -1,0 +1,298 @@
+"""Command-line entry points. Run as: python -m nproj <command> [options]
+
+Commands
+  init                  create the database schema
+  daily [--date D]      full game-day cycle: pull tonight's slate and game
+                        logs from ESPN, project, export site JSON, settle
+                        yesterday's Parlay of the Day and pick today's,
+                        grade last night's board (results.json)
+  backfill --season S   every rostered player's game log for one ESPN
+                        season year (2026 = 2025-26); not needed daily
+  export [--date D]     regenerate site JSON only, from what's in the db
+  odds-status           check the Odds API key and credits left (free call)
+  history --season S    historical box scores, spreads and prop lines for one
+    [--out DIR]         season (for model training/backtests), gzipped CSV
+    [--limit N]         in DIR/S/ (default history/); --limit for a quick test
+  status                quick database status
+
+Odds: `daily` pulls prop lines only when NPROJ_ODDS_MODE=props and
+ODDS_API_KEY is set (the workflow does this for the morning run only).
+
+--date defaults to the board date (see util.board_date). Passing a past
+date is the way to test the pipeline in the offseason: projections only use
+games played before that date.
+"""
+import argparse
+import sys
+
+from . import config, db
+
+
+def _date(args):
+    from . import util
+    return args.date or util.iso(util.board_date())
+
+
+def cmd_init(_args) -> None:
+    with db.session() as con:
+        n = con.execute("SELECT COUNT(*) c FROM sqlite_master WHERE type='table'").fetchone()["c"]
+    print(f"[init] schema ready at {config.DB_PATH} ({n} tables)")
+
+
+def cmd_daily(args) -> None:
+    from . import pipeline
+    from .export.site_export import export_all
+    from .model import predict
+
+    from .model import live
+    live.PROJ.clear()
+    date_s = _date(args)
+    with db.session() as con:
+        slate = pipeline.refresh_slate(con, date_s)
+        print(f"[daily] {date_s}: {slate['games']} games, {slate['players']} rostered players, "
+              f"{slate['logs']} game-log rows")
+        pipeline.refresh_jokic(con, date_s)
+        _maybe_odds(date_s, slate["games"])
+        _maybe_store()
+        trained = predict.train(con, before_date=date_s)
+        projected = predict.project_date(con, date_s)     # baseline first, model overwrites
+        if slate["games"]:
+            _maybe_model(con, date_s)
+        result = export_all(con, date_s)
+        try:
+            from .model import parlay
+            spend = config.ODDS_MODE == "props" and bool(config.ODDS_API_KEY)
+            print(f"[parlay] {parlay.update(con, date_s, allow_spend=spend)}")
+        except Exception as exc:  # noqa: BLE001 - a parlay problem must never block the board
+            print(f"[parlay] FAILED: {exc}")
+        try:
+            from . import results
+            print(f"[results] {results.update(con, date_s)}")
+        except Exception as exc:  # noqa: BLE001
+            print(f"[results] FAILED: {exc}")
+        try:
+            from . import injury_check
+            print(f"[injury-check] {injury_check.update(con, date_s, morning=config.ODDS_MODE == 'props')}")
+        except Exception as exc:  # noqa: BLE001 - never block the board
+            print(f"[injury-check] FAILED: {exc}")
+        if getattr(args, "early_look", True):
+            try:
+                print(f"[early-look] {_early_look(con, date_s)}")
+            except Exception as exc:  # noqa: BLE001 - never block the board
+                import traceback
+                traceback.print_exc()
+                print(f"[early-look] FAILED: {exc}")
+    from .export.status import write_status
+    print(f"[status] {write_status(date_s, slate['games'])}")
+    print(f"[daily] trained {trained} player-stats, wrote {projected} projections, exported {result}")
+    if slate["games"] == 0:
+        print("[daily] no games on this date, so today.json was left as it was")
+
+
+EARLY_LOOK_DAYS = 10   # look this far ahead for the next game day
+
+
+def _early_look(con, date_s):
+    """Project the next game day after date_s (docs/data/tomorrow.json).
+    Runs after everything for today is written, because it retrains the
+    model for that date (live.PROJ then holds the early-look projections)."""
+    import os
+    from datetime import date, timedelta
+    from . import pipeline
+    from .export.site_export import export_early_look
+    from .model import live, predict
+    nxt = None
+    for i in range(1, EARLY_LOOK_DAYS + 1):
+        d = (date.fromisoformat(date_s) + timedelta(days=i)).isoformat()
+        slate = pipeline.refresh_slate(con, d)
+        if slate["games"]:
+            nxt = d
+            break
+    if not nxt:
+        return {"skipped": f"no games in the next {EARLY_LOOK_DAYS} days"}
+    predict.train(con, before_date=nxt)
+    predict.project_date(con, nxt)
+    live.PROJ.clear()
+    if os.environ.get("NPROJ_MODEL", "lightgbm") != "baseline":
+        _maybe_model(con, nxt)
+    n = export_early_look(con, nxt)
+    log = {"date": nxt, "games": slate["games"], "players": n,
+           "model": "lightgbm" if live.PROJ else "baseline"}
+    if live.PROJ:     # the early-look parlay needs the model's distributions
+        from .ingest import odds
+        from .model import early_parlay, parlay
+        if config.ODDS_MODE == "props" and config.ODDS_API_KEY:     # morning odds run only
+            top = sorted(live.PROJ.items(), key=lambda kv: -kv[1]["pra"])[:early_parlay.POOL_TOP]
+            teams = [r["team"] for pid, _ in top for r in con.execute(
+                "SELECT team FROM players WHERE player_id=?", (pid,))]
+            order = list(dict.fromkeys(teams))          # games with the most top players first
+            try:
+                # a manual run with the odds box ticked buys now, however far out
+                manual = os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
+                log["alt_lines"] = odds.refresh_early_alts(date_s, nxt, order, force=manual)
+            except Exception as exc:  # noqa: BLE001 - prices are optional
+                log["alt_lines"] = {"error": str(exc)}
+        alts = odds.load_early_lines(nxt).get("alts", {})
+        ep = early_parlay.pick(con, nxt, live.PROJ, alts)
+        log["parlay"] = parlay.save_early(nxt, ep)
+        if ep.get("legs"):      # readable in the Actions log
+            print(f"[early-parlay] {nxt}: {ep['combined_odds']:+d} on the book, model {ep['model_prob']:.0%}"
+                  f" vs book {ep['book_prob']:.0%} ({ep.get('candidates')} candidate legs)")
+            for l in ep["legs"]:
+                print(f"    {l['player']:<26} over {l['line']} {l['stat']:<6} {l['odds']:+d} {l['book']:<10}"
+                      f" model {l['model_prob']:.0%} book {l['book_prob']:.0%} gap {l['gap']:+.0%}"
+                      f" (proj {l['proj']})")
+        else:
+            print(f"[early-parlay] {nxt}: {ep.get('note')}")
+    return log
+
+
+def _maybe_store():
+    """Append last night's box scores to history/ (skipped with NPROJ_BOX_STORE=0)."""
+    import os
+    from datetime import date
+
+    if os.environ.get("NPROJ_BOX_STORE", "1") == "0":
+        return
+    from .ingest import box_store
+    from .model.live import HISTORY_ROOT
+    try:
+        print(f"[store] {box_store.update(HISTORY_ROOT, date.today())}")
+    except Exception as exc:  # noqa: BLE001
+        print(f"[store] FAILED: {exc}")
+
+
+def _maybe_model(con, date_s):
+    """The PRA model (NPROJ_MODEL=baseline keeps the old recent average)."""
+    import os
+    if os.environ.get("NPROJ_MODEL", "lightgbm") == "baseline":
+        print("[model] baseline requested; skipping the PRA model")
+        return
+    try:
+        from .model import live
+        print(f"[model] {live.run(con, date_s)}")
+    except Exception as exc:  # noqa: BLE001 - fall back to the baseline projections
+        import traceback
+        traceback.print_exc()
+        print(f"[model] FAILED, board uses the recent-average baseline: {exc}")
+
+
+def _maybe_odds(date_s, n_games):
+    from .ingest import odds
+
+    if config.ODDS_MODE != "props":
+        print("[odds] skipped (odds mode is off for this run; reusing any saved lines)")
+        return
+    if not config.ODDS_API_KEY:
+        print("[odds] skipped (no ODDS_API_KEY)")
+        return
+    if n_games == 0:
+        print("[odds] skipped (no games, no credits spent)")
+        return
+    import os
+    manual = os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
+    if odds.load_lines(date_s).get("lines") and not manual:
+        # GitHub sometimes runs a scheduled job hours late; if lines for today
+        # were already bought (e.g. by a manual run), don't buy them twice
+        print(f"[odds] skipped (lines for {date_s} already bought; a manual run with the odds box re-buys)")
+        return
+    try:
+        print(f"[odds] {odds.refresh_lines(date_s)}")
+    except Exception as exc:  # noqa: BLE001 - odds trouble must never block the board
+        print(f"[odds] FAILED, board will show no lines: {exc}")
+
+
+def cmd_injury_check(args) -> None:
+    """The half-hourly 'Injury check' workflow: run the full refresh only
+    when a game tips off soon (see nproj/injury_check.py), else exit fast."""
+    from . import injury_check, util
+    from .ingest import espn
+    date_s = util.board_date().isoformat()
+    games = espn.fetch_schedule(date_s)
+    go, why = injury_check.due(games, injury_check.last_check(date_s))
+    if args.force and games:
+        go, why = True, "forced"
+    print(f"[injury-check] {date_s}: {'running' if go else 'skipping'} ({why})")
+    if go:
+        args.date = None
+        args.early_look = False
+        cmd_daily(args)
+
+
+def cmd_odds_status(_args) -> None:
+    from datetime import date
+
+    from .ingest import odds
+
+    if not config.ODDS_API_KEY:
+        print("[odds-status] no ODDS_API_KEY set")
+        return
+    remaining, used = odds.check_quota()
+    today = date.today()
+    print(f"[odds-status] key OK: {remaining} credits remaining, {used} used this period; "
+          f"{odds.days_until_reset(today)} days to reset; NBA allowance today = "
+          f"{odds.daily_allowance(remaining, today)} credits "
+          f"(floor {config.ODDS_BUDGET_FLOOR}, share {config.ODDS_NBA_SHARE})")
+
+
+def cmd_history(args) -> None:
+    from .ingest.espn_history import backfill_season
+    backfill_season(args.season, args.out, limit=args.limit)
+
+
+def cmd_backfill(args) -> None:
+    from . import pipeline
+
+    with db.session() as con:
+        result = pipeline.backfill(con, args.season)
+    print(f"[backfill] season {args.season}: {result}")
+
+
+def cmd_export(args) -> None:
+    from .export.site_export import export_all
+
+    date_s = _date(args)
+    with db.session() as con:
+        result = export_all(con, date_s)
+    print(f"[export] site JSON refreshed for {date_s}: {result}")
+
+
+def cmd_status(_args) -> None:
+    with db.session() as con:
+        for label, q in [
+            ("games", "SELECT COUNT(*) c, MIN(date) lo, MAX(date) hi FROM games"),
+            ("game logs", "SELECT COUNT(*) c, MIN(date) lo, MAX(date) hi FROM player_game_logs"),
+            ("projections", "SELECT COUNT(*) c, MIN(generated_at) lo, MAX(generated_at) hi FROM projections"),
+        ]:
+            r = con.execute(q).fetchone()
+            print(f"{label:14} {r['c']:>8}   {r['lo'] or '-'} → {r['hi'] or '-'}")
+
+
+def main(argv=None) -> int:
+    p = argparse.ArgumentParser(prog="nproj", description=__doc__,
+                                formatter_class=argparse.RawDescriptionHelpFormatter)
+    sub = p.add_subparsers(dest="cmd", required=True)
+    sub.add_parser("init")
+    d = sub.add_parser("daily")
+    d.add_argument("--date", help="YYYY-MM-DD (default: board date)")
+    b = sub.add_parser("backfill")
+    b.add_argument("--season", type=int, required=True, help="ESPN season year, e.g. 2026 for 2025-26")
+    e = sub.add_parser("export")
+    e.add_argument("--date", help="YYYY-MM-DD (default: board date)")
+    sub.add_parser("odds-status")
+    ic = sub.add_parser("injury-check")
+    ic.add_argument("--force", action="store_true", help="refresh now even if no game tips soon")
+    h = sub.add_parser("history")
+    h.add_argument("--season", type=int, required=True)
+    h.add_argument("--out", default="history")
+    h.add_argument("--limit", type=int, default=None)
+    sub.add_parser("status")
+    args = p.parse_args(argv)
+    {"init": cmd_init, "daily": cmd_daily, "backfill": cmd_backfill,
+     "export": cmd_export, "odds-status": cmd_odds_status,
+     "injury-check": cmd_injury_check, "history": cmd_history, "status": cmd_status}[args.cmd](args)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

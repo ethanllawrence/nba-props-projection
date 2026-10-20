@@ -72,7 +72,10 @@ def cmd_daily(args) -> None:
             print(f"[results] FAILED: {exc}")
         try:
             from . import injury_check
-            print(f"[injury-check] {injury_check.update(con, date_s, morning=config.ODDS_MODE == 'props')}")
+            # the board you bet against is the first odds run's; a later manual
+            # odds run (for early-look prices) must not reset the checkpoint
+            morning = config.ODDS_MODE == "props" and not injury_check.has_morning(date_s)
+            print(f"[injury-check] {injury_check.update(con, date_s, morning=morning)}")
         except Exception as exc:  # noqa: BLE001 - never block the board
             print(f"[injury-check] FAILED: {exc}")
         if getattr(args, "early_look", True):
@@ -193,12 +196,11 @@ def _maybe_odds(date_s, n_games):
     if n_games == 0:
         print("[odds] skipped (no games, no credits spent)")
         return
-    import os
-    manual = os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
-    if odds.load_lines(date_s).get("lines") and not manual:
-        # GitHub sometimes runs a scheduled job hours late; if lines for today
-        # were already bought (e.g. by a manual run), don't buy them twice
-        print(f"[odds] skipped (lines for {date_s} already bought; a manual run with the odds box re-buys)")
+    if odds.load_lines(date_s).get("lines"):
+        # GitHub sometimes runs a scheduled job hours late, and a manual run
+        # with the odds box may only be after tomorrow's early-look prices:
+        # either way today's lines are never bought twice
+        print(f"[odds] skipped (lines for {date_s} already bought)")
         return
     try:
         print(f"[odds] {odds.refresh_lines(date_s)}")

@@ -230,6 +230,12 @@ def due(games, last_check=None, now=None):
     return False, "no game tips off in the next 10-80 minutes"
 
 
+def has_morning(date_s):
+    """Was this morning's checkpoint already taken for date_s?"""
+    cp = _load(_path())
+    return cp.get("date") == date_s and cp.get("label") == "this morning's board"
+
+
 def last_check(date_s):
     cp = _load(_path())
     if cp.get("date") != date_s:

@@ -411,13 +411,20 @@ def test_parlay_daily_and_settle():
     # a late duplicate morning run (props mode again) must not buy today's lines twice
     import os as _os
     paid_before = sum(1 for u, _ in state["calls"] if u.endswith("/odds"))
-    event = _os.environ.pop("GITHUB_EVENT_NAME", None)     # behave like a scheduled run
-    try:
-        cli.main(["daily", "--date", "2026-03-10"])
-    finally:
-        if event is not None:
+    cp_before = json.loads((site / "checkpoint.json").read_text())["taken_at"]
+    for event in (None, "workflow_dispatch"):              # scheduled late, then a manual odds run
+        saved_event = _os.environ.pop("GITHUB_EVENT_NAME", None)
+        if event:
             _os.environ["GITHUB_EVENT_NAME"] = event
-    assert sum(1 for u, _ in state["calls"] if u.endswith("/odds")) == paid_before, "bought twice"
+        try:
+            cli.main(["daily", "--date", "2026-03-10"])
+        finally:
+            _os.environ.pop("GITHUB_EVENT_NAME", None)
+            if saved_event is not None:
+                _os.environ["GITHUB_EVENT_NAME"] = saved_event
+        assert sum(1 for u, _ in state["calls"] if u.endswith("/odds")) == paid_before, ("bought twice", event)
+    # and the morning checkpoint (the board Robin bet against) wasn't retaken
+    assert json.loads((site / "checkpoint.json").read_text())["taken_at"] == cp_before
 
     # afternoon: nothing bought, parlay still there
     import os, importlib
@@ -512,11 +519,11 @@ def _early_alts_checks(site, odds, calls):
     assert "days out" in log["skipped"] and not calls, log
     # a manual odds run (force) buys now even 4 days out; then reset for the scheduled path
     log = odds.refresh_early_alts("2026-10-16", "2026-10-20", ["OKC", "NYK"], force=True)
-    assert calls == ["e2", "e1", "e0"], (calls, log)
+    assert calls == ["e2", "e1", "e0", "e3"], (calls, log)
     (site / "early_lines.json").unlink()
     calls.clear()
     log = odds.refresh_early_alts("2026-10-18", "2026-10-20", ["OKC", "NYK"])
-    assert calls == ["e2", "e1", "e0"] and log["credits"] == 6, (calls, log)     # capped at 6 credits
+    assert calls == ["e2", "e1", "e0", "e3"] and log["credits"] == 8, (calls, log)   # within the 10 cap
     saved = odds.load_early_lines("2026-10-20")
     assert saved["games"][0] == "OKC @ SAS" and "star e2" in saved["alts"]
     assert "already bought" in odds.refresh_early_alts("2026-10-18", "2026-10-20")["skipped"]
@@ -528,6 +535,14 @@ def _early_alts_checks(site, odds, calls):
     log = odds.refresh_early_alts("2026-10-19", "2026-10-20", ["OKC"])
     assert calls == ["e2"] and log["credits"] == 2, log                          # 3 left -> one game
     assert odds.load_lines("2026-10-19")["extras_spent"] == 2
+
+    # a manual run tops up a starved morning from a fresh allowance (capped at 10)
+    (site / "early_lines.json").unlink()
+    odds.save_lines({"date": "2026-10-19", "allowance": 12, "credits_spent": 11, "extras_spent": 1})
+    calls.clear()
+    log = odds.refresh_early_alts("2026-10-19", "2026-10-20", ["OKC"], force=True)
+    assert len(calls) == 4 and log["credits"] == 8, log
+    assert odds.load_lines("2026-10-19")["extras_spent"] == 9
     print("OK early alts:", log)
 
 
