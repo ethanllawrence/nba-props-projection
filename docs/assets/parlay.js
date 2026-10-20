@@ -129,8 +129,9 @@ function earlyLegRow(l) {
   </tr>`;
 }
 
-function earlyCards(early) {
-  const picks = Object.values(early || {}).sort((a, b) => (a.date < b.date ? -1 : 1));
+function earlyCards(picks, emptyNote) {
+  picks = (picks || []).slice().sort((a, b) => (a.date < b.date ? -1 : 1));
+  if (!picks.length && emptyNote === "") return "";
   if (!picks.length) {
     return `<div class="notice" style="margin:8px 0">The early look parlay appears once the next game
       day's alt lines are bought, a day or two before the games.</div>`;
@@ -185,15 +186,30 @@ async function main() {
         "No Parlay of the Day yet. It's picked each morning at 6 AM Arizona time from that day's lines; " +
         "the first one comes on opening day.")}</div>`;
   const earlyHist = data.early_history || [];
+  // group early-look picks by the board date: tonight's (picked a day or
+  // two ago, graded tomorrow morning) vs. the next game day's
+  let boardDate = t ? t.date : null;
+  try {
+    boardDate = (await (await fetch("data/status.json?_=" + Date.now())).json()).board_date || boardDate;
+  } catch { /* keep the parlay's date */ }
+  const picks = Object.values(data.early || {});
+  const earlyTonight = picks.filter((p) => boardDate && p.date <= boardDate && p.legs && p.legs.length);
+  const earlyNext = picks.filter((p) => !boardDate || p.date > boardDate);
+  const tonightEarly = earlyTonight.length
+    ? `<div class="noedge" style="margin:14px 0 6px">Also tonight: the early look parlay, picked before
+        today's lines from alt lines bought ahead of time. It's graded tomorrow morning with the Parlay of the Day.</div>
+      ${earlyCards(earlyTonight, "")}`
+    : "";
   $("#parlay-body").innerHTML = `
     <h2 class="sec">Tonight · Parlay of the Day</h2>
     ${tonight}
+    ${tonightEarly}
     <h2 class="sec">Next game day · Early look parlay</h2>
     <div class="noedge" style="margin:-4px 0 10px">3-4 star overs at about +200 real odds from FanDuel/DraftKings
       alt lines. The model drops legs it rates well below the book and picks the combination it likes most
       relative to the book (the +/- number). Prices are from when the lines were bought, so check them
       before betting.</div>
-    ${earlyCards(data.early)}
+    ${earlyCards(earlyNext)}
     <h2 class="sec">Track record</h2>
     ${recordTiles(history, earlyHist)}
     ${history.length ? historyTable(history).replace('<h2 class="sec">History</h2>', '<h2 class="sec">Parlay of the Day history</h2>') : ""}
