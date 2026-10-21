@@ -2,6 +2,7 @@
 feeds, checked 2026-09-22) run through ingest -> model -> export.
 Run: python -m pytest tests/  (or python tests/test_pipeline_offline.py)"""
 import json
+import os
 import random
 import shutil
 import sys
@@ -9,6 +10,7 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+os.environ["NPROJ_ESPN_PROPS"] = "0"     # never call ESPN's real props feed from tests
 sys.path.insert(0, str(ROOT))
 import os  # noqa: E402
 # these tests cover the plumbing with fake ESPN data: keep the recent-average
@@ -236,7 +238,7 @@ def test_odds_rationing_and_board():
     import os
     import importlib
     os.environ.update(NPROJ_DB=str(tmp / "t.db"), NPROJ_DATA_DIR=str(tmp), NPROJ_SITE_DATA=str(site),
-                      NPROJ_ODDS_MODE="props", ODDS_API_KEY="test", NPROJ_ESPN_PROBE="0", NPROJ_ODDS_SHARE="0.5")
+                      NPROJ_ODDS_MODE="props", ODDS_API_KEY="test", NPROJ_ESPN_PROPS="0", NPROJ_ODDS_SHARE="0.5")
     importlib.reload(config)
     from nproj import cli, pipeline
     from nproj.ingest import espn
@@ -344,7 +346,7 @@ def _fresh_env(odds_mode, remaining):
     # start clean: the live site may hold real early-look prices (bought for a real date)
     (site / "early_lines.json").unlink(missing_ok=True)
     os.environ.update(NPROJ_DB=str(tmp / "t.db"), NPROJ_DATA_DIR=str(tmp), NPROJ_SITE_DATA=str(site),
-                      NPROJ_ODDS_MODE=odds_mode, ODDS_API_KEY="test", NPROJ_ESPN_PROBE="0", NPROJ_ODDS_SHARE="0.5")
+                      NPROJ_ODDS_MODE=odds_mode, ODDS_API_KEY="test", NPROJ_ESPN_PROPS="0", NPROJ_ODDS_SHARE="0.5")
     from nproj import config
     importlib.reload(config)
     from nproj import pipeline
@@ -606,7 +608,53 @@ def test_propline():
     print("OK propline:", log)
 
 
+def test_espn_props():
+    """ESPN's free DraftKings props: main lines (over listed first, checked
+    against the milestone), milestone ladders as alt overs at N - 0.5, the
+    board filling gaps from them, and the morning plan skipping free stats."""
+    from nproj.ingest import espn_props as E, odds
+    ath = lambda pid: {"$ref": f"http://x/athletes/{pid}?lang=en"}
+    it = lambda pid, t, tgt, price: {"athlete": ath(pid), "type": {"id": t},
+                                     "current": {"target": {"value": tgt}}, "odds": {"american": {"value": price}}}
+    items = [it("1", "90", 49.5, "-109"), it("1", "90", 49.5, "-120"),       # PRA main: over first
+             it("1", "225", 45, "-223"), it("1", "225", 50, "-109"), it("1", "225", 55, "+179"),
+             it("1", "1", 27.5, "-130"), it("1", "1", 27.5, "+100"),          # points: listed under-first
+             it("1", "218", 28, "+102"),                                      # milestone says over is +100
+             it("2", "98", 116.5, "-112"),                                    # team total: ignored
+             it("999", "1", 10.5, "-110"), it("999", "1", 10.5, "-110")]      # not on our roster
+    lines, alts = E.parse_game(items, {"1": "Luka Doncic", "2": "Someone"})
+    assert lines["luka doncic"]["pra"] == {"line": 49.5, "over": -109, "under": -120, "book": "DraftKings", "source": "ESPN"}
+    assert lines["luka doncic"]["points"]["over"] == 100 and lines["luka doncic"]["points"]["under"] == -130
+    assert [s["line"] for s in alts["luka doncic"]["pra"]] == [44.5, 49.5, 54.5]
+    assert alts["luka doncic"]["pra"][2]["over"] == 179 and len(lines) == 1
+    # real feed (Oct 21): a second, shorter rebounds ladder mixed into the same type
+    reb = [(6, -3800), (7, -1480), (8, -730), (9, -406), (10, -245), (11, -154), (12, 100), (13, 152),
+           (14, 230), (15, 347), (16, 510), (17, 740), (18, 1080), (19, 1580), (20, 2100),
+           (2, -740), (3, -238), (4, -101), (5, 214), (6, 454), (7, 970)]
+    lad = E.clean_ladder(reb)
+    assert sorted(lad) == [x - 0.5 for x in range(6, 21)] and lad[5.5] == -3800, lad
+    reb2 = [(2, -214), (3, 137), (4, 352), (5, 900), (3, -3500), (4, -1140), (5, -500), (6, -258), (7, -145),
+            (8, 117), (9, 193), (10, 312), (11, 508), (12, 800), (13, 1260), (14, 1920), (15, 2600)]
+    lad2 = E.clean_ladder(reb2)
+    assert lad2[2.5] == -3500 and lad2[7.5] == 117 and 1.5 not in lad2, lad2
+    pts = [(15, -710), (18, -304), (20, -184), (25, 161), (30, 475), (35, 1300), (22, -117), (40, 2900)]
+    assert len(E.clean_ladder(pts)) == 8                               # main-line rung listed out of order
+    # morning plan: free points/rebounds/assists and ladders cost nothing; PRA is still bought
+    evs = [{"event_id": "a"}, {"event_id": "b"}]
+    mk = ["player_points_rebounds_assists", "player_points", "player_rebounds", "player_assists"]
+    per, lad, res = odds.plan_morning(evs, 16, covered={"a": {"points", "rebounds", "assists"}},
+                                      markets=mk, free_ladders={"a"})
+    assert per["a"] == [mk[0]] and lad == ["b"] and "player_points" in per["b"], (per, lad)
+    # everything free: nothing to buy but the early-look reserve
+    per, lad, res = odds.plan_morning(evs, 16, covered={"a": {"pra", "points", "rebounds", "assists"},
+                                                         "b": {"pra", "points", "rebounds", "assists"}},
+                                      markets=mk, free_ladders={"a", "b"})
+    assert per == {"a": [], "b": []} and lad == [] and res == 4
+    print("OK espn props")
+
+
 if __name__ == "__main__":
+    test_espn_props()
     test_propline()
     test_early_alts()
     test_odds_rationing_and_board()

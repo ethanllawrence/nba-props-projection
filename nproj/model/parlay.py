@@ -416,6 +416,14 @@ def todays_prices(date_s, saved):
     for who, per in (odds.load_early_lines(date_s).get("alts") or {}).items():
         for stat, ladder in per.items():
             add(who, stat, ladder, "early")
+    from ..ingest import espn_props          # free DraftKings props (same morning)
+    espn = espn_props.load(date_s)
+    for who, per in (espn.get("alts") or {}).items():
+        for stat, ladder in per.items():
+            add(who, stat, ladder, "espn")
+    for who, per in (espn.get("lines") or {}).items():
+        for stat, ln in per.items():
+            add(who, stat, [ln], "espn")
     for who, per in (saved.get("lines") or {}).items():
         for stat, ln in per.items():
             if isinstance(ln, dict) and stat in STATS:

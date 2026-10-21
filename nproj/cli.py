@@ -58,11 +58,13 @@ def cmd_daily(args) -> None:
         projected = predict.project_date(con, date_s)     # baseline first, model overwrites
         if slate["games"]:
             _maybe_model(con, date_s)
+        # free DraftKings props from ESPN, every run (props for a night post
+        # the evening before, so even the 8 PM flip usually gets them)
+        if slate["games"]:
+            _espn_props(con, date_s)
         # odds after the model: this morning's projections decide which games
         # get points lines and fresh alt ladders when credits are short
         _maybe_odds(date_s, slate["games"], _team_order(con, date_s))
-        if config.ODDS_MODE == "props" and slate["games"]:
-            _espn_props_probe(con, date_s)
         result = export_all(con, date_s)
         try:
             from .model import parlay
@@ -127,8 +129,13 @@ def _early_look(con, date_s):
     log = {"date": nxt, "games": slate["games"], "players": n,
            "model": "lightgbm" if live.PROJ else "baseline"}
     if live.PROJ:     # the early-look parlay needs the model's distributions
-        from .ingest import odds
+        from .ingest import espn_props, odds
         from .model import early_parlay, parlay
+        espn_next = _espn_props(con, nxt, save=False)        # usually empty until the night before
+        espn_games = [k for k, v in espn_props.by_teams(espn_next).items()
+                      if {"pra", "points"} <= v["ladder_stats"]]
+        if espn_next:
+            log["espn"] = {"players_with_ladders": len(espn_next.get("alts", {})), "games": len(espn_games)}
         if config.ODDS_MODE == "props" and config.ODDS_API_KEY:     # morning odds run only
             top = sorted(live.PROJ.items(), key=lambda kv: -kv[1]["pra"])[:early_parlay.POOL_TOP]
             teams = [r["team"] for pid, _ in top for r in con.execute(
@@ -138,10 +145,14 @@ def _early_look(con, date_s):
                 # a manual run with the odds box ticked buys now, however far out
                 manual = os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
                 budget = max(0, TOPUP["budget"] - TOPUP["spent"]) if TOPUP else None
-                log["alt_lines"] = odds.refresh_early_alts(date_s, nxt, order, force=manual, budget=budget)
+                log["alt_lines"] = odds.refresh_early_alts(date_s, nxt, order, force=manual, budget=budget,
+                                                           skip_games=espn_games)
             except Exception as exc:  # noqa: BLE001 - prices are optional
                 log["alt_lines"] = {"error": str(exc)}
-        alts = odds.load_early_lines(nxt).get("alts", {})
+        alts = {}
+        for src in ((espn_next or {}).get("alts") or {}, odds.load_early_lines(nxt).get("alts", {})):
+            for who, per in src.items():                    # paid early ladders win at the same player/stat
+                alts.setdefault(who, {}).update(per)
         ep = early_parlay.pick(con, nxt, live.PROJ, alts)
         why = str((log.get("alt_lines") or {}).get("skipped", ""))
         if not alts and why.startswith("budget"):
@@ -205,17 +216,22 @@ def _team_order(con, date_s):
     return _board_team_order(date_s)
 
 
-def _espn_props_probe(con, date_s):
-    """Free check (2026-10-21): does ESPN publish player props again
-    (DraftKings milestones, provider 100)? Saves docs/data/espn_props_probe.json."""
+def _espn_props(con, date_s, save=True):
+    """Free DraftKings props from ESPN (ingest/espn_props.py). save=False
+    returns the pull without writing it (the early look's next game day).
+    Never blocks the run. -> the pull dict, or {}."""
     import os
-    if os.environ.get("NPROJ_ESPN_PROBE", "1") == "0":
-        return
+    if os.environ.get("NPROJ_ESPN_PROPS", "1") == "0":
+        return {}
     try:
         from .ingest import espn_props
-        print(f"[espn-props] {espn_props.probe(con, date_s)}")
-    except Exception as exc:  # noqa: BLE001 - only a probe
-        print(f"[espn-props] probe failed: {exc}")
+        if save:
+            print(f"[espn-props] {espn_props.refresh(con, date_s)}")
+            return espn_props.load(date_s)
+        return espn_props.fetch(con, date_s)
+    except Exception as exc:  # noqa: BLE001 - the free source is a bonus
+        print(f"[espn-props] failed: {exc}")
+        return {}
 
 
 def _board_team_order(date_s):
@@ -270,7 +286,8 @@ def _maybe_odds(date_s, n_games, order=()):
     try:
         from .model import live
         # fresh alt ladders only help the price-first parlay, which needs the model
-        print(f"[odds] {odds.refresh_lines(date_s, team_order=order, ladders_on=bool(live.PROJ))}")
+        from .ingest import espn_props
+        print(f"[odds] {odds.refresh_lines(date_s, team_order=order, ladders_on=bool(live.PROJ), espn=espn_props.load(date_s))}")
     except Exception as exc:  # noqa: BLE001 - odds trouble must never block the board
         print(f"[odds] FAILED, board will show no lines: {exc}")
 

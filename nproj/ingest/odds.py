@@ -243,7 +243,7 @@ LADDER_STATS = ("pra", "points")   # morning alt ladders for the parlay (overs o
 MAX_LADDER_GAMES = 4               # at most this many games get fresh morning ladders
 
 
-def plan_morning(events, allowance, covered=None, markets=None, ladders_on=True):
+def plan_morning(events, allowance, covered=None, markets=None, ladders_on=True, free_ladders=()):
     """How the morning spends today's allowance, games already in priority
     order (the games with the top projected players first). Levels:
       1. PRA main line, every game (the board's namesake column);
@@ -254,7 +254,8 @@ def plan_morning(events, allowance, covered=None, markets=None, ladders_on=True)
       3. points main lines, top games first, then rebounds, then assists.
     A share of the allowance (early_reserve) is held back for the next game
     day's early-look ladders. covered: {event_id: set(stats)} main lines a
-    free source already has, which cost nothing here.
+    free source already has, which cost nothing here and are skipped at
+    every level. free_ladders: event_ids whose alt ladders are free.
     -> (markets per event_id, ladder event_ids, reserve)."""
     markets = markets or config.ODDS_MARKETS
     covered = covered or {}
@@ -277,6 +278,8 @@ def plan_morning(events, allowance, covered=None, markets=None, ladders_on=True)
         level(markets[0])
     ladders = []
     for e in (events if ladders_on else []):
+        if e["event_id"] in free_ladders:
+            continue
         if len(ladders) >= MAX_LADDER_GAMES or budget < len(LADDER_STATS):
             break
         ladders.append(e["event_id"])
@@ -286,7 +289,8 @@ def plan_morning(events, allowance, covered=None, markets=None, ladders_on=True)
     return per, ladders, reserve
 
 
-def refresh_lines(date_s, jokic_name="Nikola Jokic", jokic_team="DEN", team_order=(), ladders_on=True):
+def refresh_lines(date_s, jokic_name="Nikola Jokic", jokic_team="DEN", team_order=(), ladders_on=True,
+                  espn=None):
     """Morning run: spend today's allowance and write lines.json. team_order:
     teams with the top projected players first (their games get points lines
     and fresh alt ladders first when credits are short). Main lines from a
@@ -305,7 +309,28 @@ def refresh_lines(date_s, jokic_name="Nikola Jokic", jokic_team="DEN", team_orde
             all_lines, covered, free_log = propline_mains(events)
         except Exception as exc:  # noqa: BLE001 - the free source is a bonus
             free_log = {"error": str(exc)[:200]}
-    per, ladders, reserve = plan_morning(events, allowance, covered, ladders_on=ladders_on)
+    # ESPN's free DraftKings props (ingest/espn_props.py) first: any game/stat
+    # ESPN has (main lines or alt ladders) is never bought. Credits only fill
+    # what's missing; the rest carries over (the allowance is recomputed daily).
+    # No book preference (Robin, 2026-10-21: boosts on both, best model data).
+    free_ladders = set()
+    if espn:
+        from .espn_props import by_teams
+        cov = by_teams(espn)
+        for e in events:
+            c = cov.get((e["home"], e["away"]))
+            if not c:
+                continue
+            covered.setdefault(e["event_id"], set()).update(c["line_stats"])
+            if {"pra", "points"} <= c["ladder_stats"]:
+                free_ladders.add(e["event_id"])
+    per, ladders, reserve = plan_morning(events, allowance, covered, ladders_on=ladders_on,
+                                         free_ladders=free_ladders)
+    # today's lines.json holds the free lines too, so it is complete on its own
+    # (and "today's lines were bought" stays true when ESPN covered everything)
+    for who, per_stat in ((espn or {}).get("lines") or {}).items():
+        for stat, v in per_stat.items():
+            all_lines.setdefault(who, {}).setdefault(stat, v)
 
     td_price, spent = None, 0
     jokic_key = norm_name(jokic_name)
@@ -343,6 +368,7 @@ def refresh_lines(date_s, jokic_name="Nikola Jokic", jokic_team="DEN", team_orde
             set(MARKET_TO_STAT[m] for m in per[e["event_id"]]) | covered.get(e["event_id"], set()))
             for e in events},
         "ladder_events": ladders,
+        "free_ladder_events": sorted(free_ladders),
         "credits_spent": spent,
         "credits_remaining": Quota.remaining,
         "lines": all_lines,
@@ -531,7 +557,8 @@ def load_early_lines(date_s):
     return data if data.get("date") == date_s else {}
 
 
-def refresh_early_alts(board_date_s, game_date_s, team_order=(), force=False, budget=None):
+def refresh_early_alts(board_date_s, game_date_s, team_order=(), force=False, budget=None,
+                       skip_games=()):
     """Buy alt ladders for game_date_s if due and affordable. team_order:
     team abbreviations, most important first (games with the top projected
     players are bought first). force: a manual odds run (Robin asked for
@@ -554,7 +581,7 @@ def refresh_early_alts(board_date_s, game_date_s, team_order=(), force=False, bu
     per_game = len(EARLY_STATS)
     if budget < per_game:
         return {"skipped": f"budget {budget} credits, need {per_game} per game"}
-    events = fetch_events(game_date_s)
+    events = [e for e in fetch_events(game_date_s) if (e["home"], e["away"]) not in set(skip_games)]
     rank = {t: i for i, t in enumerate(team_order)}
     events.sort(key=lambda e: min(rank.get(e["home"], 99), rank.get(e["away"], 99)))
     alts, spent, bought = {}, 0, []
@@ -629,3 +656,16 @@ def refresh_today_alts(date_s, budget, team_order=(), not_before=None):
     saved["credits_remaining"] = Quota.remaining
     save_lines(saved)
     return {"bought": bought, "spent": spent, "players": len(alts)}
+
+
+def board_lines(date_s):
+    """Lines for the board: the paid lines (FanDuel first), with ESPN's free
+    DraftKings lines filling any player/stat the paid pull doesn't have."""
+    from . import espn_props
+    paid = load_lines(date_s)
+    lines = {who: dict(per) for who, per in (paid.get("lines") or {}).items()}
+    free = espn_props.load(date_s)
+    for who, per in (free.get("lines") or {}).items():
+        for stat, v in per.items():
+            lines.setdefault(who, {}).setdefault(stat, v)
+    return {**paid, "lines": lines, "free_fetched_at": free.get("fetched_at")}

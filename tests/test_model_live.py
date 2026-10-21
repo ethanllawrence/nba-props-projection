@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 DATE = "2026-03-10"
+os.environ["NPROJ_ESPN_PROPS"] = "0"     # never call ESPN's real props feed from tests
 
 
 def test_live_model():

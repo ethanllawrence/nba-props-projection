@@ -22,7 +22,7 @@ import json
 from datetime import datetime, timezone
 
 from .. import config
-from ..ingest.odds import load_lines, match_lines
+from ..ingest.odds import board_lines, load_lines, match_lines
 from ..pipeline import JOKIC_ESPN_ID
 
 MIN_MINUTES_FOR_BOARD = 18.0
@@ -87,7 +87,7 @@ def _export_today_board(con, date_s: str, path=None, early=False):
     if not rows:
         return 0
 
-    book = load_lines(date_s)
+    book = board_lines(date_s)
     everyone = [x["name"] for x in con.execute(
         """SELECT p.name FROM probable_players pp JOIN players p ON p.player_id = pp.player_id
            WHERE pp.date = ?""", (date_s,))]          # incl. players ruled out
@@ -179,7 +179,7 @@ def _export_today_board(con, date_s: str, path=None, early=False):
         "early_look": early,
         "model": "lightgbm" if use_model else "baseline",
         "note": method + lines_note,
-        "lines_fetched_at": book.get("fetched_at"),
+        "lines_fetched_at": book.get("fetched_at") or book.get("free_fetched_at"),
         "unmatched_lines": unmatched,
         "players": players,
     })
