@@ -213,6 +213,19 @@ def test_odds_rationing_and_board():
     assert odds.plan(8, 9, ["a", "b"]) == (["a"], 8)
     assert odds.plan(12, 9, ["a", "b"]) == (["a"], 9)       # partial: first 9 games only
     assert odds.plan(5, 0, ["a"]) == (["a"], 0)
+    # morning plan: PRA everywhere, fresh ladders for the top games, then points top games first
+    evs = [{"event_id": f"e{i}"} for i in range(8)]
+    mk = ["player_points_rebounds_assists", "player_points", "player_rebounds", "player_assists"]
+    per, lad, res = odds.plan_morning(evs, 16, markets=mk)
+    assert res == 4 and all(per[f"e{i}"][0] == mk[0] for i in range(8)) and lad == ["e0", "e1"]
+    assert sum(len(v) for v in per.values()) + 2 * len(lad) + res == 16
+    per, lad, res = odds.plan_morning(evs[:4], 27, markets=mk)          # small slate: points everywhere
+    assert res == 8 and lad == ["e0", "e1", "e2", "e3"] and all("player_points" in per[f"e{i}"] for i in range(4))
+    per, lad, _ = odds.plan_morning(evs[:4], 27, markets=mk, ladders_on=False)
+    assert lad == [] and all(len(per[f"e{i}"]) == 4 for i in range(4))   # no model: main lines instead
+    # a free source's main lines cost nothing: credits go to the other stats/ladders
+    per, lad, res = odds.plan_morning(evs[:2], 16, covered={"e0": {"pra", "points"}, "e1": {"pra"}}, markets=mk)
+    assert mk[0] not in per["e0"] and mk[0] not in per["e1"] and "player_points" in per["e1"]
     assert odds.norm_name("Jaren Jackson Jr.") == "jaren jackson"
     assert odds.norm_name("Nikola Jokić") == "nikola jokic"
 
@@ -223,7 +236,7 @@ def test_odds_rationing_and_board():
     import os
     import importlib
     os.environ.update(NPROJ_DB=str(tmp / "t.db"), NPROJ_DATA_DIR=str(tmp), NPROJ_SITE_DATA=str(site),
-                      NPROJ_ODDS_MODE="props", ODDS_API_KEY="test", NPROJ_ODDS_SHARE="0.5")
+                      NPROJ_ODDS_MODE="props", ODDS_API_KEY="test", NPROJ_ESPN_PROBE="0", NPROJ_ODDS_SHARE="0.5")
     importlib.reload(config)
     from nproj import cli, pipeline
     from nproj.ingest import espn
@@ -238,7 +251,8 @@ def test_odds_rationing_and_board():
     allowance = odds.daily_allowance(440, date(2026, 3, 10))
     main = allowance - odds.early_reserve(allowance)               # reserve kept for the early look
     assert ln["early_reserve"] == odds.early_reserve(allowance)
-    assert ln["games_on_slate"] == 2 and ln["markets"] == config.ODDS_MARKETS[:min(4, main // 2)]
+    # no model in this test, so no ladders: main lines level by level (PRA, points, ...) for 2 games
+    assert ln["games_on_slate"] == 2 and ln["markets"] == config.ODDS_MARKETS[:min(4, main // 2)], ln["markets"]
     assert ln["credits_spent"] <= main
     assert ln["lines"]["nikola jokic"]["pra"]["book"] == "FanDuel"
     assert ln["lines"]["nikola jokic"]["pra"]["line"] == 49.5
@@ -330,7 +344,7 @@ def _fresh_env(odds_mode, remaining):
     # start clean: the live site may hold real early-look prices (bought for a real date)
     (site / "early_lines.json").unlink(missing_ok=True)
     os.environ.update(NPROJ_DB=str(tmp / "t.db"), NPROJ_DATA_DIR=str(tmp), NPROJ_SITE_DATA=str(site),
-                      NPROJ_ODDS_MODE=odds_mode, ODDS_API_KEY="test", NPROJ_ODDS_SHARE="0.5")
+                      NPROJ_ODDS_MODE=odds_mode, ODDS_API_KEY="test", NPROJ_ESPN_PROBE="0", NPROJ_ODDS_SHARE="0.5")
     from nproj import config
     importlib.reload(config)
     from nproj import pipeline
@@ -563,7 +577,37 @@ def _early_alts_checks(site, odds, calls):
     print("OK early alts:", log)
 
 
+def test_propline():
+    """Free main lines (PropLine, Odds API format): parsed, alternate rows
+    ignored, and only stats with both sides count as covered."""
+    from nproj.ingest import odds
+    events = [{"event_id": "oa1", "home": "DEN", "away": "OKC", "commence_time": "2026-10-22T01:00:00Z"},
+              {"event_id": "oa2", "home": "LAL", "away": "GSW", "commence_time": "2026-10-22T02:00:00Z"}]
+
+    def fake(path, **params):
+        if path.endswith("/events"):
+            return [{"id": "pl1", "home_team": "Denver Nuggets", "away_team": "Oklahoma City Thunder"}]
+        return {"bookmakers": [{"key": "fanduel", "title": "FanDuel", "markets": [
+            {"key": "player_points", "outcomes": [
+                {"name": "Over", "description": "Nikola Jokic", "point": 27.5, "price": -115},
+                {"name": "Under", "description": "Nikola Jokic", "point": 27.5, "price": -105},
+                {"name": "Over", "description": "Nikola Jokic", "point": 34.5, "price": 240, "line_type": "alternate"}]},
+            {"key": "player_rebounds", "outcomes": [
+                {"name": "Over", "description": "Nikola Jokic", "point": 12.5, "price": -120}]}]}]}
+    orig = odds._pl_get
+    odds._pl_get = fake
+    try:
+        lines, covered, log = odds.propline_mains(events)
+    finally:
+        odds._pl_get = orig
+    assert lines["nikola jokic"]["points"]["line"] == 27.5 and lines["nikola jokic"]["points"]["under"] == -105
+    assert "rebounds" not in lines["nikola jokic"]                 # one side only: not a main line
+    assert covered == {"oa1": {"points"}} and log["games"] == 1
+    print("OK propline:", log)
+
+
 if __name__ == "__main__":
+    test_propline()
     test_early_alts()
     test_odds_rationing_and_board()
     test_results_pure()

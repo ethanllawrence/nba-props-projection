@@ -226,6 +226,8 @@ def parse_props(event_json):
                 who = norm_name(o.get("description"))
                 if not who or o.get("point") is None:
                     continue
+                if o.get("line_type") not in (None, "main"):
+                    continue            # alternate/milestone rows (PropLine marks them)
                 side = by_player.setdefault(who, {"line": o["point"], "book": title})
                 if o.get("name") == "Over":
                     side["over"] = o.get("price")
@@ -237,36 +239,97 @@ def parse_props(event_json):
     return lines, td
 
 
-def refresh_lines(date_s, jokic_name="Nikola Jokic", jokic_team="DEN"):
-    """Morning run: spend today's allowance and write lines.json.
-    Returns a summary dict for the run log. Never raises for budget reasons."""
+LADDER_STATS = ("pra", "points")   # morning alt ladders for the parlay (overs on stars)
+MAX_LADDER_GAMES = 4               # at most this many games get fresh morning ladders
+
+
+def plan_morning(events, allowance, covered=None, markets=None, ladders_on=True):
+    """How the morning spends today's allowance, games already in priority
+    order (the games with the top projected players first). Levels:
+      1. PRA main line, every game (the board's namesake column);
+      2. fresh PRA + points alt ladders for the top games (the Parlay of the
+         Day prices its legs from these; Robin 2026-10-21: the morning parlay
+         should use morning prices for the top players, not only the
+         day-old early-look ones), up to MAX_LADDER_GAMES;
+      3. points main lines, top games first, then rebounds, then assists.
+    A share of the allowance (early_reserve) is held back for the next game
+    day's early-look ladders. covered: {event_id: set(stats)} main lines a
+    free source already has, which cost nothing here.
+    -> (markets per event_id, ladder event_ids, reserve)."""
+    markets = markets or config.ODDS_MARKETS
+    covered = covered or {}
+    reserve = early_reserve(allowance)
+    budget = allowance - reserve
+    per = {e["event_id"]: [] for e in events}
+
+    def level(market):
+        nonlocal budget
+        stat = MARKET_TO_STAT.get(market)
+        for e in events:
+            if budget < 1:
+                return
+            if stat in covered.get(e["event_id"], set()):
+                continue
+            per[e["event_id"]].append(market)
+            budget -= 1
+
+    if markets:
+        level(markets[0])
+    ladders = []
+    for e in (events if ladders_on else []):
+        if len(ladders) >= MAX_LADDER_GAMES or budget < len(LADDER_STATS):
+            break
+        ladders.append(e["event_id"])
+        budget -= len(LADDER_STATS)
+    for m in markets[1:]:
+        level(m)
+    return per, ladders, reserve
+
+
+def refresh_lines(date_s, jokic_name="Nikola Jokic", jokic_team="DEN", team_order=(), ladders_on=True):
+    """Morning run: spend today's allowance and write lines.json. team_order:
+    teams with the top projected players first (their games get points lines
+    and fresh alt ladders first when credits are short). Main lines from a
+    free source (PropLine, if PROPLINE_API_KEY is set) are used first and
+    cost no credits. Returns a summary dict. Never raises for budget reasons."""
     today = date.fromisoformat(date_s)
     remaining, used = check_quota()
     allowance = daily_allowance(remaining, today)
     events = fetch_events(date_s)
-    # keep some of today's allowance for tomorrow's early-look alt ladders
-    # (bought later in this run); without it a big slate leaves them nothing
-    reserve = early_reserve(allowance)
-    main_allowance = allowance - reserve
-    markets, n_full = plan(len(events), main_allowance, config.ODDS_MARKETS)
+    rank = {t: i for i, t in enumerate(team_order)}
+    events.sort(key=lambda e: (min(rank.get(e["home"], 99), rank.get(e["away"], 99)), e["commence_time"]))
 
-    all_lines, td_price = {}, None
-    spent = 0
+    all_lines, covered, free_log = {}, {}, None
+    if config.PROPLINE_API_KEY:
+        try:
+            all_lines, covered, free_log = propline_mains(events)
+        except Exception as exc:  # noqa: BLE001 - the free source is a bonus
+            free_log = {"error": str(exc)[:200]}
+    per, ladders, reserve = plan_morning(events, allowance, covered, ladders_on=ladders_on)
+
+    td_price, spent = None, 0
     jokic_key = norm_name(jokic_name)
-    room_for_td = config.ODDS_JOKIC_TD and len(markets) * n_full + 1 <= main_allowance
-    for ev in events[:n_full]:
-        mk = list(markets)
+    planned = sum(len(v) for v in per.values()) + len(ladders) * len(LADDER_STATS)
+    room_for_td = config.ODDS_JOKIC_TD and planned + 1 <= allowance - reserve
+    for ev in events:
+        mk = list(per[ev["event_id"]])
         if room_for_td and jokic_team in (ev["home"], ev["away"]):
             mk.append(TD_MARKET)
+        if not mk:
+            continue
         before = Quota.remaining
         lines, td = parse_props(fetch_event_props(ev["event_id"], mk))
         if before is not None and Quota.remaining is not None:
             spent += before - Quota.remaining
         for who, stats in lines.items():
-            all_lines.setdefault(who, {}).update(stats)
+            for stat, v in stats.items():
+                all_lines.setdefault(who, {}).setdefault(stat, v)
         if jokic_key in td:
             td_price = td[jokic_key]
 
+    used_markets = [m for m in config.ODDS_MARKETS
+                    if any(m in v for v in per.values())
+                    or any(MARKET_TO_STAT[m] in c for c in covered.values())]
     out = {
         "date": date_s,
         "fetched_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -274,17 +337,71 @@ def refresh_lines(date_s, jokic_name="Nikola Jokic", jokic_team="DEN"):
         "early_reserve": reserve,
         "events": events,
         "games_on_slate": len(events),
-        "games_fetched": min(n_full, len(events)),
-        "markets": markets,
+        "games_fetched": sum(1 for e in events if per[e["event_id"]] or covered.get(e["event_id"])),
+        "markets": used_markets,
+        "markets_by_game": {f"{e['away']} @ {e['home']}": sorted(
+            set(MARKET_TO_STAT[m] for m in per[e["event_id"]]) | covered.get(e["event_id"], set()))
+            for e in events},
+        "ladder_events": ladders,
         "credits_spent": spent,
         "credits_remaining": Quota.remaining,
         "lines": all_lines,
         "jokic_td": td_price,
     }
+    if free_log is not None:
+        out["free_source"] = free_log
     save_lines(out)
-    return {k: out[k] for k in ("games_on_slate", "games_fetched", "markets",
+    return {k: out[k] for k in ("games_on_slate", "games_fetched", "markets", "markets_by_game",
                                 "credits_spent", "credits_remaining")} | {
-        "allowance": allowance, "remaining_before": remaining, "players_with_lines": len(all_lines)}
+        "allowance": allowance, "remaining_before": remaining, "players_with_lines": len(all_lines),
+        "ladder_games": len(ladders), "free_source": free_log}
+
+
+# ------------------------------------------------------------ PropLine ----
+# PropLine (prop-line.com) has a free key (1,000 requests a day, no card) with
+# FanDuel/DraftKings player props in The Odds API's format. When the repo has
+# a PROPLINE_API_KEY secret, the morning run takes main lines from it first, so
+# Odds API credits go to alt ladders instead. Checked 2026-10-21 from its docs;
+# its NBA market keys are assumed to match The Odds API's (the run log shows
+# what came back per market, and anything missing is bought as before).
+PROPLINE_BASE = "https://api.prop-line.com/v1"
+
+
+def _pl_get(path, **params):
+    params["apiKey"] = config.PROPLINE_API_KEY
+    r = requests.get(f"{PROPLINE_BASE}{path}", params=params, timeout=30)
+    if r.status_code != 200:
+        raise RuntimeError(f"PropLine {path}: HTTP {r.status_code} {r.text[:200]}")
+    return r.json()
+
+
+def propline_mains(events):
+    """Main lines for today's games from PropLine (free). -> (lines,
+    {odds_api_event_id: set(stats covered)}, log)."""
+    pl_events = _pl_get(f"/sports/{config.ODDS_SPORT_KEY}/events")
+    by_teams = {}
+    for e in pl_events:
+        key = (TEAM_ABBR.get(e.get("home_team"), e.get("home_team")),
+               TEAM_ABBR.get(e.get("away_team"), e.get("away_team")))
+        by_teams[key] = e.get("id")
+    lines, covered, per_stat = {}, {}, {}
+    for ev in events:
+        pid = by_teams.get((ev["home"], ev["away"]))
+        if not pid:
+            continue
+        data = _pl_get(f"/sports/{config.ODDS_SPORT_KEY}/events/{pid}/odds",
+                       markets=",".join(config.ODDS_MARKETS),
+                       bookmakers=",".join(config.PREFERRED_BOOKS), oddsFormat="american")
+        got, _ = parse_props(data)
+        stats = set()
+        for who, per in got.items():
+            for stat, v in per.items():
+                if v.get("over") is not None and v.get("under") is not None:
+                    lines.setdefault(who, {})[stat] = {**v, "source": "PropLine"}
+                    stats.add(stat)
+                    per_stat[stat] = per_stat.get(stat, 0) + 1
+        covered[ev["event_id"]] = stats
+    return lines, covered, {"games": sum(1 for v in covered.values() if v), "lines_per_stat": per_stat}
 
 
 def early_reserve(allowance):

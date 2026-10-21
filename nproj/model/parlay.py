@@ -307,6 +307,25 @@ def buy_extras(con, date_s, saved):
             log["spreads_error"] = str(exc)
             saved["spreads"] = {}
 
+    from . import live
+    if "alts" not in saved and live.PROJ and saved.get("ladder_events") is not None:
+        # price-first: fresh PRA + points ladders for the games the morning plan
+        # picked (the ones with the top projected players), see odds.plan_morning
+        alts, n = {}, 0
+        for event_id in saved["ladder_events"]:
+            if odds.leftover_credits(saved) < len(odds.LADDER_STATS):
+                break
+            try:
+                got = odds.spend_extra(saved, odds.fetch_alt_props, event_id, list(odds.LADDER_STATS))
+            except Exception as exc:  # noqa: BLE001
+                log["alts_error"] = str(exc)
+                continue
+            n += 1
+            for who, per_stat in got.items():
+                alts.setdefault(who, {}).update(per_stat)
+        saved["alts"] = alts
+        saved["alts_fetched_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        log["ladder_games"] = n
     if "alts" not in saved:
         budget = min(MAX_ALT_CREDITS, odds.leftover_credits(saved))
         wanted = {}  # event_id -> [stats]

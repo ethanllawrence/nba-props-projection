@@ -42,6 +42,8 @@ ODDS_MARKETS = [m for m in os.environ.get(
     "player_points_rebounds_assists,player_points,player_rebounds,player_assists",
 ).split(",") if m]
 ODDS_JOKIC_TD = os.environ.get("NPROJ_ODDS_JOKIC_TD", "1") == "1"   # +1 credit on Denver game days
+# Free main lines (prop-line.com free key, see odds.propline_mains). Empty = off.
+PROPLINE_API_KEY = os.environ.get("PROPLINE_API_KEY", "")
 
 # --- NBA Stats (free, via nba_api / stats.nba.com — see nproj/ingest/nba_stats.py)
 NBA_STATS_USER_AGENT = "nproj-personal-hobby/0.1"

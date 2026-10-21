@@ -53,12 +53,16 @@ def cmd_daily(args) -> None:
         print(f"[daily] {date_s}: {slate['games']} games, {slate['players']} rostered players, "
               f"{slate['logs']} game-log rows")
         pipeline.refresh_jokic(con, date_s)
-        _maybe_odds(date_s, slate["games"])
         _maybe_store()
         trained = predict.train(con, before_date=date_s)
         projected = predict.project_date(con, date_s)     # baseline first, model overwrites
         if slate["games"]:
             _maybe_model(con, date_s)
+        # odds after the model: this morning's projections decide which games
+        # get points lines and fresh alt ladders when credits are short
+        _maybe_odds(date_s, slate["games"], _team_order(con, date_s))
+        if config.ODDS_MODE == "props" and slate["games"]:
+            _espn_props_probe(con, date_s)
         result = export_all(con, date_s)
         try:
             from .model import parlay
@@ -189,6 +193,31 @@ def _maybe_model(con, date_s):
 TOPUP = {}      # set by a manual top-up run (see _maybe_odds)
 
 
+def _team_order(con, date_s):
+    """Teams with the top projected PRA first: this run's model projections,
+    or (model off) the board already published for date_s."""
+    from .model import live
+    if live.PROJ:
+        top = sorted(live.PROJ.items(), key=lambda kv: -kv[1]["pra"])[:40]
+        teams = [r["team"] for pid, _ in top for r in con.execute(
+            "SELECT team FROM players WHERE player_id=?", (pid,))]
+        return list(dict.fromkeys(teams))
+    return _board_team_order(date_s)
+
+
+def _espn_props_probe(con, date_s):
+    """Free check (2026-10-21): does ESPN publish player props again
+    (DraftKings milestones, provider 100)? Saves docs/data/espn_props_probe.json."""
+    import os
+    if os.environ.get("NPROJ_ESPN_PROBE", "1") == "0":
+        return
+    try:
+        from .ingest import espn_props
+        print(f"[espn-props] {espn_props.probe(con, date_s)}")
+    except Exception as exc:  # noqa: BLE001 - only a probe
+        print(f"[espn-props] probe failed: {exc}")
+
+
 def _board_team_order(date_s):
     """Teams on today's board, the ones with the top projected PRA first."""
     import json
@@ -203,7 +232,7 @@ def _board_team_order(date_s):
     return list(dict.fromkeys(p["team"] for p in players))
 
 
-def _maybe_odds(date_s, n_games):
+def _maybe_odds(date_s, n_games, order=()):
     from .ingest import odds
 
     if config.ODDS_MODE != "props":
@@ -229,7 +258,7 @@ def _maybe_odds(date_s, n_games):
             return
         budget = odds.topup_allowance(date_s)
         try:
-            order = _board_team_order(date_s)
+            order = list(order) or _board_team_order(date_s)
             not_before = datetime.now(timezone.utc) + timedelta(minutes=parlay.REPICK_LEAD_MIN)
             log = odds.refresh_today_alts(date_s, budget, order, not_before)
         except Exception as exc:  # noqa: BLE001
@@ -239,7 +268,9 @@ def _maybe_odds(date_s, n_games):
         print(f"[odds] top-up (today's lines already bought): budget {budget}, {log}")
         return
     try:
-        print(f"[odds] {odds.refresh_lines(date_s)}")
+        from .model import live
+        # fresh alt ladders only help the price-first parlay, which needs the model
+        print(f"[odds] {odds.refresh_lines(date_s, team_order=order, ladders_on=bool(live.PROJ))}")
     except Exception as exc:  # noqa: BLE001 - odds trouble must never block the board
         print(f"[odds] FAILED, board will show no lines: {exc}")
 

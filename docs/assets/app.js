@@ -27,6 +27,7 @@ const STAT_COLS = [
 
 let sortState = { key: "points", dir: "desc" };
 let earlyView = false;   // early look: no lines exist yet, so cells show the projection only
+let linedStats = new Set();   // stats with at least one line tonight (big slates: often PRA only)
 
 /* Injury check (nproj/injury_check.py): later runs compare against the
    morning board and list who was ruled out/cleared and whose projection
@@ -110,7 +111,10 @@ function statCell(stat, extraCls, delta, key) {
   if (!stat) return `<td class="num${cls}"><span class="dim">—</span></td>`;
   const hasLine = stat.line != null;
   const edgeCls = edgeClass(stat);
-  let sub = hasLine ? "L " + stat.line.toFixed(1) : earlyView ? "&nbsp;" : "no line";
+  // a whole column without lines (budget bought PRA only) stays blank; a single
+  // missing line among lined players gets a quiet dash
+  let sub = hasLine ? "L " + stat.line.toFixed(1)
+    : earlyView || !linedStats.has(key) ? "&nbsp;" : '<span class="dim" title="no line for this player">–</span>';
   if (hasLine && stat.p_over != null) {
     const pick = stat.call === "under" || (!stat.call && stat.p_over < 0.5)
       ? `U ${Math.round((1 - stat.p_over) * 100)}%` : `O ${Math.round(stat.p_over * 100)}%`;
@@ -226,8 +230,15 @@ async function main() {
         </div>` : "";
     const upd = new Date(data.generated_at);
     $("#subtitle").textContent = `${data.date} · updated ${upd.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
-    $("#note").textContent = (data.note || "") + " Tap a column header to sort.";
     const players = data.players || [];
+    linedStats = new Set();
+    players.forEach((p) => Object.entries(p.stats || {}).forEach(([k, v]) => { if (v && v.line != null) linedStats.add(k); }));
+    const names = { points: "points", rebounds: "rebounds", assists: "assists", pra: "PRA" };
+    const have = ["pra", "points", "rebounds", "assists"].filter((k) => linedStats.has(k));
+    const lineNote = !earlyView && have.length && have.length < 4
+      ? ` Lines tonight: ${have.map((k) => names[k]).join(" and ")} only. On big slates the odds budget covers fewer stats per game, so the other columns show projections without a line.`
+      : "";
+    $("#note").textContent = (data.note || "") + lineNote + " Tap a column header to sort.";
     const body = !players.length
       ? '<div class="notice">No players on the slate.</div>'
       : (view === "today" ? checkBanner(data.injury_check) : "") + tableView(players);
