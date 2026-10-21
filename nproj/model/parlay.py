@@ -583,7 +583,10 @@ def update(con, date_s, allow_spend=False, repick=False):
             log["extras"] = buy_extras(con, date_s, saved)
         now_s = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         if live.PROJ:
-            legs, price, n = price_first(con, date_s, saved)
+            # never a game that has started (a late or manual run can pick after the first tip)
+            from datetime import timedelta
+            soon = datetime.now(timezone.utc) + timedelta(minutes=REPICK_LEAD_MIN)
+            legs, price, n = price_first(con, date_s, saved, soon)
             method, pool, cands = "price-first", [], [None] * n
         else:
             cands = candidates(con, date_s, saved)

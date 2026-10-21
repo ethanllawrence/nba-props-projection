@@ -1,0 +1,82 @@
+{
+  "generated_at": "2026-09-22T06:45:00Z",
+  "note": "MOCKUP DATA. Legs are picked from the same players/projections shown on the Today board, but the selection logic itself (conviction screening, blowout-risk check) is not automated yet — see nproj/model/parlay.py. Alt lines, odds, and the whole history log below are made up to preview the layout. No live model or odds feed is wired up yet.",
+  "today": {
+    "date": "2026-10-22",
+    "combined_odds": 288,
+    "status": "pending",
+    "legs": [
+      {
+        "player": "Nikola Jokic", "team": "DEN", "opp": "OKC", "time_et": "9:30 PM",
+        "stat": "rebounds", "side": "over", "alt_line": 10.5,
+        "proj": 13.9, "book_line": 12.5, "odds": -180, "book": "FanDuel",
+        "blowout_risk": "low", "minutes_confidence": "high",
+        "reasoning": "Model projects 13.9 boards, well clear of even the full book line (12.5) — the 10.5 alt line leaves a wide cushion. OKC ranks near the bottom of the league in defensive rebounding rate allowed to opposing centers. Jokic rarely loses minutes to a lopsided score, so blowout risk doesn't move this one much."
+      },
+      {
+        "player": "Shai Gilgeous-Alexander", "team": "OKC", "opp": "DEN", "time_et": "9:30 PM",
+        "stat": "points", "side": "over", "alt_line": 27.5,
+        "proj": 31.1, "book_line": 29.5, "odds": -175, "book": "DraftKings",
+        "blowout_risk": "low", "minutes_confidence": "high",
+        "reasoning": "OKC's offense runs through SGA creating his own shot; model has him at 31.1 against a 29.5 book line, and the 27.5 alt adds a real buffer underneath that. This is a competitive matchup on paper, so minutes/usage risk from a blowout is low."
+      },
+      {
+        "player": "Giannis Antetokounmpo", "team": "MIL", "opp": "CHI", "time_et": "8:00 PM",
+        "stat": "rebounds", "side": "over", "alt_line": 9.5,
+        "proj": 11.9, "book_line": 10.5, "odds": -170, "book": "FanDuel",
+        "blowout_risk": "medium", "minutes_confidence": "high",
+        "reasoning": "Milwaukee should win the rebounding battle clearly here; model projects 11.9 boards, comfortably above both the book line and the 9.5 alt. Chicago is a weaker opponent, so there's some blowout risk trimming his 4th-quarter minutes — the biggest risk factor in this parlay, but the cushion between projection and alt line is large enough to absorb a shortened game."
+      }
+    ]
+  },
+  "history": [
+    {
+      "date": "2026-10-15", "combined_odds": 265, "result": "win",
+      "legs": [
+        {"player": "Nikola Jokic", "stat": "assists", "side": "over", "alt_line": 8.5, "actual": 13, "hit": true},
+        {"player": "Jayson Tatum", "stat": "points", "side": "over", "alt_line": 24.5, "actual": 29, "hit": true},
+        {"player": "Anthony Edwards", "stat": "points", "side": "over", "alt_line": 25.5, "actual": 27, "hit": true}
+      ]
+    },
+    {
+      "date": "2026-10-16", "combined_odds": 302, "result": "loss",
+      "legs": [
+        {"player": "Giannis Antetokounmpo", "stat": "points", "side": "over", "alt_line": 27.5, "actual": 24, "hit": false},
+        {"player": "Devin Booker", "stat": "assists", "side": "over", "alt_line": 5.5, "actual": 7, "hit": true},
+        {"player": "Jalen Brunson", "stat": "points", "side": "over", "alt_line": 23.5, "actual": 26, "hit": true}
+      ]
+    },
+    {
+      "date": "2026-10-17", "combined_odds": 244, "result": "win",
+      "legs": [
+        {"player": "Nikola Jokic", "stat": "rebounds", "side": "over", "alt_line": 10.5, "actual": 15, "hit": true},
+        {"player": "Kevin Durant", "stat": "points", "side": "over", "alt_line": 23.5, "actual": 25, "hit": true},
+        {"player": "Cade Cunningham", "stat": "assists", "side": "over", "alt_line": 7.5, "actual": 9, "hit": true}
+      ]
+    },
+    {
+      "date": "2026-10-18", "combined_odds": 288, "result": "win",
+      "legs": [
+        {"player": "Shai Gilgeous-Alexander", "stat": "points", "side": "over", "alt_line": 27.5, "actual": 33, "hit": true},
+        {"player": "Nikola Jokic", "stat": "points", "side": "over", "alt_line": 23.5, "actual": 30, "hit": true},
+        {"player": "Damian Lillard", "stat": "points", "side": "over", "alt_line": 22.5, "actual": 25, "hit": true}
+      ]
+    },
+    {
+      "date": "2026-10-19", "combined_odds": 256, "result": "loss",
+      "legs": [
+        {"player": "Anthony Edwards", "stat": "rebounds", "side": "over", "alt_line": 4.5, "actual": 4, "hit": false},
+        {"player": "Jayson Tatum", "stat": "rebounds", "side": "over", "alt_line": 7.5, "actual": 9, "hit": true},
+        {"player": "Jalen Brunson", "stat": "assists", "side": "over", "alt_line": 5.5, "actual": 8, "hit": true}
+      ]
+    },
+    {
+      "date": "2026-10-20", "combined_odds": 277, "result": "win",
+      "legs": [
+        {"player": "Giannis Antetokounmpo", "stat": "rebounds", "side": "over", "alt_line": 9.5, "actual": 13, "hit": true},
+        {"player": "Nikola Jokic", "stat": "assists", "side": "over", "alt_line": 8.5, "actual": 11, "hit": true},
+        {"player": "Devin Booker", "stat": "points", "side": "over", "alt_line": 24.5, "actual": 27, "hit": true}
+      ]
+    }
+  ]
+}

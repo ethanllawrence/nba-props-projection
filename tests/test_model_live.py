@@ -24,7 +24,7 @@ def test_live_model():
         return
     tmp = Path(tempfile.mkdtemp())
     site = tmp / "site"
-    shutil.copytree(ROOT / "docs" / "data", site)
+    shutil.copytree(ROOT / "tests" / "fixtures" / "site_data", site)
     os.environ.update(NPROJ_DB=str(tmp / "t.db"), NPROJ_DATA_DIR=str(tmp), NPROJ_SITE_DATA=str(site))
     import importlib
     from nproj import config

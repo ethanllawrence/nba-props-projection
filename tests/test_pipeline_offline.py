@@ -96,7 +96,7 @@ def fake_get(path, params=None, retries=3):
 def test_daily_offline():
     tmp = Path(tempfile.mkdtemp())
     site = tmp / "site"
-    shutil.copytree(ROOT / "docs" / "data", site)
+    shutil.copytree(ROOT / "tests" / "fixtures" / "site_data", site)
     (site / "early_lines.json").unlink(missing_ok=True)
     import os
     os.environ["NPROJ_DB"] = str(tmp / "t.db")
@@ -218,7 +218,7 @@ def test_odds_rationing_and_board():
 
     tmp = Path(tempfile.mkdtemp())
     site = tmp / "site"
-    shutil.copytree(ROOT / "docs" / "data", site)
+    shutil.copytree(ROOT / "tests" / "fixtures" / "site_data", site)
     (site / "early_lines.json").unlink(missing_ok=True)
     import os
     import importlib
@@ -326,7 +326,7 @@ def _fresh_env(odds_mode, remaining):
     import importlib
     tmp = Path(tempfile.mkdtemp())
     site = tmp / "site"
-    shutil.copytree(ROOT / "docs" / "data", site)
+    shutil.copytree(ROOT / "tests" / "fixtures" / "site_data", site)
     # start clean: the live site may hold real early-look prices (bought for a real date)
     (site / "early_lines.json").unlink(missing_ok=True)
     os.environ.update(NPROJ_DB=str(tmp / "t.db"), NPROJ_DATA_DIR=str(tmp), NPROJ_SITE_DATA=str(site),
