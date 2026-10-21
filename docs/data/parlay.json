@@ -67,6 +67,24 @@
       "date": "2026-10-21",
       "legs": [
         {
+          "player": "Keyonte George",
+          "player_id": "4433627",
+          "team": "UTA",
+          "opp": "MEM",
+          "home": false,
+          "game_id": "401909838",
+          "side": "over",
+          "tipoff_utc": "2026-10-22T00:00Z",
+          "stat": "points",
+          "line": 9.5,
+          "odds": -390,
+          "book": "FanDuel",
+          "model_prob": 0.977,
+          "book_prob": 0.762,
+          "gap": 0.216,
+          "proj": 24.6
+        },
+        {
           "player": "Bam Adebayo",
           "player_id": "4066261",
           "team": "MIA",
@@ -79,10 +97,10 @@
           "line": 14.5,
           "odds": -205,
           "book": "FanDuel",
-          "model_prob": 0.769,
+          "model_prob": 0.771,
           "book_prob": 0.643,
-          "gap": 0.125,
-          "proj": 20.8
+          "gap": 0.127,
+          "proj": 20.9
         },
         {
           "player": "Paolo Banchero",
@@ -97,10 +115,10 @@
           "line": 19.5,
           "odds": -188,
           "book": "FanDuel",
-          "model_prob": 0.706,
+          "model_prob": 0.74,
           "book_prob": 0.625,
-          "gap": 0.081,
-          "proj": 24.9
+          "gap": 0.115,
+          "proj": 25.8
         },
         {
           "player": "Jalen Green",
@@ -115,36 +133,18 @@
           "line": 14.5,
           "odds": -350,
           "book": "FanDuel",
-          "model_prob": 0.784,
+          "model_prob": 0.79,
           "book_prob": 0.744,
-          "gap": 0.039,
-          "proj": 21.2
-        },
-        {
-          "player": "Dillon Brooks",
-          "player_id": "3155526",
-          "team": "PHX",
-          "opp": "POR",
-          "home": false,
-          "game_id": "401909841",
-          "side": "over",
-          "tipoff_utc": "2026-10-22T02:00Z",
-          "stat": "points",
-          "line": 14.5,
-          "odds": -290,
-          "book": "FanDuel",
-          "model_prob": 0.732,
-          "book_prob": 0.712,
-          "gap": 0.02,
-          "proj": 19.9
+          "gap": 0.046,
+          "proj": 21.4
         }
       ],
-      "combined_odds": 294,
-      "model_prob": 0.312,
-      "book_prob": 0.213,
+      "combined_odds": 268,
+      "model_prob": 0.44,
+      "book_prob": 0.228,
       "status": "pending",
-      "picked_at": "2026-10-20T20:49:24Z",
-      "candidates": 19
+      "picked_at": "2026-10-21T00:19:56Z",
+      "candidates": 18
     }
   },
   "today": {
@@ -284,5 +284,5 @@
     }
   },
   "note": "Overs only, 3-4 legs at about +200 to +320 real odds on FanDuel/DraftKings, picked each morning from the night's top players: the model must project over the line and not rate the leg well below the book, and the combination it likes most relative to the book wins (the +/- number; gaps above +8 count as +8, since bigger gaps weren't better historically). Legs stay fixed once picked, unless a manual top-up re-picks from fresh prices. Settled the next morning from the real box scores. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-10-20T20:49:24Z"
+  "generated_at": "2026-10-21T00:19:56Z"
 }
