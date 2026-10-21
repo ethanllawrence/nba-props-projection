@@ -162,7 +162,13 @@ def test_live_model():
     assert len(lined) == 6, len(lined)
     assert all("p_over" in p["stats"]["points"] for p in lined)
     calls = [p["stats"]["points"]["call"] for p in lined]
-    assert "over" in calls and "under" in calls, calls
+    assert "under" in calls, calls
+    # far below the projection: an over call, or no call when 1.5x+ (live.FAR_RATIO)
+    for p in lined:
+        st = p["stats"]["points"]
+        if st["proj"] - st["line"] > 8:
+            assert st["call"] == "over" or (st["call"] is None and st.get("flag") == "far"
+                                             and st["proj"] / st["line"] >= 1.5), st
     assert all(p["stats"]["pra"]["proj"] > p["stats"]["points"]["proj"] for p in board["players"])
     print(f"OK live model: {log['projected_players']} players, points MAE {mae:.2f}, calls {calls}")
 

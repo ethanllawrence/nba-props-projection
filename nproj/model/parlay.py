@@ -441,7 +441,8 @@ def price_first(con, date_s, saved, not_before=None):
     from . import early_parlay, live
     spreads = saved.get("spreads") or espn_spreads(con, date_s)
     prices = todays_prices(date_s, saved)
-    cands = early_parlay.candidates(con, date_s, live.PROJ, prices, spreads, not_before)
+    cands = early_parlay.candidates(con, date_s, live.PROJ, prices, spreads, not_before,
+                                    main_lines=odds.board_lines(date_s).get("lines"))
     legs, price = early_parlay.select(cands)
     if not legs:
         return [], None, len(cands)

@@ -115,7 +115,11 @@ function statCell(stat, extraCls, delta, key) {
   // missing line among lined players gets a quiet dash
   let sub = hasLine ? "L " + stat.line.toFixed(1)
     : earlyView || !linedStats.has(key) ? "&nbsp;" : '<span class="dim" title="no line for this player">–</span>';
-  if (hasLine && stat.p_over != null) {
+  if (hasLine && stat.flag === "far") {
+    // projection 1.5x+ the line: the book likely knows about a role or minutes
+    // change the model can't see; historically no edge there, so no call
+    sub += ` · <span class="dim" title="Model is ${(stat.proj / stat.line).toFixed(1)}x the line. The book likely knows about a role or minutes change the model can't see; overs this far above the line haven't beaten the book, so no call.">no call ⓘ</span>`;
+  } else if (hasLine && stat.p_over != null) {
     const pick = stat.call === "under" || (!stat.call && stat.p_over < 0.5)
       ? `U ${Math.round((1 - stat.p_over) * 100)}%` : `O ${Math.round(stat.p_over * 100)}%`;
     sub += ` · ${pick}`;

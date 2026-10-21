@@ -653,7 +653,22 @@ def test_espn_props():
     print("OK espn props")
 
 
+def test_far_from_line():
+    """A projection 1.5x+ the main line gets no call (the book knows about a
+    role change the model can't see), like Isaiah Collier, Oct 21."""
+    from nproj.model import live
+    live.PROJ["far1"] = {"points": 17.8, "pra": 28.6, "var": {"points": (4.0, 0.0), "pra": (4.7, 0.0)}}
+    try:
+        v = live.assess("far1", "pra", 11.5, -128, 100)
+        assert v["call"] is None and v["flag"] == "far", v
+        assert "flag" not in live.assess("far1", "points", 15.5, -110, -110)
+    finally:
+        live.PROJ.pop("far1", None)
+    print("OK far from line")
+
+
 if __name__ == "__main__":
+    test_far_from_line()
     test_espn_props()
     test_propline()
     test_early_alts()

@@ -54,6 +54,7 @@ from pathlib import Path
 import numpy as np
 
 from .pra_model import prob_over
+from .live import FAR_RATIO
 
 POOL_TOP = 30
 MIN_MINUTES = 30.0
@@ -106,7 +107,7 @@ def _tip(t):
     return d if d.tzinfo else d.replace(tzinfo=timezone.utc)
 
 
-def candidates(con, date_s, proj, alts, spreads=None, not_before=None):
+def candidates(con, date_s, proj, alts, spreads=None, not_before=None, main_lines=None):
     """Every qualifying leg for pool players, best gap first.
     alts: {norm_name: {stat: ladder}}. spreads: {team: spread} to skip
     blowout games. not_before: UTC datetime; skip games tipping before it."""
@@ -131,15 +132,20 @@ def candidates(con, date_s, proj, alts, spreads=None, not_before=None):
             pool.append((pr["pra"], r, pr))
     pool = sorted(pool, key=lambda x: -x[0])[:POOL_TOP]
     matched, _ = odds.match_lines([r["name"] for _, r, _ in pool], alts)
+    main_matched = odds.match_lines([r["name"] for _, r, _ in pool], main_lines)[0] if main_lines else {}
     out = []
     for _, r, pr in pool:
         home = r["team"] == r["home_team"]
         who = {"player": r["name"], "player_id": str(r["player_id"]), "team": r["team"],
                "opp": r["away_team"] if home else r["home_team"], "home": home,
                "game_id": str(r["game_id"]), "side": "over", "tipoff_utc": r["tipoff_utc"]}
+        mains = (main_matched.get(r["name"]) or {}) if main_lines else {}
         for stat, ladder in (matched.get(r["name"]) or {}).items():
             if stat not in pr:
                 continue
+            ml = (mains.get(stat) or {}).get("line")
+            if ml and pr[stat] / ml >= FAR_RATIO:
+                continue                # the book knows something (see live.FAR_RATIO)
             for step in ladder:
                 price, line = step.get("over"), step.get("line")
                 if price is None or line is None or not (LEG_ODDS[0] <= int(price) <= LEG_ODDS[1]):

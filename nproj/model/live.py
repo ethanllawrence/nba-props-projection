@@ -29,6 +29,14 @@ from . import features as F
 from .pra_model import PRAModel, prob_over
 
 EDGE_MIN = 0.02
+# No call when the projection is FAR_RATIO times the main line or more: the
+# book almost certainly knows about a role or minutes change the model can't
+# see. Evidence (2026-10-21, walk-forward projections vs archived main lines,
+# 58,329 overs): at 1.5x+ the over hit 54.8-63.8%, no better than the book's
+# own 55-60%, returning -7% (PRA -14%, points -10%); the model had projected
+# 23.0 minutes where those players played 20.4. Prompted by Isaiah Collier,
+# Oct 21: 28.6 PRA projected on an 11.5 line, last 5 games from March as a starter.
+FAR_RATIO = 1.5
 MIN_PROJ_MINUTES = 18.0
 HISTORY_ROOT = Path(config.ROOT) / "history"
 CAL = json.loads((Path(__file__).parent / "calibration.json").read_text())
@@ -78,6 +86,8 @@ def assess(player_id, stat, line, over_price=None, under_price=None):
     p_model = float(prob_over(np.array([pr[stat]]), np.array([line]), a, b)[0])
     p = blended_p_over(p_model, market_prob_over(over_price, under_price))
     call, edge = None, 0.0
+    if under_price is not None and line > 0 and pr[stat] / line >= FAR_RATIO:
+        return {"p_over": round(p, 3), "call": None, "edge": 0.0, "flag": "far"}
     if over_price is not None and under_price is None:        # alt line: over only
         edge = p - implied(over_price)
         return {"p_over": round(p, 3), "call": "over" if edge >= EDGE_MIN else None,
