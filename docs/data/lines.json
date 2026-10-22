@@ -1,6072 +1,761 @@
 {
-  "date": "2026-10-21",
-  "fetched_at": "2026-10-21T22:04:50Z",
-  "allowance": 27,
-  "early_reserve": 8,
+  "date": "2026-10-22",
+  "fetched_at": "2026-10-22T13:35:07Z",
+  "allowance": 28,
+  "early_reserve": 0,
   "events": [
     {
-      "event_id": "164cc0396837d5ff433215ffd3279283",
-      "home": "WAS",
-      "away": "MIL",
-      "commence_time": "2026-10-21T23:00:00Z"
+      "event_id": "223b2883b9b05a67329ef246384b85f1",
+      "home": "OKC",
+      "away": "DEN",
+      "commence_time": "2026-10-23T01:40:00Z"
     },
     {
-      "event_id": "85e6e4e2404ef7268659739997758da1",
-      "home": "ORL",
-      "away": "ATL",
-      "commence_time": "2026-10-21T23:10:00Z"
-    },
-    {
-      "event_id": "47cc511bb5ce50f715e3625ce5ef77ee",
-      "home": "BKN",
-      "away": "CHA",
-      "commence_time": "2026-10-21T23:30:00Z"
-    },
-    {
-      "event_id": "60431a347feac3f1c7ed925b8b769ec5",
-      "home": "TOR",
-      "away": "CHI",
-      "commence_time": "2026-10-21T23:40:00Z"
-    },
-    {
-      "event_id": "93cdd8e4ade5697cfccf42ee42c4d207",
-      "home": "MIA",
-      "away": "MIN",
-      "commence_time": "2026-10-21T23:40:00Z"
-    },
-    {
-      "event_id": "fd33c09c84ab4c2fe6955d59f8dc5dd2",
-      "home": "NOP",
-      "away": "IND",
-      "commence_time": "2026-10-22T00:10:00Z"
-    },
-    {
-      "event_id": "e6769c813dd625b622df94c14a562ce2",
-      "home": "MEM",
-      "away": "UTA",
-      "commence_time": "2026-10-22T00:10:00Z"
-    },
-    {
-      "event_id": "af2f084075391e55ba2a596e7846bb40",
-      "home": "HOU",
-      "away": "DAL",
-      "commence_time": "2026-10-22T00:40:00Z"
-    },
-    {
-      "event_id": "6fff70f4bf196dba25060a5775a03b54",
-      "home": "LAL",
-      "away": "GSW",
-      "commence_time": "2026-10-22T02:00:00Z"
-    },
-    {
-      "event_id": "71e24359951927c356bd8c852fb867dd",
-      "home": "POR",
-      "away": "PHX",
-      "commence_time": "2026-10-22T02:10:00Z"
-    },
-    {
-      "event_id": "f6be3e587d43c3821d8f059c3a1f1967",
-      "home": "LAC",
-      "away": "SAC",
-      "commence_time": "2026-10-22T02:40:00Z"
+      "event_id": "110e33c79c5ec8c0377702aff685f83b",
+      "home": "PHI",
+      "away": "CLE",
+      "commence_time": "2026-10-22T23:10:00Z"
     }
   ],
-  "games_on_slate": 11,
-  "games_fetched": 11,
+  "games_on_slate": 2,
+  "games_fetched": 2,
   "markets": [
-    "player_points_rebounds_assists"
+    "player_points_rebounds_assists",
+    "player_points",
+    "player_rebounds",
+    "player_assists"
   ],
-  "credits_spent": 11,
-  "credits_remaining": 417,
+  "markets_by_game": {
+    "DEN @ OKC": [
+      "assists",
+      "points",
+      "pra",
+      "rebounds"
+    ],
+    "CLE @ PHI": [
+      "assists",
+      "points",
+      "pra",
+      "rebounds"
+    ]
+  },
+  "ladder_events": [],
+  "free_ladder_events": [
+    "110e33c79c5ec8c0377702aff685f83b",
+    "223b2883b9b05a67329ef246384b85f1"
+  ],
+  "credits_spent": 1,
+  "credits_remaining": 416,
   "lines": {
-    "tyler herro": {
-      "pra": {
-        "line": 31.5,
-        "book": "FanDuel",
-        "over": -106,
-        "under": -120
-      }
-    },
-    "kyshawn george": {
-      "pra": {
-        "line": 21.5,
-        "book": "FanDuel",
-        "over": -111,
-        "under": -115
-      }
-    },
-    "jaime jaquez": {
-      "pra": {
-        "line": 22.5,
-        "book": "FanDuel",
-        "over": -106,
-        "under": -120
-      }
-    },
-    "trae young": {
-      "pra": {
-        "line": 33.5,
-        "book": "FanDuel",
-        "over": -106,
-        "under": -120
-      }
-    },
-    "ryan rollins": {
-      "pra": {
-        "line": 26.5,
-        "book": "FanDuel",
-        "over": -118,
-        "under": -108
-      }
-    },
-    "alex sarr": {
-      "pra": {
-        "line": 23.5,
-        "book": "FanDuel",
-        "over": -106,
-        "under": -120
-      }
-    },
-    "bilal coulibaly": {
-      "pra": {
-        "line": 16.5,
-        "book": "FanDuel",
-        "over": -113,
-        "under": -113
-      }
-    },
-    "anthony davis": {
-      "pra": {
-        "line": 36.5,
-        "book": "FanDuel",
-        "over": -106,
-        "under": -120
-      }
-    },
-    "kyle kuzma": {
-      "pra": {
-        "line": 16.5,
-        "book": "FanDuel",
-        "over": -120,
-        "under": -106
-      }
-    },
-    "myles turner": {
-      "pra": {
-        "line": 17.5,
-        "book": "DraftKings",
-        "over": -111,
-        "under": -119
-      }
-    },
-    "tre johnson": {
-      "pra": {
-        "line": 16.5,
-        "book": "DraftKings",
-        "over": -103,
-        "under": -128
-      }
-    },
-    "a j green": {
-      "pra": {
-        "line": 11.5,
-        "book": "DraftKings",
-        "over": -101,
-        "under": -131
-      }
-    },
-    "paolo banchero": {
-      "pra": {
-        "line": 36.5,
-        "book": "FanDuel",
-        "over": -102,
-        "under": -125
-      }
-    },
-    "jock landale": {
-      "pra": {
-        "line": 13.5,
-        "book": "FanDuel",
-        "over": 100,
-        "under": -128
-      }
-    },
-    "jalen suggs": {
-      "pra": {
-        "line": 21.5,
-        "book": "FanDuel",
-        "over": -111,
-        "under": -115
-      }
-    },
-    "nickeil alexander walker": {
-      "pra": {
-        "line": 25.5,
-        "book": "FanDuel",
-        "over": -113,
-        "under": -113
-      }
-    },
-    "franz wagner": {
-      "pra": {
-        "line": 31.5,
-        "book": "FanDuel",
-        "over": -122,
-        "under": -104
-      }
-    },
-    "desmond bane": {
-      "pra": {
-        "line": 25.5,
-        "book": "FanDuel",
-        "over": -115,
-        "under": -111
-      }
-    },
-    "tristan da silva": {
-      "pra": {
-        "line": 14.5,
-        "book": "FanDuel",
-        "over": -113,
-        "under": -113
-      }
-    },
-    "wendell carter": {
-      "pra": {
-        "line": 19.5,
-        "book": "FanDuel",
-        "over": -104,
-        "under": -122
-      }
-    },
-    "c j mccollum": {
-      "pra": {
-        "line": 23.5,
-        "book": "FanDuel",
-        "over": -102,
-        "under": -125
-      }
-    },
-    "dyson daniels": {
-      "pra": {
-        "line": 22.5,
-        "book": "FanDuel",
-        "over": -108,
-        "under": -118
-      }
-    },
-    "onyeka okongwu": {
-      "pra": {
-        "line": 23.5,
-        "book": "FanDuel",
-        "over": -104,
-        "under": -122
-      }
-    },
-    "jalen johnson": {
-      "pra": {
-        "line": 38.5,
-        "book": "FanDuel",
-        "over": -113,
-        "under": -113
-      }
-    },
-    "grayson allen": {
-      "pra": {
-        "line": 20.5,
-        "book": "FanDuel",
-        "over": -106,
-        "under": -120
-      }
-    },
-    "egor demin": {
-      "pra": {
-        "line": 19.5,
-        "book": "FanDuel",
-        "over": -111,
-        "under": -115
-      }
-    },
-    "naz reid": {
-      "pra": {
-        "line": 27.5,
-        "book": "FanDuel",
-        "over": -120,
-        "under": -108
-      }
-    },
-    "julius randle": {
-      "pra": {
-        "line": 31.5,
-        "book": "FanDuel",
-        "over": -108,
-        "under": -118
-      }
-    },
-    "brandon miller": {
-      "pra": {
-        "line": 33.5,
-        "book": "FanDuel",
-        "over": -115,
-        "under": -111
-      }
-    },
-    "michael porter": {
-      "pra": {
-        "line": 30.5,
-        "book": "FanDuel",
-        "over": -125,
-        "under": -102
-      }
-    },
-    "mikel brown": {
-      "pra": {
-        "line": 12.5,
-        "book": "FanDuel",
-        "over": 100,
-        "under": -128
-      }
-    },
-    "day ron sharpe": {
-      "pra": {
-        "line": 22.5,
-        "book": "FanDuel",
-        "over": -102,
-        "under": -125
-      }
-    },
-    "royce o neale": {
-      "pra": {
-        "line": 14.5,
-        "book": "FanDuel",
-        "over": -125,
-        "under": -102
-      }
-    },
-    "dennis schroder": {
-      "pra": {
-        "line": 20.5,
-        "book": "FanDuel",
-        "over": -108,
-        "under": -118
-      }
-    },
-    "josh giddey": {
-      "pra": {
-        "line": 28.5,
-        "book": "FanDuel",
-        "over": -115,
-        "under": -111
-      }
-    },
-    "immanuel quickley": {
-      "pra": {
-        "line": 25.5,
-        "book": "FanDuel",
-        "over": -104,
-        "under": -122
-      }
-    },
-    "kawhi leonard": {
-      "pra": {
-        "line": 33.5,
-        "book": "FanDuel",
-        "over": -108,
-        "under": -120
-      }
-    },
-    "norman powell": {
-      "pra": {
-        "line": 24.5,
-        "book": "FanDuel",
-        "over": -102,
-        "under": -125
-      }
-    },
-    "tre jones": {
-      "pra": {
-        "line": 14.5,
-        "book": "FanDuel",
-        "over": -128,
-        "under": 100
-      }
-    },
-    "matas buzelis": {
-      "pra": {
-        "line": 23.5,
-        "book": "FanDuel",
-        "over": -122,
-        "under": -104
-      }
-    },
-    "jalen smith": {
-      "pra": {
-        "line": 21.5,
-        "book": "FanDuel",
-        "over": -102,
-        "under": -125
-      }
-    },
-    "r j barrett": {
-      "pra": {
-        "line": 26.5,
-        "book": "FanDuel",
-        "over": -122,
-        "under": -104
-      }
-    },
-    "scottie barnes": {
-      "pra": {
-        "line": 32.5,
-        "book": "FanDuel",
-        "over": -125,
-        "under": -102
-      }
-    },
-    "caleb wilson": {
-      "pra": {
-        "line": 25.5,
-        "book": "FanDuel",
-        "over": -113,
-        "under": -113
-      }
-    },
-    "jakob poeltl": {
-      "pra": {
-        "line": 19.5,
-        "book": "DraftKings",
-        "over": -105,
-        "under": -125
-      }
-    },
-    "collin murray boyles": {
-      "pra": {
-        "line": 18.5,
-        "book": "DraftKings",
-        "over": -119,
-        "under": -111
-      }
-    },
-    "jamal shead": {
-      "pra": {
-        "line": 12.5,
-        "book": "DraftKings",
-        "over": -111,
-        "under": -118
-      }
-    },
-    "bam adebayo": {
-      "pra": {
-        "line": 29.5,
-        "book": "FanDuel",
-        "over": -120,
-        "under": -106
-      }
-    },
-    "pelle larsson": {
-      "pra": {
-        "line": 16.5,
-        "book": "FanDuel",
-        "over": -111,
-        "under": -115
-      }
-    },
-    "jaden mcdaniels": {
-      "pra": {
-        "line": 23.5,
-        "book": "FanDuel",
-        "over": -108,
-        "under": -118
-      }
-    },
-    "ayo dosunmu": {
-      "pra": {
-        "line": 18.5,
-        "book": "FanDuel",
-        "over": -115,
-        "under": -111
-      }
-    },
-    "andrew wiggins": {
-      "pra": {
-        "line": 20.5,
-        "book": "FanDuel",
-        "over": -102,
-        "under": -125
-      }
-    },
-    "anthony edwards": {
-      "pra": {
-        "line": 36.5,
-        "book": "FanDuel",
-        "over": -115,
-        "under": -111
-      }
-    },
-    "davion mitchell": {
-      "pra": {
-        "line": 17.5,
-        "book": "FanDuel",
-        "over": -122,
-        "under": -104
-      }
-    },
-    "lamelo ball": {
-      "pra": {
-        "line": 33.5,
-        "book": "FanDuel",
-        "over": -111,
-        "under": -115
-      }
-    },
-    "giannis antetokounmpo": {
-      "pra": {
-        "line": 46.5,
-        "book": "FanDuel",
-        "over": -120,
-        "under": -106
-      }
-    },
-    "bennedict mathurin": {
-      "pra": {
-        "line": 18.5,
-        "book": "FanDuel",
-        "over": -106,
-        "under": -120
-      }
-    },
-    "trey murphy": {
-      "pra": {
-        "line": 29.5,
-        "book": "FanDuel",
-        "over": -108,
-        "under": -118
-      }
-    },
-    "jeremiah fears": {
-      "pra": {
-        "line": 17.5,
-        "book": "FanDuel",
-        "over": -104,
-        "under": -122
-      }
-    },
-    "jarace walker": {
-      "pra": {
+    "lebron james": {
+      "points": {
         "line": 15.5,
-        "book": "FanDuel",
-        "over": -122,
-        "under": -104
-      }
-    },
-    "dejounte murray": {
-      "pra": {
-        "line": 27.5,
-        "book": "FanDuel",
-        "over": -115,
-        "under": -111
-      }
-    },
-    "tyrese haliburton": {
-      "pra": {
-        "line": 31.5,
-        "book": "FanDuel",
-        "over": -113,
-        "under": -113
-      }
-    },
-    "pascal siakam": {
-      "pra": {
-        "line": 30.5,
-        "book": "FanDuel",
-        "over": -118,
-        "under": -108
-      }
-    },
-    "ivica zubac": {
-      "pra": {
-        "line": 28.5,
-        "book": "FanDuel",
-        "over": -118,
-        "under": -108
-      }
-    },
-    "andrew nembhard": {
-      "pra": {
-        "line": 22.5,
-        "book": "FanDuel",
-        "over": -125,
-        "under": -102
-      }
-    },
-    "herb jones": {
-      "pra": {
-        "line": 13.5,
-        "book": "FanDuel",
-        "over": -120,
-        "under": -106
-      }
-    },
-    "zion williamson": {
-      "pra": {
-        "line": 29.5,
-        "book": "FanDuel",
-        "over": -120,
-        "under": -106
-      }
-    },
-    "derik queen": {
-      "pra": {
-        "line": 16.5,
+        "over": -121,
+        "under": -105,
         "book": "DraftKings",
-        "over": -116,
-        "under": -113
-      }
-    },
-    "saddiq bey": {
-      "pra": {
-        "line": 15.5,
-        "book": "DraftKings",
-        "over": -105,
-        "under": -126
-      }
-    },
-    "darryn peterson": {
-      "pra": {
-        "line": 21.5,
-        "book": "FanDuel",
-        "over": -108,
-        "under": -118
-      }
-    },
-    "lauri markkanen": {
-      "pra": {
-        "line": 31.5,
-        "book": "FanDuel",
-        "over": -104,
-        "under": -122
-      }
-    },
-    "cam spencer": {
-      "pra": {
-        "line": 13.5,
-        "book": "FanDuel",
-        "over": -104,
-        "under": -122
-      }
-    },
-    "jaren jackson": {
-      "pra": {
-        "line": 27.5,
-        "book": "FanDuel",
-        "over": -104,
-        "under": -122
-      }
-    },
-    "keyonte george": {
-      "pra": {
-        "line": 29.5,
-        "book": "FanDuel",
-        "over": -125,
-        "under": -102
-      }
-    },
-    "cameron boozer": {
-      "pra": {
-        "line": 28.5,
-        "book": "FanDuel",
-        "over": -106,
-        "under": -120
-      }
-    },
-    "ace bailey": {
-      "pra": {
-        "line": 17.5,
-        "book": "FanDuel",
-        "over": -115,
-        "under": -111
-      }
-    },
-    "isaiah collier": {
-      "pra": {
-        "line": 11.5,
-        "book": "FanDuel",
-        "over": -128,
-        "under": 100
-      }
-    },
-    "ty jerome": {
-      "pra": {
-        "line": 30.5,
-        "book": "FanDuel",
-        "over": -104,
-        "under": -122
-      }
-    },
-    "cedric coward": {
-      "pra": {
-        "line": 22.5,
-        "book": "FanDuel",
-        "over": -120,
-        "under": -106
-      }
-    },
-    "amen thompson": {
-      "pra": {
-        "line": 29.5,
-        "book": "FanDuel",
-        "over": -125,
-        "under": -102
-      }
-    },
-    "fred vanvleet": {
-      "pra": {
-        "line": 22.5,
-        "book": "FanDuel",
-        "over": -113,
-        "under": -113
-      }
-    },
-    "reed sheppard": {
-      "pra": {
-        "line": 12.5,
-        "book": "FanDuel",
-        "over": -120,
-        "under": -106
-      }
-    },
-    "kevin durant": {
-      "pra": {
-        "line": 33.5,
-        "book": "FanDuel",
-        "over": -104,
-        "under": -122
-      }
-    },
-    "kyrie irving": {
-      "pra": {
-        "line": 28.5,
-        "book": "FanDuel",
-        "over": -115,
-        "under": -111
-      }
-    },
-    "alperen sengun": {
-      "pra": {
-        "line": 33.5,
-        "book": "FanDuel",
-        "over": -113,
-        "under": -113
-      }
-    },
-    "cooper flagg": {
-      "pra": {
-        "line": 33.5,
-        "book": "FanDuel",
-        "over": -111,
-        "under": -115
-      }
-    },
-    "naji marshall": {
-      "pra": {
-        "line": 19.5,
-        "book": "FanDuel",
-        "over": -104,
-        "under": -122
-      }
-    },
-    "zaccharie risacher": {
-      "pra": {
-        "line": 14.5,
-        "book": "FanDuel",
-        "over": -113,
-        "under": -113
-      }
-    },
-    "p j washington": {
-      "pra": {
-        "line": 20.5,
-        "book": "FanDuel",
-        "over": -111,
-        "under": -115
-      }
-    },
-    "jabari smith": {
-      "pra": {
-        "line": 20.5,
-        "book": "FanDuel",
-        "over": -115,
-        "under": -111
-      }
-    },
-    "max christie": {
-      "pra": {
-        "line": 15.5,
-        "book": "FanDuel",
-        "over": -106,
-        "under": -120
-      }
-    },
-    "de anthony melton": {
-      "pra": {
-        "line": 19.5,
-        "book": "FanDuel",
-        "over": -118,
-        "under": -108
-      }
-    },
-    "yaxel lendeborg": {
-      "pra": {
-        "line": 26.5,
-        "book": "FanDuel",
-        "over": -104,
-        "under": -122
-      }
-    },
-    "luka doncic": {
-      "pra": {
-        "line": 48.5,
-        "book": "FanDuel",
-        "over": -111,
-        "under": -115
-      }
-    },
-    "gui santos": {
-      "pra": {
-        "line": 21.5,
-        "book": "FanDuel",
-        "over": -108,
-        "under": -115
-      }
-    },
-    "walker kessler": {
-      "pra": {
-        "line": 25.5,
-        "book": "FanDuel",
-        "over": -108,
-        "under": -118
-      }
-    },
-    "austin reaves": {
-      "pra": {
-        "line": 34.5,
-        "book": "FanDuel",
-        "over": -108,
-        "under": -120
-      }
-    },
-    "draymond green": {
-      "pra": {
-        "line": 20.5,
-        "book": "FanDuel",
-        "over": 100,
-        "under": -128
-      }
-    },
-    "sandro mamukelashvili": {
-      "pra": {
-        "line": 18.5,
-        "book": "FanDuel",
-        "over": -115,
-        "under": -111
-      }
-    },
-    "quentin grimes": {
-      "pra": {
-        "line": 17.5,
-        "book": "FanDuel",
-        "over": -113,
-        "under": -113
-      }
-    },
-    "stephen curry": {
-      "pra": {
-        "line": 31.5,
-        "book": "FanDuel",
-        "over": -122,
-        "under": -104
-      }
-    },
-    "al horford": {
-      "pra": {
-        "line": 13.5,
-        "book": "DraftKings",
-        "over": -102,
-        "under": -129
-      }
-    },
-    "matisse thybulle": {
-      "pra": {
-        "line": 9.5,
-        "book": "DraftKings",
-        "over": -116,
-        "under": -113
-      }
-    },
-    "donovan clingan": {
-      "pra": {
-        "line": 24.5,
-        "book": "FanDuel",
-        "over": -112,
-        "under": -118
-      }
-    },
-    "toumani camara": {
-      "pra": {
-        "line": 17.5,
-        "book": "FanDuel",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 7.5,
         "over": -132,
-        "under": 100
-      }
-    },
-    "damian lillard": {
-      "pra": {
-        "line": 28.5,
-        "book": "FanDuel",
-        "over": -104,
-        "under": -128
-      }
-    },
-    "deni avdija": {
-      "pra": {
-        "line": 32.5,
-        "book": "FanDuel",
-        "over": -122,
-        "under": -108
-      }
-    },
-    "ja morant": {
-      "pra": {
-        "line": 27.5,
-        "book": "FanDuel",
-        "over": -108,
-        "under": -122
-      }
-    },
-    "miles bridges": {
-      "pra": {
-        "line": 23.5,
-        "book": "FanDuel",
-        "over": -122,
-        "under": -108
-      }
-    },
-    "collin gillespie": {
-      "pra": {
-        "line": 15.5,
-        "book": "FanDuel",
-        "over": -130,
-        "under": -102
-      }
-    },
-    "devin booker": {
-      "pra": {
-        "line": 34.5,
-        "book": "FanDuel",
-        "over": -112,
-        "under": -118
-      }
-    },
-    "jrue holiday": {
-      "pra": {
-        "line": 20.5,
-        "book": "FanDuel",
-        "over": -114,
-        "under": -114
-      }
-    },
-    "jalen green": {
-      "pra": {
-        "line": 27.5,
-        "book": "FanDuel",
-        "over": -106,
-        "under": -122
-      }
-    },
-    "dillon brooks": {
-      "pra": {
-        "line": 22.5,
-        "book": "FanDuel",
-        "over": -125,
-        "under": -106
-      }
-    },
-    "oso ighodaro": {
-      "pra": {
-        "line": 12.5,
+        "under": 100,
         "book": "DraftKings",
-        "over": -117,
-        "under": -112
-      }
-    },
-    "keaton wagler": {
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 6.5,
+        "over": -139,
+        "under": 105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
       "pra": {
-        "line": 20.5,
-        "book": "FanDuel",
-        "over": -106,
-        "under": -125
-      }
-    },
-    "darius garland": {
-      "pra": {
-        "line": 34.5,
-        "book": "FanDuel",
-        "over": -122,
-        "under": -110
-      }
-    },
-    "kris dunn": {
-      "pra": {
-        "line": 16.5,
-        "book": "FanDuel",
-        "over": -114,
-        "under": -114
-      }
-    },
-    "malik monk": {
-      "pra": {
-        "line": 14.5,
-        "book": "FanDuel",
-        "over": -130,
-        "under": -102
-      }
-    },
-    "keegan murray": {
-      "pra": {
-        "line": 18.5,
-        "book": "FanDuel",
-        "over": -130,
-        "under": -102
-      }
-    },
-    "zach lavine": {
-      "pra": {
-        "line": 24.5,
-        "book": "FanDuel",
+        "line": 31.5,
         "over": -110,
-        "under": -120
+        "under": -119,
+        "book": "DraftKings",
+        "source": "ESPN"
       }
     },
-    "domantas sabonis": {
+    "james harden": {
+      "points": {
+        "line": 19.5,
+        "over": -103,
+        "under": -123,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 6.5,
+        "over": -149,
+        "under": 113,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": -105,
+        "under": -125,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 31.5,
+        "over": -110,
+        "under": -119,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "kentavious caldwell pope": {
+      "points": {
+        "line": 5.5,
+        "over": -123,
+        "under": -104,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "joel embiid": {
+      "points": {
+        "line": 22.5,
+        "over": -118,
+        "under": -108,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 3.5,
+        "over": -125,
+        "under": -105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 7.5,
+        "over": -140,
+        "under": 106,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
       "pra": {
         "line": 35.5,
-        "book": "FanDuel",
-        "over": -122,
-        "under": -108
+        "over": -108,
+        "under": -122,
+        "book": "DraftKings",
+        "source": "ESPN"
       }
     },
-    "darius acuff": {
+    "donovan mitchell": {
+      "points": {
+        "line": 25.5,
+        "over": -116,
+        "under": -110,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 4.5,
+        "over": -134,
+        "under": 102,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": 110,
+        "under": -145,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
       "pra": {
-        "line": 26.5,
-        "book": "FanDuel",
+        "line": 35.5,
+        "over": -114,
+        "under": -116,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "jaylen brown": {
+      "points": {
+        "line": 20.5,
+        "over": -103,
+        "under": -123,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 3.5,
+        "over": -127,
+        "under": -104,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 5.5,
+        "over": -139,
+        "under": 106,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 30.5,
+        "over": -112,
+        "under": -118,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "jarrett allen": {
+      "points": {
+        "line": 13.5,
+        "over": -116,
+        "under": -110,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 7.5,
+        "over": -134,
+        "under": 102,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "sam merrill": {
+      "points": {
+        "line": 8.5,
         "over": -118,
-        "under": -112
+        "under": -108,
+        "book": "DraftKings",
+        "source": "ESPN"
       }
     },
-    "de andre hunter": {
+    "anfernee simons": {
+      "points": {
+        "line": 9.5,
+        "over": -102,
+        "under": -125,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
       "pra": {
-        "line": 19.5,
-        "book": "FanDuel",
-        "over": -122,
-        "under": -108
+        "line": 13.5,
+        "over": -114,
+        "under": -116,
+        "book": "DraftKings",
+        "source": "ESPN"
       }
     },
-    "derrick jones": {
+    "tyrese maxey": {
+      "points": {
+        "line": 23.5,
+        "over": -107,
+        "under": -119,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 5.5,
+        "over": 107,
+        "under": -141,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": 108,
+        "under": -142,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 32.5,
+        "over": -115,
+        "under": -114,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "evan mobley": {
+      "points": {
+        "line": 17.5,
+        "over": -122,
+        "under": -105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 3.5,
+        "over": 104,
+        "under": -137,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 8.5,
+        "over": -137,
+        "under": 104,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 30.5,
+        "over": -118,
+        "under": -112,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "peyton watson": {
+      "points": {
+        "line": 14.5,
+        "over": -108,
+        "under": -118,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": 100,
+        "under": -132,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 20.5,
+        "over": -123,
+        "under": -107,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "jaylon tyson": {
+      "points": {
+        "line": 8.5,
+        "over": -123,
+        "under": -104,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": 116,
+        "under": -153,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 14.5,
+        "over": -120,
+        "under": -110,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "vj edgecombe": {
+      "points": {
+        "line": 10.5,
+        "over": -114,
+        "under": -112,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 2.5,
+        "over": -109,
+        "under": -120,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": -128,
+        "under": -103,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
       "pra": {
         "line": 18.5,
-        "book": "FanDuel",
-        "over": -106,
-        "under": -125
+        "over": -114,
+        "under": -115,
+        "book": "DraftKings",
+        "source": "ESPN"
       }
     },
-    "rui hachimura": {
+    "demar derozan": {
+      "points": {
+        "line": 13.5,
+        "over": -103,
+        "under": -123,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 2.5,
+        "over": -126,
+        "under": -105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 2.5,
+        "over": 121,
+        "under": -160,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
       "pra": {
-        "line": 26.5,
-        "book": "FanDuel",
-        "over": -112,
-        "under": -118
+        "line": 18.5,
+        "over": -111,
+        "under": -118,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "aaron gordon": {
+      "points": {
+        "line": 14.5,
+        "over": -105,
+        "under": -122,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 2.5,
+        "over": 108,
+        "under": -143,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 5.5,
+        "over": -146,
+        "under": 111,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 23.5,
+        "over": -105,
+        "under": -125,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "nikola jokic": {
+      "points": {
+        "line": 25.5,
+        "over": -120,
+        "under": -106,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 9.5,
+        "over": -132,
+        "under": 100,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 12.5,
+        "over": -131,
+        "under": -101,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 49.5,
+        "over": -117,
+        "under": -113,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "cameron johnson": {
+      "points": {
+        "line": 12.5,
+        "over": -113,
+        "under": -113,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 1.5,
+        "over": -188,
+        "under": 142,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": -125,
+        "under": -105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 18.5,
+        "over": -118,
+        "under": -112,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "jamal murray": {
+      "points": {
+        "line": 22.5,
+        "over": -119,
+        "under": -107,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 5.5,
+        "over": -152,
+        "under": 115,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": 118,
+        "under": -156,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 33.5,
+        "over": -116,
+        "under": -113,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "isaiah hartenstein": {
+      "points": {
+        "line": 8.5,
+        "over": 107,
+        "under": -136,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 2.5,
+        "over": -127,
+        "under": -103,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 8.5,
+        "over": 106,
+        "under": -140,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 19.5,
+        "over": -114,
+        "under": -115,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "shai gilgeous alexander": {
+      "points": {
+        "line": 31.5,
+        "over": -122,
+        "under": -105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 6.5,
+        "over": -113,
+        "under": -117,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": -137,
+        "under": 104,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 42.5,
+        "over": -119,
+        "under": -111,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "christian braun": {
+      "points": {
+        "line": 10.5,
+        "over": -115,
+        "under": -111,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 1.5,
+        "over": -170,
+        "under": 128,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": 112,
+        "under": -147,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 17.5,
+        "over": -106,
+        "under": -124,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "chet holmgren": {
+      "points": {
+        "line": 14.5,
+        "over": -113,
+        "under": -112,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 1.5,
+        "over": 107,
+        "under": -141,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 8.5,
+        "over": 101,
+        "under": -132,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 24.5,
+        "over": -117,
+        "under": -112,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "jalen williams": {
+      "points": {
+        "line": 18.5,
+        "over": -117,
+        "under": -109,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 4.5,
+        "over": 100,
+        "under": -131,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": -143,
+        "under": 109,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 28.5,
+        "over": -114,
+        "under": -116,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "cason wallace": {
+      "points": {
+        "line": 8.5,
+        "over": -123,
+        "under": -104,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 2.5,
+        "over": 120,
+        "under": -159,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": 122,
+        "under": -162,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 14.5,
+        "over": -116,
+        "under": -113,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "jared mccain": {
+      "points": {
+        "line": 10.5,
+        "over": -104,
+        "under": -122,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "ajay mitchell": {
+      "points": {
+        "line": 11.5,
+        "over": -102,
+        "under": -125,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 3.5,
+        "over": 114,
+        "under": -150,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 17.5,
+        "over": -127,
+        "under": -104,
+        "book": "DraftKings",
+        "source": "ESPN"
       }
     }
   },
-  "jokic_td": null,
-  "spreads": {
-    "ORL": -2.5,
-    "ATL": 2.5,
-    "WAS": -4.5,
-    "MIL": 4.5,
-    "MIA": -1.5,
-    "MIN": 1.5,
-    "BKN": 1.5,
-    "CHA": -1.5,
-    "TOR": -10.5,
-    "CHI": 10.5,
-    "MEM": -1.5,
-    "UTA": 1.5,
-    "NOP": 3.5,
-    "IND": -3.5,
-    "HOU": -9.5,
-    "DAL": 9.5,
-    "LAL": -6.5,
-    "GSW": 6.5,
-    "POR": -2.5,
-    "PHX": 2.5,
-    "LAC": -5.5,
-    "SAC": 5.5
+  "jokic_td": {
+    "odds": -120,
+    "book": "FanDuel"
   },
-  "extras_spent": 8,
-  "alts": {
-    "isaiah collier": {
-      "pra": [
-        {
-          "line": 5.5,
-          "over": -1100,
-          "book": "FanDuel"
-        },
-        {
-          "line": 6.5,
-          "over": -670,
-          "book": "FanDuel"
-        },
-        {
-          "line": 7.5,
-          "over": -450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 8.5,
-          "over": -310,
-          "book": "FanDuel"
-        },
-        {
-          "line": 9.5,
-          "over": -235,
-          "book": "FanDuel"
-        },
-        {
-          "line": 10.5,
-          "over": -178,
-          "book": "FanDuel"
-        },
-        {
-          "line": 11.5,
-          "over": -132,
-          "book": "FanDuel"
-        },
-        {
-          "line": 12.5,
-          "over": 102,
-          "book": "FanDuel"
-        },
-        {
-          "line": 13.5,
-          "over": 130,
-          "book": "FanDuel"
-        },
-        {
-          "line": 14.5,
-          "over": 168,
-          "book": "FanDuel"
-        },
-        {
-          "line": 15.5,
-          "over": 210,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": 270,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": 320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": 410,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": 550,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": 640,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": 800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": 920,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "keyonte george": {
-      "pra": [
-        {
-          "line": 17.5,
-          "over": -4000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": -3000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -1800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -1200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -600,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -360,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": -300,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": -240,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": -192,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": -154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": -128,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": -104,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 116,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 140,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": 168,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 198,
-          "book": "FanDuel"
-        },
-        {
-          "line": 35.5,
-          "over": 230,
-          "book": "FanDuel"
-        },
-        {
-          "line": 36.5,
-          "over": 280,
-          "book": "FanDuel"
-        },
-        {
-          "line": 37.5,
-          "over": 320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 38.5,
-          "over": 390,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 40.5,
-          "over": 550,
-          "book": "FanDuel"
-        },
-        {
-          "line": 41.5,
-          "over": 640,
-          "book": "FanDuel"
-        },
-        {
-          "line": 42.5,
-          "over": 750,
-          "book": "FanDuel"
-        },
-        {
-          "line": 43.5,
-          "over": 880,
-          "book": "FanDuel"
-        },
-        {
-          "line": 44.5,
-          "over": 920,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "ty jerome": {
-      "pra": [
-        {
-          "line": 17.5,
-          "over": -3000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": -2000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -1450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -1000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -700,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -550,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -440,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -350,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": -290,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": -240,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": -200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": -160,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": -132,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": -106,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 114,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 136,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": 158,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 188,
-          "book": "FanDuel"
-        },
-        {
-          "line": 35.5,
-          "over": 225,
-          "book": "FanDuel"
-        },
-        {
-          "line": 36.5,
-          "over": 265,
-          "book": "FanDuel"
-        },
-        {
-          "line": 37.5,
-          "over": 300,
-          "book": "FanDuel"
-        },
-        {
-          "line": 38.5,
-          "over": 360,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 410,
-          "book": "FanDuel"
-        },
-        {
-          "line": 40.5,
-          "over": 490,
-          "book": "FanDuel"
-        },
-        {
-          "line": 41.5,
-          "over": 580,
-          "book": "FanDuel"
-        },
-        {
-          "line": 42.5,
-          "over": 680,
-          "book": "FanDuel"
-        },
-        {
-          "line": 43.5,
-          "over": 800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 44.5,
-          "over": 880,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "ace bailey": {
-      "pra": [
-        {
-          "line": 8.5,
-          "over": -2500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 9.5,
-          "over": -1450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 10.5,
-          "over": -900,
-          "book": "FanDuel"
-        },
-        {
-          "line": 11.5,
-          "over": -650,
-          "book": "FanDuel"
-        },
-        {
-          "line": 12.5,
-          "over": -450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 13.5,
-          "over": -330,
-          "book": "FanDuel"
-        },
-        {
-          "line": 14.5,
-          "over": -260,
-          "book": "FanDuel"
-        },
-        {
-          "line": 15.5,
-          "over": -200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": -154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": -118,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": 108,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": 138,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": 172,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": 210,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": 265,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": 320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": 390,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": 490,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": 580,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": 700,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": 850,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "darryn peterson": {
-      "pra": [
-        {
-          "line": 11.5,
-          "over": -2500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 12.5,
-          "over": -1450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 13.5,
-          "over": -1000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 14.5,
-          "over": -670,
-          "book": "FanDuel"
-        },
-        {
-          "line": 15.5,
-          "over": -490,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": -360,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": -280,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": -225,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -174,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -138,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -110,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": 114,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": 138,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": 168,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": 200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": 240,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": 290,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": 350,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": 490,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 580,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 680,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "cameron boozer": {
-      "pra": [
-        {
-          "line": 15.5,
-          "over": -4000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": -3000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": -1800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": -1200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -850,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -650,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -490,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -380,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -300,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -245,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": -198,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": -160,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": -132,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": -108,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 110,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": 130,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 182,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": 210,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 240,
-          "book": "FanDuel"
-        },
-        {
-          "line": 35.5,
-          "over": 280,
-          "book": "FanDuel"
-        },
-        {
-          "line": 36.5,
-          "over": 320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 37.5,
-          "over": 390,
-          "book": "FanDuel"
-        },
-        {
-          "line": 38.5,
-          "over": 450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 520,
-          "book": "FanDuel"
-        },
-        {
-          "line": 40.5,
-          "over": 630,
-          "book": "FanDuel"
-        },
-        {
-          "line": 41.5,
-          "over": 700,
-          "book": "FanDuel"
-        },
-        {
-          "line": 42.5,
-          "over": 800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 43.5,
-          "over": 880,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "cedric coward": {
-      "pra": [
-        {
-          "line": 11.5,
-          "over": -4000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 12.5,
-          "over": -2500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 13.5,
-          "over": -1450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 14.5,
-          "over": -1000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 15.5,
-          "over": -670,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": -490,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": -390,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": -300,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -240,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -188,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -152,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -122,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": 102,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": 126,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": 154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": 182,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": 220,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": 270,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 310,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": 370,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 430,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 520,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": 630,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 750,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "cam spencer": {
-      "pra": [
-        {
-          "line": 5.5,
-          "over": -1800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 6.5,
-          "over": -1000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 7.5,
-          "over": -650,
-          "book": "FanDuel"
-        },
-        {
-          "line": 8.5,
-          "over": -420,
-          "book": "FanDuel"
-        },
-        {
-          "line": 9.5,
-          "over": -310,
-          "book": "FanDuel"
-        },
-        {
-          "line": 10.5,
-          "over": -235,
-          "book": "FanDuel"
-        },
-        {
-          "line": 11.5,
-          "over": -180,
-          "book": "FanDuel"
-        },
-        {
-          "line": 12.5,
-          "over": -136,
-          "book": "FanDuel"
-        },
-        {
-          "line": 13.5,
-          "over": -104,
-          "book": "FanDuel"
-        },
-        {
-          "line": 14.5,
-          "over": 118,
-          "book": "FanDuel"
-        },
-        {
-          "line": 15.5,
-          "over": 152,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": 188,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": 230,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": 280,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": 350,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": 410,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": 520,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": 630,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "lauri markkanen": {
-      "pra": [
-        {
-          "line": 18.5,
-          "over": -3500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -2000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -1450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -1000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -700,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -550,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -440,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": -340,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": -280,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": -240,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": -192,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": -154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": -130,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": -106,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 114,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": 134,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 158,
-          "book": "FanDuel"
-        },
-        {
-          "line": 35.5,
-          "over": 188,
-          "book": "FanDuel"
-        },
-        {
-          "line": 36.5,
-          "over": 220,
-          "book": "FanDuel"
-        },
-        {
-          "line": 37.5,
-          "over": 265,
-          "book": "FanDuel"
-        },
-        {
-          "line": 38.5,
-          "over": 310,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 360,
-          "book": "FanDuel"
-        },
-        {
-          "line": 40.5,
-          "over": 410,
-          "book": "FanDuel"
-        },
-        {
-          "line": 41.5,
-          "over": 490,
-          "book": "FanDuel"
-        },
-        {
-          "line": 42.5,
-          "over": 580,
-          "book": "FanDuel"
-        },
-        {
-          "line": 43.5,
-          "over": 640,
-          "book": "FanDuel"
-        },
-        {
-          "line": 44.5,
-          "over": 750,
-          "book": "FanDuel"
-        },
-        {
-          "line": 45.5,
-          "over": 850,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "jaren jackson": {
-      "pra": [
-        {
-          "line": 14.5,
-          "over": -1780,
-          "book": "DraftKings"
-        },
-        {
-          "line": 19.5,
-          "over": -493,
-          "book": "DraftKings"
-        },
-        {
-          "line": 24.5,
-          "over": -184,
-          "book": "DraftKings"
-        },
-        {
-          "line": 27.5,
-          "over": -110,
-          "book": "DraftKings"
-        },
-        {
-          "line": 29.5,
-          "over": 129,
-          "book": "DraftKings"
-        },
-        {
-          "line": 34.5,
-          "over": 303,
-          "book": "DraftKings"
-        },
-        {
-          "line": 39.5,
-          "over": 720,
-          "book": "DraftKings"
-        },
-        {
-          "line": 44.5,
-          "over": 1560,
-          "book": "DraftKings"
-        }
-      ]
-    },
-    "tre jones": {
-      "pra": [
-        {
-          "line": 7.5,
-          "over": -2000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 8.5,
-          "over": -1100,
-          "book": "FanDuel"
-        },
-        {
-          "line": 9.5,
-          "over": -670,
-          "book": "FanDuel"
-        },
-        {
-          "line": 10.5,
-          "over": -450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 11.5,
-          "over": -320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 12.5,
-          "over": -235,
-          "book": "FanDuel"
-        },
-        {
-          "line": 13.5,
-          "over": -174,
-          "book": "FanDuel"
-        },
-        {
-          "line": 14.5,
-          "over": -130,
-          "book": "FanDuel"
-        },
-        {
-          "line": 15.5,
-          "over": 102,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": 134,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": 174,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": 220,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": 280,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": 350,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": 430,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": 550,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": 680,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": 880,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "kawhi leonard": {
-      "pra": [
-        {
-          "line": 19.5,
-          "over": -4000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -3000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -2000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -1400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -900,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -670,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": -500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": -400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": -320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": -270,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": -225,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": -188,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": -154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": -130,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": -110,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 110,
-          "book": "FanDuel"
-        },
-        {
-          "line": 35.5,
-          "over": 130,
-          "book": "FanDuel"
-        },
-        {
-          "line": 36.5,
-          "over": 154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 37.5,
-          "over": 182,
-          "book": "FanDuel"
-        },
-        {
-          "line": 38.5,
-          "over": 205,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 235,
-          "book": "FanDuel"
-        },
-        {
-          "line": 40.5,
-          "over": 280,
-          "book": "FanDuel"
-        },
-        {
-          "line": 41.5,
-          "over": 320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 42.5,
-          "over": 370,
-          "book": "FanDuel"
-        },
-        {
-          "line": 43.5,
-          "over": 430,
-          "book": "FanDuel"
-        },
-        {
-          "line": 44.5,
-          "over": 490,
-          "book": "FanDuel"
-        },
-        {
-          "line": 45.5,
-          "over": 580,
-          "book": "FanDuel"
-        },
-        {
-          "line": 46.5,
-          "over": 640,
-          "book": "FanDuel"
-        },
-        {
-          "line": 47.5,
-          "over": 750,
-          "book": "FanDuel"
-        },
-        {
-          "line": 48.5,
-          "over": 880,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "r j barrett": {
-      "pra": [
-        {
-          "line": 15.5,
-          "over": -3500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": -2200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": -1450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": -1000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -670,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -310,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -245,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -192,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": -154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": -125,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": -102,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": 118,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 146,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": 178,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 210,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 260,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": 310,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 370,
-          "book": "FanDuel"
-        },
-        {
-          "line": 35.5,
-          "over": 430,
-          "book": "FanDuel"
-        },
-        {
-          "line": 36.5,
-          "over": 520,
-          "book": "FanDuel"
-        },
-        {
-          "line": 37.5,
-          "over": 630,
-          "book": "FanDuel"
-        },
-        {
-          "line": 38.5,
-          "over": 700,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 850,
-          "book": "FanDuel"
-        },
-        {
-          "line": 40.5,
-          "over": 920,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "caleb wilson": {
-      "pra": [
-        {
-          "line": 14.5,
-          "over": -2500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 15.5,
-          "over": -1450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": -1100,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": -750,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": -550,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -440,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -340,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -270,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -220,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -178,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -140,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": -114,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": 106,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": 130,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": 154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 188,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": 220,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 265,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 310,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": 370,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 430,
-          "book": "FanDuel"
-        },
-        {
-          "line": 35.5,
-          "over": 550,
-          "book": "FanDuel"
-        },
-        {
-          "line": 36.5,
-          "over": 630,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "josh giddey": {
-      "pra": [
-        {
-          "line": 16.5,
-          "over": -3500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": -2200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": -1450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -1100,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -750,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -550,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -420,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -330,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -270,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": -215,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": -174,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": -144,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": -118,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 104,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": 128,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 178,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": 210,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 250,
-          "book": "FanDuel"
-        },
-        {
-          "line": 35.5,
-          "over": 290,
-          "book": "FanDuel"
-        },
-        {
-          "line": 36.5,
-          "over": 350,
-          "book": "FanDuel"
-        },
-        {
-          "line": 37.5,
-          "over": 410,
-          "book": "FanDuel"
-        },
-        {
-          "line": 38.5,
-          "over": 490,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 580,
-          "book": "FanDuel"
-        },
-        {
-          "line": 40.5,
-          "over": 680,
-          "book": "FanDuel"
-        },
-        {
-          "line": 41.5,
-          "over": 800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 42.5,
-          "over": 880,
-          "book": "FanDuel"
-        },
-        {
-          "line": 43.5,
-          "over": 1000,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "scottie barnes": {
-      "pra": [
-        {
-          "line": 20.5,
-          "over": -3500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -2500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -1600,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -1100,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": -600,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": -470,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": -360,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": -300,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": -245,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": -198,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": -158,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": -128,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": -104,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 118,
-          "book": "FanDuel"
-        },
-        {
-          "line": 35.5,
-          "over": 142,
-          "book": "FanDuel"
-        },
-        {
-          "line": 36.5,
-          "over": 172,
-          "book": "FanDuel"
-        },
-        {
-          "line": 37.5,
-          "over": 200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 38.5,
-          "over": 235,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 290,
-          "book": "FanDuel"
-        },
-        {
-          "line": 40.5,
-          "over": 320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 41.5,
-          "over": 390,
-          "book": "FanDuel"
-        },
-        {
-          "line": 42.5,
-          "over": 450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 43.5,
-          "over": 550,
-          "book": "FanDuel"
-        },
-        {
-          "line": 44.5,
-          "over": 640,
-          "book": "FanDuel"
-        },
-        {
-          "line": 45.5,
-          "over": 750,
-          "book": "FanDuel"
-        },
-        {
-          "line": 46.5,
-          "over": 880,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "norman powell": {
-      "pra": [
-        {
-          "line": 12.5,
-          "over": -3000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 13.5,
-          "over": -2000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 14.5,
-          "over": -1400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 15.5,
-          "over": -900,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": -650,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": -490,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": -390,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -310,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -245,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -194,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -158,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -130,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -104,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": 116,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": 140,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": 168,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": 198,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 235,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": 280,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 350,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": 490,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 580,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "jalen smith": {
-      "pra": [
-        {
-          "line": 10.5,
-          "over": -3500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 11.5,
-          "over": -2000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 12.5,
-          "over": -1200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 13.5,
-          "over": -800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 14.5,
-          "over": -600,
-          "book": "FanDuel"
-        },
-        {
-          "line": 15.5,
-          "over": -440,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": -330,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": -270,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": -210,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -166,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -132,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -104,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": 118,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": 142,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": 174,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": 205,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": 250,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": 300,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": 360,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 430,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": 520,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 630,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 700,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "matas buzelis": {
-      "pra": [
-        {
-          "line": 12.5,
-          "over": -3000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 13.5,
-          "over": -2000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 14.5,
-          "over": -1400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 15.5,
-          "over": -900,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": -650,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": -470,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": -360,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -290,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -240,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -192,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -125,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": 100,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": 124,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": 152,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": 178,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": 220,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 260,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": 310,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 360,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 410,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": 520,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 630,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "immanuel quickley": {
-      "pra": [
-        {
-          "line": 14.5,
-          "over": -1800,
-          "book": "DraftKings"
-        },
-        {
-          "line": 19.5,
-          "over": -444,
-          "book": "DraftKings"
-        },
-        {
-          "line": 24.5,
-          "over": -152,
-          "book": "DraftKings"
-        },
-        {
-          "line": 25.5,
-          "over": -124,
-          "book": "DraftKings"
-        },
-        {
-          "line": 29.5,
-          "over": 171,
-          "book": "DraftKings"
-        },
-        {
-          "line": 34.5,
-          "over": 433,
-          "book": "DraftKings"
-        },
-        {
-          "line": 39.5,
-          "over": 1000,
-          "book": "DraftKings"
-        },
-        {
-          "line": 44.5,
-          "over": 2000,
-          "book": "DraftKings"
-        }
-      ]
-    },
-    "jakob poeltl": {
-      "pra": [
-        {
-          "line": 9.5,
-          "over": -1160,
-          "book": "DraftKings"
-        },
-        {
-          "line": 14.5,
-          "over": -312,
-          "book": "DraftKings"
-        },
-        {
-          "line": 19.5,
-          "over": -107,
-          "book": "DraftKings"
-        },
-        {
-          "line": 24.5,
-          "over": 251,
-          "book": "DraftKings"
-        },
-        {
-          "line": 29.5,
-          "over": 690,
-          "book": "DraftKings"
-        },
-        {
-          "line": 34.5,
-          "over": 1720,
-          "book": "DraftKings"
-        }
-      ]
-    },
-    "collin murray boyles": {
-      "pra": [
-        {
-          "line": 9.5,
-          "over": -1840,
-          "book": "DraftKings"
-        },
-        {
-          "line": 14.5,
-          "over": -325,
-          "book": "DraftKings"
-        },
-        {
-          "line": 18.5,
-          "over": -119,
-          "book": "DraftKings"
-        },
-        {
-          "line": 19.5,
-          "over": 106,
-          "book": "DraftKings"
-        },
-        {
-          "line": 24.5,
-          "over": 302,
-          "book": "DraftKings"
-        },
-        {
-          "line": 29.5,
-          "over": 840,
-          "book": "DraftKings"
-        },
-        {
-          "line": 34.5,
-          "over": 1960,
-          "book": "DraftKings"
-        }
-      ]
-    },
-    "jamal shead": {
-      "pra": [
-        {
-          "line": 4.5,
-          "over": -4700,
-          "book": "DraftKings"
-        },
-        {
-          "line": 9.5,
-          "over": -280,
-          "book": "DraftKings"
-        },
-        {
-          "line": 12.5,
-          "over": -111,
-          "book": "DraftKings"
-        },
-        {
-          "line": 14.5,
-          "over": 153,
-          "book": "DraftKings"
-        },
-        {
-          "line": 19.5,
-          "over": 562,
-          "book": "DraftKings"
-        },
-        {
-          "line": 24.5,
-          "over": 1620,
-          "book": "DraftKings"
-        }
-      ]
-    },
-    "ja kobe walter": {
-      "pra": [
-        {
-          "line": 4.5,
-          "over": -1180,
-          "book": "DraftKings"
-        },
-        {
-          "line": 9.5,
-          "over": -175,
-          "book": "DraftKings"
-        },
-        {
-          "line": 11.5,
-          "over": -102,
-          "book": "DraftKings"
-        },
-        {
-          "line": 14.5,
-          "over": 208,
-          "book": "DraftKings"
-        },
-        {
-          "line": 19.5,
-          "over": 670,
-          "book": "DraftKings"
-        },
-        {
-          "line": 24.5,
-          "over": 1720,
-          "book": "DraftKings"
-        }
-      ]
-    },
-    "tyrese haliburton": {
-      "pra": [
-        {
-          "line": 19.5,
-          "over": -2500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": -170,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 360,
-          "book": "FanDuel"
-        },
-        {
-          "line": 44.5,
-          "over": 830,
-          "book": "FanDuel"
-        },
-        {
-          "line": 49.5,
-          "over": 1500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 54.5,
-          "over": 5000,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "pascal siakam": {
-      "pra": [
-        {
-          "line": 18.5,
-          "over": -3000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -2000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -1800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -1400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -1000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -700,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -550,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -410,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -420,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": -330,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": -270,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": -220,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": -178,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": -146,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": -142,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": -120,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 102,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 124,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": 148,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 180,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 178,
-          "book": "FanDuel"
-        },
-        {
-          "line": 35.5,
-          "over": 210,
-          "book": "FanDuel"
-        },
-        {
-          "line": 36.5,
-          "over": 240,
-          "book": "FanDuel"
-        },
-        {
-          "line": 37.5,
-          "over": 290,
-          "book": "FanDuel"
-        },
-        {
-          "line": 38.5,
-          "over": 350,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 420,
-          "book": "FanDuel"
-        },
-        {
-          "line": 40.5,
-          "over": 490,
-          "book": "FanDuel"
-        },
-        {
-          "line": 41.5,
-          "over": 580,
-          "book": "FanDuel"
-        },
-        {
-          "line": 42.5,
-          "over": 640,
-          "book": "FanDuel"
-        },
-        {
-          "line": 43.5,
-          "over": 750,
-          "book": "FanDuel"
-        },
-        {
-          "line": 44.5,
-          "over": 1000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 44.5,
-          "over": 880,
-          "book": "FanDuel"
-        },
-        {
-          "line": 45.5,
-          "over": 1000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 49.5,
-          "over": 1800,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "zion williamson": {
-      "pra": [
-        {
-          "line": 14.5,
-          "over": -7000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": -3000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": -2000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -1400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -1200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -900,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -700,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -550,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -420,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": -270,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": -220,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": -180,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": -152,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": -122,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": -120,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": -102,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 118,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 142,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": 172,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 198,
-          "book": "FanDuel"
-        },
-        {
-          "line": 35.5,
-          "over": 230,
-          "book": "FanDuel"
-        },
-        {
-          "line": 36.5,
-          "over": 280,
-          "book": "FanDuel"
-        },
-        {
-          "line": 37.5,
-          "over": 320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 38.5,
-          "over": 370,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 430,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 40.5,
-          "over": 520,
-          "book": "FanDuel"
-        },
-        {
-          "line": 41.5,
-          "over": 630,
-          "book": "FanDuel"
-        },
-        {
-          "line": 42.5,
-          "over": 680,
-          "book": "FanDuel"
-        },
-        {
-          "line": 43.5,
-          "over": 800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 44.5,
-          "over": 1000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 44.5,
-          "over": 880,
-          "book": "FanDuel"
-        },
-        {
-          "line": 49.5,
-          "over": 1700,
-          "book": "FanDuel"
-        },
-        {
-          "line": 54.5,
-          "over": 5000,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "trey murphy": {
-      "pra": [
-        {
-          "line": 14.5,
-          "over": -7000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": -4000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": -2500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": -1600,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -1000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -1100,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -600,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -470,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -360,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -295,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -300,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": -245,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": -200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": -162,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": -132,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": -108,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": -110,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": 110,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 134,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 158,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": 188,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 230,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 225,
-          "book": "FanDuel"
-        },
-        {
-          "line": 35.5,
-          "over": 270,
-          "book": "FanDuel"
-        },
-        {
-          "line": 36.5,
-          "over": 320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 37.5,
-          "over": 370,
-          "book": "FanDuel"
-        },
-        {
-          "line": 38.5,
-          "over": 430,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 540,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 520,
-          "book": "FanDuel"
-        },
-        {
-          "line": 40.5,
-          "over": 630,
-          "book": "FanDuel"
-        },
-        {
-          "line": 41.5,
-          "over": 700,
-          "book": "FanDuel"
-        },
-        {
-          "line": 42.5,
-          "over": 850,
-          "book": "FanDuel"
-        },
-        {
-          "line": 43.5,
-          "over": 920,
-          "book": "FanDuel"
-        },
-        {
-          "line": 44.5,
-          "over": 1200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 49.5,
-          "over": 2500,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "ivica zubac": {
-      "pra": [
-        {
-          "line": 14.5,
-          "over": -7000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -1000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -280,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 102,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 255,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 630,
-          "book": "FanDuel"
-        },
-        {
-          "line": 44.5,
-          "over": 1400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 49.5,
-          "over": 3500,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "dejounte murray": {
-      "pra": [
-        {
-          "line": 14.5,
-          "over": -5000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 15.5,
-          "over": -3500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": -2200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": -1450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": -1100,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -750,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -720,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -580,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -350,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -275,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -220,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -230,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": -182,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": -146,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": -118,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": 104,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 128,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 130,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": 154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 182,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 220,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": 270,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 310,
-          "book": "FanDuel"
-        },
-        {
-          "line": 35.5,
-          "over": 370,
-          "book": "FanDuel"
-        },
-        {
-          "line": 36.5,
-          "over": 430,
-          "book": "FanDuel"
-        },
-        {
-          "line": 37.5,
-          "over": 550,
-          "book": "FanDuel"
-        },
-        {
-          "line": 38.5,
-          "over": 630,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 750,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 40.5,
-          "over": 850,
-          "book": "FanDuel"
-        },
-        {
-          "line": 41.5,
-          "over": 920,
-          "book": "FanDuel"
-        },
-        {
-          "line": 44.5,
-          "over": 1500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 49.5,
-          "over": 3500,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "andrew nembhard": {
-      "pra": [
-        {
-          "line": 12.5,
-          "over": -4000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 13.5,
-          "over": -2500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 14.5,
-          "over": -1450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 14.5,
-          "over": -1400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 15.5,
-          "over": -900,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": -650,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": -470,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": -350,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -270,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -265,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -210,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -162,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -130,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -102,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": 126,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": 122,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": 154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": 188,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": 225,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": 280,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 350,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 350,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": 410,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 520,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 630,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": 700,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 900,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 880,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 1800,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "bennedict mathurin": {
-      "pra": [
-        {
-          "line": 9.5,
-          "over": -1600,
-          "book": "FanDuel"
-        },
-        {
-          "line": 14.5,
-          "over": -290,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": 116,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": 320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 830,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 1700,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 4000,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "jeremiah fears": {
-      "pra": [
-        {
-          "line": 9.5,
-          "over": -1000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 14.5,
-          "over": -215,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": 154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": 430,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 1100,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 3000,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "jarace walker": {
-      "pra": [
-        {
-          "line": 9.5,
-          "over": -650,
-          "book": "FanDuel"
-        },
-        {
-          "line": 14.5,
-          "over": -158,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": 200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": 540,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 1400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 3500,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "herb jones": {
-      "pra": [
-        {
-          "line": 9.5,
-          "over": -460,
-          "book": "FanDuel"
-        },
-        {
-          "line": 14.5,
-          "over": 112,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": 400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": 1200,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "kelly oubre": {
-      "pra": [
-        {
-          "line": 9.5,
-          "over": -1320,
-          "book": "DraftKings"
-        },
-        {
-          "line": 14.5,
-          "over": -312,
-          "book": "DraftKings"
-        },
-        {
-          "line": 19.5,
-          "over": -104,
-          "book": "DraftKings"
-        },
-        {
-          "line": 24.5,
-          "over": 258,
-          "book": "DraftKings"
-        },
-        {
-          "line": 29.5,
-          "over": 670,
-          "book": "DraftKings"
-        },
-        {
-          "line": 34.5,
-          "over": 1580,
-          "book": "DraftKings"
-        }
-      ]
-    },
-    "obi toppin": {
-      "pra": [
-        {
-          "line": 9.5,
-          "over": -900,
-          "book": "DraftKings"
-        },
-        {
-          "line": 14.5,
-          "over": -213,
-          "book": "DraftKings"
-        },
-        {
-          "line": 17.5,
-          "over": -108,
-          "book": "DraftKings"
-        },
-        {
-          "line": 19.5,
-          "over": 140,
-          "book": "DraftKings"
-        },
-        {
-          "line": 24.5,
-          "over": 375,
-          "book": "DraftKings"
-        },
-        {
-          "line": 29.5,
-          "over": 930,
-          "book": "DraftKings"
-        },
-        {
-          "line": 34.5,
-          "over": 1980,
-          "book": "DraftKings"
-        }
-      ]
-    },
-    "derik queen": {
-      "pra": [
-        {
-          "line": 9.5,
-          "over": -880,
-          "book": "DraftKings"
-        },
-        {
-          "line": 14.5,
-          "over": -192,
-          "book": "DraftKings"
-        },
-        {
-          "line": 16.5,
-          "over": -116,
-          "book": "DraftKings"
-        },
-        {
-          "line": 19.5,
-          "over": 169,
-          "book": "DraftKings"
-        },
-        {
-          "line": 24.5,
-          "over": 489,
-          "book": "DraftKings"
-        },
-        {
-          "line": 29.5,
-          "over": 1300,
-          "book": "DraftKings"
-        }
-      ]
-    },
-    "saddiq bey": {
-      "pra": [
-        {
-          "line": 9.5,
-          "over": -559,
-          "book": "DraftKings"
-        },
-        {
-          "line": 14.5,
-          "over": -133,
-          "book": "DraftKings"
-        },
-        {
-          "line": 15.5,
-          "over": -105,
-          "book": "DraftKings"
-        },
-        {
-          "line": 19.5,
-          "over": 233,
-          "book": "DraftKings"
-        },
-        {
-          "line": 24.5,
-          "over": 650,
-          "book": "DraftKings"
-        },
-        {
-          "line": 29.5,
-          "over": 1640,
-          "book": "DraftKings"
-        }
-      ]
-    },
-    "yves missi": {
-      "pra": [
-        {
-          "line": 9.5,
-          "over": -640,
-          "book": "DraftKings"
-        },
-        {
-          "line": 14.5,
-          "over": -146,
-          "book": "DraftKings"
-        },
-        {
-          "line": 15.5,
-          "over": -115,
-          "book": "DraftKings"
-        },
-        {
-          "line": 19.5,
-          "over": 226,
-          "book": "DraftKings"
-        },
-        {
-          "line": 24.5,
-          "over": 670,
-          "book": "DraftKings"
-        },
-        {
-          "line": 29.5,
-          "over": 1660,
-          "book": "DraftKings"
-        }
-      ]
-    },
-    "kevin durant": {
-      "pra": [
-        {
-          "line": 20.5,
-          "over": -4000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -3000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -1800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -1200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -900,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": -670,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": -490,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": -390,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": -310,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": -245,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": -200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": -160,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": -130,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": -106,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 116,
-          "book": "FanDuel"
-        },
-        {
-          "line": 35.5,
-          "over": 140,
-          "book": "FanDuel"
-        },
-        {
-          "line": 36.5,
-          "over": 164,
-          "book": "FanDuel"
-        },
-        {
-          "line": 37.5,
-          "over": 194,
-          "book": "FanDuel"
-        },
-        {
-          "line": 38.5,
-          "over": 230,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 280,
-          "book": "FanDuel"
-        },
-        {
-          "line": 40.5,
-          "over": 320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 41.5,
-          "over": 390,
-          "book": "FanDuel"
-        },
-        {
-          "line": 42.5,
-          "over": 450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 43.5,
-          "over": 550,
-          "book": "FanDuel"
-        },
-        {
-          "line": 44.5,
-          "over": 640,
-          "book": "FanDuel"
-        },
-        {
-          "line": 45.5,
-          "over": 750,
-          "book": "FanDuel"
-        },
-        {
-          "line": 46.5,
-          "over": 880,
-          "book": "FanDuel"
-        },
-        {
-          "line": 47.5,
-          "over": 920,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "fred vanvleet": {
-      "pra": [
-        {
-          "line": 12.5,
-          "over": -3500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 13.5,
-          "over": -2000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 14.5,
-          "over": -1400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 15.5,
-          "over": -850,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": -580,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": -420,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": -320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -245,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -188,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -148,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -114,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": 108,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": 140,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": 174,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": 210,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": 265,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": 320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": 490,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 580,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 700,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": 850,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 920,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "jabari smith": {
-      "pra": [
-        {
-          "line": 10.5,
-          "over": -4000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 11.5,
-          "over": -2500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 12.5,
-          "over": -1450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 13.5,
-          "over": -900,
-          "book": "FanDuel"
-        },
-        {
-          "line": 14.5,
-          "over": -650,
-          "book": "FanDuel"
-        },
-        {
-          "line": 15.5,
-          "over": -440,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": -330,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": -260,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": -200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -118,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": 108,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": 134,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": 168,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": 205,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": 250,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": 310,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": 370,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": 450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 580,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": 680,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 920,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "kyrie irving": {
-      "pra": [
-        {
-          "line": 15.5,
-          "over": -4000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": -3000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": -1800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": -1200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -900,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -670,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -500,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -260,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": -210,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": -174,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": -140,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": -118,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": 102,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": 124,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 152,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 174,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": 205,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 240,
-          "book": "FanDuel"
-        },
-        {
-          "line": 35.5,
-          "over": 290,
-          "book": "FanDuel"
-        },
-        {
-          "line": 36.5,
-          "over": 350,
-          "book": "FanDuel"
-        },
-        {
-          "line": 37.5,
-          "over": 400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 38.5,
-          "over": 490,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 580,
-          "book": "FanDuel"
-        },
-        {
-          "line": 40.5,
-          "over": 640,
-          "book": "FanDuel"
-        },
-        {
-          "line": 41.5,
-          "over": 800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 42.5,
-          "over": 880,
-          "book": "FanDuel"
-        },
-        {
-          "line": 43.5,
-          "over": 1000,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "max christie": {
-      "pra": [
-        {
-          "line": 7.5,
-          "over": -1800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 8.5,
-          "over": -1100,
-          "book": "FanDuel"
-        },
-        {
-          "line": 9.5,
-          "over": -670,
-          "book": "FanDuel"
-        },
-        {
-          "line": 10.5,
-          "over": -450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 11.5,
-          "over": -320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 12.5,
-          "over": -245,
-          "book": "FanDuel"
-        },
-        {
-          "line": 13.5,
-          "over": -186,
-          "book": "FanDuel"
-        },
-        {
-          "line": 14.5,
-          "over": -140,
-          "book": "FanDuel"
-        },
-        {
-          "line": 15.5,
-          "over": -108,
-          "book": "FanDuel"
-        },
-        {
-          "line": 16.5,
-          "over": 118,
-          "book": "FanDuel"
-        },
-        {
-          "line": 17.5,
-          "over": 154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 18.5,
-          "over": 194,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": 235,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": 300,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": 370,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": 450,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": 580,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": 680,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "cooper flagg": {
-      "pra": [
-        {
-          "line": 20.5,
-          "over": -3000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -2000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -1400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -1000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -700,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": -580,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": -440,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": -350,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": -290,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": -245,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": -198,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": -162,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": -136,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": -112,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 108,
-          "book": "FanDuel"
-        },
-        {
-          "line": 35.5,
-          "over": 128,
-          "book": "FanDuel"
-        },
-        {
-          "line": 36.5,
-          "over": 154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 37.5,
-          "over": 182,
-          "book": "FanDuel"
-        },
-        {
-          "line": 38.5,
-          "over": 210,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 250,
-          "book": "FanDuel"
-        },
-        {
-          "line": 40.5,
-          "over": 290,
-          "book": "FanDuel"
-        },
-        {
-          "line": 41.5,
-          "over": 320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 42.5,
-          "over": 400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 43.5,
-          "over": 490,
-          "book": "FanDuel"
-        },
-        {
-          "line": 44.5,
-          "over": 580,
-          "book": "FanDuel"
-        },
-        {
-          "line": 45.5,
-          "over": 640,
-          "book": "FanDuel"
-        },
-        {
-          "line": 46.5,
-          "over": 750,
-          "book": "FanDuel"
-        },
-        {
-          "line": 47.5,
-          "over": 880,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "amen thompson": {
-      "pra": [
-        {
-          "line": 18.5,
-          "over": -4000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 19.5,
-          "over": -3000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 20.5,
-          "over": -1600,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -1100,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -750,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -550,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -420,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": -320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": -260,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": -205,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": -158,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": -128,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": 100,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": 124,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": 154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": 194,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 230,
-          "book": "FanDuel"
-        },
-        {
-          "line": 35.5,
-          "over": 280,
-          "book": "FanDuel"
-        },
-        {
-          "line": 36.5,
-          "over": 350,
-          "book": "FanDuel"
-        },
-        {
-          "line": 37.5,
-          "over": 410,
-          "book": "FanDuel"
-        },
-        {
-          "line": 38.5,
-          "over": 490,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 630,
-          "book": "FanDuel"
-        },
-        {
-          "line": 40.5,
-          "over": 700,
-          "book": "FanDuel"
-        },
-        {
-          "line": 41.5,
-          "over": 880,
-          "book": "FanDuel"
-        },
-        {
-          "line": 42.5,
-          "over": 920,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "alperen sengun": {
-      "pra": [
-        {
-          "line": 20.5,
-          "over": -4000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 21.5,
-          "over": -3000,
-          "book": "FanDuel"
-        },
-        {
-          "line": 22.5,
-          "over": -1800,
-          "book": "FanDuel"
-        },
-        {
-          "line": 23.5,
-          "over": -1200,
-          "book": "FanDuel"
-        },
-        {
-          "line": 24.5,
-          "over": -850,
-          "book": "FanDuel"
-        },
-        {
-          "line": 25.5,
-          "over": -650,
-          "book": "FanDuel"
-        },
-        {
-          "line": 26.5,
-          "over": -490,
-          "book": "FanDuel"
-        },
-        {
-          "line": 27.5,
-          "over": -400,
-          "book": "FanDuel"
-        },
-        {
-          "line": 28.5,
-          "over": -320,
-          "book": "FanDuel"
-        },
-        {
-          "line": 29.5,
-          "over": -260,
-          "book": "FanDuel"
-        },
-        {
-          "line": 30.5,
-          "over": -210,
-          "book": "FanDuel"
-        },
-        {
-          "line": 31.5,
-          "over": -174,
-          "book": "FanDuel"
-        },
-        {
-          "line": 32.5,
-          "over": -144,
-          "book": "FanDuel"
-        },
-        {
-          "line": 33.5,
-          "over": -114,
-          "book": "FanDuel"
-        },
-        {
-          "line": 34.5,
-          "over": 104,
-          "book": "FanDuel"
-        },
-        {
-          "line": 35.5,
-          "over": 128,
-          "book": "FanDuel"
-        },
-        {
-          "line": 36.5,
-          "over": 154,
-          "book": "FanDuel"
-        },
-        {
-          "line": 37.5,
-          "over": 182,
-          "book": "FanDuel"
-        },
-        {
-          "line": 38.5,
-          "over": 220,
-          "book": "FanDuel"
-        },
-        {
-          "line": 39.5,
-          "over": 250,
-          "book": "FanDuel"
-        },
-        {
-          "line": 40.5,
-          "over": 300,
-          "book": "FanDuel"
-        },
-        {
-          "line": 41.5,
-          "over": 360,
-          "book": "FanDuel"
-        },
-        {
-          "line": 42.5,
-          "over": 410,
-          "book": "FanDuel"
-        },
-        {
-          "line": 43.5,
-          "over": 520,
-          "book": "FanDuel"
-        },
-        {
-          "line": 44.5,
-          "over": 580,
-          "book": "FanDuel"
-        },
-        {
-          "line": 45.5,
-          "over": 680,
-          "book": "FanDuel"
-        },
-        {
-          "line": 46.5,
-          "over": 750,
-          "book": "FanDuel"
-        },
-        {
-          "line": 47.5,
-          "over": 880,
-          "book": "FanDuel"
-        }
-      ]
-    },
-    "p j washington": {
-      "pra": [
-        {
-          "line": 9.5,
-          "over": -3300,
-          "book": "DraftKings"
-        },
-        {
-          "line": 14.5,
-          "over": -503,
-          "book": "DraftKings"
-        },
-        {
-          "line": 19.5,
-          "over": -151,
-          "book": "DraftKings"
-        },
-        {
-          "line": 20.5,
-          "over": -122,
-          "book": "DraftKings"
-        },
-        {
-          "line": 24.5,
-          "over": 190,
-          "book": "DraftKings"
-        },
-        {
-          "line": 29.5,
-          "over": 498,
-          "book": "DraftKings"
-        },
-        {
-          "line": 34.5,
-          "over": 1260,
-          "book": "DraftKings"
-        },
-        {
-          "line": 39.5,
-          "over": 2500,
-          "book": "DraftKings"
-        }
-      ]
-    },
-    "naji marshall": {
-      "pra": [
-        {
-          "line": 9.5,
-          "over": -2200,
-          "book": "DraftKings"
-        },
-        {
-          "line": 14.5,
-          "over": -340,
-          "book": "DraftKings"
-        },
-        {
-          "line": 18.5,
-          "over": -123,
-          "book": "DraftKings"
-        },
-        {
-          "line": 19.5,
-          "over": 102,
-          "book": "DraftKings"
-        },
-        {
-          "line": 24.5,
-          "over": 297,
-          "book": "DraftKings"
-        },
-        {
-          "line": 29.5,
-          "over": 800,
-          "book": "DraftKings"
-        },
-        {
-          "line": 34.5,
-          "over": 1960,
-          "book": "DraftKings"
-        }
-      ]
-    },
-    "zaccharie risacher": {
-      "pra": [
-        {
-          "line": 9.5,
-          "over": -407,
-          "book": "DraftKings"
-        },
-        {
-          "line": 14.5,
-          "over": -105,
-          "book": "DraftKings"
-        },
-        {
-          "line": 19.5,
-          "over": 288,
-          "book": "DraftKings"
-        },
-        {
-          "line": 24.5,
-          "over": 770,
-          "book": "DraftKings"
-        },
-        {
-          "line": 29.5,
-          "over": 1760,
-          "book": "DraftKings"
-        }
-      ]
-    },
-    "reed sheppard": {
-      "pra": [
-        {
-          "line": 4.5,
-          "over": -2300,
-          "book": "DraftKings"
-        },
-        {
-          "line": 9.5,
-          "over": -268,
-          "book": "DraftKings"
-        },
-        {
-          "line": 12.5,
-          "over": -118,
-          "book": "DraftKings"
-        },
-        {
-          "line": 14.5,
-          "over": 136,
-          "book": "DraftKings"
-        },
-        {
-          "line": 19.5,
-          "over": 408,
-          "book": "DraftKings"
-        },
-        {
-          "line": 24.5,
-          "over": 1120,
-          "book": "DraftKings"
-        },
-        {
-          "line": 29.5,
-          "over": 2200,
-          "book": "DraftKings"
-        }
-      ]
-    }
-  }
+  "spreads": {
+    "PHI": -3.5,
+    "CLE": 3.5,
+    "OKC": -8.5,
+    "DEN": 8.5
+  },
+  "alts": {},
+  "alts_fetched_at": "2026-10-22T13:35:07Z"
 }

@@ -345,13 +345,14 @@
         "book_line": 10.5,
         "proj": 14.4,
         "prob": 0.852,
-        "book_prob": 0.712,
-        "gap": 0.14,
-        "odds": -290,
+        "book_prob": 0.706,
+        "gap": 0.146,
+        "odds": -282,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 14.4 points: 85% to clear 7.5 (star-calibrated) vs the book's 71% at -290, a +14 point gap. Projected for 34.9 minutes; PHI -2.5 spread."
+        "reasoning": "Model projects 14.4 points: 85% to clear 7.5 (star-calibrated) vs the book's 71% at -282, a +15 point gap. Projected for 34.9 minutes; PHI -3.5 spread.",
+        "night_odds": -290
       },
       {
         "player": "Joel Embiid",
@@ -368,13 +369,14 @@
         "book_line": 22.5,
         "proj": 25.6,
         "prob": 0.812,
-        "book_prob": 0.718,
-        "gap": 0.094,
-        "odds": -301,
+        "book_prob": 0.722,
+        "gap": 0.089,
+        "odds": -308,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 25.6 points: 81% to clear 17.5 (star-calibrated) vs the book's 72% at -301, a +9 point gap. Projected for 34.1 minutes; PHI -2.5 spread."
+        "reasoning": "Model projects 25.6 points: 81% to clear 17.5 (star-calibrated) vs the book's 72% at -308, a +9 point gap. Projected for 34.1 minutes; PHI -3.5 spread.",
+        "night_odds": -301
       },
       {
         "player": "Shai Gilgeous-Alexander",
@@ -390,18 +392,19 @@
         "line_type": "alt",
         "book_line": 6.5,
         "proj": 7.1,
-        "prob": 0.709,
-        "book_prob": 0.646,
-        "gap": 0.063,
-        "odds": -208,
+        "prob": 0.711,
+        "book_prob": 0.649,
+        "gap": 0.062,
+        "odds": -211,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 7.1 assists: 71% to clear 5.5 (star-calibrated) vs the book's 65% at -208, a +6 point gap. Projected for 34.1 minutes; OKC -8.5 spread."
+        "reasoning": "Model projects 7.1 assists: 71% to clear 5.5 (star-calibrated) vs the book's 65% at -211, a +6 point gap. Projected for 34.1 minutes; OKC -8.5 spread.",
+        "night_odds": -208
       },
       {
-        "player": "Jamal Murray",
-        "player_id": "3936299",
+        "player": "Cameron Johnson",
+        "player_id": "3138196",
         "game_id": "401909094",
         "team": "DEN",
         "opp": "OKC",
@@ -412,22 +415,70 @@
         "line": 2.5,
         "line_type": "alt",
         "book_line": 3.5,
-        "proj": 4.3,
-        "prob": 0.782,
-        "book_prob": 0.734,
-        "gap": 0.048,
-        "odds": -330,
+        "proj": 4.0,
+        "prob": 0.737,
+        "book_prob": 0.704,
+        "gap": 0.032,
+        "odds": -279,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 4.3 rebounds: 78% to clear 2.5 (star-calibrated) vs the book's 73% at -330, a +5 point gap. Projected for 35.4 minutes; DEN +8.5 spread."
+        "reasoning": "Model projects 4.0 rebounds: 74% to clear 2.5 (star-calibrated) vs the book's 70% at -279, a +3 point gap. Projected for 30.7 minutes; DEN +8.5 spread."
       }
     ],
-    "combined_odds": 246,
-    "status": "pending"
+    "combined_odds": 259,
+    "status": "pending",
+    "night": {
+      "combined_odds": 246,
+      "picked_at": "2026-10-22T05:27:00Z",
+      "legs": [
+        {
+          "player": "VJ Edgecombe",
+          "stat": "points",
+          "line": 7.5,
+          "odds": -290
+        },
+        {
+          "player": "Joel Embiid",
+          "stat": "points",
+          "line": 17.5,
+          "odds": -301
+        },
+        {
+          "player": "Shai Gilgeous-Alexander",
+          "stat": "assists",
+          "line": 5.5,
+          "odds": -208
+        },
+        {
+          "player": "Jamal Murray",
+          "stat": "rebounds",
+          "line": 2.5,
+          "odds": -330
+        }
+      ]
+    },
+    "morning_checked": "2026-10-22T13:35:07Z",
+    "changes": [
+      {
+        "out": {
+          "player": "Jamal Murray",
+          "stat": "rebounds",
+          "line": 2.5,
+          "odds": -330
+        },
+        "why": "Jamal Murray over 2.5 no longer passes the checks at this morning's price and projection",
+        "in": {
+          "player": "Cameron Johnson",
+          "stat": "rebounds",
+          "line": 2.5,
+          "odds": -279
+        }
+      }
+    ]
   },
   "note": "Overs only, 3-4 legs at about +200 to +320 real FanDuel/DraftKings odds, picked the night before (about 9:45 PM Arizona time) from the books' real lines and the night's projections, then checked at 6 AM: a leg is swapped only if overnight news or a line move hurt it. The model must project over the line and not rate the leg well below the book; the combination it likes most relative to the book wins (the +/- number; gaps above +8 count as +8). At most 2 legs from one game unless the model strongly backs a third. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-10-22T08:07:45Z",
+  "generated_at": "2026-10-22T13:35:07Z",
   "early_history": [
     {
       "date": "2026-10-20",
