@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T13:35:07Z",
+  "generated_at": "2026-10-22T13:59:00Z",
   "date": "2026-10-22",
   "early_look": false,
   "model": "lightgbm",
@@ -1289,7 +1289,7 @@
           "book": "DraftKings",
           "over": -188,
           "under": 142,
-          "p_over": 0.623,
+          "p_over": 0.624,
           "call": null,
           "edge": 0.0,
           "flag": "far"
@@ -1769,7 +1769,7 @@
       "home": true,
       "time_et": "9:30 PM",
       "status": null,
-      "minutes": 21.6,
+      "minutes": 21.7,
       "stats": {
         "points": {
           "proj": 10.9,
@@ -1777,16 +1777,19 @@
           "book": "DraftKings",
           "over": -102,
           "under": -125,
-          "p_over": 0.458,
+          "p_over": 0.457,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
           "proj": 3.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 3.5,
+          "book": "DraftKings",
+          "over": 131,
+          "under": -174,
+          "p_over": 0.386,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 3.6,
@@ -1947,7 +1950,7 @@
       "minutes": 19.0,
       "stats": {
         "points": {
-          "proj": 9.8,
+          "proj": 9.7,
           "line": 10.5,
           "book": "DraftKings",
           "over": -104,
@@ -2185,7 +2188,7 @@
       "minutes": 24.3,
       "stats": {
         "points": {
-          "proj": 8.4,
+          "proj": 8.3,
           "line": 8.5,
           "book": "DraftKings",
           "over": -123,
@@ -2271,7 +2274,7 @@
       "home": false,
       "time_et": "9:30 PM",
       "status": null,
-      "minutes": 20.1,
+      "minutes": 20.2,
       "stats": {
         "points": {
           "proj": 7.9,
@@ -2428,7 +2431,7 @@
       "home": true,
       "time_et": "9:30 PM",
       "status": null,
-      "minutes": 19.3,
+      "minutes": 19.6,
       "stats": {
         "points": {
           "proj": 7.5,
@@ -2517,7 +2520,7 @@
       "home": false,
       "time_et": "9:30 PM",
       "status": "day-to-day",
-      "minutes": 18.6,
+      "minutes": 18.8,
       "stats": {
         "points": {
           "proj": 4.8,
@@ -2586,5 +2589,13 @@
         }
       ]
     }
-  ]
+  ],
+  "injury_check": {
+    "checked_at": "2026-10-22T13:59:00Z",
+    "since": "2026-10-22T13:35:07Z",
+    "since_label": "this morning's board",
+    "status_changes": [],
+    "moves": [],
+    "games_affected": []
+  }
 }
