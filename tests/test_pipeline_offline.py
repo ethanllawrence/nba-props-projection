@@ -219,10 +219,11 @@ def test_odds_rationing_and_board():
     evs = [{"event_id": f"e{i}"} for i in range(8)]
     mk = ["player_points_rebounds_assists", "player_points", "player_rebounds", "player_assists"]
     per, lad, res = odds.plan_morning(evs, 16, markets=mk)
-    assert res == 4 and all(per[f"e{i}"][0] == mk[0] for i in range(8)) and lad == ["e0", "e1"]
+    assert res == odds.early_reserve(16) and all(per[f"e{i}"][0] == mk[0] for i in range(8))
+    assert lad == ["e0", "e1", "e2", "e3"][:(16 - res - 8) // 2]
     assert sum(len(v) for v in per.values()) + 2 * len(lad) + res == 16
     per, lad, res = odds.plan_morning(evs[:4], 27, markets=mk)          # small slate: points everywhere
-    assert res == 8 and lad == ["e0", "e1", "e2", "e3"] and all("player_points" in per[f"e{i}"] for i in range(4))
+    assert res == odds.early_reserve(27) and lad == ["e0", "e1", "e2", "e3"] and all("player_points" in per[f"e{i}"] for i in range(4))
     per, lad, _ = odds.plan_morning(evs[:4], 27, markets=mk, ladders_on=False)
     assert lad == [] and all(len(per[f"e{i}"]) == 4 for i in range(4))   # no model: main lines instead
     # a free source's main lines cost nothing: credits go to the other stats/ladders
@@ -649,8 +650,24 @@ def test_espn_props():
     per, lad, res = odds.plan_morning(evs, 16, covered={"a": {"pra", "points", "rebounds", "assists"},
                                                          "b": {"pra", "points", "rebounds", "assists"}},
                                       markets=mk, free_ladders={"a", "b"})
-    assert per == {"a": [], "b": []} and lad == [] and res == 4
+    assert per == {"a": [], "b": []} and lad == [] and res == odds.early_reserve(16)
     print("OK espn props")
+
+
+def test_combo_rules():
+    """At most 2 legs from one game, a 3rd only when every leg from that game
+    is strongly backed; night picks go to "next" while last night's waits."""
+    from nproj.model import early_parlay as EP, parlay as P
+    leg = lambda pid, g, gap: {"player_id": pid, "game_id": g, "gap": gap}
+    assert EP.combo_ok([leg(1, "a", .02), leg(2, "a", .03), leg(3, "b", .01)])
+    assert not EP.combo_ok([leg(1, "a", .02), leg(2, "a", .09), leg(3, "a", .09)])
+    assert EP.combo_ok([leg(1, "a", .08), leg(2, "a", .09), leg(3, "a", .12)])
+    assert not EP.combo_ok([leg(1, "a", .2)] * 2)
+    data = {"today": {"date": "2026-10-21", "status": "pending", "legs": [1]}}
+    P._put(data, {"date": "2026-10-22", "legs": [2]})
+    assert data["next"]["date"] == "2026-10-22" and data["today"]["date"] == "2026-10-21"
+    assert P._pick_for(data, "2026-10-22")[0] == "next"
+    print("OK combo rules")
 
 
 def test_far_from_line():
@@ -668,6 +685,7 @@ def test_far_from_line():
 
 
 if __name__ == "__main__":
+    test_combo_rules()
     test_far_from_line()
     test_espn_props()
     test_propline()

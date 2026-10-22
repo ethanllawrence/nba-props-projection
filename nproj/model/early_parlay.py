@@ -56,6 +56,11 @@ import numpy as np
 from .pra_model import prob_over
 from .live import FAR_RATIO
 
+# Retired 2026-10-22: the early-look parlay (picked a morning ahead from paid
+# alt lines) became the night pick of the Parlay of the Day (parlay.night_pick),
+# which uses ESPN's free lines once posted. This module's candidates/select are
+# that pick's engine; only its own day-ahead pick and purchase are switched off.
+ENABLED = False
 POOL_TOP = 30
 MIN_MINUTES = 30.0
 LEG_ODDS = (-400, -120)          # price range for a leg (American odds); alt ladders step
@@ -64,7 +69,9 @@ LEG_ODDS = (-400, -120)          # price range for a leg (American odds); alt la
 TARGET_LO, TARGET_HI = 200, 320
 MIN_ACCEPT = 150
 MIN_LEGS, MAX_LEGS = 3, 4
-MAX_PER_GAME = 3                 # same-game legs weren't more correlated in the replay
+MAX_PER_GAME = 2                 # legs from one game; a 3rd only if each of them is STRONG
+STRONG_GAP = 0.08                # Robin, 2026-10-21: don't lean on one game (say three
+                                 # teammates) unless the model strongly backs every one of them
 VETO = -0.10                     # drop legs the model rates 10+ points below the book
 GAP_CAP = 0.08                   # a gap above +8 points scores like +8 (see 5. above)
 BLOWOUT_SPREAD = 12              # skip games with a spread this big (when a spread is known)
@@ -165,31 +172,52 @@ def candidates(con, date_s, proj, alts, spreads=None, not_before=None, main_line
 SEARCH_TOP = 24          # best-gap legs considered when combining
 
 
-def select(cands):
-    """The 3-4 leg combination (one leg per player, at most MAX_PER_GAME per
-    game) whose REAL combined odds land in +TARGET_LO..+TARGET_HI and that the
+def combo_ok(combo, fixed=()):
+    """One leg per player; at most MAX_PER_GAME legs from a game, or one more
+    when every leg from that game has a gap of STRONG_GAP or better."""
+    legs = list(fixed) + list(combo)
+    if len({c["player_id"] for c in legs}) < len(legs):
+        return False
+    by_game = {}
+    for c in legs:
+        by_game.setdefault(c["game_id"], []).append(c)
+    for g in by_game.values():
+        if len(g) > MAX_PER_GAME + 1:
+            return False
+        if len(g) > MAX_PER_GAME and not all((c.get("gap") or 0) >= STRONG_GAP for c in g):
+            return False
+    return True
+
+
+def select(cands, fixed=(), sizes=None):
+    """The 3-4 leg combination (one leg per player, see combo_ok for the
+    per-game limit) whose REAL combined odds land in +TARGET_LO..+TARGET_HI and that the
     model likes most relative to the book (largest total gap). If none lands
-    in that range, the best one between +MIN_ACCEPT and +TARGET_LO."""
+    in that range, the best one between +MIN_ACCEPT and +TARGET_LO.
+    fixed: legs that must stay (the morning check keeps the night pick's
+    healthy legs and only replaces the rest); sizes: how many to add."""
     from itertools import combinations
-    pool = cands[:SEARCH_TOP]
+    fixed = list(fixed)
+    pool = [c for c in cands if c["player_id"] not in {f["player_id"] for f in fixed}][:SEARCH_TOP]
     best, fallback = None, None
     cap = lambda g: min(g, GAP_CAP)
-    for n in range(MIN_LEGS, MAX_LEGS + 1):
+    sizes = sizes or range(max(0, MIN_LEGS - len(fixed)), MAX_LEGS - len(fixed) + 1)
+    for n in sizes:
         for combo in combinations(pool, n):
-            if len({c["player_id"] for c in combo}) < n:
+            if not combo_ok(combo, fixed):
                 continue
-            games = [c["game_id"] for c in combo]
-            if max(games.count(g) for g in games) > MAX_PER_GAME:
+            legs = fixed + list(combo)
+            if not MIN_LEGS <= len(legs) <= MAX_LEGS:
                 continue
-            price = combined_odds([c["odds"] for c in combo])
-            score = (round(sum(cap(c["gap"]) for c in combo), 4),
-                     math.prod(c["book_prob"] for c in combo))
+            price = combined_odds([c["odds"] for c in legs])
+            score = (round(sum(cap(c["gap"]) for c in legs), 4),
+                     math.prod(c["book_prob"] for c in legs))
             if TARGET_LO <= price <= TARGET_HI:
                 if best is None or score > best[0]:
-                    best = (score, combo, price)
+                    best = (score, legs, price)
             elif MIN_ACCEPT <= price < TARGET_LO:
                 if fallback is None or score > fallback[0]:
-                    fallback = (score, combo, price)
+                    fallback = (score, legs, price)
     pick = best or fallback
     if not pick:
         return [], None

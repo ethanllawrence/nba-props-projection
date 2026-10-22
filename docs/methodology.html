@@ -93,24 +93,29 @@
     model had projected 23.</p>
 
     <h2>Parlay of the Day</h2>
-    <p>Picked automatically every morning with the same rules as the early look parlay below,
-    applied to that day's prices: 3-4 overs at about +200 to +320 real FanDuel/DraftKings odds, from
-    the night's top projected players, no game with a 12+ point spread. Prices come from, oldest to
-    newest, the early-look alt ladders bought the day before (PRA and points), the morning's main
-    lines, and the morning's alt ladders; a newer price for the same line wins. (Opening day, Oct 20,
-    used an older "most likely overs" rule that ranked legs by the model's chance alone; it picked
-    role players' rebound and assist overs.)</p>
-    <p>Once picked, the legs don't change during the day, since you may already have bet them. One
-    exception: a manual run with the odds box ticked, after the morning lines were bought, is a
-    top-up. It buys fresh alt ladders (all four stats) for games that haven't started, re-picks the
-    parlay from games tipping at least 15 minutes later, and buys the next game day's early-look
-    ladders, all from a fresh day's budget. The page then shows the morning pick as replaced; only
-    the re-pick is graded. If a later injury check finds that a leg's player was ruled out or its
-    projection moved against the leg, the leg gets a flag. Each leg is graded the next morning
-    against the real box score (a player who didn't play is void, like a sportsbook would do it).</p>
+    <p>One parlay per game day: 3-4 overs at about +200 to +320 real FanDuel/DraftKings odds. It's picked
+    the night before, at about 9:45 PM Arizona time, once the books have posted the next day's player
+    lines (ESPN publishes DraftKings' lines and "N+" prices for free, usually by mid-evening), using the
+    night's projections. If no lines were up yet, or more games have posted since, an 11:30 PM run picks
+    again; games still without lines are listed as not in play. The legs come from the night's top
+    projected players, priced -400 to -120; the model must project the player over the line, not rate
+    the leg 10+ points below the book, and not be 1.5x the line (see Edge coloring). Of what's left, the
+    3-4 leg combination that the model likes most relative to the book wins (the +/- number; gaps above
+    +8 count as +8, since bigger gaps weren't better historically). At most 2 legs come from one game,
+    unless the model strongly backs (+8 or better) every leg from that game. No game with a 12+ point
+    spread.</p>
+    <p>The 6 AM run checks it with fresh lines and projections. A leg stays unless its player is no
+    longer listed as active, its line is gone or no longer passes those checks, or the model's chance
+    fell 8+ points overnight; then just that leg is swapped for the best replacement that keeps the
+    parlay in the price range, and the page says what changed and why. If the night found nothing, the
+    morning picks fresh. After that the legs don't change; a later injury check flags a leg instead.
+    Each leg is graded the next morning against the box score (a player who didn't play is void, like a
+    sportsbook would do it). Opening week used earlier versions: a "most likely overs" rule on Oct 20,
+    and a morning pick Oct 21.</p>
 
-    <h2>Early look parlay</h2>
-    <p>A second parlay for the next game day: 3-4 star overs at about +200 to +320 real sportsbook
+    <h2>Early look parlay (retired Oct 22)</h2>
+    <p>Until Oct 22 there was a second parlay for the next game day, picked a morning ahead. It was replaced by
+    the night pick above, which uses real lines instead of guessing a day early. How it worked: 3-4 star overs at about +200 to +320 real sportsbook
     odds, built from books and model together. On the morning run, once that game day is within two
     days, the site buys FanDuel/DraftKings alt-line prices for PRA and points (a few credits from the
     day's spare budget, games with the top projected players first). The pool is the night's top 30
@@ -165,20 +170,17 @@
     graded once all its games are over.</p>
 
     <h2>Data and schedule</h2>
-    <p>Rosters, injury statuses, schedules and box scores come from ESPN. Sportsbook lines come from
-    FanDuel/DraftKings through a free odds plan with a tight monthly budget (about 16 credits a day once
-    baseball is over; each stat costs 1 credit per game). The morning run projects first, then, for
-    whatever the free source below doesn't cover, buys in this order: the PRA line for every game; fresh PRA and points alt-line prices for the games with the
-    top projected players (what the Parlay of the Day is priced from); then points, rebounds and assists
-    lines, top games first. About a third of the budget is held for the next game day's early-look
-    prices. On busy nights that usually means PRA lines everywhere and few or no points, rebounds and
-    assists lines from the paid plan. Free help: ESPN publishes DraftKings player props (main lines and
-    "N+" milestone prices for points, rebounds, assists and PRA), usually from the evening before. Every
-    run pulls them first, and credits only buy what ESPN doesn't have (a game or stat it skipped, and the
-    next game day's early-look prices, which ESPN doesn't post until the evening before). Unused credits
-    carry over. No sportsbook is preferred; the board shows whichever line the data came from. If a free PropLine key is set up, main lines come from there too at no cost. The site updates at 6 AM Arizona time (lines, last night's grading),
-    3 PM, and about an hour before each game tips (injury checks), and flips to the next day's slate at
-    8 PM.</p>
+    <p>Rosters, injury statuses, schedules and box scores come from ESPN. Sportsbook lines come first
+    from ESPN, which publishes DraftKings' player lines and "N+" prices for points, rebounds, assists
+    and PRA for free, usually by the evening before; every run pulls them. A free odds plan (about 16
+    credits a day once baseball is over; each stat costs 1 credit per game) only buys what ESPN doesn't
+    have on the 6 AM run: a game or stat it skipped, in this order: PRA lines, alt-line prices for the
+    games with the top projected players, then points, rebounds and assists lines. Unused credits carry
+    over. No sportsbook is preferred; the board shows whichever line the data came from. If a free
+    PropLine key is set up, main lines come from there too at no cost. The site updates at 6 AM Arizona
+    time (lines, last night's grading, the Parlay of the Day check), 3 PM, and about an hour before each
+    game tips (injury checks); it flips to the next day's slate at 8 PM, and picks the next day's Parlay
+    of the Day at 9:45 PM (and 11:30 PM if needed).</p>
     <p>Known limits: early in a season the model leans on last season's games (including the
     playoffs), so projections for stars can run low for the first few weeks, and players who
     changed teams are projected in their old role until they've played a few games. Still ahead:

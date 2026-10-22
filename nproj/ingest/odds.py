@@ -434,6 +434,9 @@ def early_reserve(allowance):
     """Credits held back each morning for the next game day's early-look alt
     ladders: a third of the allowance, at most EARLY_MAX_CREDITS, in whole
     games (2 credits each)."""
+    from ..model import early_parlay
+    if not early_parlay.ENABLED:          # retired: nothing to hold back
+        return 0
     return min(EARLY_MAX_CREDITS, allowance // 3) // len(EARLY_STATS) * len(EARLY_STATS)
 
 

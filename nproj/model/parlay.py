@@ -81,12 +81,13 @@ MAX_ALT_CREDITS = 4
 import os as _os
 PARLAY_SIDES = tuple(x for x in _os.environ.get("NPROJ_PARLAY_SIDES", "over").split(",") if x)
 HISTORY_KEEP = 60
-NOTE = ("Overs only, 3-4 legs at about +200 to +320 real odds on FanDuel/DraftKings, picked each "
-        "morning from the night's top players: the model must project over the line and not rate "
-        "the leg well below the book, and the combination it likes most relative to the book wins "
-        "(the +/- number; gaps above +8 count as +8, since bigger gaps weren't better historically). "
-        "Legs stay fixed once picked, unless a manual top-up re-picks from fresh prices. Settled the "
-        "next morning from the real box scores. It's for fun: expect the book's cut over time.")
+NOTE = ("Overs only, 3-4 legs at about +200 to +320 real FanDuel/DraftKings odds, picked the night "
+        "before (about 9:45 PM Arizona time) from the books' real lines and the night's projections, then "
+        "checked at 6 AM: a leg is swapped only if overnight news or a line move hurt it. The model must "
+        "project over the line and not rate the leg well below the book; the combination it likes most "
+        "relative to the book wins (the +/- number; gaps above +8 count as +8). At most 2 legs from one "
+        "game unless the model strongly backs a third. Graded the next morning. It's for fun: expect the "
+        "book's cut over time.")
 REPICK_LEAD_MIN = 15        # a re-pick only uses games tipping at least this far ahead
 
 _N = NormalDist()
@@ -435,41 +436,151 @@ def todays_prices(date_s, saved):
             for who, per in merged.items()}
 
 
-def price_first(con, date_s, saved, not_before=None):
-    """-> (public legs, combined price, number of candidate legs)."""
-    from ..export.site_export import _time_et
+def _ctx(con, date_s, saved):
     from . import early_parlay, live
     spreads = saved.get("spreads") or espn_spreads(con, date_s)
-    prices = todays_prices(date_s, saved)
-    cands = early_parlay.candidates(con, date_s, live.PROJ, prices, spreads, not_before,
-                                    main_lines=odds.board_lines(date_s).get("lines"))
+    mains = odds.board_lines(date_s).get("lines") or {}
+    return spreads, mains
+
+
+def _cands(con, date_s, saved, not_before=None):
+    from . import early_parlay, live
+    spreads, mains = _ctx(con, date_s, saved)
+    return early_parlay.candidates(con, date_s, live.PROJ, todays_prices(date_s, saved), spreads,
+                                   not_before, main_lines=mains)
+
+
+def _public(con, date_s, saved, l):
+    """A candidate leg (early_parlay.candidates) -> the leg as the page shows it."""
+    from ..export.site_export import _time_et
+    from . import live
+    spreads, mains = _ctx(con, date_s, saved)
+    main = ((odds.match_lines([l["player"]], mains)[0].get(l["player"]) or {}).get(l["stat"]) or {})
+    book_line = main.get("line")
+    sp = spreads.get(l["team"])
+    mins = live.PROJ.get(str(l["player_id"]), {}).get("minutes")
+    leg = {"player": l["player"], "player_id": l["player_id"], "game_id": l["game_id"],
+           "team": l["team"], "opp": l["opp"], "home": l["home"],
+           "time_et": _time_et(l.get("tipoff_utc")), "stat": l["stat"], "side": "over",
+           "line": l["line"], "line_type": "main" if book_line == l["line"] else "alt",
+           "book_line": book_line, "proj": l["proj"], "prob": l["model_prob"],
+           "book_prob": l["book_prob"], "gap": l["gap"], "odds": l["odds"], "book": l["book"],
+           "blowout_risk": blowout_risk(sp),
+           "minutes_confidence": "high" if (mins or 0) >= 30 else "medium"}
+    stat = STAT_LABEL[l["stat"]]
+    spread_txt = "no spread" if sp is None else f"{l['team']} {sp:+g} spread"
+    leg["reasoning"] = (
+        f"Model projects {l['proj']} {stat}: {round(l['model_prob'] * 100)}% to clear {l['line']} "
+        f"(star-calibrated) vs the book's {round(l['book_prob'] * 100)}% at {l['odds']:+d}, "
+        f"a {round(l['gap'] * 100):+d} point gap. Projected for {round(mins or 0, 1)} minutes; "
+        f"{spread_txt}.")
+    return leg
+
+
+def price_first(con, date_s, saved, not_before=None):
+    """-> (public legs, combined price, number of candidate legs)."""
+    from . import early_parlay
+    cands = _cands(con, date_s, saved, not_before)
     legs, price = early_parlay.select(cands)
-    if not legs:
-        return [], None, len(cands)
-    mains, _ = odds.match_lines([l["player"] for l in legs], saved.get("lines") or {})
+    return [_public(con, date_s, saved, l) for l in legs], price, len(cands)
+
+
+# ------------------------------------------------------------ night pick ----
+# Since 2026-10-22 (Robin): ONE Parlay of the Day per game day, picked the
+# night before (~9:45 PM Arizona, retried ~11:30 PM) from ESPN's free
+# DraftKings lines once they're posted, with the night's projections. The
+# 6 AM run then CHECKS it: legs stay unless overnight news or a line move
+# hurt them (morning_check). This replaced the early-look parlay, which was
+# picked a whole morning ahead without real lines for most games.
+NIGHT_HOURS = (21, 5)          # Arizona local time window for the night pick
+MORNING_DROP = 0.08            # a leg whose model chance fell 8+ points overnight is swapped
+
+
+def _games_without_lines(con, date_s):
+    from ..ingest import espn_props
+    cov = espn_props.by_teams(espn_props.load(date_s))
     out = []
-    for l in legs:
-        main = (mains.get(l["player"]) or {}).get(l["stat"]) or {}
-        book_line = main.get("line")
-        sp = spreads.get(l["team"])
-        mins = live.PROJ.get(str(l["player_id"]), {}).get("minutes")
-        leg = {"player": l["player"], "player_id": l["player_id"], "game_id": l["game_id"],
-               "team": l["team"], "opp": l["opp"], "home": l["home"],
-               "time_et": _time_et(l.get("tipoff_utc")), "stat": l["stat"], "side": "over",
-               "line": l["line"], "line_type": "main" if book_line == l["line"] else "alt",
-               "book_line": book_line, "proj": l["proj"], "prob": l["model_prob"],
-               "book_prob": l["book_prob"], "gap": l["gap"], "odds": l["odds"], "book": l["book"],
-               "blowout_risk": blowout_risk(sp),
-               "minutes_confidence": "high" if (mins or 0) >= 30 else "medium"}
-        stat = STAT_LABEL[l["stat"]]
-        spread_txt = "no spread" if sp is None else f"{l['team']} {sp:+g} spread"
-        leg["reasoning"] = (
-            f"Model projects {l['proj']} {stat}: {round(l['model_prob'] * 100)}% to clear {l['line']} "
-            f"(star-calibrated) vs the book's {round(l['book_prob'] * 100)}% at {l['odds']:+d}, "
-            f"a {round(l['gap'] * 100):+d} point gap. Projected for {round(mins or 0, 1)} minutes; "
-            f"{spread_txt}.")
-        out.append(leg)
-    return out, price, len(cands)
+    for g in con.execute("SELECT home_team, away_team FROM games WHERE date=? ORDER BY tipoff_utc",
+                         (date_s,)):
+        c = cov.get((g["home_team"], g["away_team"]))
+        if not c or not ({"pra", "points"} & (c["ladder_stats"] | c["line_stats"])):
+            out.append(f"{g['away_team']} @ {g['home_team']}")
+    return out
+
+
+def night_pick(con, date_s):
+    """-> parlay dict (legs may be empty, with the reason in note)."""
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    missing = _games_without_lines(con, date_s)
+    legs, price, n = price_first(con, date_s, {})
+    base = {"date": date_s, "method": "night", "picked_at": now, "missing_games": missing,
+            "candidates": n}
+    if not legs:
+        return {**base, "legs": [], "status": "none",
+                "note": (f"No parlay yet: {n} overs passed the price range and the model's checks, but no "
+                         f"3-4 leg combination reaches +{MIN_ACCEPT}." if n else
+                         "No parlay yet: ESPN hasn't posted tomorrow's player lines.")}
+    return {**base, "legs": legs, "combined_odds": price, "status": "pending"}
+
+
+def morning_check(con, date_s, saved, pj):
+    """The 6 AM look at the night pick with fresh lines and projections.
+    A leg is swapped when its player is no longer listed as active, its line
+    is gone or no longer passes the rules (price range, the model over the
+    line and not well below the book, not 1.5x the line), or the model's chance
+    fell MORNING_DROP or more. Replacements keep the healthy legs and land the
+    parlay back in the price range. -> (parlay dict, list of changes)."""
+    from datetime import timedelta
+    from . import early_parlay
+    soon = datetime.now(timezone.utc) + timedelta(minutes=REPICK_LEAD_MIN)
+    cands = _cands(con, date_s, saved, soon)
+    by_key = {(str(c["player_id"]), c["stat"], float(c["line"])): c for c in cands}
+    status = {str(r["player_id"]): (r["status"] or "active").lower() for r in con.execute(
+        "SELECT player_id, status FROM probable_players WHERE date=?", (date_s,))}
+    keep, hurt = [], []
+    for leg in pj["legs"]:
+        pid = str(leg["player_id"])
+        c = by_key.get((pid, leg["stat"], float(leg["line"])))
+        st = status.get(pid, "active")
+        if st not in ("active", "available", "probable"):
+            hurt.append((leg, f"{leg['player']} is now listed {st}"))
+        elif c is None:
+            hurt.append((leg, f"{leg['player']} over {leg['line']} no longer passes the checks at this "
+                              f"morning's price and projection"))
+        elif (leg.get("prob") or 0) - c["model_prob"] >= MORNING_DROP:
+            hurt.append((leg, f"model chance fell from {round(leg['prob'] * 100)}% to "
+                              f"{round(c['model_prob'] * 100)}% overnight"))
+        else:
+            keep.append(c)
+    night = {"combined_odds": pj.get("combined_odds"), "picked_at": pj.get("picked_at"),
+             "legs": [{k: lg.get(k) for k in ("player", "stat", "line", "odds")} for lg in pj["legs"]]}
+    if not hurt:
+        legs = [_public(con, date_s, saved, c) for c in keep]
+        for l, old in zip(legs, pj["legs"]):
+            l["night_odds"] = old.get("odds")
+        price = early_parlay.combined_odds([l["odds"] for l in legs])
+        return {**pj, "legs": legs, "combined_odds": price, "night": night}, []
+    # replace only the hurt legs (same count, or one fewer if that still works)
+    out_ids = {str(l["player_id"]) for l, _ in hurt}
+    pool = [c for c in cands if str(c["player_id"]) not in out_ids]
+    legs, price = early_parlay.select(pool, fixed=keep, sizes=[len(hurt), max(0, len(hurt) - 1)])
+    if not legs:
+        legs, price = early_parlay.select(pool)          # nothing fits around them: pick fresh
+    changes = [{"out": {k: l.get(k) for k in ("player", "stat", "line", "odds")}, "why": why}
+               for l, why in hurt]
+    kept = {str(c["player_id"]) for c in keep}
+    added = [l for l in legs if str(l["player_id"]) not in kept]
+    for ch, l in zip(changes, added):
+        ch["in"] = {k: l.get(k) for k in ("player", "stat", "line", "odds")}
+    if not legs:
+        return {**pj, "legs": [], "status": "none", "night": night,
+                "note": "The night pick lost legs overnight and nothing else reaches the price range."}, changes
+    pub = [_public(con, date_s, saved, l) for l in legs]
+    olds = {str(l["player_id"]): l for l in pj["legs"]}
+    for l in pub:
+        if str(l["player_id"]) in olds:
+            l["night_odds"] = olds[str(l["player_id"])].get("odds")
+    return {**pj, "legs": pub, "combined_odds": price, "night": night}, changes
 
 
 # ------------------------------------------------------------- settlement ----
@@ -533,11 +644,31 @@ def save_early(date_s, pick):
     return {"saved": date_s, "legs": len(early[date_s]["legs"])}
 
 
-def update(con, date_s, allow_spend=False, repick=False):
+def _pick_for(data, d):
+    """-> (slot, parlay) for game day d: "today" or "next" (a night pick made
+    while last night's parlay is still waiting to be graded)."""
+    for k in ("today", "next"):
+        pj = data.get(k)
+        if pj and pj.get("date") == d:
+            return k, pj
+    return None, None
+
+
+def _put(data, pj):
+    k, _ = _pick_for(data, pj["date"])
+    if not k:
+        t = data.get("today")
+        k = "today" if not t or t.get("date") == pj["date"] else "next"
+    data[k] = pj
+
+
+def update(con, date_s, allow_spend=False, repick=False, mode=None):
     """Settle any finished parlay, then build (or rebuild) today's. Writes
     docs/data/parlay.json only when something changed. repick: a manual
     top-up run re-picks today's parlay from games not started yet.
-    -> summary dict."""
+    mode: "night" (the ~9:45 PM / 11:30 PM runs: pick tomorrow's parlay from
+    ESPN's lines) or "morning" (the 6 AM run: check the night pick, or pick
+    fresh if there is none). -> summary dict."""
     path = config.SITE_DATA_DIR / "parlay.json"
     data = _load(path)
     before = json.dumps({k: v for k, v in data.items() if k != "generated_at"}, sort_keys=True)
@@ -564,21 +695,81 @@ def update(con, date_s, allow_spend=False, repick=False):
             and today_json.get("status") == "pending" and today_json["date"] < date_s):
         if not util.day_is_final(today_json["date"]):
             log["waiting_to_settle"] = today_json["date"]
-            return log
-        settled = settle(con, today_json)
-        data.setdefault("history", []).append(settled)
-        data["history"] = data["history"][-HISTORY_KEEP:]
-        data["today"] = None
-        log["settled"] = {"date": settled["date"], "result": settled["result"]}
+        else:
+            settled = settle(con, today_json)
+            data.setdefault("history", []).append(settled)
+            data["history"] = data["history"][-HISTORY_KEEP:]
+            data["today"] = None
+            log["settled"] = {"date": settled["date"], "result": settled["result"]}
+    if not data.get("today") and data.get("next"):
+        data["today"] = data.pop("next")              # last night's graded: the night pick moves up
+    elif data.get("today") and data["today"].get("status") != "pending" and data.get("next"):
+        data["today"] = data.pop("next")
+    from . import early_parlay
+    if not early_parlay.ENABLED:                      # retired: drop waiting picks, keep ones to grade
+        for d in [d for d, ep in (data.get("early") or {}).items() if not (ep and ep.get("legs"))]:
+            del data["early"][d]
+
+    # night: pick tomorrow's parlay from ESPN's lines (or retry if the 9:45 PM
+    # run found none); a pick already made isn't changed, only its list of
+    # games still missing lines is refreshed
+    from . import live
+    if mode == "night" and not mock and live.PROJ:
+        _, have = _pick_for(data, date_s)
+        missing = _games_without_lines(con, date_s)
+        more_games = (have and have.get("method") == "night"
+                      and len(missing) < len(have.get("missing_games") or []))
+        if have and have.get("legs") and not more_games:
+            log["night"] = {"kept": date_s, "missing_games": len(missing)}
+        else:
+            # first pick, or the 11:30 PM retry now that more games have lines
+            pj = night_pick(con, date_s)
+            if more_games and have.get("legs") and pj["legs"]:
+                pj["replaced"] = {"combined_odds": have.get("combined_odds"), "picked_at": have.get("picked_at"),
+                                  "legs": [{k: lg.get(k) for k in ("player", "stat", "side", "line", "odds")}
+                                           for lg in have["legs"]]}
+            elif more_games and have.get("legs") and not pj["legs"]:
+                pj = {**have, "missing_games": missing}       # keep the earlier pick
+            _put(data, pj)
+            log["night"] = {"date": date_s, "legs": len(pj["legs"]), "odds": pj.get("combined_odds"),
+                            "missing_games": pj["missing_games"]}
+            if pj["legs"]:
+                data.pop("no_parlay_reason", None)
+                data.pop("no_parlay_date", None)
+        data["note"] = NOTE
+
+    # morning: check the night pick with fresh lines and projections
+    slot, pj = _pick_for(data, date_s)
+    if (mode == "morning" and pj and pj.get("method") == "night" and not pj.get("morning_checked")
+            and live.PROJ and odds.load_lines(date_s).get("lines")):
+        saved = odds.load_lines(date_s)
+        if allow_spend:
+            log["extras"] = buy_extras(con, date_s, saved)
+        if pj.get("legs"):
+            new, changes = morning_check(con, date_s, saved, pj)
+        else:                                          # night found nothing: pick fresh now
+            legs, price, n = price_first(con, date_s, saved)
+            new, changes = ({**pj, "legs": legs, "combined_odds": price,
+                             "status": "pending" if legs else "none"}, [])
+        new["morning_checked"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        new["changes"] = changes
+        if not new.get("legs"):
+            data.pop(slot, None)
+            data["no_parlay_date"] = date_s
+            data["no_parlay_reason"] = new.get("note") or "No parlay today: nothing reaches the price range."
+        else:
+            data[slot] = new
+        log["morning_check"] = {"changes": len(changes), "odds": new.get("combined_odds")}
 
     # 2. build today's parlay, only when today has a slate with lines
     saved = odds.load_lines(date_s)
     has_slate = con.execute("SELECT 1 FROM probable_players WHERE date=?", (date_s,)).fetchone()
     today_json = data.get("today")
-    locked = (not mock and ((today_json and today_json.get("date") == date_s)
+    locked = (not mock and (_pick_for(data, date_s)[1] is not None
                             or data.get("no_parlay_date") == date_s))
-    from . import live
-    if locked and repick and has_slate and saved.get("lines") and live.PROJ:
+    if mode == "night":
+        pass                                           # handled above; no paid lines at night
+    elif locked and repick and has_slate and saved.get("lines") and live.PROJ:
         # manual top-up: re-pick from fresh prices, only games not started yet
         now = datetime.now(timezone.utc)
         from datetime import timedelta
@@ -623,14 +814,15 @@ def update(con, date_s, allow_spend=False, repick=False):
             legs, method = [_public_leg(l) for l in legs], "most-likely"
         log["candidates"] = len(cands)
         if legs:
-            data["today"] = {"date": date_s, "combined_odds": price, "status": "pending",
-                             "method": method, "picked_at": now_s, "legs": legs}
+            _put(data, {"date": date_s, "combined_odds": price, "status": "pending",
+                        "method": method, "picked_at": now_s, "legs": legs})
             data.pop("no_parlay_reason", None)
             data.pop("no_parlay_date", None)
             log["parlay"] = {"legs": len(legs), "odds": price,
                              "alt_legs": sum(1 for l in legs if l["line_type"] == "alt")}
         else:
-            data["today"] = None
+            if (data.get("today") or {}).get("date") == date_s:
+                data["today"] = None
             data["no_parlay_date"] = date_s
             data["no_parlay_reason"] = (
                 f"No parlay today: {len(cands)} overs passed the price range and the model's veto, "
@@ -641,7 +833,7 @@ def update(con, date_s, allow_spend=False, repick=False):
             log["parlay"] = None
         data["note"] = NOTE
 
-    if data.get("today") and data["today"].get("date") == date_s and data["today"].get("method") == "price-first":
+    if (_pick_for(data, date_s)[1] or {}).get("method") in ("price-first", "night"):
         data["note"] = NOTE
     after = json.dumps({k: v for k, v in data.items() if k != "generated_at"}, sort_keys=True)
     if after != before:

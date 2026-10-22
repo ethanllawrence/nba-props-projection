@@ -92,16 +92,15 @@ def test_live_model():
         assert EP.MIN_ACCEPT <= ep["combined_odds"] <= EP.TARGET_HI
         assert ep["combined_odds"] == EP.combined_odds([l["odds"] for l in legs])
         assert len({l["player_id"] for l in legs}) == len(legs)
-        assert all(sum(x["game_id"] == l["game_id"] for x in legs) <= EP.MAX_PER_GAME for l in legs)
+        assert EP.combo_ok(legs)
         assert [l["gap"] for l in legs] == sorted((l["gap"] for l in legs), reverse=True)
         # the chosen combination has the largest total CAPPED gap among in-range combinations
         from itertools import combinations
         cands = EP.candidates(con, DATE, live.PROJ, alts)
         capped = lambda k: round(sum(min(c["gap"], EP.GAP_CAP) for c in k), 4)
         best = max((capped(k) for n in (3, 4) for k in combinations(cands[:EP.SEARCH_TOP], n)
-                    if len({c["player_id"] for c in k}) == n
-                    and EP.TARGET_LO <= EP.combined_odds([c["odds"] for c in k]) <= EP.TARGET_HI
-                    and max([c["game_id"] for c in k].count(g) for g in {c["game_id"] for c in k}) <= EP.MAX_PER_GAME),
+                    if EP.combo_ok(k)
+                    and EP.TARGET_LO <= EP.combined_odds([c["odds"] for c in k]) <= EP.TARGET_HI),
                    default=None)
         assert best is None or abs(capped(legs) - best) < 1e-9
         print("OK early parlay:", ep["combined_odds"], [(l["player"], l["line"], l["odds"], l["gap"]) for l in legs])
@@ -154,6 +153,48 @@ def test_live_model():
             assert all(l["game_id"] != gone for l in pr["legs"]) and pr["replaced"]["legs"], pr
         else:
             assert pr["legs"] == pj["legs"]                              # nothing found: morning pick stays
+        # night pick (ESPN lines only, no paid lines yet), then the 6 AM check
+        from nproj.ingest import espn_props
+        (site / "parlay.json").write_text(json.dumps({"history": []}))
+        (site / "lines.json").unlink(missing_ok=True)
+        con.execute("UPDATE games SET tipoff_utc='2030-01-01T00:00Z'")
+        star_games = {r["game_id"] for r in con.execute(
+            f"SELECT game_id FROM probable_players WHERE date=? AND player_id IN ({','.join('?' * len(stars))})",
+            (DATE, *stars))}
+        games_cov = {}
+        for g in con.execute("SELECT game_id, home_team, away_team FROM games WHERE date=?", (DATE,)):
+            if g["game_id"] in star_games:
+                games_cov[f"{g['away_team']} @ {g['home_team']}"] = {
+                    "home": g["home_team"], "away": g["away_team"], "lines": 1, "ladders": 1,
+                    "line_stats": ["points"], "ladder_stats": ["pra"]}
+        espn_props.save({"date": DATE, "fetched_at": "x", "games": games_cov,
+                         "lines": {norm_name(k): v for k, v in lines.items()}, "alts": alts})
+        lg_n = parlay.update(con, DATE, mode="night")
+        pn = json.loads((site / "parlay.json").read_text())["today"]
+        assert pn["method"] == "night" and 3 <= len(pn["legs"]) <= 4, (lg_n, pn)
+        assert EP.combo_ok([{**l, "gap": l["gap"]} for l in pn["legs"]])
+        assert len(pn["missing_games"]) == len(set(r["game_id"] for r in con.execute(
+            "SELECT game_id FROM games WHERE date=?", (DATE,)))) - len(games_cov)
+        assert parlay.update(con, DATE, mode="night")["night"]["kept"] == DATE      # 11:30 PM: same games, kept
+        # 6 AM: one leg's player is ruled out overnight -> that leg (only) is swapped
+        gone = pn["legs"][0]
+        con.execute("UPDATE probable_players SET status='out' WHERE player_id=? AND date=?",
+                    (gone["player_id"], DATE))
+        (site / "lines.json").write_text(json.dumps(
+            {"date": DATE, "lines": {norm_name(k): v for k, v in lines.items()}, "alts": {}}))
+        lg_m = parlay.update(con, DATE, mode="morning")
+        pm = json.loads((site / "parlay.json").read_text())
+        pm = pm.get("today") or {}
+        if pm.get("legs"):
+            assert pm["morning_checked"] and pm["changes"][0]["out"]["player"] == gone["player"], (lg_m, pm)
+            assert gone["player_id"] not in {l["player_id"] for l in pm["legs"]}
+            kept = {l["player_id"] for l in pn["legs"][1:]}
+            assert kept <= {l["player_id"] for l in pm["legs"]} or pm["changes"], pm
+        assert parlay.update(con, DATE, mode="morning").get("morning_check") is None   # checked once
+        con.execute("UPDATE probable_players SET status='active' WHERE player_id=? AND date=?",
+                    (gone["player_id"], DATE))
+        print("OK night pick + morning check:", pn["combined_odds"], [l["player"] for l in pn["legs"]],
+              "->", pm.get("combined_odds"), [c.get("in", {}).get("player") for c in pm.get("changes", [])])
         print("OK price-first parlay:", pj["combined_odds"], [(l["player"], l["line"], l["odds"]) for l in pj["legs"]],
               "| repick:", log_r.get("repicked") or log_r.get("repick"))
     board = json.loads((site / "today.json").read_text())

@@ -69,7 +69,8 @@ def cmd_daily(args) -> None:
         try:
             from .model import parlay
             spend = config.ODDS_MODE == "props" and bool(config.ODDS_API_KEY) and not TOPUP
-            print(f"[parlay] {parlay.update(con, date_s, allow_spend=spend, repick=bool(TOPUP))}")
+            mode = _parlay_mode(args)
+            print(f"[parlay] mode={mode} {parlay.update(con, date_s, allow_spend=spend, repick=bool(TOPUP), mode=mode)}")
         except Exception as exc:  # noqa: BLE001 - a parlay problem must never block the board
             print(f"[parlay] FAILED: {exc}")
         try:
@@ -128,7 +129,8 @@ def _early_look(con, date_s):
     n = export_early_look(con, nxt)
     log = {"date": nxt, "games": slate["games"], "players": n,
            "model": "lightgbm" if live.PROJ else "baseline"}
-    if live.PROJ:     # the early-look parlay needs the model's distributions
+    from .model import early_parlay as _ep
+    if live.PROJ and _ep.ENABLED:     # retired 2026-10-22 (see parlay.night_pick)
         from .ingest import espn_props, odds
         from .model import early_parlay, parlay
         espn_next = _espn_props(con, nxt, save=False)        # usually empty until the night before
@@ -202,6 +204,27 @@ def _maybe_model(con, date_s):
 
 
 TOPUP = {}      # set by a manual top-up run (see _maybe_odds)
+
+
+def _parlay_mode(args):
+    """"night" between 9 PM and 5 AM Arizona time (the 9:45 PM and 11:30 PM
+    runs pick tomorrow's Parlay of the Day from ESPN's lines), "morning" on the
+    odds run (6 AM: check the night pick), else None. Test runs (--date) never
+    count as night unless NPROJ_PARLAY_MODE says so."""
+    import os
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    forced = os.environ.get("NPROJ_PARLAY_MODE")
+    if forced:
+        return None if forced == "none" else forced
+    if config.ODDS_MODE == "props" and not TOPUP:
+        return "morning"
+    if getattr(args, "date", None):
+        return None
+    from .model import parlay
+    h = datetime.now(ZoneInfo("America/Phoenix")).hour
+    start, end = parlay.NIGHT_HOURS
+    return "night" if (h >= start or h < end) else None
 
 
 def _team_order(con, date_s):
