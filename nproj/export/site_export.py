@@ -252,8 +252,24 @@ def _export_jokic(con, date_s: str):
     else:
         tonight["opp"] = None  # Denver is off; the page says so instead of a stale matchup
         tonight["time_et"] = None
-    td = load_lines(date_s).get("jokic_td") if game else None
-    tonight["market"] = {"side": "yes", "odds": td["odds"], "book": td["book"]} if td else None
+    # Yes prices: the morning's paid pull (FanDuel first) and ESPN's free
+    # DraftKings price, which every run refreshes. The call uses the best one;
+    # both show on the page with when they were pulled (Oct 22: the 6 AM price
+    # was FanDuel -120, and by afternoon DraftKings was +121, FanDuel +110).
+    td, prices = None, []
+    if game:
+        from ..ingest import espn_props
+        saved = load_lines(date_s)
+        if saved.get("jokic_td"):
+            prices.append({**saved["jokic_td"], "at": saved.get("fetched_at")})
+        free = espn_props.load(date_s)
+        if (free.get("td") or {}).get("nikola jokic"):
+            prices.append({**free["td"]["nikola jokic"], "at": free.get("fetched_at")})
+        prices = sorted(prices, key=lambda q: -int(q["odds"]))
+        td = prices[0] if prices else None
+    tonight["market"] = ({"side": "yes", "odds": td["odds"], "book": td["book"], "at": td.get("at"),
+                          "others": [{k: q.get(k) for k in ("odds", "book", "at")} for q in prices[1:]]}
+                         if td else None)
     if prob is not None:
         from ..model.live import implied
         n_games = predict.TD_WINDOW
@@ -265,8 +281,8 @@ def _export_jokic(con, date_s: str):
             be = implied(int(td["odds"]))
             tonight["call"] = "yes" if prob > be else "no"
             tp["break_even"] = round(be, 3)
-            why = (f"The Yes price ({int(td['odds']):+d}) needs {be * 100:.0f}% to break even, so the call "
-                   f"is {'YES' if prob > be else 'NO'}.")
+            why = (f"The best Yes price ({int(td['odds']):+d} {td['book']}) needs {be * 100:.0f}% to break "
+                   f"even, so the call is {'YES' if prob > be else 'NO'}.")
         else:
             tonight["call"] = "yes" if prob >= 0.5 else "no"
             tp.pop("break_even", None)
@@ -282,7 +298,8 @@ def _export_jokic(con, date_s: str):
         return False  # nothing new (e.g. offseason); skip so the daily run doesn't commit noise
     data["generated_at"] = _now()
     data["note"] = ("Season summary, recent games and the model call come from Jokic's real ESPN "
-                    "game log. The market price is his triple-double Yes price from the morning "
-                    "odds pull, when there was room in the budget for it.")
+                    "game log. The market price is the best triple-double Yes price we have: "
+                    "DraftKings' from ESPN (refreshed every run, free) or FanDuel's from the morning "
+                    "odds pull. Prices move during the day, so check yours.")
     _save(path, data)
     return True

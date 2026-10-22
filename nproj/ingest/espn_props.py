@@ -32,6 +32,7 @@ PROVIDER = "100"            # DraftKings on ESPN
 MAIN = {"1": "points", "3": "rebounds", "2": "assists", "90": "pra"}
 MILESTONE = {"218": "points", "220": "rebounds", "219": "assists", "225": "pra"}
 BOOK = "DraftKings"
+TRIPLE_DOUBLE = "93"        # "To Record a Triple Double": one Yes price per player
 
 
 def _american(v):
@@ -115,13 +116,28 @@ def parse_game(items, names):
     return lines, alts
 
 
+def parse_td(items, names):
+    """Triple-double Yes prices -> {norm_name: {"odds", "book"}} (Jokic tab)."""
+    from .odds import norm_name
+    out = {}
+    for it in items:
+        if str((it.get("type") or {}).get("id")) != TRIPLE_DOUBLE:
+            continue
+        ref = (it.get("athlete") or {}).get("$ref", "")
+        pid = ref.split("/athletes/")[1].split("?")[0] if "/athletes/" in ref else None
+        price = _american(((it.get("odds") or {}).get("american") or {}).get("value"))
+        if pid in names and price is not None:
+            out[norm_name(names[pid])] = {"odds": price, "book": BOOK}
+    return out
+
+
 def fetch(con, date_s):
     """Pull every game's DraftKings props for date_s from ESPN (free).
     -> {"date", "fetched_at", "games": {"AWY @ HOM": n_players}, "lines", "alts"}."""
     names = {str(r["player_id"]): r["name"] for r in con.execute("SELECT player_id, name FROM players")}
     games = con.execute("SELECT game_id, home_team, away_team FROM games WHERE date=?", (date_s,)).fetchall()
     out = {"date": date_s, "fetched_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-           "source": "ESPN (DraftKings)", "games": {}, "lines": {}, "alts": {}}
+           "source": "ESPN (DraftKings)", "games": {}, "lines": {}, "alts": {}, "td": {}}
     empty = 0
     for g in games:
         items = _items(g["game_id"])
@@ -129,6 +145,7 @@ def fetch(con, date_s):
         if empty >= 2 and not out["lines"]:
             break                   # nothing posted (or ESPN down): don't wait on every game
         lines, alts = parse_game(items, names)
+        out["td"].update(parse_td(items, names))
         count = lambda d: {st: sum(1 for per in d.values() if st in per) for st in MAIN.values()}
         out["games"][f"{g['away_team']} @ {g['home_team']}"] = {
             "home": g["home_team"], "away": g["away_team"], "lines": len(lines), "ladders": len(alts),
@@ -165,7 +182,7 @@ def refresh(con, date_s):
     replaces a good one). -> log dict."""
     data = fetch(con, date_s)
     n = len(data["lines"]) + len(data["alts"])
-    same = lambda d: json.dumps({k: d.get(k) for k in ("lines", "alts")}, sort_keys=True)
+    same = lambda d: json.dumps({k: d.get(k) for k in ("lines", "alts", "td")}, sort_keys=True)
     if n and same(data) != same(load(date_s)):        # unchanged prices: no new commit
         save(data)
     return {"date": date_s, "players_with_lines": len(data["lines"]),

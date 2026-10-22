@@ -33,6 +33,11 @@ function summaryTiles(sum, streak) {
 /* The headline: do we expect a triple-double tonight, yes or no. The model
    probability and market price are supporting detail underneath, not the
    lead — the call itself is what matters most here, not the edge math. */
+const priceTxt = (q) => {
+  const at = q.at ? new Date(q.at).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) : "";
+  return `${q.odds > 0 ? "+" + q.odds : q.odds} ${esc(q.book)}${at ? ` <span class="dim">(as of ${esc(at)})</span>` : ""}`;
+};
+
 function tonightCall(t) {
   if (!t) return "";
   const p = t.td_projection;
@@ -50,8 +55,8 @@ function tonightCall(t) {
       <div class="call-badge ${isYes ? "call-yes" : "call-no"}">Bet TD: ${isYes ? "YES" : "NO"}</div>
       <div class="call-prob">His chance: about <b>${pct}%</b>${p.break_even != null
         ? ` · price needs ${Math.round(p.break_even * 100)}%` : ""}</div>
-      ${mkt ? `<div class="call-market">Market: ${mkt.side === "yes" ? "Yes" : "No"}
-        ${mkt.odds > 0 ? "+" + mkt.odds : mkt.odds} · ${esc(mkt.book)}</div>` : ""}
+      ${mkt ? `<div class="call-market">Best Yes price: ${priceTxt(mkt)}${(mkt.others || []).length
+        ? ` · also ${mkt.others.map(priceTxt).join(" · ")}` : ""}</div>` : ""}
     </div>
     <div class="noedge" style="margin:-8px 0 16px">${esc(p.note)}</div>`;
 }

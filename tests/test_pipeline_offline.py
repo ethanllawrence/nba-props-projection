@@ -271,7 +271,8 @@ def test_odds_rationing_and_board():
 
     jk = json.loads((site / "jokic.json").read_text())
     if config.ODDS_JOKIC_TD and len(ln["markets"]) * 2 + 1 <= main:
-        assert jk["tonight"]["market"] == {"side": "yes", "odds": 120, "book": "FanDuel"}
+        m = jk["tonight"]["market"]
+        assert (m["side"], m["odds"], m["book"]) == ("yes", 120, "FanDuel") and m["at"] and m["others"] == []
 
     # Afternoon run: odds off, lines must survive without any paid call
     os.environ["NPROJ_ODDS_MODE"] = "off"
@@ -651,6 +652,10 @@ def test_espn_props():
                                                          "b": {"pra", "points", "rebounds", "assists"}},
                                       markets=mk, free_ladders={"a", "b"})
     assert per == {"a": [], "b": []} and lad == [] and res == odds.early_reserve(16)
+    # Jokic's triple-double Yes price (type 93) for the Jokic tab
+    td = E.parse_td([it("1", "93", None, "+121"), it("2", "92", None, "-750"), it("9", "93", None, "+300")],
+                    {"1": "Nikola Jokic", "2": "Someone"})
+    assert td == {"nikola jokic": {"odds": 121, "book": "DraftKings"}}, td
     print("OK espn props")
 
 

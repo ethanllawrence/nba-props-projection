@@ -335,7 +335,8 @@ def refresh_lines(date_s, jokic_name="Nikola Jokic", jokic_team="DEN", team_orde
     td_price, spent = None, 0
     jokic_key = norm_name(jokic_name)
     planned = sum(len(v) for v in per.values()) + len(ladders) * len(LADDER_STATS)
-    room_for_td = config.ODDS_JOKIC_TD and planned + 1 <= allowance - reserve
+    free_td = norm_name(jokic_name) in ((espn or {}).get("td") or {})      # ESPN has DK's price free
+    room_for_td = config.ODDS_JOKIC_TD and not free_td and planned + 1 <= allowance - reserve
     for ev in events:
         mk = list(per[ev["event_id"]])
         if room_for_td and jokic_team in (ev["home"], ev["away"]):
