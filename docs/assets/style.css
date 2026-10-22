@@ -244,3 +244,9 @@ tr.moved td:first-child { box-shadow: inset 3px 0 var(--gold); }
 /* every small table (results, Jokic games, parlay history) fits the phone: no forced width, no fade */
 .board-tbl.compact-tbl table.t { min-width: 0; }
 .board-tbl-wrap:has(.compact-tbl)::after { display: none; }
+
+/* Jokic TD tab: the YES celebration art (only shown on a YES call) */
+.td-yes-art { display: block; width: 100%; height: auto; border-radius: 10px; margin: 0 0 12px;
+  border: 1px solid var(--line); animation: td-pop .5s ease-out; }
+@keyframes td-pop { from { transform: scale(.96); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .td-yes-art { animation: none; } }

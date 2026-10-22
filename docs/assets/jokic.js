@@ -37,10 +37,13 @@ function tonightCall(t) {
   if (!t) return "";
   const p = t.td_projection;
   const mkt = t.market;
-  const isYes = t.call === "yes";
+  // ?td=yes previews the YES celebration whatever tonight's call is
+  const isYes = t.call === "yes" || new URLSearchParams(location.search).get("td") === "yes";
   const pct = Math.round(p.model_prob * 100);
   return `
     <div class="call-hero">
+      ${isYes ? `<img class="td-yes-art" src="assets/jokic-td-yes.jpg?v=1"
+        alt="Cartoon of Jokic dunking a flaming ball through a shattered backboard while the crowd goes wild">` : ""}
       <div class="call-meta">${t.opp
         ? `Nikola Jokic · DEN ${esc(t.opp)} · ${esc(t.time_et)}`
         : "Nikola Jokic · no game today · call for his next game"}</div>
