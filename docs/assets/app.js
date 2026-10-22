@@ -11,6 +11,23 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
    Green = the model likes the over enough to beat the price, red = the
    under, gold = there's a line but no edge. Older data without p_over
    (before the model) shows uncolored. */
+/* Color = where the projection sits vs. the book line (Robin, Oct 22): a
+   gradient from red (well below the line) through gold (about even) to green
+   (well above), full color at 25%+ off the line. It's a direction-at-a-glance
+   guide (e.g. how safe a lower alt line looks), not a bet signal. A real edge
+   call (the model's chance beats the price; see Edge coloring on the Method
+   page) gets a box around the number. Far-from-line cells (1.5x+, "no call")
+   stay grey: there the book likely knows something the model doesn't. */
+const GRAD_DEAD = 0.03, GRAD_FULL = 0.25;
+function lineTint(stat) {
+  if (!stat || stat.line == null || !(stat.line > 0)) return null;
+  if (stat.flag === "far") return "var(--dim)";
+  const d = (stat.proj - stat.line) / stat.line;
+  const t = Math.max(0, Math.min(1, (Math.abs(d) - GRAD_DEAD) / (GRAD_FULL - GRAD_DEAD)));
+  if (t === 0) return "var(--gold)";
+  return `color-mix(in srgb, ${d > 0 ? "var(--green)" : "var(--red)"} ${Math.round(35 + 65 * t)}%, var(--gold))`;
+}
+
 function edgeClass(stat) {
   if (!stat || stat.line == null || stat.p_over == null) return "";
   if (stat.call === "over") return "pos";
@@ -124,9 +141,13 @@ function statCell(stat, extraCls, delta, key) {
       ? `U ${Math.round((1 - stat.p_over) * 100)}%` : `O ${Math.round(stat.p_over * 100)}%`;
     sub += ` · ${pick}`;
   }
+  const tint = earlyView ? null : lineTint(stat);
+  const callCls = stat.call ? ` edge-call ${edgeCls}` : "";
+  const pctTxt = hasLine && stat.line > 0 ? `${stat.proj > stat.line ? "+" : ""}${Math.round((stat.proj - stat.line) / stat.line * 100)}% vs the line` : "";
+  const tip = stat.call ? `Model edge: ${stat.call} (the model's chance beats the price). ${pctTxt}` : pctTxt;
   return `<td class="num${cls}">
     <div class="stat-cell">
-      <div class="num ${edgeCls}">${stat.proj.toFixed(1)}${moveTag(delta, key)}</div>
+      <div class="num${callCls}"${tint && !stat.call ? ` style="color:${tint}"` : ""}${tip ? ` title="${esc(tip)}"` : ""}>${stat.proj.toFixed(1)}${moveTag(delta, key)}</div>
       <div class="line">${sub}</div>
     </div>
   </td>`;
@@ -179,9 +200,8 @@ function tableView(players) {
   const anyLines = players.some((p) => Object.values(p.stats || {}).some((s) => s && s.p_over != null));
   const legend = anyLines
     ? `<div class="legend">
-      <span><span class="sw g"></span>model edge: over</span>
-      <span><span class="sw o"></span>no edge vs. price</span>
-      <span><span class="sw r"></span>model edge: under</span>
+      <span><span class="sw grad"></span>projection vs. line: below · even · above</span>
+      <span><span class="sw box"></span>boxed = model edge vs. the price</span>
     </div>`
     : `<div class="legend"><span>${earlyView ? "Early look: model projections only. Lines arrive the morning of the games."
       : "Projections only: no book lines for this slate yet."}</span></div>`;

@@ -250,3 +250,9 @@ tr.moved td:first-child { box-shadow: inset 3px 0 var(--gold); }
   border: 1px solid var(--line); animation: td-pop .5s ease-out; }
 @keyframes td-pop { from { transform: scale(.96); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .td-yes-art { animation: none; } }
+
+/* Today board: projection-vs-line gradient legend and boxed edge calls (app.js lineTint) */
+.legend .sw.grad { width: 34px; background: linear-gradient(90deg, var(--red), var(--gold), var(--green)); }
+.legend .sw.box { background: transparent; border: 1.5px solid var(--text); }
+.stat-cell .num.edge-call { display: inline-block; border: 1.5px solid currentColor; border-radius: 5px;
+  padding: 0 4px; font-weight: 800; }

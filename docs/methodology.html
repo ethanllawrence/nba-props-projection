@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>PRAjections — Methodology</title>
-<link rel="stylesheet" href="assets/style.css?v=5">
+<link rel="stylesheet" href="assets/style.css?v=6">
 </head>
 <body>
 <div class="wrap">
@@ -75,17 +75,20 @@
     right before tip-off as "probably fine," not a guarantee.</p>
 
     <h2>Edge coloring</h2>
-    <p>Under each projection is the book line (FanDuel or DraftKings) and the model's chance of
-    the over or under. That chance isn't the raw model alone: in testing, the raw model was
-    overconfident (when it said 75%, the over hit about 57% of the time), so its view is blended
-    with the chance implied by the sportsbook's prices, using weights fitted on the backtest. A
-    cell is <span class="pos">green</span> when that blended chance of the over beats the
-    price's break-even by 2 or more percentage points, <span class="neg">red</span> for the
-    under, and <span class="neu">gold</span> when there's a line but no edge. Expect only a
-    handful of colored cells a night; that's on purpose. (The old rule, coloring anything 6% off
-    the line, would have lost about 6% of every dollar bet in the backtest.)</p>
-    <p>One exception: when the projection is 1.5 times the line or more, the cell says "no call"
-    instead of coloring an over, and the parlays skip that player and stat. A gap that big almost
+    <p>Each projection's color shows where it sits against the book line: red when it's below
+    the line, gold when it's about even (within 3%), green when it's above, getting stronger up to
+    25% off the line. It's a quick read on direction, for example how comfortable a lower alt line
+    looks. It is not a bet signal on its own: in the backtest, betting everything 6% or more off the
+    line lost about 6% of every dollar, because the book's line already knows things the model
+    doesn't.</p>
+    <p>The bet signal is the box. Under each projection is the line and the model's chance of the
+    over or under. That chance isn't the raw model alone: in testing, the raw model was overconfident
+    (when it said 75%, the over hit about 57% of the time), so its view is blended with the chance
+    implied by the sportsbook's prices, using weights fitted on the backtest. A number gets a box
+    (green for over, red for under) when that blended chance beats the price's break-even by 2 or more
+    percentage points. Expect only a handful of boxes a night; that's on purpose.</p>
+    <p>One exception: when the projection is 1.5 times the line or more, the cell turns grey and says
+    "no call" instead of boxing an over, and the parlays skip that player and stat. A gap that big almost
     always means the book knows about a role or minutes change the model can't see yet (on Oct 21
     the model had Isaiah Collier at 28.6 PRA, built on last March's games as a starter, against an
     11.5 line). In the archive (58,329 main-line overs), overs at 1.5x or more hit no more often than

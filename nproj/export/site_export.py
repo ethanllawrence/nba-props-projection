@@ -159,11 +159,12 @@ def _export_today_board(con, date_s: str, path=None, early=False):
     n_lined = sum(1 for p in players if has_line(p))
     n_calls = sum(1 for p in players for v in p["stats"].values() if v.get("call"))
     if n_lined:
-        lines_note = (f"Lines from FanDuel/DraftKings, pulled each morning ({n_lined} of "
-                      f"{len(players)} players have at least one). ")
-        lines_note += (f"{n_calls} cells are colored: the model's chance beats the price's "
-                       f"break-even by {round(live.EDGE_MIN * 100)}+ points."
-                       if use_model else "No model probabilities today, so nothing is colored.")
+        lines_note = (f"Lines from FanDuel/DraftKings ({n_lined} of {len(players)} players have at "
+                      f"least one). Colors show where the projection sits vs. the line: red below, "
+                      f"gold about even, green above (a guide, not a bet signal). ")
+        lines_note += (f"{n_calls} {'cell is' if n_calls == 1 else 'cells are'} boxed: the model's chance "
+                       f"beats the price's break-even by {round(live.EDGE_MIN * 100)}+ points."
+                       if use_model else "No model probabilities today, so nothing is boxed.")
     else:
         lines_note = "No sportsbook lines for this date yet, so nothing is colored."
     method = ("Projections come from the PRA model (LightGBM trained on three seasons: recent form, "
