@@ -1,10 +1,13 @@
 # Daily board: pull tonight's slate and game logs from ESPN, project, and
 # commit the refreshed docs/data/*.json so GitHub Pages serves them.
 #
-# Runs three times a day, Arizona time: 6 AM (adds last night's box scores
-# to history/, buys odds, settles last night), 3 PM (picks up injury news),
-# and 8 PM (flips the board to tomorrow's slate, projections only; lines come
-# the next morning). Every run retrains the PRA model on history/ (~1 min).
+# Runs five times a day, Arizona time: 6 AM (adds last night's box scores
+# to history/, buys any odds ESPN doesn't cover, settles last night, checks
+# the night's Parlay of the Day), 3 PM (picks up injury news), 8 PM (flips the
+# board to tomorrow's slate), 9:45 PM (picks tomorrow's Parlay of the Day from
+# ESPN's free DraftKings lines) and 11:30 PM (picks it then if the 9:45 run
+# found no lines yet; otherwise leaves it alone). Every run retrains the PRA
+# model on history/ (~1 min). The night runs never spend odds credits.
 # Offseason runs only refresh a small heartbeat file.
 #
 # Odds: only the 6 AM run buys prop lines (The Odds API, shared free plan,
@@ -24,6 +27,8 @@ on:
     - cron: "0 13 * * *"   # 6:00 AM Arizona (UTC-7, no daylight saving)
     - cron: "0 22 * * *"   # 3:00 PM Arizona
     - cron: "0 3 * * *"    # 8:00 PM Arizona: board flips to tomorrow
+    - cron: "45 4 * * *"   # 9:45 PM Arizona: tomorrow's Parlay of the Day (ESPN lines)
+    - cron: "30 6 * * *"   # 11:30 PM Arizona: retry if 9:45 found no lines
   workflow_dispatch:
     inputs:
       date:
