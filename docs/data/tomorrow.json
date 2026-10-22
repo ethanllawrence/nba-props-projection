@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T08:10:54Z",
+  "generated_at": "2026-10-22T12:14:01Z",
   "date": "2026-10-23",
   "early_look": true,
   "model": "lightgbm",
@@ -246,10 +246,10 @@
       "home": true,
       "time_et": "9:30 PM",
       "status": null,
-      "minutes": 32.5,
+      "minutes": 32.7,
       "stats": {
         "points": {
-          "proj": 25.9,
+          "proj": 26.0,
           "line": null,
           "book": null,
           "over": null,
@@ -410,7 +410,7 @@
           "under": null
         },
         "rebounds": {
-          "proj": 8.1,
+          "proj": 8.2,
           "line": null,
           "book": null,
           "over": null,
@@ -879,7 +879,7 @@
           "under": null
         },
         "assists": {
-          "proj": 6.5,
+          "proj": 6.6,
           "line": null,
           "book": null,
           "over": null,
@@ -939,7 +939,7 @@
       "home": true,
       "time_et": "9:30 PM",
       "status": null,
-      "minutes": 30.3,
+      "minutes": 30.5,
       "stats": {
         "points": {
           "proj": 23.3,
@@ -956,7 +956,7 @@
           "under": null
         },
         "assists": {
-          "proj": 4.9,
+          "proj": 5.0,
           "line": null,
           "book": null,
           "over": null,
@@ -1103,7 +1103,7 @@
           "under": null
         },
         "rebounds": {
-          "proj": 6.1,
+          "proj": 6.2,
           "line": null,
           "book": null,
           "over": null,
@@ -1117,7 +1117,7 @@
           "under": null
         },
         "pra": {
-          "proj": 32.8,
+          "proj": 32.6,
           "line": null,
           "book": null,
           "over": null,
@@ -1373,10 +1373,10 @@
       "home": true,
       "time_et": "9:30 PM",
       "status": null,
-      "minutes": 30.4,
+      "minutes": 30.6,
       "stats": {
         "points": {
-          "proj": 21.9,
+          "proj": 22.0,
           "line": null,
           "book": null,
           "over": null,
@@ -1681,7 +1681,7 @@
       "home": false,
       "time_et": "9:30 PM",
       "status": null,
-      "minutes": 31.7,
+      "minutes": 31.5,
       "stats": {
         "points": {
           "proj": 21.0,
@@ -2724,6 +2724,83 @@
       ]
     },
     {
+      "player": "Dejounte Murray",
+      "player_id": "3907497",
+      "team": "NOP",
+      "opp": "UTA",
+      "home": false,
+      "time_et": "9:30 PM",
+      "status": null,
+      "minutes": 27.5,
+      "stats": {
+        "points": {
+          "proj": 18.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 5.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 6.6,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 30.4,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-03-24",
+          "pts": 7,
+          "reb": 5,
+          "ast": 12,
+          "pra": 24
+        },
+        {
+          "date": "2026-03-26",
+          "pts": 12,
+          "reb": 7,
+          "ast": 4,
+          "pra": 23
+        },
+        {
+          "date": "2026-03-29",
+          "pts": 19,
+          "reb": 4,
+          "ast": 6,
+          "pra": 29
+        },
+        {
+          "date": "2026-04-02",
+          "pts": 9,
+          "reb": 8,
+          "ast": 5,
+          "pra": 22
+        },
+        {
+          "date": "2026-10-21",
+          "pts": 23,
+          "reb": 3,
+          "ast": 7,
+          "pra": 33
+        }
+      ]
+    },
+    {
       "player": "Austin Reaves",
       "player_id": "4066457",
       "team": "LAL",
@@ -2796,83 +2873,6 @@
           "pts": 23,
           "reb": 4,
           "ast": 6,
-          "pra": 33
-        }
-      ]
-    },
-    {
-      "player": "Dejounte Murray",
-      "player_id": "3907497",
-      "team": "NOP",
-      "opp": "UTA",
-      "home": false,
-      "time_et": "9:30 PM",
-      "status": null,
-      "minutes": 27.2,
-      "stats": {
-        "points": {
-          "proj": 18.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 5.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 6.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 30.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-03-24",
-          "pts": 7,
-          "reb": 5,
-          "ast": 12,
-          "pra": 24
-        },
-        {
-          "date": "2026-03-26",
-          "pts": 12,
-          "reb": 7,
-          "ast": 4,
-          "pra": 23
-        },
-        {
-          "date": "2026-03-29",
-          "pts": 19,
-          "reb": 4,
-          "ast": 6,
-          "pra": 29
-        },
-        {
-          "date": "2026-04-02",
-          "pts": 9,
-          "reb": 8,
-          "ast": 5,
-          "pra": 22
-        },
-        {
-          "date": "2026-10-21",
-          "pts": 23,
-          "reb": 3,
-          "ast": 7,
           "pra": 33
         }
       ]
@@ -2962,7 +2962,7 @@
       "home": false,
       "time_et": "9:30 PM",
       "status": null,
-      "minutes": 29.4,
+      "minutes": 29.6,
       "stats": {
         "points": {
           "proj": 17.7,
@@ -2986,7 +2986,7 @@
           "under": null
         },
         "pra": {
-          "proj": 27.6,
+          "proj": 27.4,
           "line": null,
           "book": null,
           "over": null,
@@ -3028,6 +3028,83 @@
           "reb": 4,
           "ast": 1,
           "pra": 16
+        }
+      ]
+    },
+    {
+      "player": "Jeremiah Fears",
+      "player_id": "5144091",
+      "team": "NOP",
+      "opp": "UTA",
+      "home": false,
+      "time_et": "9:30 PM",
+      "status": null,
+      "minutes": 25.8,
+      "stats": {
+        "points": {
+          "proj": 17.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 3.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 4.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 25.0,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-04-05",
+          "pts": 19,
+          "reb": 3,
+          "ast": 7,
+          "pra": 29
+        },
+        {
+          "date": "2026-04-07",
+          "pts": 40,
+          "reb": 5,
+          "ast": 6,
+          "pra": 51
+        },
+        {
+          "date": "2026-04-10",
+          "pts": 36,
+          "reb": 3,
+          "ast": 6,
+          "pra": 45
+        },
+        {
+          "date": "2026-04-12",
+          "pts": 36,
+          "reb": 10,
+          "ast": 5,
+          "pra": 51
+        },
+        {
+          "date": "2026-10-21",
+          "pts": 8,
+          "reb": 3,
+          "ast": 1,
+          "pra": 12
         }
       ]
     },
@@ -3105,83 +3182,6 @@
           "reb": 5,
           "ast": 3,
           "pra": 46
-        }
-      ]
-    },
-    {
-      "player": "Jeremiah Fears",
-      "player_id": "5144091",
-      "team": "NOP",
-      "opp": "UTA",
-      "home": false,
-      "time_et": "9:30 PM",
-      "status": null,
-      "minutes": 25.6,
-      "stats": {
-        "points": {
-          "proj": 17.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 3.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 4.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 25.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-04-05",
-          "pts": 19,
-          "reb": 3,
-          "ast": 7,
-          "pra": 29
-        },
-        {
-          "date": "2026-04-07",
-          "pts": 40,
-          "reb": 5,
-          "ast": 6,
-          "pra": 51
-        },
-        {
-          "date": "2026-04-10",
-          "pts": 36,
-          "reb": 3,
-          "ast": 6,
-          "pra": 45
-        },
-        {
-          "date": "2026-04-12",
-          "pts": 36,
-          "reb": 10,
-          "ast": 5,
-          "pra": 51
-        },
-        {
-          "date": "2026-10-21",
-          "pts": 8,
-          "reb": 3,
-          "ast": 1,
-          "pra": 12
         }
       ]
     },
@@ -3287,14 +3287,14 @@
           "under": null
         },
         "assists": {
-          "proj": 7.8,
+          "proj": 7.9,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 30.2,
+          "proj": 30.1,
           "line": null,
           "book": null,
           "over": null,
@@ -3319,7 +3319,7 @@
       "home": false,
       "time_et": "9:30 PM",
       "status": null,
-      "minutes": 26.1,
+      "minutes": 26.2,
       "stats": {
         "points": {
           "proj": 17.0,
@@ -3343,7 +3343,7 @@
           "under": null
         },
         "pra": {
-          "proj": 26.3,
+          "proj": 26.4,
           "line": null,
           "book": null,
           "over": null,
@@ -3567,14 +3567,14 @@
           "under": null
         },
         "assists": {
-          "proj": 8.8,
+          "proj": 8.9,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 26.9,
+          "proj": 26.8,
           "line": null,
           "book": null,
           "over": null,
@@ -3627,7 +3627,7 @@
       "home": false,
       "time_et": "9:30 PM",
       "status": null,
-      "minutes": 30.6,
+      "minutes": 30.5,
       "stats": {
         "points": {
           "proj": 16.1,
@@ -3728,7 +3728,7 @@
           "under": null
         },
         "pra": {
-          "proj": 26.2,
+          "proj": 26.1,
           "line": null,
           "book": null,
           "over": null,
@@ -3858,7 +3858,7 @@
       "home": false,
       "time_et": "9:30 PM",
       "status": null,
-      "minutes": 32.6,
+      "minutes": 32.4,
       "stats": {
         "points": {
           "proj": 15.9,
@@ -4267,7 +4267,7 @@
           "under": null
         },
         "pra": {
-          "proj": 24.9,
+          "proj": 24.8,
           "line": null,
           "book": null,
           "over": null,
