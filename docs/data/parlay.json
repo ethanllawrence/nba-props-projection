@@ -294,13 +294,6 @@
       "status": "pending",
       "picked_at": "2026-10-21T22:06:47Z",
       "candidates": 7
-    },
-    "2026-10-23": {
-      "date": "2026-10-23",
-      "legs": [],
-      "status": "waiting",
-      "picked_at": "2026-10-22T04:42:00Z",
-      "note": "Waiting for alt-line prices. They're bought on the morning run once the games are within 2 days."
     }
   },
   "today": {
@@ -404,8 +397,8 @@
       }
     ]
   },
-  "note": "Overs only, 3-4 legs at about +200 to +320 real odds on FanDuel/DraftKings, picked each morning from the night's top players: the model must project over the line and not rate the leg well below the book, and the combination it likes most relative to the book wins (the +/- number; gaps above +8 count as +8, since bigger gaps weren't better historically). Legs stay fixed once picked, unless a manual top-up re-picks from fresh prices. Settled the next morning from the real box scores. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-10-22T04:42:00Z",
+  "note": "Overs only, 3-4 legs at about +200 to +320 real FanDuel/DraftKings odds, picked the night before (about 9:45 PM Arizona time) from the books' real lines and the night's projections, then checked at 6 AM: a leg is swapped only if overnight news or a line move hurt it. The model must project over the line and not rate the leg well below the book; the combination it likes most relative to the book wins (the +/- number; gaps above +8 count as +8). At most 2 legs from one game unless the model strongly backs a third. Graded the next morning. It's for fun: expect the book's cut over time.",
+  "generated_at": "2026-10-22T05:27:00Z",
   "early_history": [
     {
       "date": "2026-10-20",
@@ -476,5 +469,108 @@
       "candidates": 18,
       "result": "loss"
     }
-  ]
+  ],
+  "next": {
+    "date": "2026-10-22",
+    "method": "night",
+    "picked_at": "2026-10-22T05:27:00Z",
+    "missing_games": [],
+    "candidates": 50,
+    "legs": [
+      {
+        "player": "VJ Edgecombe",
+        "player_id": "5124612",
+        "game_id": "401909093",
+        "team": "PHI",
+        "opp": "CLE",
+        "home": true,
+        "time_et": "7:00 PM",
+        "stat": "points",
+        "side": "over",
+        "line": 7.5,
+        "line_type": "alt",
+        "book_line": 10.5,
+        "proj": 14.4,
+        "prob": 0.852,
+        "book_prob": 0.712,
+        "gap": 0.14,
+        "odds": -290,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "reasoning": "Model projects 14.4 points: 85% to clear 7.5 (star-calibrated) vs the book's 71% at -290, a +14 point gap. Projected for 34.9 minutes; PHI -2.5 spread."
+      },
+      {
+        "player": "Joel Embiid",
+        "player_id": "3059318",
+        "game_id": "401909093",
+        "team": "PHI",
+        "opp": "CLE",
+        "home": true,
+        "time_et": "7:00 PM",
+        "stat": "points",
+        "side": "over",
+        "line": 17.5,
+        "line_type": "alt",
+        "book_line": 22.5,
+        "proj": 25.6,
+        "prob": 0.812,
+        "book_prob": 0.718,
+        "gap": 0.094,
+        "odds": -301,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "reasoning": "Model projects 25.6 points: 81% to clear 17.5 (star-calibrated) vs the book's 72% at -301, a +9 point gap. Projected for 34.1 minutes; PHI -2.5 spread."
+      },
+      {
+        "player": "Shai Gilgeous-Alexander",
+        "player_id": "4278073",
+        "game_id": "401909094",
+        "team": "OKC",
+        "opp": "DEN",
+        "home": true,
+        "time_et": "9:30 PM",
+        "stat": "assists",
+        "side": "over",
+        "line": 5.5,
+        "line_type": "alt",
+        "book_line": 6.5,
+        "proj": 7.1,
+        "prob": 0.709,
+        "book_prob": 0.646,
+        "gap": 0.063,
+        "odds": -208,
+        "book": "DraftKings",
+        "blowout_risk": "medium",
+        "minutes_confidence": "high",
+        "reasoning": "Model projects 7.1 assists: 71% to clear 5.5 (star-calibrated) vs the book's 65% at -208, a +6 point gap. Projected for 34.1 minutes; OKC -8.5 spread."
+      },
+      {
+        "player": "Jamal Murray",
+        "player_id": "3936299",
+        "game_id": "401909094",
+        "team": "DEN",
+        "opp": "OKC",
+        "home": false,
+        "time_et": "9:30 PM",
+        "stat": "rebounds",
+        "side": "over",
+        "line": 2.5,
+        "line_type": "alt",
+        "book_line": 3.5,
+        "proj": 4.3,
+        "prob": 0.782,
+        "book_prob": 0.734,
+        "gap": 0.048,
+        "odds": -330,
+        "book": "DraftKings",
+        "blowout_risk": "medium",
+        "minutes_confidence": "high",
+        "reasoning": "Model projects 4.3 rebounds: 78% to clear 2.5 (star-calibrated) vs the book's 73% at -330, a +5 point gap. Projected for 35.4 minutes; DEN +8.5 spread."
+      }
+    ],
+    "combined_odds": 246,
+    "status": "pending"
+  }
 }
