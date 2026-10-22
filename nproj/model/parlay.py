@@ -461,7 +461,7 @@ def _public(con, date_s, saved, l):
     mins = live.PROJ.get(str(l["player_id"]), {}).get("minutes")
     leg = {"player": l["player"], "player_id": l["player_id"], "game_id": l["game_id"],
            "team": l["team"], "opp": l["opp"], "home": l["home"],
-           "time_et": _time_et(l.get("tipoff_utc")), "stat": l["stat"], "side": "over",
+           "time_et": _time_et(l.get("tipoff_utc")) or l.get("time_et") or "", "stat": l["stat"], "side": "over",
            "line": l["line"], "line_type": "main" if book_line == l["line"] else "alt",
            "book_line": book_line, "proj": l["proj"], "prob": l["model_prob"],
            "book_prob": l["book_prob"], "gap": l["gap"], "odds": l["odds"], "book": l["book"],
@@ -523,12 +523,41 @@ def night_pick(con, date_s):
     return {**base, "legs": legs, "combined_odds": price, "status": "pending"}
 
 
+def _recheck(con, date_s, saved, leg):
+    """A night leg the strict pick rules no longer take: is it actually
+    hurt? A price that only got SHORTER (the book more sure, e.g. Jamal
+    Murray 3+ rebounds -330 -> -409, Oct 22) is not a reason to swap, so
+    the price range and the model-vs-book veto don't apply here. Hurt means:
+    the line is gone, the model projects at or below the line, or the
+    projection is 1.5x the main line. -> (candidate dict, None) or (None, why)."""
+    from . import early_parlay, live
+    pid, stat, line = str(leg["player_id"]), leg["stat"], float(leg["line"])
+    pr = live.PROJ.get(pid)
+    if not pr or stat not in pr:
+        return None, f"{leg['player']} has no projection this morning"
+    ladder = (odds.match_lines([leg["player"]], todays_prices(date_s, saved))[0].get(leg["player"]) or {}).get(stat) or []
+    step = next((x for x in ladder if float(x["line"]) == line and x.get("over") is not None), None)
+    if not step:
+        return None, f"{leg['player']} over {leg['line']} is no longer offered"
+    if pr[stat] <= line:
+        return None, f"model now projects {round(pr[stat], 1)}, at or below the {leg['line']} line"
+    main = ((odds.match_lines([leg["player"]], odds.board_lines(date_s).get("lines") or {})[0]
+             .get(leg["player"]) or {}).get(stat) or {}).get("line")
+    if main and pr[stat] / main >= early_parlay.FAR_RATIO:
+        return None, f"model is {pr[stat] / main:.1f}x the line (the book likely knows something)"
+    pm, pb = early_parlay.model_chance(pr, stat, line), early_parlay.book_chance(step["over"])
+    return {**{k: leg.get(k) for k in ("player", "player_id", "team", "opp", "home", "game_id", "time_et")},
+            "side": "over", "stat": stat, "line": leg["line"], "odds": int(step["over"]),
+            "book": step.get("book"), "model_prob": round(pm, 3), "book_prob": round(pb, 3),
+            "gap": round(pm - pb, 3), "proj": round(float(pr[stat]), 1)}, None
+
+
 def morning_check(con, date_s, saved, pj):
     """The 6 AM look at the night pick with fresh lines and projections.
     A leg is swapped when its player is no longer listed as active, its line
-    is gone or no longer passes the rules (price range, the model over the
-    line and not well below the book, not 1.5x the line), or the model's chance
-    fell MORNING_DROP or more. Replacements keep the healthy legs and land the
+    is gone, the model projects at or below the line or 1.5x the line, or the
+    model's chance fell MORNING_DROP or more. A price that moved (even past the
+    pick's -400 limit) is never a reason by itself (see _recheck). Replacements keep the healthy legs and land the
     parlay back in the price range. -> (parlay dict, list of changes)."""
     from datetime import timedelta
     from . import early_parlay
@@ -545,8 +574,14 @@ def morning_check(con, date_s, saved, pj):
         if st not in ("active", "available", "probable"):
             hurt.append((leg, f"{leg['player']} is now listed {st}"))
         elif c is None:
-            hurt.append((leg, f"{leg['player']} over {leg['line']} no longer passes the checks at this "
-                              f"morning's price and projection"))
+            c, why = _recheck(con, date_s, saved, leg)
+            if why:
+                hurt.append((leg, why))
+            elif (leg.get("prob") or 0) - c["model_prob"] >= MORNING_DROP:
+                hurt.append((leg, f"model chance fell from {round(leg['prob'] * 100)}% to "
+                                  f"{round(c['model_prob'] * 100)}% overnight"))
+            else:
+                keep.append(c)
         elif (leg.get("prob") or 0) - c["model_prob"] >= MORNING_DROP:
             hurt.append((leg, f"model chance fell from {round(leg['prob'] * 100)}% to "
                               f"{round(c['model_prob'] * 100)}% overnight"))

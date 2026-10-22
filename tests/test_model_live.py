@@ -182,12 +182,22 @@ def test_live_model():
                     (gone["player_id"], DATE))
         (site / "lines.json").write_text(json.dumps(
             {"date": DATE, "lines": {norm_name(k): v for k, v in lines.items()}, "alts": {}}))
+        # ... and another leg's price only got SHORTER past -400 overnight: it must stay
+        short = pn["legs"][1]
+        e2 = espn_props.load(DATE)
+        for step in e2["alts"][norm_name(short["player"])][short["stat"]]:
+            if step["line"] == short["line"]:
+                step["over"] = -520
+        espn_props.save(e2)
         lg_m = parlay.update(con, DATE, mode="morning")
         pm = json.loads((site / "parlay.json").read_text())
         pm = pm.get("today") or {}
         if pm.get("legs"):
             assert pm["morning_checked"] and pm["changes"][0]["out"]["player"] == gone["player"], (lg_m, pm)
             assert gone["player_id"] not in {l["player_id"] for l in pm["legs"]}
+            kept_short = [l for l in pm["legs"] if l["player_id"] == short["player_id"]]
+            assert kept_short and kept_short[0]["odds"] == -520, (pm["legs"], pm["changes"])
+            assert all(c["out"]["player"] != short["player"] for c in pm["changes"])
             kept = {l["player_id"] for l in pn["legs"][1:]}
             assert kept <= {l["player_id"] for l in pm["legs"]} or pm["changes"], pm
         assert parlay.update(con, DATE, mode="morning").get("morning_check") is None   # checked once

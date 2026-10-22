@@ -103,6 +103,7 @@ function nightNotes(t) {
   } else {
     bits.push("The 6 AM run checks it against overnight news and line moves.");
   }
+  if (t.restored) bits.push(esc(t.restored));
   if (t.missing_games && t.missing_games.length) {
     bits.push(`<span class="neg">Not in play: ${esc(t.missing_games.join(", "))}</span> (no lines posted at pick time).`);
   }
