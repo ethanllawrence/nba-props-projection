@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-22T13:35:07Z",
-  "note": "Season summary, recent games and the model call come from Jokic's real ESPN game log. The market price is his triple-double Yes price from the morning odds pull, when there was room in the budget for it.",
+  "generated_at": "2026-10-22T21:15:31Z",
+  "note": "Season summary, recent games and the model call come from Jokic's real ESPN game log. The market price is the best triple-double Yes price we have: DraftKings' from ESPN (refreshed every run, free) or FanDuel's from the morning odds pull. Prices move during the day, so check yours.",
   "season_summary": {
     "season_label": "2025-26",
     "games_played": 65,
@@ -96,16 +96,24 @@
   "tonight": {
     "opp": "@ OKC",
     "time_et": "9:30 PM",
-    "call": "no",
+    "call": "yes",
     "td_projection": {
       "model_prob": 0.504,
-      "note": "His chance is halfway between his triple-double rate over his last 80 games and 50%. We tested fancier versions (the PRA model's rebound and assist projections, recent-form blends) on the last two seasons and none predicted his nightly triple-doubles better than a coin flip, so his long-run rate pulled toward 50/50 is the honest number. The Yes price (-120) needs 55% to break even, so the call is NO.",
-      "break_even": 0.545
+      "note": "His chance is halfway between his triple-double rate over his last 80 games and 50%. We tested fancier versions (the PRA model's rebound and assist projections, recent-form blends) on the last two seasons and none predicted his nightly triple-doubles better than a coin flip, so his long-run rate pulled toward 50/50 is the honest number. The best Yes price (+121 DraftKings) needs 45% to break even, so the call is YES.",
+      "break_even": 0.452
     },
     "market": {
       "side": "yes",
-      "odds": -120,
-      "book": "FanDuel"
+      "odds": 121,
+      "book": "DraftKings",
+      "at": "2026-10-22T21:15:31Z",
+      "others": [
+        {
+          "odds": -120,
+          "book": "FanDuel",
+          "at": "2026-10-22T13:35:07Z"
+        }
+      ]
     }
   }
 }
