@@ -166,8 +166,22 @@ footer.site { color: var(--dim); font-size: 11.5px; line-height: 1.6; margin-top
    columns — just let it size to content instead of the wide min-width. */
 .today-tbl table.t { min-width: 0; }
 .today-tbl-wrap::after { display: none; }
-@media (max-width: 380px) {
-  .today-tbl .stat-cell .line { display: none; }
+.lbl-sm { display: none; }
+/* Phones: the Today table fits the screen with no sideways scroll (Oct 23).
+   Tighter cells, names and meta lines wrap, smaller last-5 chips without the
+   "L5 PRA" label, "Pts" header, and each cell's line and over/under % stack
+   on two short lines instead of one long one. */
+@media (max-width: 480px) {
+  .today-tbl table.t th, .today-tbl table.t td { padding-left: 4px; padding-right: 4px; }
+  .today-tbl table.t th { font-size: 10.5px; letter-spacing: 0; }
+  .today-tbl td .pn, .today-tbl td .pm { white-space: normal; }
+  .today-tbl .lbl-lg { display: none; } .today-tbl .lbl-sm { display: inline; }
+  .today-tbl .l5 { gap: 2px; } .today-tbl .l5k { display: none; }
+  .today-tbl .l5c { font-size: 9.5px; min-width: 15px; padding: 1px 2px; }
+  .today-tbl .stat-cell .line .sep { display: none; }
+  .today-tbl .stat-cell .line .pk { display: block; }
+  .today-tbl .stat-cell .line, .today-tbl .stat-cell .line .pk { white-space: nowrap; }
+  .today-tbl .stat-cell .num { font-size: 13px; }
 }
 
 /* Signals page */
@@ -246,7 +260,7 @@ tr.moved td:first-child { box-shadow: inset 3px 0 var(--gold); }
 .board-tbl-wrap:has(.compact-tbl)::after { display: none; }
 
 /* Jokic TD tab: the YES celebration art (only shown on a YES call) */
-.td-yes-art { display: block; width: 100%; height: auto; border-radius: 10px; margin: 0 0 12px;
+.td-yes-art { display: block; width: 100%; max-width: 580px; height: auto; border-radius: 10px; margin: 0 auto 12px;
   border: 1px solid var(--line); animation: td-pop .5s ease-out; }
 @keyframes td-pop { from { transform: scale(.96); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .td-yes-art { animation: none; } }
@@ -256,3 +270,10 @@ tr.moved td:first-child { box-shadow: inset 3px 0 var(--gold); }
 .legend .sw.box { background: transparent; border: 1.5px solid var(--text); }
 .stat-cell .num.edge-call { display: inline-block; border: 1.5px solid currentColor; border-radius: 5px;
   padding: 0 4px; font-weight: 800; }
+
+/* Parlay leg tables on phones: the right-hand column (price, book, night price,
+   model vs book, full line) wraps instead of pushing past the card edge */
+.parlay-legs table.t { table-layout: auto; width: 100%; }
+.parlay-legs td .pm { white-space: normal; }
+.parlay-legs td.num { max-width: 52%; }
+.wrap-meta td .pm { white-space: normal; }   /* Results: calls table meta wraps on small phones */

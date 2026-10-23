@@ -36,7 +36,7 @@ function edgeClass(stat) {
 }
 
 const STAT_COLS = [
-  { key: "points", label: "Points" },
+  { key: "points", label: "Points", short: "Pts" },
   { key: "rebounds", label: "Reb" },
   { key: "assists", label: "Ast" },
   { key: "pra", label: "PRA", cls: "pra-col" },
@@ -135,11 +135,11 @@ function statCell(stat, extraCls, delta, key) {
   if (hasLine && stat.flag === "far") {
     // projection 1.5x+ the line: the book likely knows about a role or minutes
     // change the model can't see; historically no edge there, so no call
-    sub += ` · <span class="dim" title="Model is ${(stat.proj / stat.line).toFixed(1)}x the line. The book likely knows about a role or minutes change the model can't see; overs this far above the line haven't beaten the book, so no call.">no call ⓘ</span>`;
+    sub += `<span class="sep"> · </span><span class="pk dim" title="Model is ${(stat.proj / stat.line).toFixed(1)}x the line. The book likely knows about a role or minutes change the model can't see; overs this far above the line haven't beaten the book, so no call.">no call ⓘ</span>`;
   } else if (hasLine && stat.p_over != null) {
     const pick = stat.call === "under" || (!stat.call && stat.p_over < 0.5)
       ? `U ${Math.round((1 - stat.p_over) * 100)}%` : `O ${Math.round(stat.p_over * 100)}%`;
-    sub += ` · ${pick}`;
+    sub += `<span class="sep"> · </span><span class="pk">${pick}</span>`;
   }
   const tint = earlyView ? null : lineTint(stat);
   const callCls = stat.call ? ` edge-call ${edgeCls}` : "";
@@ -195,7 +195,8 @@ function tableView(players) {
       const active = c.key === sortState.key;
       const arrow = active ? (sortState.dir === "asc" ? " ↑" : " ↓") : "";
       const cls = ["num", c.cls, active ? "sort-on" : ""].filter(Boolean).join(" ");
-      return `<th data-key="${c.key}" class="${cls}">${esc(c.label)}${arrow}</th>`;
+      const lbl = c.short ? `<span class="lbl-lg">${esc(c.label)}</span><span class="lbl-sm">${esc(c.short)}</span>` : esc(c.label);
+      return `<th data-key="${c.key}" class="${cls}">${lbl}${arrow}</th>`;
     }).join("");
   const anyLines = players.some((p) => Object.values(p.stats || {}).some((s) => s && s.p_over != null));
   const legend = anyLines

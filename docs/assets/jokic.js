@@ -47,7 +47,7 @@ function tonightCall(t) {
   const pct = Math.round(p.model_prob * 100);
   return `
     <div class="call-hero">
-      ${isYes ? `<img class="td-yes-art" src="assets/jokic-td-yes.jpg?v=1"
+      ${isYes ? `<img class="td-yes-art" src="assets/jokic-td-yes.jpg?v=2"
         alt="Cartoon of Jokic dunking a flaming ball through a shattered backboard while the crowd goes wild">` : ""}
       <div class="call-meta">${t.opp
         ? `Nikola Jokic · DEN ${esc(t.opp)} · ${esc(t.time_et)}`

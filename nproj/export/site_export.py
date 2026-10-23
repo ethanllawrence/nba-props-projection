@@ -230,10 +230,13 @@ def _export_jokic(con, date_s: str):
         })
         data["season_summary"] = summary
 
+    # recent games: this season only (Robin, Oct 23); in the offseason that's
+    # still the season just finished, since it's the latest one in the log
+    current = logs[0]["season"]
     data["recent_games"] = [
         {"date": g["date"], "opp": g["opp"], "pts": g["points"], "reb": g["rebounds"],
          "ast": g["assists"], "triple_double": is_td(g)}
-        for g in logs[:10]
+        for g in [g for g in logs if g["season"] == current][:10]
     ]
 
     season_rate = data["season_summary"]["hit_rate"]

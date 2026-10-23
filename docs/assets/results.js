@@ -85,7 +85,7 @@ function callsTable(calls) {
   }).join("");
   return `
     <h2 class="sec">Latest edge calls</h2>
-    <div class="board-tbl-wrap"><div class="board-tbl compact-tbl">
+    <div class="board-tbl-wrap"><div class="board-tbl compact-tbl wrap-meta">
       <table class="t">
         <thead><tr><th>Call</th><th class="num">Actual</th><th>Result</th></tr></thead>
         <tbody>${rows}</tbody>

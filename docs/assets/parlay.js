@@ -79,7 +79,7 @@ function parlayCard(t) {
     <div class="call-meta" style="margin-bottom:6px;display:flex;justify-content:space-between;gap:8px;align-items:baseline">
       <span>${esc(niceDate(t.date))} · ${t.legs.length} legs · <b>${fmtOdds(t.combined_odds)}</b> on the book${all}</span>
       <span class="win ${statusCls}">${statusLabel}</span></div>
-    <div class="board-tbl-wrap"><div class="board-tbl compact-tbl"><table class="t">
+    <div class="board-tbl-wrap"><div class="board-tbl compact-tbl parlay-legs"><table class="t">
       <thead><tr><th>Player</th><th class="num">Leg</th></tr></thead>
       <tbody>${t.legs.map(legRow).join("")}</tbody></table></div></div>
     ${replacedNote(t)}
@@ -175,7 +175,7 @@ function earlyCards(picks, emptyNote) {
       <div class="call-meta" style="margin-bottom:6px">${esc(niceDate(p.date))} · ${p.legs.length} legs ·
         <b>${fmtOdds(p.combined_odds)}</b> on the book · all legs hit: model ${Math.round(p.model_prob * 100)}%,
         book ${Math.round(p.book_prob * 100)}%</div>
-      <div class="board-tbl-wrap"><div class="board-tbl compact-tbl"><table class="t">
+      <div class="board-tbl-wrap"><div class="board-tbl compact-tbl parlay-legs"><table class="t">
         <thead><tr><th>Player</th><th class="num">Leg</th></tr></thead>
         <tbody>${p.legs.map(earlyLegRow).join("")}</tbody></table></div></div>
     </div>`;
