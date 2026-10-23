@@ -428,13 +428,14 @@
         "book_line": 6.5,
         "proj": 9.0,
         "prob": 0.878,
-        "book_prob": 0.688,
-        "gap": 0.19,
-        "odds": -256,
+        "book_prob": 0.704,
+        "gap": 0.174,
+        "odds": -279,
         "book": "DraftKings",
-        "blowout_risk": "low",
+        "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 9.0 assists: 88% to clear 5.5 (star-calibrated) vs the book's 69% at -256, a +19 point gap. Projected for 31.8 minutes; IND -6.5 spread."
+        "reasoning": "Model projects 9.0 assists: 88% to clear 5.5 (star-calibrated) vs the book's 70% at -279, a +17 point gap. Projected for 31.7 minutes; IND -7.5 spread.",
+        "night_odds": -256
       },
       {
         "player": "Kyrie Irving",
@@ -450,14 +451,15 @@
         "line_type": "alt",
         "book_line": 19.5,
         "proj": 23.9,
-        "prob": 0.869,
-        "book_prob": 0.74,
-        "gap": 0.128,
-        "odds": -342,
+        "prob": 0.867,
+        "book_prob": 0.75,
+        "gap": 0.117,
+        "odds": -363,
         "book": "DraftKings",
-        "blowout_risk": "low",
+        "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 23.9 points: 87% to clear 14.5 (star-calibrated) vs the book's 74% at -342, a +13 point gap. Projected for 32.3 minutes; DAL +6.5 spread."
+        "reasoning": "Model projects 23.9 points: 87% to clear 14.5 (star-calibrated) vs the book's 75% at -363, a +12 point gap. Projected for 32.3 minutes; DAL +7.5 spread.",
+        "night_odds": -342
       },
       {
         "player": "Cooper Flagg",
@@ -471,16 +473,17 @@
         "side": "over",
         "line": 4.5,
         "line_type": "alt",
-        "book_line": 5.5,
+        "book_line": 6.5,
         "proj": 7.2,
-        "prob": 0.816,
-        "book_prob": 0.717,
-        "gap": 0.1,
-        "odds": -298,
+        "prob": 0.817,
+        "book_prob": 0.71,
+        "gap": 0.107,
+        "odds": -288,
         "book": "DraftKings",
-        "blowout_risk": "low",
+        "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 7.2 rebounds: 82% to clear 4.5 (star-calibrated) vs the book's 72% at -298, a +10 point gap. Projected for 32.0 minutes; DAL +6.5 spread."
+        "reasoning": "Model projects 7.2 rebounds: 82% to clear 4.5 (star-calibrated) vs the book's 71% at -288, a +11 point gap. Projected for 31.9 minutes; DAL +7.5 spread.",
+        "night_odds": -298
       },
       {
         "player": "Paolo Banchero",
@@ -495,18 +498,19 @@
         "line": 29.5,
         "line_type": "alt",
         "book_line": 36.5,
-        "proj": 42.4,
-        "prob": 0.851,
-        "book_prob": 0.766,
-        "gap": 0.085,
-        "odds": -400,
+        "proj": 42.6,
+        "prob": 0.855,
+        "book_prob": 0.761,
+        "gap": 0.094,
+        "odds": -389,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 42.4 PRA: 85% to clear 29.5 (star-calibrated) vs the book's 77% at -400, a +8 point gap. Projected for 38.8 minutes; ORL +1.5 spread."
+        "reasoning": "Model projects 42.6 PRA: 86% to clear 29.5 (star-calibrated) vs the book's 76% at -389, a +9 point gap. Projected for 38.8 minutes; ORL -1.5 spread.",
+        "night_odds": -400
       }
     ],
-    "combined_odds": 200,
+    "combined_odds": 193,
     "status": "pending",
     "replaced": {
       "combined_odds": 200,
@@ -541,10 +545,42 @@
           "odds": -314
         }
       ]
-    }
+    },
+    "night": {
+      "combined_odds": 200,
+      "picked_at": "2026-10-23T11:55:51Z",
+      "legs": [
+        {
+          "player": "Andrew Nembhard",
+          "stat": "assists",
+          "line": 5.5,
+          "odds": -256
+        },
+        {
+          "player": "Kyrie Irving",
+          "stat": "points",
+          "line": 14.5,
+          "odds": -342
+        },
+        {
+          "player": "Cooper Flagg",
+          "stat": "rebounds",
+          "line": 4.5,
+          "odds": -298
+        },
+        {
+          "player": "Paolo Banchero",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -400
+        }
+      ]
+    },
+    "morning_checked": "2026-10-23T17:44:43Z",
+    "changes": []
   },
   "note": "Overs only, 3-4 legs at about +200 to +320 real FanDuel/DraftKings odds, picked the night before (about 9:45 PM Arizona time) from the books' real lines and the night's projections, then checked at 6 AM: a leg is swapped only if overnight news or a line move hurt it. The model must project over the line and not rate the leg well below the book; the combination it likes most relative to the book wins (the +/- number; gaps above +8 count as +8). At most 2 legs from one game unless the model strongly backs a third. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-10-23T11:55:51Z",
+  "generated_at": "2026-10-23T17:44:43Z",
   "early_history": [
     {
       "date": "2026-10-20",
