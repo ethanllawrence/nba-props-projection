@@ -596,34 +596,32 @@
   "today": {
     "date": "2026-10-24",
     "method": "night",
-    "picked_at": "2026-10-24T09:11:37Z",
-    "missing_games": [
-      "BKN @ CLE"
-    ],
-    "candidates": 44,
+    "picked_at": "2026-10-24T11:22:21Z",
+    "missing_games": [],
+    "candidates": 80,
     "legs": [
       {
-        "player": "Jabari Smith Jr.",
-        "player_id": "4432639",
+        "player": "Kevin Durant",
+        "player_id": "3202",
         "game_id": "401909856",
         "team": "HOU",
         "opp": "ATL",
         "home": false,
         "time_et": "8:30 PM",
-        "stat": "points",
+        "stat": "assists",
         "side": "over",
-        "line": 9.5,
+        "line": 3.5,
         "line_type": "alt",
-        "book_line": 13.5,
-        "proj": 16.9,
-        "prob": 0.848,
-        "book_prob": 0.722,
-        "gap": 0.125,
-        "odds": -308,
+        "book_line": 4.5,
+        "proj": 5.2,
+        "prob": 0.757,
+        "book_prob": 0.622,
+        "gap": 0.135,
+        "odds": -186,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 16.9 points: 85% to clear 9.5 (star-calibrated) vs the book's 72% at -308, a +12 point gap. Projected for 36.4 minutes; HOU +1.5 spread."
+        "reasoning": "Model projects 5.2 assists: 76% to clear 3.5 (star-calibrated) vs the book's 62% at -186, a +14 point gap. Projected for 36.8 minutes; HOU +1.5 spread."
       },
       {
         "player": "Dillon Brooks",
@@ -640,13 +638,13 @@
         "book_line": 16.5,
         "proj": 20.6,
         "prob": 0.881,
-        "book_prob": 0.758,
-        "gap": 0.122,
-        "odds": -382,
+        "book_prob": 0.762,
+        "gap": 0.119,
+        "odds": -390,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 20.6 points: 88% to clear 11.5 (star-calibrated) vs the book's 76% at -382, a +12 point gap. Projected for 32.0 minutes; PHX -9.5 spread."
+        "reasoning": "Model projects 20.6 points: 88% to clear 11.5 (star-calibrated) vs the book's 76% at -390, a +12 point gap. Projected for 32.0 minutes; PHX -9.5 spread."
       },
       {
         "player": "Josh Giddey",
@@ -656,20 +654,20 @@
         "opp": "WAS",
         "home": true,
         "time_et": "8:00 PM",
-        "stat": "points",
+        "stat": "rebounds",
         "side": "over",
-        "line": 9.5,
+        "line": 4.5,
         "line_type": "alt",
-        "book_line": 12.5,
-        "proj": 15.5,
-        "prob": 0.796,
-        "book_prob": 0.712,
-        "gap": 0.084,
-        "odds": -291,
+        "book_line": 6.5,
+        "proj": 7.9,
+        "prob": 0.871,
+        "book_prob": 0.76,
+        "gap": 0.11,
+        "odds": -387,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 15.5 points: 80% to clear 9.5 (star-calibrated) vs the book's 71% at -291, a +8 point gap. Projected for 31.1 minutes; CHI -1.5 spread."
+        "reasoning": "Model projects 7.9 rebounds: 87% to clear 4.5 (star-calibrated) vs the book's 76% at -387, a +11 point gap. Projected for 31.1 minutes; CHI +1.5 spread."
       },
       {
         "player": "Jamal Murray",
@@ -686,20 +684,54 @@
         "book_line": 4.5,
         "proj": 5.1,
         "prob": 0.722,
-        "book_prob": 0.644,
-        "gap": 0.077,
-        "odds": -206,
+        "book_prob": 0.634,
+        "gap": 0.088,
+        "odds": -196,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 5.1 rebounds: 72% to clear 3.5 (star-calibrated) vs the book's 64% at -206, a +8 point gap. Projected for 37.8 minutes; DEN -11.5 spread."
+        "reasoning": "Model projects 5.1 rebounds: 72% to clear 3.5 (star-calibrated) vs the book's 63% at -196, a +9 point gap. Projected for 37.8 minutes; DEN -11.5 spread."
       }
     ],
-    "combined_odds": 234,
-    "status": "pending"
+    "combined_odds": 267,
+    "status": "pending",
+    "replaced": {
+      "combined_odds": 234,
+      "picked_at": "2026-10-24T09:11:37Z",
+      "legs": [
+        {
+          "player": "Jabari Smith Jr.",
+          "stat": "points",
+          "side": "over",
+          "line": 9.5,
+          "odds": -308
+        },
+        {
+          "player": "Dillon Brooks",
+          "stat": "points",
+          "side": "over",
+          "line": 11.5,
+          "odds": -382
+        },
+        {
+          "player": "Josh Giddey",
+          "stat": "points",
+          "side": "over",
+          "line": 9.5,
+          "odds": -291
+        },
+        {
+          "player": "Jamal Murray",
+          "stat": "rebounds",
+          "side": "over",
+          "line": 3.5,
+          "odds": -206
+        }
+      ]
+    }
   },
   "note": "Overs only, 3-4 legs at about +200 to +320 real FanDuel/DraftKings odds, picked the night before (about 9:45 PM Arizona time) from the books' real lines and the night's projections, then checked at 6 AM: a leg is swapped only if overnight news or a line move hurt it. The model must project over the line and not rate the leg well below the book; the combination it likes most relative to the book wins (the +/- number; gaps above +8 count as +8). At most 2 legs from one game unless the model strongly backs a third. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-10-24T09:11:37Z",
+  "generated_at": "2026-10-24T11:22:21Z",
   "early_history": [
     {
       "date": "2026-10-20",
