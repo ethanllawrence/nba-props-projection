@@ -585,7 +585,7 @@
     "changes": []
   },
   "note": "Overs only, 3-4 legs at about +200 to +320 real FanDuel/DraftKings odds, picked the night before (about 9:45 PM Arizona time) from the books' real lines and the night's projections, then checked at 6 AM: a leg is swapped only if overnight news or a line move hurt it. The model must project over the line and not rate the leg well below the book; the combination it likes most relative to the book wins (the +/- number; gaps above +8 count as +8). At most 2 legs from one game unless the model strongly backs a third. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-10-23T17:44:43Z",
+  "generated_at": "2026-10-24T07:46:35Z",
   "early_history": [
     {
       "date": "2026-10-20",
@@ -820,5 +820,24 @@
       "candidates": 7,
       "result": "win"
     }
-  ]
+  ],
+  "next": {
+    "date": "2026-10-24",
+    "method": "night",
+    "picked_at": "2026-10-24T07:46:35Z",
+    "missing_games": [
+      "MIA @ CHA",
+      "BKN @ CLE",
+      "MIL @ PHI",
+      "WAS @ CHI",
+      "SAS @ DAL",
+      "HOU @ ATL",
+      "NOP @ DEN",
+      "GSW @ PHX"
+    ],
+    "candidates": 0,
+    "legs": [],
+    "status": "none",
+    "note": "No parlay yet: ESPN hasn't posted tomorrow's player lines."
+  }
 }
