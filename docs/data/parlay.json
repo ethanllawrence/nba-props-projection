@@ -403,189 +403,303 @@
       "changes": [],
       "restored": "The 6 AM check first swapped Jamal Murray for Cameron Johnson only because Murray's price got shorter (-330 to -409); that's no longer a reason to swap, so he's back.",
       "result": "loss"
+    },
+    {
+      "date": "2026-10-23",
+      "method": "night",
+      "picked_at": "2026-10-23T11:55:51Z",
+      "missing_games": [],
+      "candidates": 121,
+      "legs": [
+        {
+          "player": "Andrew Nembhard",
+          "player_id": "4395712",
+          "game_id": "401909844",
+          "team": "IND",
+          "opp": "DAL",
+          "home": true,
+          "time_et": "7:00 PM",
+          "stat": "assists",
+          "side": "over",
+          "line": 5.5,
+          "line_type": "alt",
+          "book_line": 6.5,
+          "proj": 9.0,
+          "prob": 0.878,
+          "book_prob": 0.704,
+          "gap": 0.174,
+          "odds": -279,
+          "book": "DraftKings",
+          "blowout_risk": "medium",
+          "minutes_confidence": "high",
+          "reasoning": "Model projects 9.0 assists: 88% to clear 5.5 (star-calibrated) vs the book's 70% at -279, a +17 point gap. Projected for 31.7 minutes; IND -7.5 spread.",
+          "night_odds": -256,
+          "actual": 5,
+          "hit": false
+        },
+        {
+          "player": "Kyrie Irving",
+          "player_id": "6442",
+          "game_id": "401909844",
+          "team": "DAL",
+          "opp": "IND",
+          "home": false,
+          "time_et": "7:00 PM",
+          "stat": "points",
+          "side": "over",
+          "line": 14.5,
+          "line_type": "alt",
+          "book_line": 19.5,
+          "proj": 23.9,
+          "prob": 0.867,
+          "book_prob": 0.75,
+          "gap": 0.117,
+          "odds": -363,
+          "book": "DraftKings",
+          "blowout_risk": "medium",
+          "minutes_confidence": "high",
+          "reasoning": "Model projects 23.9 points: 87% to clear 14.5 (star-calibrated) vs the book's 75% at -363, a +12 point gap. Projected for 32.3 minutes; DAL +7.5 spread.",
+          "night_odds": -342,
+          "actual": 24,
+          "hit": true
+        },
+        {
+          "player": "Cooper Flagg",
+          "player_id": "5041939",
+          "game_id": "401909844",
+          "team": "DAL",
+          "opp": "IND",
+          "home": false,
+          "time_et": "7:00 PM",
+          "stat": "rebounds",
+          "side": "over",
+          "line": 4.5,
+          "line_type": "alt",
+          "book_line": 6.5,
+          "proj": 7.2,
+          "prob": 0.817,
+          "book_prob": 0.71,
+          "gap": 0.107,
+          "odds": -288,
+          "book": "DraftKings",
+          "blowout_risk": "medium",
+          "minutes_confidence": "high",
+          "reasoning": "Model projects 7.2 rebounds: 82% to clear 4.5 (star-calibrated) vs the book's 71% at -288, a +11 point gap. Projected for 31.9 minutes; DAL +7.5 spread.",
+          "night_odds": -298,
+          "check": {
+            "kind": "status",
+            "from": "active",
+            "to": "day-to-day"
+          },
+          "actual": 5,
+          "hit": true
+        },
+        {
+          "player": "Paolo Banchero",
+          "player_id": "4432573",
+          "game_id": "401909845",
+          "team": "ORL",
+          "opp": "MIN",
+          "home": true,
+          "time_et": "7:00 PM",
+          "stat": "pra",
+          "side": "over",
+          "line": 29.5,
+          "line_type": "alt",
+          "book_line": 36.5,
+          "proj": 42.6,
+          "prob": 0.855,
+          "book_prob": 0.761,
+          "gap": 0.094,
+          "odds": -389,
+          "book": "DraftKings",
+          "blowout_risk": "low",
+          "minutes_confidence": "high",
+          "reasoning": "Model projects 42.6 PRA: 86% to clear 29.5 (star-calibrated) vs the book's 76% at -389, a +9 point gap. Projected for 38.8 minutes; ORL -1.5 spread.",
+          "night_odds": -400,
+          "actual": 25,
+          "hit": false
+        }
+      ],
+      "combined_odds": 193,
+      "status": "loss",
+      "replaced": {
+        "combined_odds": 200,
+        "picked_at": "2026-10-23T09:40:15Z",
+        "legs": [
+          {
+            "player": "Andrew Nembhard",
+            "stat": "assists",
+            "side": "over",
+            "line": 5.5,
+            "odds": -256
+          },
+          {
+            "player": "Scottie Barnes",
+            "stat": "assists",
+            "side": "over",
+            "line": 3.5,
+            "odds": -377
+          },
+          {
+            "player": "Kyrie Irving",
+            "stat": "points",
+            "side": "over",
+            "line": 14.5,
+            "odds": -342
+          },
+          {
+            "player": "Paolo Banchero",
+            "stat": "points",
+            "side": "over",
+            "line": 17.5,
+            "odds": -314
+          }
+        ]
+      },
+      "night": {
+        "combined_odds": 200,
+        "picked_at": "2026-10-23T11:55:51Z",
+        "legs": [
+          {
+            "player": "Andrew Nembhard",
+            "stat": "assists",
+            "line": 5.5,
+            "odds": -256
+          },
+          {
+            "player": "Kyrie Irving",
+            "stat": "points",
+            "line": 14.5,
+            "odds": -342
+          },
+          {
+            "player": "Cooper Flagg",
+            "stat": "rebounds",
+            "line": 4.5,
+            "odds": -298
+          },
+          {
+            "player": "Paolo Banchero",
+            "stat": "pra",
+            "line": 29.5,
+            "odds": -400
+          }
+        ]
+      },
+      "morning_checked": "2026-10-23T17:44:43Z",
+      "changes": [],
+      "result": "loss"
     }
   ],
   "early": {},
   "today": {
-    "date": "2026-10-23",
+    "date": "2026-10-24",
     "method": "night",
-    "picked_at": "2026-10-23T11:55:51Z",
-    "missing_games": [],
-    "candidates": 121,
+    "picked_at": "2026-10-24T09:11:37Z",
+    "missing_games": [
+      "BKN @ CLE"
+    ],
+    "candidates": 44,
     "legs": [
       {
-        "player": "Andrew Nembhard",
-        "player_id": "4395712",
-        "game_id": "401909844",
-        "team": "IND",
-        "opp": "DAL",
-        "home": true,
-        "time_et": "7:00 PM",
-        "stat": "assists",
-        "side": "over",
-        "line": 5.5,
-        "line_type": "alt",
-        "book_line": 6.5,
-        "proj": 9.0,
-        "prob": 0.878,
-        "book_prob": 0.704,
-        "gap": 0.174,
-        "odds": -279,
-        "book": "DraftKings",
-        "blowout_risk": "medium",
-        "minutes_confidence": "high",
-        "reasoning": "Model projects 9.0 assists: 88% to clear 5.5 (star-calibrated) vs the book's 70% at -279, a +17 point gap. Projected for 31.7 minutes; IND -7.5 spread.",
-        "night_odds": -256
-      },
-      {
-        "player": "Kyrie Irving",
-        "player_id": "6442",
-        "game_id": "401909844",
-        "team": "DAL",
-        "opp": "IND",
+        "player": "Jabari Smith Jr.",
+        "player_id": "4432639",
+        "game_id": "401909856",
+        "team": "HOU",
+        "opp": "ATL",
         "home": false,
-        "time_et": "7:00 PM",
+        "time_et": "8:30 PM",
         "stat": "points",
         "side": "over",
-        "line": 14.5,
+        "line": 9.5,
         "line_type": "alt",
-        "book_line": 19.5,
-        "proj": 23.9,
-        "prob": 0.867,
-        "book_prob": 0.75,
-        "gap": 0.117,
-        "odds": -363,
-        "book": "DraftKings",
-        "blowout_risk": "medium",
-        "minutes_confidence": "high",
-        "reasoning": "Model projects 23.9 points: 87% to clear 14.5 (star-calibrated) vs the book's 75% at -363, a +12 point gap. Projected for 32.3 minutes; DAL +7.5 spread.",
-        "night_odds": -342
-      },
-      {
-        "player": "Cooper Flagg",
-        "player_id": "5041939",
-        "game_id": "401909844",
-        "team": "DAL",
-        "opp": "IND",
-        "home": false,
-        "time_et": "7:00 PM",
-        "stat": "rebounds",
-        "side": "over",
-        "line": 4.5,
-        "line_type": "alt",
-        "book_line": 6.5,
-        "proj": 7.2,
-        "prob": 0.817,
-        "book_prob": 0.71,
-        "gap": 0.107,
-        "odds": -288,
-        "book": "DraftKings",
-        "blowout_risk": "medium",
-        "minutes_confidence": "high",
-        "reasoning": "Model projects 7.2 rebounds: 82% to clear 4.5 (star-calibrated) vs the book's 71% at -288, a +11 point gap. Projected for 31.9 minutes; DAL +7.5 spread.",
-        "night_odds": -298,
-        "check": {
-          "kind": "status",
-          "from": "active",
-          "to": "day-to-day"
-        }
-      },
-      {
-        "player": "Paolo Banchero",
-        "player_id": "4432573",
-        "game_id": "401909845",
-        "team": "ORL",
-        "opp": "MIN",
-        "home": true,
-        "time_et": "7:00 PM",
-        "stat": "pra",
-        "side": "over",
-        "line": 29.5,
-        "line_type": "alt",
-        "book_line": 36.5,
-        "proj": 42.6,
-        "prob": 0.855,
-        "book_prob": 0.761,
-        "gap": 0.094,
-        "odds": -389,
+        "book_line": 13.5,
+        "proj": 16.9,
+        "prob": 0.848,
+        "book_prob": 0.722,
+        "gap": 0.125,
+        "odds": -308,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 42.6 PRA: 86% to clear 29.5 (star-calibrated) vs the book's 76% at -389, a +9 point gap. Projected for 38.8 minutes; ORL -1.5 spread.",
-        "night_odds": -400
+        "reasoning": "Model projects 16.9 points: 85% to clear 9.5 (star-calibrated) vs the book's 72% at -308, a +12 point gap. Projected for 36.4 minutes; HOU +1.5 spread."
+      },
+      {
+        "player": "Dillon Brooks",
+        "player_id": "3155526",
+        "game_id": "401909860",
+        "team": "PHX",
+        "opp": "GSW",
+        "home": true,
+        "time_et": "10:00 PM",
+        "stat": "points",
+        "side": "over",
+        "line": 11.5,
+        "line_type": "alt",
+        "book_line": 16.5,
+        "proj": 20.6,
+        "prob": 0.881,
+        "book_prob": 0.758,
+        "gap": 0.122,
+        "odds": -382,
+        "book": "DraftKings",
+        "blowout_risk": "medium",
+        "minutes_confidence": "high",
+        "reasoning": "Model projects 20.6 points: 88% to clear 11.5 (star-calibrated) vs the book's 76% at -382, a +12 point gap. Projected for 32.0 minutes; PHX -9.5 spread."
+      },
+      {
+        "player": "Josh Giddey",
+        "player_id": "4871145",
+        "game_id": "401909857",
+        "team": "CHI",
+        "opp": "WAS",
+        "home": true,
+        "time_et": "8:00 PM",
+        "stat": "points",
+        "side": "over",
+        "line": 9.5,
+        "line_type": "alt",
+        "book_line": 12.5,
+        "proj": 15.5,
+        "prob": 0.796,
+        "book_prob": 0.712,
+        "gap": 0.084,
+        "odds": -291,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "reasoning": "Model projects 15.5 points: 80% to clear 9.5 (star-calibrated) vs the book's 71% at -291, a +8 point gap. Projected for 31.1 minutes; CHI -1.5 spread."
+      },
+      {
+        "player": "Jamal Murray",
+        "player_id": "3936299",
+        "game_id": "401909859",
+        "team": "DEN",
+        "opp": "NOP",
+        "home": true,
+        "time_et": "9:00 PM",
+        "stat": "rebounds",
+        "side": "over",
+        "line": 3.5,
+        "line_type": "alt",
+        "book_line": 4.5,
+        "proj": 5.1,
+        "prob": 0.722,
+        "book_prob": 0.644,
+        "gap": 0.077,
+        "odds": -206,
+        "book": "DraftKings",
+        "blowout_risk": "medium",
+        "minutes_confidence": "high",
+        "reasoning": "Model projects 5.1 rebounds: 72% to clear 3.5 (star-calibrated) vs the book's 64% at -206, a +8 point gap. Projected for 37.8 minutes; DEN -11.5 spread."
       }
     ],
-    "combined_odds": 193,
-    "status": "pending",
-    "replaced": {
-      "combined_odds": 200,
-      "picked_at": "2026-10-23T09:40:15Z",
-      "legs": [
-        {
-          "player": "Andrew Nembhard",
-          "stat": "assists",
-          "side": "over",
-          "line": 5.5,
-          "odds": -256
-        },
-        {
-          "player": "Scottie Barnes",
-          "stat": "assists",
-          "side": "over",
-          "line": 3.5,
-          "odds": -377
-        },
-        {
-          "player": "Kyrie Irving",
-          "stat": "points",
-          "side": "over",
-          "line": 14.5,
-          "odds": -342
-        },
-        {
-          "player": "Paolo Banchero",
-          "stat": "points",
-          "side": "over",
-          "line": 17.5,
-          "odds": -314
-        }
-      ]
-    },
-    "night": {
-      "combined_odds": 200,
-      "picked_at": "2026-10-23T11:55:51Z",
-      "legs": [
-        {
-          "player": "Andrew Nembhard",
-          "stat": "assists",
-          "line": 5.5,
-          "odds": -256
-        },
-        {
-          "player": "Kyrie Irving",
-          "stat": "points",
-          "line": 14.5,
-          "odds": -342
-        },
-        {
-          "player": "Cooper Flagg",
-          "stat": "rebounds",
-          "line": 4.5,
-          "odds": -298
-        },
-        {
-          "player": "Paolo Banchero",
-          "stat": "pra",
-          "line": 29.5,
-          "odds": -400
-        }
-      ]
-    },
-    "morning_checked": "2026-10-23T17:44:43Z",
-    "changes": []
+    "combined_odds": 234,
+    "status": "pending"
   },
   "note": "Overs only, 3-4 legs at about +200 to +320 real FanDuel/DraftKings odds, picked the night before (about 9:45 PM Arizona time) from the books' real lines and the night's projections, then checked at 6 AM: a leg is swapped only if overnight news or a line move hurt it. The model must project over the line and not rate the leg well below the book; the combination it likes most relative to the book wins (the +/- number; gaps above +8 count as +8). At most 2 legs from one game unless the model strongly backs a third. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-10-24T07:46:35Z",
+  "generated_at": "2026-10-24T09:11:37Z",
   "early_history": [
     {
       "date": "2026-10-20",
@@ -820,24 +934,5 @@
       "candidates": 7,
       "result": "win"
     }
-  ],
-  "next": {
-    "date": "2026-10-24",
-    "method": "night",
-    "picked_at": "2026-10-24T07:46:35Z",
-    "missing_games": [
-      "MIA @ CHA",
-      "BKN @ CLE",
-      "MIL @ PHI",
-      "WAS @ CHI",
-      "SAS @ DAL",
-      "HOU @ ATL",
-      "NOP @ DEN",
-      "GSW @ PHX"
-    ],
-    "candidates": 0,
-    "legs": [],
-    "status": "none",
-    "note": "No parlay yet: ESPN hasn't posted tomorrow's player lines."
-  }
+  ]
 }
