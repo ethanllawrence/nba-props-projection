@@ -35,7 +35,7 @@
         "team": "MIN",
         "stats": {
           "points": {
-            "proj": 27.0,
+            "proj": 27.1,
             "line": 29.5,
             "call": null
           },
@@ -45,12 +45,12 @@
             "call": null
           },
           "assists": {
-            "proj": 3.1,
+            "proj": 3.2,
             "line": 3.5,
             "call": null
           },
           "pra": {
-            "proj": 35.5,
+            "proj": 35.6,
             "line": 38.5,
             "call": null
           }
@@ -62,12 +62,12 @@
         "team": "ORL",
         "stats": {
           "points": {
-            "proj": 26.7,
+            "proj": 26.9,
             "line": 21.5,
             "call": null
           },
           "rebounds": {
-            "proj": 8.6,
+            "proj": 8.4,
             "line": 8.5,
             "call": null
           },
@@ -77,7 +77,7 @@
             "call": null
           },
           "pra": {
-            "proj": 42.6,
+            "proj": 42.3,
             "line": 36.5,
             "call": null
           }
@@ -89,7 +89,7 @@
         "team": "GSW",
         "stats": {
           "points": {
-            "proj": 26.1,
+            "proj": 26.0,
             "line": 25.5,
             "call": null
           },
@@ -99,12 +99,12 @@
             "call": null
           },
           "assists": {
-            "proj": 4.9,
+            "proj": 4.8,
             "line": 4.5,
             "call": null
           },
           "pra": {
-            "proj": 35.8,
+            "proj": 35.9,
             "line": 32.5,
             "call": null
           }
@@ -116,7 +116,7 @@
         "team": "DAL",
         "stats": {
           "points": {
-            "proj": 25.5,
+            "proj": 25.9,
             "line": 24.5,
             "call": null
           },
@@ -131,7 +131,7 @@
             "call": null
           },
           "pra": {
-            "proj": 38.1,
+            "proj": 38.3,
             "line": 35.5,
             "call": null
           }
@@ -143,7 +143,7 @@
         "team": "IND",
         "stats": {
           "points": {
-            "proj": 25.4,
+            "proj": 25.7,
             "line": 22.5,
             "call": null
           },
@@ -153,13 +153,40 @@
             "call": null
           },
           "assists": {
-            "proj": 3.6,
+            "proj": 3.7,
             "line": 3.5,
             "call": null
           },
           "pra": {
-            "proj": 36.2,
+            "proj": 36.7,
             "line": 33.5,
+            "call": null
+          }
+        }
+      },
+      {
+        "player_id": "6450",
+        "player": "Kawhi Leonard",
+        "team": "TOR",
+        "stats": {
+          "points": {
+            "proj": 25.5,
+            "line": 24.5,
+            "call": null
+          },
+          "rebounds": {
+            "proj": 5.9,
+            "line": 5.5,
+            "call": null
+          },
+          "assists": {
+            "proj": 3.7,
+            "line": 3.5,
+            "call": null
+          },
+          "pra": {
+            "proj": 34.3,
+            "line": 34.5,
             "call": null
           }
         }
@@ -192,60 +219,6 @@
         }
       },
       {
-        "player_id": "6450",
-        "player": "Kawhi Leonard",
-        "team": "TOR",
-        "stats": {
-          "points": {
-            "proj": 25.4,
-            "line": 24.5,
-            "call": null
-          },
-          "rebounds": {
-            "proj": 5.9,
-            "line": 5.5,
-            "call": null
-          },
-          "assists": {
-            "proj": 3.7,
-            "line": 3.5,
-            "call": null
-          },
-          "pra": {
-            "proj": 34.5,
-            "line": 34.5,
-            "call": null
-          }
-        }
-      },
-      {
-        "player_id": "3032977",
-        "player": "Giannis Antetokounmpo",
-        "team": "MIA",
-        "stats": {
-          "points": {
-            "proj": 25.1,
-            "line": 28.5,
-            "call": null
-          },
-          "rebounds": {
-            "proj": 7.4,
-            "line": 10.5,
-            "call": "under"
-          },
-          "assists": {
-            "proj": 4.3,
-            "line": 5.5,
-            "call": null
-          },
-          "pra": {
-            "proj": 36.5,
-            "line": 45.5,
-            "call": null
-          }
-        }
-      },
-      {
         "player_id": "5104157",
         "player": "Victor Wembanyama",
         "team": "SAS",
@@ -268,6 +241,33 @@
           "pra": {
             "proj": 38.9,
             "line": 39.5,
+            "call": null
+          }
+        }
+      },
+      {
+        "player_id": "3032977",
+        "player": "Giannis Antetokounmpo",
+        "team": "MIA",
+        "stats": {
+          "points": {
+            "proj": 24.9,
+            "line": 28.5,
+            "call": null
+          },
+          "rebounds": {
+            "proj": 7.4,
+            "line": 10.5,
+            "call": "under"
+          },
+          "assists": {
+            "proj": 4.3,
+            "line": 5.5,
+            "call": null
+          },
+          "pra": {
+            "proj": 36.5,
+            "line": 45.5,
             "call": null
           }
         }
@@ -305,7 +305,7 @@
         "team": "WAS",
         "stats": {
           "points": {
-            "proj": 24.0,
+            "proj": 24.1,
             "line": 22.5,
             "call": null
           },
@@ -315,12 +315,12 @@
             "call": null
           },
           "assists": {
-            "proj": 3.5,
+            "proj": 3.6,
             "line": 2.5,
             "call": null
           },
           "pra": {
-            "proj": 37.7,
+            "proj": 37.8,
             "line": 36.5,
             "call": null
           }
@@ -332,7 +332,7 @@
         "team": "DAL",
         "stats": {
           "points": {
-            "proj": 23.8,
+            "proj": 24.1,
             "line": 19.5,
             "call": null
           },
@@ -347,7 +347,7 @@
             "call": null
           },
           "pra": {
-            "proj": 33.1,
+            "proj": 33.2,
             "line": 27.5,
             "call": null
           }
@@ -359,7 +359,7 @@
         "team": "BOS",
         "stats": {
           "points": {
-            "proj": 23.6,
+            "proj": 23.5,
             "line": 25.5,
             "call": null
           },
@@ -369,7 +369,7 @@
             "call": null
           },
           "assists": {
-            "proj": 5.7,
+            "proj": 5.8,
             "line": 6.5,
             "call": null
           },
@@ -386,7 +386,7 @@
         "team": "MIN",
         "stats": {
           "points": {
-            "proj": 23.3,
+            "proj": 23.5,
             "line": 19.5,
             "call": null
           },
@@ -413,12 +413,12 @@
         "team": "DET",
         "stats": {
           "points": {
-            "proj": 23.2,
+            "proj": 23.4,
             "line": 24.5,
             "call": null
           },
           "rebounds": {
-            "proj": 4.6,
+            "proj": 4.5,
             "line": 4.5,
             "call": null
           },
@@ -440,7 +440,7 @@
         "team": "NYK",
         "stats": {
           "points": {
-            "proj": 22.9,
+            "proj": 22.8,
             "line": 25.5,
             "call": null
           },
@@ -455,7 +455,7 @@
             "call": null
           },
           "pra": {
-            "proj": 31.3,
+            "proj": 31.1,
             "line": 35.5,
             "call": null
           }
@@ -494,7 +494,7 @@
         "team": "TOR",
         "stats": {
           "points": {
-            "proj": 22.3,
+            "proj": 22.2,
             "line": 18.5,
             "call": null
           },
@@ -509,7 +509,7 @@
             "call": null
           },
           "pra": {
-            "proj": 31.5,
+            "proj": 31.4,
             "line": 27.5,
             "call": null
           }
@@ -543,6 +543,33 @@
         }
       },
       {
+        "player_id": "4566434",
+        "player": "Franz Wagner",
+        "team": "ORL",
+        "stats": {
+          "points": {
+            "proj": 21.7,
+            "line": 21.5,
+            "call": null
+          },
+          "rebounds": {
+            "proj": 5.1,
+            "line": 5.5,
+            "call": null
+          },
+          "assists": {
+            "proj": 3.4,
+            "line": 4.5,
+            "call": null
+          },
+          "pra": {
+            "proj": 28.9,
+            "line": 31.5,
+            "call": null
+          }
+        }
+      },
+      {
         "player_id": "4279888",
         "player": "Ja Morant",
         "team": "POR",
@@ -565,33 +592,6 @@
           "pra": {
             "proj": 33.6,
             "line": 27.5,
-            "call": null
-          }
-        }
-      },
-      {
-        "player_id": "4566434",
-        "player": "Franz Wagner",
-        "team": "ORL",
-        "stats": {
-          "points": {
-            "proj": 21.4,
-            "line": 21.5,
-            "call": null
-          },
-          "rebounds": {
-            "proj": 5.1,
-            "line": 5.5,
-            "call": null
-          },
-          "assists": {
-            "proj": 3.3,
-            "line": 4.5,
-            "call": null
-          },
-          "pra": {
-            "proj": 28.8,
-            "line": 31.5,
             "call": null
           }
         }
@@ -698,62 +698,8 @@
             "call": null
           },
           "pra": {
-            "proj": 31.2,
+            "proj": 31.4,
             "line": 25.5,
-            "call": null
-          }
-        }
-      },
-      {
-        "player_id": "4701230",
-        "player": "Jalen Johnson",
-        "team": "ATL",
-        "stats": {
-          "points": {
-            "proj": 20.5,
-            "line": 20.5,
-            "call": null
-          },
-          "rebounds": {
-            "proj": 8.4,
-            "line": 9.5,
-            "call": null
-          },
-          "assists": {
-            "proj": 5.5,
-            "line": 7.5,
-            "call": null
-          },
-          "pra": {
-            "proj": 35.5,
-            "line": 37.5,
-            "call": null
-          }
-        }
-      },
-      {
-        "player_id": "4433287",
-        "player": "Brandon Miller",
-        "team": "CHA",
-        "stats": {
-          "points": {
-            "proj": 20.5,
-            "line": 24.5,
-            "call": null
-          },
-          "rebounds": {
-            "proj": 4.9,
-            "line": 4.5,
-            "call": null
-          },
-          "assists": {
-            "proj": 3.1,
-            "line": 3.5,
-            "call": null
-          },
-          "pra": {
-            "proj": 27.8,
-            "line": 33.5,
             "call": null
           }
         }
@@ -786,12 +732,39 @@
         }
       },
       {
+        "player_id": "4433287",
+        "player": "Brandon Miller",
+        "team": "CHA",
+        "stats": {
+          "points": {
+            "proj": 20.3,
+            "line": 24.5,
+            "call": null
+          },
+          "rebounds": {
+            "proj": 4.9,
+            "line": 4.5,
+            "call": null
+          },
+          "assists": {
+            "proj": 3.0,
+            "line": 3.5,
+            "call": null
+          },
+          "pra": {
+            "proj": 27.5,
+            "line": 33.5,
+            "call": null
+          }
+        }
+      },
+      {
         "player_id": "4433134",
         "player": "Scottie Barnes",
         "team": "TOR",
         "stats": {
           "points": {
-            "proj": 20.1,
+            "proj": 20.2,
             "line": 18.5,
             "call": null
           },
@@ -806,8 +779,35 @@
             "call": null
           },
           "pra": {
-            "proj": 33.0,
+            "proj": 32.9,
             "line": 31.5,
+            "call": null
+          }
+        }
+      },
+      {
+        "player_id": "4701230",
+        "player": "Jalen Johnson",
+        "team": "ATL",
+        "stats": {
+          "points": {
+            "proj": 20.1,
+            "line": 20.5,
+            "call": null
+          },
+          "rebounds": {
+            "proj": 8.4,
+            "line": 9.5,
+            "call": null
+          },
+          "assists": {
+            "proj": 5.5,
+            "line": 7.5,
+            "call": null
+          },
+          "pra": {
+            "proj": 35.0,
+            "line": 37.5,
             "call": null
           }
         }
@@ -818,7 +818,7 @@
         "team": "ORL",
         "stats": {
           "points": {
-            "proj": 19.9,
+            "proj": 20.1,
             "line": 18.5,
             "call": null
           },
@@ -833,7 +833,7 @@
             "call": null
           },
           "pra": {
-            "proj": 25.6,
+            "proj": 25.7,
             "line": 26.5,
             "call": null
           }
@@ -845,7 +845,7 @@
         "team": "WAS",
         "stats": {
           "points": {
-            "proj": 19.4,
+            "proj": 19.7,
             "line": 19.5,
             "call": null
           },
@@ -855,12 +855,12 @@
             "call": null
           },
           "assists": {
-            "proj": 8.7,
+            "proj": 8.4,
             "line": 9.5,
             "call": null
           },
           "pra": {
-            "proj": 32.3,
+            "proj": 33.1,
             "line": 32.5,
             "call": null
           }
@@ -894,6 +894,33 @@
         }
       },
       {
+        "player_id": "4396993",
+        "player": "Tyrese Haliburton",
+        "team": "IND",
+        "stats": {
+          "points": {
+            "proj": 18.8,
+            "line": 19.5,
+            "call": null
+          },
+          "rebounds": {
+            "proj": 4.6,
+            "line": 3.5,
+            "call": null
+          },
+          "assists": {
+            "proj": 8.5,
+            "line": 9.5,
+            "call": null
+          },
+          "pra": {
+            "proj": 33.3,
+            "line": 33.5,
+            "call": null
+          }
+        }
+      },
+      {
         "player_id": "4711294",
         "player": "Matas Buzelis",
         "team": "CHI",
@@ -916,33 +943,6 @@
           "pra": {
             "proj": 27.6,
             "line": 24.5,
-            "call": null
-          }
-        }
-      },
-      {
-        "player_id": "4396993",
-        "player": "Tyrese Haliburton",
-        "team": "IND",
-        "stats": {
-          "points": {
-            "proj": 18.5,
-            "line": 19.5,
-            "call": null
-          },
-          "rebounds": {
-            "proj": 4.5,
-            "line": 3.5,
-            "call": null
-          },
-          "assists": {
-            "proj": 8.9,
-            "line": 9.5,
-            "call": null
-          },
-          "pra": {
-            "proj": 32.7,
-            "line": 33.5,
             "call": null
           }
         }
@@ -1056,6 +1056,33 @@
         }
       },
       {
+        "player_id": "4395712",
+        "player": "Andrew Nembhard",
+        "team": "IND",
+        "stats": {
+          "points": {
+            "proj": 18.0,
+            "line": 14.5,
+            "call": null
+          },
+          "rebounds": {
+            "proj": 3.1,
+            "line": 2.5,
+            "call": null
+          },
+          "assists": {
+            "proj": 9.0,
+            "line": 6.5,
+            "call": null
+          },
+          "pra": {
+            "proj": 29.7,
+            "line": 24.5,
+            "call": null
+          }
+        }
+      },
+      {
         "player_id": "4251",
         "player": "Paul George",
         "team": "BOS",
@@ -1078,33 +1105,6 @@
           "pra": {
             "proj": 25.6,
             "line": 25.5,
-            "call": null
-          }
-        }
-      },
-      {
-        "player_id": "4395712",
-        "player": "Andrew Nembhard",
-        "team": "IND",
-        "stats": {
-          "points": {
-            "proj": 17.6,
-            "line": 14.5,
-            "call": null
-          },
-          "rebounds": {
-            "proj": 3.1,
-            "line": 2.5,
-            "call": null
-          },
-          "assists": {
-            "proj": 9.5,
-            "line": 6.5,
-            "call": null
-          },
-          "pra": {
-            "proj": 29.3,
-            "line": 24.5,
             "call": null
           }
         }
@@ -1314,12 +1314,12 @@
             "call": "under"
           },
           "assists": {
-            "proj": 2.7,
+            "proj": 2.6,
             "line": 3.5,
             "call": null
           },
           "pra": {
-            "proj": 25.2,
+            "proj": 25.4,
             "line": 25.5,
             "call": null
           }
@@ -1341,12 +1341,12 @@
             "call": null
           },
           "assists": {
-            "proj": 3.8,
+            "proj": 3.7,
             "line": 2.5,
             "call": null
           },
           "pra": {
-            "proj": 25.8,
+            "proj": 25.9,
             "line": 20.5,
             "call": null
           }
@@ -1434,6 +1434,33 @@
         }
       },
       {
+        "player_id": "4066259",
+        "player": "De'Aaron Fox",
+        "team": "SAS",
+        "stats": {
+          "points": {
+            "proj": 15.7,
+            "line": 14.5,
+            "call": null
+          },
+          "rebounds": {
+            "proj": 3.8,
+            "line": 3.5,
+            "call": null
+          },
+          "assists": {
+            "proj": 5.8,
+            "line": 5.5,
+            "call": null
+          },
+          "pra": {
+            "proj": 24.3,
+            "line": 23.5,
+            "call": null
+          }
+        }
+      },
+      {
         "player_id": "4871145",
         "player": "Josh Giddey",
         "team": "CHI",
@@ -1466,7 +1493,7 @@
         "team": "CHA",
         "stats": {
           "points": {
-            "proj": 15.2,
+            "proj": 15.1,
             "line": 18.5,
             "call": null
           },
@@ -1481,7 +1508,7 @@
             "call": null
           },
           "pra": {
-            "proj": 26.2,
+            "proj": 25.7,
             "line": 29.5,
             "call": null
           }
@@ -1498,12 +1525,12 @@
             "call": null
           },
           "rebounds": {
-            "proj": 11.0,
+            "proj": 10.6,
             "line": 11.5,
             "call": null
           },
           "assists": {
-            "proj": 2.0,
+            "proj": 2.1,
             "line": 2.5,
             "call": null
           },
@@ -1525,7 +1552,7 @@
             "call": null
           },
           "rebounds": {
-            "proj": 8.8,
+            "proj": 8.9,
             "line": 9.5,
             "call": null
           },
@@ -1557,12 +1584,12 @@
             "call": null
           },
           "assists": {
-            "proj": 2.8,
+            "proj": 2.7,
             "line": 3.5,
             "call": null
           },
           "pra": {
-            "proj": 25.3,
+            "proj": 25.1,
             "line": 34.5,
             "call": "under"
           }
@@ -1591,33 +1618,6 @@
           "pra": {
             "proj": 25.7,
             "line": 27.5,
-            "call": null
-          }
-        }
-      },
-      {
-        "player_id": "5041935",
-        "player": "Cameron Boozer",
-        "team": "MEM",
-        "stats": {
-          "points": {
-            "proj": 11.7,
-            "line": 16.5,
-            "call": null
-          },
-          "rebounds": {
-            "proj": 8.6,
-            "line": 8.5,
-            "call": null
-          },
-          "assists": {
-            "proj": 4.6,
-            "line": 4.5,
-            "call": null
-          },
-          "pra": {
-            "proj": 24.6,
-            "line": 29.5,
             "call": null
           }
         }
@@ -1816,5 +1816,5 @@
     },
     "recent_calls_window": 5
   },
-  "generated_at": "2026-10-23T22:48:53Z"
+  "generated_at": "2026-10-24T00:12:39Z"
 }
