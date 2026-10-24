@@ -483,7 +483,12 @@
         "blowout_risk": "medium",
         "minutes_confidence": "high",
         "reasoning": "Model projects 7.2 rebounds: 82% to clear 4.5 (star-calibrated) vs the book's 71% at -288, a +11 point gap. Projected for 31.9 minutes; DAL +7.5 spread.",
-        "night_odds": -298
+        "night_odds": -298,
+        "check": {
+          "kind": "status",
+          "from": "active",
+          "to": "day-to-day"
+        }
       },
       {
         "player": "Paolo Banchero",
