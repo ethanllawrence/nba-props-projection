@@ -767,7 +767,7 @@
     "changes": []
   },
   "note": "Overs only, 3-4 legs at about +200 to +320 real FanDuel/DraftKings odds, picked the night before (about 9:45 PM Arizona time) from the books' real lines and the night's projections, then checked at 6 AM: a leg is swapped only if overnight news or a line move hurt it. The model must project over the line and not rate the leg well below the book; the combination it likes most relative to the book wins (the +/- number; gaps above +8 count as +8). At most 2 legs from one game unless the model strongly backs a third. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-10-24T16:28:30Z",
+  "generated_at": "2026-10-25T07:56:57Z",
   "early_history": [
     {
       "date": "2026-10-20",
@@ -1002,5 +1002,111 @@
       "candidates": 7,
       "result": "win"
     }
-  ]
+  ],
+  "next": {
+    "date": "2026-10-25",
+    "method": "night",
+    "picked_at": "2026-10-25T07:56:56Z",
+    "missing_games": [
+      "IND @ BKN",
+      "MEM @ SAC"
+    ],
+    "candidates": 72,
+    "legs": [
+      {
+        "player": "Jaren Jackson Jr.",
+        "player_id": "4277961",
+        "game_id": "401909861",
+        "team": "UTA",
+        "opp": "LAL",
+        "home": true,
+        "time_et": "5:00 PM",
+        "stat": "points",
+        "side": "over",
+        "line": 14.5,
+        "line_type": "alt",
+        "book_line": 17.5,
+        "proj": 21.5,
+        "prob": 0.793,
+        "book_prob": 0.649,
+        "gap": 0.144,
+        "odds": -211,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "reasoning": "Model projects 21.5 points: 79% to clear 14.5 (star-calibrated) vs the book's 65% at -211, a +14 point gap. Projected for 31.9 minutes; UTA +6.5 spread."
+      },
+      {
+        "player": "Jaden McDaniels",
+        "player_id": "4431671",
+        "game_id": "401909864",
+        "team": "MIN",
+        "opp": "TOR",
+        "home": true,
+        "time_et": "7:00 PM",
+        "stat": "points",
+        "side": "over",
+        "line": 9.5,
+        "line_type": "alt",
+        "book_line": 13.5,
+        "proj": 16.2,
+        "prob": 0.824,
+        "book_prob": 0.738,
+        "gap": 0.086,
+        "odds": -337,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "reasoning": "Model projects 16.2 points: 82% to clear 9.5 (star-calibrated) vs the book's 74% at -337, a +9 point gap. Projected for 33.1 minutes; MIN -1.5 spread."
+      },
+      {
+        "player": "Keyonte George",
+        "player_id": "4433627",
+        "game_id": "401909861",
+        "team": "UTA",
+        "opp": "LAL",
+        "home": true,
+        "time_et": "5:00 PM",
+        "stat": "points",
+        "side": "over",
+        "line": 14.5,
+        "line_type": "alt",
+        "book_line": 19.5,
+        "proj": 22.2,
+        "prob": 0.818,
+        "book_prob": 0.735,
+        "gap": 0.082,
+        "odds": -332,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "reasoning": "Model projects 22.2 points: 82% to clear 14.5 (star-calibrated) vs the book's 74% at -332, a +8 point gap. Projected for 30.6 minutes; UTA +6.5 spread."
+      },
+      {
+        "player": "Scottie Barnes",
+        "player_id": "4433134",
+        "game_id": "401909864",
+        "team": "TOR",
+        "opp": "MIN",
+        "home": false,
+        "time_et": "7:00 PM",
+        "stat": "assists",
+        "side": "over",
+        "line": 4.5,
+        "line_type": "alt",
+        "book_line": 5.5,
+        "proj": 6.1,
+        "prob": 0.722,
+        "book_prob": 0.662,
+        "gap": 0.06,
+        "odds": -224,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "reasoning": "Model projects 6.1 assists: 72% to clear 4.5 (star-calibrated) vs the book's 66% at -224, a +6 point gap. Projected for 31.3 minutes; TOR +1.5 spread."
+      }
+    ],
+    "combined_odds": 260,
+    "status": "pending"
+  }
 }
