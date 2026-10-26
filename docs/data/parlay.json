@@ -976,16 +976,17 @@
         "side": "over",
         "line": 6.5,
         "line_type": "alt",
-        "book_line": 8.5,
-        "proj": 11.1,
-        "prob": 0.91,
-        "book_prob": 0.738,
-        "gap": 0.172,
-        "odds": -337,
+        "book_line": 9.5,
+        "proj": 10.2,
+        "prob": 0.86,
+        "book_prob": 0.77,
+        "gap": 0.09,
+        "odds": -412,
         "book": "DraftKings",
         "blowout_risk": "low",
-        "minutes_confidence": "high",
-        "reasoning": "Model projects 11.1 rebounds: 91% to clear 6.5 (star-calibrated) vs the book's 74% at -337, a +17 point gap. Projected for 33.4 minutes; MEM +1.5 spread."
+        "minutes_confidence": "medium",
+        "reasoning": "Model projects 10.2 rebounds: 86% to clear 6.5 (star-calibrated) vs the book's 77% at -412, a +9 point gap. Projected for 29.9 minutes; MEM -1.5 spread.",
+        "night_odds": -337
       },
       {
         "player": "Kevin Durant",
@@ -1002,13 +1003,14 @@
         "book_line": 3.5,
         "proj": 5.0,
         "prob": 0.862,
-        "book_prob": 0.757,
-        "gap": 0.106,
-        "odds": -378,
+        "book_prob": 0.736,
+        "gap": 0.126,
+        "odds": -333,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 5.0 assists: 86% to clear 2.5 (star-calibrated) vs the book's 76% at -378, a +11 point gap. Projected for 36.3 minutes; HOU -5.5 spread."
+        "reasoning": "Model projects 5.0 assists: 86% to clear 2.5 (star-calibrated) vs the book's 74% at -333, a +13 point gap. Projected for 37.8 minutes; HOU -4.5 spread.",
+        "night_odds": -378
       },
       {
         "player": "Ace Bailey",
@@ -1025,13 +1027,14 @@
         "book_line": 4.5,
         "proj": 5.8,
         "prob": 0.809,
-        "book_prob": 0.717,
-        "gap": 0.092,
-        "odds": -298,
+        "book_prob": 0.706,
+        "gap": 0.103,
+        "odds": -281,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 5.8 rebounds: 81% to clear 3.5 (star-calibrated) vs the book's 72% at -298, a +9 point gap. Projected for 30.9 minutes; UTA -1.5 spread."
+        "reasoning": "Model projects 5.8 rebounds: 81% to clear 3.5 (star-calibrated) vs the book's 71% at -281, a +10 point gap. Projected for 30.4 minutes; UTA +1.5 spread.",
+        "night_odds": -298
       },
       {
         "player": "Brandin Podziemski",
@@ -1045,19 +1048,20 @@
         "side": "over",
         "line": 19.5,
         "line_type": "alt",
-        "book_line": 23.5,
-        "proj": 27.8,
-        "prob": 0.783,
-        "book_prob": 0.7,
-        "gap": 0.083,
-        "odds": -272,
+        "book_line": 25.5,
+        "proj": 27.7,
+        "prob": 0.78,
+        "book_prob": 0.749,
+        "gap": 0.031,
+        "odds": -361,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 27.8 PRA: 78% to clear 19.5 (star-calibrated) vs the book's 70% at -272, a +8 point gap. Projected for 31.2 minutes; GSW +7.5 spread."
+        "reasoning": "Model projects 27.7 PRA: 78% to clear 19.5 (star-calibrated) vs the book's 75% at -361, a +3 point gap. Projected for 32.4 minutes; GSW +7.5 spread.",
+        "night_odds": -272
       }
     ],
-    "combined_odds": 200,
+    "combined_odds": 180,
     "status": "pending",
     "replaced": {
       "combined_odds": 201,
@@ -1092,10 +1096,42 @@
           "odds": -341
         }
       ]
-    }
+    },
+    "night": {
+      "combined_odds": 200,
+      "picked_at": "2026-10-26T10:36:22Z",
+      "legs": [
+        {
+          "player": "Cameron Boozer",
+          "stat": "rebounds",
+          "line": 6.5,
+          "odds": -337
+        },
+        {
+          "player": "Kevin Durant",
+          "stat": "assists",
+          "line": 2.5,
+          "odds": -378
+        },
+        {
+          "player": "Ace Bailey",
+          "stat": "rebounds",
+          "line": 3.5,
+          "odds": -298
+        },
+        {
+          "player": "Brandin Podziemski",
+          "stat": "pra",
+          "line": 19.5,
+          "odds": -272
+        }
+      ]
+    },
+    "morning_checked": "2026-10-26T19:03:29Z",
+    "changes": []
   },
   "note": "Overs only, 3-4 legs at about +200 to +320 real FanDuel/DraftKings odds, picked the night before (about 9:45 PM Arizona time) from the books' real lines and the night's projections, then checked at 6 AM: a leg is swapped only if overnight news or a line move hurt it. The model must project over the line and not rate the leg well below the book; the combination it likes most relative to the book wins (the +/- number; gaps above +8 count as +8). At most 2 legs from one game unless the model strongly backs a third. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-10-26T10:36:22Z",
+  "generated_at": "2026-10-26T19:03:29Z",
   "early_history": [
     {
       "date": "2026-10-20",
