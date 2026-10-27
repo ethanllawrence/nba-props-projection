@@ -1161,13 +1161,14 @@
         "book_line": 8.5,
         "proj": 10.0,
         "prob": 0.758,
-        "book_prob": 0.641,
-        "gap": 0.117,
-        "odds": -203,
+        "book_prob": 0.601,
+        "gap": 0.157,
+        "odds": -169,
         "book": "DraftKings",
-        "blowout_risk": "medium",
+        "blowout_risk": "high",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 10.0 rebounds: 76% to clear 7.5 (star-calibrated) vs the book's 64% at -203, a +12 point gap. Projected for 34.7 minutes; BOS -11.5 spread."
+        "reasoning": "Model projects 10.0 rebounds: 76% to clear 7.5 (star-calibrated) vs the book's 60% at -169, a +16 point gap. Projected for 34.0 minutes; BOS -12.5 spread.",
+        "night_odds": -203
       },
       {
         "player": "Deni Avdija",
@@ -1181,16 +1182,17 @@
         "side": "over",
         "line": 3.5,
         "line_type": "alt",
-        "book_line": 4.5,
-        "proj": 5.8,
-        "prob": 0.819,
-        "book_prob": 0.713,
-        "gap": 0.105,
-        "odds": -293,
+        "book_line": 5.5,
+        "proj": 5.7,
+        "prob": 0.813,
+        "book_prob": 0.728,
+        "gap": 0.085,
+        "odds": -318,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 5.8 assists: 82% to clear 3.5 (star-calibrated) vs the book's 71% at -293, a +10 point gap. Projected for 34.3 minutes; POR +2.5 spread."
+        "reasoning": "Model projects 5.7 assists: 81% to clear 3.5 (star-calibrated) vs the book's 73% at -318, a +8 point gap. Projected for 34.3 minutes; POR +1.5 spread.",
+        "night_odds": -293
       },
       {
         "player": "OG Anunoby",
@@ -1204,16 +1206,17 @@
         "side": "over",
         "line": 11.5,
         "line_type": "alt",
-        "book_line": 16.5,
+        "book_line": 15.5,
         "proj": 18.0,
         "prob": 0.798,
-        "book_prob": 0.746,
-        "gap": 0.052,
-        "odds": -353,
+        "book_prob": 0.731,
+        "gap": 0.066,
+        "odds": -324,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 18.0 points: 80% to clear 11.5 (star-calibrated) vs the book's 75% at -353, a +5 point gap. Projected for 33.8 minutes; NYK -3.5 spread."
+        "reasoning": "Model projects 18.0 points: 80% to clear 11.5 (star-calibrated) vs the book's 73% at -324, a +7 point gap. Projected for 33.8 minutes; NYK -4.5 spread.",
+        "night_odds": -353
       },
       {
         "player": "Toumani Camara",
@@ -1229,21 +1232,54 @@
         "line_type": "alt",
         "book_line": 3.5,
         "proj": 4.3,
-        "prob": 0.777,
-        "book_prob": 0.738,
-        "gap": 0.039,
-        "odds": -337,
+        "prob": 0.778,
+        "book_prob": 0.72,
+        "gap": 0.058,
+        "odds": -304,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 4.3 rebounds: 78% to clear 2.5 (star-calibrated) vs the book's 74% at -337, a +4 point gap. Projected for 31.4 minutes; POR +2.5 spread."
+        "reasoning": "Model projects 4.3 rebounds: 78% to clear 2.5 (star-calibrated) vs the book's 72% at -304, a +6 point gap. Projected for 31.5 minutes; POR +1.5 spread.",
+        "night_odds": -337
       }
     ],
-    "combined_odds": 233,
-    "status": "pending"
+    "combined_odds": 264,
+    "status": "pending",
+    "night": {
+      "combined_odds": 233,
+      "picked_at": "2026-10-27T08:31:30Z",
+      "legs": [
+        {
+          "player": "Jayson Tatum",
+          "stat": "rebounds",
+          "line": 7.5,
+          "odds": -203
+        },
+        {
+          "player": "Deni Avdija",
+          "stat": "assists",
+          "line": 3.5,
+          "odds": -293
+        },
+        {
+          "player": "OG Anunoby",
+          "stat": "points",
+          "line": 11.5,
+          "odds": -353
+        },
+        {
+          "player": "Toumani Camara",
+          "stat": "rebounds",
+          "line": 2.5,
+          "odds": -337
+        }
+      ]
+    },
+    "morning_checked": "2026-10-27T18:34:22Z",
+    "changes": []
   },
   "note": "Overs only, 3-4 legs at about +200 to +320 real FanDuel/DraftKings odds, picked the night before (about 9:45 PM Arizona time) from the books' real lines and the night's projections, then checked at 6 AM: a leg is swapped only if overnight news or a line move hurt it. The model must project over the line and not rate the leg well below the book; the combination it likes most relative to the book wins (the +/- number; gaps above +8 count as +8). At most 2 legs from one game unless the model strongly backs a third. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-10-27T08:31:30Z",
+  "generated_at": "2026-10-27T18:34:22Z",
   "early_history": [
     {
       "date": "2026-10-20",
