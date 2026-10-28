@@ -1306,16 +1306,17 @@
         "side": "over",
         "line": 17.5,
         "line_type": "alt",
-        "book_line": 22.5,
+        "book_line": 21.5,
         "proj": 26.8,
-        "prob": 0.847,
-        "book_prob": 0.705,
-        "gap": 0.142,
-        "odds": -280,
+        "prob": 0.846,
+        "book_prob": 0.684,
+        "gap": 0.162,
+        "odds": -250,
         "book": "DraftKings",
-        "blowout_risk": "low",
+        "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 26.8 points: 85% to clear 17.5 (star-calibrated) vs the book's 70% at -280, a +14 point gap. Projected for 36.2 minutes; PHI -4.5 spread."
+        "reasoning": "Model projects 26.8 points: 85% to clear 17.5 (star-calibrated) vs the book's 68% at -250, a +16 point gap. Projected for 36.0 minutes; PHI -7.5 spread.",
+        "night_odds": -280
       },
       {
         "player": "LeBron James",
@@ -1329,16 +1330,17 @@
         "side": "over",
         "line": 4.5,
         "line_type": "alt",
-        "book_line": 5.5,
-        "proj": 7.1,
-        "prob": 0.822,
-        "book_prob": 0.712,
-        "gap": 0.111,
-        "odds": -290,
+        "book_line": 6.5,
+        "proj": 7.0,
+        "prob": 0.819,
+        "book_prob": 0.748,
+        "gap": 0.071,
+        "odds": -359,
         "book": "DraftKings",
-        "blowout_risk": "low",
+        "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 7.1 assists: 82% to clear 4.5 (star-calibrated) vs the book's 71% at -290, a +11 point gap. Projected for 35.2 minutes; PHI -4.5 spread."
+        "reasoning": "Model projects 7.0 assists: 82% to clear 4.5 (star-calibrated) vs the book's 75% at -359, a +7 point gap. Projected for 35.0 minutes; PHI -7.5 spread.",
+        "night_odds": -290
       },
       {
         "player": "Joel Embiid",
@@ -1354,14 +1356,15 @@
         "line_type": "alt",
         "book_line": 23.5,
         "proj": 27.0,
-        "prob": 0.853,
-        "book_prob": 0.747,
-        "gap": 0.106,
-        "odds": -355,
+        "prob": 0.852,
+        "book_prob": 0.748,
+        "gap": 0.104,
+        "odds": -357,
         "book": "DraftKings",
-        "blowout_risk": "low",
+        "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 27.0 points: 85% to clear 17.5 (star-calibrated) vs the book's 75% at -355, a +11 point gap. Projected for 34.9 minutes; PHI -4.5 spread."
+        "reasoning": "Model projects 27.0 points: 85% to clear 17.5 (star-calibrated) vs the book's 75% at -357, a +10 point gap. Projected for 34.7 minutes; PHI -7.5 spread.",
+        "night_odds": -355
       },
       {
         "player": "Dejounte Murray",
@@ -1377,21 +1380,54 @@
         "line_type": "alt",
         "book_line": 6.5,
         "proj": 7.2,
-        "prob": 0.832,
-        "book_prob": 0.743,
-        "gap": 0.089,
-        "odds": -347,
+        "prob": 0.835,
+        "book_prob": 0.725,
+        "gap": 0.111,
+        "odds": -312,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 7.2 assists: 83% to clear 4.5 (star-calibrated) vs the book's 74% at -347, a +9 point gap. Projected for 31.9 minutes; NOP +4.5 spread."
+        "reasoning": "Model projects 7.2 assists: 84% to clear 4.5 (star-calibrated) vs the book's 72% at -312, a +11 point gap. Projected for 31.9 minutes; NOP +4.5 spread.",
+        "night_odds": -347
       }
     ],
-    "combined_odds": 201,
-    "status": "pending"
+    "combined_odds": 203,
+    "status": "pending",
+    "night": {
+      "combined_odds": 201,
+      "picked_at": "2026-10-28T09:10:52Z",
+      "legs": [
+        {
+          "player": "Jaylen Brown",
+          "stat": "points",
+          "line": 17.5,
+          "odds": -280
+        },
+        {
+          "player": "LeBron James",
+          "stat": "assists",
+          "line": 4.5,
+          "odds": -290
+        },
+        {
+          "player": "Joel Embiid",
+          "stat": "points",
+          "line": 17.5,
+          "odds": -355
+        },
+        {
+          "player": "Dejounte Murray",
+          "stat": "assists",
+          "line": 4.5,
+          "odds": -347
+        }
+      ]
+    },
+    "morning_checked": "2026-10-28T18:41:58Z",
+    "changes": []
   },
   "note": "Overs only, 3-4 legs at about +200 to +320 real FanDuel/DraftKings odds, picked the night before (about 9:45 PM Arizona time) from the books' real lines and the night's projections, then checked at 6 AM: a leg is swapped only if overnight news or a line move hurt it. The model must project over the line and not rate the leg well below the book; the combination it likes most relative to the book wins (the +/- number; gaps above +8 count as +8). At most 2 legs from one game unless the model strongly backs a third. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-10-28T09:10:52Z",
+  "generated_at": "2026-10-28T18:41:58Z",
   "early_history": [
     {
       "date": "2026-10-20",
