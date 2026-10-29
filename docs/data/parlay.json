@@ -1454,16 +1454,17 @@
         "side": "over",
         "line": 3.5,
         "line_type": "alt",
-        "book_line": null,
+        "book_line": 4.5,
         "proj": 5.5,
-        "prob": 0.79,
-        "book_prob": 0.68,
-        "gap": 0.111,
-        "odds": -245,
+        "prob": 0.791,
+        "book_prob": 0.713,
+        "gap": 0.078,
+        "odds": -292,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 5.5 assists: 79% to clear 3.5 (star-calibrated) vs the book's 68% at -245, a +11 point gap. Projected for 35.1 minutes; SAC +5.5 spread."
+        "reasoning": "Model projects 5.5 assists: 79% to clear 3.5 (star-calibrated) vs the book's 71% at -292, a +8 point gap. Projected for 35.1 minutes; SAC +5.5 spread.",
+        "night_odds": -245
       },
       {
         "player": "Deni Avdija",
@@ -1480,13 +1481,14 @@
         "book_line": 5.5,
         "proj": 6.6,
         "prob": 0.776,
-        "book_prob": 0.667,
-        "gap": 0.11,
-        "odds": -230,
+        "book_prob": 0.669,
+        "gap": 0.108,
+        "odds": -232,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 6.6 assists: 78% to clear 4.5 (star-calibrated) vs the book's 67% at -230, a +11 point gap. Projected for 31.9 minutes; POR -7.5 spread."
+        "reasoning": "Model projects 6.6 assists: 78% to clear 4.5 (star-calibrated) vs the book's 67% at -232, a +11 point gap. Projected for 31.9 minutes; POR -7.5 spread.",
+        "night_odds": -230
       },
       {
         "player": "Damian Lillard",
@@ -1503,13 +1505,14 @@
         "book_line": 3.5,
         "proj": 4.4,
         "prob": 0.791,
-        "book_prob": 0.709,
-        "gap": 0.082,
-        "odds": -286,
+        "book_prob": 0.725,
+        "gap": 0.067,
+        "odds": -312,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 4.4 rebounds: 79% to clear 2.5 (star-calibrated) vs the book's 71% at -286, a +8 point gap. Projected for 32.3 minutes; POR -7.5 spread."
+        "reasoning": "Model projects 4.4 rebounds: 79% to clear 2.5 (star-calibrated) vs the book's 72% at -312, a +7 point gap. Projected for 32.3 minutes; POR -7.5 spread.",
+        "night_odds": -286
       },
       {
         "player": "Trey Murphy III",
@@ -1523,23 +1526,56 @@
         "side": "over",
         "line": 3.5,
         "line_type": "alt",
-        "book_line": null,
+        "book_line": 4.5,
         "proj": 5.3,
         "prob": 0.753,
-        "book_prob": 0.68,
-        "gap": 0.072,
-        "odds": -246,
+        "book_prob": 0.687,
+        "gap": 0.065,
+        "odds": -255,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 5.3 rebounds: 75% to clear 3.5 (star-calibrated) vs the book's 68% at -246, a +7 point gap. Projected for 33.6 minutes; NOP -5.5 spread."
+        "reasoning": "Model projects 5.3 rebounds: 75% to clear 3.5 (star-calibrated) vs the book's 69% at -255, a +6 point gap. Projected for 33.7 minutes; NOP -5.5 spread.",
+        "night_odds": -246
       }
     ],
-    "combined_odds": 284,
-    "status": "pending"
+    "combined_odds": 253,
+    "status": "pending",
+    "night": {
+      "combined_odds": 284,
+      "picked_at": "2026-10-29T09:07:38Z",
+      "legs": [
+        {
+          "player": "Darius Acuff Jr.",
+          "stat": "assists",
+          "line": 3.5,
+          "odds": -245
+        },
+        {
+          "player": "Deni Avdija",
+          "stat": "assists",
+          "line": 4.5,
+          "odds": -230
+        },
+        {
+          "player": "Damian Lillard",
+          "stat": "rebounds",
+          "line": 2.5,
+          "odds": -286
+        },
+        {
+          "player": "Trey Murphy III",
+          "stat": "rebounds",
+          "line": 3.5,
+          "odds": -246
+        }
+      ]
+    },
+    "morning_checked": "2026-10-29T18:48:29Z",
+    "changes": []
   },
   "note": "Overs only, 3-4 legs at about +200 to +320 real FanDuel/DraftKings odds, picked the night before (about 9:45 PM Arizona time) from the books' real lines and the night's projections, then checked at 6 AM: a leg is swapped only if overnight news or a line move hurt it. The model must project over the line and not rate the leg well below the book; the combination it likes most relative to the book wins (the +/- number; gaps above +8 count as +8). At most 2 legs from one game unless the model strongly backs a third. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-10-29T09:07:38Z",
+  "generated_at": "2026-10-29T18:48:29Z",
   "early_history": [
     {
       "date": "2026-10-20",
