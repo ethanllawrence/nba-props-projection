@@ -1604,14 +1604,15 @@
         "line_type": "alt",
         "book_line": 3.5,
         "proj": 5.2,
-        "prob": 0.883,
-        "book_prob": 0.753,
-        "gap": 0.129,
-        "odds": -370,
+        "prob": 0.884,
+        "book_prob": 0.756,
+        "gap": 0.128,
+        "odds": -376,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 5.2 assists: 88% to clear 2.5 (star-calibrated) vs the book's 75% at -370, a +13 point gap. Projected for 35.7 minutes; HOU -5.5 spread."
+        "reasoning": "Model projects 5.2 assists: 88% to clear 2.5 (star-calibrated) vs the book's 76% at -376, a +13 point gap. Projected for 35.9 minutes; HOU -6.5 spread.",
+        "night_odds": -370
       },
       {
         "player": "Pascal Siakam",
@@ -1625,16 +1626,17 @@
         "side": "over",
         "line": 2.5,
         "line_type": "alt",
-        "book_line": 3.5,
+        "book_line": 4.5,
         "proj": 4.9,
         "prob": 0.855,
-        "book_prob": 0.758,
-        "gap": 0.097,
-        "odds": -381,
+        "book_prob": 0.766,
+        "gap": 0.088,
+        "odds": -402,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 4.9 assists: 86% to clear 2.5 (star-calibrated) vs the book's 76% at -381, a +10 point gap. Projected for 33.4 minutes; IND +8.5 spread."
+        "reasoning": "Model projects 4.9 assists: 86% to clear 2.5 (star-calibrated) vs the book's 77% at -402, a +9 point gap. Projected for 33.4 minutes; IND +8.5 spread.",
+        "night_odds": -381
       },
       {
         "player": "Tyrese Maxey",
@@ -1651,13 +1653,14 @@
         "book_line": 4.5,
         "proj": 5.2,
         "prob": 0.756,
-        "book_prob": 0.662,
-        "gap": 0.094,
-        "odds": -224,
+        "book_prob": 0.695,
+        "gap": 0.061,
+        "odds": -265,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 5.2 assists: 76% to clear 3.5 (star-calibrated) vs the book's 66% at -224, a +9 point gap. Projected for 38.2 minutes; PHI +1.5 spread."
+        "reasoning": "Model projects 5.2 assists: 76% to clear 3.5 (star-calibrated) vs the book's 70% at -265, a +6 point gap. Projected for 38.3 minutes; PHI +1.5 spread.",
+        "night_odds": -224
       },
       {
         "player": "Cooper Flagg",
@@ -1671,19 +1674,20 @@
         "side": "over",
         "line": 17.5,
         "line_type": "alt",
-        "book_line": 22.5,
-        "proj": 25.9,
-        "prob": 0.822,
-        "book_prob": 0.741,
-        "gap": 0.081,
-        "odds": -343,
+        "book_line": 23.5,
+        "proj": 25.8,
+        "prob": 0.819,
+        "book_prob": 0.767,
+        "gap": 0.052,
+        "odds": -403,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 25.9 points: 82% to clear 17.5 (star-calibrated) vs the book's 74% at -343, a +8 point gap. Projected for 34.4 minutes; DAL +5.5 spread."
+        "reasoning": "Model projects 25.8 points: 82% to clear 17.5 (star-calibrated) vs the book's 77% at -403, a +5 point gap. Projected for 34.4 minutes; DAL +6.5 spread.",
+        "night_odds": -343
       }
     ],
-    "combined_odds": 200,
+    "combined_odds": 172,
     "status": "pending",
     "replaced": {
       "combined_odds": 237,
@@ -1718,10 +1722,42 @@
           "odds": -339
         }
       ]
-    }
+    },
+    "night": {
+      "combined_odds": 200,
+      "picked_at": "2026-10-30T11:05:55Z",
+      "legs": [
+        {
+          "player": "Kevin Durant",
+          "stat": "assists",
+          "line": 2.5,
+          "odds": -370
+        },
+        {
+          "player": "Pascal Siakam",
+          "stat": "assists",
+          "line": 2.5,
+          "odds": -381
+        },
+        {
+          "player": "Tyrese Maxey",
+          "stat": "assists",
+          "line": 3.5,
+          "odds": -224
+        },
+        {
+          "player": "Cooper Flagg",
+          "stat": "points",
+          "line": 17.5,
+          "odds": -343
+        }
+      ]
+    },
+    "morning_checked": "2026-10-30T18:27:42Z",
+    "changes": []
   },
   "note": "Overs only, 3-4 legs at about +200 to +320 real FanDuel/DraftKings odds, picked the night before (about 9:45 PM Arizona time) from the books' real lines and the night's projections, then checked at 6 AM: a leg is swapped only if overnight news or a line move hurt it. The model must project over the line and not rate the leg well below the book; the combination it likes most relative to the book wins (the +/- number; gaps above +8 count as +8). At most 2 legs from one game unless the model strongly backs a third. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-10-30T11:05:55Z",
+  "generated_at": "2026-10-30T18:27:42Z",
   "early_history": [
     {
       "date": "2026-10-20",
