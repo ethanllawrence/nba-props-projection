@@ -1586,35 +1586,32 @@
   "today": {
     "date": "2026-10-30",
     "method": "night",
-    "picked_at": "2026-10-30T09:20:20Z",
-    "missing_games": [
-      "HOU @ DAL",
-      "LAL @ GSW"
-    ],
-    "candidates": 92,
+    "picked_at": "2026-10-30T11:05:55Z",
+    "missing_games": [],
+    "candidates": 155,
     "legs": [
       {
-        "player": "Amen Thompson",
-        "player_id": "4684740",
+        "player": "Kevin Durant",
+        "player_id": "3202",
         "game_id": "401909283",
         "team": "HOU",
         "opp": "DAL",
         "home": false,
         "time_et": "8:00 PM",
-        "stat": "rebounds",
+        "stat": "assists",
         "side": "over",
-        "line": 5.5,
+        "line": 2.5,
         "line_type": "alt",
-        "book_line": 6.5,
-        "proj": 8.0,
-        "prob": 0.789,
-        "book_prob": 0.667,
-        "gap": 0.122,
-        "odds": -230,
+        "book_line": 3.5,
+        "proj": 5.2,
+        "prob": 0.883,
+        "book_prob": 0.753,
+        "gap": 0.129,
+        "odds": -370,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 8.0 rebounds: 79% to clear 5.5 (star-calibrated) vs the book's 67% at -230, a +12 point gap. Projected for 37.7 minutes; HOU -5.5 spread."
+        "reasoning": "Model projects 5.2 assists: 88% to clear 2.5 (star-calibrated) vs the book's 75% at -370, a +13 point gap. Projected for 35.7 minutes; HOU -5.5 spread."
       },
       {
         "player": "Pascal Siakam",
@@ -1624,20 +1621,20 @@
         "opp": "MIA",
         "home": false,
         "time_et": "8:00 PM",
-        "stat": "points",
+        "stat": "assists",
         "side": "over",
-        "line": 17.5,
+        "line": 2.5,
         "line_type": "alt",
-        "book_line": 23.5,
-        "proj": 27.2,
-        "prob": 0.856,
-        "book_prob": 0.76,
-        "gap": 0.096,
-        "odds": -386,
+        "book_line": 3.5,
+        "proj": 4.9,
+        "prob": 0.855,
+        "book_prob": 0.758,
+        "gap": 0.097,
+        "odds": -381,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 27.2 points: 86% to clear 17.5 (star-calibrated) vs the book's 76% at -386, a +10 point gap. Projected for 33.5 minutes; IND +7.5 spread."
+        "reasoning": "Model projects 4.9 assists: 86% to clear 2.5 (star-calibrated) vs the book's 76% at -381, a +10 point gap. Projected for 33.4 minutes; IND +8.5 spread."
       },
       {
         "player": "Tyrese Maxey",
@@ -1653,23 +1650,23 @@
         "line_type": "alt",
         "book_line": 4.5,
         "proj": 5.2,
-        "prob": 0.748,
-        "book_prob": 0.664,
-        "gap": 0.084,
-        "odds": -227,
+        "prob": 0.756,
+        "book_prob": 0.662,
+        "gap": 0.094,
+        "odds": -224,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 5.2 assists: 75% to clear 3.5 (star-calibrated) vs the book's 66% at -227, a +8 point gap. Projected for 38.2 minutes; PHI +1.5 spread."
+        "reasoning": "Model projects 5.2 assists: 76% to clear 3.5 (star-calibrated) vs the book's 66% at -224, a +9 point gap. Projected for 38.2 minutes; PHI +1.5 spread."
       },
       {
-        "player": "Devin Booker",
-        "player_id": "3136193",
-        "game_id": "401909286",
-        "team": "PHX",
-        "opp": "DEN",
+        "player": "Cooper Flagg",
+        "player_id": "5041939",
+        "game_id": "401909283",
+        "team": "DAL",
+        "opp": "HOU",
         "home": true,
-        "time_et": "10:00 PM",
+        "time_et": "8:00 PM",
         "stat": "points",
         "side": "over",
         "line": 17.5,
@@ -1677,20 +1674,54 @@
         "book_line": 22.5,
         "proj": 25.9,
         "prob": 0.822,
-        "book_prob": 0.739,
-        "gap": 0.083,
-        "odds": -339,
+        "book_prob": 0.741,
+        "gap": 0.081,
+        "odds": -343,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 25.9 points: 82% to clear 17.5 (star-calibrated) vs the book's 74% at -339, a +8 point gap. Projected for 35.5 minutes; PHX +4.5 spread."
+        "reasoning": "Model projects 25.9 points: 82% to clear 17.5 (star-calibrated) vs the book's 74% at -343, a +8 point gap. Projected for 34.4 minutes; DAL +5.5 spread."
       }
     ],
-    "combined_odds": 237,
-    "status": "pending"
+    "combined_odds": 200,
+    "status": "pending",
+    "replaced": {
+      "combined_odds": 237,
+      "picked_at": "2026-10-30T09:20:20Z",
+      "legs": [
+        {
+          "player": "Amen Thompson",
+          "stat": "rebounds",
+          "side": "over",
+          "line": 5.5,
+          "odds": -230
+        },
+        {
+          "player": "Pascal Siakam",
+          "stat": "points",
+          "side": "over",
+          "line": 17.5,
+          "odds": -386
+        },
+        {
+          "player": "Tyrese Maxey",
+          "stat": "assists",
+          "side": "over",
+          "line": 3.5,
+          "odds": -227
+        },
+        {
+          "player": "Devin Booker",
+          "stat": "points",
+          "side": "over",
+          "line": 17.5,
+          "odds": -339
+        }
+      ]
+    }
   },
   "note": "Overs only, 3-4 legs at about +200 to +320 real FanDuel/DraftKings odds, picked the night before (about 9:45 PM Arizona time) from the books' real lines and the night's projections, then checked at 6 AM: a leg is swapped only if overnight news or a line move hurt it. The model must project over the line and not rate the leg well below the book; the combination it likes most relative to the book wins (the +/- number; gaps above +8 count as +8). At most 2 legs from one game unless the model strongly backs a third. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-10-30T09:20:20Z",
+  "generated_at": "2026-10-30T11:05:55Z",
   "early_history": [
     {
       "date": "2026-10-20",
