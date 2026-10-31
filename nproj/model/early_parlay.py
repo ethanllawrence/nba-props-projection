@@ -76,6 +76,18 @@ VETO = -0.10                     # drop legs the model rates 10+ points below th
 GAP_CAP = 0.08                   # a gap above +8 points scores like +8 (see 5. above)
 BLOWOUT_SPREAD = 12              # skip games with a spread this big (when a spread is known)
 ALT_HOLD = 1.045                 # typical book cut on one-sided alt prices
+# Stats a parlay leg can use. Assists-only legs dropped 2026-10-30 (Robin): through
+# 10 Parlays of the Day, assists legs hit 7 of 12 where the book's prices
+# expected about 8.5, and the picker kept leaning on them (3 of 4 legs on
+# Oct 30), while points legs hit 12 of 12. The 2024-25 / 2025-26 replay did
+# not show assists legs doing worse than other stats, so this is a cautious
+# choice to revisit with more of this season's results, not a fitted rule.
+# PRA (which includes assists) is still allowed.
+# Rebounds-only legs dropped too, same day (Robin): they hit 7 of 11 (book
+# expected about 7.7), often on lesser-known rebounders. Points or PRA only,
+# with the emphasis on points: at most MAX_PRA_LEGS PRA leg per parlay.
+PARLAY_STATS = ("points", "pra")
+MAX_PRA_LEGS = 1
 STAR_CAL = json.loads((Path(__file__).parent / "star_calibration.json").read_text())
 
 
@@ -148,7 +160,7 @@ def candidates(con, date_s, proj, alts, spreads=None, not_before=None, main_line
                "game_id": str(r["game_id"]), "side": "over", "tipoff_utc": r["tipoff_utc"]}
         mains = (main_matched.get(r["name"]) or {}) if main_lines else {}
         for stat, ladder in (matched.get(r["name"]) or {}).items():
-            if stat not in pr:
+            if stat not in pr or stat not in PARLAY_STATS:
                 continue
             ml = (mains.get(stat) or {}).get("line")
             if ml and pr[stat] / ml >= FAR_RATIO:
@@ -173,11 +185,14 @@ SEARCH_TOP = 24          # best-gap legs considered when combining
 
 
 def combo_ok(combo, fixed=()):
-    """One leg per player; at most MAX_PER_GAME legs from a game, or one more
-    when every leg from that game has a gap of STRONG_GAP or better."""
+    """One leg per player; at most MAX_PRA_LEGS PRA legs; at most MAX_PER_GAME
+    legs from a game, or one more when every leg from that game has a gap of
+    STRONG_GAP or better."""
     legs = list(fixed) + list(combo)
     if len({c["player_id"] for c in legs}) < len(legs):
         return False
+    if sum(1 for c in legs if c.get("stat") == "pra") > MAX_PRA_LEGS:
+        return False                    # points first (Robin, 2026-10-30)
     by_game = {}
     for c in legs:
         by_game.setdefault(c["game_id"], []).append(c)

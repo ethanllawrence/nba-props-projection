@@ -214,7 +214,10 @@ def candidates(con, date_s, saved, qualify=True):
             "blowout_risk": risk,
             "spread": spreads.get(r["team"]),
         }
+        from .early_parlay import PARLAY_STATS as _PARLAY_STATS
         for stat in STATS:
+            if stat not in _PARLAY_STATS:
+                continue
             ln = mine.get(stat)
             if not ln or ln.get("line") is None:
                 continue
@@ -359,10 +362,16 @@ def buy_extras(con, date_s, saved):
 # ------------------------------------------------------------- selection ----
 def select_legs(options):
     """Greedy by model probability: one leg per player, at most MAX_PER_GAME
-    per game, never past TARGET_HI, stop once TARGET_LO is reached."""
+    per game and early_parlay.MAX_PRA_LEGS PRA legs, never past TARGET_HI,
+    stop once TARGET_LO is reached."""
+    from .early_parlay import MAX_PRA_LEGS, PARLAY_STATS
     legs, price = [], None
     for o in sorted(options, key=lambda o: (-o["prob"], o["line_type"] != "alt")):
+        if o["stat"] not in PARLAY_STATS:
+            continue
         if any(l["player_id"] == o["player_id"] for l in legs):
+            continue
+        if o["stat"] == "pra" and sum(1 for l in legs if l["stat"] == "pra") >= MAX_PRA_LEGS:
             continue
         if sum(1 for l in legs if l["game_id"] == o["game_id"]) >= MAX_PER_GAME:
             continue
@@ -532,6 +541,8 @@ def _recheck(con, date_s, saved, leg):
     projection is 1.5x the main line. -> (candidate dict, None) or (None, why)."""
     from . import early_parlay, live
     pid, stat, line = str(leg["player_id"]), leg["stat"], float(leg["line"])
+    if stat not in early_parlay.PARLAY_STATS:
+        return None, f"{stat} legs are no longer used in the parlay (points and PRA only since Oct 30)"
     pr = live.PROJ.get(pid)
     if not pr or stat not in pr:
         return None, f"{leg['player']} has no projection this morning"

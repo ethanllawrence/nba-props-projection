@@ -383,7 +383,7 @@ def test_parlay_pure():
     assert P.combined_odds([-250, -250, -250]) == 174
     assert P.blowout_risk(None) == "unknown" and P.blowout_risk(-13.5) == "high"
     assert P.blowout_risk(4) == "low" and P.blowout_risk(-8) == "medium"
-    base = {"game_id": "g", "line_type": "main"}
+    base = {"game_id": "g", "line_type": "main", "stat": "points"}
     opts = [dict(base, player_id=f"p{i}", game_id=f"g{i}", prob=0.9 - i * 0.01, odds=-250)
             for i in range(6)]
     legs, price = P.select_legs(opts)
@@ -394,6 +394,13 @@ def test_parlay_pure():
     same_game = [dict(base, player_id=f"p{i}", game_id="g1", prob=0.9, odds=-200) for i in range(4)]
     legs, _ = P.select_legs(same_game)
     assert len(legs) <= 2
+    # backup picker: points first, at most one PRA leg, no assists/rebounds legs
+    mixed = [dict(base, player_id=f"q{i}", game_id=f"h{i}", prob=0.95 - i * 0.01, odds=-250,
+                  stat=("pra", "pra", "assists", "rebounds", "points", "points", "points")[i])
+             for i in range(7)]
+    legs, _ = P.select_legs(mixed)
+    stats = [l["stat"] for l in legs]
+    assert stats.count("pra") == 1 and set(stats) <= {"points", "pra"}, stats
 
 
 def test_parlay_daily_and_settle():
@@ -689,7 +696,36 @@ def test_far_from_line():
     print("OK far from line")
 
 
+def test_points_pra_legs_only():
+    """Parlay legs are points or PRA only, at most one PRA (Robin, 2026-10-30)."""
+    import sqlite3
+    from nproj.model import early_parlay as EP
+    con = sqlite3.connect(":memory:")
+    con.row_factory = sqlite3.Row
+    con.executescript("""
+        CREATE TABLE players (player_id TEXT, name TEXT, team TEXT);
+        CREATE TABLE games (game_id TEXT, home_team TEXT, away_team TEXT, tipoff_utc TEXT);
+        CREATE TABLE probable_players (player_id TEXT, game_id TEXT, status TEXT, date TEXT);
+        INSERT INTO players VALUES ('9', 'Test Guard', 'AAA');
+        INSERT INTO games VALUES ('g1', 'AAA', 'BBB', '2030-01-01T00:00Z');
+        INSERT INTO probable_players VALUES ('9', 'g1', 'active', '2030-01-01');
+    """)
+    var = {s: (4.0, 0.0) for s in ("points", "rebounds", "assists", "pra")}
+    proj = {"9": {"points": 25.0, "rebounds": 7.0, "assists": 9.0, "pra": 41.0, "minutes": 34.0,
+                  "var": var}}
+    ladder = lambda ln: [{"line": ln, "over": -250, "book": "DraftKings"}]
+    alts = {"test guard": {"points": ladder(19.5), "rebounds": ladder(4.5),
+                           "assists": ladder(5.5), "pra": ladder(33.5)}}
+    stats = {c["stat"] for c in EP.candidates(con, "2030-01-01", proj, alts)}
+    assert stats == {"points", "pra"}, stats
+    leg = lambda pid, st: {"player_id": pid, "game_id": pid, "stat": st, "gap": 0.05}
+    assert EP.combo_ok([leg("a", "pra"), leg("b", "points"), leg("c", "points")])
+    assert not EP.combo_ok([leg("a", "pra"), leg("b", "pra"), leg("c", "points")])
+    print("OK points/PRA legs only")
+
+
 if __name__ == "__main__":
+    test_points_pra_legs_only()
     test_combo_rules()
     test_far_from_line()
     test_espn_props()

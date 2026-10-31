@@ -73,16 +73,17 @@ def test_live_model():
         from nproj.ingest.odds import norm_name
         assert EP.pick(con, DATE, live.PROJ, {})["status"] == "waiting"
         names = dict(con.execute("SELECT player_id, name FROM players").fetchall())
-        stars = sorted(live.PROJ, key=lambda p: -live.PROJ[p]["pra"])[:10]
+        stars = sorted(live.PROJ, key=lambda p: -live.PROJ[p]["pra"])[:16]
         alts = {}
         for i, pid in enumerate(stars):
-            mu = live.PROJ[pid]["pra"]
-            ladder = [{"line": round(mu) - 8.5, "over": -400, "book": "FanDuel"},
-                      {"line": round(mu) - 5.5, "over": -260, "book": "FanDuel"},
-                      {"line": round(mu) - 2.5, "over": -160, "book": "FanDuel"}]
+            # points ladders: the parlay uses points legs plus at most one PRA leg
+            mu = live.PROJ[pid]["points"]
+            ladder = [{"line": round(mu) - 6.5, "over": -400, "book": "FanDuel"},
+                      {"line": round(mu) - 4.5, "over": -260, "book": "FanDuel"},
+                      {"line": round(mu) - 1.5, "over": -160, "book": "FanDuel"}]
             if i == 0:      # a trap: the book is far surer than the model -> vetoed
-                ladder = [{"line": round(mu) - 1.5, "over": -300, "book": "FanDuel"}]
-            alts[norm_name(names[pid])] = {"pra": ladder}
+                ladder = [{"line": round(mu) - 0.5, "over": -300, "book": "FanDuel"}]
+            alts[norm_name(names[pid])] = {"points": ladder}
         ep = EP.pick(con, DATE, live.PROJ, alts)
         legs = ep["legs"]
         assert ep["status"] == "pending" and EP.MIN_LEGS <= len(legs) <= EP.MAX_LEGS, ep
@@ -166,7 +167,7 @@ def test_live_model():
             if g["game_id"] in star_games:
                 games_cov[f"{g['away_team']} @ {g['home_team']}"] = {
                     "home": g["home_team"], "away": g["away_team"], "lines": 1, "ladders": 1,
-                    "line_stats": ["points"], "ladder_stats": ["pra"]}
+                    "line_stats": ["points"], "ladder_stats": ["points"]}
         espn_props.save({"date": DATE, "fetched_at": "x", "games": games_cov,
                          "lines": {norm_name(k): v for k, v in lines.items()}, "alts": alts})
         lg_n = parlay.update(con, DATE, mode="night")
