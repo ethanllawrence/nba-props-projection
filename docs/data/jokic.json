@@ -1,16 +1,24 @@
 {
-  "generated_at": "2026-10-31T01:19:01Z",
+  "generated_at": "2026-10-31T05:28:27Z",
   "note": "Season summary, recent games and the model call come from Jokic's real ESPN game log. The market price is the best triple-double Yes price we have: DraftKings' from ESPN (refreshed every run, free) or FanDuel's from the morning odds pull. Prices move during the day, so check yours.",
   "season_summary": {
     "season_label": "2026-27",
-    "games_played": 4,
+    "games_played": 5,
     "triple_doubles": 2,
-    "hit_rate": 0.5,
-    "ppg": 22.0,
-    "rpg": 10.5,
-    "apg": 9.0
+    "hit_rate": 0.4,
+    "ppg": 21.2,
+    "rpg": 9.8,
+    "apg": 9.2
   },
   "recent_games": [
+    {
+      "date": "2026-10-30",
+      "opp": "@ PHX",
+      "pts": 18,
+      "reb": 7,
+      "ast": 10,
+      "triple_double": false
+    },
     {
       "date": "2026-10-28",
       "opp": "@ NOP",
@@ -45,20 +53,13 @@
     }
   ],
   "tonight": {
-    "opp": "@ PHX",
-    "time_et": "10:00 PM",
+    "opp": null,
+    "time_et": null,
     "call": "yes",
     "td_projection": {
-      "model_prob": 0.503,
-      "note": "His chance is halfway between his triple-double rate over his last 80 games and 50%. We tested fancier versions (the PRA model's rebound and assist projections, recent-form blends) on the last two seasons and none predicted his nightly triple-doubles better than a coin flip, so his long-run rate pulled toward 50/50 is the honest number. The best Yes price (+129 DraftKings) needs 44% to break even, so the call is YES.",
-      "break_even": 0.437
+      "model_prob": 0.5,
+      "note": "His chance is halfway between his triple-double rate over his last 80 games and 50%. We tested fancier versions (the PRA model's rebound and assist projections, recent-form blends) on the last two seasons and none predicted his nightly triple-doubles better than a coin flip, so his long-run rate pulled toward 50/50 is the honest number. No Yes price today, so the call is just whether his chance is above 50%."
     },
-    "market": {
-      "side": "yes",
-      "odds": 129,
-      "book": "DraftKings",
-      "at": "2026-10-31T01:19:01Z",
-      "others": []
-    }
+    "market": null
   }
 }
