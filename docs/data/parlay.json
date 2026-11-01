@@ -1931,14 +1931,15 @@
         "line_type": "alt",
         "book_line": 16.5,
         "proj": 19.7,
-        "prob": 0.725,
-        "book_prob": 0.635,
-        "gap": 0.09,
-        "odds": -197,
+        "prob": 0.726,
+        "book_prob": 0.601,
+        "gap": 0.125,
+        "odds": -169,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 19.7 points: 72% to clear 14.5 (star-calibrated) vs the book's 64% at -197, a +9 point gap. Projected for 34.2 minutes; GSW -2.5 spread."
+        "reasoning": "Model projects 19.7 points: 73% to clear 14.5 (star-calibrated) vs the book's 60% at -169, a +12 point gap. Projected for 34.2 minutes; GSW -2.5 spread.",
+        "night_odds": -197
       },
       {
         "player": "Pascal Siakam",
@@ -1955,36 +1956,14 @@
         "book_line": 22.5,
         "proj": 25.7,
         "prob": 0.739,
-        "book_prob": 0.672,
-        "gap": 0.067,
-        "odds": -236,
+        "book_prob": 0.668,
+        "gap": 0.072,
+        "odds": -231,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 25.7 points: 74% to clear 19.5 (star-calibrated) vs the book's 67% at -236, a +7 point gap. Projected for 33.4 minutes; IND -3.5 spread."
-      },
-      {
-        "player": "Derrick Jones Jr.",
-        "player_id": "3936099",
-        "game_id": "401909905",
-        "team": "LAC",
-        "opp": "GSW",
-        "home": false,
-        "time_et": "8:30 PM",
-        "stat": "points",
-        "side": "over",
-        "line": 7.5,
-        "line_type": "alt",
-        "book_line": 10.5,
-        "proj": 12.3,
-        "prob": 0.764,
-        "book_prob": 0.72,
-        "gap": 0.044,
-        "odds": -304,
-        "book": "DraftKings",
-        "blowout_risk": "low",
-        "minutes_confidence": "high",
-        "reasoning": "Model projects 12.3 points: 76% to clear 7.5 (star-calibrated) vs the book's 72% at -304, a +4 point gap. Projected for 30.2 minutes; LAC +2.5 spread."
+        "reasoning": "Model projects 25.7 points: 74% to clear 19.5 (star-calibrated) vs the book's 67% at -231, a +7 point gap. Projected for 33.4 minutes; IND -3.5 spread.",
+        "night_odds": -236
       },
       {
         "player": "Michael Porter Jr.",
@@ -1998,23 +1977,95 @@
         "side": "over",
         "line": 17.5,
         "line_type": "alt",
-        "book_line": 22.5,
+        "book_line": 21.5,
         "proj": 23.7,
         "prob": 0.747,
-        "book_prob": 0.719,
-        "gap": 0.028,
-        "odds": -303,
+        "book_prob": 0.713,
+        "gap": 0.035,
+        "odds": -292,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 23.7 points: 75% to clear 17.5 (star-calibrated) vs the book's 72% at -303, a +3 point gap. Projected for 32.1 minutes; BKN +3.5 spread."
+        "reasoning": "Model projects 23.7 points: 75% to clear 17.5 (star-calibrated) vs the book's 71% at -292, a +4 point gap. Projected for 32.1 minutes; BKN +3.5 spread.",
+        "night_odds": -303
+      },
+      {
+        "player": "Wendell Carter Jr.",
+        "player_id": "4277847",
+        "game_id": "401909903",
+        "team": "ORL",
+        "opp": "BOS",
+        "home": true,
+        "time_et": "3:30 PM",
+        "stat": "points",
+        "side": "over",
+        "line": 7.5,
+        "line_type": "alt",
+        "book_line": 11.5,
+        "proj": 12.8,
+        "prob": 0.786,
+        "book_prob": 0.762,
+        "gap": 0.024,
+        "odds": -391,
+        "book": "DraftKings",
+        "blowout_risk": "medium",
+        "minutes_confidence": "high",
+        "reasoning": "Model projects 12.8 points: 79% to clear 7.5 (star-calibrated) vs the book's 76% at -391, a +2 point gap. Projected for 34.0 minutes; ORL +7.5 spread."
       }
     ],
-    "combined_odds": 279,
-    "status": "pending"
+    "combined_odds": 284,
+    "status": "pending",
+    "night": {
+      "combined_odds": 279,
+      "picked_at": "2026-11-01T09:55:17Z",
+      "legs": [
+        {
+          "player": "Brandin Podziemski",
+          "stat": "points",
+          "line": 14.5,
+          "odds": -197
+        },
+        {
+          "player": "Pascal Siakam",
+          "stat": "points",
+          "line": 19.5,
+          "odds": -236
+        },
+        {
+          "player": "Derrick Jones Jr.",
+          "stat": "points",
+          "line": 7.5,
+          "odds": -304
+        },
+        {
+          "player": "Michael Porter Jr.",
+          "stat": "points",
+          "line": 17.5,
+          "odds": -303
+        }
+      ]
+    },
+    "morning_checked": "2026-11-01T18:16:39Z",
+    "changes": [
+      {
+        "out": {
+          "player": "Derrick Jones Jr.",
+          "stat": "points",
+          "line": 7.5,
+          "odds": -304
+        },
+        "why": "model chance fell from 76% to 65% overnight",
+        "in": {
+          "player": "Wendell Carter Jr.",
+          "stat": "points",
+          "line": 7.5,
+          "odds": -391
+        }
+      }
+    ]
   },
   "note": "Overs only, 3-4 legs at about +200 to +320 real FanDuel/DraftKings odds, picked the night before (about 9:45 PM Arizona time) from the books' real lines and the night's projections, then checked at 6 AM: a leg is swapped only if overnight news or a line move hurt it. The model must project over the line and not rate the leg well below the book; the combination it likes most relative to the book wins (the +/- number; gaps above +8 count as +8). At most 2 legs from one game unless the model strongly backs a third. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-01T09:55:17Z",
+  "generated_at": "2026-11-01T18:16:39Z",
   "early_history": [
     {
       "date": "2026-10-20",

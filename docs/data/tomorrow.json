@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T13:44:22Z",
+  "generated_at": "2026-11-01T18:20:04Z",
   "date": "2026-11-02",
   "early_look": true,
   "model": "lightgbm",
@@ -631,31 +631,31 @@
       "home": false,
       "time_et": "8:30 PM",
       "status": null,
-      "minutes": 36.8,
+      "minutes": 38.0,
       "stats": {
         "points": {
-          "proj": 27.0,
+          "proj": 27.2,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 8.1,
+          "proj": 8.4,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 6.5,
+          "proj": 6.4,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 41.0,
+          "proj": 41.4,
           "line": null,
           "book": null,
           "over": null,
@@ -2318,83 +2318,6 @@
       ]
     },
     {
-      "player": "Darius Garland",
-      "player_id": "4396907",
-      "team": "LAC",
-      "opp": "TOR",
-      "home": true,
-      "time_et": "10:00 PM",
-      "status": null,
-      "minutes": 31.8,
-      "stats": {
-        "points": {
-          "proj": 21.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 2.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 6.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 30.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-21",
-          "pts": 30,
-          "reb": 1,
-          "ast": 4,
-          "pra": 35
-        },
-        {
-          "date": "2026-10-23",
-          "pts": 26,
-          "reb": 0,
-          "ast": 6,
-          "pra": 32
-        },
-        {
-          "date": "2026-10-25",
-          "pts": 16,
-          "reb": 4,
-          "ast": 11,
-          "pra": 31
-        },
-        {
-          "date": "2026-10-28",
-          "pts": 14,
-          "reb": 1,
-          "ast": 5,
-          "pra": 20
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 24,
-          "reb": 2,
-          "ast": 5,
-          "pra": 31
-        }
-      ]
-    },
-    {
       "player": "Damian Lillard",
       "player_id": "6606",
       "team": "POR",
@@ -2696,9 +2619,9 @@
         {
           "date": "2026-10-30",
           "pts": 21,
-          "reb": 7,
+          "reb": 6,
           "ast": 9,
-          "pra": 37
+          "pra": 36
         }
       ]
     },
@@ -2853,6 +2776,83 @@
           "reb": 5,
           "ast": 5,
           "pra": 51
+        }
+      ]
+    },
+    {
+      "player": "Darius Garland",
+      "player_id": "4396907",
+      "team": "LAC",
+      "opp": "TOR",
+      "home": true,
+      "time_et": "10:00 PM",
+      "status": null,
+      "minutes": 32.1,
+      "stats": {
+        "points": {
+          "proj": 20.6,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 2.8,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 6.5,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 29.4,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-21",
+          "pts": 30,
+          "reb": 1,
+          "ast": 4,
+          "pra": 35
+        },
+        {
+          "date": "2026-10-23",
+          "pts": 26,
+          "reb": 0,
+          "ast": 6,
+          "pra": 32
+        },
+        {
+          "date": "2026-10-25",
+          "pts": 16,
+          "reb": 4,
+          "ast": 11,
+          "pra": 31
+        },
+        {
+          "date": "2026-10-28",
+          "pts": 14,
+          "reb": 1,
+          "ast": 5,
+          "pra": 20
+        },
+        {
+          "date": "2026-10-30",
+          "pts": 24,
+          "reb": 2,
+          "ast": 5,
+          "pra": 31
         }
       ]
     },
