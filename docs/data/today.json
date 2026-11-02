@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-02T16:26:23Z",
+  "generated_at": "2026-11-02T22:10:51Z",
   "date": "2026-11-02",
   "early_look": false,
   "model": "lightgbm",
   "note": "Projections come from the PRA model (LightGBM trained on three seasons: recent form, minutes, opponent, pace and spread, rest, and teammates out). Lines from FanDuel/DraftKings (60 of 60 players have at least one). Colors show where the projection sits vs. the line: red below, gold about even, green above (a guide, not a bet signal). 0 cells are boxed: the model's chance beats the price's break-even by 2+ points.",
-  "lines_fetched_at": "2026-11-02T16:26:21Z",
+  "lines_fetched_at": "2026-11-02T22:10:50Z",
   "unmatched_lines": [],
   "players": [
     {
@@ -15,45 +15,45 @@
       "home": true,
       "time_et": "10:00 PM",
       "status": null,
-      "minutes": 36.1,
+      "minutes": 34.3,
       "stats": {
         "points": {
-          "proj": 33.4,
-          "line": 34.5,
+          "proj": 33.2,
+          "line": 32.5,
           "book": "DraftKings",
-          "over": -107,
-          "under": -119,
-          "p_over": 0.472,
+          "over": -110,
+          "under": -116,
+          "p_over": 0.487,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
-          "proj": 7.5,
+          "proj": 7.1,
           "line": 7.5,
           "book": "DraftKings",
-          "over": 106,
-          "under": -140,
-          "p_over": 0.446,
+          "over": 105,
+          "under": -138,
+          "p_over": 0.441,
           "call": null,
           "edge": 0.0
         },
         "assists": {
-          "proj": 7.9,
+          "proj": 7.5,
           "line": 7.5,
           "book": "DraftKings",
-          "over": -115,
-          "under": -115,
-          "p_over": 0.498,
+          "over": -107,
+          "under": -123,
+          "p_over": 0.474,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 51.3,
-          "line": 49.5,
+          "proj": 50.8,
+          "line": 47.5,
           "book": "DraftKings",
-          "over": -116,
-          "under": -113,
-          "p_over": 0.5,
+          "over": -114,
+          "under": -115,
+          "p_over": 0.502,
           "call": null,
           "edge": 0.0
         }
@@ -104,15 +104,15 @@
       "home": true,
       "time_et": "8:30 PM",
       "status": null,
-      "minutes": 33.3,
+      "minutes": 33.1,
       "stats": {
         "points": {
-          "proj": 28.8,
+          "proj": 28.7,
           "line": 26.5,
           "book": "DraftKings",
-          "over": -103,
-          "under": -124,
-          "p_over": 0.48,
+          "over": -111,
+          "under": -115,
+          "p_over": 0.497,
           "call": null,
           "edge": 0.0
         },
@@ -120,9 +120,9 @@
           "proj": 11.4,
           "line": 11.5,
           "book": "DraftKings",
-          "over": -129,
-          "under": -102,
-          "p_over": 0.515,
+          "over": -111,
+          "under": -119,
+          "p_over": 0.481,
           "call": null,
           "edge": 0.0
         },
@@ -130,19 +130,19 @@
           "proj": 3.5,
           "line": 2.5,
           "book": "DraftKings",
-          "over": -172,
-          "under": 130,
-          "p_over": 0.603,
+          "over": -168,
+          "under": 127,
+          "p_over": 0.598,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 44.1,
+          "proj": 44.0,
           "line": 41.5,
           "book": "DraftKings",
-          "over": -115,
-          "under": -114,
-          "p_over": 0.501,
+          "over": -112,
+          "under": -117,
+          "p_over": 0.495,
           "call": null,
           "edge": 0.0
         }
@@ -193,15 +193,15 @@
       "home": false,
       "time_et": "8:00 PM",
       "status": null,
-      "minutes": 36.9,
+      "minutes": 37.0,
       "stats": {
         "points": {
-          "proj": 28.3,
-          "line": 23.5,
+          "proj": 28.5,
+          "line": 24.5,
           "book": "DraftKings",
-          "over": -123,
-          "under": -103,
-          "p_over": 0.536,
+          "over": -109,
+          "under": -116,
+          "p_over": 0.504,
           "call": null,
           "edge": 0.0
         },
@@ -209,9 +209,9 @@
           "proj": 4.5,
           "line": 3.5,
           "book": "DraftKings",
-          "over": 120,
-          "under": -158,
-          "p_over": 0.44,
+          "over": -104,
+          "under": -126,
+          "p_over": 0.489,
           "call": null,
           "edge": 0.0
         },
@@ -219,19 +219,19 @@
           "proj": 7.1,
           "line": 5.5,
           "book": "DraftKings",
-          "over": -133,
-          "under": 101,
-          "p_over": 0.554,
+          "over": -147,
+          "under": 111,
+          "p_over": 0.575,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 40.0,
-          "line": 33.5,
+          "proj": 40.1,
+          "line": 34.5,
           "book": "DraftKings",
-          "over": -114,
-          "under": -115,
-          "p_over": 0.517,
+          "over": -113,
+          "under": -117,
+          "p_over": 0.51,
           "call": null,
           "edge": 0.0
         }
@@ -275,6 +275,95 @@
       ]
     },
     {
+      "player": "Stephen Curry",
+      "player_id": "3975",
+      "team": "GSW",
+      "opp": "PHX",
+      "home": true,
+      "time_et": "10:00 PM",
+      "status": null,
+      "minutes": 32.6,
+      "stats": {
+        "points": {
+          "proj": 28.3,
+          "line": 26.5,
+          "book": "DraftKings",
+          "over": -111,
+          "under": -115,
+          "p_over": 0.495,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 4.2,
+          "line": 3.5,
+          "book": "DraftKings",
+          "over": -132,
+          "under": 100,
+          "p_over": 0.534,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 5.5,
+          "line": 4.5,
+          "book": "DraftKings",
+          "over": -121,
+          "under": -109,
+          "p_over": 0.522,
+          "call": null,
+          "edge": 0.0
+        },
+        "pra": {
+          "proj": 36.6,
+          "line": 34.5,
+          "book": "DraftKings",
+          "over": -123,
+          "under": -107,
+          "p_over": 0.514,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-21",
+          "pts": 23,
+          "reb": 2,
+          "ast": 1,
+          "pra": 26
+        },
+        {
+          "date": "2026-10-23",
+          "pts": 24,
+          "reb": 2,
+          "ast": 4,
+          "pra": 30
+        },
+        {
+          "date": "2026-10-26",
+          "pts": 24,
+          "reb": 3,
+          "ast": 3,
+          "pra": 30
+        },
+        {
+          "date": "2026-10-28",
+          "pts": 44,
+          "reb": 8,
+          "ast": 6,
+          "pra": 58
+        },
+        {
+          "date": "2026-10-30",
+          "pts": 31,
+          "reb": 4,
+          "ast": 6,
+          "pra": 41
+        }
+      ]
+    },
+    {
       "player": "Shai Gilgeous-Alexander",
       "player_id": "4278073",
       "team": "OKC",
@@ -282,15 +371,15 @@
       "home": false,
       "time_et": "7:00 PM",
       "status": null,
-      "minutes": 35.5,
+      "minutes": 35.6,
       "stats": {
         "points": {
           "proj": 27.9,
-          "line": 29.5,
+          "line": 30.5,
           "book": "DraftKings",
-          "over": -112,
-          "under": -114,
-          "p_over": 0.479,
+          "over": -109,
+          "under": -117,
+          "p_over": 0.468,
           "call": null,
           "edge": 0.0
         },
@@ -298,9 +387,9 @@
           "proj": 4.1,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -141,
-          "under": 107,
-          "p_over": 0.547,
+          "over": -137,
+          "under": 104,
+          "p_over": 0.541,
           "call": null,
           "edge": 0.0
         },
@@ -316,11 +405,11 @@
         },
         "pra": {
           "proj": 38.7,
-          "line": 39.5,
+          "line": 40.5,
           "book": "DraftKings",
-          "over": -109,
-          "under": -121,
-          "p_over": 0.475,
+          "over": -107,
+          "under": -123,
+          "p_over": 0.467,
           "call": null,
           "edge": 0.0
         }
@@ -371,15 +460,15 @@
       "home": true,
       "time_et": "7:30 PM",
       "status": null,
-      "minutes": 36.0,
+      "minutes": 36.5,
       "stats": {
         "points": {
-          "proj": 27.8,
-          "line": 26.5,
+          "proj": 27.7,
+          "line": 25.5,
           "book": "DraftKings",
-          "over": -105,
-          "under": -121,
-          "p_over": 0.48,
+          "over": -120,
+          "under": -107,
+          "p_over": 0.514,
           "call": null,
           "edge": 0.0
         },
@@ -387,29 +476,29 @@
           "proj": 4.1,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -161,
-          "under": 122,
-          "p_over": 0.576,
+          "over": -159,
+          "under": 120,
+          "p_over": 0.573,
           "call": null,
           "edge": 0.0
         },
         "assists": {
-          "proj": 5.6,
-          "line": 4.5,
+          "proj": 5.7,
+          "line": 5.5,
           "book": "DraftKings",
-          "over": -158,
-          "under": 119,
-          "p_over": 0.582,
+          "over": 119,
+          "under": -157,
+          "p_over": 0.424,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 37.7,
+          "proj": 37.8,
           "line": 35.5,
           "book": "DraftKings",
-          "over": -120,
-          "under": -110,
-          "p_over": 0.509,
+          "over": -115,
+          "under": -115,
+          "p_over": 0.499,
           "call": null,
           "edge": 0.0
         }
@@ -453,95 +542,6 @@
       ]
     },
     {
-      "player": "Stephen Curry",
-      "player_id": "3975",
-      "team": "GSW",
-      "opp": "PHX",
-      "home": true,
-      "time_et": "10:00 PM",
-      "status": "day-to-day",
-      "minutes": 31.7,
-      "stats": {
-        "points": {
-          "proj": 27.6,
-          "line": 26.5,
-          "book": "DraftKings",
-          "over": -105,
-          "under": -121,
-          "p_over": 0.479,
-          "call": null,
-          "edge": 0.0
-        },
-        "rebounds": {
-          "proj": 4.1,
-          "line": 3.5,
-          "book": "DraftKings",
-          "over": 100,
-          "under": -132,
-          "p_over": 0.47,
-          "call": null,
-          "edge": 0.0
-        },
-        "assists": {
-          "proj": 5.1,
-          "line": 4.5,
-          "book": "DraftKings",
-          "over": -113,
-          "under": -116,
-          "p_over": 0.499,
-          "call": null,
-          "edge": 0.0
-        },
-        "pra": {
-          "proj": 36.0,
-          "line": 34.5,
-          "book": "DraftKings",
-          "over": -113,
-          "under": -117,
-          "p_over": 0.492,
-          "call": null,
-          "edge": 0.0
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-21",
-          "pts": 23,
-          "reb": 2,
-          "ast": 1,
-          "pra": 26
-        },
-        {
-          "date": "2026-10-23",
-          "pts": 24,
-          "reb": 2,
-          "ast": 4,
-          "pra": 30
-        },
-        {
-          "date": "2026-10-26",
-          "pts": 24,
-          "reb": 3,
-          "ast": 3,
-          "pra": 30
-        },
-        {
-          "date": "2026-10-28",
-          "pts": 44,
-          "reb": 8,
-          "ast": 6,
-          "pra": 58
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 31,
-          "reb": 4,
-          "ast": 6,
-          "pra": 41
-        }
-      ]
-    },
-    {
       "player": "Cooper Flagg",
       "player_id": "5041939",
       "team": "DAL",
@@ -549,15 +549,15 @@
       "home": true,
       "time_et": "8:00 PM",
       "status": null,
-      "minutes": 36.4,
+      "minutes": 36.5,
       "stats": {
         "points": {
-          "proj": 27.2,
-          "line": 25.5,
+          "proj": 27.1,
+          "line": 27.5,
           "book": "DraftKings",
-          "over": -118,
-          "under": -108,
-          "p_over": 0.508,
+          "over": -103,
+          "under": -124,
+          "p_over": 0.466,
           "call": null,
           "edge": 0.0
         },
@@ -565,9 +565,9 @@
           "proj": 7.0,
           "line": 6.5,
           "book": "DraftKings",
-          "over": -123,
-          "under": -107,
-          "p_over": 0.514,
+          "over": -118,
+          "under": -111,
+          "p_over": 0.505,
           "call": null,
           "edge": 0.0
         },
@@ -575,19 +575,19 @@
           "proj": 6.1,
           "line": 6.5,
           "book": "DraftKings",
-          "over": 113,
-          "under": -149,
-          "p_over": 0.425,
+          "over": -116,
+          "under": -113,
+          "p_over": 0.485,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 39.6,
-          "line": 39.5,
+          "line": 40.5,
           "book": "DraftKings",
-          "over": -107,
-          "under": -123,
-          "p_over": 0.475,
+          "over": -123,
+          "under": -107,
+          "p_over": 0.501,
           "call": null,
           "edge": 0.0
         }
@@ -638,45 +638,45 @@
       "home": false,
       "time_et": "8:30 PM",
       "status": null,
-      "minutes": 36.8,
+      "minutes": 37.5,
       "stats": {
         "points": {
-          "proj": 26.9,
-          "line": 25.5,
+          "proj": 26.8,
+          "line": 27.5,
           "book": "DraftKings",
-          "over": -109,
-          "under": -117,
-          "p_over": 0.489,
+          "over": -120,
+          "under": -107,
+          "p_over": 0.498,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
-          "proj": 7.8,
+          "proj": 8.0,
           "line": 7.5,
           "book": "DraftKings",
-          "over": -101,
-          "under": -131,
-          "p_over": 0.466,
+          "over": 107,
+          "under": -140,
+          "p_over": 0.453,
           "call": null,
           "edge": 0.0
         },
         "assists": {
-          "proj": 6.4,
+          "proj": 6.5,
           "line": 6.5,
           "book": "DraftKings",
-          "over": -109,
-          "under": -120,
-          "p_over": 0.477,
+          "over": -112,
+          "under": -118,
+          "p_over": 0.485,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 41.2,
-          "line": 39.5,
+          "proj": 41.6,
+          "line": 41.5,
           "book": "DraftKings",
-          "over": -116,
-          "under": -113,
-          "p_over": 0.499,
+          "over": -123,
+          "under": -107,
+          "p_over": 0.505,
           "call": null,
           "edge": 0.0
         }
@@ -727,7 +727,7 @@
       "home": true,
       "time_et": "7:30 PM",
       "status": "day-to-day",
-      "minutes": 33.6,
+      "minutes": 34.0,
       "stats": {
         "points": {
           "proj": 26.8,
@@ -743,9 +743,9 @@
           "proj": 9.0,
           "line": 8.5,
           "book": "DraftKings",
-          "over": -101,
-          "under": -130,
-          "p_over": 0.47,
+          "over": 102,
+          "under": -134,
+          "p_over": 0.463,
           "call": null,
           "edge": 0.0
         },
@@ -753,9 +753,9 @@
           "proj": 5.7,
           "line": 4.5,
           "book": "DraftKings",
-          "over": 121,
-          "under": -160,
-          "p_over": 0.441,
+          "over": 122,
+          "under": -161,
+          "p_over": 0.439,
           "call": null,
           "edge": 0.0
         },
@@ -820,11 +820,11 @@
       "stats": {
         "points": {
           "proj": 26.2,
-          "line": 24.5,
+          "line": 23.5,
           "book": "DraftKings",
-          "over": -108,
-          "under": -117,
-          "p_over": 0.489,
+          "over": -105,
+          "under": -121,
+          "p_over": 0.488,
           "call": null,
           "edge": 0.0
         },
@@ -832,9 +832,9 @@
           "proj": 3.3,
           "line": 3.5,
           "book": "DraftKings",
-          "over": 120,
+          "over": 119,
           "under": -158,
-          "p_over": 0.413,
+          "p_over": 0.414,
           "call": null,
           "edge": 0.0
         },
@@ -842,19 +842,19 @@
           "proj": 6.3,
           "line": 6.5,
           "book": "DraftKings",
-          "over": -129,
-          "under": -102,
-          "p_over": 0.513,
+          "over": 104,
+          "under": -137,
+          "p_over": 0.448,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 36.2,
-          "line": 34.5,
+          "proj": 36.1,
+          "line": 32.5,
           "book": "DraftKings",
-          "over": -115,
-          "under": -115,
-          "p_over": 0.497,
+          "over": -125,
+          "under": -105,
+          "p_over": 0.525,
           "call": null,
           "edge": 0.0
         }
@@ -911,19 +911,19 @@
           "proj": 25.9,
           "line": 24.5,
           "book": "DraftKings",
-          "over": -122,
-          "under": -105,
-          "p_over": 0.513,
+          "over": -121,
+          "under": -106,
+          "p_over": 0.511,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
           "proj": 12.0,
-          "line": 12.5,
+          "line": 11.5,
           "book": "DraftKings",
-          "over": 100,
-          "under": -132,
-          "p_over": 0.453,
+          "over": -131,
+          "under": -101,
+          "p_over": 0.526,
           "call": null,
           "edge": 0.0
         },
@@ -931,9 +931,9 @@
           "proj": 9.9,
           "line": 9.5,
           "book": "DraftKings",
-          "over": -127,
-          "under": -104,
-          "p_over": 0.518,
+          "over": -125,
+          "under": -106,
+          "p_over": 0.515,
           "call": null,
           "edge": 0.0
         },
@@ -941,9 +941,9 @@
           "proj": 48.0,
           "line": 47.5,
           "book": "DraftKings",
-          "over": -117,
-          "under": -112,
-          "p_over": 0.497,
+          "over": -111,
+          "under": -119,
+          "p_over": 0.484,
           "call": null,
           "edge": 0.0
         }
@@ -994,15 +994,15 @@
       "home": true,
       "time_et": "7:30 PM",
       "status": null,
-      "minutes": 34.6,
+      "minutes": 35.0,
       "stats": {
         "points": {
-          "proj": 25.8,
-          "line": 22.5,
+          "proj": 25.7,
+          "line": 21.5,
           "book": "DraftKings",
-          "over": -104,
-          "under": -123,
-          "p_over": 0.489,
+          "over": -123,
+          "under": -104,
+          "p_over": 0.532,
           "call": null,
           "edge": 0.0
         },
@@ -1010,9 +1010,9 @@
           "proj": 6.5,
           "line": 6.5,
           "book": "DraftKings",
-          "over": -108,
-          "under": -122,
-          "p_over": 0.476,
+          "over": -105,
+          "under": -125,
+          "p_over": 0.471,
           "call": null,
           "edge": 0.0
         },
@@ -1020,9 +1020,9 @@
           "proj": 4.8,
           "line": 4.5,
           "book": "DraftKings",
-          "over": 121,
-          "under": -160,
-          "p_over": 0.422,
+          "over": 123,
+          "under": -162,
+          "p_over": 0.419,
           "call": null,
           "edge": 0.0
         },
@@ -1030,9 +1030,9 @@
           "proj": 37.5,
           "line": 33.5,
           "book": "DraftKings",
-          "over": -113,
-          "under": -117,
-          "p_over": 0.503,
+          "over": -109,
+          "under": -121,
+          "p_over": 0.495,
           "call": null,
           "edge": 0.0
         }
@@ -1099,9 +1099,9 @@
           "proj": 4.9,
           "line": 4.5,
           "book": "DraftKings",
-          "over": -117,
-          "under": -112,
-          "p_over": 0.501,
+          "over": -107,
+          "under": -123,
+          "p_over": 0.48,
           "call": null,
           "edge": 0.0
         },
@@ -1109,9 +1109,9 @@
           "proj": 6.1,
           "line": 5.5,
           "book": "DraftKings",
-          "over": -138,
-          "under": 105,
-          "p_over": 0.542,
+          "over": -145,
+          "under": 110,
+          "p_over": 0.553,
           "call": null,
           "edge": 0.0
         },
@@ -1119,9 +1119,9 @@
           "proj": 36.4,
           "line": 33.5,
           "book": "DraftKings",
-          "over": -121,
-          "under": -108,
-          "p_over": 0.515,
+          "over": -117,
+          "under": -112,
+          "p_over": 0.507,
           "call": null,
           "edge": 0.0
         }
@@ -1186,11 +1186,11 @@
         },
         "rebounds": {
           "proj": 3.8,
-          "line": 3.5,
+          "line": 4.5,
           "book": "DraftKings",
-          "over": -163,
-          "under": 123,
-          "p_over": 0.57,
+          "over": 123,
+          "under": -162,
+          "p_over": 0.395,
           "call": null,
           "edge": 0.0
         },
@@ -1198,9 +1198,9 @@
           "proj": 5.9,
           "line": 5.5,
           "book": "DraftKings",
-          "over": 103,
-          "under": -136,
-          "p_over": 0.459,
+          "over": -102,
+          "under": -130,
+          "p_over": 0.47,
           "call": null,
           "edge": 0.0
         },
@@ -1208,9 +1208,9 @@
           "proj": 35.1,
           "line": 33.5,
           "book": "DraftKings",
-          "over": -117,
-          "under": -113,
-          "p_over": 0.5,
+          "over": -121,
+          "under": -109,
+          "p_over": 0.508,
           "call": null,
           "edge": 0.0
         }
@@ -1254,95 +1254,6 @@
       ]
     },
     {
-      "player": "Kyrie Irving",
-      "player_id": "6442",
-      "team": "DAL",
-      "opp": "SAC",
-      "home": true,
-      "time_et": "8:00 PM",
-      "status": "day-to-day",
-      "minutes": 33.5,
-      "stats": {
-        "points": {
-          "proj": 24.7,
-          "line": 20.5,
-          "book": "DraftKings",
-          "over": -120,
-          "under": -107,
-          "p_over": 0.526,
-          "call": null,
-          "edge": 0.0
-        },
-        "rebounds": {
-          "proj": 4.5,
-          "line": 3.5,
-          "book": "DraftKings",
-          "over": -115,
-          "under": -115,
-          "p_over": 0.511,
-          "call": null,
-          "edge": 0.0
-        },
-        "assists": {
-          "proj": 4.9,
-          "line": 5.5,
-          "book": "DraftKings",
-          "over": 105,
-          "under": -139,
-          "p_over": 0.434,
-          "call": null,
-          "edge": 0.0
-        },
-        "pra": {
-          "proj": 34.0,
-          "line": 29.5,
-          "book": "DraftKings",
-          "over": -125,
-          "under": -105,
-          "p_over": 0.529,
-          "call": null,
-          "edge": 0.0
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-21",
-          "pts": 15,
-          "reb": 4,
-          "ast": 2,
-          "pra": 21
-        },
-        {
-          "date": "2026-10-23",
-          "pts": 24,
-          "reb": 1,
-          "ast": 3,
-          "pra": 28
-        },
-        {
-          "date": "2026-10-26",
-          "pts": 18,
-          "reb": 6,
-          "ast": 6,
-          "pra": 30
-        },
-        {
-          "date": "2026-10-28",
-          "pts": 15,
-          "reb": 2,
-          "ast": 4,
-          "pra": 21
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 35,
-          "reb": 4,
-          "ast": 9,
-          "pra": 48
-        }
-      ]
-    },
-    {
       "player": "Cade Cunningham",
       "player_id": "4432166",
       "team": "DET",
@@ -1356,9 +1267,9 @@
           "proj": 24.6,
           "line": 24.5,
           "book": "DraftKings",
-          "over": -103,
-          "under": -124,
-          "p_over": 0.469,
+          "over": -111,
+          "under": -115,
+          "p_over": 0.485,
           "call": null,
           "edge": 0.0
         },
@@ -1366,9 +1277,9 @@
           "proj": 5.3,
           "line": 5.5,
           "book": "DraftKings",
-          "over": 103,
-          "under": -136,
-          "p_over": 0.447,
+          "over": 112,
+          "under": -147,
+          "p_over": 0.429,
           "call": null,
           "edge": 0.0
         },
@@ -1386,9 +1297,9 @@
           "proj": 37.2,
           "line": 38.5,
           "book": "DraftKings",
-          "over": -116,
-          "under": -113,
-          "p_over": 0.487,
+          "over": -117,
+          "under": -112,
+          "p_over": 0.489,
           "call": null,
           "edge": 0.0
         }
@@ -1445,9 +1356,9 @@
           "proj": 24.6,
           "line": 22.5,
           "book": "DraftKings",
-          "over": -118,
-          "under": -108,
-          "p_over": 0.511,
+          "over": -114,
+          "under": -112,
+          "p_over": 0.503,
           "call": null,
           "edge": 0.0
         },
@@ -1472,7 +1383,7 @@
           "edge": 0.0
         },
         "pra": {
-          "proj": 33.7,
+          "proj": 33.9,
           "line": 32.5,
           "book": "DraftKings",
           "over": -115,
@@ -1532,21 +1443,21 @@
       "stats": {
         "points": {
           "proj": 24.5,
-          "line": 31.5,
+          "line": 30.5,
           "book": "DraftKings",
-          "over": -104,
-          "under": -123,
-          "p_over": 0.433,
+          "over": -111,
+          "under": -114,
+          "p_over": 0.453,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
-          "proj": 9.6,
+          "proj": 9.7,
           "line": 11.5,
           "book": "DraftKings",
-          "over": -107,
-          "under": -123,
-          "p_over": 0.448,
+          "over": -114,
+          "under": -116,
+          "p_over": 0.463,
           "call": null,
           "edge": 0.0
         },
@@ -1556,17 +1467,17 @@
           "book": "DraftKings",
           "over": -147,
           "under": 112,
-          "p_over": 0.55,
+          "p_over": 0.551,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 39.7,
-          "line": 49.5,
+          "proj": 39.6,
+          "line": 48.5,
           "book": "DraftKings",
-          "over": -109,
-          "under": -121,
-          "p_over": 0.439,
+          "over": -119,
+          "under": -110,
+          "p_over": 0.463,
           "call": null,
           "edge": 0.0
         }
@@ -1610,88 +1521,91 @@
       ]
     },
     {
-      "player": "Pascal Siakam",
-      "player_id": "3149673",
-      "team": "IND",
-      "opp": "ATL",
+      "player": "Franz Wagner",
+      "player_id": "4566434",
+      "team": "ORL",
+      "opp": "WAS",
       "home": true,
       "time_et": "7:30 PM",
       "status": null,
-      "minutes": 33.9,
+      "minutes": 34.7,
       "stats": {
         "points": {
           "proj": 24.2,
-          "line": 22.5,
+          "line": 24.5,
           "book": "DraftKings",
-          "over": -112,
-          "under": -114,
-          "p_over": 0.496,
+          "over": -104,
+          "under": -123,
+          "p_over": 0.468,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
-          "proj": 7.9,
+          "proj": 6.1,
           "line": 6.5,
           "book": "DraftKings",
-          "over": -131,
-          "under": -101,
-          "p_over": 0.543,
+          "over": 100,
+          "under": -132,
+          "p_over": 0.452,
           "call": null,
           "edge": 0.0
         },
         "assists": {
-          "proj": 4.9,
-          "line": 4.5,
+          "proj": 6.7,
+          "line": 6.5,
           "book": "DraftKings",
-          "over": 116,
-          "under": -153,
-          "p_over": 0.435,
+          "over": -111,
+          "under": -119,
+          "p_over": 0.486,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 36.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "proj": 35.9,
+          "line": 37.5,
+          "book": "DraftKings",
+          "over": -113,
+          "under": -117,
+          "p_over": 0.479,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
         {
-          "date": "2026-10-25",
-          "pts": 21,
-          "reb": 7,
-          "ast": 6,
-          "pra": 34
+          "date": "2026-10-23",
+          "pts": 18,
+          "reb": 6,
+          "ast": 5,
+          "pra": 29
         },
         {
-          "date": "2026-10-26",
-          "pts": 20,
+          "date": "2026-10-25",
+          "pts": 23,
           "reb": 13,
-          "ast": 6,
-          "pra": 39
+          "ast": 9,
+          "pra": 45
         },
         {
           "date": "2026-10-28",
-          "pts": 26,
-          "reb": 11,
-          "ast": 3,
-          "pra": 40
+          "pts": 15,
+          "reb": 4,
+          "ast": 5,
+          "pra": 24
         },
         {
           "date": "2026-10-30",
-          "pts": 13,
+          "pts": 26,
           "reb": 5,
-          "ast": 4,
-          "pra": 22
+          "ast": 11,
+          "pra": 42
         },
         {
           "date": "2026-11-01",
-          "pts": 17,
-          "reb": 5,
-          "ast": 5,
-          "pra": 27
+          "pts": 14,
+          "reb": 6,
+          "ast": 12,
+          "pra": 32
         }
       ]
     },
@@ -1703,45 +1617,45 @@
       "home": false,
       "time_et": "7:30 PM",
       "status": null,
-      "minutes": 33.8,
+      "minutes": 34.3,
       "stats": {
         "points": {
-          "proj": 23.5,
-          "line": 21.5,
+          "proj": 24.1,
+          "line": 22.5,
           "book": "DraftKings",
-          "over": -108,
-          "under": -118,
-          "p_over": 0.49,
+          "over": -107,
+          "under": -119,
+          "p_over": 0.486,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
-          "proj": 10.9,
+          "proj": 11.5,
           "line": 10.5,
           "book": "DraftKings",
-          "over": -135,
-          "under": 103,
+          "over": -130,
+          "under": -101,
           "p_over": 0.532,
           "call": null,
           "edge": 0.0
         },
         "assists": {
-          "proj": 2.7,
+          "proj": 2.9,
           "line": 2.5,
           "book": "DraftKings",
-          "over": -109,
-          "under": -120,
-          "p_over": 0.483,
+          "over": -106,
+          "under": -124,
+          "p_over": 0.48,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 36.7,
-          "line": 35.5,
+          "proj": 39.2,
+          "line": 36.5,
           "book": "DraftKings",
-          "over": -108,
-          "under": -122,
-          "p_over": 0.481,
+          "over": -112,
+          "under": -117,
+          "p_over": 0.496,
           "call": null,
           "edge": 0.0
         }
@@ -1785,6 +1699,95 @@
       ]
     },
     {
+      "player": "Yaxel Lendeborg",
+      "player_id": "5175737",
+      "team": "GSW",
+      "opp": "PHX",
+      "home": true,
+      "time_et": "10:00 PM",
+      "status": null,
+      "minutes": 34.5,
+      "stats": {
+        "points": {
+          "proj": 23.8,
+          "line": 18.5,
+          "book": "DraftKings",
+          "over": -121,
+          "under": -105,
+          "p_over": 0.537,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 7.0,
+          "line": 7.5,
+          "book": "DraftKings",
+          "over": -134,
+          "under": 102,
+          "p_over": 0.515,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 4.6,
+          "line": 3.5,
+          "book": "DraftKings",
+          "over": -144,
+          "under": 109,
+          "p_over": 0.564,
+          "call": null,
+          "edge": 0.0
+        },
+        "pra": {
+          "proj": 37.2,
+          "line": 30.5,
+          "book": "DraftKings",
+          "over": -115,
+          "under": -114,
+          "p_over": 0.521,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-24",
+          "pts": 26,
+          "reb": 9,
+          "ast": 5,
+          "pra": 40
+        },
+        {
+          "date": "2026-10-26",
+          "pts": 31,
+          "reb": 12,
+          "ast": 6,
+          "pra": 49
+        },
+        {
+          "date": "2026-10-28",
+          "pts": 26,
+          "reb": 9,
+          "ast": 1,
+          "pra": 36
+        },
+        {
+          "date": "2026-10-30",
+          "pts": 6,
+          "reb": 1,
+          "ast": 0,
+          "pra": 7
+        },
+        {
+          "date": "2026-11-01",
+          "pts": 37,
+          "reb": 4,
+          "ast": 6,
+          "pra": 47
+        }
+      ]
+    },
+    {
       "player": "Deni Avdija",
       "player_id": "4683021",
       "team": "POR",
@@ -1798,9 +1801,9 @@
           "proj": 23.2,
           "line": 22.5,
           "book": "DraftKings",
-          "over": -111,
-          "under": -115,
-          "p_over": 0.488,
+          "over": -108,
+          "under": -118,
+          "p_over": 0.482,
           "call": null,
           "edge": 0.0
         },
@@ -1808,19 +1811,19 @@
           "proj": 6.6,
           "line": 7.5,
           "book": "DraftKings",
-          "over": -104,
-          "under": -126,
-          "p_over": 0.453,
+          "over": -105,
+          "under": -125,
+          "p_over": 0.455,
           "call": null,
           "edge": 0.0
         },
         "assists": {
           "proj": 5.7,
-          "line": 5.5,
+          "line": 6.5,
           "book": "DraftKings",
-          "over": -154,
-          "under": 117,
-          "p_over": 0.559,
+          "over": 106,
+          "under": -140,
+          "p_over": 0.431,
           "call": null,
           "edge": 0.0
         },
@@ -1874,362 +1877,6 @@
       ]
     },
     {
-      "player": "Yaxel Lendeborg",
-      "player_id": "5175737",
-      "team": "GSW",
-      "opp": "PHX",
-      "home": true,
-      "time_et": "10:00 PM",
-      "status": null,
-      "minutes": 33.9,
-      "stats": {
-        "points": {
-          "proj": 23.2,
-          "line": 18.5,
-          "book": "DraftKings",
-          "over": -114,
-          "under": -112,
-          "p_over": 0.519,
-          "call": null,
-          "edge": 0.0
-        },
-        "rebounds": {
-          "proj": 6.8,
-          "line": 7.5,
-          "book": "DraftKings",
-          "over": 102,
-          "under": -134,
-          "p_over": 0.444,
-          "call": null,
-          "edge": 0.0
-        },
-        "assists": {
-          "proj": 4.2,
-          "line": 3.5,
-          "book": "DraftKings",
-          "over": -139,
-          "under": 105,
-          "p_over": 0.547,
-          "call": null,
-          "edge": 0.0
-        },
-        "pra": {
-          "proj": 36.5,
-          "line": 30.5,
-          "book": "DraftKings",
-          "over": -107,
-          "under": -123,
-          "p_over": 0.501,
-          "call": null,
-          "edge": 0.0
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-24",
-          "pts": 26,
-          "reb": 9,
-          "ast": 5,
-          "pra": 40
-        },
-        {
-          "date": "2026-10-26",
-          "pts": 31,
-          "reb": 12,
-          "ast": 6,
-          "pra": 49
-        },
-        {
-          "date": "2026-10-28",
-          "pts": 26,
-          "reb": 9,
-          "ast": 1,
-          "pra": 36
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 6,
-          "reb": 1,
-          "ast": 0,
-          "pra": 7
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 37,
-          "reb": 4,
-          "ast": 6,
-          "pra": 47
-        }
-      ]
-    },
-    {
-      "player": "Franz Wagner",
-      "player_id": "4566434",
-      "team": "ORL",
-      "opp": "WAS",
-      "home": true,
-      "time_et": "7:30 PM",
-      "status": null,
-      "minutes": 34.4,
-      "stats": {
-        "points": {
-          "proj": 23.0,
-          "line": 23.5,
-          "book": "DraftKings",
-          "over": -121,
-          "under": -105,
-          "p_over": 0.501,
-          "call": null,
-          "edge": 0.0
-        },
-        "rebounds": {
-          "proj": 5.8,
-          "line": 5.5,
-          "book": "DraftKings",
-          "over": -150,
-          "under": 114,
-          "p_over": 0.555,
-          "call": null,
-          "edge": 0.0
-        },
-        "assists": {
-          "proj": 6.3,
-          "line": 6.5,
-          "book": "DraftKings",
-          "over": 100,
-          "under": -132,
-          "p_over": 0.456,
-          "call": null,
-          "edge": 0.0
-        },
-        "pra": {
-          "proj": 33.6,
-          "line": 36.5,
-          "book": "DraftKings",
-          "over": -122,
-          "under": -108,
-          "p_over": 0.49,
-          "call": null,
-          "edge": 0.0
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-23",
-          "pts": 18,
-          "reb": 6,
-          "ast": 5,
-          "pra": 29
-        },
-        {
-          "date": "2026-10-25",
-          "pts": 23,
-          "reb": 13,
-          "ast": 9,
-          "pra": 45
-        },
-        {
-          "date": "2026-10-28",
-          "pts": 15,
-          "reb": 4,
-          "ast": 5,
-          "pra": 24
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 26,
-          "reb": 5,
-          "ast": 11,
-          "pra": 42
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 14,
-          "reb": 6,
-          "ast": 12,
-          "pra": 32
-        }
-      ]
-    },
-    {
-      "player": "Austin Reaves",
-      "player_id": "4066457",
-      "team": "LAL",
-      "opp": "MIA",
-      "home": true,
-      "time_et": "10:00 PM",
-      "status": null,
-      "minutes": 35.8,
-      "stats": {
-        "points": {
-          "proj": 22.9,
-          "line": 22.5,
-          "book": "DraftKings",
-          "over": -116,
-          "under": -110,
-          "p_over": 0.497,
-          "call": null,
-          "edge": 0.0
-        },
-        "rebounds": {
-          "proj": 4.1,
-          "line": 3.5,
-          "book": "DraftKings",
-          "over": -147,
-          "under": 111,
-          "p_over": 0.556,
-          "call": null,
-          "edge": 0.0
-        },
-        "assists": {
-          "proj": 5.7,
-          "line": 5.5,
-          "book": "DraftKings",
-          "over": -110,
-          "under": -119,
-          "p_over": 0.485,
-          "call": null,
-          "edge": 0.0
-        },
-        "pra": {
-          "proj": 33.2,
-          "line": 32.5,
-          "book": "DraftKings",
-          "over": -114,
-          "under": -115,
-          "p_over": 0.491,
-          "call": null,
-          "edge": 0.0
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-25",
-          "pts": 29,
-          "reb": 1,
-          "ast": 4,
-          "pra": 34
-        },
-        {
-          "date": "2026-10-27",
-          "pts": 26,
-          "reb": 4,
-          "ast": 7,
-          "pra": 37
-        },
-        {
-          "date": "2026-10-28",
-          "pts": 16,
-          "reb": 6,
-          "ast": 1,
-          "pra": 23
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 21,
-          "reb": 4,
-          "ast": 5,
-          "pra": 30
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 19,
-          "reb": 3,
-          "ast": 4,
-          "pra": 26
-        }
-      ]
-    },
-    {
-      "player": "Keyonte George",
-      "player_id": "4433627",
-      "team": "UTA",
-      "opp": "SAS",
-      "home": false,
-      "time_et": "8:30 PM",
-      "status": null,
-      "minutes": 31.8,
-      "stats": {
-        "points": {
-          "proj": 22.7,
-          "line": 20.5,
-          "book": "DraftKings",
-          "over": -122,
-          "under": -104,
-          "p_over": 0.519,
-          "call": null,
-          "edge": 0.0
-        },
-        "rebounds": {
-          "proj": 3.7,
-          "line": 3.5,
-          "book": "DraftKings",
-          "over": -107,
-          "under": -123,
-          "p_over": 0.477,
-          "call": null,
-          "edge": 0.0
-        },
-        "assists": {
-          "proj": 5.4,
-          "line": 5.5,
-          "book": "DraftKings",
-          "over": -149,
-          "under": 113,
-          "p_over": 0.545,
-          "call": null,
-          "edge": 0.0
-        },
-        "pra": {
-          "proj": 31.5,
-          "line": 30.5,
-          "book": "DraftKings",
-          "over": -123,
-          "under": -107,
-          "p_over": 0.509,
-          "call": null,
-          "edge": 0.0
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-23",
-          "pts": 19,
-          "reb": 1,
-          "ast": 10,
-          "pra": 30
-        },
-        {
-          "date": "2026-10-25",
-          "pts": 24,
-          "reb": 9,
-          "ast": 10,
-          "pra": 43
-        },
-        {
-          "date": "2026-10-26",
-          "pts": 26,
-          "reb": 3,
-          "ast": 6,
-          "pra": 35
-        },
-        {
-          "date": "2026-10-28",
-          "pts": 31,
-          "reb": 4,
-          "ast": 3,
-          "pra": 38
-        },
-        {
-          "date": "2026-10-31",
-          "pts": 8,
-          "reb": 3,
-          "ast": 4,
-          "pra": 15
-        }
-      ]
-    },
-    {
       "player": "Kevin Durant",
       "player_id": "3202",
       "team": "HOU",
@@ -2237,25 +1884,25 @@
       "home": true,
       "time_et": "8:30 PM",
       "status": null,
-      "minutes": 34.3,
+      "minutes": 35.4,
       "stats": {
         "points": {
-          "proj": 22.2,
+          "proj": 22.8,
           "line": 21.5,
           "book": "DraftKings",
-          "over": -107,
-          "under": -119,
-          "p_over": 0.481,
+          "over": -110,
+          "under": -115,
+          "p_over": 0.491,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
-          "proj": 5.4,
+          "proj": 5.5,
           "line": 5.5,
           "book": "DraftKings",
-          "over": -110,
-          "under": -120,
-          "p_over": 0.476,
+          "over": 115,
+          "under": -152,
+          "p_over": 0.428,
           "call": null,
           "edge": 0.0
         },
@@ -2263,19 +1910,19 @@
           "proj": 4.5,
           "line": 3.5,
           "book": "DraftKings",
-          "over": 117,
-          "under": -154,
-          "p_over": 0.447,
+          "over": -101,
+          "under": -130,
+          "p_over": 0.483,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 33.1,
+          "proj": 33.8,
           "line": 30.5,
           "book": "DraftKings",
-          "over": -114,
-          "under": -115,
-          "p_over": 0.5,
+          "over": -111,
+          "under": -118,
+          "p_over": 0.498,
           "call": null,
           "edge": 0.0
         }
@@ -2319,6 +1966,273 @@
       ]
     },
     {
+      "player": "Keyonte George",
+      "player_id": "4433627",
+      "team": "UTA",
+      "opp": "SAS",
+      "home": false,
+      "time_et": "8:30 PM",
+      "status": null,
+      "minutes": 32.0,
+      "stats": {
+        "points": {
+          "proj": 22.7,
+          "line": 20.5,
+          "book": "DraftKings",
+          "over": -119,
+          "under": -107,
+          "p_over": 0.514,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 3.7,
+          "line": 3.5,
+          "book": "DraftKings",
+          "over": -111,
+          "under": -119,
+          "p_over": 0.485,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 5.4,
+          "line": 6.5,
+          "book": "DraftKings",
+          "over": 116,
+          "under": -153,
+          "p_over": 0.405,
+          "call": null,
+          "edge": 0.0
+        },
+        "pra": {
+          "proj": 31.6,
+          "line": 30.5,
+          "book": "DraftKings",
+          "over": -122,
+          "under": -108,
+          "p_over": 0.508,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-23",
+          "pts": 19,
+          "reb": 1,
+          "ast": 10,
+          "pra": 30
+        },
+        {
+          "date": "2026-10-25",
+          "pts": 24,
+          "reb": 9,
+          "ast": 10,
+          "pra": 43
+        },
+        {
+          "date": "2026-10-26",
+          "pts": 26,
+          "reb": 3,
+          "ast": 6,
+          "pra": 35
+        },
+        {
+          "date": "2026-10-28",
+          "pts": 31,
+          "reb": 4,
+          "ast": 3,
+          "pra": 38
+        },
+        {
+          "date": "2026-10-31",
+          "pts": 8,
+          "reb": 3,
+          "ast": 4,
+          "pra": 15
+        }
+      ]
+    },
+    {
+      "player": "Desmond Bane",
+      "player_id": "4066320",
+      "team": "ORL",
+      "opp": "WAS",
+      "home": true,
+      "time_et": "7:30 PM",
+      "status": null,
+      "minutes": 35.6,
+      "stats": {
+        "points": {
+          "proj": 22.2,
+          "line": 21.5,
+          "book": "DraftKings",
+          "over": -102,
+          "under": -125,
+          "p_over": 0.47,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 4.7,
+          "line": 4.5,
+          "book": "DraftKings",
+          "over": -111,
+          "under": -118,
+          "p_over": 0.485,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 3.5,
+          "line": 3.5,
+          "book": "DraftKings",
+          "over": -146,
+          "under": 111,
+          "p_over": 0.54,
+          "call": null,
+          "edge": 0.0
+        },
+        "pra": {
+          "proj": 30.9,
+          "line": 29.5,
+          "book": "DraftKings",
+          "over": -122,
+          "under": -108,
+          "p_over": 0.509,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-23",
+          "pts": 5,
+          "reb": 2,
+          "ast": 0,
+          "pra": 7
+        },
+        {
+          "date": "2026-10-25",
+          "pts": 22,
+          "reb": 6,
+          "ast": 2,
+          "pra": 30
+        },
+        {
+          "date": "2026-10-28",
+          "pts": 13,
+          "reb": 5,
+          "ast": 4,
+          "pra": 22
+        },
+        {
+          "date": "2026-10-30",
+          "pts": 28,
+          "reb": 2,
+          "ast": 6,
+          "pra": 36
+        },
+        {
+          "date": "2026-11-01",
+          "pts": 19,
+          "reb": 2,
+          "ast": 1,
+          "pra": 22
+        }
+      ]
+    },
+    {
+      "player": "Austin Reaves",
+      "player_id": "4066457",
+      "team": "LAL",
+      "opp": "MIA",
+      "home": true,
+      "time_et": "10:00 PM",
+      "status": null,
+      "minutes": 33.9,
+      "stats": {
+        "points": {
+          "proj": 22.1,
+          "line": 22.5,
+          "book": "DraftKings",
+          "over": -120,
+          "under": -106,
+          "p_over": 0.5,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 4.0,
+          "line": 3.5,
+          "book": "DraftKings",
+          "over": -153,
+          "under": 116,
+          "p_over": 0.562,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 5.7,
+          "line": 5.5,
+          "book": "DraftKings",
+          "over": -102,
+          "under": -129,
+          "p_over": 0.467,
+          "call": null,
+          "edge": 0.0
+        },
+        "pra": {
+          "proj": 32.3,
+          "line": 32.5,
+          "book": "DraftKings",
+          "over": -118,
+          "under": -111,
+          "p_over": 0.495,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-25",
+          "pts": 29,
+          "reb": 1,
+          "ast": 4,
+          "pra": 34
+        },
+        {
+          "date": "2026-10-27",
+          "pts": 26,
+          "reb": 4,
+          "ast": 7,
+          "pra": 37
+        },
+        {
+          "date": "2026-10-28",
+          "pts": 16,
+          "reb": 6,
+          "ast": 1,
+          "pra": 23
+        },
+        {
+          "date": "2026-10-30",
+          "pts": 21,
+          "reb": 4,
+          "ast": 5,
+          "pra": 30
+        },
+        {
+          "date": "2026-11-01",
+          "pts": 19,
+          "reb": 3,
+          "ast": 4,
+          "pra": 26
+        }
+      ]
+    },
+    {
       "player": "LeBron James",
       "player_id": "1966",
       "team": "PHI",
@@ -2326,15 +2240,15 @@
       "home": true,
       "time_et": "7:30 PM",
       "status": null,
-      "minutes": 33.7,
+      "minutes": 34.1,
       "stats": {
         "points": {
           "proj": 21.9,
           "line": 17.5,
           "book": "DraftKings",
-          "over": -123,
-          "under": -104,
-          "p_over": 0.535,
+          "over": -118,
+          "under": -108,
+          "p_over": 0.526,
           "call": null,
           "edge": 0.0
         },
@@ -2342,9 +2256,9 @@
           "proj": 7.1,
           "line": 6.5,
           "book": "DraftKings",
-          "over": -114,
-          "under": -116,
-          "p_over": 0.498,
+          "over": -112,
+          "under": -118,
+          "p_over": 0.494,
           "call": null,
           "edge": 0.0
         },
@@ -2352,9 +2266,9 @@
           "proj": 7.5,
           "line": 6.5,
           "book": "DraftKings",
-          "over": -132,
-          "under": 100,
-          "p_over": 0.538,
+          "over": -128,
+          "under": -102,
+          "p_over": 0.533,
           "call": null,
           "edge": 0.0
         },
@@ -2362,9 +2276,9 @@
           "proj": 36.6,
           "line": 31.5,
           "book": "DraftKings",
-          "over": -118,
-          "under": -111,
-          "p_over": 0.519,
+          "over": -111,
+          "under": -119,
+          "p_over": 0.504,
           "call": null,
           "edge": 0.0
         }
@@ -2408,22 +2322,112 @@
       ]
     },
     {
+      "player": "Trae Young",
+      "player_id": "4277905",
+      "team": "WAS",
+      "opp": "ORL",
+      "home": false,
+      "time_et": "7:30 PM",
+      "status": null,
+      "minutes": 35.1,
+      "stats": {
+        "points": {
+          "proj": 21.9,
+          "line": 20.5,
+          "book": "DraftKings",
+          "over": -109,
+          "under": -117,
+          "p_over": 0.489,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 3.8,
+          "line": 2.5,
+          "book": "DraftKings",
+          "over": -142,
+          "under": 108,
+          "p_over": 0.566,
+          "call": null,
+          "edge": 0.0,
+          "flag": "far"
+        },
+        "assists": {
+          "proj": 8.6,
+          "line": 9.5,
+          "book": "DraftKings",
+          "over": -140,
+          "under": 107,
+          "p_over": 0.521,
+          "call": null,
+          "edge": 0.0
+        },
+        "pra": {
+          "proj": 36.2,
+          "line": 33.5,
+          "book": "DraftKings",
+          "over": -115,
+          "under": -114,
+          "p_over": 0.502,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-23",
+          "pts": 22,
+          "reb": 1,
+          "ast": 12,
+          "pra": 35
+        },
+        {
+          "date": "2026-10-24",
+          "pts": 25,
+          "reb": 4,
+          "ast": 9,
+          "pra": 38
+        },
+        {
+          "date": "2026-10-26",
+          "pts": 22,
+          "reb": 6,
+          "ast": 10,
+          "pra": 38
+        },
+        {
+          "date": "2026-10-28",
+          "pts": 14,
+          "reb": 5,
+          "ast": 8,
+          "pra": 27
+        },
+        {
+          "date": "2026-10-30",
+          "pts": 21,
+          "reb": 6,
+          "ast": 9,
+          "pra": 36
+        }
+      ]
+    },
+    {
       "player": "Scottie Barnes",
       "player_id": "4433134",
       "team": "TOR",
       "opp": "LAC",
       "home": false,
       "time_et": "10:00 PM",
-      "status": null,
-      "minutes": 34.0,
+      "status": "day-to-day",
+      "minutes": 34.2,
       "stats": {
         "points": {
           "proj": 21.9,
           "line": 23.5,
           "book": "DraftKings",
-          "over": -116,
-          "under": -110,
-          "p_over": 0.485,
+          "over": -107,
+          "under": -119,
+          "p_over": 0.467,
           "call": null,
           "edge": 0.0
         },
@@ -2431,9 +2435,9 @@
           "proj": 6.8,
           "line": 7.5,
           "book": "DraftKings",
-          "over": 109,
-          "under": -143,
-          "p_over": 0.428,
+          "over": 104,
+          "under": -136,
+          "p_over": 0.439,
           "call": null,
           "edge": 0.0
         },
@@ -2441,19 +2445,19 @@
           "proj": 6.3,
           "line": 5.5,
           "book": "DraftKings",
-          "over": -128,
-          "under": -103,
-          "p_over": 0.529,
+          "over": -131,
+          "under": -101,
+          "p_over": 0.534,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 35.6,
-          "line": 37.5,
+          "line": 36.5,
           "book": "DraftKings",
-          "over": -106,
-          "under": -125,
-          "p_over": 0.463,
+          "over": -123,
+          "under": -107,
+          "p_over": 0.501,
           "call": null,
           "edge": 0.0
         }
@@ -2504,23 +2508,23 @@
       "home": false,
       "time_et": "7:30 PM",
       "status": null,
-      "minutes": 33.2,
+      "minutes": 33.6,
       "stats": {
         "points": {
           "proj": 21.6,
-          "line": 19.5,
+          "line": 18.5,
           "book": "DraftKings",
-          "over": -104,
-          "under": -122,
-          "p_over": 0.484,
+          "over": -113,
+          "under": -113,
+          "p_over": 0.508,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
-          "proj": 6.5,
+          "proj": 6.4,
           "line": 5.5,
           "book": "DraftKings",
-          "over": -149,
+          "over": -150,
           "under": 113,
           "p_over": 0.565,
           "call": null,
@@ -2530,19 +2534,19 @@
           "proj": 3.0,
           "line": 2.5,
           "book": "DraftKings",
-          "over": -108,
-          "under": -122,
-          "p_over": 0.489,
+          "over": -105,
+          "under": -125,
+          "p_over": 0.483,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 30.0,
-          "line": 28.5,
+          "proj": 30.1,
+          "line": 27.5,
           "book": "DraftKings",
-          "over": -108,
-          "under": -122,
-          "p_over": 0.482,
+          "over": -120,
+          "under": -109,
+          "p_over": 0.512,
           "call": null,
           "edge": 0.0
         }
@@ -2586,6 +2590,95 @@
       ]
     },
     {
+      "player": "Darius Garland",
+      "player_id": "4396907",
+      "team": "LAC",
+      "opp": "TOR",
+      "home": true,
+      "time_et": "10:00 PM",
+      "status": null,
+      "minutes": 33.0,
+      "stats": {
+        "points": {
+          "proj": 21.5,
+          "line": 24.5,
+          "book": "DraftKings",
+          "over": -106,
+          "under": -120,
+          "p_over": 0.457,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 2.7,
+          "line": 3.5,
+          "book": "DraftKings",
+          "over": -113,
+          "under": -117,
+          "p_over": 0.46,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 7.1,
+          "line": 6.5,
+          "book": "DraftKings",
+          "over": -122,
+          "under": -108,
+          "p_over": 0.514,
+          "call": null,
+          "edge": 0.0
+        },
+        "pra": {
+          "proj": 31.6,
+          "line": 34.5,
+          "book": "DraftKings",
+          "over": -120,
+          "under": -110,
+          "p_over": 0.486,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-23",
+          "pts": 26,
+          "reb": 0,
+          "ast": 6,
+          "pra": 32
+        },
+        {
+          "date": "2026-10-25",
+          "pts": 16,
+          "reb": 4,
+          "ast": 11,
+          "pra": 31
+        },
+        {
+          "date": "2026-10-28",
+          "pts": 14,
+          "reb": 1,
+          "ast": 5,
+          "pra": 20
+        },
+        {
+          "date": "2026-10-30",
+          "pts": 24,
+          "reb": 2,
+          "ast": 5,
+          "pra": 31
+        },
+        {
+          "date": "2026-11-01",
+          "pts": 15,
+          "reb": 0,
+          "ast": 7,
+          "pra": 22
+        }
+      ]
+    },
+    {
       "player": "Lauri Markkanen",
       "player_id": "4066336",
       "team": "UTA",
@@ -2593,15 +2686,15 @@
       "home": false,
       "time_et": "8:30 PM",
       "status": null,
-      "minutes": 32.0,
+      "minutes": 32.2,
       "stats": {
         "points": {
-          "proj": 21.5,
+          "proj": 21.4,
           "line": 19.5,
           "book": "DraftKings",
-          "over": -118,
-          "under": -108,
-          "p_over": 0.51,
+          "over": -111,
+          "under": -114,
+          "p_over": 0.497,
           "call": null,
           "edge": 0.0
         },
@@ -2609,9 +2702,9 @@
           "proj": 6.6,
           "line": 6.5,
           "book": "DraftKings",
-          "over": 111,
-          "under": -146,
-          "p_over": 0.437,
+          "over": 107,
+          "under": -141,
+          "p_over": 0.445,
           "call": null,
           "edge": 0.0
         },
@@ -2619,19 +2712,19 @@
           "proj": 1.9,
           "line": 1.5,
           "book": "DraftKings",
-          "over": -133,
-          "under": 101,
-          "p_over": 0.533,
+          "over": -137,
+          "under": 104,
+          "p_over": 0.54,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 29.4,
+          "proj": 29.5,
           "line": 27.5,
           "book": "DraftKings",
-          "over": -122,
-          "under": -108,
-          "p_over": 0.512,
+          "over": -118,
+          "under": -112,
+          "p_over": 0.504,
           "call": null,
           "edge": 0.0
         }
@@ -2682,15 +2775,15 @@
       "home": false,
       "time_et": "10:00 PM",
       "status": null,
-      "minutes": 33.3,
+      "minutes": 33.4,
       "stats": {
         "points": {
           "proj": 21.3,
-          "line": 21.5,
+          "line": 19.5,
           "book": "DraftKings",
-          "over": -105,
-          "under": -121,
-          "p_over": 0.471,
+          "over": -124,
+          "under": -103,
+          "p_over": 0.52,
           "call": null,
           "edge": 0.0
         },
@@ -2698,9 +2791,9 @@
           "proj": 6.2,
           "line": 5.5,
           "book": "DraftKings",
-          "over": -108,
-          "under": -122,
-          "p_over": 0.488,
+          "over": -110,
+          "under": -120,
+          "p_over": 0.492,
           "call": null,
           "edge": 0.0
         },
@@ -2708,19 +2801,19 @@
           "proj": 4.0,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -153,
-          "under": 116,
-          "p_over": 0.564,
+          "over": -161,
+          "under": 122,
+          "p_over": 0.575,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 31.0,
-          "line": 30.5,
+          "line": 29.5,
           "book": "DraftKings",
           "over": -123,
           "under": -107,
-          "p_over": 0.506,
+          "p_over": 0.511,
           "call": null,
           "edge": 0.0
         }
@@ -2771,15 +2864,15 @@
       "home": false,
       "time_et": "8:00 PM",
       "status": "day-to-day",
-      "minutes": 31.3,
+      "minutes": 31.4,
       "stats": {
         "points": {
           "proj": 21.3,
           "line": 21.5,
           "book": "DraftKings",
-          "over": -107,
-          "under": -119,
-          "p_over": 0.475,
+          "over": -105,
+          "under": -122,
+          "p_over": 0.471,
           "call": null,
           "edge": 0.0
         },
@@ -2789,7 +2882,7 @@
           "book": "DraftKings",
           "over": -148,
           "under": 112,
-          "p_over": 0.564,
+          "p_over": 0.563,
           "call": null,
           "edge": 0.0
         },
@@ -2797,19 +2890,19 @@
           "proj": 2.9,
           "line": 2.5,
           "book": "DraftKings",
-          "over": -137,
-          "under": 104,
-          "p_over": 0.538,
+          "over": -144,
+          "under": 109,
+          "p_over": 0.549,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 28.6,
+          "proj": 28.7,
           "line": 27.5,
           "book": "DraftKings",
-          "over": -110,
-          "under": -120,
-          "p_over": 0.484,
+          "over": -107,
+          "under": -123,
+          "p_over": 0.479,
           "call": null,
           "edge": 0.0
         }
@@ -2864,11 +2957,11 @@
       "stats": {
         "points": {
           "proj": 21.2,
-          "line": 20.5,
+          "line": 19.5,
           "book": "DraftKings",
-          "over": -105,
-          "under": -121,
-          "p_over": 0.477,
+          "over": -121,
+          "under": -105,
+          "p_over": 0.515,
           "call": null,
           "edge": 0.0
         },
@@ -2876,9 +2969,9 @@
           "proj": 6.6,
           "line": 6.5,
           "book": "DraftKings",
-          "over": -127,
-          "under": -104,
-          "p_over": 0.513,
+          "over": -101,
+          "under": -131,
+          "p_over": 0.462,
           "call": null,
           "edge": 0.0
         },
@@ -2886,20 +2979,20 @@
           "proj": 2.4,
           "line": 1.5,
           "book": "DraftKings",
-          "over": -160,
-          "under": 121,
-          "p_over": 0.587,
+          "over": -173,
+          "under": 131,
+          "p_over": 0.604,
           "call": null,
           "edge": 0.0,
           "flag": "far"
         },
         "pra": {
           "proj": 30.5,
-          "line": 29.5,
+          "line": 28.5,
           "book": "DraftKings",
-          "over": -110,
-          "under": -120,
-          "p_over": 0.484,
+          "over": -117,
+          "under": -113,
+          "p_over": 0.502,
           "call": null,
           "edge": 0.0
         }
@@ -2954,11 +3047,11 @@
       "stats": {
         "points": {
           "proj": 21.1,
-          "line": 23.5,
+          "line": 22.5,
           "book": "DraftKings",
-          "over": -108,
-          "under": -118,
-          "p_over": 0.464,
+          "over": -116,
+          "under": -110,
+          "p_over": 0.486,
           "call": null,
           "edge": 0.0
         },
@@ -2966,9 +3059,9 @@
           "proj": 5.4,
           "line": 5.5,
           "book": "DraftKings",
-          "over": 110,
-          "under": -145,
-          "p_over": 0.435,
+          "over": 116,
+          "under": -153,
+          "p_over": 0.424,
           "call": null,
           "edge": 0.0
         },
@@ -2976,9 +3069,9 @@
           "proj": 3.0,
           "line": 2.5,
           "book": "DraftKings",
-          "over": -151,
-          "under": 115,
-          "p_over": 0.561,
+          "over": -143,
+          "under": 109,
+          "p_over": 0.549,
           "call": null,
           "edge": 0.0
         },
@@ -2986,9 +3079,9 @@
           "proj": 29.8,
           "line": 31.5,
           "book": "DraftKings",
-          "over": -120,
-          "under": -109,
-          "p_over": 0.491,
+          "over": -108,
+          "under": -122,
+          "p_over": 0.467,
           "call": null,
           "edge": 0.0
         }
@@ -3032,184 +3125,6 @@
       ]
     },
     {
-      "player": "Desmond Bane",
-      "player_id": "4066320",
-      "team": "ORL",
-      "opp": "WAS",
-      "home": true,
-      "time_et": "7:30 PM",
-      "status": null,
-      "minutes": 35.6,
-      "stats": {
-        "points": {
-          "proj": 21.1,
-          "line": 21.5,
-          "book": "DraftKings",
-          "over": -110,
-          "under": -116,
-          "p_over": 0.48,
-          "call": null,
-          "edge": 0.0
-        },
-        "rebounds": {
-          "proj": 4.3,
-          "line": 4.5,
-          "book": "DraftKings",
-          "over": 104,
-          "under": -137,
-          "p_over": 0.445,
-          "call": null,
-          "edge": 0.0
-        },
-        "assists": {
-          "proj": 3.4,
-          "line": 3.5,
-          "book": "DraftKings",
-          "over": -129,
-          "under": -102,
-          "p_over": 0.51,
-          "call": null,
-          "edge": 0.0
-        },
-        "pra": {
-          "proj": 28.4,
-          "line": 29.5,
-          "book": "DraftKings",
-          "over": -122,
-          "under": -108,
-          "p_over": 0.497,
-          "call": null,
-          "edge": 0.0
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-23",
-          "pts": 5,
-          "reb": 2,
-          "ast": 0,
-          "pra": 7
-        },
-        {
-          "date": "2026-10-25",
-          "pts": 22,
-          "reb": 6,
-          "ast": 2,
-          "pra": 30
-        },
-        {
-          "date": "2026-10-28",
-          "pts": 13,
-          "reb": 5,
-          "ast": 4,
-          "pra": 22
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 28,
-          "reb": 2,
-          "ast": 6,
-          "pra": 36
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 19,
-          "reb": 2,
-          "ast": 1,
-          "pra": 22
-        }
-      ]
-    },
-    {
-      "player": "Trae Young",
-      "player_id": "4277905",
-      "team": "WAS",
-      "opp": "ORL",
-      "home": false,
-      "time_et": "7:30 PM",
-      "status": null,
-      "minutes": 34.6,
-      "stats": {
-        "points": {
-          "proj": 21.0,
-          "line": 19.5,
-          "book": "DraftKings",
-          "over": -115,
-          "under": -110,
-          "p_over": 0.503,
-          "call": null,
-          "edge": 0.0
-        },
-        "rebounds": {
-          "proj": 3.4,
-          "line": 2.5,
-          "book": "DraftKings",
-          "over": -163,
-          "under": 123,
-          "p_over": 0.588,
-          "call": null,
-          "edge": 0.0
-        },
-        "assists": {
-          "proj": 8.5,
-          "line": 10.5,
-          "book": "DraftKings",
-          "over": 110,
-          "under": -144,
-          "p_over": 0.408,
-          "call": null,
-          "edge": 0.0
-        },
-        "pra": {
-          "proj": 34.6,
-          "line": 33.5,
-          "book": "DraftKings",
-          "over": -107,
-          "under": -123,
-          "p_over": 0.479,
-          "call": null,
-          "edge": 0.0
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-23",
-          "pts": 22,
-          "reb": 1,
-          "ast": 12,
-          "pra": 35
-        },
-        {
-          "date": "2026-10-24",
-          "pts": 25,
-          "reb": 4,
-          "ast": 9,
-          "pra": 38
-        },
-        {
-          "date": "2026-10-26",
-          "pts": 22,
-          "reb": 6,
-          "ast": 10,
-          "pra": 38
-        },
-        {
-          "date": "2026-10-28",
-          "pts": 14,
-          "reb": 5,
-          "ast": 8,
-          "pra": 27
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 21,
-          "reb": 6,
-          "ast": 9,
-          "pra": 36
-        }
-      ]
-    },
-    {
       "player": "Damian Lillard",
       "player_id": "6606",
       "team": "POR",
@@ -3221,11 +3136,11 @@
       "stats": {
         "points": {
           "proj": 20.9,
-          "line": 20.5,
+          "line": 21.5,
           "book": "DraftKings",
-          "over": -117,
-          "under": -109,
-          "p_over": 0.499,
+          "over": -109,
+          "under": -117,
+          "p_over": 0.477,
           "call": null,
           "edge": 0.0
         },
@@ -3233,9 +3148,9 @@
           "proj": 4.4,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -141,
-          "under": 107,
-          "p_over": 0.554,
+          "over": -138,
+          "under": 105,
+          "p_over": 0.55,
           "call": null,
           "edge": 0.0
         },
@@ -3243,19 +3158,19 @@
           "proj": 5.3,
           "line": 4.5,
           "book": "DraftKings",
-          "over": -154,
-          "under": 117,
-          "p_over": 0.571,
+          "over": -127,
+          "under": -103,
+          "p_over": 0.53,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 30.9,
-          "line": 29.5,
+          "line": 30.5,
           "book": "DraftKings",
-          "over": -124,
-          "under": -106,
-          "p_over": 0.513,
+          "over": -109,
+          "under": -121,
+          "p_over": 0.479,
           "call": null,
           "edge": 0.0
         }
@@ -3306,25 +3221,25 @@
       "home": false,
       "time_et": "7:30 PM",
       "status": "day-to-day",
-      "minutes": 34.5,
+      "minutes": 34.4,
       "stats": {
         "points": {
           "proj": 20.8,
           "line": 21.5,
           "book": "DraftKings",
-          "over": -115,
-          "under": -111,
-          "p_over": 0.488,
+          "over": -103,
+          "under": -124,
+          "p_over": 0.463,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
           "proj": 9.6,
-          "line": 9.5,
+          "line": 8.5,
           "book": "DraftKings",
-          "over": 106,
-          "under": -140,
-          "p_over": 0.448,
+          "over": -142,
+          "under": 108,
+          "p_over": 0.554,
           "call": null,
           "edge": 0.0
         },
@@ -3332,19 +3247,19 @@
           "proj": 7.0,
           "line": 7.5,
           "book": "DraftKings",
-          "over": -131,
-          "under": 100,
-          "p_over": 0.512,
+          "over": 103,
+          "under": -136,
+          "p_over": 0.445,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 38.7,
-          "line": 38.5,
+          "line": 37.5,
           "book": "DraftKings",
-          "over": -116,
-          "under": -113,
-          "p_over": 0.493,
+          "over": -123,
+          "under": -107,
+          "p_over": 0.51,
           "call": null,
           "edge": 0.0
         }
@@ -3388,111 +3303,22 @@
       ]
     },
     {
-      "player": "Zion Williamson",
-      "player_id": "4395628",
-      "team": "NOP",
-      "opp": "MEM",
-      "home": false,
-      "time_et": "8:00 PM",
-      "status": null,
-      "minutes": 31.1,
-      "stats": {
-        "points": {
-          "proj": 19.9,
-          "line": 19.5,
-          "book": "DraftKings",
-          "over": -110,
-          "under": -115,
-          "p_over": 0.485,
-          "call": null,
-          "edge": 0.0
-        },
-        "rebounds": {
-          "proj": 5.8,
-          "line": 5.5,
-          "book": "DraftKings",
-          "over": 104,
-          "under": -137,
-          "p_over": 0.456,
-          "call": null,
-          "edge": 0.0
-        },
-        "assists": {
-          "proj": 3.1,
-          "line": 2.5,
-          "book": "DraftKings",
-          "over": 102,
-          "under": -135,
-          "p_over": 0.467,
-          "call": null,
-          "edge": 0.0
-        },
-        "pra": {
-          "proj": 30.4,
-          "line": 27.5,
-          "book": "DraftKings",
-          "over": -117,
-          "under": -112,
-          "p_over": 0.508,
-          "call": null,
-          "edge": 0.0
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-23",
-          "pts": 23,
-          "reb": 5,
-          "ast": 2,
-          "pra": 30
-        },
-        {
-          "date": "2026-10-24",
-          "pts": 17,
-          "reb": 1,
-          "ast": 2,
-          "pra": 20
-        },
-        {
-          "date": "2026-10-28",
-          "pts": 25,
-          "reb": 5,
-          "ast": 2,
-          "pra": 32
-        },
-        {
-          "date": "2026-10-29",
-          "pts": 22,
-          "reb": 6,
-          "ast": 2,
-          "pra": 30
-        },
-        {
-          "date": "2026-10-31",
-          "pts": 15,
-          "reb": 6,
-          "ast": 4,
-          "pra": 25
-        }
-      ]
-    },
-    {
       "player": "LaMelo Ball",
       "player_id": "4432816",
       "team": "MIN",
       "opp": "MIL",
       "home": true,
       "time_et": "8:00 PM",
-      "status": null,
+      "status": "day-to-day",
       "minutes": 28.1,
       "stats": {
         "points": {
-          "proj": 19.8,
-          "line": 21.5,
+          "proj": 20.1,
+          "line": 20.5,
           "book": "DraftKings",
-          "over": -108,
-          "under": -118,
-          "p_over": 0.468,
+          "over": -117,
+          "under": -109,
+          "p_over": 0.493,
           "call": null,
           "edge": 0.0
         },
@@ -3500,9 +3326,9 @@
           "proj": 4.0,
           "line": 4.5,
           "book": "DraftKings",
-          "over": -101,
-          "under": -130,
-          "p_over": 0.449,
+          "over": 119,
+          "under": -157,
+          "p_over": 0.409,
           "call": null,
           "edge": 0.0
         },
@@ -3510,19 +3336,19 @@
           "proj": 7.0,
           "line": 6.5,
           "book": "DraftKings",
-          "over": -145,
-          "under": 110,
-          "p_over": 0.551,
+          "over": -143,
+          "under": 109,
+          "p_over": 0.549,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 31.0,
-          "line": 33.5,
+          "proj": 31.2,
+          "line": 32.5,
           "book": "DraftKings",
-          "over": -111,
-          "under": -118,
-          "p_over": 0.47,
+          "over": -113,
+          "under": -116,
+          "p_over": 0.48,
           "call": null,
           "edge": 0.0
         }
@@ -3566,6 +3392,95 @@
       ]
     },
     {
+      "player": "Zion Williamson",
+      "player_id": "4395628",
+      "team": "NOP",
+      "opp": "MEM",
+      "home": false,
+      "time_et": "8:00 PM",
+      "status": null,
+      "minutes": 31.1,
+      "stats": {
+        "points": {
+          "proj": 19.9,
+          "line": 20.5,
+          "book": "DraftKings",
+          "over": -112,
+          "under": -114,
+          "p_over": 0.482,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 5.8,
+          "line": 4.5,
+          "book": "DraftKings",
+          "over": -157,
+          "under": 119,
+          "p_over": 0.584,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 3.1,
+          "line": 2.5,
+          "book": "DraftKings",
+          "over": 103,
+          "under": -136,
+          "p_over": 0.466,
+          "call": null,
+          "edge": 0.0
+        },
+        "pra": {
+          "proj": 30.4,
+          "line": 28.5,
+          "book": "DraftKings",
+          "over": -113,
+          "under": -116,
+          "p_over": 0.495,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-23",
+          "pts": 23,
+          "reb": 5,
+          "ast": 2,
+          "pra": 30
+        },
+        {
+          "date": "2026-10-24",
+          "pts": 17,
+          "reb": 1,
+          "ast": 2,
+          "pra": 20
+        },
+        {
+          "date": "2026-10-28",
+          "pts": 25,
+          "reb": 5,
+          "ast": 2,
+          "pra": 32
+        },
+        {
+          "date": "2026-10-29",
+          "pts": 22,
+          "reb": 6,
+          "ast": 2,
+          "pra": 30
+        },
+        {
+          "date": "2026-10-31",
+          "pts": 15,
+          "reb": 6,
+          "ast": 4,
+          "pra": 25
+        }
+      ]
+    },
+    {
       "player": "Alperen Sengun",
       "player_id": "4871144",
       "team": "HOU",
@@ -3573,15 +3488,15 @@
       "home": true,
       "time_et": "8:30 PM",
       "status": null,
-      "minutes": 34.2,
+      "minutes": 35.2,
       "stats": {
         "points": {
-          "proj": 19.7,
+          "proj": 19.8,
           "line": 17.5,
           "book": "DraftKings",
           "over": -120,
           "under": -106,
-          "p_over": 0.516,
+          "p_over": 0.517,
           "call": null,
           "edge": 0.0
         },
@@ -3589,29 +3504,29 @@
           "proj": 8.8,
           "line": 8.5,
           "book": "DraftKings",
-          "over": -116,
-          "under": -113,
-          "p_over": 0.497,
+          "over": 102,
+          "under": -134,
+          "p_over": 0.461,
           "call": null,
           "edge": 0.0
         },
         "assists": {
-          "proj": 6.2,
+          "proj": 6.3,
           "line": 5.5,
           "book": "DraftKings",
-          "over": -120,
-          "under": -110,
-          "p_over": 0.513,
+          "over": -124,
+          "under": -106,
+          "p_over": 0.523,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 36.1,
+          "proj": 37.0,
           "line": 32.5,
           "book": "DraftKings",
-          "over": -116,
-          "under": -113,
-          "p_over": 0.508,
+          "over": -109,
+          "under": -120,
+          "p_over": 0.499,
           "call": null,
           "edge": 0.0
         }
@@ -3655,6 +3570,74 @@
       ]
     },
     {
+      "player": "AJ Dybantsa",
+      "player_id": "5142718",
+      "team": "WAS",
+      "opp": "ORL",
+      "home": false,
+      "time_et": "7:30 PM",
+      "status": null,
+      "minutes": 33.6,
+      "stats": {
+        "points": {
+          "proj": 19.4,
+          "line": 16.5,
+          "book": "DraftKings",
+          "over": -103,
+          "under": -124,
+          "p_over": 0.487,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 5.9,
+          "line": 4.5,
+          "book": "DraftKings",
+          "over": -144,
+          "under": 109,
+          "p_over": 0.567,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 2.2,
+          "line": 1.5,
+          "book": "DraftKings",
+          "over": -152,
+          "under": 115,
+          "p_over": 0.571,
+          "call": null,
+          "edge": 0.0
+        },
+        "pra": {
+          "proj": 27.9,
+          "line": 23.5,
+          "book": "DraftKings",
+          "over": -109,
+          "under": -121,
+          "p_over": 0.5,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-28",
+          "pts": 19,
+          "reb": 2,
+          "ast": 2,
+          "pra": 23
+        },
+        {
+          "date": "2026-10-30",
+          "pts": 17,
+          "reb": 7,
+          "ast": 1,
+          "pra": 25
+        }
+      ]
+    },
+    {
       "player": "Jeremiah Fears",
       "player_id": "5144091",
       "team": "NOP",
@@ -3666,11 +3649,11 @@
       "stats": {
         "points": {
           "proj": 19.3,
-          "line": 13.5,
+          "line": 15.5,
           "book": "DraftKings",
-          "over": -127,
-          "under": 100,
-          "p_over": 0.556,
+          "over": -118,
+          "under": -108,
+          "p_over": 0.524,
           "call": null,
           "edge": 0.0
         },
@@ -3678,28 +3661,31 @@
           "proj": 4.6,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -140,
-          "under": 106,
-          "p_over": 0.556,
+          "over": -152,
+          "under": 115,
+          "p_over": 0.574,
           "call": null,
           "edge": 0.0
         },
         "assists": {
           "proj": 5.2,
-          "line": 3.5,
+          "line": 4.5,
           "book": "DraftKings",
           "over": -111,
           "under": -118,
-          "p_over": 0.522,
+          "p_over": 0.498,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 28.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 24.5,
+          "book": "DraftKings",
+          "over": -120,
+          "under": -110,
+          "p_over": 0.521,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -3741,111 +3727,22 @@
       ]
     },
     {
-      "player": "Andrew Nembhard",
-      "player_id": "4395712",
-      "team": "IND",
-      "opp": "ATL",
-      "home": true,
-      "time_et": "7:30 PM",
-      "status": null,
-      "minutes": 32.1,
-      "stats": {
-        "points": {
-          "proj": 19.1,
-          "line": 16.5,
-          "book": "DraftKings",
-          "over": -115,
-          "under": -111,
-          "p_over": 0.509,
-          "call": null,
-          "edge": 0.0
-        },
-        "rebounds": {
-          "proj": 3.3,
-          "line": 2.5,
-          "book": "DraftKings",
-          "over": -165,
-          "under": 125,
-          "p_over": 0.587,
-          "call": null,
-          "edge": 0.0
-        },
-        "assists": {
-          "proj": 8.6,
-          "line": 8.5,
-          "book": "DraftKings",
-          "over": -105,
-          "under": -125,
-          "p_over": 0.472,
-          "call": null,
-          "edge": 0.0
-        },
-        "pra": {
-          "proj": 29.9,
-          "line": 28.5,
-          "book": "DraftKings",
-          "over": -115,
-          "under": -114,
-          "p_over": 0.496,
-          "call": null,
-          "edge": 0.0
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-23",
-          "pts": 16,
-          "reb": 2,
-          "ast": 5,
-          "pra": 23
-        },
-        {
-          "date": "2026-10-25",
-          "pts": 14,
-          "reb": 1,
-          "ast": 3,
-          "pra": 18
-        },
-        {
-          "date": "2026-10-28",
-          "pts": 18,
-          "reb": 3,
-          "ast": 14,
-          "pra": 35
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 22,
-          "reb": 2,
-          "ast": 9,
-          "pra": 33
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 23,
-          "reb": 3,
-          "ast": 4,
-          "pra": 30
-        }
-      ]
-    },
-    {
       "player": "Trey Murphy III",
       "player_id": "4397688",
       "team": "NOP",
       "opp": "MEM",
       "home": false,
       "time_et": "8:00 PM",
-      "status": "day-to-day",
+      "status": null,
       "minutes": 34.0,
       "stats": {
         "points": {
-          "proj": 19.1,
-          "line": 15.5,
+          "proj": 19.2,
+          "line": 16.5,
           "book": "DraftKings",
-          "over": -112,
-          "under": -114,
-          "p_over": 0.51,
+          "over": -116,
+          "under": -110,
+          "p_over": 0.512,
           "call": null,
           "edge": 0.0
         },
@@ -3853,9 +3750,9 @@
           "proj": 5.5,
           "line": 4.5,
           "book": "DraftKings",
-          "over": -133,
-          "under": 101,
-          "p_over": 0.541,
+          "over": -120,
+          "under": -109,
+          "p_over": 0.519,
           "call": null,
           "edge": 0.0
         },
@@ -3863,20 +3760,20 @@
           "proj": 3.9,
           "line": 2.5,
           "book": "DraftKings",
-          "over": -158,
-          "under": 120,
-          "p_over": 0.595,
+          "over": -162,
+          "under": 122,
+          "p_over": 0.599,
           "call": null,
           "edge": 0.0,
           "flag": "far"
         },
         "pra": {
           "proj": 28.2,
-          "line": 23.5,
+          "line": 24.5,
           "book": "DraftKings",
-          "over": -118,
-          "under": -112,
-          "p_over": 0.518,
+          "over": -121,
+          "under": -109,
+          "p_over": 0.519,
           "call": null,
           "edge": 0.0
         }
@@ -3920,22 +3817,111 @@
       ]
     },
     {
+      "player": "Brandin Podziemski",
+      "player_id": "4709138",
+      "team": "GSW",
+      "opp": "PHX",
+      "home": true,
+      "time_et": "10:00 PM",
+      "status": null,
+      "minutes": 34.4,
+      "stats": {
+        "points": {
+          "proj": 19.1,
+          "line": 15.5,
+          "book": "DraftKings",
+          "over": -105,
+          "under": -122,
+          "p_over": 0.495,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 5.8,
+          "line": 5.5,
+          "book": "DraftKings",
+          "over": 116,
+          "under": -153,
+          "p_over": 0.431,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 5.6,
+          "line": 4.5,
+          "book": "DraftKings",
+          "over": 118,
+          "under": -155,
+          "p_over": 0.445,
+          "call": null,
+          "edge": 0.0
+        },
+        "pra": {
+          "proj": 29.9,
+          "line": 24.5,
+          "book": "DraftKings",
+          "over": -122,
+          "under": -108,
+          "p_over": 0.529,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-23",
+          "pts": 18,
+          "reb": 2,
+          "ast": 3,
+          "pra": 23
+        },
+        {
+          "date": "2026-10-26",
+          "pts": 18,
+          "reb": 7,
+          "ast": 5,
+          "pra": 30
+        },
+        {
+          "date": "2026-10-28",
+          "pts": 8,
+          "reb": 5,
+          "ast": 6,
+          "pra": 19
+        },
+        {
+          "date": "2026-10-30",
+          "pts": 21,
+          "reb": 5,
+          "ast": 6,
+          "pra": 32
+        },
+        {
+          "date": "2026-11-01",
+          "pts": 17,
+          "reb": 8,
+          "ast": 8,
+          "pra": 33
+        }
+      ]
+    },
+    {
       "player": "Dejounte Murray",
       "player_id": "3907497",
       "team": "NOP",
       "opp": "MEM",
       "home": false,
       "time_et": "8:00 PM",
-      "status": null,
+      "status": "day-to-day",
       "minutes": 32.1,
       "stats": {
         "points": {
           "proj": 19.0,
           "line": 17.5,
           "book": "DraftKings",
-          "over": -102,
-          "under": -125,
-          "p_over": 0.475,
+          "over": -116,
+          "under": -110,
+          "p_over": 0.504,
           "call": null,
           "edge": 0.0
         },
@@ -3943,29 +3929,29 @@
           "proj": 6.2,
           "line": 5.5,
           "book": "DraftKings",
-          "over": -114,
-          "under": -115,
-          "p_over": 0.502,
+          "over": 106,
+          "under": -139,
+          "p_over": 0.46,
           "call": null,
           "edge": 0.0
         },
         "assists": {
           "proj": 6.7,
-          "line": 6.5,
+          "line": 5.5,
           "book": "DraftKings",
-          "over": 108,
-          "under": -142,
-          "p_over": 0.447,
+          "over": -117,
+          "under": -113,
+          "p_over": 0.518,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 32.6,
-          "line": 29.5,
+          "line": 28.5,
           "book": "DraftKings",
-          "over": -112,
-          "under": -118,
-          "p_over": 0.498,
+          "over": -126,
+          "under": -104,
+          "p_over": 0.53,
           "call": null,
           "edge": 0.0
         }
@@ -4022,9 +4008,9 @@
           "proj": 19.0,
           "line": 17.5,
           "book": "DraftKings",
-          "over": -123,
-          "under": -104,
-          "p_over": 0.516,
+          "over": -118,
+          "under": -108,
+          "p_over": 0.507,
           "call": null,
           "edge": 0.0
         },
@@ -4044,7 +4030,7 @@
           "book": "DraftKings",
           "over": -118,
           "under": -111,
-          "p_over": 0.487,
+          "p_over": 0.486,
           "call": null,
           "edge": 0.0
         },
@@ -4109,38 +4095,41 @@
       "stats": {
         "points": {
           "proj": 18.6,
-          "line": 21.5,
+          "line": 20.5,
           "book": "DraftKings",
-          "over": -111,
-          "under": -115,
-          "p_over": 0.465,
+          "over": -104,
+          "under": -122,
+          "p_over": 0.458,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
-          "proj": 12.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "proj": 12.2,
+          "line": 11.5,
+          "book": "DraftKings",
+          "over": -130,
+          "under": -101,
+          "p_over": 0.529,
+          "call": null,
+          "edge": 0.0
         },
         "assists": {
           "proj": 4.2,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -128,
-          "under": -103,
-          "p_over": 0.529,
+          "over": -118,
+          "under": -111,
+          "p_over": 0.511,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 35.5,
-          "line": 37.5,
+          "proj": 35.3,
+          "line": 36.5,
           "book": "DraftKings",
-          "over": -123,
-          "under": -107,
-          "p_over": 0.496,
+          "over": -111,
+          "under": -119,
+          "p_over": 0.476,
           "call": null,
           "edge": 0.0
         }
@@ -4184,95 +4173,6 @@
       ]
     },
     {
-      "player": "Brandin Podziemski",
-      "player_id": "4709138",
-      "team": "GSW",
-      "opp": "PHX",
-      "home": true,
-      "time_et": "10:00 PM",
-      "status": null,
-      "minutes": 33.5,
-      "stats": {
-        "points": {
-          "proj": 18.6,
-          "line": 15.5,
-          "book": "DraftKings",
-          "over": -104,
-          "under": -123,
-          "p_over": 0.49,
-          "call": null,
-          "edge": 0.0
-        },
-        "rebounds": {
-          "proj": 5.6,
-          "line": 4.5,
-          "book": "DraftKings",
-          "over": -158,
-          "under": 119,
-          "p_over": 0.581,
-          "call": null,
-          "edge": 0.0
-        },
-        "assists": {
-          "proj": 5.1,
-          "line": 4.5,
-          "book": "DraftKings",
-          "over": 123,
-          "under": -162,
-          "p_over": 0.425,
-          "call": null,
-          "edge": 0.0
-        },
-        "pra": {
-          "proj": 29.3,
-          "line": 24.5,
-          "book": "DraftKings",
-          "over": -116,
-          "under": -113,
-          "p_over": 0.516,
-          "call": null,
-          "edge": 0.0
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-23",
-          "pts": 18,
-          "reb": 2,
-          "ast": 3,
-          "pra": 23
-        },
-        {
-          "date": "2026-10-26",
-          "pts": 18,
-          "reb": 7,
-          "ast": 5,
-          "pra": 30
-        },
-        {
-          "date": "2026-10-28",
-          "pts": 8,
-          "reb": 5,
-          "ast": 6,
-          "pra": 19
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 21,
-          "reb": 5,
-          "ast": 6,
-          "pra": 32
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 17,
-          "reb": 8,
-          "ast": 8,
-          "pra": 33
-        }
-      ]
-    },
-    {
       "player": "Julius Randle",
       "player_id": "3064514",
       "team": "BKN",
@@ -4284,11 +4184,11 @@
       "stats": {
         "points": {
           "proj": 18.3,
-          "line": 18.5,
+          "line": 17.5,
           "book": "DraftKings",
-          "over": -118,
-          "under": -108,
-          "p_over": 0.496,
+          "over": -123,
+          "under": -104,
+          "p_over": 0.512,
           "call": null,
           "edge": 0.0
         },
@@ -4296,29 +4196,29 @@
           "proj": 6.6,
           "line": 6.5,
           "book": "DraftKings",
-          "over": -108,
-          "under": -121,
-          "p_over": 0.479,
+          "over": 100,
+          "under": -132,
+          "p_over": 0.461,
           "call": null,
           "edge": 0.0
         },
         "assists": {
-          "proj": 4.6,
+          "proj": 4.5,
           "line": 4.5,
           "book": "DraftKings",
-          "over": -129,
-          "under": -102,
-          "p_over": 0.516,
+          "over": -125,
+          "under": -105,
+          "p_over": 0.509,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 29.3,
-          "line": 30.5,
+          "line": 29.5,
           "book": "DraftKings",
-          "over": -114,
-          "under": -115,
-          "p_over": 0.482,
+          "over": -110,
+          "under": -119,
+          "p_over": 0.479,
           "call": null,
           "edge": 0.0
         }
@@ -4395,9 +4295,9 @@
           "proj": 4.5,
           "line": 4.5,
           "book": "DraftKings",
-          "over": -128,
-          "under": -103,
-          "p_over": 0.513,
+          "over": -122,
+          "under": -107,
+          "p_over": 0.503,
           "call": null,
           "edge": 0.0
         },
@@ -4407,7 +4307,7 @@
           "book": "DraftKings",
           "over": -108,
           "under": -121,
-          "p_over": 0.478,
+          "p_over": 0.479,
           "call": null,
           "edge": 0.0
         }
@@ -4464,9 +4364,9 @@
           "proj": 18.2,
           "line": 16.5,
           "book": "DraftKings",
-          "over": -120,
-          "under": -106,
-          "p_over": 0.513,
+          "over": -116,
+          "under": -110,
+          "p_over": 0.505,
           "call": null,
           "edge": 0.0
         },
@@ -4474,9 +4374,9 @@
           "proj": 9.5,
           "line": 9.5,
           "book": "DraftKings",
-          "over": 105,
+          "over": 104,
           "under": -138,
-          "p_over": 0.449,
+          "p_over": 0.45,
           "call": null,
           "edge": 0.0
         },
@@ -4484,9 +4384,9 @@
           "proj": 5.9,
           "line": 5.5,
           "book": "DraftKings",
-          "over": 108,
-          "under": -142,
-          "p_over": 0.451,
+          "over": 109,
+          "under": -144,
+          "p_over": 0.448,
           "call": null,
           "edge": 0.0
         },
@@ -4494,9 +4394,9 @@
           "proj": 33.5,
           "line": 31.5,
           "book": "DraftKings",
-          "over": -119,
-          "under": -110,
-          "p_over": 0.507,
+          "over": -114,
+          "under": -116,
+          "p_over": 0.496,
           "call": null,
           "edge": 0.0
         }
@@ -4551,21 +4451,21 @@
       "stats": {
         "points": {
           "proj": 17.8,
-          "line": 16.5,
+          "line": 17.5,
           "book": "DraftKings",
-          "over": -120,
-          "under": -106,
-          "p_over": 0.51,
+          "over": -103,
+          "under": -124,
+          "p_over": 0.469,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
-          "proj": 8.1,
+          "proj": 8.2,
           "line": 8.5,
           "book": "DraftKings",
-          "over": -113,
-          "under": -117,
-          "p_over": 0.479,
+          "over": -109,
+          "under": -120,
+          "p_over": 0.474,
           "call": null,
           "edge": 0.0
         },
@@ -4583,9 +4483,9 @@
           "proj": 29.8,
           "line": 29.5,
           "book": "DraftKings",
-          "over": -116,
-          "under": -114,
-          "p_over": 0.492,
+          "over": -126,
+          "under": -105,
+          "p_over": 0.51,
           "call": null,
           "edge": 0.0
         }
@@ -4636,15 +4536,15 @@
       "home": true,
       "time_et": "8:00 PM",
       "status": null,
-      "minutes": 34.3,
+      "minutes": 34.5,
       "stats": {
         "points": {
-          "proj": 17.5,
+          "proj": 17.6,
           "line": 18.5,
           "book": "DraftKings",
-          "over": -104,
-          "under": -122,
-          "p_over": 0.463,
+          "over": -110,
+          "under": -116,
+          "p_over": 0.475,
           "call": null,
           "edge": 0.0
         },
@@ -4652,19 +4552,19 @@
           "proj": 5.8,
           "line": 5.5,
           "book": "DraftKings",
-          "over": -117,
-          "under": -112,
-          "p_over": 0.499,
+          "over": -108,
+          "under": -122,
+          "p_over": 0.48,
           "call": null,
           "edge": 0.0
         },
         "assists": {
           "proj": 3.4,
-          "line": 2.5,
+          "line": 3.5,
           "book": "DraftKings",
-          "over": -167,
-          "under": 126,
-          "p_over": 0.594,
+          "over": 123,
+          "under": -162,
+          "p_over": 0.41,
           "call": null,
           "edge": 0.0
         },
@@ -4672,9 +4572,9 @@
           "proj": 26.8,
           "line": 27.5,
           "book": "DraftKings",
-          "over": -109,
-          "under": -121,
-          "p_over": 0.473,
+          "over": -116,
+          "under": -113,
+          "p_over": 0.488,
           "call": null,
           "edge": 0.0
         }
@@ -4718,95 +4618,6 @@
       ]
     },
     {
-      "player": "Domantas Sabonis",
-      "player_id": "3155942",
-      "team": "SAC",
-      "opp": "DAL",
-      "home": false,
-      "time_et": "8:00 PM",
-      "status": null,
-      "minutes": 34.8,
-      "stats": {
-        "points": {
-          "proj": 17.3,
-          "line": 15.5,
-          "book": "DraftKings",
-          "over": -102,
-          "under": -125,
-          "p_over": 0.477,
-          "call": null,
-          "edge": 0.0
-        },
-        "rebounds": {
-          "proj": 13.0,
-          "line": 13.5,
-          "book": "DraftKings",
-          "over": -104,
-          "under": -127,
-          "p_over": 0.463,
-          "call": null,
-          "edge": 0.0
-        },
-        "assists": {
-          "proj": 6.1,
-          "line": 6.5,
-          "book": "DraftKings",
-          "over": 102,
-          "under": -134,
-          "p_over": 0.446,
-          "call": null,
-          "edge": 0.0
-        },
-        "pra": {
-          "proj": 37.5,
-          "line": 35.5,
-          "book": "DraftKings",
-          "over": -111,
-          "under": -118,
-          "p_over": 0.491,
-          "call": null,
-          "edge": 0.0
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-23",
-          "pts": 27,
-          "reb": 19,
-          "ast": 10,
-          "pra": 56
-        },
-        {
-          "date": "2026-10-25",
-          "pts": 15,
-          "reb": 15,
-          "ast": 3,
-          "pra": 33
-        },
-        {
-          "date": "2026-10-27",
-          "pts": 20,
-          "reb": 14,
-          "ast": 8,
-          "pra": 42
-        },
-        {
-          "date": "2026-10-29",
-          "pts": 9,
-          "reb": 15,
-          "ast": 7,
-          "pra": 31
-        },
-        {
-          "date": "2026-10-31",
-          "pts": 11,
-          "reb": 14,
-          "ast": 8,
-          "pra": 33
-        }
-      ]
-    },
-    {
       "player": "De'Aaron Fox",
       "player_id": "4066259",
       "team": "SAS",
@@ -4814,15 +4625,15 @@
       "home": true,
       "time_et": "8:30 PM",
       "status": null,
-      "minutes": 32.4,
+      "minutes": 32.3,
       "stats": {
         "points": {
-          "proj": 17.3,
+          "proj": 17.4,
           "line": 14.5,
           "book": "DraftKings",
-          "over": -122,
-          "under": -105,
-          "p_over": 0.524,
+          "over": -126,
+          "under": -102,
+          "p_over": 0.531,
           "call": null,
           "edge": 0.0
         },
@@ -4830,9 +4641,9 @@
           "proj": 4.2,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -164,
-          "under": 124,
-          "p_over": 0.581,
+          "over": -165,
+          "under": 125,
+          "p_over": 0.582,
           "call": null,
           "edge": 0.0
         },
@@ -4840,19 +4651,19 @@
           "proj": 6.8,
           "line": 5.5,
           "book": "DraftKings",
-          "over": -147,
-          "under": 112,
-          "p_over": 0.57,
+          "over": -139,
+          "under": 105,
+          "p_over": 0.556,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 28.6,
+          "proj": 28.7,
           "line": 25.5,
           "book": "DraftKings",
           "over": -109,
-          "under": -121,
-          "p_over": 0.492,
+          "under": -120,
+          "p_over": 0.494,
           "call": null,
           "edge": 0.0
         }
@@ -4896,6 +4707,95 @@
       ]
     },
     {
+      "player": "Domantas Sabonis",
+      "player_id": "3155942",
+      "team": "SAC",
+      "opp": "DAL",
+      "home": false,
+      "time_et": "8:00 PM",
+      "status": null,
+      "minutes": 34.9,
+      "stats": {
+        "points": {
+          "proj": 17.3,
+          "line": 15.5,
+          "book": "DraftKings",
+          "over": -102,
+          "under": -125,
+          "p_over": 0.477,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 13.0,
+          "line": 13.5,
+          "book": "DraftKings",
+          "over": -119,
+          "under": -111,
+          "p_over": 0.492,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 6.1,
+          "line": 6.5,
+          "book": "DraftKings",
+          "over": -103,
+          "under": -127,
+          "p_over": 0.458,
+          "call": null,
+          "edge": 0.0
+        },
+        "pra": {
+          "proj": 37.5,
+          "line": 35.5,
+          "book": "DraftKings",
+          "over": -117,
+          "under": -113,
+          "p_over": 0.502,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-23",
+          "pts": 27,
+          "reb": 19,
+          "ast": 10,
+          "pra": 56
+        },
+        {
+          "date": "2026-10-25",
+          "pts": 15,
+          "reb": 15,
+          "ast": 3,
+          "pra": 33
+        },
+        {
+          "date": "2026-10-27",
+          "pts": 20,
+          "reb": 14,
+          "ast": 8,
+          "pra": 42
+        },
+        {
+          "date": "2026-10-29",
+          "pts": 9,
+          "reb": 15,
+          "ast": 7,
+          "pra": 31
+        },
+        {
+          "date": "2026-10-31",
+          "pts": 11,
+          "reb": 14,
+          "ast": 8,
+          "pra": 33
+        }
+      ]
+    },
+    {
       "player": "Amen Thompson",
       "player_id": "4684740",
       "team": "HOU",
@@ -4903,45 +4803,45 @@
       "home": true,
       "time_et": "8:30 PM",
       "status": null,
-      "minutes": 35.9,
+      "minutes": 36.5,
       "stats": {
         "points": {
-          "proj": 17.1,
+          "proj": 17.3,
           "line": 15.5,
           "book": "DraftKings",
-          "over": -106,
-          "under": -120,
-          "p_over": 0.484,
+          "over": -108,
+          "under": -118,
+          "p_over": 0.49,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
-          "proj": 6.7,
+          "proj": 6.8,
           "line": 6.5,
           "book": "DraftKings",
-          "over": -101,
-          "under": -130,
-          "p_over": 0.465,
+          "over": -118,
+          "under": -112,
+          "p_over": 0.5,
           "call": null,
           "edge": 0.0
         },
         "assists": {
           "proj": 4.2,
-          "line": 4.5,
+          "line": 3.5,
           "book": "DraftKings",
-          "over": 118,
-          "under": -156,
-          "p_over": 0.414,
+          "over": -162,
+          "under": 123,
+          "p_over": 0.58,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 28.5,
+          "proj": 29.1,
           "line": 26.5,
           "book": "DraftKings",
-          "over": -106,
-          "under": -124,
-          "p_over": 0.481,
+          "over": -112,
+          "under": -117,
+          "p_over": 0.497,
           "call": null,
           "edge": 0.0
         }
@@ -4996,21 +4896,21 @@
       "stats": {
         "points": {
           "proj": 16.9,
-          "line": 19.5,
+          "line": 17.5,
           "book": "DraftKings",
-          "over": -102,
-          "under": -124,
-          "p_over": 0.449,
+          "over": -108,
+          "under": -118,
+          "p_over": 0.474,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
-          "proj": 8.3,
+          "proj": 8.4,
           "line": 8.5,
           "book": "DraftKings",
-          "over": -140,
-          "under": 106,
-          "p_over": 0.53,
+          "over": -128,
+          "under": -103,
+          "p_over": 0.512,
           "call": null,
           "edge": 0.0
         },
@@ -5018,19 +4918,19 @@
           "proj": 3.3,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -110,
-          "under": -119,
-          "p_over": 0.473,
+          "over": -107,
+          "under": -123,
+          "p_over": 0.466,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 28.7,
-          "line": 32.5,
+          "line": 30.5,
           "book": "DraftKings",
           "over": -105,
-          "under": -126,
-          "p_over": 0.451,
+          "under": -125,
+          "p_over": 0.46,
           "call": null,
           "edge": 0.0
         }
@@ -5081,15 +4981,15 @@
       "home": true,
       "time_et": "8:30 PM",
       "status": null,
-      "minutes": 29.8,
+      "minutes": 29.7,
       "stats": {
         "points": {
           "proj": 16.2,
-          "line": 15.5,
+          "line": 16.5,
           "book": "DraftKings",
-          "over": -126,
-          "under": -101,
-          "p_over": 0.517,
+          "over": -102,
+          "under": -124,
+          "p_over": 0.463,
           "call": null,
           "edge": 0.0
         },
@@ -5098,7 +4998,7 @@
           "line": 5.5,
           "book": "DraftKings",
           "over": 112,
-          "under": -148,
+          "under": -147,
           "p_over": 0.429,
           "call": null,
           "edge": 0.0
@@ -5107,9 +5007,9 @@
           "proj": 6.2,
           "line": 5.5,
           "book": "DraftKings",
-          "over": -140,
-          "under": 107,
-          "p_over": 0.548,
+          "over": -136,
+          "under": 103,
+          "p_over": 0.541,
           "call": null,
           "edge": 0.0
         },
@@ -5117,9 +5017,9 @@
           "proj": 27.9,
           "line": 27.5,
           "book": "DraftKings",
-          "over": -117,
-          "under": -113,
-          "p_over": 0.494,
+          "over": -118,
+          "under": -112,
+          "p_over": 0.496,
           "call": null,
           "edge": 0.0
         }
@@ -5163,6 +5063,96 @@
       ]
     },
     {
+      "player": "Wendell Carter Jr.",
+      "player_id": "4277847",
+      "team": "ORL",
+      "opp": "WAS",
+      "home": true,
+      "time_et": "7:30 PM",
+      "status": null,
+      "minutes": 34.8,
+      "stats": {
+        "points": {
+          "proj": 15.5,
+          "line": 11.5,
+          "book": "DraftKings",
+          "over": -118,
+          "under": -108,
+          "p_over": 0.528,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 10.0,
+          "line": 8.5,
+          "book": "DraftKings",
+          "over": -115,
+          "under": -114,
+          "p_over": 0.514,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 2.3,
+          "line": 1.5,
+          "book": "DraftKings",
+          "over": -150,
+          "under": 114,
+          "p_over": 0.57,
+          "call": null,
+          "edge": 0.0,
+          "flag": "far"
+        },
+        "pra": {
+          "proj": 28.4,
+          "line": 22.5,
+          "book": "DraftKings",
+          "over": -117,
+          "under": -112,
+          "p_over": 0.524,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-23",
+          "pts": 20,
+          "reb": 9,
+          "ast": 1,
+          "pra": 30
+        },
+        {
+          "date": "2026-10-25",
+          "pts": 9,
+          "reb": 10,
+          "ast": 2,
+          "pra": 21
+        },
+        {
+          "date": "2026-10-28",
+          "pts": 3,
+          "reb": 10,
+          "ast": 3,
+          "pra": 16
+        },
+        {
+          "date": "2026-10-30",
+          "pts": 20,
+          "reb": 7,
+          "ast": 1,
+          "pra": 28
+        },
+        {
+          "date": "2026-11-01",
+          "pts": 7,
+          "reb": 10,
+          "ast": 0,
+          "pra": 17
+        }
+      ]
+    },
+    {
       "player": "Walker Kessler",
       "player_id": "4433136",
       "team": "LAL",
@@ -5170,25 +5160,25 @@
       "home": true,
       "time_et": "10:00 PM",
       "status": null,
-      "minutes": 30.2,
+      "minutes": 28.3,
       "stats": {
         "points": {
-          "proj": 13.3,
-          "line": 12.5,
+          "proj": 13.2,
+          "line": 11.5,
           "book": "DraftKings",
-          "over": 103,
-          "under": -131,
-          "p_over": 0.459,
+          "over": -127,
+          "under": 100,
+          "p_over": 0.526,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
-          "proj": 11.7,
+          "proj": 11.5,
           "line": 10.5,
           "book": "DraftKings",
-          "over": 102,
-          "under": -134,
-          "p_over": 0.473,
+          "over": 101,
+          "under": -133,
+          "p_over": 0.472,
           "call": null,
           "edge": 0.0
         },
@@ -5203,12 +5193,12 @@
           "edge": 0.0
         },
         "pra": {
-          "proj": 27.3,
+          "proj": 27.0,
           "line": 23.5,
           "book": "DraftKings",
-          "over": -122,
-          "under": -108,
-          "p_over": 0.521,
+          "over": -117,
+          "under": -112,
+          "p_over": 0.511,
           "call": null,
           "edge": 0.0
         }
@@ -5259,15 +5249,15 @@
       "home": false,
       "time_et": "7:30 PM",
       "status": null,
-      "minutes": 30.1,
+      "minutes": 30.2,
       "stats": {
         "points": {
           "proj": 12.9,
-          "line": 11.5,
+          "line": 12.5,
           "book": "DraftKings",
-          "over": -121,
-          "under": -106,
-          "p_over": 0.512,
+          "over": -104,
+          "under": -122,
+          "p_over": 0.472,
           "call": null,
           "edge": 0.0
         },
@@ -5275,29 +5265,29 @@
           "proj": 7.2,
           "line": 6.5,
           "book": "DraftKings",
-          "over": 107,
-          "under": -141,
-          "p_over": 0.456,
+          "over": 110,
+          "under": -145,
+          "p_over": 0.45,
           "call": null,
           "edge": 0.0
         },
         "assists": {
           "proj": 8.6,
-          "line": 6.5,
+          "line": 7.5,
           "book": "DraftKings",
-          "over": -151,
-          "under": 114,
-          "p_over": 0.587,
+          "over": -134,
+          "under": 102,
+          "p_over": 0.544,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 28.8,
-          "line": 25.5,
+          "proj": 28.7,
+          "line": 26.5,
           "book": "DraftKings",
-          "over": -113,
-          "under": -116,
-          "p_over": 0.502,
+          "over": -107,
+          "under": -123,
+          "p_over": 0.484,
           "call": null,
           "edge": 0.0
         }
@@ -5340,24 +5330,5 @@
         }
       ]
     }
-  ],
-  "injury_check": {
-    "checked_at": "2026-11-02T16:26:23Z",
-    "since": "2026-11-02T10:20:33Z",
-    "since_label": "last night's board",
-    "status_changes": [
-      {
-        "player_id": "3975",
-        "player": "Stephen Curry",
-        "team": "GSW",
-        "game_id": "401909919",
-        "from": "out",
-        "to": "day-to-day"
-      }
-    ],
-    "moves": [],
-    "games_affected": [
-      "401909919"
-    ]
-  }
+  ]
 }

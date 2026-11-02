@@ -2093,15 +2093,16 @@
         "line": 19.5,
         "line_type": "alt",
         "book_line": 24.5,
-        "proj": 28.3,
-        "prob": 0.824,
-        "book_prob": 0.702,
-        "gap": 0.122,
-        "odds": -276,
+        "proj": 28.5,
+        "prob": 0.828,
+        "book_prob": 0.707,
+        "gap": 0.121,
+        "odds": -283,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 28.3 points: 82% to clear 19.5 (star-calibrated) vs the book's 70% at -276, a +12 point gap. Projected for 36.9 minutes; SAC +10.5 spread."
+        "reasoning": "Model projects 28.5 points: 83% to clear 19.5 (star-calibrated) vs the book's 71% at -283, a +12 point gap. Projected for 37.0 minutes; SAC +8.5 spread.",
+        "night_odds": -276
       },
       {
         "player": "Yaxel Lendeborg",
@@ -2116,15 +2117,16 @@
         "line": 24.5,
         "line_type": "alt",
         "book_line": 30.5,
-        "proj": 37.1,
-        "prob": 0.865,
-        "book_prob": 0.744,
-        "gap": 0.121,
-        "odds": -350,
+        "proj": 37.2,
+        "prob": 0.867,
+        "book_prob": 0.75,
+        "gap": 0.117,
+        "odds": -362,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 37.1 PRA: 86% to clear 24.5 (star-calibrated) vs the book's 74% at -350, a +12 point gap. Projected for 34.5 minutes; GSW -4.5 spread."
+        "reasoning": "Model projects 37.2 PRA: 87% to clear 24.5 (star-calibrated) vs the book's 75% at -362, a +12 point gap. Projected for 34.5 minutes; GSW -2.5 spread.",
+        "night_odds": -350
       },
       {
         "player": "LeBron James",
@@ -2138,16 +2140,17 @@
         "side": "over",
         "line": 14.5,
         "line_type": "alt",
-        "book_line": 18.5,
+        "book_line": 17.5,
         "proj": 21.9,
         "prob": 0.808,
-        "book_prob": 0.693,
-        "gap": 0.116,
-        "odds": -262,
+        "book_prob": 0.675,
+        "gap": 0.133,
+        "odds": -240,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 21.9 points: 81% to clear 14.5 (star-calibrated) vs the book's 69% at -262, a +12 point gap. Projected for 33.5 minutes; PHI -11.5 spread."
+        "reasoning": "Model projects 21.9 points: 81% to clear 14.5 (star-calibrated) vs the book's 68% at -240, a +13 point gap. Projected for 34.1 minutes; PHI -9.5 spread.",
+        "night_odds": -262
       },
       {
         "player": "Jaylen Brown",
@@ -2161,23 +2164,56 @@
         "side": "over",
         "line": 17.5,
         "line_type": "alt",
-        "book_line": 22.5,
-        "proj": 25.8,
-        "prob": 0.82,
-        "book_prob": 0.715,
-        "gap": 0.105,
-        "odds": -296,
+        "book_line": 21.5,
+        "proj": 25.7,
+        "prob": 0.816,
+        "book_prob": 0.695,
+        "gap": 0.121,
+        "odds": -265,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "reasoning": "Model projects 25.8 points: 82% to clear 17.5 (star-calibrated) vs the book's 72% at -296, a +10 point gap. Projected for 34.3 minutes; PHI -11.5 spread."
+        "reasoning": "Model projects 25.7 points: 82% to clear 17.5 (star-calibrated) vs the book's 70% at -265, a +12 point gap. Projected for 35.0 minutes; PHI -9.5 spread.",
+        "night_odds": -296
       }
     ],
-    "combined_odds": 224,
-    "status": "pending"
+    "combined_odds": 237,
+    "status": "pending",
+    "night": {
+      "combined_odds": 224,
+      "picked_at": "2026-11-02T10:20:22Z",
+      "legs": [
+        {
+          "player": "Darius Acuff Jr.",
+          "stat": "points",
+          "line": 19.5,
+          "odds": -276
+        },
+        {
+          "player": "Yaxel Lendeborg",
+          "stat": "pra",
+          "line": 24.5,
+          "odds": -350
+        },
+        {
+          "player": "LeBron James",
+          "stat": "points",
+          "line": 14.5,
+          "odds": -262
+        },
+        {
+          "player": "Jaylen Brown",
+          "stat": "points",
+          "line": 17.5,
+          "odds": -296
+        }
+      ]
+    },
+    "morning_checked": "2026-11-02T22:10:51Z",
+    "changes": []
   },
   "note": "Overs only, 3-4 legs at about +200 to +320 real FanDuel/DraftKings odds, picked the night before (about 9:45 PM Arizona time) from the books' real lines and the night's projections, then checked at 6 AM: a leg is swapped only if overnight news or a line move hurt it. The model must project over the line and not rate the leg well below the book; the combination it likes most relative to the book wins (the +/- number; gaps above +8 count as +8). At most 2 legs from one game unless the model strongly backs a third. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-02T10:20:22Z",
+  "generated_at": "2026-11-02T22:10:51Z",
   "early_history": [
     {
       "date": "2026-10-20",
