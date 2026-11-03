@@ -1,5 +1,10 @@
-"""Parlay of the Day: pick 3-4 overs for a combined ~+200 to +320 parlay at
+"""Parlay of the Day: pick 3 PRA overs for a combined ~+100 to +300 parlay at
 real sportsbook prices, and settle yesterday's parlay from real box scores.
+
+SINCE 2026-11-02 (Robin): the "green" rule in nproj/model/early_parlay.py
+(the 3 players whose PRA projection is furthest over the book's line, one per
+game, legs -300 or longer). The notes below describe how the pick is run
+(night pick, morning check, prices) and the earlier gap-based rules.
 
 PRICE-FIRST (2026-10-21 on; Robin, 2026-10-20). When the PRA model ran, the
 pick uses the same engine as the early-look parlay (nproj/model/early_parlay.py):
@@ -73,10 +78,10 @@ MODEL_MIN_EDGE = None       # no fair-price rule ("most likely overs"); a number
 MIN_LEG_ODDS = -350         # skip legs priced shorter than this
 SHRINK = 0.85               # pull probabilities toward 50%; small samples overstate certainty
 MIN_GAMES = 8               # need at least this many recent games to trust the spread
-MIN_LEGS, MAX_LEGS = 2, 4
-TARGET_LO, TARGET_HI = 200, 320
-MIN_ACCEPT = 150            # below this combined price, skip the day rather than force it
-MAX_PER_GAME = 2
+MIN_LEGS, MAX_LEGS = 3, 3          # since 2026-11-02 (see early_parlay)
+TARGET_LO, TARGET_HI = 100, 300
+MIN_ACCEPT = 100            # below this combined price, skip the day rather than force it
+MAX_PER_GAME = 1
 MAX_ALT_CREDITS = 4
 import os as _os
 PARLAY_SIDES = tuple(x for x in _os.environ.get("NPROJ_PARLAY_SIDES", "over").split(",") if x)
@@ -478,11 +483,15 @@ def _public(con, date_s, saved, l):
            "minutes_confidence": "high" if (mins or 0) >= 30 else "medium"}
     stat = STAT_LABEL[l["stat"]]
     spread_txt = "no spread" if sp is None else f"{l['team']} {sp:+g} spread"
+    leg["green"] = l.get("green")
+    if l.get("tier"):
+        leg["tier"] = l["tier"]
+    over_txt = (f"{round(l['green'] * 100)}% over the book's {book_line} line"
+                if l.get("green") is not None and book_line else "over the book's line")
     leg["reasoning"] = (
-        f"Model projects {l['proj']} {stat}: {round(l['model_prob'] * 100)}% to clear {l['line']} "
-        f"(star-calibrated) vs the book's {round(l['book_prob'] * 100)}% at {l['odds']:+d}, "
-        f"a {round(l['gap'] * 100):+d} point gap. Projected for {round(mins or 0, 1)} minutes; "
-        f"{spread_txt}.")
+        f"Model projects {l['proj']} {stat}, {over_txt}; this leg is {l['line']} at {l['odds']:+d} "
+        f"(book {round(l['book_prob'] * 100)}%, model {round(l['model_prob'] * 100)}%). "
+        f"Projected for {round(mins or 0, 1)} minutes; {spread_txt}.")
     return leg
 
 
@@ -519,6 +528,7 @@ def _games_without_lines(con, date_s):
 
 def night_pick(con, date_s):
     """-> parlay dict (legs may be empty, with the reason in note)."""
+    from . import early_parlay
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     missing = _games_without_lines(con, date_s)
     legs, price, n = price_first(con, date_s, {})
@@ -526,8 +536,9 @@ def night_pick(con, date_s):
             "candidates": n}
     if not legs:
         return {**base, "legs": [], "status": "none",
-                "note": (f"No parlay yet: {n} overs passed the price range and the model's checks, but no "
-                         f"3-4 leg combination reaches +{MIN_ACCEPT}." if n else
+                "note": (f"No parlay yet: {n} green PRA legs passed the price range, but no "
+                         f"2- or 3-leg combination (one per game) lands at +{early_parlay.TARGET_LO} to "
+                         f"+{early_parlay.TARGET_HI}." if n else
                          "No parlay yet: ESPN hasn't posted tomorrow's player lines.")}
     return {**base, "legs": legs, "combined_odds": price, "status": "pending"}
 
@@ -542,7 +553,7 @@ def _recheck(con, date_s, saved, leg):
     from . import early_parlay, live
     pid, stat, line = str(leg["player_id"]), leg["stat"], float(leg["line"])
     if stat not in early_parlay.PARLAY_STATS:
-        return None, f"{stat} legs are no longer used in the parlay (points and PRA only since Oct 30)"
+        return None, f"{stat} legs are no longer used in the parlay (PRA only since Nov 2)"
     pr = live.PROJ.get(pid)
     if not pr or stat not in pr:
         return None, f"{leg['player']} has no projection this morning"
@@ -556,11 +567,14 @@ def _recheck(con, date_s, saved, leg):
              .get(leg["player"]) or {}).get(stat) or {}).get("line")
     if main and pr[stat] / main >= early_parlay.FAR_RATIO:
         return None, f"model is {pr[stat] / main:.1f}x the line (the book likely knows something)"
+    if main and pr[stat] <= main:
+        return None, f"no longer green: model now projects {round(pr[stat], 1)}, at or below the book's {main}"
     pm, pb = early_parlay.model_chance(pr, stat, line), early_parlay.book_chance(step["over"])
     return {**{k: leg.get(k) for k in ("player", "player_id", "team", "opp", "home", "game_id", "time_et")},
             "side": "over", "stat": stat, "line": leg["line"], "odds": int(step["over"]),
             "book": step.get("book"), "model_prob": round(pm, 3), "book_prob": round(pb, 3),
-            "gap": round(pm - pb, 3), "proj": round(float(pr[stat]), 1)}, None
+            "gap": round(pm - pb, 3), "proj": round(float(pr[stat]), 1), "book_line": main,
+            "green": round((pr[stat] - main) / main, 4) if main else leg.get("green")}, None
 
 
 def morning_check(con, date_s, saved, pj):
@@ -609,7 +623,7 @@ def morning_check(con, date_s, saved, pj):
     # replace only the hurt legs (same count, or one fewer if that still works)
     out_ids = {str(l["player_id"]) for l, _ in hurt}
     pool = [c for c in cands if str(c["player_id"]) not in out_ids]
-    legs, price = early_parlay.select(pool, fixed=keep, sizes=[len(hurt), max(0, len(hurt) - 1)])
+    legs, price = early_parlay.select(pool, fixed=keep)
     if not legs:
         legs, price = early_parlay.select(pool)          # nothing fits around them: pick fresh
     changes = [{"out": {k: l.get(k) for k in ("player", "stat", "line", "odds")}, "why": why}

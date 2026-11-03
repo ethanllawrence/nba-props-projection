@@ -1,4 +1,16 @@
-"""Early-look parlay: 3-4 overs for the next game day at about +200 to +320
+"""Parlay of the Day engine (and the retired early-look parlay).
+
+SINCE 2026-11-02 (Robin): 3 PRA legs from the "greenest" players on the Today
+board, i.e. the projection furthest above the book's main PRA line as a share
+of it. One leg per game; each leg is the book line or an alt below it (and
+below our projection), priced -300 to +200; the 3 together land at +100 to
++300 real odds. Most total green wins; ties go to the combination the book
+rates likeliest. If nothing fits, legs up to -350 are allowed, then 2 legs
+(TIERS, Robin 2026-11-03); only if that fails too is there no parlay. The 1.5x rule
+(live.FAR_RATIO) still applies. See the constants below; the notes that
+follow describe the earlier gap-based rules, kept for the record.
+
+Early-look parlay (history): 3-4 overs for the next game day at about +200 to +320
 REAL sportsbook odds, built from real alt-line prices and filtered by the model.
 
 Robin's goal (2026-10-16): "picking lines that incorporate books AND our model to
@@ -61,33 +73,36 @@ from .live import FAR_RATIO
 # which uses ESPN's free lines once posted. This module's candidates/select are
 # that pick's engine; only its own day-ahead pick and purchase are switched off.
 ENABLED = False
-POOL_TOP = 30
-MIN_MINUTES = 30.0
-LEG_ODDS = (-400, -120)          # price range for a leg (American odds); alt ladders step
-                                 # 5 points at a time, so prices jump (Brunson 30+ PRA -390,
-                                 # 35+ -146): a narrower window missed both
-TARGET_LO, TARGET_HI = 200, 320
-MIN_ACCEPT = 150
-MIN_LEGS, MAX_LEGS = 3, 4
-MAX_PER_GAME = 2                 # legs from one game; a 3rd only if each of them is STRONG
-STRONG_GAP = 0.08                # Robin, 2026-10-21: don't lean on one game (say three
-                                 # teammates) unless the model strongly backs every one of them
-VETO = -0.10                     # drop legs the model rates 10+ points below the book
-GAP_CAP = 0.08                   # a gap above +8 points scores like +8 (see 5. above)
+# ---- Parlay of the Day rules since 2026-11-02 (Robin): "green" PRA legs ----
+# 3 PRA legs, the players the model likes most RELATIVE TO THE BOOK'S LINE
+# (the greenest PRA numbers on the Today board: (projection - book line) / line),
+# one leg per game, each leg at the book line or an alt below it (always below
+# our projection) and priced no shorter than -300 (a -400 leg barely moves the
+# payout), and the three together at +100 to +300. Of every combination in
+# range, the one with the most total green wins; ties go to the combination
+# the book rates likeliest to hit. Earlier versions (3-4 legs by model
+# chance minus book chance, any stat) went 2-11 to start the season (through Nov 1).
+POOL_TOP = 60                    # the night's top players by projected PRA ...
+MIN_MINUTES = 26.0               # ... projected for this many minutes or more
+LEG_ODDS = (-350, 200)           # widest price range for one leg (American odds); see TIERS
+TARGET_LO, TARGET_HI = 100, 300  # the legs together
+MIN_ACCEPT = TARGET_LO
+# Tried in order until one lands in range (Robin, 2026-11-03: a night with games
+# and a board shouldn't go without a parlay): 3 legs at -300 or longer, then 3
+# legs allowing -350, then 2 legs allowing -350. Nothing fits even then -> none.
+TIERS = ((3, -300), (3, -350), (2, -350))
+TIER_NOTE = {1: "one or more legs allowed at up to -350 (nothing fit at -300)",
+             2: "2 legs (no 3-leg parlay fit at up to -350)"}
+MIN_LEGS, MAX_LEGS = 2, 3
+MAX_PER_GAME = 1
 BLOWOUT_SPREAD = 12              # skip games with a spread this big (when a spread is known)
 ALT_HOLD = 1.045                 # typical book cut on one-sided alt prices
-# Stats a parlay leg can use. Assists-only legs dropped 2026-10-30 (Robin): through
-# 10 Parlays of the Day, assists legs hit 7 of 12 where the book's prices
-# expected about 8.5, and the picker kept leaning on them (3 of 4 legs on
-# Oct 30), while points legs hit 12 of 12. The 2024-25 / 2025-26 replay did
-# not show assists legs doing worse than other stats, so this is a cautious
-# choice to revisit with more of this season's results, not a fitted rule.
-# PRA (which includes assists) is still allowed.
-# Rebounds-only legs dropped too, same day (Robin): they hit 7 of 11 (book
-# expected about 7.7), often on lesser-known rebounders. Points or PRA only,
-# with the emphasis on points: at most MAX_PRA_LEGS PRA leg per parlay.
-PARLAY_STATS = ("points", "pra")
-MAX_PRA_LEGS = 1
+# Stats a parlay leg can use. Assists-only and rebounds-only legs were dropped
+# 2026-10-30 (through 10 parlays: assists legs 7 of 12, rebounds 7 of 11, where
+# the books expected about 8.5 and 7.7; points 12 of 12); points-or-PRA ran
+# Oct 31 - Nov 2. PRA only since Nov 2.
+PARLAY_STATS = ("pra",)
+MAX_PRA_LEGS = MAX_LEGS
 STAR_CAL = json.loads((Path(__file__).parent / "star_calibration.json").read_text())
 
 
@@ -163,80 +178,83 @@ def candidates(con, date_s, proj, alts, spreads=None, not_before=None, main_line
             if stat not in pr or stat not in PARLAY_STATS:
                 continue
             ml = (mains.get(stat) or {}).get("line")
-            if ml and pr[stat] / ml >= FAR_RATIO:
+            if not ml:
+                continue                # "green" needs the book's main line
+            if pr[stat] / ml >= FAR_RATIO:
                 continue                # the book knows something (see live.FAR_RATIO)
+            if pr[stat] <= ml:
+                continue                # not green: the model isn't over the book's line
+            green = float((pr[stat] - ml) / ml)
             for step in ladder:
                 price, line = step.get("over"), step.get("line")
                 if price is None or line is None or not (LEG_ODDS[0] <= int(price) <= LEG_ODDS[1]):
                     continue
-                if pr[stat] <= line:
-                    continue            # the model must project over the line
+                if line > ml or pr[stat] <= line:
+                    continue            # the book line or an alt below it, below our projection
                 pm, pb = model_chance(pr, stat, line), book_chance(price)
-                if pm - pb < VETO:
-                    continue
                 out.append({**who, "stat": stat, "line": line, "odds": int(price), "book": step.get("book"),
                             "model_prob": round(pm, 3), "book_prob": round(pb, 3), "gap": round(pm - pb, 3),
-                            "proj": round(float(pr[stat]), 1)})
-    # capped gap first, then the book's own chance (safer legs first on ties)
-    return sorted(out, key=lambda c: (-min(c["gap"], GAP_CAP), -c["book_prob"]))
+                            "proj": round(float(pr[stat]), 1), "book_line": ml, "green": round(green, 4)})
+    # greenest first, then the book's own chance (safer legs first on ties)
+    return sorted(out, key=lambda c: (-c["green"], -c["book_prob"]))
 
 
-SEARCH_TOP = 24          # best-gap legs considered when combining
+SEARCH_TOP = 60          # greenest legs considered when combining
 
 
 def combo_ok(combo, fixed=()):
-    """One leg per player; at most MAX_PRA_LEGS PRA legs; at most MAX_PER_GAME
-    legs from a game, or one more when every leg from that game has a gap of
-    STRONG_GAP or better."""
+    """One leg per player and at most MAX_PER_GAME legs from one game."""
     legs = list(fixed) + list(combo)
     if len({c["player_id"] for c in legs}) < len(legs):
         return False
     if sum(1 for c in legs if c.get("stat") == "pra") > MAX_PRA_LEGS:
-        return False                    # points first (Robin, 2026-10-30)
+        return False
     by_game = {}
     for c in legs:
-        by_game.setdefault(c["game_id"], []).append(c)
-    for g in by_game.values():
-        if len(g) > MAX_PER_GAME + 1:
-            return False
-        if len(g) > MAX_PER_GAME and not all((c.get("gap") or 0) >= STRONG_GAP for c in g):
-            return False
-    return True
+        by_game[c["game_id"]] = by_game.get(c["game_id"], 0) + 1
+    return max(by_game.values(), default=0) <= MAX_PER_GAME
+
+
+def _green(c):
+    g = c.get("green")
+    if g is None and c.get("book_line"):
+        g = (float(c["proj"]) - float(c["book_line"])) / float(c["book_line"])
+    return g or 0.0
 
 
 def select(cands, fixed=(), sizes=None):
-    """The 3-4 leg combination (one leg per player, see combo_ok for the
-    per-game limit) whose REAL combined odds land in +TARGET_LO..+TARGET_HI and that the
-    model likes most relative to the book (largest total gap). If none lands
-    in that range, the best one between +MIN_ACCEPT and +TARGET_LO.
-    fixed: legs that must stay (the morning check keeps the night pick's
-    healthy legs and only replaces the rest); sizes: how many to add."""
+    """The best combination under the first of TIERS that has one in range:
+    one leg per player and per game, REAL combined odds at +TARGET_LO..+TARGET_HI,
+    the most total green (projection over the book's line, as a share of the
+    line); ties go to the combination the book rates likeliest. Returned legs
+    carry "tier" (0 = the normal 3 legs at -300; see TIER_NOTE). Nothing in
+    range -> ([], None). fixed: legs that must stay (the morning check keeps the
+    night pick's healthy legs, whatever their price now, and only replaces the
+    rest). sizes: unused, kept for older callers."""
     from itertools import combinations
     fixed = list(fixed)
-    pool = [c for c in cands if c["player_id"] not in {f["player_id"] for f in fixed}][:SEARCH_TOP]
-    best, fallback = None, None
-    cap = lambda g: min(g, GAP_CAP)
-    sizes = sizes or range(max(0, MIN_LEGS - len(fixed)), MAX_LEGS - len(fixed) + 1)
-    for n in sizes:
-        for combo in combinations(pool, n):
+    taken = {f["player_id"] for f in fixed}
+    pool = [c for c in cands if c["player_id"] not in taken][:SEARCH_TOP]
+    for tier, (n_legs, cap) in enumerate(TIERS):
+        n = n_legs - len(fixed)
+        if n < 0:
+            continue
+        sub = [c for c in pool if int(c["odds"]) >= cap]
+        best = None
+        for combo in combinations(sub, n):
             if not combo_ok(combo, fixed):
                 continue
             legs = fixed + list(combo)
-            if not MIN_LEGS <= len(legs) <= MAX_LEGS:
-                continue
             price = combined_odds([c["odds"] for c in legs])
-            score = (round(sum(cap(c["gap"]) for c in legs), 4),
-                     math.prod(c["book_prob"] for c in legs))
-            if TARGET_LO <= price <= TARGET_HI:
-                if best is None or score > best[0]:
-                    best = (score, legs, price)
-            elif MIN_ACCEPT <= price < TARGET_LO:
-                if fallback is None or score > fallback[0]:
-                    fallback = (score, legs, price)
-    pick = best or fallback
-    if not pick:
-        return [], None
-    return sorted(pick[1], key=lambda c: -c["gap"]), pick[2]
+            if not TARGET_LO <= price <= TARGET_HI:
+                continue
+            score = (round(sum(_green(c) for c in legs), 4), math.prod(c["book_prob"] for c in legs))
+            if best is None or score > best[0]:
+                best = (score, legs, price)
+        if best:
+            legs = [{**c, "tier": tier} for c in sorted(best[1], key=lambda c: -_green(c))]
+            return legs, best[2]
+    return [], None
 
 
 def pick(con, date_s, proj, alts, spreads=None):

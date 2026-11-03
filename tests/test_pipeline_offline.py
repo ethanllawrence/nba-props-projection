@@ -383,28 +383,36 @@ def test_parlay_pure():
     assert P.combined_odds([-250, -250, -250]) == 174
     assert P.blowout_risk(None) == "unknown" and P.blowout_risk(-13.5) == "high"
     assert P.blowout_risk(4) == "low" and P.blowout_risk(-8) == "medium"
-    base = {"game_id": "g", "line_type": "main", "stat": "points"}
+    base = {"game_id": "g", "line_type": "main", "stat": "pra"}
     opts = [dict(base, player_id=f"p{i}", game_id=f"g{i}", prob=0.9 - i * 0.01, odds=-250)
             for i in range(6)]
     legs, price = P.select_legs(opts)
-    assert len(legs) == 4 and 200 <= price <= 320, (len(legs), price)
+    assert len(legs) == 3 and 100 <= price <= 300, (len(legs), price)
     legs, price = P.select_legs([dict(base, player_id="a", game_id="g1", prob=0.8, odds=-120),
                                  dict(base, player_id="a", game_id="g1", prob=0.7, odds=-120)])
     assert legs == [] and price is None        # one player can't carry a parlay
     same_game = [dict(base, player_id=f"p{i}", game_id="g1", prob=0.9, odds=-200) for i in range(4)]
     legs, _ = P.select_legs(same_game)
-    assert len(legs) <= 2
-    # backup picker: points first, at most one PRA leg, no assists/rebounds legs
+    assert len(legs) <= 1                       # one leg per game
+    # backup picker: PRA legs only (since Nov 2)
     mixed = [dict(base, player_id=f"q{i}", game_id=f"h{i}", prob=0.95 - i * 0.01, odds=-250,
-                  stat=("pra", "pra", "assists", "rebounds", "points", "points", "points")[i])
+                  stat=("points", "assists", "rebounds", "pra", "pra", "pra", "pra")[i])
              for i in range(7)]
     legs, _ = P.select_legs(mixed)
-    stats = [l["stat"] for l in legs]
-    assert stats.count("pra") == 1 and set(stats) <= {"points", "pra"}, stats
+    assert [l["stat"] for l in legs] == ["pra"] * 3, legs
 
 
 def test_parlay_daily_and_settle():
     from datetime import date
+    from nproj.model import parlay as _P
+    _P.MAX_PER_GAME = 2     # the mock slate has only 2 games; the real rule is one leg per game
+    try:
+        _parlay_daily_and_settle(date)
+    finally:
+        _P.MAX_PER_GAME = 1
+
+
+def _parlay_daily_and_settle(date):
     site, state = _fresh_env("props", 700)      # allowance (700-60)*.5/22 = 14
     from nproj import cli
     from nproj.ingest import odds
@@ -418,8 +426,9 @@ def test_parlay_daily_and_settle():
     pj = json.loads((site / "parlay.json").read_text())
     assert pj["history"] == [], "mock history must be dropped on the first real day"
     t = pj["today"]
-    assert t and t["status"] == "pending" and 2 <= len(t["legs"]) <= 4, pj
-    assert 150 <= t["combined_odds"] <= 320
+    assert t and t["status"] == "pending" and len(t["legs"]) == 3, pj
+    assert 100 <= t["combined_odds"] <= 300
+    assert all(l["stat"] == "pra" for l in t["legs"]), "PRA legs only since Nov 2"
     assert all(l["side"] == "over" for l in t["legs"]), "parlay is overs only"
     assert len({l["player_id"] for l in t["legs"]}) == len(t["legs"])
     risk = {l["team"]: l["blowout_risk"] for l in t["legs"]}
@@ -667,13 +676,12 @@ def test_espn_props():
 
 
 def test_combo_rules():
-    """At most 2 legs from one game, a 3rd only when every leg from that game
-    is strongly backed; night picks go to "next" while last night's waits."""
+    """One leg per player and per game (since Nov 2); night picks go to "next"
+    while last night's waits."""
     from nproj.model import early_parlay as EP, parlay as P
     leg = lambda pid, g, gap: {"player_id": pid, "game_id": g, "gap": gap}
-    assert EP.combo_ok([leg(1, "a", .02), leg(2, "a", .03), leg(3, "b", .01)])
-    assert not EP.combo_ok([leg(1, "a", .02), leg(2, "a", .09), leg(3, "a", .09)])
-    assert EP.combo_ok([leg(1, "a", .08), leg(2, "a", .09), leg(3, "a", .12)])
+    assert EP.combo_ok([leg(1, "a", .02), leg(2, "b", .03), leg(3, "c", .01)])
+    assert not EP.combo_ok([leg(1, "a", .02), leg(2, "a", .03), leg(3, "b", .01)])
     assert not EP.combo_ok([leg(1, "a", .2)] * 2)
     data = {"today": {"date": "2026-10-21", "status": "pending", "legs": [1]}}
     P._put(data, {"date": "2026-10-22", "legs": [2]})
@@ -696,8 +704,11 @@ def test_far_from_line():
     print("OK far from line")
 
 
-def test_points_pra_legs_only():
-    """Parlay legs are points or PRA only, at most one PRA (Robin, 2026-10-30)."""
+def test_green_pra_parlay():
+    """Parlay of the Day since 2026-11-02 (Robin): 3 PRA legs from the greenest
+    players (projection over the book's main line, as a share of it), one per
+    game, each leg at or below the book line and priced -300 or longer, the 3
+    together at +100 to +300."""
     import sqlite3
     from nproj.model import early_parlay as EP
     con = sqlite3.connect(":memory:")
@@ -706,26 +717,47 @@ def test_points_pra_legs_only():
         CREATE TABLE players (player_id TEXT, name TEXT, team TEXT);
         CREATE TABLE games (game_id TEXT, home_team TEXT, away_team TEXT, tipoff_utc TEXT);
         CREATE TABLE probable_players (player_id TEXT, game_id TEXT, status TEXT, date TEXT);
-        INSERT INTO players VALUES ('9', 'Test Guard', 'AAA');
-        INSERT INTO games VALUES ('g1', 'AAA', 'BBB', '2030-01-01T00:00Z');
-        INSERT INTO probable_players VALUES ('9', 'g1', 'active', '2030-01-01');
     """)
     var = {s: (4.0, 0.0) for s in ("points", "rebounds", "assists", "pra")}
-    proj = {"9": {"points": 25.0, "rebounds": 7.0, "assists": 9.0, "pra": 41.0, "minutes": 34.0,
-                  "var": var}}
-    ladder = lambda ln: [{"line": ln, "over": -250, "book": "DraftKings"}]
-    alts = {"test guard": {"points": ladder(19.5), "rebounds": ladder(4.5),
-                           "assists": ladder(5.5), "pra": ladder(33.5)}}
-    stats = {c["stat"] for c in EP.candidates(con, "2030-01-01", proj, alts)}
-    assert stats == {"points", "pra"}, stats
-    leg = lambda pid, st: {"player_id": pid, "game_id": pid, "stat": st, "gap": 0.05}
-    assert EP.combo_ok([leg("a", "pra"), leg("b", "points"), leg("c", "points")])
-    assert not EP.combo_ok([leg("a", "pra"), leg("b", "pra"), leg("c", "points")])
-    print("OK points/PRA legs only")
-
+    proj, alts, mains = {}, {}, {}
+    # (projected PRA, book line): greens +40%, +30%, +20%, +10%, and one under the line
+    for i, (pra, ml) in enumerate([(28.0, 20.0), (26.0, 20.0), (24.0, 20.0), (22.0, 20.0), (18.0, 20.0)]):
+        pid, name = str(i), f"Test Player{i}"
+        con.execute("INSERT INTO players VALUES (?,?,?)", (pid, name, f"T{i}"))
+        con.execute("INSERT INTO games VALUES (?,?,?,?)", (f"g{i}", f"T{i}", f"O{i}", "2030-01-01T00:00Z"))
+        con.execute("INSERT INTO probable_players VALUES (?,?,?,?)", (pid, f"g{i}", "active", "2030-01-01"))
+        proj[pid] = {"points": pra * .6, "rebounds": pra * .25, "assists": pra * .15, "pra": pra,
+                     "minutes": 34.0, "var": var}
+        alts[name.lower()] = {"pra": [{"line": 14.5, "over": -450, "book": "DK"},      # shorter than -300
+                                      {"line": 17.5, "over": -200, "book": "DK"},
+                                      {"line": 19.5, "over": -130, "book": "DK"},
+                                      {"line": 24.5, "over": 150, "book": "DK"}],      # above the book line
+                              "points": [{"line": 10.5, "over": -200, "book": "DK"}]}
+        mains[name.lower()] = {"pra": {"line": 19.5}}
+    c = EP.candidates(con, "2030-01-01", proj, alts, main_lines=mains)
+    assert {x["stat"] for x in c} == {"pra"}, c
+    assert all(-300 <= x["odds"] and x["line"] <= x["book_line"] < x["proj"] for x in c), c
+    assert "4" not in {x["player_id"] for x in c}, "not green: projected under the book line"
+    assert [x["green"] for x in c] == sorted((x["green"] for x in c), reverse=True)
+    legs, price = EP.select(c)
+    assert len(legs) == 3 and 100 <= price <= 300, (legs, price)
+    assert [l["player_id"] for l in legs] == ["0", "1", "2"], legs        # the three greenest
+    assert len({l["game_id"] for l in legs}) == 3
+    assert all(l["tier"] == 0 and l["odds"] >= -300 for l in legs)
+    leg = lambda pid, g: {"player_id": pid, "game_id": g, "stat": "pra"}
+    assert not EP.combo_ok([leg("a", "g1"), leg("b", "g1")])               # one leg per game
+    # fallbacks (Robin, Nov 3): nothing at -300 -> allow -350; still nothing -> 2 legs
+    mk = lambda pid, odds, green: {"player_id": pid, "game_id": "g" + pid, "stat": "pra", "odds": odds,
+                                   "book_prob": EP.book_chance(odds), "green": green}
+    legs, price = EP.select([mk("a", -340, .3), mk("b", -330, .2), mk("c", -115, .1)])
+    assert len(legs) == 3 and {l["tier"] for l in legs} == {1} and 100 <= price <= 300, (legs, price)
+    legs, price = EP.select([mk("a", -120, .3), mk("b", -125, .2)])        # 2 legs: +230
+    assert len(legs) == 2 and legs[0]["tier"] == 2 and 100 <= price <= 300, (legs, price)
+    assert EP.select([mk("a", -500, .3), mk("b", -500, .2)]) == ([], None)
+    print("OK green PRA parlay + -350 / 2-leg fallbacks")
 
 if __name__ == "__main__":
-    test_points_pra_legs_only()
+    test_green_pra_parlay()
     test_combo_rules()
     test_far_from_line()
     test_espn_props()

@@ -45,8 +45,14 @@ function legRow(leg) {
       <div class="pm" style="white-space:normal">${esc(shortRisk[leg.blowout_risk] || "")} · ${esc(leg.minutes_confidence)} minutes confidence</div></td>
     <td class="num"><div class="pos" style="font-weight:700">${side} ${line} ${esc(statAbbr[leg.stat] || leg.stat)}</div>
       <div class="pm">${fmtOdds(leg.odds)} ${esc(leg.book || "")}${leg.night_odds != null && leg.night_odds !== leg.odds ? ` <span class="dim">(night ${fmtOdds(leg.night_odds)})</span>` : ""}</div>
-      <div class="pm">${leg.book_prob != null ? gapTxt(leg) : `model ${leg.prob != null ? Math.round(leg.prob * 100) + "%" : "?"}`}${isAlt && leg.book_line != null ? ` · full line ${leg.book_line}` : ""}</div></td>
+      <div class="pm">${leg.green != null ? greenTxt(leg) : leg.book_prob != null ? gapTxt(leg) : `model ${leg.prob != null ? Math.round(leg.prob * 100) + "%" : "?"}`}${leg.green == null && isAlt && leg.book_line != null ? ` · full line ${leg.book_line}` : ""}</div></td>
   </tr>${note}`;
+}
+
+// Since Nov 2: legs are picked by how far our projection is over the book's line
+function greenTxt(l) {
+  return `<span class="pos">proj ${Math.round(l.green * 100)}% over</span> the book's ${l.book_line}` +
+    (l.book_prob != null ? ` · book ${Math.round(l.book_prob * 100)}%` : "");
 }
 
 function gapTxt(l) {
@@ -104,6 +110,9 @@ function nightNotes(t) {
     bits.push("The 6 AM run checks it against overnight news and line moves.");
   }
   if (t.restored) bits.push(esc(t.restored));
+  const tier = Math.max(0, ...(t.legs || []).map((l) => l.tier || 0));
+  if (tier === 1) bits.push("Nothing fit with every leg at -300 or longer, so legs up to -350 were allowed.");
+  if (tier === 2) bits.push("No 3-leg parlay fit (even allowing -350 legs), so this one has 2 legs.");
   if (t.missing_games && t.missing_games.length) {
     bits.push(`<span class="neg">Not in play: ${esc(t.missing_games.join(", "))}</span> (no lines posted at pick time).`);
   }

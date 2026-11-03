@@ -68,43 +68,39 @@ def test_live_model():
         p_joint = live.td_probability(tdp)
         p_indep = live.td_probability(tdp, corr=[[1, 0, 0], [0, 1, 0], [0, 0, 1]])
         assert 0 < p_indep < p_joint < 1, (p_indep, p_joint)
-        # early-look parlay: real alt prices + model veto/ranking, about +200 real odds
+        # Parlay of the Day engine (since Nov 2): green PRA legs, 3 legs, +100 to +300
         from nproj.model import early_parlay as EP
         from nproj.ingest.odds import norm_name
         assert EP.pick(con, DATE, live.PROJ, {})["status"] == "waiting"
         names = dict(con.execute("SELECT player_id, name FROM players").fetchall())
         stars = sorted(live.PROJ, key=lambda p: -live.PROJ[p]["pra"])[:16]
-        alts = {}
+        alts, mains = {}, {}
         for i, pid in enumerate(stars):
-            # points ladders: the parlay uses points legs plus at most one PRA leg
-            mu = live.PROJ[pid]["points"]
-            ladder = [{"line": round(mu) - 6.5, "over": -400, "book": "FanDuel"},
-                      {"line": round(mu) - 4.5, "over": -260, "book": "FanDuel"},
-                      {"line": round(mu) - 1.5, "over": -160, "book": "FanDuel"}]
-            if i == 0:      # a trap: the book is far surer than the model -> vetoed
-                ladder = [{"line": round(mu) - 0.5, "over": -300, "book": "FanDuel"}]
-            alts[norm_name(names[pid])] = {"points": ladder}
-        ep = EP.pick(con, DATE, live.PROJ, alts)
-        legs = ep["legs"]
-        assert ep["status"] == "pending" and EP.MIN_LEGS <= len(legs) <= EP.MAX_LEGS, ep
-        assert stars[0] not in {l["player_id"] for l in legs}, "trap leg must be vetoed"
-        assert all(EP.LEG_ODDS[0] <= l["odds"] <= EP.LEG_ODDS[1] and l["gap"] >= EP.VETO
-                   and l["proj"] > l["line"] and l["side"] == "over" for l in legs)
-        assert EP.MIN_ACCEPT <= ep["combined_odds"] <= EP.TARGET_HI
-        assert ep["combined_odds"] == EP.combined_odds([l["odds"] for l in legs])
-        assert len({l["player_id"] for l in legs}) == len(legs)
-        assert EP.combo_ok(legs)
-        assert [l["gap"] for l in legs] == sorted((l["gap"] for l in legs), reverse=True)
-        # the chosen combination has the largest total CAPPED gap among in-range combinations
+            mu = live.PROJ[pid]["pra"]
+            # book lines 4-30% under the projection (green), except a "trap": over it
+            ml = round(mu * (0.96 - 0.02 * (i % 12))) - 0.5 if i else round(mu) + 2.5
+            mains[norm_name(names[pid])] = {"pra": {"line": ml, "over": -115, "under": -115,
+                                                    "book": "FanDuel"}}
+            alts[norm_name(names[pid])] = {"pra": [
+                {"line": ml - 8, "over": -400, "book": "FanDuel"},       # too short a price
+                {"line": ml - 5, "over": -260, "book": "FanDuel"},
+                {"line": ml - 3, "over": -170, "book": "FanDuel"},
+                {"line": ml, "over": -115, "book": "FanDuel"},
+                {"line": ml + 3, "over": 150, "book": "FanDuel"}]}       # above the book line
+        cands = EP.candidates(con, DATE, live.PROJ, alts, main_lines=mains)
+        assert cands and stars[0] not in {c["player_id"] for c in cands}, "not green: no legs"
+        assert all(c["stat"] == "pra" and EP.LEG_ODDS[0] <= c["odds"] <= EP.LEG_ODDS[1]
+                   and c["line"] <= c["book_line"] < c["proj"] for c in cands)
+        legs, price = EP.select(cands)
+        assert len(legs) == 3 and EP.TARGET_LO <= price <= EP.TARGET_HI, (legs, price)
+        assert price == EP.combined_odds([l["odds"] for l in legs]) and EP.combo_ok(legs)
+        # the chosen combination has the most total green among in-range combinations
         from itertools import combinations
-        cands = EP.candidates(con, DATE, live.PROJ, alts)
-        capped = lambda k: round(sum(min(c["gap"], EP.GAP_CAP) for c in k), 4)
-        best = max((capped(k) for n in (3, 4) for k in combinations(cands[:EP.SEARCH_TOP], n)
-                    if EP.combo_ok(k)
-                    and EP.TARGET_LO <= EP.combined_odds([c["odds"] for c in k]) <= EP.TARGET_HI),
-                   default=None)
-        assert best is None or abs(capped(legs) - best) < 1e-9
-        print("OK early parlay:", ep["combined_odds"], [(l["player"], l["line"], l["odds"], l["gap"]) for l in legs])
+        tot = lambda k: round(sum(c["green"] for c in k), 4)
+        best = max(tot(k) for k in combinations(cands[:EP.SEARCH_TOP], 3) if EP.combo_ok(k)
+                   and EP.TARGET_LO <= EP.combined_odds([c["odds"] for c in k]) <= EP.TARGET_HI)
+        assert abs(tot(legs) - best) < 1e-9
+        print("OK green parlay engine:", price, [(l["player"], l["line"], l["odds"], l["green"]) for l in legs])
         top = sorted(live.PROJ, key=lambda p: -live.PROJ[p]["points"])[:6]
         # lines: two below the projection, two above, two right at it
         lines = {}
@@ -120,6 +116,8 @@ def test_live_model():
             if 2 <= i < 4:
                 assert v["p_over"] < 0.5
         from nproj.ingest.odds import norm_name
+        for k, v in mains.items():          # the stars' PRA main lines (for "green")
+            lines.setdefault(k, {}).update(v)
         (site / "lines.json").write_text(json.dumps(
             {"date": DATE, "lines": {norm_name(k): v for k, v in lines.items()}}))
         from nproj.export.site_export import _export_today_board
@@ -167,7 +165,7 @@ def test_live_model():
             if g["game_id"] in star_games:
                 games_cov[f"{g['away_team']} @ {g['home_team']}"] = {
                     "home": g["home_team"], "away": g["away_team"], "lines": 1, "ladders": 1,
-                    "line_stats": ["points"], "ladder_stats": ["points"]}
+                    "line_stats": ["points", "pra"], "ladder_stats": ["pra"]}
         espn_props.save({"date": DATE, "fetched_at": "x", "games": games_cov,
                          "lines": {norm_name(k): v for k, v in lines.items()}, "alts": alts})
         lg_n = parlay.update(con, DATE, mode="night")
