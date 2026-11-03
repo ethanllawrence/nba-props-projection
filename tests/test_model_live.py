@@ -71,6 +71,9 @@ def test_live_model():
         # Parlay of the Day engine (since Nov 2): green PRA legs, 3 legs, +100 to +300
         from nproj.model import early_parlay as EP
         from nproj.ingest.odds import norm_name
+        # this historical slate has few 30.5+ PRA lines; the stars-only floor is
+        # tested in test_pipeline_offline, so it's off here
+        EP.MIN_BOOK_LINE = 0
         assert EP.pick(con, DATE, live.PROJ, {})["status"] == "waiting"
         names = dict(con.execute("SELECT player_id, name FROM players").fetchall())
         stars = sorted(live.PROJ, key=lambda p: -live.PROJ[p]["pra"])[:16]

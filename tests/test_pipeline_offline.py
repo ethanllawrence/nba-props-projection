@@ -384,32 +384,36 @@ def test_parlay_pure():
     assert P.blowout_risk(None) == "unknown" and P.blowout_risk(-13.5) == "high"
     assert P.blowout_risk(4) == "low" and P.blowout_risk(-8) == "medium"
     base = {"game_id": "g", "line_type": "main", "stat": "pra"}
-    opts = [dict(base, player_id=f"p{i}", game_id=f"g{i}", prob=0.9 - i * 0.01, odds=-250)
+    opts = [dict(base, player_id=f"p{i}", game_id=f"g{i}", prob=0.9 - i * 0.01, odds=-250, book_line=34.5)
             for i in range(6)]
     legs, price = P.select_legs(opts)
     assert len(legs) == 3 and 100 <= price <= 300, (len(legs), price)
-    legs, price = P.select_legs([dict(base, player_id="a", game_id="g1", prob=0.8, odds=-120),
-                                 dict(base, player_id="a", game_id="g1", prob=0.7, odds=-120)])
+    legs, price = P.select_legs([dict(base, player_id="a", game_id="g1", prob=0.8, odds=-120, book_line=34.5),
+                                 dict(base, player_id="a", game_id="g1", prob=0.7, odds=-120, book_line=34.5)])
     assert legs == [] and price is None        # one player can't carry a parlay
-    same_game = [dict(base, player_id=f"p{i}", game_id="g1", prob=0.9, odds=-200) for i in range(4)]
+    same_game = [dict(base, player_id=f"p{i}", game_id="g1", prob=0.9, odds=-200, book_line=34.5) for i in range(4)]
     legs, _ = P.select_legs(same_game)
     assert len(legs) <= 1                       # one leg per game
     # backup picker: PRA legs only (since Nov 2)
     mixed = [dict(base, player_id=f"q{i}", game_id=f"h{i}", prob=0.95 - i * 0.01, odds=-250,
                   stat=("points", "assists", "rebounds", "pra", "pra", "pra", "pra")[i])
              for i in range(7)]
-    legs, _ = P.select_legs(mixed)
+    legs, _ = P.select_legs([dict(o, book_line=34.5) for o in mixed])
     assert [l["stat"] for l in legs] == ["pra"] * 3, legs
+    assert P.select_legs([dict(o, book_line=24.5) for o in mixed]) == ([], None)   # stars only
 
 
 def test_parlay_daily_and_settle():
     from datetime import date
     from nproj.model import parlay as _P
+    from nproj.model import early_parlay as _EP
     _P.MAX_PER_GAME = 2     # the mock slate has only 2 games; the real rule is one leg per game
+    floor, _EP.MIN_BOOK_LINE = _EP.MIN_BOOK_LINE, 0     # mock PRA lines are small (no stars)
     try:
         _parlay_daily_and_settle(date)
     finally:
         _P.MAX_PER_GAME = 1
+        _EP.MIN_BOOK_LINE = floor
 
 
 def _parlay_daily_and_settle(date):
@@ -734,6 +738,16 @@ def test_green_pra_parlay():
                                       {"line": 24.5, "over": 150, "book": "DK"}],      # above the book line
                               "points": [{"line": 10.5, "over": -200, "book": "DK"}]}
         mains[name.lower()] = {"pra": {"line": 19.5}}
+    # stars only since Nov 3: these book lines (19.5) are under the 30.5 floor
+    assert EP.candidates(con, "2030-01-01", proj, alts, main_lines=mains) == []
+    floor, EP.MIN_BOOK_LINE = EP.MIN_BOOK_LINE, 0
+    try:
+        _green_rules(EP, con, proj, alts, mains)
+    finally:
+        EP.MIN_BOOK_LINE = floor
+
+
+def _green_rules(EP, con, proj, alts, mains):
     c = EP.candidates(con, "2030-01-01", proj, alts, main_lines=mains)
     assert {x["stat"] for x in c} == {"pra"}, c
     assert all(-300 <= x["odds"] and x["line"] <= x["book_line"] < x["proj"] for x in c), c

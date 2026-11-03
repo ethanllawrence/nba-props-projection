@@ -369,11 +369,13 @@ def select_legs(options):
     """Greedy by model probability: one leg per player, at most MAX_PER_GAME
     per game and early_parlay.MAX_PRA_LEGS PRA legs, never past TARGET_HI,
     stop once TARGET_LO is reached."""
-    from .early_parlay import MAX_PRA_LEGS, PARLAY_STATS
+    from .early_parlay import MAX_PRA_LEGS, MIN_BOOK_LINE, PARLAY_STATS
     legs, price = [], None
     for o in sorted(options, key=lambda o: (-o["prob"], o["line_type"] != "alt")):
         if o["stat"] not in PARLAY_STATS:
             continue
+        if (o.get("book_line") or o.get("line") or 0) < MIN_BOOK_LINE:
+            continue                    # stars only (book PRA line 30.5+), since Nov 3
         if any(l["player_id"] == o["player_id"] for l in legs):
             continue
         if o["stat"] == "pra" and sum(1 for l in legs if l["stat"] == "pra") >= MAX_PRA_LEGS:

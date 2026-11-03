@@ -5,7 +5,8 @@ board, i.e. the projection furthest above the book's main PRA line as a share
 of it. One leg per game; each leg is the book line or an alt below it (and
 below our projection), priced -300 to +200; the 3 together land at +100 to
 +300 real odds. Most total green wins; ties go to the combination the book
-rates likeliest. If nothing fits, legs up to -350 are allowed, then 2 legs
+rates likeliest. Since 2026-11-03 only players whose book PRA line is
+MIN_BOOK_LINE (30.5) or more. If nothing fits, legs up to -350 are allowed, then 2 legs
 (TIERS, Robin 2026-11-03); only if that fails too is there no parlay. The 1.5x rule
 (live.FAR_RATIO) still applies. See the constants below; the notes that
 follow describe the earlier gap-based rules, kept for the record.
@@ -82,6 +83,12 @@ ENABLED = False
 # range, the one with the most total green wins; ties go to the combination
 # the book rates likeliest to hit. Earlier versions (3-4 legs by model
 # chance minus book chance, any stat) went 2-11 to start the season (through Nov 1).
+# Stars only since 2026-11-03 (Robin, a 2-3 week trial): the book's PRA line must
+# be 30.5 or more. Replayed on this season's saved boards (Oct 20 - Nov 1) this
+# went 5 of 11 vs 3 of 13 with no floor, and in the 2024-25 / 2025-26 replay
+# star PRA legs on 30.5+ lines beat the estimated market by ~2-3 points per leg
+# while smaller lines were about even. Small samples: a trial, not a proven edge.
+MIN_BOOK_LINE = 30.5
 POOL_TOP = 60                    # the night's top players by projected PRA ...
 MIN_MINUTES = 26.0               # ... projected for this many minutes or more
 LEG_ODDS = (-350, 200)           # widest price range for one leg (American odds); see TIERS
@@ -180,6 +187,8 @@ def candidates(con, date_s, proj, alts, spreads=None, not_before=None, main_line
             ml = (mains.get(stat) or {}).get("line")
             if not ml:
                 continue                # "green" needs the book's main line
+            if ml < MIN_BOOK_LINE:
+                continue                # stars only: book PRA line 30.5+
             if pr[stat] / ml >= FAR_RATIO:
                 continue                # the book knows something (see live.FAR_RATIO)
             if pr[stat] <= ml:
