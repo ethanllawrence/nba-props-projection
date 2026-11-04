@@ -107,8 +107,9 @@ function checkedNote(t) {
 /* Night pick (from the evening board) and its morning re-pick. */
 function nightNotes(t) {
   if (t.method !== "night") return "";
-  const pickedAt = (t.night && t.night.picked_at) || t.picked_at;
-  const bits = [`First picked ${esc(atTime(pickedAt))} the night before from the evening board.`];
+  const pickedAt = (t.night && t.night.picked_at) || t.first_picked_at || t.picked_at;
+  const day = (iso) => iso ? new Date(iso).toLocaleString([], { weekday: "short", hour: "numeric", minute: "2-digit" }) : "";
+  const bits = [`First picked ${esc(day(pickedAt))}.`];
   const legTxt = (l) => `${esc(l.player)} ${l.line}+ ${esc(statShort[l.stat] || l.stat)}`;
   if (t.morning_checked) {
     const ch = t.changes || [];
@@ -121,7 +122,8 @@ function nightNotes(t) {
       : `${verb}: same legs.`);
     if (t.night && t.night.combined_odds !== t.combined_odds) bits.push(`The evening price was ${fmtOdds(t.night.combined_odds)}.`);
   } else {
-    bits.push("The morning run re-picks it from the full morning board (players whose lines post overnight included); it's final after that.");
+    bits.push((t.refreshed ? `Refreshed from the current board ${t.refreshed} time${t.refreshed > 1 ? "s" : ""} since (last ${esc(day(t.picked_at))}). ` : "") +
+      "Provisional: every run re-picks it from the current board until the morning odds run, which re-picks it once more and locks it.");
   }
   if (t.restored) bits.push(esc(t.restored));
   const tier = Math.max(0, ...(t.legs || []).map((l) => l.tier || 0));

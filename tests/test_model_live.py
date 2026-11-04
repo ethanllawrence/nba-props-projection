@@ -177,7 +177,11 @@ def test_live_model():
         assert EP.combo_ok([{**l, "gap": l["gap"]} for l in pn["legs"]])
         assert len(pn["missing_games"]) == len(set(r["game_id"] for r in con.execute(
             "SELECT game_id FROM games WHERE date=?", (DATE,)))) - len(games_cov)
-        assert parlay.update(con, DATE, mode="night")["night"]["kept"] == DATE      # 11:30 PM: same games, kept
+        # later runs before the morning lock re-pick from the current board; same board -> same pick
+        assert parlay.update(con, DATE, mode="night")["night"]["date"] == DATE
+        assert "night" in parlay.update(con, DATE, mode=None)       # a delayed overnight run (mode None) too
+        pn2 = json.loads((site / "parlay.json").read_text())["today"]
+        assert pn2["picked_at"] == pn["picked_at"] and [l["line"] for l in pn2["legs"]] == [l["line"] for l in pn["legs"]]
         # 6 AM: one leg's player is ruled out overnight -> that leg (only) is swapped
         gone = pn["legs"][0]
         con.execute("UPDATE probable_players SET status='out' WHERE player_id=? AND date=?",
@@ -204,6 +208,7 @@ def test_live_model():
             # the same re-pick on the same board: the fresh pick is what the engine picks now
             assert EP.combo_ok(pm["legs"]) and 2 <= len(pm["legs"]) <= 3
         assert parlay.update(con, DATE, mode="morning").get("morning_check") is None   # checked once
+        assert "night" not in parlay.update(con, DATE, mode=None)  # locked after the morning re-pick
         con.execute("UPDATE probable_players SET status='active' WHERE player_id=? AND date=?",
                     (gone["player_id"], DATE))
         print("OK night pick + morning check:", pn["combined_odds"], [l["player"] for l in pn["legs"]],

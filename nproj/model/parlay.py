@@ -532,8 +532,11 @@ def night_pick(con, date_s):
     """-> parlay dict (legs may be empty, with the reason in note)."""
     from . import early_parlay
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    from datetime import timedelta
     missing = _games_without_lines(con, date_s)
-    legs, price, n = price_first(con, date_s, {})
+    saved = odds.load_lines(date_s)       # today's lines if this is a game-day run before the lock
+    soon = datetime.now(timezone.utc) + timedelta(minutes=REPICK_LEAD_MIN)
+    legs, price, n = price_first(con, date_s, saved if saved.get("date") == date_s else {}, soon)
     base = {"date": date_s, "method": "night", "picked_at": now, "missing_games": missing,
             "candidates": n}
     if not legs:
@@ -787,26 +790,34 @@ def update(con, date_s, allow_spend=False, repick=False, mode=None):
         for d in [d for d, ep in (data.get("early") or {}).items() if not (ep and ep.get("legs"))]:
             del data["early"][d]
 
-    # night: pick tomorrow's parlay from ESPN's lines (or retry if the 9:45 PM
-    # run found none); a pick already made isn't changed, only its list of
-    # games still missing lines is refreshed
+    # Provisional pick (since 2026-11-04): until the morning odds run re-picks
+    # and locks it, EVERY run refreshes the pick from the current board. GitHub
+    # starts scheduled runs hours late (the 9:45 PM and 11:30 PM runs often land
+    # at 5-8 AM), so this is keyed to the lock, not to the clock.
     from . import live
+    _, have0 = _pick_for(data, date_s)
+    if (mode is None and not repick and not mock and live.PROJ and have0
+            and have0.get("method") == "night" and not have0.get("morning_checked")):
+        mode = "night"
     if mode == "night" and not mock and live.PROJ:
         _, have = _pick_for(data, date_s)
-        missing = _games_without_lines(con, date_s)
-        more_games = (have and have.get("method") == "night"
-                      and len(missing) < len(have.get("missing_games") or []))
-        if have and have.get("legs") and not more_games:
-            log["night"] = {"kept": date_s, "missing_games": len(missing)}
+        if have and (have.get("morning_checked") or have.get("method") != "night") and have.get("legs"):
+            log["night"] = {"kept": date_s, "locked": True}      # already final
+            pj = None
         else:
-            # first pick, or the 11:30 PM retry now that more games have lines
             pj = night_pick(con, date_s)
-            if more_games and have.get("legs") and pj["legs"]:
-                pj["replaced"] = {"combined_odds": have.get("combined_odds"), "picked_at": have.get("picked_at"),
-                                  "legs": [{k: lg.get(k) for k in ("player", "stat", "side", "line", "odds")}
-                                           for lg in have["legs"]]}
-            elif more_games and have.get("legs") and not pj["legs"]:
-                pj = {**have, "missing_games": missing}       # keep the earlier pick
+            if have and have.get("legs"):
+                first = have.get("first_picked_at") or have.get("picked_at")
+                if pj["legs"]:
+                    pj["first_picked_at"] = first
+                    if _repick_changes(have["legs"], pj["legs"]):
+                        pj["refreshed"] = (have.get("refreshed") or 0) + 1
+                    else:                                 # same legs: keep the original pick time
+                        pj = {**have, "missing_games": pj["missing_games"], "combined_odds": pj["combined_odds"],
+                              "legs": pj["legs"]}
+                else:
+                    pj = {**have, "missing_games": pj["missing_games"]}   # nothing fits now: keep it
+        if pj is not None:
             _put(data, pj)
             log["night"] = {"date": date_s, "legs": len(pj["legs"]), "odds": pj.get("combined_odds"),
                             "missing_games": pj["missing_games"]}
