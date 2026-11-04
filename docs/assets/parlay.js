@@ -90,24 +90,38 @@ function parlayCard(t) {
       <tbody>${t.legs.map(legRow).join("")}</tbody></table></div></div>
     ${replacedNote(t)}
     ${nightNotes(t)}
+    ${checkedNote(t)}
   </div>`;
 }
 
 const atTime = (iso) => iso ? new Date(iso).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) : "";
 
-/* Night pick (picked ~9:45 PM from real lines) and its 6 AM check. */
+/* When the pick was last checked against the current Today board. */
+function checkedNote(t) {
+  if (!t.checked_at) return "";
+  const d = new Date(t.checked_at);
+  const when = d.toLocaleString([], { weekday: "short", hour: "numeric", minute: "2-digit" });
+  return `<div class="dim" style="margin-top:6px;font-size:12px">Last checked against the Today board: ${esc(when)}.</div>`;
+}
+
+/* Night pick (from the evening board) and its morning re-pick. */
 function nightNotes(t) {
   if (t.method !== "night") return "";
-  const bits = [`Picked ${esc(atTime(t.picked_at))} the night before from the books' real lines.`];
+  const pickedAt = (t.night && t.night.picked_at) || t.picked_at;
+  const bits = [`First picked ${esc(atTime(pickedAt))} the night before from the evening board.`];
+  const legTxt = (l) => `${esc(l.player)} ${l.line}+ ${esc(statShort[l.stat] || l.stat)}`;
   if (t.morning_checked) {
     const ch = t.changes || [];
+    const verb = t.morning_repick ? `Re-picked ${esc(atTime(t.morning_checked))} from the morning board`
+                                  : `Checked ${esc(atTime(t.morning_checked))} against the morning board`;
     bits.push(ch.length
-      ? "Checked at 6 AM, changed: " + ch.map((c) => `${esc(c.out.player)} out (${esc(c.why)})` +
-          (c.in ? `, ${esc(c.in.player)} ${c.in.line}+ ${esc(statShort[c.in.stat] || c.in.stat)} in` : "")).join("; ") + "."
-      : "Checked at 6 AM: no changes.");
-    if (t.night && t.night.combined_odds !== t.combined_odds) bits.push(`The night price was ${fmtOdds(t.night.combined_odds)}.`);
+      ? `${verb}, changed: ` + ch.map((c) => c.out
+          ? `${legTxt(c.out)} out${t.morning_repick ? "" : ` (${esc(c.why)})`}` + (c.in ? `, ${legTxt(c.in)} in` : "")
+          : `${legTxt(c.in)} in`).join("; ") + "."
+      : `${verb}: same legs.`);
+    if (t.night && t.night.combined_odds !== t.combined_odds) bits.push(`The evening price was ${fmtOdds(t.night.combined_odds)}.`);
   } else {
-    bits.push("The 6 AM run checks it against overnight news and line moves.");
+    bits.push("The morning run re-picks it from the full morning board (players whose lines post overnight included); it's final after that.");
   }
   if (t.restored) bits.push(esc(t.restored));
   const tier = Math.max(0, ...(t.legs || []).map((l) => l.tier || 0));

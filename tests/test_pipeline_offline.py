@@ -770,7 +770,27 @@ def _green_rules(EP, con, proj, alts, mains):
     assert EP.select([mk("a", -500, .3), mk("b", -500, .2)]) == ([], None)
     print("OK green PRA parlay + -350 / 2-leg fallbacks")
 
+def test_parlay_mode_after_flip():
+    """A run whose board is already for tomorrow (the 8 PM flip; Nov 3 ran at
+    8:44 PM) is an evening pick, so the morning run re-picks it."""
+    import os, types
+    from nproj import cli, config
+    saved = (os.environ.pop("NPROJ_PARLAY_MODE", None), config.ODDS_MODE, cli.TOPUP)
+    config.ODDS_MODE, cli.TOPUP = "off", False
+    try:
+        args = types.SimpleNamespace(date=None)
+        assert cli._parlay_mode(args, "2099-01-01") == "night"
+        config.ODDS_MODE = "props"
+        assert cli._parlay_mode(args, "2099-01-01") == "morning"     # the odds run is the morning re-pick
+    finally:
+        if saved[0] is not None:
+            os.environ["NPROJ_PARLAY_MODE"] = saved[0]
+        config.ODDS_MODE, cli.TOPUP = saved[1], saved[2]
+    print("OK parlay mode after the board flip")
+
+
 if __name__ == "__main__":
+    test_parlay_mode_after_flip()
     test_green_pra_parlay()
     test_combo_rules()
     test_far_from_line()

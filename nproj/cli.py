@@ -69,7 +69,7 @@ def cmd_daily(args) -> None:
         try:
             from .model import parlay
             spend = config.ODDS_MODE == "props" and bool(config.ODDS_API_KEY) and not TOPUP
-            mode = _parlay_mode(args)
+            mode = _parlay_mode(args, date_s)
             print(f"[parlay] mode={mode} {parlay.update(con, date_s, allow_spend=spend, repick=bool(TOPUP), mode=mode)}")
         except Exception as exc:  # noqa: BLE001 - a parlay problem must never block the board
             print(f"[parlay] FAILED: {exc}")
@@ -206,11 +206,14 @@ def _maybe_model(con, date_s):
 TOPUP = {}      # set by a manual top-up run (see _maybe_odds)
 
 
-def _parlay_mode(args):
+def _parlay_mode(args, date_s=None):
     """"night" between 9 PM and 5 AM Arizona time (the 9:45 PM and 11:30 PM
-    runs pick tomorrow's Parlay of the Day from ESPN's lines), "morning" on the
-    odds run (6 AM: check the night pick), else None. Test runs (--date) never
-    count as night unless NPROJ_PARLAY_MODE says so."""
+    runs pick tomorrow's Parlay of the Day from ESPN's lines), and also any
+    run whose board is already for a later day than today in Arizona (the 8 PM
+    run flips the board to tomorrow; on Nov 3 it ran at 8:44 PM and its pick
+    was treated as final, so the morning never refreshed it). "morning" on the
+    odds run (6 AM: re-pick from the morning board), else None. Test runs
+    (--date) never count as night unless NPROJ_PARLAY_MODE says so."""
     import os
     from datetime import datetime
     from zoneinfo import ZoneInfo
@@ -222,7 +225,10 @@ def _parlay_mode(args):
     if getattr(args, "date", None):
         return None
     from .model import parlay
-    h = datetime.now(ZoneInfo("America/Phoenix")).hour
+    now = datetime.now(ZoneInfo("America/Phoenix"))
+    if date_s and date_s > now.strftime("%Y-%m-%d"):
+        return "night"
+    h = now.hour
     start, end = parlay.NIGHT_HOURS
     return "night" if (h >= start or h < end) else None
 

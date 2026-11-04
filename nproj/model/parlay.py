@@ -579,6 +579,21 @@ def _recheck(con, date_s, saved, leg):
             "green": round((pr[stat] - main) / main, 4) if main else leg.get("green")}, None
 
 
+def _repick_changes(old_legs, new_legs):
+    """Evening legs vs the morning re-pick -> [{"out", "why", "in"}] for the page."""
+    key = lambda l: (str(l["player_id"]), l["stat"], float(l["line"]))
+    new_keys = {key(l) for l in new_legs}
+    old_keys = {key(l) for l in old_legs}
+    outs = [l for l in old_legs if key(l) not in new_keys]
+    ins = [l for l in new_legs if key(l) not in old_keys]
+    pick = lambda l: {k: l.get(k) for k in ("player", "stat", "line", "odds")}
+    changes = [{"out": pick(o), "why": "re-picked from the morning board"} for o in outs]
+    for ch, l in zip(changes, ins):
+        ch["in"] = pick(l)
+    changes += [{"in": pick(l), "why": "re-picked from the morning board"} for l in ins[len(outs):]]
+    return changes
+
+
 def morning_check(con, date_s, saved, pj):
     """The 6 AM look at the night pick with fresh lines and projections.
     A leg is swapped when its player is no longer listed as active, its line
@@ -807,12 +822,30 @@ def update(con, date_s, allow_spend=False, repick=False, mode=None):
         saved = odds.load_lines(date_s)
         if allow_spend:
             log["extras"] = buy_extras(con, date_s, saved)
-        if pj.get("legs"):
+        # Since 2026-11-04 (Robin): a FULL fresh re-pick from the morning board,
+        # which has every player whose line posted overnight (the evening board
+        # can be missing some). The page lists what changed from the evening
+        # pick. If nothing fits now, the evening legs are kept unless hurt.
+        from datetime import timedelta
+        soon = datetime.now(timezone.utc) + timedelta(minutes=REPICK_LEAD_MIN)
+        legs, price, n = price_first(con, date_s, saved, soon)
+        if legs:
+            new = {**pj, "legs": legs, "combined_odds": price, "status": "pending",
+                   "morning_repick": True, "candidates": n}
+            changes = _repick_changes(pj.get("legs") or [], legs)
+            if pj.get("legs"):
+                new["night"] = {"combined_odds": pj.get("combined_odds"), "picked_at": pj.get("picked_at"),
+                                "legs": [{k: lg.get(k) for k in ("player", "stat", "line", "odds")}
+                                         for lg in pj["legs"]]}
+                olds = {str(l["player_id"]): l for l in pj["legs"]}
+                for l in new["legs"]:
+                    o = olds.get(str(l["player_id"]))
+                    if o and o.get("line") == l.get("line"):
+                        l["night_odds"] = o.get("odds")
+        elif pj.get("legs"):
             new, changes = morning_check(con, date_s, saved, pj)
-        else:                                          # night found nothing: pick fresh now
-            legs, price, n = price_first(con, date_s, saved)
-            new, changes = ({**pj, "legs": legs, "combined_odds": price,
-                             "status": "pending" if legs else "none"}, [])
+        else:
+            new, changes = ({**pj, "legs": [], "combined_odds": None, "status": "none"}, [])
         new["morning_checked"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         new["changes"] = changes
         if not new.get("legs"):
@@ -887,8 +920,9 @@ def update(con, date_s, allow_spend=False, repick=False, mode=None):
                 data["today"] = None
             data["no_parlay_date"] = date_s
             data["no_parlay_reason"] = (
-                f"No parlay today: {len(cands)} overs passed the price range and the model's veto, "
-                f"but no 3-4 leg combination reaches +{MIN_ACCEPT}." if method == "price-first" else
+                f"No parlay today: {len(cands)} green PRA legs passed the price range, but no 2- or "
+                f"3-leg combination (one per game) lands at +{early_parlay.TARGET_LO} to "
+                f"+{early_parlay.TARGET_HI}." if method == "price-first" else
                 "No parlay today: not enough overs cleared the conviction bar "
                 f"({len(cands)} main-line overs, {len(alt_options(pool, saved))} alt overs "
                 f"qualified) to reach +{TARGET_LO} without forcing it.")
@@ -897,6 +931,11 @@ def update(con, date_s, allow_spend=False, repick=False, mode=None):
 
     if (_pick_for(data, date_s)[1] or {}).get("method") in ("price-first", "night"):
         data["note"] = NOTE
+    # every run that has projections stamps when the pick was last checked
+    # against the current board, so the page's time matches the Today tab's
+    slot, cur = _pick_for(data, date_s)
+    if cur and cur.get("legs") and live.PROJ and not mock:
+        cur["checked_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     after = json.dumps({k: v for k, v in data.items() if k != "generated_at"}, sort_keys=True)
     if after != before:
         data["generated_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")

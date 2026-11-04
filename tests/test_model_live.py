@@ -195,13 +195,14 @@ def test_live_model():
         pm = json.loads((site / "parlay.json").read_text())
         pm = pm.get("today") or {}
         if pm.get("legs"):
-            assert pm["morning_checked"] and pm["changes"][0]["out"]["player"] == gone["player"], (lg_m, pm)
+            # since Nov 4: the morning run re-picks from scratch on the morning board
+            assert pm["morning_checked"] and pm["morning_repick"] and pm["checked_at"], pm
             assert gone["player_id"] not in {l["player_id"] for l in pm["legs"]}
-            kept_short = [l for l in pm["legs"] if l["player_id"] == short["player_id"]]
-            assert kept_short and kept_short[0]["odds"] == -520, (pm["legs"], pm["changes"])
-            assert all(c["out"]["player"] != short["player"] for c in pm["changes"])
-            kept = {l["player_id"] for l in pn["legs"][1:]}
-            assert kept <= {l["player_id"] for l in pm["legs"]} or pm["changes"], pm
+            assert any(c.get("out", {}).get("player") == gone["player"] for c in pm["changes"]), pm["changes"]
+            assert all(l["odds"] >= EP.LEG_ODDS[0] and l["stat"] == "pra" for l in pm["legs"])
+            assert pm["night"]["picked_at"] == pn["picked_at"]
+            # the same re-pick on the same board: the fresh pick is what the engine picks now
+            assert EP.combo_ok(pm["legs"]) and 2 <= len(pm["legs"]) <= 3
         assert parlay.update(con, DATE, mode="morning").get("morning_check") is None   # checked once
         con.execute("UPDATE probable_players SET status='active' WHERE player_id=? AND date=?",
                     (gone["player_id"], DATE))
