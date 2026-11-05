@@ -781,7 +781,12 @@ def test_parlay_mode_after_flip():
         args = types.SimpleNamespace(date=None)
         assert cli._parlay_mode(args, "2099-01-01") == "night"
         config.ODDS_MODE = "props"
-        assert cli._parlay_mode(args, "2099-01-01") == "morning"     # the odds run is the morning re-pick
+        # an odds run the evening before only refreshes; on game day it's the morning lock
+        assert cli._parlay_mode(args, "2099-01-01") == "night"
+        from datetime import datetime
+        from zoneinfo import ZoneInfo
+        today = datetime.now(ZoneInfo("America/Phoenix")).strftime("%Y-%m-%d")
+        assert cli._parlay_mode(args, today) == "morning"
     finally:
         if saved[0] is not None:
             os.environ["NPROJ_PARLAY_MODE"] = saved[0]
