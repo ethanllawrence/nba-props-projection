@@ -2315,7 +2315,7 @@
     "method": "night",
     "picked_at": "2026-11-05T13:39:53Z",
     "missing_games": [],
-    "candidates": 8,
+    "candidates": 6,
     "legs": [
       {
         "player": "Yaxel Lendeborg",
@@ -2332,15 +2332,16 @@
         "book_line": 30.5,
         "proj": 36.6,
         "prob": 0.711,
-        "book_prob": 0.55,
-        "gap": 0.161,
-        "odds": -135,
+        "book_prob": 0.546,
+        "gap": 0.164,
+        "odds": -133,
         "book": "DraftKings",
-        "blowout_risk": "medium",
+        "blowout_risk": "low",
         "minutes_confidence": "high",
         "green": 0.1995,
         "tier": 2,
-        "reasoning": "Model projects 36.6 PRA, 20% over the book's 30.5 line; this leg is 29.5 at -135 (book 55%, model 71%). Projected for 32.6 minutes; GSW -7.5 spread."
+        "reasoning": "Model projects 36.6 PRA, 20% over the book's 30.5 line; this leg is 29.5 at -133 (book 55%, model 71%). Projected for 32.7 minutes; GSW -6.5 spread.",
+        "night_odds": -135
       },
       {
         "player": "Devin Booker",
@@ -2354,26 +2355,48 @@
         "side": "over",
         "line": 29.5,
         "line_type": "alt",
-        "book_line": 33.5,
+        "book_line": 34.5,
         "proj": 35.2,
         "prob": 0.668,
-        "book_prob": 0.687,
-        "gap": -0.02,
-        "odds": -255,
+        "book_prob": 0.707,
+        "gap": -0.039,
+        "odds": -283,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "green": 0.0514,
+        "green": 0.0209,
         "tier": 2,
-        "reasoning": "Model projects 35.2 PRA, 5% over the book's 33.5 line; this leg is 29.5 at -255 (book 69%, model 67%). Projected for 36.3 minutes; PHX -1.5 spread."
+        "reasoning": "Model projects 35.2 PRA, 2% over the book's 34.5 line; this leg is 29.5 at -283 (book 71%, model 67%). Projected for 36.4 minutes; PHX -1.5 spread.",
+        "night_odds": -255
       }
     ],
-    "combined_odds": 142,
+    "combined_odds": 137,
     "status": "pending",
-    "checked_at": "2026-11-05T14:51:17Z"
+    "checked_at": "2026-11-05T20:29:13Z",
+    "morning_repick": true,
+    "night": {
+      "combined_odds": 142,
+      "picked_at": "2026-11-05T13:39:53Z",
+      "legs": [
+        {
+          "player": "Yaxel Lendeborg",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -135
+        },
+        {
+          "player": "Devin Booker",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -255
+        }
+      ]
+    },
+    "morning_checked": "2026-11-05T20:29:13Z",
+    "changes": []
   },
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-05T14:51:17Z",
+  "generated_at": "2026-11-05T20:29:13Z",
   "early_history": [
     {
       "date": "2026-10-20",
