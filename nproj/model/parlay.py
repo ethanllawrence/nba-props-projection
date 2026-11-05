@@ -85,14 +85,11 @@ MAX_PER_GAME = 1
 MAX_ALT_CREDITS = 4
 import os as _os
 PARLAY_SIDES = tuple(x for x in _os.environ.get("NPROJ_PARLAY_SIDES", "over").split(",") if x)
-HISTORY_KEEP = 60
-NOTE = ("Overs only, 3-4 legs at about +200 to +320 real FanDuel/DraftKings odds, picked the night "
-        "before (about 9:45 PM Arizona time) from the books' real lines and the night's projections, then "
-        "checked at 6 AM: a leg is swapped only if overnight news or a line move hurt it. The model must "
-        "project over the line and not rate the leg well below the book; the combination it likes most "
-        "relative to the book wins (the +/- number; gaps above +8 count as +8). At most 2 legs from one "
-        "game unless the model strongly backs a third. Graded the next morning. It's for fun: expect the "
-        "book's cut over time.")
+HISTORY_KEEP = 500            # the whole season (Robin, Nov 4: full history on the page)
+NOTE = ("3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line "
+        "30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First "
+        "picked the evening before, refreshed by each run, then re-picked from the full morning board and "
+        "locked. Graded the next morning. It's for fun: expect the book's cut over time.")
 REPICK_LEAD_MIN = 15        # a re-pick only uses games tipping at least this far ahead
 
 _N = NormalDist()

@@ -28,8 +28,8 @@ function checkNote(c) {
   return `<div class="check-box" style="margin:9px 0 0">${bits.join("<br>")}</div>`;
 }
 
-/* Parlay of the Day as one compact card, laid out like the early look
-   parlay: a header with the price, then one row per leg. */
+/* Parlay of the Day as one compact card: a header with the price, then
+   one row per leg. */
 const shortRisk = { low: "low blowout risk", medium: "medium blowout risk", high: "high blowout risk",
   unknown: "no spread" };
 
@@ -65,7 +65,7 @@ function replacedNote(t) {
   if (!t.replaced) return "";
   const r = t.replaced;
   const at = t.picked_at ? new Date(t.picked_at).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) : "";
-  const legs = (r.legs || []).map((l) => `${esc(l.player.split(" ").slice(-1)[0])} O${l.line} ${esc(statAbbr[l.stat] || l.stat)}`).join(", ");
+  const legs = (r.legs || []).map((l) => `${esc(lastName(l.player))} O${l.line} ${esc(statAbbr[l.stat] || l.stat)}`).join(", ");
   const why = t.method === "night"
     ? `Re-picked ${esc(at)} once more games had lines. The earlier night pick`
     : `Re-picked ${esc(at)} from fresh prices (games not started yet). This morning's pick`;
@@ -140,7 +140,7 @@ function historyRow(h) {
   const cls = { win: "win-go", loss: "win-off" }[h.result] || "win-wait";
   const label = { win: "HIT", loss: "MISS", void: "VOID" }[h.result] || "—";
   const legSummary = h.legs.map((l) =>
-    `${esc(l.player.split(" ").slice(-1)[0])} ${l.side === "over" ? "O" : "U"}${lineOf(l)}
+    `${esc(lastName(l.player))} ${l.side === "over" ? "O" : "U"}${lineOf(l)}
      ${statAbbr[l.stat] || l.stat} ${l.void ? "void" : l.hit ? "✓" : "✗"}`
   ).join(" · ");
   return `<tr>
@@ -164,48 +164,17 @@ function historyTable(history) {
     </div></div>`;
 }
 
-/* Early-look parlay (nproj/model/early_parlay.py): milestone overs picked
-   from the next game day's early-look projections, before lines exist. */
 const niceDate = (d) => {
   const [y, m, day] = String(d).split("-").map(Number);
   return new Date(y, m - 1, day).toLocaleDateString([], { weekday: "short", month: "short", day: "numeric" });
 };
+// "Jaren Jackson Jr." -> "Jackson", "Trey Murphy III" -> "Murphy"
+const lastName = (name) => {
+  const w = String(name).split(" ");
+  while (w.length > 1 && /^(jr\.?|sr\.?|ii|iii|iv|v)$/i.test(w[w.length - 1])) w.pop();
+  return w[w.length - 1];
+};
 const statShort = { pra: "PRA", points: "points", rebounds: "rebounds", assists: "assists" };
-
-function earlyLegRow(l) {
-  const ms = Math.floor(l.line) + 1;                  // 29.5 -> 30+
-  const gap = Math.round(l.gap * 100);
-  return `<tr>
-    <td><div class="pn">${esc(l.player)}</div>
-      <div class="pm">${esc(l.team)} ${l.home ? "vs" : "@"} ${esc(l.opp)} · proj ${l.proj} ${esc(statShort[l.stat])}</div></td>
-    <td class="num"><div class="pos" style="font-weight:700">${ms}+ ${esc(statShort[l.stat])}</div>
-      <div class="pm">${fmtOdds(l.odds)} ${esc(l.book || "")}</div>
-      <div class="pm">model ${Math.round(l.model_prob * 100)}% · book ${Math.round(l.book_prob * 100)}%
-        <span class="${gap >= 0 ? "pos" : "neg"}">(${gap >= 0 ? "+" : ""}${gap})</span></div></td>
-  </tr>`;
-}
-
-function earlyCards(picks, emptyNote) {
-  picks = (picks || []).slice().sort((a, b) => (a.date < b.date ? -1 : 1));
-  if (!picks.length && emptyNote === "") return "";
-  if (!picks.length) {
-    return `<div class="notice" style="margin:8px 0">The early look parlay appears once the next game
-      day's alt lines are bought, a day or two before the games.</div>`;
-  }
-  return picks.map((p) => {
-    if (!p.legs || !p.legs.length) {
-      return `<div class="notice" style="margin:8px 0">${esc(niceDate(p.date))}: ${esc(p.note || "No early look parlay.")}</div>`;
-    }
-    return `<div class="card">
-      <div class="call-meta" style="margin-bottom:6px">${esc(niceDate(p.date))} · ${p.legs.length} legs ·
-        <b>${fmtOdds(p.combined_odds)}</b> on the book · all legs hit: model ${Math.round(p.model_prob * 100)}%,
-        book ${Math.round(p.book_prob * 100)}%</div>
-      <div class="board-tbl-wrap"><div class="board-tbl compact-tbl parlay-legs"><table class="t">
-        <thead><tr><th>Player</th><th class="num">Leg</th></tr></thead>
-        <tbody>${p.legs.map(earlyLegRow).join("")}</tbody></table></div></div>
-    </div>`;
-  }).join("");
-}
 
 function record(hist) {
   const graded = (hist || []).filter((h) => h.result === "win" || h.result === "loss");
@@ -213,11 +182,11 @@ function record(hist) {
   return { w, l: graded.length - w, n: graded.length };
 }
 
-function recordTiles(main, early) {
-  const tile = (r, label) => `<div class="tile"><div class="v">${r.n ? `${r.w}-${r.l}` : "—"}</div>
-    <div class="k">${label}</div>
-    <div class="s">${r.n ? `${Math.round((r.w / r.n) * 100)}% hit · every leg must hit` : "no graded parlays yet"}</div></div>`;
-  return `<div class="tiles">${tile(record(main), "Parlay of the Day")}${tile(record(early), "Early look (retired)")}</div>`;
+function recordTiles(main) {
+  const r = record(main);
+  return `<div class="tiles"><div class="tile"><div class="v">${r.n ? `${r.w}-${r.l}` : "—"}</div>
+    <div class="k">Parlay of the Day</div>
+    <div class="s">${r.n ? `${Math.round((r.w / r.n) * 100)}% hit · every leg must hit` : "no graded parlays yet"}</div></div></div>`;
 }
 
 async function main() {
@@ -235,41 +204,34 @@ async function main() {
   const mock = /MOCKUP/.test(data.note || "");
   const history = mock ? [] : (data.history || []);
   const t = !mock && data.today && data.today.legs && data.today.legs.length ? data.today : null;
-  const earlyHist = data.early_history || [];
-  // One section per game day, each with its Parlay of the Day: picked the
-  // night before (~9:45 PM Arizona) from real lines, checked at 6 AM. The
-  // early look (picked a morning ahead) was retired Oct 22; its last picks
-  // still show until they're graded.
+  // One section per game day with its Parlay of the Day (provisional until
+  // the morning odds run re-picks and locks it).
   let boardDate = t ? t.date : null;
   try {
     boardDate = (await (await fetch("data/status.json?_=" + Date.now())).json()).board_date || boardDate;
   } catch { /* keep the parlay's date */ }
-  const early = data.early || {};
   const pjs = [t, !mock && data.next && data.next.legs ? data.next : null].filter(Boolean);
   const pjFor = (d) => pjs.find((x) => x.date === d);
-  const days = [...new Set([...pjs.map((x) => x.date), ...Object.keys(early), ...(boardDate ? [boardDate] : [])])].sort();
+  const days = [...new Set([...pjs.map((x) => x.date), ...(boardDate ? [boardDate] : [])])].sort();
   const sub = (txt) => `<div class="noedge" style="margin:12px 0 6px;font-weight:600">${txt}</div>`;
   const daySection = (d) => {
-    const when = !boardDate ? "" : d < boardDate ? " · last night · grading at 6 AM"
+    const when = !boardDate ? "" : d < boardDate ? " · last night · graded the next morning"
       : d === boardDate ? " · tonight" : " · next game day";
     const pj = pjFor(d);
     const potd = pj ? parlayCard(pj)
       : `<div class="notice" style="margin:6px 0">${esc(
           !mock && data.no_parlay_date === d && data.no_parlay_reason ? data.no_parlay_reason
-            : "Picked about 9:45 PM Arizona time the night before, once the books post that day's lines "
-              + "(checked again at 11:30 PM if they weren't up), then checked at 6 AM.")}</div>`;
-    const ep = early[d];
+            : "First picked the evening before, once the books post that day's lines, then refreshed by "
+              + "each run until the morning odds run re-picks it and locks it.")}</div>`;
     return `<h2 class="sec">${esc(niceDate(d))}${when}</h2>
-      ${sub("Parlay of the Day")}${potd}
-      ${ep ? sub("Early look parlay · old method, picked a morning ahead (retired)") + earlyCards([ep], "") : ""}`;
+      ${sub("Parlay of the Day")}${potd}`;
   };
   $("#parlay-body").innerHTML = `
     ${days.length ? days.map(daySection).join("") : `<div class="notice" style="margin:8px 0">No parlays yet.</div>`}
     <div class="noedge" style="margin:14px 0 4px">${esc(data.note || "")} Prices are from when they were
       pulled, so check them before betting.</div>
     <h2 class="sec">Track record</h2>
-    ${recordTiles(history, earlyHist)}
-    ${history.length ? historyTable(history).replace('<h2 class="sec">History</h2>', '<h2 class="sec">Parlay of the Day history</h2>') : ""}
-    ${earlyHist.length ? historyTable(earlyHist).replace('<h2 class="sec">History</h2>', '<h2 class="sec">Early look history</h2>') : ""}`;
+    ${recordTiles(history)}
+    ${historyTable(history)}`;
 }
 main();
