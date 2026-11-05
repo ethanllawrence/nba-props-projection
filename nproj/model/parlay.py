@@ -793,8 +793,12 @@ def update(con, date_s, allow_spend=False, repick=False, mode=None):
     # at 5-8 AM), so this is keyed to the lock, not to the clock.
     from . import live
     _, have0 = _pick_for(data, date_s)
-    if (mode is None and not repick and not mock and live.PROJ and have0
-            and have0.get("method") == "night" and not have0.get("morning_checked")):
+    provisional = have0 and have0.get("method") == "night" and not have0.get("morning_checked")
+    # no pick yet for this day and the morning lock hasn't happened (it would
+    # have made a locked pick or recorded "no parlay"): start a provisional one
+    # (Nov 5: the evening run found no lines, so the 6:26 AM run made nothing)
+    nothing_yet = not (have0 and have0.get("legs")) and data.get("no_parlay_date") != date_s
+    if mode is None and not repick and not mock and live.PROJ and (provisional or nothing_yet):
         mode = "night"
     if mode == "night" and not mock and live.PROJ:
         _, have = _pick_for(data, date_s)

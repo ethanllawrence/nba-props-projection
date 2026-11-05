@@ -141,7 +141,7 @@ def test_live_model():
         (site / "lines.json").write_text(json.dumps(
             {"date": DATE, "lines": {norm_name(k): v for k, v in lines.items()}, "alts": alts}))
         con.execute("UPDATE games SET tipoff_utc='2030-01-01T00:00Z'")
-        log_p = parlay.update(con, DATE)
+        log_p = parlay.update(con, DATE, mode="morning")    # the odds run with no provisional pick
         pj = json.loads((site / "parlay.json").read_text())["today"]
         assert pj["method"] == "price-first" and 3 <= len(pj["legs"]) <= 4, (log_p, pj)
         assert all(l["side"] == "over" and l["book_prob"] and "gap" in l and l["reasoning"] for l in pj["legs"])
@@ -171,7 +171,10 @@ def test_live_model():
                     "line_stats": ["points", "pra"], "ladder_stats": ["pra"]}
         espn_props.save({"date": DATE, "fetched_at": "x", "games": games_cov,
                          "lines": {norm_name(k): v for k, v in lines.items()}, "alts": alts})
-        lg_n = parlay.update(con, DATE, mode="night")
+        # no pick yet and not locked: even a plain run (mode None, e.g. a manual run
+        # without the odds box on game day) starts the provisional pick (Nov 5)
+        lg_n = parlay.update(con, DATE, mode=None)
+        assert "night" in lg_n, lg_n
         pn = json.loads((site / "parlay.json").read_text())["today"]
         assert pn["method"] == "night" and 3 <= len(pn["legs"]) <= 4, (lg_n, pn)
         assert EP.combo_ok([{**l, "gap": l["gap"]} for l in pn["legs"]])
