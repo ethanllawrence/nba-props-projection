@@ -220,13 +220,16 @@ def _parlay_mode(args, date_s=None):
     forced = os.environ.get("NPROJ_PARLAY_MODE")
     if forced:
         return None if forced == "none" else forced
+    now = datetime.now(ZoneInfo("America/Phoenix"))
+    evening = bool(date_s) and not getattr(args, "date", None) and date_s > now.strftime("%Y-%m-%d")
     if config.ODDS_MODE == "props" and not TOPUP:
-        return "morning"
+        # an odds run the evening before (board already flipped to tomorrow) is
+        # not the morning lock: it only refreshes the provisional pick (Nov 4)
+        return "night" if evening else "morning"
     if getattr(args, "date", None):
         return None
     from .model import parlay
-    now = datetime.now(ZoneInfo("America/Phoenix"))
-    if date_s and date_s > now.strftime("%Y-%m-%d"):
+    if evening:
         return "night"
     h = now.hour
     start, end = parlay.NIGHT_HOURS

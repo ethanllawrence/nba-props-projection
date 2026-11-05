@@ -230,6 +230,25 @@ def due(games, last_check=None, now=None):
     return False, "no game tips off in the next 10-80 minutes"
 
 
+def has_morning(date_s):
+    """Was this morning's checkpoint already taken for date_s? Only one taken
+    on the game day itself (Arizona time) counts: a manual odds run the evening
+    before (Nov 4, 9:45 PM, before lines were up) must not stand in for it."""
+    cp = _load(_path())
+    if not (cp.get("date") == date_s and cp.get("label") == "this morning's board"):
+        return False
+    taken = cp.get("taken_at")
+    if not taken:
+        return True
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    try:
+        t = datetime.fromisoformat(str(taken).replace("Z", "+00:00"))
+    except ValueError:
+        return True
+    return t.astimezone(ZoneInfo("America/Phoenix")).strftime("%Y-%m-%d") >= date_s
+
+
 def last_check(date_s):
     cp = _load(_path())
     if cp.get("date") != date_s:
