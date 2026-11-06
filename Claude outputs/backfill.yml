@@ -1,0 +1,75 @@
+# One-off: download 3 seasons of NBA history (box scores, spreads, and the
+# sportsbook prop lines ESPN kept) for training and backtesting the model.
+# Actions tab -> "Backfill history" -> Run workflow, then pick a mode:
+#   full : every game of all three seasons, commits history/<season>/ (default)
+#   test : 20 games per season, prints counts, commits nothing
+
+name: Backfill history
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "full = download everything and save it; test = 20 games per season, saves nothing"
+        type: choice
+        options: [full, test]
+        default: full
+
+permissions:
+  contents: write
+
+jobs:
+  season:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        season: [2024, 2025, 2026]     # ESPN season years: 2023-24, 2024-25, 2025-26
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Download season ${{ matrix.season }}
+        env:
+          LIMIT: ${{ github.event.inputs.mode == 'test' && '20' || '' }}
+        run: |
+          if [ -n "$LIMIT" ]; then
+            python -m nproj history --season ${{ matrix.season }} --out history --limit "$LIMIT"
+          else
+            python -m nproj history --season ${{ matrix.season }} --out history
+          fi
+          ls -la history/${{ matrix.season }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: history-${{ matrix.season }}
+          path: history/${{ matrix.season }}
+          retention-days: 7
+
+  commit:
+    needs: season
+    if: ${{ always() && github.event.inputs.mode != 'test' }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: history-*
+          path: dl
+      - name: Commit history files
+        run: |
+          for d in dl/history-*; do
+            s="${d##*-}"
+            mkdir -p "history/$s"
+            cp "$d"/* "history/$s/"
+          done
+          ls -laR history
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add history
+          git commit -m "Historical data backfill" || { echo "Nothing to commit"; exit 0; }
+          git pull --rebase
+          git push
