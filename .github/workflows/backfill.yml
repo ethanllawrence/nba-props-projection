@@ -20,7 +20,7 @@ permissions:
 
 jobs:
   season:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 150
     strategy:
       fail-fast: false
@@ -52,7 +52,7 @@ jobs:
   commit:
     needs: season
     if: ${{ always() && github.event.inputs.mode != 'test' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
