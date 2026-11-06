@@ -2405,32 +2405,8 @@
     "method": "night",
     "picked_at": "2026-11-06T14:30:50Z",
     "missing_games": [],
-    "candidates": 19,
+    "candidates": 17,
     "legs": [
-      {
-        "player": "Kyrie Irving",
-        "player_id": "6442",
-        "game_id": "401909290",
-        "team": "DAL",
-        "opp": "UTA",
-        "home": true,
-        "time_et": "8:00 PM",
-        "stat": "pra",
-        "side": "over",
-        "line": 29.5,
-        "line_type": "alt",
-        "book_line": 30.5,
-        "proj": 35.0,
-        "prob": 0.662,
-        "book_prob": 0.565,
-        "gap": 0.097,
-        "odds": -144,
-        "book": "DraftKings",
-        "blowout_risk": "medium",
-        "minutes_confidence": "high",
-        "green": 0.1491,
-        "reasoning": "Model projects 35.0 PRA, 15% over the book's 30.5 line; this leg is 29.5 at -144 (book 56%, model 66%). Projected for 34.5 minutes; DAL -7.5 spread."
-      },
       {
         "player": "Cameron Boozer",
         "player_id": "5041935",
@@ -2446,14 +2422,15 @@
         "book_line": 30.5,
         "proj": 33.5,
         "prob": 0.608,
-        "book_prob": 0.577,
-        "gap": 0.031,
-        "odds": -152,
+        "book_prob": 0.571,
+        "gap": 0.037,
+        "odds": -148,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "green": 0.0976,
-        "reasoning": "Model projects 33.5 PRA, 10% over the book's 30.5 line; this leg is 29.5 at -152 (book 58%, model 61%). Projected for 33.6 minutes; MEM +3.5 spread."
+        "green": 0.0974,
+        "reasoning": "Model projects 33.5 PRA, 10% over the book's 30.5 line; this leg is 29.5 at -148 (book 57%, model 61%). Projected for 33.8 minutes; MEM +4.5 spread.",
+        "night_odds": -152
       },
       {
         "player": "Joel Embiid",
@@ -2468,26 +2445,94 @@
         "line": 29.5,
         "line_type": "alt",
         "book_line": 34.5,
-        "proj": 37.4,
-        "prob": 0.736,
-        "book_prob": 0.693,
-        "gap": 0.043,
-        "odds": -262,
+        "proj": 37.7,
+        "prob": 0.742,
+        "book_prob": 0.694,
+        "gap": 0.048,
+        "odds": -264,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "green": 0.0853,
-        "reasoning": "Model projects 37.4 PRA, 9% over the book's 34.5 line; this leg is 29.5 at -262 (book 69%, model 74%). Projected for 33.6 minutes; PHI -2.5 spread."
+        "green": 0.0921,
+        "reasoning": "Model projects 37.7 PRA, 9% over the book's 34.5 line; this leg is 29.5 at -264 (book 69%, model 74%). Projected for 33.5 minutes; PHI -2.5 spread.",
+        "night_odds": -262
+      },
+      {
+        "player": "Keyonte George",
+        "player_id": "4433627",
+        "game_id": "401909290",
+        "team": "UTA",
+        "opp": "DAL",
+        "home": false,
+        "time_et": "8:00 PM",
+        "stat": "pra",
+        "side": "over",
+        "line": 29.5,
+        "line_type": "alt",
+        "book_line": 32.5,
+        "proj": 34.5,
+        "prob": 0.642,
+        "book_prob": 0.628,
+        "gap": 0.014,
+        "odds": -191,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "green": 0.0601,
+        "reasoning": "Model projects 34.5 PRA, 6% over the book's 32.5 line; this leg is 29.5 at -191 (book 63%, model 64%). Projected for 33.6 minutes; UTA +6.5 spread."
       }
     ],
-    "combined_odds": 288,
+    "combined_odds": 252,
     "status": "pending",
     "first_picked_at": "2026-11-06T10:09:07Z",
     "refreshed": 2,
-    "checked_at": "2026-11-06T14:30:51Z"
+    "checked_at": "2026-11-06T19:52:22Z",
+    "morning_repick": true,
+    "night": {
+      "combined_odds": 288,
+      "picked_at": "2026-11-06T14:30:50Z",
+      "legs": [
+        {
+          "player": "Kyrie Irving",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -144
+        },
+        {
+          "player": "Cameron Boozer",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -152
+        },
+        {
+          "player": "Joel Embiid",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -262
+        }
+      ]
+    },
+    "morning_checked": "2026-11-06T19:52:22Z",
+    "changes": [
+      {
+        "out": {
+          "player": "Kyrie Irving",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -144
+        },
+        "why": "re-picked from the morning board",
+        "in": {
+          "player": "Keyonte George",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -191
+        }
+      }
+    ]
   },
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-06T14:30:51Z",
+  "generated_at": "2026-11-06T19:52:22Z",
   "early_history": [
     {
       "date": "2026-10-20",
