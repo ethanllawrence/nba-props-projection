@@ -31,12 +31,15 @@ permissions:
   contents: write
 
 concurrency:
-  group: daily-board          # same group as Daily board: never two runs pushing at once
+  # Its own queue (Nov 5): sharing Daily board's queue meant a queued injury
+  # check could replace a waiting Daily board run (GitHub keeps only one
+  # waiting run per queue). Clashes on push are handled in the commit step.
+  group: injury-check
   cancel-in-progress: false
 
 jobs:
   check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
@@ -84,5 +87,16 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Injury check $(TZ=America/Phoenix date '+%Y-%m-%d %H:%M')"
-          git pull --rebase
-          git push
+          # A Daily board run may have pushed a newer board meanwhile. If the
+          # files clash, skip this check (the board is newer; the next check is
+          # 30 minutes away) instead of failing.
+          for i in 1 2 3; do
+            if ! git pull --rebase; then
+              git rebase --abort
+              echo "A newer board was pushed meanwhile; skipping this check's commit."
+              exit 0
+            fi
+            git push && exit 0
+            sleep 15
+          done
+          echo "Could not push after 3 tries"; exit 1
