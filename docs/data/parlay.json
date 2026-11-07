@@ -2543,32 +2543,8 @@
     "method": "night",
     "picked_at": "2026-11-07T13:24:36Z",
     "missing_games": [],
-    "candidates": 26,
+    "candidates": 20,
     "legs": [
-      {
-        "player": "Trae Young",
-        "player_id": "4277905",
-        "game_id": "401909941",
-        "team": "WAS",
-        "opp": "OKC",
-        "home": false,
-        "time_et": "8:00 PM",
-        "stat": "pra",
-        "side": "over",
-        "line": 29.5,
-        "line_type": "alt",
-        "book_line": 31.5,
-        "proj": 35.1,
-        "prob": 0.663,
-        "book_prob": 0.579,
-        "gap": 0.085,
-        "odds": -153,
-        "book": "DraftKings",
-        "blowout_risk": "medium",
-        "minutes_confidence": "high",
-        "green": 0.115,
-        "reasoning": "Model projects 35.1 PRA, 12% over the book's 31.5 line; this leg is 29.5 at -153 (book 58%, model 66%). Projected for 34.3 minutes; WAS +11.5 spread."
-      },
       {
         "player": "Pascal Siakam",
         "player_id": "3149673",
@@ -2584,14 +2560,15 @@
         "book_line": 31.5,
         "proj": 34.0,
         "prob": 0.624,
-        "book_prob": 0.611,
-        "gap": 0.012,
-        "odds": -177,
+        "book_prob": 0.601,
+        "gap": 0.023,
+        "odds": -169,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
         "green": 0.0778,
-        "reasoning": "Model projects 34.0 PRA, 8% over the book's 31.5 line; this leg is 29.5 at -177 (book 61%, model 62%). Projected for 33.4 minutes; IND +7.5 spread."
+        "reasoning": "Model projects 34.0 PRA, 8% over the book's 31.5 line; this leg is 29.5 at -169 (book 60%, model 62%). Projected for 33.4 minutes; IND +7.5 spread.",
+        "night_odds": -177
       },
       {
         "player": "Devin Booker",
@@ -2606,26 +2583,94 @@
         "line": 29.5,
         "line_type": "alt",
         "book_line": 32.5,
-        "proj": 35.0,
-        "prob": 0.659,
-        "book_prob": 0.635,
-        "gap": 0.024,
-        "odds": -197,
+        "proj": 34.7,
+        "prob": 0.649,
+        "book_prob": 0.639,
+        "gap": 0.01,
+        "odds": -201,
         "book": "DraftKings",
-        "blowout_risk": "medium",
+        "blowout_risk": "low",
         "minutes_confidence": "high",
-        "green": 0.0763,
-        "reasoning": "Model projects 35.0 PRA, 8% over the book's 32.5 line; this leg is 29.5 at -197 (book 64%, model 66%). Projected for 35.6 minutes; PHX +7.5 spread."
+        "green": 0.0673,
+        "reasoning": "Model projects 34.7 PRA, 7% over the book's 32.5 line; this leg is 29.5 at -201 (book 64%, model 65%). Projected for 35.5 minutes; PHX +6.5 spread.",
+        "night_odds": -197
+      },
+      {
+        "player": "Deni Avdija",
+        "player_id": "4683021",
+        "game_id": "401909944",
+        "team": "POR",
+        "opp": "SAS",
+        "home": true,
+        "time_et": "10:00 PM",
+        "stat": "pra",
+        "side": "over",
+        "line": 34.5,
+        "line_type": "alt",
+        "book_line": 36.5,
+        "proj": 38.1,
+        "prob": 0.587,
+        "book_prob": 0.606,
+        "gap": -0.019,
+        "odds": -173,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "green": 0.0432,
+        "reasoning": "Model projects 38.1 PRA, 4% over the book's 36.5 line; this leg is 34.5 at -173 (book 61%, model 59%). Projected for 35.8 minutes; POR +5.5 spread."
       }
     ],
-    "combined_odds": 290,
+    "combined_odds": 276,
     "status": "pending",
     "first_picked_at": "2026-11-07T09:27:16Z",
     "refreshed": 2,
-    "checked_at": "2026-11-07T13:24:36Z"
+    "checked_at": "2026-11-07T17:58:34Z",
+    "morning_repick": true,
+    "night": {
+      "combined_odds": 290,
+      "picked_at": "2026-11-07T13:24:36Z",
+      "legs": [
+        {
+          "player": "Trae Young",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -153
+        },
+        {
+          "player": "Pascal Siakam",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -177
+        },
+        {
+          "player": "Devin Booker",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -197
+        }
+      ]
+    },
+    "morning_checked": "2026-11-07T17:58:34Z",
+    "changes": [
+      {
+        "out": {
+          "player": "Trae Young",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -153
+        },
+        "why": "re-picked from the morning board",
+        "in": {
+          "player": "Deni Avdija",
+          "stat": "pra",
+          "line": 34.5,
+          "odds": -173
+        }
+      }
+    ]
   },
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-07T13:24:36Z",
+  "generated_at": "2026-11-07T17:58:34Z",
   "early_history": [
     {
       "date": "2026-10-20",
