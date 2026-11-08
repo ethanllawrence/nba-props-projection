@@ -676,6 +676,35 @@ def test_espn_props():
     td = E.parse_td([it("1", "93", None, "+121"), it("2", "92", None, "-750"), it("9", "93", None, "+300")],
                     {"1": "Nikola Jokic", "2": "Someone"})
     assert td == {"nikola jokic": {"odds": 121, "book": "DraftKings"}}, td
+    # 3-pointers made (Nov 8): type 4 main line + type 221 "N+" milestones, kept apart
+    three = [it("1", "4", 2.5, "+105"), it("1", "4", 2.5, "-135"),
+             it("1", "221", 2, "-300"), it("1", "221", 3, "+105"), it("1", "221", 4, "+260")]
+    tl, ta = E.parse_game(three + items, {"1": "Luka Doncic"}, E.THREES_MAIN, E.THREES_MILESTONE, by_id=True)
+    assert tl["1"]["threes"]["line"] == 2.5 and tl["1"]["threes"]["over"] == 105, tl
+    assert [r["line"] for r in ta["1"]["threes"]] == [1.5, 2.5, 3.5]
+    assert "threes" not in E.parse_game(three, {"1": "Luka Doncic"})[0].get("luka doncic", {})
+    # archive: last pre-tip price per player/line; frozen once the game tips
+    import sqlite3, tempfile, gzip, csv
+    from pathlib import Path as _P
+    from datetime import datetime as _dt, timezone as _tz
+    con = sqlite3.connect(":memory:")
+    con.row_factory = sqlite3.Row
+    con.execute("CREATE TABLE games (game_id TEXT, date TEXT, tipoff_utc TEXT)")
+    con.execute("INSERT INTO games VALUES ('g1', '2026-11-08', '2026-11-09T01:00Z')")
+    rows = lambda over: [{"game_id": "g1", "player_id": "1", "player": "Luka Doncic", "kind": "main",
+                          "line": 2.5, "over": over, "under": -135}]
+    with tempfile.TemporaryDirectory() as tmp:
+        root = _P(tmp)
+        d = {"date": "2026-11-08", "fetched_at": "t1", "_threes_rows": rows(105)}
+        before = _dt(2026, 11, 8, 20, tzinfo=_tz.utc)
+        assert E.archive_threes(con, d, root, before) == 1
+        assert E.archive_threes(con, d, root, before) == 0                   # same price: unchanged
+        assert E.archive_threes(con, {**d, "fetched_at": "t2", "_threes_rows": rows(110)}, root, before) == 1
+        after = _dt(2026, 11, 9, 2, tzinfo=_tz.utc)                          # game under way
+        assert E.archive_threes(con, {**d, "fetched_at": "t3", "_threes_rows": rows(400)}, root, after) == 0
+        with gzip.open(root / "2027" / "threes_props.csv.gz", "rt") as fh:
+            saved = list(csv.DictReader(fh))
+        assert len(saved) == 1 and saved[0]["over"] == "110" and saved[0]["fetched_at"] == "t2", saved
     print("OK espn props")
 
 
