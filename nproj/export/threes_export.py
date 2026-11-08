@@ -86,7 +86,7 @@ def export_threes(con, date_s, now=None, early=False):
            FROM probable_players pp JOIN players p ON p.player_id = pp.player_id
            JOIN games g ON g.game_id = pp.game_id
            WHERE pp.date = ? AND COALESCE(pp.status, '') != 'out'""", (date_s,)).fetchall()
-    players = []
+    players, box = [], None                       # box: 3PA for the L5 hover (the db has no attempts)
     for r in rows:
         pid = str(r["player_id"])
         t = have.get(pid)
@@ -127,8 +127,15 @@ def export_threes(con, date_s, now=None, early=False):
             """SELECT date, threes, minutes FROM player_game_logs
                WHERE player_id=? AND date < ? AND minutes > 0 ORDER BY date DESC LIMIT 5""",
             (pid, date_s)).fetchall()
-        row["last5"] = [{"date": g["date"], "made": g["threes"]} for g in reversed(recent)
-                        if g["threes"] is not None]
+        if box is None:
+            box = _box_rows()
+        row["last5"] = []
+        for g in reversed(recent):
+            if g["threes"] is None:
+                continue
+            got = box.get((str(g["date"])[:10], pid))
+            att = None if got is None or got[2] is None else int(got[2])
+            row["last5"].append({"date": g["date"], "made": g["threes"], "att": att})   # att: hover shows 5/9
         players.append(row)
     players.sort(key=lambda p: (-p["made"], p["player"]))
     log = summarize(_load("threes_log.json").get("days", {})) if early else _update_log(con, date_s, players, now)
@@ -186,8 +193,8 @@ def _days_before(date_s, n):
     return (date.fromisoformat(date_s) - timedelta(days=n)).isoformat()
 
 
-def _box_threes():
-    """{(date, player_id): (minutes, 3PM)} from history/<season>/box.csv.gz."""
+def _box_rows():
+    """{(date, player_id): (minutes, 3PM, 3PA)} from history/<season>/box.csv.gz."""
     import os
     from pathlib import Path
     import pandas as pd
@@ -195,12 +202,20 @@ def _box_threes():
     out = {}
     for f in sorted(root.glob("*/box.csv.gz"))[-2:]:
         try:
-            b = pd.read_csv(f, usecols=["date", "player_id", "minutes", "fg3m"], dtype={"player_id": str})
+            b = pd.read_csv(f, usecols=lambda c: c in ("date", "player_id", "minutes", "fg3m", "fg3a"),
+                            dtype={"player_id": str})
         except (OSError, ValueError):
             continue
-        for d, pid, m, x in b.itertuples(index=False):
-            out[(str(d)[:10], pid)] = (0 if m != m else m, 0 if x != x else x)
+        if "fg3a" not in b:
+            b["fg3a"] = float("nan")
+        for d, pid, m, x, a in b[["date", "player_id", "minutes", "fg3m", "fg3a"]].itertuples(index=False):
+            out[(str(d)[:10], pid)] = (0 if m != m else m, 0 if x != x else x, None if a != a else a)
     return out
+
+
+def _box_threes():
+    """{(date, player_id): (minutes, 3PM)} for grading."""
+    return {k: v[:2] for k, v in _box_rows().items()}
 
 
 def summarize(days):

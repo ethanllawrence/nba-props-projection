@@ -72,7 +72,7 @@ function last5(p) {
   const line = p.line ? p.line.line : null;
   const chips = g.map((x) => {
     const cls = line == null ? "" : x.made > line ? " hit" : " miss";
-    const tip = `${shortDate(x.date)} · ${x.made} threes`;
+    const tip = x.att != null ? `${shortDate(x.date)} · ${x.made}/${x.att} 3PT` : `${shortDate(x.date)} · ${x.made} made`;
     return `<span class="l5c${cls}" tabindex="0" data-tip="${esc(tip)}" aria-label="${esc(tip)}">${x.made}</span>`;
   }).join("");
   return `<div class="l5"><span class="l5k">L5</span>${chips}</div>`;

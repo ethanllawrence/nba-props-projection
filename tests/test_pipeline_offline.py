@@ -910,16 +910,19 @@ def test_threes_model_and_export():
             hist = _P(tmp) / "hist" / "2030"
             hist.mkdir(parents=True)
             with gzip.open(hist / "box.csv.gz", "wt") as fh:
-                fh.write("date,player_id,minutes,fg3m\n2030-01-02,1,35,6\n")
+                fh.write("date,player_id,minutes,fg3m,fg3a\n2030-01-02,1,35,6,11\n")
             os.environ["NPROJ_HISTORY_DIR"] = str(_P(tmp) / "hist")
             live.PROJ.clear()
             live.PROJ.update({"1": {"minutes": 34.0, "threes": {"attempts": 9.0, "p3": 0.40, "made": 3.6, "rungs": rr}}})
             con.execute("INSERT INTO games VALUES ('g2', '2030-01-04', 'GSW', 'LAL', '2030-01-05T03:00Z')")
             con.execute("INSERT INTO probable_players VALUES ('1', 'g2', 'active', '2030-01-04')")
+            con.execute("INSERT INTO player_game_logs VALUES ('1', '2030-01-02', 35, 6)")
             X.export_threes(con, "2030-01-04", now=_dt(2030, 1, 4, 20, tzinfo=_tz.utc))
             tr = json.loads((_P(tmp) / "threes.json").read_text())["track"]
             assert tr["days"] == 1 and tr["player_games"] == 1 and tr["avg_miss_made"] == 2.0, tr
             assert tr["lines"]["over_hit"] == 1.0
+            l5 = json.loads((_P(tmp) / "threes.json").read_text())["players"][0]["last5"]
+            assert l5 == [{"date": "2030-01-02", "made": 6, "att": 11}], l5    # hover shows 6/11
             # early look: its own file, no new track-record rows, same summary
             before = (_P(tmp) / "threes_log.json").read_text()
             X.export_threes(con, "2030-01-04", now=_dt(2030, 1, 3, 20, tzinfo=_tz.utc), early=True)
