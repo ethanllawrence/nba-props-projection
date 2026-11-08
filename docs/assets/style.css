@@ -279,12 +279,29 @@ tr.moved td:first-child { box-shadow: inset 3px 0 var(--gold); }
 .wrap-meta td .pm { white-space: normal; }   /* Results: calls table meta wraps on small phones */
 
 /* 3PM tab (beta): board-style table, fits a phone without sideways scrolling */
-.threes-tbl table.t { min-width: 0; width: 100%; }
+.threes-tbl table.t { min-width: 0; width: 100%; box-sizing: border-box; }
+.board-tbl.threes-tbl { overflow-x: hidden; }
 .threes-tbl td, .threes-tbl th { padding: 7px 5px; }
 .board-tbl.threes-tbl td:first-child .pn, .board-tbl.threes-tbl td:first-child .pm { white-space: normal; }
-.threes-tbl td:first-child { width: 42%; }
+.threes-tbl td:first-child { width: 40%; }
+.threes-tbl .proj3 { font-size: 17px; }
+.threes-tbl td.num { vertical-align: middle; }
 .threes-tbl .pn { font-size: 13.5px; }
 @media (max-width: 420px) {
   .threes-tbl td, .threes-tbl th { padding: 6px 3px; font-size: 12.5px; }
   .threes-tbl .pm { font-size: 10.5px; }
+}
+@media (max-width: 440px) {
+  .threes-tbl table.t { table-layout: fixed; }
+  .threes-tbl th:first-child, .threes-tbl td:first-child { width: 31%; }
+  .threes-tbl th:nth-child(2), .threes-tbl td:nth-child(2) { width: 13%; }
+  .threes-tbl td, .threes-tbl th { padding: 6px 2px; }
+  .threes-tbl .l5c { font-size: 9.5px; min-width: 14px; padding: 1px 2px; }
+  .threes-tbl .l5 { gap: 2px; } .threes-tbl .l5k { display: none; }
+}
+@media (max-width: 350px) {
+  .threes-tbl td, .threes-tbl th { padding: 6px 1px; font-size: 11.5px; }
+  .threes-tbl td.num .pm { font-size: 9.5px; }
+  .threes-tbl .proj3 { font-size: 14px; }
+  .threes-tbl .l5c { min-width: 12px; padding: 1px 1px; }
 }

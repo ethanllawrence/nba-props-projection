@@ -119,6 +119,13 @@ def export_threes(con, date_s, now=None):
                           "edge": round(mk - bk, 4)})
         if steps:
             row["ladder"] = sorted(steps, key=lambda s: s["n"])
+        # last 5 games played, oldest first (shown like the Today board's L5 PRA)
+        recent = con.execute(
+            """SELECT date, threes, minutes FROM player_game_logs
+               WHERE player_id=? AND date < ? AND minutes > 0 ORDER BY date DESC LIMIT 5""",
+            (pid, date_s)).fetchall()
+        row["last5"] = [{"date": g["date"], "made": g["threes"]} for g in reversed(recent)
+                        if g["threes"] is not None]
         players.append(row)
     players.sort(key=lambda p: (-p["made"], p["player"]))
     log = _update_log(con, date_s, players, now)

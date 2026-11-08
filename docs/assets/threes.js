@@ -1,22 +1,13 @@
 /* 3PM tab (beta): docs/data/threes.json from nproj/export/threes_export.py.
-   One row per player: projected attempts x make rate = projected made
-   threes, the chance of 2+/3+/4+..., and DraftKings' main line and ladder
-   (free via ESPN) with the model's chance next to the book's. No calls yet:
+   One row per player: projected made threes, then DraftKings' main line and
+   the two ladder rungs above it (free via ESPN), each price colored by our
+   chance against the book's. No calls yet:
    the model isn't blended with the market until enough lines are saved. */
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const fmtOdds = (o) => (o > 0 ? "+" + o : String(o));
 const pct = (p) => (p == null ? "–" : Math.round(p * 100) + "%");
-const fair = (p) => {
-  if (!p || p <= 0 || p >= 1) return "–";
-  return p >= 0.5 ? String(-Math.round((100 * p) / (1 - p))) : "+" + Math.round((100 * (1 - p)) / p);
-};
-const gap = (e) => {
-  if (e == null) return "";
-  const g = Math.round(e * 100);
-  return `<span class="${g >= 0 ? "pos" : "neg"}">(${g >= 0 ? "+" : ""}${g})</span>`;
-};
 let sortBy = "made";
 
 /* Board-style color (Nov 8, Robin): gold when we agree with the book, then
@@ -36,20 +27,56 @@ const styled = (txt, edge, bold) => {
   return `<span style="${c ? `color:${c};` : ""}${bold ? "font-weight:700;" : ""}">${txt}</span>`;
 };
 
-function projCell(p) {
-  const l = p.line;
-  const sub = l
-    ? `<div class="pm">O ${l.line} ${l.over != null ? fmtOdds(l.over) : ""}</div><div class="pm">${pct(l.model_over)} / ${pct(l.book_over)}</div>`
-    : '<div class="pm dim">no line</div>';
-  return `<td class="num"><div style="font-size:16px">${styled(p.made.toFixed(1), l ? l.edge : null, true)}</div>${sub}</td>`;
+/* Table (Nov 8, Robin): projection, the book's line, and the next two rungs
+   above it (line +1, +2), each shown as the book's price colored by how our
+   chance compares with the book's. Hover/tap a price for the two chances. */
+const ladderAt = (p, n) => (p.ladder || []).find((s) => s.n === n);
+
+function priceCell(label, price, edge, ours, book) {
+  if (price == null) return '<td class="num dim">–</td>';
+  const tip = ours != null && book != null ? ` title="our ${pct(ours)} vs book ${pct(book)}"` : "";
+  return `<td class="num"${tip}><div class="pm">${label}</div><div>${styled(fmtOdds(price), edge, true)}</div></td>`;
 }
 
-function rungCell(p, n) {
-  const m = p.rungs[n - 1];
-  const b = (p.ladder || []).find((s) => s.n === n);
-  if (m == null) return '<td class="num dim">–</td>';
-  return `<td class="num" title="model fair price ${fair(m)}"><div>${styled(pct(m), b ? b.edge : null, !!b)}</div>
-    <div class="pm">${b ? fmtOdds(b.price) : `<span class="dim">${fair(m)}</span>`}</div></td>`;
+/* Alt below the line: the deepest rung under the line still priced -400 or
+   longer (Robin: a -1000 leg is never worth it, but -350 to -400 cushions are). */
+const ALT_FLOOR = -400;
+function altBelow(p, n) {
+  const ok = (p.ladder || []).filter((s) => s.n < n && s.price >= ALT_FLOOR);
+  return ok.length ? ok.reduce((a, b) => (b.n < a.n ? b : a)) : null;
+}
+
+function cells(p) {
+  const l = p.line;
+  if (!l) return '<td class="num dim" colspan="4">no line posted</td>';
+  const n = Math.floor(l.line) + 1;                  // 4.5 -> 5+
+  const alt = altBelow(p, n);
+  const out = [alt ? priceCell(`${alt.n}+`, alt.price, alt.edge, alt.model, alt.book) : '<td class="num dim">–</td>',
+               priceCell(`O ${l.line}`, l.over, l.edge, l.model_over, l.book_over)];
+  for (const k of [n + 1, n + 2]) {
+    const b = ladderAt(p, k);
+    out.push(b ? priceCell(`${k}+`, b.price, b.edge, b.model, b.book) : '<td class="num dim">–</td>');
+  }
+  return out.join("");
+}
+
+const shortDate = (d) => {
+  const [y, m, day] = String(d).split("-").map(Number);
+  return new Date(y, m - 1, day).toLocaleDateString([], { month: "short", day: "numeric" });
+};
+
+/* Last 5 games' threes, green when he'd have cleared tonight's line, red when
+   not (like the Today board's L5 PRA). */
+function last5(p) {
+  const g = p.last5 || [];
+  if (!g.length) return "";
+  const line = p.line ? p.line.line : null;
+  const chips = g.map((x) => {
+    const cls = line == null ? "" : x.made > line ? " hit" : " miss";
+    const tip = `${shortDate(x.date)} · ${x.made} threes`;
+    return `<span class="l5c${cls}" tabindex="0" data-tip="${esc(tip)}" aria-label="${esc(tip)}">${x.made}</span>`;
+  }).join("");
+  return `<div class="l5"><span class="l5k">L5</span>${chips}</div>`;
 }
 
 function row(p) {
@@ -57,10 +84,17 @@ function row(p) {
   const flag = p.status && p.status !== "active" ? ` · <span class="neg">${esc(p.status)}</span>` : "";
   return `<tr>
     <td><div class="pn">${esc(p.player)}</div>
-      <div class="pm">${esc(p.team)} ${where} ${esc(p.opp)} · ${esc(p.time_et)}${flag}</div>
-      <div class="pm">${p.attempts.toFixed(1)} att × ${(p.p3 * 100).toFixed(0)}%</div></td>
-    ${projCell(p)}${rungCell(p, 2)}${rungCell(p, 3)}${rungCell(p, 4)}
+      <div class="pm">${esc(p.team)} ${where} ${esc(p.opp)} · ${esc(p.time_et)}${flag}</div>${last5(p)}</td>
+    <td class="num"><div class="proj3">${styled(p.made.toFixed(1), p.line ? p.line.edge : null, true)}</div></td>
+    ${cells(p)}
   </tr>`;
+}
+
+function maxGap(p) {
+  if (!p.line) return 0;
+  const n = Math.floor(p.line.line) + 1;
+  const e = [p.line.edge, (altBelow(p, n) || {}).edge, ...[n + 1, n + 2].map((k) => (ladderAt(p, k) || {}).edge)];
+  return Math.max(...e.filter((x) => x != null).map(Math.abs), 0);
 }
 
 function trackTiles(t) {
@@ -84,8 +118,7 @@ function trackTiles(t) {
 function render(data) {
   const players = (data.players || []).slice();
   if (sortBy === "gap") {
-    const g = (p) => Math.max(Math.abs((p.line || {}).edge || 0), ...((p.ladder || []).map((x) => Math.abs(x.edge))));
-    players.sort((a, b) => g(b) - g(a));
+    players.sort((a, b) => maxGap(b) - maxGap(a));
   } else if (sortBy === "lined") {
     players.sort((a, b) => (b.line ? 1 : 0) - (a.line ? 1 : 0) || b.made - a.made);
   }
@@ -94,15 +127,17 @@ function render(data) {
   $("#threes-body").innerHTML = `
     <div class="chips" style="margin-bottom:10px">${chips}</div>
     <div class="board-tbl threes-tbl"><table class="t">
-      <thead><tr><th>Player</th><th class="num">3PM</th>
-        <th class="num">2+</th><th class="num">3+</th><th class="num">4+</th></tr></thead>
-      <tbody>${players.map(row).join("") || '<tr><td colspan="5" class="dim">No 3PM projections for this slate yet.</td></tr>'}</tbody>
+      <thead><tr><th>Player</th><th class="num">Proj</th><th class="num">Alt</th><th class="num">Line</th>
+        <th class="num">+1</th><th class="num">+2</th></tr></thead>
+      <tbody>${players.map(row).join("") || '<tr><td colspan="6" class="dim">No 3PM projections for this slate yet.</td></tr>'}</tbody>
     </table></div>
     <div class="legend" style="margin-top:8px">
-      <span><span class="sw grad"></span>our chance vs the book's: red below · gold even · green above</span>
-      <span>3PM: projected threes, the book's line, then our over % / the book's</span>
-      <span>2+ 3+ 4+: our chance, the book's price under it (grey = our fair price, not posted)</span>
-      <span>prices: DraftKings via ESPN</span></div>
+      <span><span class="sw grad"></span>our chance vs the book's: red lower · gold even · green higher</span>
+      <span>Proj: projected threes, colored by the main line</span>
+      <span>Alt: the safest rung under the line still priced -400 or longer</span>
+      <span>Line / +1 / +2: DraftKings' over price at the line and one and two threes above it</span>
+      <span>L5: threes in his last 5 games (green = over tonight's line)</span>
+      <span>tap a price for both chances</span></div>
     <h2 class="sec">Track record (beta)</h2>
     ${trackTiles(data.track)}`;
   document.querySelectorAll("[data-sort]").forEach((b) => b.addEventListener("click", () => {
@@ -122,6 +157,8 @@ async function main() {
   }
   const upd = new Date(data.generated_at);
   $("#subtitle").textContent = `${data.date} · updated ${upd.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
+  // lined players first when the books have posted (the default view)
+  if ((data.players || []).some((p) => p.line)) sortBy = "lined";
   render(data);
 }
 main();
