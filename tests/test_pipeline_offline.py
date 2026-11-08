@@ -141,6 +141,9 @@ def test_daily_offline():
         l5 = p["last5"]
         assert 0 < len(l5) <= 5 and [g["date"] for g in l5] == sorted(g["date"] for g in l5)
         assert all(g["date"] < "2026-03-10" and g["pra"] == g["pts"] + g["reb"] + g["ast"] for g in l5)
+        # last 10 for the hit rate: oldest first, ending with the same games as the L5
+        assert len(l5) <= len(p["l10"]) <= 10
+        assert [[g["pts"], g["reb"], g["ast"]] for g in l5] == p["l10"][-len(l5):]
 
     jk = json.loads((site / "jokic.json").read_text())
     assert jk["tonight"]["opp"] == "vs OKC"

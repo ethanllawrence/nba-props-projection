@@ -310,3 +310,11 @@ tr.moved td:first-child { box-shadow: inset 3px 0 var(--gold); }
    tables off a phone screen); the full write-ups live on the Method tab. */
 .page-note { color: var(--dim); font-size: 12px; line-height: 1.45; margin: 18px 0 4px; }
 .page-note a { color: var(--accent); white-space: nowrap; margin-left: 4px; }
+
+/* Today board: last-10 hit rate after the line (Nov 8) */
+.stat-cell .hr.hot { color: var(--green); } .stat-cell .hr.cold { color: var(--red); }
+.stat-cell .hr[data-tip] { position: relative; outline: none; cursor: default; }
+.stat-cell .hr[data-tip]:hover::after, .stat-cell .hr[data-tip]:focus::after {
+  content: attr(data-tip); position: absolute; right: 0; bottom: calc(100% + 4px); z-index: 5;
+  background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 6px;
+  padding: 3px 7px; font-size: 11px; font-weight: 400; white-space: nowrap; pointer-events: none; }

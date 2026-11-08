@@ -140,7 +140,7 @@ def _export_today_board(con, date_s: str, path=None, early=False):
         home = r["team"] == r["home_team"]
         recent = con.execute(
             """SELECT date, points, rebounds, assists FROM player_game_logs
-               WHERE player_id=? AND date < ? AND minutes > 0 ORDER BY date DESC LIMIT 5""",
+               WHERE player_id=? AND date < ? AND minutes > 0 ORDER BY date DESC LIMIT 10""",
             (pid, date_s)).fetchall()
         players.append({
             "player": r["name"],
@@ -155,7 +155,9 @@ def _export_today_board(con, date_s: str, path=None, early=False):
             # last 5 games played, oldest first (the Today table shows PRA)
             "last5": [{"date": g["date"], "pts": g["points"], "reb": g["rebounds"],
                        "ast": g["assists"], "pra": g["points"] + g["rebounds"] + g["assists"]}
-                      for g in reversed(recent)],
+                      for g in reversed(recent[:5])],
+            # last 10 games played, oldest first, [pts, reb, ast]: the hit rate vs tonight's line
+            "l10": [[g["points"], g["rebounds"], g["assists"]] for g in reversed(recent)],
         })
 
     def has_line(p):

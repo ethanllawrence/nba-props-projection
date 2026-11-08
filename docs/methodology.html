@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>PRAjections — Methodology</title>
-<link rel="stylesheet" href="assets/style.css?v=15">
+<link rel="stylesheet" href="assets/style.css?v=17">
 </head>
 <body>
 <div class="wrap">
@@ -54,6 +54,10 @@
     sortable table beats scrolling cards. One row per player, one column each for points,
     rebounds, assists, and PRA; tap any header to sort by that projection. Players projected for
     fewer than 18 minutes are left off.</p>
+    <p>Next to each line: "hit 7/10" means he went over tonight's line in 7 of his last 10 games
+    (green 7 or more, red 3 or fewer). It's a quick gut check, not part of the model: it ignores
+    minutes, teammates out and the opponent, which the projection accounts for. The model's over or
+    under chance (blended with the book's) shows when you hover or tap the projection.</p>
 
     <h2>Early look</h2>
     <p>The Today page also has an Early look tab: the next game day's projections, built by the
@@ -82,8 +86,8 @@
     looks. It is not a bet signal on its own: in the backtest, betting everything 6% or more off the
     line lost about 6% of every dollar, because the book's line already knows things the model
     doesn't.</p>
-    <p>The bet signal is the box. Under each projection is the line and the model's chance of the
-    over or under. That chance isn't the raw model alone: in testing, the raw model was overconfident
+    <p>The bet signal is the box. Under each projection is the line; hover or tap the projection for
+    the model's chance of the over or under. That chance isn't the raw model alone: in testing, the raw model was overconfident
     (when it said 75%, the over hit about 57% of the time), so its view is blended with the chance
     implied by the sportsbook's prices, using weights fitted on the backtest. A number gets a box
     (green for over, red for under) when that blended chance beats the price's break-even by 2 or more

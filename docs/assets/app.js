@@ -123,7 +123,7 @@ function moveTag(delta, key) {
   return ` <span class="mv ${delta > 0 ? "up" : "down"}" title="since the morning board">${delta > 0 ? "▲" : "▼"}${Math.abs(delta).toFixed(1)}</span>`;
 }
 
-function statCell(stat, extraCls, delta, key) {
+function statCell(stat, extraCls, delta, key, hist) {
   const cls = extraCls ? ` ${extraCls}` : "";
   if (!stat) return `<td class="num${cls}"><span class="dim">—</span></td>`;
   const hasLine = stat.line != null;
@@ -136,21 +136,35 @@ function statCell(stat, extraCls, delta, key) {
     // projection 1.5x+ the line: the book likely knows about a role or minutes
     // change the model can't see; historically no edge there, so no call
     sub += `<span class="sep"> · </span><span class="pk dim" title="Model is ${(stat.proj / stat.line).toFixed(1)}x the line. The book likely knows about a role or minutes change the model can't see; overs this far above the line haven't beaten the book, so no call.">no call ⓘ</span>`;
-  } else if (hasLine && stat.p_over != null) {
-    const pick = stat.call === "under" || (!stat.call && stat.p_over < 0.5)
-      ? `U ${Math.round((1 - stat.p_over) * 100)}%` : `O ${Math.round(stat.p_over * 100)}%`;
-    sub += `<span class="sep"> · </span><span class="pk">${pick}</span>`;
+  } else if (hasLine && !earlyView) {
+    // Nov 8 (Robin): the over/under % moved to the hover; the hit rate takes its place
+    sub += hitRate(hist, key, stat.line);
   }
   const tint = earlyView ? null : lineTint(stat);
   const callCls = stat.call ? ` edge-call ${edgeCls}` : "";
   const pctTxt = hasLine && stat.line > 0 ? `${stat.proj > stat.line ? "+" : ""}${Math.round((stat.proj - stat.line) / stat.line * 100)}% vs the line` : "";
-  const tip = stat.call ? `Model edge: ${stat.call} (the model's chance beats the price). ${pctTxt}` : pctTxt;
+  const ouTxt = hasLine && stat.p_over != null && stat.flag !== "far"
+    ? (stat.p_over < 0.5 ? `Under ${Math.round((1 - stat.p_over) * 100)}%` : `Over ${Math.round(stat.p_over * 100)}%`) + " (model + book blend). " : "";
+  const tip = (stat.call ? `Model edge: ${stat.call} (the model's chance beats the price). ` : "") + ouTxt + pctTxt;
   return `<td class="num${cls}">
     <div class="stat-cell">
       <div class="num${callCls}"${tint && !stat.call ? ` style="color:${tint}"` : ""}${tip ? ` title="${esc(tip)}"` : ""}>${stat.proj.toFixed(1)}${moveTag(delta, key)}</div>
       <div class="line">${sub}</div>
     </div>
   </td>`;
+}
+
+/* Hit rate (Nov 8, Robin): in how many of his last 10 games he'd have cleared
+   tonight's line. Green 7+, red 3 or fewer. A rough guide: minutes and
+   teammates change, which is what the projection accounts for. */
+const L10_IDX = { points: [0], rebounds: [1], assists: [2], pra: [0, 1, 2] };
+function hitRate(hist, key, line) {
+  if (!hist || hist.length < 5 || line == null) return "";
+  const hits = hist.filter((g) => L10_IDX[key].reduce((a, i) => a + (g[i] || 0), 0) > line).length;
+  const r = hits / hist.length;
+  const cls = r >= 0.7 ? " hot" : r <= 0.3 ? " cold" : "";
+  const tip = `over ${line.toFixed(1)} in ${hits} of his last ${hist.length} games`;
+  return `<span class="sep"> · </span><span class="pk hr${cls}" tabindex="0" data-tip="${esc(tip)}" aria-label="${esc(tip)}">hit ${hits}/${hist.length}</span>`;
 }
 
 /* Last 5 PRA under the player's name, oldest to newest (same idea as the
@@ -182,7 +196,7 @@ function tableRow(p) {
     <div class="pm">${esc(p.team)} ${p.home ? "vs" : "@"} ${esc(p.opp)} · ${esc(p.time_et)}${tag}</div>${last5(p)}</td>`;
   const d = (p.since && p.since.delta) || {};
   const cells = STAT_COLS.map((c) => statCell(statOf(p, c.key), c.key === "pra" ? "pra-cell" : "",
-    d[c.key], c.key)).join("");
+    d[c.key], c.key, p.l10)).join("");
   return `<tr${p.since ? ' class="moved"' : ""}>${nameCell}${cells}</tr>`;
 }
 
@@ -203,6 +217,7 @@ function tableView(players) {
     ? `<div class="legend">
       <span><span class="sw grad"></span>projection vs. line: below · even · above</span>
       <span><span class="sw box"></span>boxed = model edge vs. the price</span>
+      <span>hit 7/10: over tonight's line in 7 of his last 10 games</span>
     </div>`
     : `<div class="legend"><span>${earlyView ? "Early look: model projections only. Lines arrive the morning of the games."
       : "Projections only: no book lines for this slate yet."}</span></div>`;
