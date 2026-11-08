@@ -62,9 +62,11 @@ def _recent_minutes(con, player_id, date_s):
 
 
 def _time_et(tipoff_utc):
-    from ..ingest.espn import et_date
+    """Tip-off time as shown on the site, in ARIZONA time since Nov 7, 2026
+    (Robin). The field keeps its old name, time_et, so saved data still works."""
+    from ..ingest.espn import az_time
     try:
-        return et_date(tipoff_utc).strftime("%I:%M %p").lstrip("0")
+        return az_time(tipoff_utc)
     except (TypeError, ValueError, AttributeError):
         return ""
 

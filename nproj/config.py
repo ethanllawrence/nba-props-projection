@@ -68,7 +68,8 @@ BOOK_WEIGHT_OTHER = 0.7
 KELLY_FRACTION = 0.25
 MIN_EV_DISPLAY = 0.0
 
-ET_ZONE = "America/New_York"
+ET_ZONE = "America/New_York"    # NBA game dates follow the Eastern calendar day
+AZ_ZONE = "America/Phoenix"     # times shown on the site (Robin is in Arizona; no daylight saving)
 
 # --- Board clock ---------------------------------------------------------
 # Robin's choice (2026-09-22): the site flips to the next day's slate at 8 PM

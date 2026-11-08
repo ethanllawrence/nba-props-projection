@@ -948,6 +948,14 @@ def update(con, date_s, allow_spend=False, repick=False, mode=None):
     slot, cur = _pick_for(data, date_s)
     if cur and cur.get("legs") and live.PROJ and not mock:
         cur["checked_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    # tip-off times on the pending picks, in Arizona time (picks saved before
+    # Nov 7 have Eastern times)
+    from ..export.site_export import _time_et
+    for key in ("today", "next"):
+        for leg in ((data.get(key) or {}).get("legs") or []):
+            row = con.execute("SELECT tipoff_utc FROM games WHERE game_id=?", (str(leg.get("game_id")),)).fetchone()
+            if row and row["tipoff_utc"] and _time_et(row["tipoff_utc"]):
+                leg["time_et"] = _time_et(row["tipoff_utc"])
     after = json.dumps({k: v for k, v in data.items() if k != "generated_at"}, sort_keys=True)
     if after != before:
         data["generated_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")

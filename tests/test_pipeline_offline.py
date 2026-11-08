@@ -118,7 +118,7 @@ def test_daily_offline():
     assert all(r["opp"].endswith("GSW") for r in rows)
     sched = espn.fetch_schedule("2026-03-10")
     assert [g["game_id"] for g in sched] == ["g1", "g2"]
-    assert sched[0]["date"] == "2026-03-10" and sched[0]["time_et"] == "10:00 PM"  # EDT
+    assert sched[0]["date"] == "2026-03-10" and sched[0]["time_et"] == "7:00 PM"  # 10 PM EDT, shown in Arizona time
 
     cli.main(["daily", "--date", "2026-03-10"])
 

@@ -26,6 +26,7 @@ from .. import config
 
 BASE = "https://site.web.api.espn.com/apis"
 ET = ZoneInfo(config.ET_ZONE)
+AZ = ZoneInfo(config.AZ_ZONE)
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
 
@@ -68,6 +69,12 @@ def et_date(iso_utc):
     '2026-03-10T23:00Z'). Games are dated by their US Eastern calendar day."""
     s = iso_utc.replace("Z", "+00:00")
     return datetime.fromisoformat(s).astimezone(ET)
+
+
+def az_time(iso_utc):
+    """'7:00 PM'-style tip-off time in Arizona time (what the site shows)."""
+    s = iso_utc.replace("Z", "+00:00")
+    return datetime.fromisoformat(s).astimezone(AZ).strftime("%I:%M %p").lstrip("0")
 
 
 # ---------- Teams / rosters ----------
@@ -123,7 +130,7 @@ def fetch_schedule(date_s):
             "away_team_id": str(side["away"]["team"]["id"]),
             "status": ((e.get("status") or {}).get("type") or {}).get("description"),
             "tipoff_utc": e["date"],
-            "time_et": tip.strftime("%I:%M %p").lstrip("0"),
+            "time_et": tip.astimezone(AZ).strftime("%I:%M %p").lstrip("0"),   # Arizona time (name kept)
             "spread_home": spread_home,
             "total": total,
         })
