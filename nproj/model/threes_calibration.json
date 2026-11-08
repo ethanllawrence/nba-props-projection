@@ -1,0 +1,29 @@
+{
+ "rungs": {
+  "1": {
+   "intercept": -0.1691,
+   "slope": 1.0185
+  },
+  "2": {
+   "intercept": -0.079,
+   "slope": 0.9764
+  },
+  "3": {
+   "intercept": -0.0699,
+   "slope": 0.9476
+  },
+  "4": {
+   "intercept": -0.1312,
+   "slope": 0.9231
+  },
+  "5": {
+   "intercept": -0.3387,
+   "slope": 0.8637
+  }
+ },
+ "fitted_on": "walk-forward 3PM rung chances with the absence features, 2024-25 and 2025-26 (54157 player-games)",
+ "check": "fit on 2024-25 only, tested later: 1+ 2026: said 0.590 -> 0.558 (hit 0.568), log loss 0.5062 -> 0.5051; 1+ 2027: said 0.594 -> 0.562 (hit 0.559), log loss 0.5317 -> 0.5282; 2+ 2026: said 0.335 -> 0.319 (hit 0.327), log loss 0.4889 -> 0.4891; 2+ 2027: said 0.337 -> 0.321 (hit 0.317), log loss 0.4922 -> 0.4908",
+ "rungs_above_5": "use the 5+ curve",
+ "prior_attempts": 300,
+ "decay_games": 120
+}

@@ -21,6 +21,16 @@ what exists in this repo right now vs. what's still a stub.
 - `docs/parlay.html` + `docs/data/parlay.json` — a **Parlay of the Day** tab: 2-4 legs picked
   automatically for high conviction (not best expected value), combined to roughly +200 to
   +300, with per-leg reasoning and a settled win/loss history. See the Parlay section below.
+- `docs/threes.html` + `docs/data/threes.json` — a **3PM tab (beta, since 2026-11-08)**:
+  3-pointers made per player = projected attempts (`nproj/model/threes.py`, LightGBM on the PRA
+  features plus coming-back-from-absence inputs) × a shrunk make rate (recent 3P% pulled toward a
+  shooter-type baseline, worth 300 attempts), then the chance of 1+ .. 8+ (negative-binomial
+  attempts, binomial makes, per-rung calibration in `threes_calibration.json`). Shown next to
+  DraftKings' free 3PM line and ladder (via ESPN), colored by our chance minus the book's. No picks
+  until the market blend (needs a few weeks of `history/<season>/threes_props.csv.gz`). Graded
+  every morning in `docs/data/threes_log.json`. Backtest: `scripts/threes_backtest.py`
+  (`reports/threes_backtest_2026-11-08.json`). Injury statuses are saved every run to
+  `history/<season>/statuses.csv.gz` for a later test of day-to-day handling.
 - `nproj/` — the Python pipeline: `ingest/espn.py` (schedule, rosters, game logs),
   `pipeline.py` (ingest into SQLite), `model/predict.py` (projections),
   `export/site_export.py` (writes `docs/data/*.json`), `cli.py`

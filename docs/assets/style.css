@@ -277,3 +277,14 @@ tr.moved td:first-child { box-shadow: inset 3px 0 var(--gold); }
 .parlay-legs td .pm { white-space: normal; }
 .parlay-legs td.num { max-width: 52%; }
 .wrap-meta td .pm { white-space: normal; }   /* Results: calls table meta wraps on small phones */
+
+/* 3PM tab (beta): board-style table, fits a phone without sideways scrolling */
+.threes-tbl table.t { min-width: 0; width: 100%; }
+.threes-tbl td, .threes-tbl th { padding: 7px 5px; }
+.board-tbl.threes-tbl td:first-child .pn, .board-tbl.threes-tbl td:first-child .pm { white-space: normal; }
+.threes-tbl td:first-child { width: 42%; }
+.threes-tbl .pn { font-size: 13.5px; }
+@media (max-width: 420px) {
+  .threes-tbl td, .threes-tbl th { padding: 6px 3px; font-size: 12.5px; }
+  .threes-tbl .pm { font-size: 10.5px; }
+}

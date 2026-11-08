@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>PRAjections — 3PM</title>
+<link rel="stylesheet" href="assets/style.css?v=11">
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <h1>🏀 PRAjections</h1>
+    <span class="sub" id="subtitle">loading…</span>
+  </header>
+  <nav class="tabs">
+    <a href="index.html">Today</a>
+    <a href="threes.html" class="active">3PM</a>
+    <a href="parlay.html">Parlay</a>
+    <a href="jokic.html">Jokic TD</a>
+    <a href="results.html">Results</a>
+    <a href="methodology.html">Method</a>
+  </nav>
+
+  <div class="notice" id="note" style="margin-bottom:14px">
+    <b>Beta.</b> 3-pointers made: the model projects each player's attempts (minutes, role, recent
+    volume, teammates out, pace and the opponent's threes allowed) and his make rate (his recent 3P%
+    pulled toward a baseline for his kind of shooter, since hot and cold streaks are mostly noise),
+    then the chance of 1+, 2+, 3+ threes. Next to each: DraftKings' line and ladder, colored like the
+    Today board by how far our chance is from the book's (gold = we agree, green = we like it more,
+    red = less). No picks yet: those wait until the model is blended with
+    the market and tested on a few weeks of saved lines. Times are Arizona time.
+  </div>
+
+  <div id="threes-body"></div>
+
+  <footer class="site">
+    Model output, not betting advice. For entertainment among friends.
+    If gambling stops being fun: 1-800-GAMBLER.
+  </footer>
+</div>
+<script src="assets/threes.js?v=2"></script>
+<script src="assets/stale.js?v=1"></script>
+</body>
+</html>

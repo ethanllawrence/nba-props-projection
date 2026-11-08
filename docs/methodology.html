@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>PRAjections — Methodology</title>
-<link rel="stylesheet" href="assets/style.css?v=9">
+<link rel="stylesheet" href="assets/style.css?v=11">
 </head>
 <body>
 <div class="wrap">
@@ -15,6 +15,7 @@
   </header>
   <nav class="tabs">
     <a href="index.html">Today</a>
+    <a href="threes.html">3PM</a>
     <a href="parlay.html">Parlay</a>
     <a href="jokic.html">Jokic TD</a>
     <a href="results.html">Results</a>
@@ -131,6 +132,41 @@
     Each leg is graded the next morning against the box score (a player who didn't play is void, like a
     sportsbook would do it). Opening week used earlier versions: a "most likely overs" rule on Oct 20,
     and a morning pick Oct 21.</p>
+
+    <h2>3PM model (beta)</h2>
+    <p>The 3PM tab projects 3-pointers made in two parts, because they behave very differently. Attempts
+    are steady: last season a player's three-point attempts per 36 minutes in half of his games
+    predicted the other half almost perfectly (r = 0.97). Make rate is mostly noise: the same test on
+    3P% gave r = 0.2-0.3, and in 2023-26 it took about 400-650 attempts before a player's 3P% was even
+    half skill (an older 2014 study said about 750). So:</p>
+    <p><b>Attempts</b> come from a LightGBM model with the same inputs and training as the PRA model:
+    minutes and role, recent attempts per minute (short and long memory), teammates out, pace and the
+    game total, the spread, how many threes the opponent allows, and whether he's coming back from an
+    absence (days since he last played, games missed lately, games since returning and how long he was
+    out: first games back often come with a minutes limit). Defenses control how many threes
+    opponents take far more than how many they make, so the opponent's 3P% allowed isn't used.
+    <b>Make rate</b> is the player's recent 3P% (a 120-game half-life) pulled toward the average for
+    his kind of shooter (by how often he shoots threes), as if he had 300 extra attempts at that
+    average. The backtest picked 300: 150-500 were nearly as good, 800 and up clearly worse.
+    <b>Chances</b>: attempts vary around the projection a bit more than a coin-flip count would, each
+    attempt goes in at the make rate, and that gives the chance of 1+, 2+, 3+ threes. A small
+    calibration per rung, fitted on earlier seasons, trims the 1+ and 2+ chances, which ran 2-4
+    points high.</p>
+    <p>Backtest (walk-forward: each month projected with a model trained only on earlier games), every
+    player who played: 2025-26 average miss 0.88 threes made and 1.48 attempts; this season Oct 20 -
+    Nov 6, 0.89 and 1.52. For comparison, KSplit's public 3PM diagnostics for the same window report
+    0.86 and 1.48 on a similar number of player-games. The coming-back-from-absence inputs cut the
+    attempts error for players in their first three games back by 3-6% and their over-projection by
+    more than half (2025-26: +0.17 attempts to +0.07). Players ESPN lists as out count as teammates out
+    (more shots for everyone else). Day-to-day players are projected as if they play, because a prop on
+    a player who sits is voided; their status is shown, and every run saves the statuses so a later
+    test can decide how to treat them. The book's prices (DraftKings via ESPN, free)
+    are saved every run, last price before tip-off, so the model can be tested against the market and
+    blended with it after a few weeks. Until then the tab shows the gap between our chance and the
+    book's but makes no picks. Colors work like the Today board: gold where our chance and the book's
+    agree, then green (we like it more) or red (less), full color at a 15-point gap. Because 3PM lines
+    are small, the gap is in chance points, not projection versus line. Its track record (average miss, and each rung's predicted chance vs
+    how often it hit) is graded every morning.</p>
 
     <h2>Jokic TD tracker</h2>
     <p>A separate tab for Nikola Jokic's triple-double prop. It leads with one call: bet the

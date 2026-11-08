@@ -823,7 +823,112 @@ def test_parlay_mode_after_flip():
     print("OK parlay mode after the board flip")
 
 
+def test_threes_model_and_export():
+    """3PM beta: rung chances fall with k and add up with the make rate,
+    calibration keeps them falling, make rates shrink toward the baseline,
+    and the 3PM export pairs the model's chances with DraftKings' line and
+    ladder, saves the pre-tip numbers and grades finished nights."""
+    import sqlite3, tempfile, gzip
+    import numpy as np
+    import pandas as pd
+    from pathlib import Path as _P
+    from datetime import datetime as _dt, timezone as _tz
+    from nproj import config
+    from nproj.model import threes as T, live
+    from nproj.export import threes_export as X
+    r = T.rung_probs([6.0, 2.0], [0.38, 0.33], (1.4, 0.0), 8)
+    assert (np.diff(r, axis=1) <= 1e-12).all() and 0.85 < r[0, 0] < 0.95, r
+    mean = r.sum(axis=1)                              # E[M] = sum P(M >= k)
+    assert abs(mean[0] - 6 * 0.38) < 0.05 and abs(mean[1] - 2 * 0.33) < 0.02, mean
+    c = T.calibrate(r)
+    assert (np.diff(c, axis=1) <= 1e-12).all() and c[0, 0] < r[0, 0]
+    # make rates: a 10-for-10 start barely moves a player off the baseline
+    box = pd.DataFrame({"game_id": ["a", "b", "c"], "player_id": ["9"] * 3, "season": [2026] * 3,
+                        "date": pd.to_datetime(["2026-01-01", "2026-01-03", "2026-01-05"]),
+                        "dnp": [0, 0, 0], "minutes": [30, 30, 30], "fg3a": [5, 5, 5], "fg3m": [5, 5, 0]})
+    mr = T.make_rates(box)
+    assert mr["p3"].iloc[0] == mr["base"].iloc[0], mr                  # no history yet: the baseline
+    assert 0 < mr["p3"].iloc[2] - mr["base"].iloc[2] < 0.03, mr        # 10-for-10: only a nudge up
+    # coming back from an absence: first game back after 3 missed, then counting up
+    ab = T.absence_features(pd.DataFrame({
+        "game_id": list("abcdefg") + ["up-h"], "player_id": ["1"] * 8,
+        "date": pd.date_range("2026-01-01", periods=8, freq="2D"),
+        "dnp": [0, 0, 1, 1, 1, 0, 0, 0], "minutes": [30, 30, 0, 0, 0, 20, 25, None]}))
+    assert ab["games_back"].tolist()[5:] == [0, 1, 2] and ab["absence_len"].tolist()[5:] == [3, 3, 3], ab
+    assert ab["missed_last10"].iloc[7] == 3 and ab["days_since_played"].iloc[5] == 8, ab
+    # injury statuses saved for later tests: changes kept until tip-off, then frozen
+    from nproj.ingest import status_archive as SA
+    sc = sqlite3.connect(":memory:")
+    sc.row_factory = sqlite3.Row
+    sc.executescript("""
+        CREATE TABLE games (game_id TEXT, tipoff_utc TEXT);
+        CREATE TABLE probable_players (player_id TEXT, game_id TEXT, status TEXT, date TEXT);
+        INSERT INTO games VALUES ('g1', '2030-01-03T03:00Z');
+        INSERT INTO probable_players VALUES ('1', 'g1', 'day-to-day', '2030-01-02');""")
+    with tempfile.TemporaryDirectory() as tmp:
+        t0 = _dt(2030, 1, 2, 18, tzinfo=_tz.utc)
+        assert SA.archive(sc, "2030-01-02", t0, _P(tmp)) == 1 and SA.archive(sc, "2030-01-02", t0, _P(tmp)) == 0
+        sc.execute("UPDATE probable_players SET status='out'")
+        assert SA.archive(sc, "2030-01-02", t0, _P(tmp)) == 1
+        sc.execute("UPDATE probable_players SET status='active'")
+        assert SA.archive(sc, "2030-01-02", _dt(2030, 1, 3, 4, tzinfo=_tz.utc), _P(tmp)) == 0   # tipped
+        with gzip.open(_P(tmp) / "2030" / "statuses.csv.gz", "rt") as fh:
+            st = list(__import__("csv").DictReader(fh))
+        assert st[0]["status"] == "out" and st[0]["first_status"] == "day-to-day", st
+    # export
+    con = sqlite3.connect(":memory:")
+    con.row_factory = sqlite3.Row
+    con.executescript("""
+        CREATE TABLE players (player_id TEXT, name TEXT, team TEXT);
+        CREATE TABLE games (game_id TEXT, date TEXT, home_team TEXT, away_team TEXT, tipoff_utc TEXT);
+        CREATE TABLE probable_players (player_id TEXT, game_id TEXT, status TEXT, date TEXT);
+        CREATE TABLE player_game_logs (player_id TEXT, date TEXT, minutes REAL, threes INTEGER);
+        INSERT INTO players VALUES ('1', 'Steph Test', 'GSW'), ('2', 'Bench Big', 'GSW');
+        INSERT INTO games VALUES ('g1', '2030-01-02', 'GSW', 'BOS', '2030-01-03T03:00Z');
+        INSERT INTO probable_players VALUES ('1', 'g1', 'active', '2030-01-02'), ('2', 'g1', 'active', '2030-01-02');
+    """)
+    rr = [float(x) for x in T.calibrate(T.rung_probs([10.0], [0.40], (1.4, 0.0)))[0]]
+    live.PROJ.clear()
+    live.PROJ.update({"1": {"minutes": 34.0, "threes": {"attempts": 10.0, "p3": 0.40, "made": 4.0, "rungs": rr}},
+                      "2": {"minutes": 20.0, "threes": {"attempts": 0.4, "p3": 0.2, "made": 0.08, "rungs": [0.07] + [0.0] * 7}}})
+    from nproj.ingest import espn_props as E
+    with tempfile.TemporaryDirectory() as tmp:
+        old_site = config.SITE_DATA_DIR
+        config.SITE_DATA_DIR = _P(tmp)
+        try:
+            E.save({"date": "2030-01-02", "fetched_at": "x", "games": {}, "lines": {}, "alts": {}, "td": {},
+                    "threes": {"lines": {"steph test": {"line": 4.5, "over": -105, "under": -125, "book": "DraftKings"}},
+                               "alts": {"steph test": [{"line": 2.5, "over": -300}, {"line": 4.5, "over": -105},
+                                                       {"line": 5.5, "over": 190}]}}})
+            out = X.export_threes(con, "2030-01-02", now=_dt(2030, 1, 2, 20, tzinfo=_tz.utc))
+            assert out["players"] == 1 and out["with_line"] == 1, out          # bench big filtered out
+            d = json.loads((_P(tmp) / "threes.json").read_text())
+            p = d["players"][0]
+            assert p["line"]["model_over"] == round(rr[4], 4) and p["line"]["book_over"] < 0.53
+            assert [s["n"] for s in p["ladder"]] == [3, 5, 6] and p["time_et"] == "8:00 PM"
+            # next morning: graded from the box score store
+            hist = _P(tmp) / "hist" / "2030"
+            hist.mkdir(parents=True)
+            with gzip.open(hist / "box.csv.gz", "wt") as fh:
+                fh.write("date,player_id,minutes,fg3m\n2030-01-02,1,35,6\n")
+            os.environ["NPROJ_HISTORY_DIR"] = str(_P(tmp) / "hist")
+            live.PROJ.clear()
+            live.PROJ.update({"1": {"minutes": 34.0, "threes": {"attempts": 9.0, "p3": 0.40, "made": 3.6, "rungs": rr}}})
+            con.execute("INSERT INTO games VALUES ('g2', '2030-01-04', 'GSW', 'LAL', '2030-01-05T03:00Z')")
+            con.execute("INSERT INTO probable_players VALUES ('1', 'g2', 'active', '2030-01-04')")
+            X.export_threes(con, "2030-01-04", now=_dt(2030, 1, 4, 20, tzinfo=_tz.utc))
+            tr = json.loads((_P(tmp) / "threes.json").read_text())["track"]
+            assert tr["days"] == 1 and tr["player_games"] == 1 and tr["avg_miss_made"] == 2.0, tr
+            assert tr["lines"]["over_hit"] == 1.0
+        finally:
+            config.SITE_DATA_DIR = old_site
+            os.environ.pop("NPROJ_HISTORY_DIR", None)
+            live.PROJ.clear()
+    print("OK 3PM model + export")
+
+
 if __name__ == "__main__":
+    test_threes_model_and_export()
     test_parlay_mode_after_flip()
     test_green_pra_parlay()
     test_combo_rules()

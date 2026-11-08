@@ -53,6 +53,12 @@ def cmd_daily(args) -> None:
         print(f"[daily] {date_s}: {slate['games']} games, {slate['players']} rostered players, "
               f"{slate['logs']} game-log rows")
         pipeline.refresh_jokic(con, date_s)
+        if slate["games"] and not getattr(args, "date", None):
+            try:                       # injury statuses, kept for later backtests (Nov 8)
+                from .ingest import status_archive
+                print(f"[statuses] {status_archive.archive(con, date_s)} saved")
+            except Exception as exc:  # noqa: BLE001 - never blocks the board
+                print(f"[statuses] failed: {exc}")
         _maybe_store()
         trained = predict.train(con, before_date=date_s)
         projected = predict.project_date(con, date_s)     # baseline first, model overwrites

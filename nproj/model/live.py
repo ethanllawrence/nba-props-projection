@@ -210,5 +210,29 @@ def run(con, date_s, history_root=None):
                      generated_at=excluded.generated_at""",
                 (gid, pid, date_s, stat, round(float(p[f"{stat}_proj"]), 1)))
             written += 1
-    return {"model": "lightgbm", "trained_on": int((hist["played"] == 1).sum()),
-            "projected_players": len(PROJ), "rows_written": written}
+    log = {"model": "lightgbm", "trained_on": int((hist["played"] == 1).sum()),
+           "projected_players": len(PROJ), "rows_written": written}
+    # 3-pointers made (beta, nproj/model/threes.py): its own attempts model on
+    # the same features, a shrunk make rate, and 1+ .. 8+ chances. A problem
+    # here must never take down the PRA board.
+    try:
+        from . import threes as T3
+        h3, t3 = hist, tonight
+        if T3.USE_ABSENCE:            # coming back from an absence (box scores + tonight's injury report)
+            frame = pd.concat([box, up], ignore_index=True)
+            h3, t3 = T3.add_absence(hist, frame), T3.add_absence(tonight, frame)
+        tm = T3.ThreesModel().fit(h3)
+        mu = tm.predict_attempts(t3)
+        rates = T3.current_rates(box)
+        pids = [str(x) for x in tonight["player_id"]]
+        p3 = np.array([rates.get(pid, (0.33, 0.0, 0.33))[0] for pid in pids], float)
+        rungs = T3.calibrate(T3.rung_probs(mu, p3, tm.var, T3.MAX_RUNG))
+        for pid, m, p, rr in zip(pids, mu, p3, rungs):
+            if pid in PROJ:
+                PROJ[pid]["threes"] = {"attempts": float(m), "p3": float(p), "made": float(m * p),
+                                       "rungs": [float(x) for x in rr],
+                                       "shot_history": float(rates.get(pid, (0, 0.0, 0))[1])}
+        log["threes"] = {"players": len(pids), "attempts_var": [round(v, 3) for v in tm.var]}
+    except Exception as exc:  # noqa: BLE001
+        log["threes"] = f"failed: {exc}"
+    return log

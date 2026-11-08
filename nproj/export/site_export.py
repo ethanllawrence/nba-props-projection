@@ -48,7 +48,13 @@ def _now():
 def export_all(con, date_s: str):
     n_board = _export_today_board(con, date_s)
     jokic = _export_jokic(con, date_s)
-    return {"today_board_players": n_board, "jokic_updated": jokic}
+    out = {"today_board_players": n_board, "jokic_updated": jokic}
+    try:                                   # 3PM tab (beta): never blocks the board
+        from .threes_export import export_threes
+        out["threes"] = export_threes(con, date_s)
+    except Exception as exc:  # noqa: BLE001
+        out["threes"] = f"failed: {exc}"
+    return out
 
 
 def _recent_minutes(con, player_id, date_s):

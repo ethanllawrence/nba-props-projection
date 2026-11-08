@@ -54,6 +54,15 @@ def test_live_model():
                         "VALUES (?,?,?,?)", (r.game_id, r.player_id, DATE, st))
         log = live.run(con, DATE, history_root=hist)
         assert log["projected_players"] > 150, log
+        # 3PM beta rides along: attempts, make rate and falling 1+ .. 8+ chances
+        assert isinstance(log.get("threes"), dict), log.get("threes")
+        th = [v["threes"] for v in live.PROJ.values() if "threes" in v]
+        assert len(th) > 150 and all(0.15 < t["p3"] < 0.5 for t in th)
+        assert all(all(a >= b for a, b in zip(t["rungs"], t["rungs"][1:])) for t in th)
+        acts = b[b.dnp == 0].set_index("player_id")
+        err = [abs(live.PROJ[p]["threes"]["made"] - acts.loc[p, "fg3m"]) for p in acts.index
+               if p in live.PROJ and "threes" in live.PROJ[p]] if "fg3m" in acts.columns else []
+        assert not err or sum(err) / len(err) < 1.3, sum(err) / len(err)
         actual = b[b.dnp == 0].set_index("player_id")
         errs = [abs(live.PROJ[p]["points"] - actual.loc[p, "points"]) for p in actual.index
                 if p in live.PROJ]
