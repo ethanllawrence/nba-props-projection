@@ -182,11 +182,41 @@ function record(hist) {
   return { w, l: graded.length - w, n: graded.length };
 }
 
+/* Units (Nov 8, Robin): 1 unit on every graded Parlay of the Day at its posted
+   odds. A win pays the combined odds; with a leg voided (player sat), the
+   books pay the remaining legs, so the price is rebuilt from those legs. */
+const dec = (o) => (o > 0 ? 1 + o / 100 : 1 + 100 / -o);
+function payout(h) {
+  const legs = h.legs || [];
+  if (legs.some((l) => l.void)) {
+    const live = legs.filter((l) => !l.void && l.odds != null);
+    return live.reduce((a, l) => a * dec(l.odds), 1) - 1;
+  }
+  return h.combined_odds != null ? dec(h.combined_odds) - 1 : null;
+}
+function units(hist) {
+  let u = 0, n = 0;
+  for (const h of hist || []) {
+    if (h.result === "loss") { u -= 1; n += 1; }
+    else if (h.result === "win") {
+      const p = payout(h);
+      if (p != null) { u += p; n += 1; }
+    }
+  }
+  return { u, n };
+}
+const fmtU = (u) => `${u > 0 ? "+" : u < 0 ? "−" : ""}${Math.abs(u).toFixed(2)}u`;
+
 function recordTiles(main) {
   const r = record(main);
+  const { u, n } = units(main);
+  const uCls = u > 0 ? "pos" : u < 0 ? "neg" : "";
   return `<div class="tiles"><div class="tile"><div class="v">${r.n ? `${r.w}-${r.l}` : "—"}</div>
     <div class="k">Parlay of the Day</div>
-    <div class="s">${r.n ? `${Math.round((r.w / r.n) * 100)}% hit · every leg must hit` : "no graded parlays yet"}</div></div></div>`;
+    <div class="s">${r.n ? `${Math.round((r.w / r.n) * 100)}% hit · every leg must hit` : "no graded parlays yet"}</div></div>
+    <div class="tile"><div class="v ${uCls}">${n ? fmtU(u) : "—"}</div>
+    <div class="k">Units</div>
+    <div class="s">${n ? `1 unit a day at the posted odds · ${u >= 0 ? "+" : "−"}${Math.abs((u / n) * 100).toFixed(0)}% per bet` : "no graded parlays yet"}</div></div></div>`;
 }
 
 async function main() {
