@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-08T14:43:34Z",
+  "generated_at": "2026-11-08T17:13:20Z",
   "date": "2026-11-08",
   "early_look": false,
   "model": "lightgbm",
   "note": "Projections come from the PRA model (LightGBM trained on three seasons: recent form, minutes, opponent, pace and spread, rest, and teammates out). Lines from FanDuel/DraftKings (60 of 60 players have at least one). Colors show where the projection sits vs. the line: red below, gold about even, green above (a guide, not a bet signal). 0 cells are boxed: the model's chance beats the price's break-even by 2+ points.",
-  "lines_fetched_at": "2026-11-08T14:43:33Z",
+  "lines_fetched_at": "2026-11-08T17:13:19Z",
   "unmatched_lines": [],
   "players": [
     {
@@ -21,9 +21,9 @@
           "proj": 31.1,
           "line": 33.5,
           "book": "DraftKings",
-          "over": -108,
-          "under": -118,
-          "p_over": 0.467,
+          "over": -110,
+          "under": -116,
+          "p_over": 0.471,
           "call": null,
           "edge": 0.0
         },
@@ -31,9 +31,9 @@
           "proj": 6.1,
           "line": 7.5,
           "book": "DraftKings",
-          "over": 100,
-          "under": -132,
-          "p_over": 0.433,
+          "over": -101,
+          "under": -131,
+          "p_over": 0.435,
           "call": null,
           "edge": 0.0
         },
@@ -41,19 +41,19 @@
           "proj": 6.4,
           "line": 6.5,
           "book": "DraftKings",
-          "over": -132,
-          "under": 100,
-          "p_over": 0.519,
+          "over": -130,
+          "under": -101,
+          "p_over": 0.517,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 45.0,
-          "line": 47.5,
+          "line": 48.5,
           "book": "DraftKings",
-          "over": -121,
-          "under": -109,
-          "p_over": 0.492,
+          "over": -108,
+          "under": -122,
+          "p_over": 0.463,
           "call": null,
           "edge": 0.0
         }
@@ -94,6 +94,58 @@
           "ast": 5,
           "pra": 63
         }
+      ],
+      "l10": [
+        [
+          12,
+          4,
+          7
+        ],
+        [
+          28,
+          8,
+          7
+        ],
+        [
+          23,
+          6,
+          7
+        ],
+        [
+          52,
+          8,
+          10
+        ],
+        [
+          41,
+          5,
+          9
+        ],
+        [
+          37,
+          7,
+          5
+        ],
+        [
+          45,
+          15,
+          6
+        ],
+        [
+          42,
+          7,
+          13
+        ],
+        [
+          40,
+          9,
+          7
+        ],
+        [
+          53,
+          5,
+          5
+        ]
       ]
     },
     {
@@ -120,9 +172,9 @@
           "proj": 4.0,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -165,
-          "under": 125,
-          "p_over": 0.578,
+          "over": -128,
+          "under": -103,
+          "p_over": 0.522,
           "call": null,
           "edge": 0.0
         },
@@ -130,19 +182,19 @@
           "proj": 5.8,
           "line": 5.5,
           "book": "DraftKings",
-          "over": -129,
-          "under": -102,
-          "p_over": 0.522,
+          "over": -123,
+          "under": -107,
+          "p_over": 0.511,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 36.1,
-          "line": 35.5,
+          "line": 34.5,
           "book": "DraftKings",
-          "over": -110,
-          "under": -120,
-          "p_over": 0.482,
+          "over": -124,
+          "under": -106,
+          "p_over": 0.514,
           "call": null,
           "edge": 0.0
         }
@@ -183,96 +235,58 @@
           "ast": 4,
           "pra": 24
         }
-      ]
-    },
-    {
-      "player": "Darius Acuff Jr.",
-      "player_id": "5142620",
-      "team": "SAC",
-      "opp": "MIA",
-      "home": true,
-      "time_et": "7:00 PM",
-      "status": null,
-      "minutes": 37.1,
-      "stats": {
-        "points": {
-          "proj": 27.0,
-          "line": 24.5,
-          "book": "DraftKings",
-          "over": -109,
-          "under": -117,
-          "p_over": 0.495,
-          "call": null,
-          "edge": 0.0
-        },
-        "rebounds": {
-          "proj": 4.2,
-          "line": 2.5,
-          "book": "DraftKings",
-          "over": -162,
-          "under": 123,
-          "p_over": 0.604,
-          "call": null,
-          "edge": 0.0,
-          "flag": "far"
-        },
-        "assists": {
-          "proj": 8.2,
-          "line": 5.5,
-          "book": "DraftKings",
-          "over": -148,
-          "under": 112,
-          "p_over": 0.596,
-          "call": null,
-          "edge": 0.0
-        },
-        "pra": {
-          "proj": 38.7,
-          "line": 33.5,
-          "book": "DraftKings",
-          "over": -122,
-          "under": -107,
-          "p_over": 0.527,
-          "call": null,
-          "edge": 0.0
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-29",
-          "pts": 34,
-          "reb": 6,
-          "ast": 14,
-          "pra": 54
-        },
-        {
-          "date": "2026-10-31",
-          "pts": 38,
-          "reb": 5,
-          "ast": 5,
-          "pra": 48
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 25,
-          "reb": 5,
-          "ast": 6,
-          "pra": 36
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 22,
-          "reb": 3,
-          "ast": 12,
-          "pra": 37
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 22,
-          "reb": 3,
-          "ast": 8,
-          "pra": 33
-        }
+      ],
+      "l10": [
+        [
+          28,
+          4,
+          5
+        ],
+        [
+          32,
+          3,
+          6
+        ],
+        [
+          26,
+          4,
+          4
+        ],
+        [
+          29,
+          5,
+          4
+        ],
+        [
+          27,
+          5,
+          4
+        ],
+        [
+          27,
+          4,
+          4
+        ],
+        [
+          38,
+          4,
+          4
+        ],
+        [
+          26,
+          4,
+          11
+        ],
+        [
+          19,
+          1,
+          7
+        ],
+        [
+          17,
+          3,
+          4
+        ]
       ]
     },
     {
@@ -283,15 +297,15 @@
       "home": false,
       "time_et": "7:00 PM",
       "status": null,
-      "minutes": 29.2,
+      "minutes": 29.0,
       "stats": {
         "points": {
-          "proj": 26.8,
+          "proj": 27.0,
           "line": 30.5,
           "book": "DraftKings",
           "over": -106,
           "under": -120,
-          "p_over": 0.456,
+          "p_over": 0.457,
           "call": null,
           "edge": 0.0
         },
@@ -299,9 +313,9 @@
           "proj": 11.0,
           "line": 12.5,
           "book": "DraftKings",
-          "over": 100,
-          "under": -131,
-          "p_over": 0.44,
+          "over": -131,
+          "under": 100,
+          "p_over": 0.5,
           "call": null,
           "edge": 0.0
         },
@@ -362,6 +376,195 @@
           "ast": 4,
           "pra": 38
         }
+      ],
+      "l10": [
+        [
+          31,
+          14,
+          8
+        ],
+        [
+          35,
+          6,
+          1
+        ],
+        [
+          36,
+          12,
+          5
+        ],
+        [
+          14,
+          6,
+          3
+        ],
+        [
+          29,
+          14,
+          11
+        ],
+        [
+          24,
+          18,
+          3
+        ],
+        [
+          31,
+          18,
+          10
+        ],
+        [
+          30,
+          12,
+          7
+        ],
+        [
+          27,
+          14,
+          6
+        ],
+        [
+          20,
+          14,
+          4
+        ]
+      ]
+    },
+    {
+      "player": "Darius Acuff Jr.",
+      "player_id": "5142620",
+      "team": "SAC",
+      "opp": "MIA",
+      "home": true,
+      "time_et": "7:00 PM",
+      "status": null,
+      "minutes": 37.0,
+      "stats": {
+        "points": {
+          "proj": 27.0,
+          "line": 24.5,
+          "book": "DraftKings",
+          "over": -109,
+          "under": -117,
+          "p_over": 0.495,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 4.2,
+          "line": 2.5,
+          "book": "DraftKings",
+          "over": -162,
+          "under": 123,
+          "p_over": 0.604,
+          "call": null,
+          "edge": 0.0,
+          "flag": "far"
+        },
+        "assists": {
+          "proj": 8.2,
+          "line": 6.5,
+          "book": "DraftKings",
+          "over": 100,
+          "under": -132,
+          "p_over": 0.49,
+          "call": null,
+          "edge": 0.0
+        },
+        "pra": {
+          "proj": 38.6,
+          "line": 33.5,
+          "book": "DraftKings",
+          "over": -122,
+          "under": -108,
+          "p_over": 0.525,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-29",
+          "pts": 34,
+          "reb": 6,
+          "ast": 14,
+          "pra": 54
+        },
+        {
+          "date": "2026-10-31",
+          "pts": 38,
+          "reb": 5,
+          "ast": 5,
+          "pra": 48
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 25,
+          "reb": 5,
+          "ast": 6,
+          "pra": 36
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 22,
+          "reb": 3,
+          "ast": 12,
+          "pra": 37
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 22,
+          "reb": 3,
+          "ast": 8,
+          "pra": 33
+        }
+      ],
+      "l10": [
+        [
+          12,
+          3,
+          3
+        ],
+        [
+          33,
+          2,
+          4
+        ],
+        [
+          22,
+          3,
+          7
+        ],
+        [
+          19,
+          3,
+          5
+        ],
+        [
+          34,
+          6,
+          14
+        ],
+        [
+          38,
+          5,
+          5
+        ],
+        [
+          25,
+          5,
+          6
+        ],
+        [
+          22,
+          3,
+          12
+        ],
+        [
+          22,
+          3,
+          8
+        ]
       ]
     },
     {
@@ -378,9 +581,9 @@
           "proj": 25.9,
           "line": 21.5,
           "book": "DraftKings",
-          "over": -109,
-          "under": -117,
-          "p_over": 0.506,
+          "over": -103,
+          "under": -123,
+          "p_over": 0.494,
           "call": null,
           "edge": 0.0
         },
@@ -388,9 +591,9 @@
           "proj": 6.6,
           "line": 6.5,
           "book": "DraftKings",
-          "over": -117,
-          "under": -112,
-          "p_over": 0.497,
+          "over": -125,
+          "under": -105,
+          "p_over": 0.511,
           "call": null,
           "edge": 0.0
         },
@@ -398,9 +601,9 @@
           "proj": 4.4,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -164,
-          "under": 124,
-          "p_over": 0.587,
+          "over": -150,
+          "under": 114,
+          "p_over": 0.568,
           "call": null,
           "edge": 0.0
         },
@@ -408,9 +611,9 @@
           "proj": 37.3,
           "line": 32.5,
           "book": "DraftKings",
-          "over": -111,
-          "under": -118,
-          "p_over": 0.504,
+          "over": -109,
+          "under": -120,
+          "p_over": 0.5,
           "call": null,
           "edge": 0.0
         }
@@ -451,6 +654,58 @@
           "ast": 5,
           "pra": 30
         }
+      ],
+      "l10": [
+        [
+          33,
+          9,
+          4
+        ],
+        [
+          19,
+          8,
+          6
+        ],
+        [
+          21,
+          8,
+          4
+        ],
+        [
+          27,
+          3,
+          5
+        ],
+        [
+          16,
+          4,
+          4
+        ],
+        [
+          20,
+          10,
+          2
+        ],
+        [
+          16,
+          4,
+          4
+        ],
+        [
+          25,
+          11,
+          5
+        ],
+        [
+          30,
+          7,
+          1
+        ],
+        [
+          20,
+          5,
+          5
+        ]
       ]
     },
     {
@@ -485,11 +740,11 @@
         },
         "assists": {
           "proj": 7.9,
-          "line": 9.5,
+          "line": 8.5,
           "book": "DraftKings",
-          "over": 110,
-          "under": -145,
-          "p_over": 0.412,
+          "over": -148,
+          "under": 112,
+          "p_over": 0.535,
           "call": null,
           "edge": 0.0
         },
@@ -497,9 +752,9 @@
           "proj": 38.6,
           "line": 39.5,
           "book": "DraftKings",
-          "over": -117,
-          "under": -112,
-          "p_over": 0.491,
+          "over": -116,
+          "under": -113,
+          "p_over": 0.489,
           "call": null,
           "edge": 0.0
         }
@@ -540,6 +795,58 @@
           "ast": 11,
           "pra": 44
         }
+      ],
+      "l10": [
+        [
+          21,
+          2,
+          8
+        ],
+        [
+          13,
+          4,
+          5
+        ],
+        [
+          22,
+          4,
+          8
+        ],
+        [
+          16,
+          2,
+          8
+        ],
+        [
+          26,
+          8,
+          8
+        ],
+        [
+          19,
+          9,
+          8
+        ],
+        [
+          30,
+          5,
+          7
+        ],
+        [
+          20,
+          5,
+          4
+        ],
+        [
+          33,
+          5,
+          7
+        ],
+        [
+          26,
+          7,
+          11
+        ]
       ]
     },
     {
@@ -556,9 +863,9 @@
           "proj": 25.2,
           "line": 21.5,
           "book": "DraftKings",
-          "over": -124,
-          "under": -103,
-          "p_over": 0.531,
+          "over": -112,
+          "under": -114,
+          "p_over": 0.508,
           "call": null,
           "edge": 0.0
         },
@@ -566,9 +873,9 @@
           "proj": 9.2,
           "line": 8.5,
           "book": "DraftKings",
-          "over": 104,
-          "under": -138,
-          "p_over": 0.461,
+          "over": -112,
+          "under": -118,
+          "p_over": 0.495,
           "call": null,
           "edge": 0.0
         },
@@ -576,19 +883,19 @@
           "proj": 4.6,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -124,
-          "under": -106,
-          "p_over": 0.532,
+          "over": 105,
+          "under": -138,
+          "p_over": 0.474,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 39.3,
-          "line": 34.5,
+          "line": 33.5,
           "book": "DraftKings",
-          "over": -110,
-          "under": -119,
-          "p_over": 0.501,
+          "over": -122,
+          "under": -107,
+          "p_over": 0.529,
           "call": null,
           "edge": 0.0
         }
@@ -629,6 +936,58 @@
           "ast": 1,
           "pra": 14
         }
+      ],
+      "l10": [
+        [
+          18,
+          6,
+          5
+        ],
+        [
+          24,
+          5,
+          4
+        ],
+        [
+          13,
+          11,
+          6
+        ],
+        [
+          24,
+          7,
+          1
+        ],
+        [
+          28,
+          11,
+          10
+        ],
+        [
+          21,
+          11,
+          2
+        ],
+        [
+          10,
+          7,
+          7
+        ],
+        [
+          15,
+          8,
+          3
+        ],
+        [
+          26,
+          15,
+          2
+        ],
+        [
+          6,
+          7,
+          1
+        ]
       ]
     },
     {
@@ -653,21 +1012,21 @@
         },
         "rebounds": {
           "proj": 7.6,
-          "line": 6.5,
+          "line": 7.5,
           "book": "DraftKings",
-          "over": -150,
-          "under": 114,
-          "p_over": 0.567,
+          "over": 115,
+          "under": -151,
+          "p_over": 0.43,
           "call": null,
           "edge": 0.0
         },
         "assists": {
           "proj": 6.0,
-          "line": 5.5,
+          "line": 6.5,
           "book": "DraftKings",
-          "over": -149,
-          "under": 113,
-          "p_over": 0.557,
+          "over": 112,
+          "under": -147,
+          "p_over": 0.425,
           "call": null,
           "edge": 0.0
         },
@@ -675,9 +1034,9 @@
           "proj": 38.4,
           "line": 38.5,
           "book": "DraftKings",
-          "over": -106,
-          "under": -124,
-          "p_over": 0.471,
+          "over": -110,
+          "under": -119,
+          "p_over": 0.48,
           "call": null,
           "edge": 0.0
         }
@@ -718,6 +1077,58 @@
           "ast": 7,
           "pra": 38
         }
+      ],
+      "l10": [
+        [
+          33,
+          6,
+          5
+        ],
+        [
+          10,
+          4,
+          1
+        ],
+        [
+          32,
+          5,
+          2
+        ],
+        [
+          14,
+          5,
+          6
+        ],
+        [
+          29,
+          6,
+          11
+        ],
+        [
+          26,
+          5,
+          8
+        ],
+        [
+          33,
+          9,
+          6
+        ],
+        [
+          17,
+          4,
+          6
+        ],
+        [
+          19,
+          10,
+          5
+        ],
+        [
+          21,
+          10,
+          7
+        ]
       ]
     },
     {
@@ -732,21 +1143,21 @@
       "stats": {
         "points": {
           "proj": 24.4,
-          "line": 27.5,
+          "line": 26.5,
           "book": "DraftKings",
-          "over": -103,
-          "under": -123,
-          "p_over": 0.452,
+          "over": -124,
+          "under": -103,
+          "p_over": 0.498,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
           "proj": 7.5,
-          "line": 7.5,
+          "line": 6.5,
           "book": "DraftKings",
-          "over": 110,
-          "under": -145,
-          "p_over": 0.439,
+          "over": -150,
+          "under": 114,
+          "p_over": 0.567,
           "call": null,
           "edge": 0.0
         },
@@ -764,9 +1175,9 @@
           "proj": 40.0,
           "line": 41.5,
           "book": "DraftKings",
-          "over": -113,
-          "under": -117,
-          "p_over": 0.48,
+          "over": -110,
+          "under": -120,
+          "p_over": 0.474,
           "call": null,
           "edge": 0.0
         }
@@ -807,6 +1218,58 @@
           "ast": 9,
           "pra": 51
         }
+      ],
+      "l10": [
+        [
+          24,
+          16,
+          4
+        ],
+        [
+          17,
+          11,
+          3
+        ],
+        [
+          13,
+          4,
+          11
+        ],
+        [
+          36,
+          9,
+          7
+        ],
+        [
+          23,
+          7,
+          6
+        ],
+        [
+          40,
+          5,
+          8
+        ],
+        [
+          26,
+          7,
+          7
+        ],
+        [
+          32,
+          4,
+          7
+        ],
+        [
+          19,
+          6,
+          9
+        ],
+        [
+          34,
+          8,
+          9
+        ]
       ]
     },
     {
@@ -821,11 +1284,11 @@
       "stats": {
         "points": {
           "proj": 24.0,
-          "line": 22.5,
+          "line": 21.5,
           "book": "DraftKings",
-          "over": -102,
-          "under": -125,
-          "p_over": 0.474,
+          "over": -119,
+          "under": -107,
+          "p_over": 0.515,
           "call": null,
           "edge": 0.0
         },
@@ -833,9 +1296,9 @@
           "proj": 7.2,
           "line": 6.5,
           "book": "DraftKings",
-          "over": -133,
+          "over": -134,
           "under": 101,
-          "p_over": 0.534,
+          "p_over": 0.535,
           "call": null,
           "edge": 0.0
         },
@@ -843,9 +1306,9 @@
           "proj": 2.2,
           "line": 1.5,
           "book": "DraftKings",
-          "over": -189,
-          "under": 143,
-          "p_over": 0.619,
+          "over": -191,
+          "under": 144,
+          "p_over": 0.62,
           "call": null,
           "edge": 0.0
         },
@@ -853,9 +1316,9 @@
           "proj": 33.9,
           "line": 31.5,
           "book": "DraftKings",
-          "over": -110,
-          "under": -119,
-          "p_over": 0.491,
+          "over": -106,
+          "under": -124,
+          "p_over": 0.482,
           "call": null,
           "edge": 0.0
         }
@@ -896,6 +1359,58 @@
           "ast": 1,
           "pra": 35
         }
+      ],
+      "l10": [
+        [
+          19,
+          2,
+          1
+        ],
+        [
+          26,
+          7,
+          1
+        ],
+        [
+          28,
+          9,
+          1
+        ],
+        [
+          10,
+          0,
+          0
+        ],
+        [
+          27,
+          12,
+          2
+        ],
+        [
+          13,
+          7,
+          1
+        ],
+        [
+          23,
+          9,
+          3
+        ],
+        [
+          18,
+          5,
+          2
+        ],
+        [
+          26,
+          10,
+          0
+        ],
+        [
+          25,
+          9,
+          1
+        ]
       ]
     },
     {
@@ -905,16 +1420,16 @@
       "opp": "MIN",
       "home": false,
       "time_et": "5:00 PM",
-      "status": null,
-      "minutes": 33.2,
+      "status": "day-to-day",
+      "minutes": 32.5,
       "stats": {
         "points": {
           "proj": 23.5,
-          "line": 21.5,
+          "line": 22.5,
           "book": "DraftKings",
-          "over": -117,
-          "under": -109,
-          "p_over": 0.508,
+          "over": -103,
+          "under": -123,
+          "p_over": 0.475,
           "call": null,
           "edge": 0.0
         },
@@ -922,9 +1437,9 @@
           "proj": 4.0,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -158,
-          "under": 120,
-          "p_over": 0.569,
+          "over": -154,
+          "under": 116,
+          "p_over": 0.563,
           "call": null,
           "edge": 0.0
         },
@@ -932,19 +1447,19 @@
           "proj": 5.8,
           "line": 5.5,
           "book": "DraftKings",
-          "over": -144,
-          "under": 109,
-          "p_over": 0.545,
+          "over": -130,
+          "under": -101,
+          "p_over": 0.523,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 33.4,
-          "line": 31.5,
+          "line": 32.5,
           "book": "DraftKings",
-          "over": -121,
-          "under": -108,
-          "p_over": 0.51,
+          "over": -110,
+          "under": -120,
+          "p_over": 0.484,
           "call": null,
           "edge": 0.0
         }
@@ -985,6 +1500,58 @@
           "ast": 9,
           "pra": 31
         }
+      ],
+      "l10": [
+        [
+          14,
+          2,
+          5
+        ],
+        [
+          22,
+          3,
+          5
+        ],
+        [
+          19,
+          1,
+          10
+        ],
+        [
+          24,
+          9,
+          10
+        ],
+        [
+          26,
+          3,
+          6
+        ],
+        [
+          31,
+          4,
+          3
+        ],
+        [
+          8,
+          3,
+          4
+        ],
+        [
+          7,
+          7,
+          0
+        ],
+        [
+          39,
+          2,
+          9
+        ],
+        [
+          16,
+          6,
+          9
+        ]
       ]
     },
     {
@@ -1001,9 +1568,9 @@
           "proj": 23.4,
           "line": 21.5,
           "book": "DraftKings",
-          "over": -117,
-          "under": -109,
-          "p_over": 0.508,
+          "over": -121,
+          "under": -105,
+          "p_over": 0.516,
           "call": null,
           "edge": 0.0
         },
@@ -1021,9 +1588,9 @@
           "proj": 7.2,
           "line": 6.5,
           "book": "DraftKings",
-          "over": -150,
-          "under": 114,
-          "p_over": 0.561,
+          "over": -143,
+          "under": 108,
+          "p_over": 0.55,
           "call": null,
           "edge": 0.0
         },
@@ -1074,6 +1641,58 @@
           "ast": 7,
           "pra": 34
         }
+      ],
+      "l10": [
+        [
+          15,
+          1,
+          6
+        ],
+        [
+          21,
+          5,
+          8
+        ],
+        [
+          30,
+          1,
+          4
+        ],
+        [
+          26,
+          0,
+          6
+        ],
+        [
+          16,
+          4,
+          11
+        ],
+        [
+          14,
+          1,
+          5
+        ],
+        [
+          24,
+          2,
+          5
+        ],
+        [
+          15,
+          0,
+          7
+        ],
+        [
+          16,
+          4,
+          8
+        ],
+        [
+          26,
+          1,
+          7
+        ]
       ]
     },
     {
@@ -1100,9 +1719,9 @@
           "proj": 4.4,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -135,
-          "under": 103,
-          "p_over": 0.546,
+          "over": -137,
+          "under": 104,
+          "p_over": 0.549,
           "call": null,
           "edge": 0.0
         },
@@ -1110,19 +1729,19 @@
           "proj": 4.3,
           "line": 4.5,
           "book": "DraftKings",
-          "over": 115,
-          "under": -152,
-          "p_over": 0.423,
+          "over": 111,
+          "under": -146,
+          "p_over": 0.431,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 33.0,
-          "line": 28.5,
+          "line": 29.5,
           "book": "DraftKings",
-          "over": -122,
-          "under": -108,
-          "p_over": 0.524,
+          "over": -105,
+          "under": -126,
+          "p_over": 0.485,
           "call": null,
           "edge": 0.0
         }
@@ -1163,6 +1782,43 @@
           "ast": 2,
           "pra": 18
         }
+      ],
+      "l10": [
+        [
+          15,
+          4,
+          2
+        ],
+        [
+          24,
+          1,
+          3
+        ],
+        [
+          18,
+          6,
+          6
+        ],
+        [
+          15,
+          2,
+          4
+        ],
+        [
+          35,
+          4,
+          9
+        ],
+        [
+          29,
+          7,
+          5
+        ],
+        [
+          14,
+          2,
+          2
+        ]
       ]
     },
     {
@@ -1173,15 +1829,15 @@
       "home": false,
       "time_et": "5:00 PM",
       "status": "day-to-day",
-      "minutes": 33.4,
+      "minutes": 33.1,
       "stats": {
         "points": {
           "proj": 22.9,
-          "line": 20.5,
+          "line": 21.5,
           "book": "DraftKings",
-          "over": -115,
-          "under": -111,
-          "p_over": 0.507,
+          "over": -113,
+          "under": -113,
+          "p_over": 0.497,
           "call": null,
           "edge": 0.0
         },
@@ -1189,9 +1845,9 @@
           "proj": 6.8,
           "line": 6.5,
           "book": "DraftKings",
-          "over": -119,
-          "under": -111,
-          "p_over": 0.502,
+          "over": -116,
+          "under": -113,
+          "p_over": 0.497,
           "call": null,
           "edge": 0.0
         },
@@ -1199,19 +1855,19 @@
           "proj": 2.1,
           "line": 1.5,
           "book": "DraftKings",
-          "over": -152,
-          "under": 116,
-          "p_over": 0.567,
+          "over": -170,
+          "under": 128,
+          "p_over": 0.589,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 31.7,
-          "line": 29.5,
+          "line": 30.5,
           "book": "DraftKings",
-          "over": -113,
+          "over": -112,
           "under": -117,
-          "p_over": 0.495,
+          "p_over": 0.489,
           "call": null,
           "edge": 0.0
         }
@@ -1252,6 +1908,58 @@
           "ast": 1,
           "pra": 33
         }
+      ],
+      "l10": [
+        [
+          19,
+          7,
+          3
+        ],
+        [
+          29,
+          3,
+          2
+        ],
+        [
+          18,
+          9,
+          3
+        ],
+        [
+          16,
+          6,
+          3
+        ],
+        [
+          28,
+          7,
+          1
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          13,
+          6,
+          1
+        ],
+        [
+          22,
+          8,
+          3
+        ],
+        [
+          21,
+          10,
+          4
+        ],
+        [
+          24,
+          8,
+          1
+        ]
       ]
     },
     {
@@ -1262,15 +1970,15 @@
       "home": true,
       "time_et": "5:00 PM",
       "status": null,
-      "minutes": 31.3,
+      "minutes": 31.0,
       "stats": {
         "points": {
           "proj": 22.3,
           "line": 21.5,
           "book": "DraftKings",
-          "over": -112,
-          "under": -114,
-          "p_over": 0.491,
+          "over": -108,
+          "under": -118,
+          "p_over": 0.483,
           "call": null,
           "edge": 0.0
         },
@@ -1278,19 +1986,19 @@
           "proj": 4.6,
           "line": 4.5,
           "book": "DraftKings",
-          "over": -111,
-          "under": -118,
-          "p_over": 0.484,
+          "over": 103,
+          "under": -135,
+          "p_over": 0.454,
           "call": null,
           "edge": 0.0
         },
         "assists": {
           "proj": 6.8,
-          "line": 7.5,
+          "line": 6.5,
           "book": "DraftKings",
-          "over": 112,
-          "under": -148,
-          "p_over": 0.422,
+          "over": -149,
+          "under": 113,
+          "p_over": 0.553,
           "call": null,
           "edge": 0.0
         },
@@ -1298,9 +2006,9 @@
           "proj": 34.3,
           "line": 33.5,
           "book": "DraftKings",
-          "over": -116,
-          "under": -113,
-          "p_over": 0.495,
+          "over": -107,
+          "under": -123,
+          "p_over": 0.477,
           "call": null,
           "edge": 0.0
         }
@@ -1341,6 +2049,58 @@
           "ast": 8,
           "pra": 32
         }
+      ],
+      "l10": [
+        [
+          21,
+          2,
+          6
+        ],
+        [
+          12,
+          5,
+          5
+        ],
+        [
+          15,
+          1,
+          8
+        ],
+        [
+          11,
+          0,
+          6
+        ],
+        [
+          8,
+          3,
+          8
+        ],
+        [
+          24,
+          4,
+          7
+        ],
+        [
+          10,
+          8,
+          4
+        ],
+        [
+          34,
+          6,
+          3
+        ],
+        [
+          20,
+          2,
+          6
+        ],
+        [
+          22,
+          2,
+          8
+        ]
       ]
     },
     {
@@ -1351,7 +2111,7 @@
       "home": true,
       "time_et": "7:00 PM",
       "status": null,
-      "minutes": 33.4,
+      "minutes": 33.2,
       "stats": {
         "points": {
           "proj": 20.9,
@@ -1387,9 +2147,9 @@
           "proj": 27.7,
           "line": 26.5,
           "book": "DraftKings",
-          "over": -112,
-          "under": -117,
-          "p_over": 0.489,
+          "over": -110,
+          "under": -120,
+          "p_over": 0.485,
           "call": null,
           "edge": 0.0
         }
@@ -1430,6 +2190,58 @@
           "ast": 3,
           "pra": 21
         }
+      ],
+      "l10": [
+        [
+          6,
+          2,
+          4
+        ],
+        [
+          28,
+          4,
+          4
+        ],
+        [
+          22,
+          5,
+          1
+        ],
+        [
+          37,
+          2,
+          5
+        ],
+        [
+          22,
+          3,
+          3
+        ],
+        [
+          21,
+          3,
+          5
+        ],
+        [
+          11,
+          0,
+          1
+        ],
+        [
+          23,
+          4,
+          1
+        ],
+        [
+          21,
+          4,
+          1
+        ],
+        [
+          14,
+          4,
+          3
+        ]
       ]
     },
     {
@@ -1446,19 +2258,19 @@
           "proj": 20.4,
           "line": 17.5,
           "book": "DraftKings",
-          "over": -101,
-          "under": -126,
-          "p_over": 0.482,
+          "over": -107,
+          "under": -120,
+          "p_over": 0.494,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
           "proj": 7.5,
-          "line": 6.5,
+          "line": 7.5,
           "book": "DraftKings",
-          "over": -137,
-          "under": 104,
-          "p_over": 0.546,
+          "over": 108,
+          "under": -142,
+          "p_over": 0.442,
           "call": null,
           "edge": 0.0
         },
@@ -1466,9 +2278,9 @@
           "proj": 7.3,
           "line": 6.5,
           "book": "DraftKings",
-          "over": -140,
-          "under": 106,
-          "p_over": 0.549,
+          "over": -146,
+          "under": 111,
+          "p_over": 0.559,
           "call": null,
           "edge": 0.0
         },
@@ -1476,9 +2288,9 @@
           "proj": 35.9,
           "line": 31.5,
           "book": "DraftKings",
-          "over": -109,
-          "under": -120,
-          "p_over": 0.498,
+          "over": -122,
+          "under": -108,
+          "p_over": 0.523,
           "call": null,
           "edge": 0.0
         }
@@ -1519,6 +2331,58 @@
           "ast": 3,
           "pra": 18
         }
+      ],
+      "l10": [
+        [
+          19,
+          6,
+          8
+        ],
+        [
+          24,
+          12,
+          3
+        ],
+        [
+          14,
+          9,
+          7
+        ],
+        [
+          17,
+          10,
+          5
+        ],
+        [
+          18,
+          2,
+          5
+        ],
+        [
+          13,
+          5,
+          10
+        ],
+        [
+          20,
+          9,
+          8
+        ],
+        [
+          15,
+          7,
+          9
+        ],
+        [
+          13,
+          10,
+          8
+        ],
+        [
+          8,
+          7,
+          3
+        ]
       ]
     },
     {
@@ -1535,9 +2399,9 @@
           "proj": 20.3,
           "line": 20.5,
           "book": "DraftKings",
-          "over": -112,
-          "under": -114,
-          "p_over": 0.485,
+          "over": -105,
+          "under": -122,
+          "p_over": 0.47,
           "call": null,
           "edge": 0.0
         },
@@ -1545,9 +2409,9 @@
           "proj": 7.0,
           "line": 6.5,
           "book": "DraftKings",
-          "over": -118,
-          "under": -111,
-          "p_over": 0.506,
+          "over": -112,
+          "under": -117,
+          "p_over": 0.494,
           "call": null,
           "edge": 0.0
         },
@@ -1565,9 +2429,9 @@
           "proj": 32.0,
           "line": 31.5,
           "book": "DraftKings",
-          "over": -124,
-          "under": -106,
-          "p_over": 0.509,
+          "over": -116,
+          "under": -113,
+          "p_over": 0.494,
           "call": null,
           "edge": 0.0
         }
@@ -1608,6 +2472,58 @@
           "ast": 8,
           "pra": 34
         }
+      ],
+      "l10": [
+        [
+          3,
+          7,
+          1
+        ],
+        [
+          33,
+          8,
+          7
+        ],
+        [
+          23,
+          6,
+          5
+        ],
+        [
+          10,
+          7,
+          7
+        ],
+        [
+          24,
+          9,
+          4
+        ],
+        [
+          15,
+          8,
+          3
+        ],
+        [
+          20,
+          5,
+          6
+        ],
+        [
+          21,
+          11,
+          2
+        ],
+        [
+          22,
+          3,
+          4
+        ],
+        [
+          19,
+          7,
+          8
+        ]
       ]
     },
     {
@@ -1618,15 +2534,15 @@
       "home": false,
       "time_et": "7:00 PM",
       "status": null,
-      "minutes": 30.2,
+      "minutes": 29.9,
       "stats": {
         "points": {
           "proj": 19.7,
           "line": 19.5,
           "book": "DraftKings",
-          "over": -115,
-          "under": -111,
-          "p_over": 0.493,
+          "over": -119,
+          "under": -107,
+          "p_over": 0.501,
           "call": null,
           "edge": 0.0
         },
@@ -1697,6 +2613,58 @@
           "ast": 0,
           "pra": 28
         }
+      ],
+      "l10": [
+        [
+          6,
+          3,
+          1
+        ],
+        [
+          15,
+          7,
+          4
+        ],
+        [
+          4,
+          6,
+          3
+        ],
+        [
+          20,
+          8,
+          4
+        ],
+        [
+          8,
+          8,
+          3
+        ],
+        [
+          24,
+          9,
+          3
+        ],
+        [
+          27,
+          9,
+          3
+        ],
+        [
+          16,
+          9,
+          4
+        ],
+        [
+          35,
+          10,
+          4
+        ],
+        [
+          18,
+          10,
+          0
+        ]
       ]
     },
     {
@@ -1713,9 +2681,9 @@
           "proj": 19.6,
           "line": 19.5,
           "book": "DraftKings",
-          "over": -121,
-          "under": -105,
-          "p_over": 0.504,
+          "over": -116,
+          "under": -110,
+          "p_over": 0.494,
           "call": null,
           "edge": 0.0
         },
@@ -1723,9 +2691,9 @@
           "proj": 6.3,
           "line": 6.5,
           "book": "DraftKings",
-          "over": 110,
-          "under": -145,
-          "p_over": 0.435,
+          "over": 106,
+          "under": -139,
+          "p_over": 0.443,
           "call": null,
           "edge": 0.0
         },
@@ -1733,9 +2701,9 @@
           "proj": 2.6,
           "line": 2.5,
           "book": "DraftKings",
-          "over": -109,
-          "under": -121,
-          "p_over": 0.477,
+          "over": -108,
+          "under": -122,
+          "p_over": 0.475,
           "call": null,
           "edge": 0.0
         },
@@ -1743,9 +2711,9 @@
           "proj": 27.7,
           "line": 28.5,
           "book": "DraftKings",
-          "over": -123,
-          "under": -107,
-          "p_over": 0.5,
+          "over": -119,
+          "under": -111,
+          "p_over": 0.492,
           "call": null,
           "edge": 0.0
         }
@@ -1786,6 +2754,48 @@
           "ast": 0,
           "pra": 10
         }
+      ],
+      "l10": [
+        [
+          16,
+          4,
+          0
+        ],
+        [
+          21,
+          6,
+          1
+        ],
+        [
+          30,
+          14,
+          3
+        ],
+        [
+          17,
+          5,
+          3
+        ],
+        [
+          20,
+          6,
+          4
+        ],
+        [
+          23,
+          5,
+          4
+        ],
+        [
+          24,
+          7,
+          4
+        ],
+        [
+          5,
+          5,
+          0
+        ]
       ]
     },
     {
@@ -1822,9 +2832,9 @@
           "proj": 3.0,
           "line": 2.5,
           "book": "DraftKings",
-          "over": -138,
-          "under": 105,
-          "p_over": 0.543,
+          "over": -164,
+          "under": 124,
+          "p_over": 0.58,
           "call": null,
           "edge": 0.0
         },
@@ -1832,9 +2842,9 @@
           "proj": 28.3,
           "line": 29.5,
           "book": "DraftKings",
-          "over": -105,
-          "under": -125,
-          "p_over": 0.463,
+          "over": -109,
+          "under": -120,
+          "p_over": 0.472,
           "call": null,
           "edge": 0.0
         }
@@ -1875,6 +2885,58 @@
           "ast": 4,
           "pra": 25
         }
+      ],
+      "l10": [
+        [
+          17,
+          7,
+          2
+        ],
+        [
+          22,
+          3,
+          3
+        ],
+        [
+          23,
+          5,
+          2
+        ],
+        [
+          17,
+          1,
+          2
+        ],
+        [
+          25,
+          5,
+          2
+        ],
+        [
+          22,
+          6,
+          2
+        ],
+        [
+          15,
+          6,
+          4
+        ],
+        [
+          25,
+          11,
+          4
+        ],
+        [
+          23,
+          4,
+          2
+        ],
+        [
+          13,
+          8,
+          4
+        ]
       ]
     },
     {
@@ -1889,11 +2951,11 @@
       "stats": {
         "points": {
           "proj": 18.9,
-          "line": 23.5,
+          "line": 22.5,
           "book": "DraftKings",
-          "over": -108,
-          "under": -118,
-          "p_over": 0.449,
+          "over": -120,
+          "under": -106,
+          "p_over": 0.479,
           "call": null,
           "edge": 0.0
         },
@@ -1901,9 +2963,9 @@
           "proj": 3.5,
           "line": 4.5,
           "book": "DraftKings",
-          "over": 118,
-          "under": -156,
-          "p_over": 0.396,
+          "over": 124,
+          "under": -164,
+          "p_over": 0.386,
           "call": null,
           "edge": 0.0
         },
@@ -1911,9 +2973,9 @@
           "proj": 4.1,
           "line": 5.5,
           "book": "DraftKings",
-          "over": 105,
-          "under": -139,
-          "p_over": 0.414,
+          "over": 109,
+          "under": -144,
+          "p_over": 0.407,
           "call": null,
           "edge": 0.0
         },
@@ -1921,9 +2983,9 @@
           "proj": 26.4,
           "line": 32.5,
           "book": "DraftKings",
-          "over": -122,
-          "under": -107,
-          "p_over": 0.473,
+          "over": -116,
+          "under": -114,
+          "p_over": 0.461,
           "call": null,
           "edge": 0.0
         }
@@ -1964,6 +3026,58 @@
           "ast": 2,
           "pra": 30
         }
+      ],
+      "l10": [
+        [
+          23,
+          4,
+          6
+        ],
+        [
+          28,
+          2,
+          9
+        ],
+        [
+          29,
+          1,
+          4
+        ],
+        [
+          26,
+          4,
+          7
+        ],
+        [
+          16,
+          6,
+          1
+        ],
+        [
+          21,
+          4,
+          5
+        ],
+        [
+          19,
+          3,
+          4
+        ],
+        [
+          27,
+          2,
+          5
+        ],
+        [
+          21,
+          3,
+          4
+        ],
+        [
+          25,
+          3,
+          2
+        ]
       ]
     },
     {
@@ -1978,11 +3092,11 @@
       "stats": {
         "points": {
           "proj": 18.8,
-          "line": 17.5,
+          "line": 16.5,
           "book": "DraftKings",
-          "over": -105,
-          "under": -121,
-          "p_over": 0.48,
+          "over": -124,
+          "under": -103,
+          "p_over": 0.523,
           "call": null,
           "edge": 0.0
         },
@@ -1990,9 +3104,9 @@
           "proj": 5.4,
           "line": 5.5,
           "book": "DraftKings",
-          "over": 110,
-          "under": -145,
-          "p_over": 0.436,
+          "over": 106,
+          "under": -139,
+          "p_over": 0.444,
           "call": null,
           "edge": 0.0
         },
@@ -2000,9 +3114,9 @@
           "proj": 2.3,
           "line": 1.5,
           "book": "DraftKings",
-          "over": 130,
-          "under": -172,
-          "p_over": 0.424,
+          "over": 135,
+          "under": -179,
+          "p_over": 0.416,
           "call": null,
           "edge": 0.0,
           "flag": "far"
@@ -2011,9 +3125,9 @@
           "proj": 26.8,
           "line": 23.5,
           "book": "DraftKings",
-          "over": -127,
-          "under": -104,
-          "p_over": 0.528,
+          "over": -123,
+          "under": -107,
+          "p_over": 0.521,
           "call": null,
           "edge": 0.0
         }
@@ -2054,6 +3168,58 @@
           "ast": 7,
           "pra": 37
         }
+      ],
+      "l10": [
+        [
+          18,
+          2,
+          2
+        ],
+        [
+          16,
+          4,
+          2
+        ],
+        [
+          21,
+          5,
+          4
+        ],
+        [
+          25,
+          5,
+          2
+        ],
+        [
+          10,
+          8,
+          2
+        ],
+        [
+          16,
+          6,
+          1
+        ],
+        [
+          5,
+          4,
+          0
+        ],
+        [
+          12,
+          5,
+          0
+        ],
+        [
+          24,
+          7,
+          0
+        ],
+        [
+          21,
+          9,
+          7
+        ]
       ]
     },
     {
@@ -2063,16 +3229,16 @@
       "opp": "PHI",
       "home": true,
       "time_et": "1:30 PM",
-      "status": null,
+      "status": "day-to-day",
       "minutes": 28.2,
       "stats": {
         "points": {
           "proj": 18.7,
           "line": 18.5,
           "book": "DraftKings",
-          "over": -123,
-          "under": -103,
-          "p_over": 0.509,
+          "over": -111,
+          "under": -115,
+          "p_over": 0.485,
           "call": null,
           "edge": 0.0
         },
@@ -2080,9 +3246,9 @@
           "proj": 2.9,
           "line": 2.5,
           "book": "DraftKings",
-          "over": -123,
-          "under": -107,
-          "p_over": 0.513,
+          "over": -124,
+          "under": -106,
+          "p_over": 0.515,
           "call": null,
           "edge": 0.0
         },
@@ -2090,19 +3256,19 @@
           "proj": 2.0,
           "line": 2.5,
           "book": "DraftKings",
-          "over": 141,
-          "under": -187,
-          "p_over": 0.364,
+          "over": 139,
+          "under": -184,
+          "p_over": 0.368,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 23.5,
-          "line": 24.5,
+          "line": 23.5,
           "book": "DraftKings",
-          "over": -107,
-          "under": -123,
-          "p_over": 0.467,
+          "over": -116,
+          "under": -113,
+          "p_over": 0.491,
           "call": null,
           "edge": 0.0
         }
@@ -2143,6 +3309,58 @@
           "ast": 1,
           "pra": 14
         }
+      ],
+      "l10": [
+        [
+          25,
+          2,
+          2
+        ],
+        [
+          11,
+          2,
+          1
+        ],
+        [
+          15,
+          5,
+          1
+        ],
+        [
+          25,
+          4,
+          1
+        ],
+        [
+          18,
+          2,
+          3
+        ],
+        [
+          20,
+          1,
+          2
+        ],
+        [
+          30,
+          2,
+          2
+        ],
+        [
+          16,
+          2,
+          3
+        ],
+        [
+          18,
+          3,
+          0
+        ],
+        [
+          12,
+          1,
+          1
+        ]
       ]
     },
     {
@@ -2153,15 +3371,15 @@
       "home": true,
       "time_et": "5:00 PM",
       "status": null,
-      "minutes": 33.7,
+      "minutes": 33.4,
       "stats": {
         "points": {
           "proj": 18.5,
           "line": 18.5,
           "book": "DraftKings",
-          "over": -107,
-          "under": -119,
-          "p_over": 0.476,
+          "over": -103,
+          "under": -124,
+          "p_over": 0.467,
           "call": null,
           "edge": 0.0
         },
@@ -2169,9 +3387,9 @@
           "proj": 5.0,
           "line": 4.5,
           "book": "DraftKings",
-          "over": -157,
-          "under": 119,
-          "p_over": 0.567,
+          "over": -144,
+          "under": 109,
+          "p_over": 0.548,
           "call": null,
           "edge": 0.0
         },
@@ -2179,19 +3397,19 @@
           "proj": 5.1,
           "line": 4.5,
           "book": "DraftKings",
-          "over": -139,
-          "under": 105,
-          "p_over": 0.544,
+          "over": -141,
+          "under": 107,
+          "p_over": 0.548,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 28.2,
+          "proj": 28.3,
           "line": 28.5,
           "book": "DraftKings",
-          "over": -119,
-          "under": -110,
-          "p_over": 0.496,
+          "over": -111,
+          "under": -119,
+          "p_over": 0.48,
           "call": null,
           "edge": 0.0
         }
@@ -2232,6 +3450,58 @@
           "ast": 4,
           "pra": 32
         }
+      ],
+      "l10": [
+        [
+          16,
+          5,
+          3
+        ],
+        [
+          14,
+          7,
+          10
+        ],
+        [
+          9,
+          3,
+          3
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          17,
+          3,
+          4
+        ],
+        [
+          15,
+          7,
+          2
+        ],
+        [
+          27,
+          9,
+          3
+        ],
+        [
+          19,
+          12,
+          8
+        ],
+        [
+          21,
+          1,
+          6
+        ],
+        [
+          26,
+          2,
+          4
+        ]
       ]
     },
     {
@@ -2268,9 +3538,9 @@
           "proj": 4.9,
           "line": 3.5,
           "book": "DraftKings",
-          "over": 108,
-          "under": -143,
-          "p_over": 0.474,
+          "over": 112,
+          "under": -148,
+          "p_over": 0.466,
           "call": null,
           "edge": 0.0
         },
@@ -2278,9 +3548,9 @@
           "proj": 27.5,
           "line": 22.5,
           "book": "DraftKings",
-          "over": -116,
-          "under": -114,
-          "p_over": 0.517,
+          "over": -114,
+          "under": -116,
+          "p_over": 0.513,
           "call": null,
           "edge": 0.0
         }
@@ -2321,6 +3591,58 @@
           "ast": 5,
           "pra": 34
         }
+      ],
+      "l10": [
+        [
+          36,
+          10,
+          5
+        ],
+        [
+          8,
+          3,
+          1
+        ],
+        [
+          7,
+          0,
+          1
+        ],
+        [
+          10,
+          6,
+          2
+        ],
+        [
+          11,
+          4,
+          3
+        ],
+        [
+          22,
+          8,
+          13
+        ],
+        [
+          20,
+          5,
+          7
+        ],
+        [
+          12,
+          4,
+          7
+        ],
+        [
+          19,
+          6,
+          2
+        ],
+        [
+          24,
+          5,
+          5
+        ]
       ]
     },
     {
@@ -2331,15 +3653,15 @@
       "home": true,
       "time_et": "5:00 PM",
       "status": null,
-      "minutes": 34.6,
+      "minutes": 34.3,
       "stats": {
         "points": {
           "proj": 18.3,
-          "line": 17.5,
+          "line": 16.5,
           "book": "DraftKings",
-          "over": -106,
-          "under": -120,
-          "p_over": 0.479,
+          "over": -126,
+          "under": -101,
+          "p_over": 0.524,
           "call": null,
           "edge": 0.0
         },
@@ -2347,9 +3669,9 @@
           "proj": 5.8,
           "line": 5.5,
           "book": "DraftKings",
-          "over": -120,
-          "under": -110,
-          "p_over": 0.505,
+          "over": -124,
+          "under": -106,
+          "p_over": 0.512,
           "call": null,
           "edge": 0.0
         },
@@ -2357,9 +3679,9 @@
           "proj": 3.6,
           "line": 2.5,
           "book": "DraftKings",
-          "over": -172,
-          "under": 130,
-          "p_over": 0.605,
+          "over": -174,
+          "under": 131,
+          "p_over": 0.607,
           "call": null,
           "edge": 0.0
         },
@@ -2367,9 +3689,9 @@
           "proj": 27.3,
           "line": 26.5,
           "book": "DraftKings",
-          "over": -113,
-          "under": -116,
-          "p_over": 0.489,
+          "over": -109,
+          "under": -121,
+          "p_over": 0.481,
           "call": null,
           "edge": 0.0
         }
@@ -2410,6 +3732,58 @@
           "ast": 5,
           "pra": 34
         }
+      ],
+      "l10": [
+        [
+          17,
+          8,
+          1
+        ],
+        [
+          15,
+          6,
+          3
+        ],
+        [
+          14,
+          6,
+          3
+        ],
+        [
+          14,
+          6,
+          4
+        ],
+        [
+          19,
+          7,
+          4
+        ],
+        [
+          23,
+          6,
+          7
+        ],
+        [
+          19,
+          3,
+          3
+        ],
+        [
+          13,
+          6,
+          3
+        ],
+        [
+          14,
+          8,
+          4
+        ],
+        [
+          23,
+          6,
+          5
+        ]
       ]
     },
     {
@@ -2426,9 +3800,9 @@
           "proj": 17.6,
           "line": 16.5,
           "book": "DraftKings",
-          "over": -116,
-          "under": -110,
-          "p_over": 0.501,
+          "over": -113,
+          "under": -113,
+          "p_over": 0.495,
           "call": null,
           "edge": 0.0
         },
@@ -2436,9 +3810,9 @@
           "proj": 6.1,
           "line": 5.5,
           "book": "DraftKings",
-          "over": -127,
-          "under": -104,
-          "p_over": 0.523,
+          "over": -131,
+          "under": -101,
+          "p_over": 0.53,
           "call": null,
           "edge": 0.0
         },
@@ -2446,9 +3820,9 @@
           "proj": 6.1,
           "line": 5.5,
           "book": "DraftKings",
-          "over": -101,
+          "over": -102,
           "under": -130,
-          "p_over": 0.474,
+          "p_over": 0.475,
           "call": null,
           "edge": 0.0
         },
@@ -2499,6 +3873,58 @@
           "ast": 4,
           "pra": 13
         }
+      ],
+      "l10": [
+        [
+          7,
+          5,
+          12
+        ],
+        [
+          12,
+          7,
+          4
+        ],
+        [
+          19,
+          4,
+          6
+        ],
+        [
+          9,
+          8,
+          5
+        ],
+        [
+          23,
+          3,
+          7
+        ],
+        [
+          16,
+          6,
+          6
+        ],
+        [
+          22,
+          6,
+          6
+        ],
+        [
+          10,
+          8,
+          5
+        ],
+        [
+          20,
+          8,
+          4
+        ],
+        [
+          7,
+          2,
+          4
+        ]
       ]
     },
     {
@@ -2535,9 +3961,9 @@
           "proj": 3.6,
           "line": 2.5,
           "book": "DraftKings",
-          "over": -142,
-          "under": 108,
-          "p_over": 0.565,
+          "over": -136,
+          "under": 104,
+          "p_over": 0.556,
           "call": null,
           "edge": 0.0
         },
@@ -2588,6 +4014,58 @@
           "ast": 5,
           "pra": 19
         }
+      ],
+      "l10": [
+        [
+          19,
+          8,
+          2
+        ],
+        [
+          13,
+          4,
+          4
+        ],
+        [
+          11,
+          4,
+          1
+        ],
+        [
+          9,
+          6,
+          3
+        ],
+        [
+          26,
+          6,
+          4
+        ],
+        [
+          6,
+          1,
+          3
+        ],
+        [
+          19,
+          5,
+          3
+        ],
+        [
+          15,
+          5,
+          5
+        ],
+        [
+          18,
+          5,
+          5
+        ],
+        [
+          10,
+          4,
+          5
+        ]
       ]
     },
     {
@@ -2604,9 +4082,9 @@
           "proj": 17.4,
           "line": 17.5,
           "book": "DraftKings",
-          "over": -113,
-          "under": -112,
-          "p_over": 0.488,
+          "over": -115,
+          "under": -111,
+          "p_over": 0.491,
           "call": null,
           "edge": 0.0
         },
@@ -2614,9 +4092,9 @@
           "proj": 4.5,
           "line": 4.5,
           "book": "DraftKings",
-          "over": -139,
-          "under": 106,
-          "p_over": 0.531,
+          "over": -132,
+          "under": 101,
+          "p_over": 0.52,
           "call": null,
           "edge": 0.0
         },
@@ -2624,9 +4102,9 @@
           "proj": 4.1,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -120,
-          "under": -109,
-          "p_over": 0.513,
+          "over": -122,
+          "under": -108,
+          "p_over": 0.516,
           "call": null,
           "edge": 0.0
         },
@@ -2634,9 +4112,9 @@
           "proj": 25.2,
           "line": 26.5,
           "book": "DraftKings",
-          "over": -112,
-          "under": -117,
-          "p_over": 0.477,
+          "over": -113,
+          "under": -116,
+          "p_over": 0.479,
           "call": null,
           "edge": 0.0
         }
@@ -2677,6 +4155,58 @@
           "ast": 1,
           "pra": 14
         }
+      ],
+      "l10": [
+        [
+          15,
+          5,
+          3
+        ],
+        [
+          7,
+          1,
+          2
+        ],
+        [
+          38,
+          5,
+          3
+        ],
+        [
+          15,
+          7,
+          2
+        ],
+        [
+          16,
+          5,
+          2
+        ],
+        [
+          20,
+          7,
+          7
+        ],
+        [
+          18,
+          6,
+          8
+        ],
+        [
+          17,
+          6,
+          8
+        ],
+        [
+          25,
+          3,
+          5
+        ],
+        [
+          8,
+          5,
+          1
+        ]
       ]
     },
     {
@@ -2693,9 +4223,9 @@
           "proj": 16.7,
           "line": 20.5,
           "book": "DraftKings",
-          "over": -102,
-          "under": -126,
-          "p_over": 0.439,
+          "over": -106,
+          "under": -121,
+          "p_over": 0.448,
           "call": null,
           "edge": 0.0
         },
@@ -2703,9 +4233,9 @@
           "proj": 4.4,
           "line": 4.5,
           "book": "DraftKings",
-          "over": -101,
-          "under": -130,
-          "p_over": 0.457,
+          "over": 104,
+          "under": -137,
+          "p_over": 0.446,
           "call": null,
           "edge": 0.0
         },
@@ -2713,9 +4243,9 @@
           "proj": 4.6,
           "line": 4.5,
           "book": "DraftKings",
-          "over": 112,
-          "under": -147,
-          "p_over": 0.436,
+          "over": 113,
+          "under": -149,
+          "p_over": 0.433,
           "call": null,
           "edge": 0.0
         },
@@ -2723,9 +4253,9 @@
           "proj": 25.5,
           "line": 29.5,
           "book": "DraftKings",
-          "over": -108,
-          "under": -122,
-          "p_over": 0.455,
+          "over": -107,
+          "under": -123,
+          "p_over": 0.453,
           "call": null,
           "edge": 0.0
         }
@@ -2766,89 +4296,58 @@
           "ast": 10,
           "pra": 38
         }
-      ]
-    },
-    {
-      "player": "P.J. Washington",
-      "player_id": "4278078",
-      "team": "DAL",
-      "opp": "BKN",
-      "home": true,
-      "time_et": "5:30 PM",
-      "status": null,
-      "minutes": 34.0,
-      "stats": {
-        "points": {
-          "proj": 16.6,
-          "line": 13.5,
-          "book": "DraftKings",
-          "over": -106,
-          "under": -120,
-          "p_over": 0.496,
-          "call": null,
-          "edge": 0.0
-        },
-        "rebounds": {
-          "proj": 7.3,
-          "line": 6.5,
-          "book": "DraftKings",
-          "over": -122,
-          "under": -108,
-          "p_over": 0.518,
-          "call": null,
-          "edge": 0.0
-        },
-        "assists": {
-          "proj": 1.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 26.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-28",
-          "pts": 18,
-          "reb": 9,
-          "ast": 0,
-          "pra": 27
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 3,
-          "reb": 10,
-          "ast": 1,
-          "pra": 14
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 12,
-          "reb": 5,
-          "ast": 1,
-          "pra": 18
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 21,
-          "reb": 10,
-          "ast": 3,
-          "pra": 34
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 26,
-          "reb": 6,
-          "ast": 1,
-          "pra": 33
-        }
+      ],
+      "l10": [
+        [
+          23,
+          3,
+          6
+        ],
+        [
+          24,
+          2,
+          9
+        ],
+        [
+          34,
+          5,
+          4
+        ],
+        [
+          13,
+          6,
+          3
+        ],
+        [
+          23,
+          10,
+          7
+        ],
+        [
+          23,
+          3,
+          0
+        ],
+        [
+          15,
+          3,
+          2
+        ],
+        [
+          21,
+          6,
+          3
+        ],
+        [
+          25,
+          5,
+          3
+        ],
+        [
+          23,
+          5,
+          10
+        ]
       ]
     },
     {
@@ -2862,7 +4361,7 @@
       "minutes": 33.1,
       "stats": {
         "points": {
-          "proj": 16.5,
+          "proj": 16.6,
           "line": 14.5,
           "book": "DraftKings",
           "over": -101,
@@ -2877,7 +4376,7 @@
           "book": "DraftKings",
           "over": -134,
           "under": 102,
-          "p_over": 0.529,
+          "p_over": 0.53,
           "call": null,
           "edge": 0.0
         },
@@ -2885,19 +4384,19 @@
           "proj": 5.5,
           "line": 5.5,
           "book": "DraftKings",
-          "over": -133,
-          "under": 101,
-          "p_over": 0.521,
+          "over": -124,
+          "under": -106,
+          "p_over": 0.506,
           "call": null,
           "edge": 0.0
         },
         "pra": {
-          "proj": 35.4,
+          "proj": 35.5,
           "line": 33.5,
           "book": "DraftKings",
-          "over": -118,
-          "under": -111,
-          "p_over": 0.504,
+          "over": -114,
+          "under": -115,
+          "p_over": 0.497,
           "call": null,
           "edge": 0.0
         }
@@ -2938,6 +4437,196 @@
           "ast": 5,
           "pra": 34
         }
+      ],
+      "l10": [
+        [
+          24,
+          15,
+          3
+        ],
+        [
+          14,
+          18,
+          8
+        ],
+        [
+          27,
+          19,
+          10
+        ],
+        [
+          15,
+          15,
+          3
+        ],
+        [
+          20,
+          14,
+          8
+        ],
+        [
+          9,
+          15,
+          7
+        ],
+        [
+          11,
+          14,
+          8
+        ],
+        [
+          9,
+          7,
+          4
+        ],
+        [
+          16,
+          17,
+          1
+        ],
+        [
+          17,
+          12,
+          5
+        ]
+      ]
+    },
+    {
+      "player": "P.J. Washington",
+      "player_id": "4278078",
+      "team": "DAL",
+      "opp": "BKN",
+      "home": true,
+      "time_et": "5:30 PM",
+      "status": null,
+      "minutes": 34.0,
+      "stats": {
+        "points": {
+          "proj": 16.6,
+          "line": 13.5,
+          "book": "DraftKings",
+          "over": -111,
+          "under": -115,
+          "p_over": 0.506,
+          "call": null,
+          "edge": 0.0
+        },
+        "rebounds": {
+          "proj": 7.3,
+          "line": 6.5,
+          "book": "DraftKings",
+          "over": -122,
+          "under": -108,
+          "p_over": 0.518,
+          "call": null,
+          "edge": 0.0
+        },
+        "assists": {
+          "proj": 1.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 26.3,
+          "line": 21.5,
+          "book": "DraftKings",
+          "over": -119,
+          "under": -110,
+          "p_over": 0.523,
+          "call": null,
+          "edge": 0.0
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-28",
+          "pts": 18,
+          "reb": 9,
+          "ast": 0,
+          "pra": 27
+        },
+        {
+          "date": "2026-10-30",
+          "pts": 3,
+          "reb": 10,
+          "ast": 1,
+          "pra": 14
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 12,
+          "reb": 5,
+          "ast": 1,
+          "pra": 18
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 21,
+          "reb": 10,
+          "ast": 3,
+          "pra": 34
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 26,
+          "reb": 6,
+          "ast": 1,
+          "pra": 33
+        }
+      ],
+      "l10": [
+        [
+          15,
+          6,
+          0
+        ],
+        [
+          10,
+          4,
+          2
+        ],
+        [
+          20,
+          13,
+          0
+        ],
+        [
+          12,
+          4,
+          2
+        ],
+        [
+          20,
+          9,
+          2
+        ],
+        [
+          18,
+          9,
+          0
+        ],
+        [
+          3,
+          10,
+          1
+        ],
+        [
+          12,
+          5,
+          1
+        ],
+        [
+          21,
+          10,
+          3
+        ],
+        [
+          26,
+          6,
+          1
+        ]
       ]
     },
     {
@@ -2954,9 +4643,9 @@
           "proj": 15.7,
           "line": 12.5,
           "book": "DraftKings",
-          "over": -101,
-          "under": -127,
-          "p_over": 0.485,
+          "over": -104,
+          "under": -123,
+          "p_over": 0.492,
           "call": null,
           "edge": 0.0
         },
@@ -2964,9 +4653,9 @@
           "proj": 6.5,
           "line": 5.5,
           "book": "DraftKings",
-          "over": 111,
-          "under": -146,
-          "p_over": 0.454,
+          "over": 115,
+          "under": -151,
+          "p_over": 0.447,
           "call": null,
           "edge": 0.0
         },
@@ -2979,11 +4668,11 @@
         },
         "pra": {
           "proj": 25.3,
-          "line": 18.5,
+          "line": 19.5,
           "book": "DraftKings",
-          "over": -126,
-          "under": -104,
-          "p_over": 0.548,
+          "over": -106,
+          "under": -124,
+          "p_over": 0.503,
           "call": null,
           "edge": 0.0
         }
@@ -3024,6 +4713,58 @@
           "ast": 1,
           "pra": 29
         }
+      ],
+      "l10": [
+        [
+          7,
+          8,
+          0
+        ],
+        [
+          17,
+          5,
+          1
+        ],
+        [
+          17,
+          11,
+          1
+        ],
+        [
+          22,
+          4,
+          0
+        ],
+        [
+          15,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          13,
+          6,
+          0
+        ],
+        [
+          7,
+          2,
+          0
+        ],
+        [
+          12,
+          6,
+          1
+        ],
+        [
+          20,
+          8,
+          1
+        ]
       ]
     },
     {
@@ -3040,9 +4781,9 @@
           "proj": 15.7,
           "line": 13.5,
           "book": "DraftKings",
-          "over": -128,
-          "under": 100,
-          "p_over": 0.53,
+          "over": -101,
+          "under": -126,
+          "p_over": 0.478,
           "call": null,
           "edge": 0.0
         },
@@ -3107,6 +4848,58 @@
           "ast": 2,
           "pra": 18
         }
+      ],
+      "l10": [
+        [
+          9,
+          2,
+          1
+        ],
+        [
+          6,
+          1,
+          0
+        ],
+        [
+          6,
+          3,
+          1
+        ],
+        [
+          4,
+          7,
+          1
+        ],
+        [
+          7,
+          5,
+          1
+        ],
+        [
+          24,
+          6,
+          2
+        ],
+        [
+          24,
+          5,
+          1
+        ],
+        [
+          19,
+          3,
+          0
+        ],
+        [
+          6,
+          7,
+          2
+        ],
+        [
+          14,
+          2,
+          2
+        ]
       ]
     },
     {
@@ -3117,15 +4910,15 @@
       "home": false,
       "time_et": "5:00 PM",
       "status": null,
-      "minutes": 31.8,
+      "minutes": 31.5,
       "stats": {
         "points": {
           "proj": 15.5,
-          "line": 13.5,
+          "line": 15.5,
           "book": "DraftKings",
-          "over": -125,
-          "under": -102,
-          "p_over": 0.524,
+          "over": -108,
+          "under": -118,
+          "p_over": 0.477,
           "call": null,
           "edge": 0.0
         },
@@ -3133,14 +4926,14 @@
           "proj": 5.9,
           "line": 6.5,
           "book": "DraftKings",
-          "over": 110,
-          "under": -145,
-          "p_over": 0.427,
+          "over": 109,
+          "under": -144,
+          "p_over": 0.429,
           "call": null,
           "edge": 0.0
         },
         "assists": {
-          "proj": 1.9,
+          "proj": 1.8,
           "line": null,
           "book": null,
           "over": null,
@@ -3148,11 +4941,11 @@
         },
         "pra": {
           "proj": 23.1,
-          "line": 22.5,
+          "line": 23.5,
           "book": "DraftKings",
-          "over": -109,
-          "under": -121,
-          "p_over": 0.479,
+          "over": -116,
+          "under": -113,
+          "p_over": 0.488,
           "call": null,
           "edge": 0.0
         }
@@ -3193,6 +4986,58 @@
           "ast": 0,
           "pra": 18
         }
+      ],
+      "l10": [
+        [
+          15,
+          3,
+          1
+        ],
+        [
+          12,
+          5,
+          3
+        ],
+        [
+          6,
+          7,
+          2
+        ],
+        [
+          17,
+          12,
+          4
+        ],
+        [
+          17,
+          10,
+          3
+        ],
+        [
+          19,
+          6,
+          0
+        ],
+        [
+          9,
+          7,
+          1
+        ],
+        [
+          5,
+          6,
+          2
+        ],
+        [
+          15,
+          5,
+          1
+        ],
+        [
+          12,
+          6,
+          0
+        ]
       ]
     },
     {
@@ -3219,9 +5064,9 @@
           "proj": 4.4,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -138,
-          "under": 105,
-          "p_over": 0.549,
+          "over": -143,
+          "under": 108,
+          "p_over": 0.556,
           "call": null,
           "edge": 0.0
         },
@@ -3279,6 +5124,58 @@
           "ast": 4,
           "pra": 26
         }
+      ],
+      "l10": [
+        [
+          32,
+          6,
+          1
+        ],
+        [
+          13,
+          5,
+          0
+        ],
+        [
+          20,
+          3,
+          1
+        ],
+        [
+          14,
+          4,
+          3
+        ],
+        [
+          9,
+          0,
+          3
+        ],
+        [
+          10,
+          4,
+          3
+        ],
+        [
+          25,
+          6,
+          1
+        ],
+        [
+          18,
+          5,
+          1
+        ],
+        [
+          22,
+          4,
+          3
+        ],
+        [
+          17,
+          5,
+          4
+        ]
       ]
     },
     {
@@ -3295,9 +5192,9 @@
           "proj": 15.5,
           "line": 15.5,
           "book": "DraftKings",
-          "over": -110,
-          "under": -116,
-          "p_over": 0.481,
+          "over": -114,
+          "under": -112,
+          "p_over": 0.489,
           "call": null,
           "edge": 0.0
         },
@@ -3325,9 +5222,9 @@
           "proj": 21.2,
           "line": 20.5,
           "book": "DraftKings",
-          "over": -109,
-          "under": -121,
-          "p_over": 0.48,
+          "over": -113,
+          "under": -116,
+          "p_over": 0.489,
           "call": null,
           "edge": 0.0
         }
@@ -3368,6 +5265,58 @@
           "ast": 2,
           "pra": 30
         }
+      ],
+      "l10": [
+        [
+          14,
+          2,
+          2
+        ],
+        [
+          13,
+          1,
+          1
+        ],
+        [
+          21,
+          2,
+          2
+        ],
+        [
+          17,
+          1,
+          2
+        ],
+        [
+          21,
+          3,
+          3
+        ],
+        [
+          12,
+          0,
+          2
+        ],
+        [
+          13,
+          2,
+          2
+        ],
+        [
+          17,
+          4,
+          2
+        ],
+        [
+          24,
+          2,
+          3
+        ],
+        [
+          27,
+          1,
+          2
+        ]
       ]
     },
     {
@@ -3378,15 +5327,15 @@
       "home": true,
       "time_et": "5:00 PM",
       "status": null,
-      "minutes": 31.5,
+      "minutes": 31.2,
       "stats": {
         "points": {
           "proj": 15.4,
           "line": 14.5,
           "book": "DraftKings",
-          "over": -122,
-          "under": -104,
-          "p_over": 0.511,
+          "over": -119,
+          "under": -107,
+          "p_over": 0.505,
           "call": null,
           "edge": 0.0
         },
@@ -3395,8 +5344,8 @@
           "line": 5.5,
           "book": "DraftKings",
           "over": -154,
-          "under": 117,
-          "p_over": 0.561,
+          "under": 116,
+          "p_over": 0.56,
           "call": null,
           "edge": 0.0
         },
@@ -3404,9 +5353,9 @@
           "proj": 3.1,
           "line": 2.5,
           "book": "DraftKings",
-          "over": 117,
-          "under": -154,
-          "p_over": 0.439,
+          "over": 114,
+          "under": -150,
+          "p_over": 0.444,
           "call": null,
           "edge": 0.0
         },
@@ -3457,6 +5406,58 @@
           "ast": 4,
           "pra": 29
         }
+      ],
+      "l10": [
+        [
+          12,
+          1,
+          3
+        ],
+        [
+          11,
+          8,
+          5
+        ],
+        [
+          13,
+          4,
+          1
+        ],
+        [
+          10,
+          10,
+          1
+        ],
+        [
+          20,
+          3,
+          5
+        ],
+        [
+          5,
+          1,
+          0
+        ],
+        [
+          19,
+          6,
+          3
+        ],
+        [
+          8,
+          10,
+          3
+        ],
+        [
+          16,
+          8,
+          5
+        ],
+        [
+          17,
+          8,
+          4
+        ]
       ]
     },
     {
@@ -3467,15 +5468,15 @@
       "home": false,
       "time_et": "5:00 PM",
       "status": null,
-      "minutes": 31.6,
+      "minutes": 31.3,
       "stats": {
         "points": {
           "proj": 15.4,
-          "line": 14.5,
+          "line": 15.5,
           "book": "DraftKings",
-          "over": -104,
-          "under": -123,
-          "p_over": 0.474,
+          "over": -110,
+          "under": -116,
+          "p_over": 0.48,
           "call": null,
           "edge": 0.0
         },
@@ -3483,29 +5484,29 @@
           "proj": 4.2,
           "line": 4.5,
           "book": "DraftKings",
-          "over": -108,
-          "under": -122,
-          "p_over": 0.467,
+          "over": -101,
+          "under": -130,
+          "p_over": 0.452,
           "call": null,
           "edge": 0.0
         },
         "assists": {
           "proj": 4.4,
-          "line": 3.5,
+          "line": 4.5,
           "book": "DraftKings",
-          "over": -150,
-          "under": 114,
-          "p_over": 0.569,
+          "over": 118,
+          "under": -156,
+          "p_over": 0.419,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 23.4,
-          "line": 22.5,
+          "line": 24.5,
           "book": "DraftKings",
-          "over": -126,
-          "under": -104,
-          "p_over": 0.514,
+          "over": -109,
+          "under": -120,
+          "p_over": 0.472,
           "call": null,
           "edge": 0.0
         }
@@ -3546,6 +5547,53 @@
           "ast": 5,
           "pra": 28
         }
+      ],
+      "l10": [
+        [
+          9,
+          4,
+          3
+        ],
+        [
+          15,
+          3,
+          1
+        ],
+        [
+          8,
+          3,
+          2
+        ],
+        [
+          14,
+          7,
+          4
+        ],
+        [
+          18,
+          5,
+          3
+        ],
+        [
+          16,
+          4,
+          4
+        ],
+        [
+          14,
+          4,
+          6
+        ],
+        [
+          7,
+          2,
+          7
+        ],
+        [
+          21,
+          2,
+          5
+        ]
       ]
     },
     {
@@ -3560,11 +5608,11 @@
       "stats": {
         "points": {
           "proj": 15.2,
-          "line": 12.5,
+          "line": 13.5,
           "book": "DraftKings",
-          "over": -126,
-          "under": -101,
-          "p_over": 0.532,
+          "over": -114,
+          "under": -112,
+          "p_over": 0.501,
           "call": null,
           "edge": 0.0
         },
@@ -3580,18 +5628,21 @@
         },
         "assists": {
           "proj": 2.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 1.5,
+          "book": "DraftKings",
+          "over": -183,
+          "under": 138,
+          "p_over": 0.604,
+          "call": null,
+          "edge": 0.0
         },
         "pra": {
           "proj": 22.9,
           "line": 20.5,
           "book": "DraftKings",
-          "over": -104,
-          "under": -126,
-          "p_over": 0.48,
+          "over": -121,
+          "under": -109,
+          "p_over": 0.513,
           "call": null,
           "edge": 0.0
         }
@@ -3632,6 +5683,58 @@
           "ast": 3,
           "pra": 20
         }
+      ],
+      "l10": [
+        [
+          11,
+          6,
+          0
+        ],
+        [
+          14,
+          8,
+          3
+        ],
+        [
+          17,
+          6,
+          0
+        ],
+        [
+          7,
+          5,
+          3
+        ],
+        [
+          21,
+          5,
+          2
+        ],
+        [
+          11,
+          1,
+          2
+        ],
+        [
+          17,
+          5,
+          3
+        ],
+        [
+          14,
+          5,
+          1
+        ],
+        [
+          4,
+          3,
+          2
+        ],
+        [
+          12,
+          5,
+          3
+        ]
       ]
     },
     {
@@ -3648,19 +5751,19 @@
           "proj": 14.9,
           "line": 12.5,
           "book": "DraftKings",
-          "over": -118,
-          "under": -108,
-          "p_over": 0.515,
+          "over": -119,
+          "under": -107,
+          "p_over": 0.517,
           "call": null,
           "edge": 0.0
         },
         "rebounds": {
           "proj": 6.3,
-          "line": 5.5,
+          "line": 6.5,
           "book": "DraftKings",
-          "over": -142,
-          "under": 108,
-          "p_over": 0.552,
+          "over": 111,
+          "under": -147,
+          "p_over": 0.432,
           "call": null,
           "edge": 0.0
         },
@@ -3668,9 +5771,9 @@
           "proj": 3.8,
           "line": 3.5,
           "book": "DraftKings",
-          "over": 122,
-          "under": -161,
-          "p_over": 0.421,
+          "over": 124,
+          "under": -164,
+          "p_over": 0.417,
           "call": null,
           "edge": 0.0
         },
@@ -3678,9 +5781,9 @@
           "proj": 24.7,
           "line": 22.5,
           "book": "DraftKings",
-          "over": -109,
-          "under": -121,
-          "p_over": 0.488,
+          "over": -114,
+          "under": -115,
+          "p_over": 0.499,
           "call": null,
           "edge": 0.0
         }
@@ -3721,6 +5824,58 @@
           "ast": 2,
           "pra": 24
         }
+      ],
+      "l10": [
+        [
+          8,
+          6,
+          7
+        ],
+        [
+          9,
+          4,
+          1
+        ],
+        [
+          11,
+          7,
+          6
+        ],
+        [
+          17,
+          13,
+          2
+        ],
+        [
+          8,
+          7,
+          2
+        ],
+        [
+          13,
+          8,
+          2
+        ],
+        [
+          10,
+          8,
+          3
+        ],
+        [
+          21,
+          3,
+          5
+        ],
+        [
+          11,
+          6,
+          3
+        ],
+        [
+          19,
+          3,
+          2
+        ]
       ]
     },
     {
@@ -3737,9 +5892,9 @@
           "proj": 13.8,
           "line": 13.5,
           "book": "DraftKings",
-          "over": -118,
-          "under": -108,
-          "p_over": 0.499,
+          "over": -114,
+          "under": -112,
+          "p_over": 0.491,
           "call": null,
           "edge": 0.0
         },
@@ -3747,19 +5902,19 @@
           "proj": 4.3,
           "line": 4.5,
           "book": "DraftKings",
-          "over": -117,
+          "over": -116,
           "under": -113,
-          "p_over": 0.488,
+          "p_over": 0.487,
           "call": null,
           "edge": 0.0
         },
         "assists": {
           "proj": 3.4,
-          "line": 3.5,
+          "line": 2.5,
           "book": "DraftKings",
-          "over": 131,
-          "under": -174,
-          "p_over": 0.396,
+          "over": -177,
+          "under": 133,
+          "p_over": 0.606,
           "call": null,
           "edge": 0.0
         },
@@ -3767,9 +5922,9 @@
           "proj": 21.2,
           "line": 21.5,
           "book": "DraftKings",
-          "over": -122,
-          "under": -108,
-          "p_over": 0.5,
+          "over": -116,
+          "under": -114,
+          "p_over": 0.488,
           "call": null,
           "edge": 0.0
         }
@@ -3810,6 +5965,58 @@
           "ast": 3,
           "pra": 20
         }
+      ],
+      "l10": [
+        [
+          13,
+          6,
+          8
+        ],
+        [
+          22,
+          7,
+          2
+        ],
+        [
+          19,
+          11,
+          5
+        ],
+        [
+          21,
+          8,
+          4
+        ],
+        [
+          8,
+          6,
+          0
+        ],
+        [
+          19,
+          4,
+          2
+        ],
+        [
+          8,
+          7,
+          5
+        ],
+        [
+          19,
+          8,
+          2
+        ],
+        [
+          18,
+          2,
+          2
+        ],
+        [
+          14,
+          3,
+          3
+        ]
       ]
     },
     {
@@ -3893,6 +6100,58 @@
           "ast": 1,
           "pra": 21
         }
+      ],
+      "l10": [
+        [
+          10,
+          2,
+          1
+        ],
+        [
+          0,
+          4,
+          0
+        ],
+        [
+          13,
+          2,
+          1
+        ],
+        [
+          8,
+          6,
+          5
+        ],
+        [
+          16,
+          4,
+          1
+        ],
+        [
+          11,
+          6,
+          1
+        ],
+        [
+          15,
+          5,
+          0
+        ],
+        [
+          10,
+          1,
+          1
+        ],
+        [
+          9,
+          7,
+          1
+        ],
+        [
+          12,
+          8,
+          1
+        ]
       ]
     },
     {
@@ -3909,9 +6168,9 @@
           "proj": 13.6,
           "line": 11.5,
           "book": "DraftKings",
-          "over": -110,
-          "under": -116,
-          "p_over": 0.497,
+          "over": -112,
+          "under": -114,
+          "p_over": 0.501,
           "call": null,
           "edge": 0.0
         },
@@ -3919,9 +6178,9 @@
           "proj": 3.8,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -111,
-          "under": -118,
-          "p_over": 0.489,
+          "over": -114,
+          "under": -115,
+          "p_over": 0.494,
           "call": null,
           "edge": 0.0
         },
@@ -3929,9 +6188,9 @@
           "proj": 4.4,
           "line": 3.5,
           "book": "DraftKings",
-          "over": 129,
-          "under": -171,
-          "p_over": 0.424,
+          "over": 127,
+          "under": -168,
+          "p_over": 0.428,
           "call": null,
           "edge": 0.0
         },
@@ -3939,9 +6198,9 @@
           "proj": 22.1,
           "line": 18.5,
           "book": "DraftKings",
-          "over": -113,
-          "under": -116,
-          "p_over": 0.505,
+          "over": -114,
+          "under": -115,
+          "p_over": 0.507,
           "call": null,
           "edge": 0.0
         }
@@ -3982,6 +6241,58 @@
           "ast": 5,
           "pra": 13
         }
+      ],
+      "l10": [
+        [
+          19,
+          3,
+          3
+        ],
+        [
+          9,
+          4,
+          2
+        ],
+        [
+          13,
+          6,
+          7
+        ],
+        [
+          6,
+          2,
+          0
+        ],
+        [
+          16,
+          2,
+          6
+        ],
+        [
+          15,
+          4,
+          6
+        ],
+        [
+          10,
+          4,
+          5
+        ],
+        [
+          5,
+          2,
+          7
+        ],
+        [
+          22,
+          5,
+          3
+        ],
+        [
+          7,
+          1,
+          5
+        ]
       ]
     },
     {
@@ -3996,11 +6307,11 @@
       "stats": {
         "points": {
           "proj": 13.6,
-          "line": 11.5,
+          "line": 12.5,
           "book": "DraftKings",
-          "over": -124,
-          "under": -103,
-          "p_over": 0.524,
+          "over": -121,
+          "under": -105,
+          "p_over": 0.511,
           "call": null,
           "edge": 0.0
         },
@@ -4008,9 +6319,9 @@
           "proj": 2.6,
           "line": 2.5,
           "book": "DraftKings",
-          "over": 138,
-          "under": -183,
-          "p_over": 0.389,
+          "over": 143,
+          "under": -190,
+          "p_over": 0.381,
           "call": null,
           "edge": 0.0
         },
@@ -4026,11 +6337,11 @@
         },
         "pra": {
           "proj": 20.5,
-          "line": 18.5,
+          "line": 19.5,
           "book": "DraftKings",
-          "over": -119,
-          "under": -111,
-          "p_over": 0.507,
+          "over": -116,
+          "under": -114,
+          "p_over": 0.495,
           "call": null,
           "edge": 0.0
         }
@@ -4071,6 +6382,58 @@
           "ast": 2,
           "pra": 22
         }
+      ],
+      "l10": [
+        [
+          14,
+          4,
+          0
+        ],
+        [
+          3,
+          2,
+          0
+        ],
+        [
+          3,
+          2,
+          0
+        ],
+        [
+          17,
+          2,
+          5
+        ],
+        [
+          15,
+          1,
+          3
+        ],
+        [
+          9,
+          2,
+          2
+        ],
+        [
+          16,
+          2,
+          6
+        ],
+        [
+          17,
+          3,
+          4
+        ],
+        [
+          16,
+          4,
+          2
+        ],
+        [
+          19,
+          1,
+          2
+        ]
       ]
     },
     {
@@ -4087,9 +6450,9 @@
           "proj": 13.4,
           "line": 13.5,
           "book": "DraftKings",
-          "over": -105,
-          "under": -122,
-          "p_over": 0.469,
+          "over": -123,
+          "under": -104,
+          "p_over": 0.504,
           "call": null,
           "edge": 0.0
         },
@@ -4107,19 +6470,19 @@
           "proj": 4.9,
           "line": 4.5,
           "book": "DraftKings",
-          "over": -102,
-          "under": -128,
-          "p_over": 0.473,
+          "over": -108,
+          "under": -121,
+          "p_over": 0.485,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 21.4,
-          "line": 21.5,
+          "line": 22.5,
           "book": "DraftKings",
-          "over": -114,
-          "under": -115,
-          "p_over": 0.486,
+          "over": -105,
+          "under": -125,
+          "p_over": 0.462,
           "call": null,
           "edge": 0.0
         }
@@ -4160,6 +6523,58 @@
           "ast": 5,
           "pra": 27
         }
+      ],
+      "l10": [
+        [
+          26,
+          6,
+          4
+        ],
+        [
+          17,
+          1,
+          8
+        ],
+        [
+          12,
+          4,
+          6
+        ],
+        [
+          5,
+          6,
+          4
+        ],
+        [
+          16,
+          5,
+          7
+        ],
+        [
+          9,
+          2,
+          4
+        ],
+        [
+          12,
+          2,
+          2
+        ],
+        [
+          7,
+          2,
+          3
+        ],
+        [
+          24,
+          4,
+          7
+        ],
+        [
+          18,
+          4,
+          5
+        ]
       ]
     },
     {
@@ -4170,15 +6585,15 @@
       "home": false,
       "time_et": "7:00 PM",
       "status": null,
-      "minutes": 30.0,
+      "minutes": 29.8,
       "stats": {
         "points": {
           "proj": 13.2,
           "line": 13.5,
           "book": "DraftKings",
-          "over": -103,
-          "under": -123,
-          "p_over": 0.464,
+          "over": -107,
+          "under": -119,
+          "p_over": 0.472,
           "call": null,
           "edge": 0.0
         },
@@ -4186,9 +6601,9 @@
           "proj": 2.5,
           "line": 2.5,
           "book": "DraftKings",
-          "over": 116,
-          "under": -154,
-          "p_over": 0.422,
+          "over": 122,
+          "under": -161,
+          "p_over": 0.411,
           "call": null,
           "edge": 0.0
         },
@@ -4196,9 +6611,9 @@
           "proj": 6.8,
           "line": 7.5,
           "book": "DraftKings",
-          "over": 104,
-          "under": -136,
-          "p_over": 0.439,
+          "over": -101,
+          "under": -130,
+          "p_over": 0.449,
           "call": null,
           "edge": 0.0
         },
@@ -4206,9 +6621,9 @@
           "proj": 22.3,
           "line": 23.5,
           "book": "DraftKings",
-          "over": -106,
-          "under": -124,
-          "p_over": 0.464,
+          "over": -110,
+          "under": -120,
+          "p_over": 0.472,
           "call": null,
           "edge": 0.0
         }
@@ -4249,6 +6664,58 @@
           "ast": 8,
           "pra": 32
         }
+      ],
+      "l10": [
+        [
+          28,
+          4,
+          6
+        ],
+        [
+          11,
+          0,
+          11
+        ],
+        [
+          18,
+          2,
+          5
+        ],
+        [
+          22,
+          1,
+          10
+        ],
+        [
+          21,
+          0,
+          2
+        ],
+        [
+          10,
+          1,
+          10
+        ],
+        [
+          15,
+          6,
+          11
+        ],
+        [
+          15,
+          0,
+          7
+        ],
+        [
+          11,
+          2,
+          10
+        ],
+        [
+          22,
+          2,
+          8
+        ]
       ]
     },
     {
@@ -4263,11 +6730,11 @@
       "stats": {
         "points": {
           "proj": 13.2,
-          "line": 12.5,
+          "line": 11.5,
           "book": "DraftKings",
-          "over": -110,
-          "under": -115,
-          "p_over": 0.487,
+          "over": -127,
+          "under": 100,
+          "p_over": 0.527,
           "call": null,
           "edge": 0.0
         },
@@ -4275,9 +6742,9 @@
           "proj": 4.5,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -128,
-          "under": -102,
-          "p_over": 0.537,
+          "over": -135,
+          "under": 102,
+          "p_over": 0.547,
           "call": null,
           "edge": 0.0
         },
@@ -4285,19 +6752,19 @@
           "proj": 3.6,
           "line": 2.5,
           "book": "DraftKings",
-          "over": -142,
-          "under": 108,
-          "p_over": 0.564,
+          "over": -146,
+          "under": 111,
+          "p_over": 0.57,
           "call": null,
           "edge": 0.0
         },
         "pra": {
           "proj": 20.4,
-          "line": 19.5,
+          "line": 18.5,
           "book": "DraftKings",
-          "over": -112,
-          "under": -118,
-          "p_over": 0.487,
+          "over": -125,
+          "under": -105,
+          "p_over": 0.518,
           "call": null,
           "edge": 0.0
         }
@@ -4338,6 +6805,48 @@
           "ast": 1,
           "pra": 14
         }
+      ],
+      "l10": [
+        [
+          15,
+          5,
+          5
+        ],
+        [
+          13,
+          3,
+          3
+        ],
+        [
+          11,
+          5,
+          4
+        ],
+        [
+          21,
+          4,
+          2
+        ],
+        [
+          12,
+          6,
+          3
+        ],
+        [
+          7,
+          4,
+          4
+        ],
+        [
+          6,
+          4,
+          4
+        ],
+        [
+          11,
+          2,
+          1
+        ]
       ]
     },
     {
@@ -4379,7 +6888,7 @@
           "under": null
         },
         "pra": {
-          "proj": 21.7,
+          "proj": 21.8,
           "line": null,
           "book": null,
           "over": null,
@@ -4422,6 +6931,58 @@
           "ast": 0,
           "pra": 13
         }
+      ],
+      "l10": [
+        [
+          27,
+          11,
+          4
+        ],
+        [
+          15,
+          5,
+          2
+        ],
+        [
+          14,
+          6,
+          1
+        ],
+        [
+          12,
+          10,
+          0
+        ],
+        [
+          4,
+          1,
+          0
+        ],
+        [
+          24,
+          9,
+          2
+        ],
+        [
+          6,
+          5,
+          1
+        ],
+        [
+          6,
+          10,
+          3
+        ],
+        [
+          7,
+          3,
+          1
+        ],
+        [
+          9,
+          4,
+          0
+        ]
       ]
     },
     {
@@ -4438,9 +6999,9 @@
           "proj": 13.0,
           "line": 13.5,
           "book": "DraftKings",
-          "over": -105,
-          "under": -121,
-          "p_over": 0.466,
+          "over": -102,
+          "under": -125,
+          "p_over": 0.459,
           "call": null,
           "edge": 0.0
         },
@@ -4448,9 +7009,9 @@
           "proj": 3.1,
           "line": 2.5,
           "book": "DraftKings",
-          "over": -173,
-          "under": 131,
-          "p_over": 0.592,
+          "over": -164,
+          "under": 124,
+          "p_over": 0.58,
           "call": null,
           "edge": 0.0
         },
@@ -4458,9 +7019,9 @@
           "proj": 4.5,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -123,
-          "under": -107,
-          "p_over": 0.528,
+          "over": -130,
+          "under": -101,
+          "p_over": 0.541,
           "call": null,
           "edge": 0.0
         },
@@ -4511,6 +7072,58 @@
           "ast": 5,
           "pra": 23
         }
+      ],
+      "l10": [
+        [
+          13,
+          5,
+          7
+        ],
+        [
+          17,
+          4,
+          1
+        ],
+        [
+          4,
+          1,
+          4
+        ],
+        [
+          28,
+          1,
+          4
+        ],
+        [
+          4,
+          2,
+          6
+        ],
+        [
+          30,
+          3,
+          3
+        ],
+        [
+          7,
+          7,
+          3
+        ],
+        [
+          4,
+          3,
+          3
+        ],
+        [
+          10,
+          1,
+          5
+        ],
+        [
+          12,
+          6,
+          5
+        ]
       ]
     },
     {
@@ -4527,9 +7140,9 @@
           "proj": 12.9,
           "line": 11.5,
           "book": "DraftKings",
-          "over": -107,
-          "under": -120,
-          "p_over": 0.484,
+          "over": -105,
+          "under": -121,
+          "p_over": 0.481,
           "call": null,
           "edge": 0.0
         },
@@ -4547,9 +7160,9 @@
           "proj": 8.4,
           "line": 8.5,
           "book": "DraftKings",
-          "over": 109,
-          "under": -144,
-          "p_over": 0.44,
+          "over": 107,
+          "under": -141,
+          "p_over": 0.444,
           "call": null,
           "edge": 0.0
         },
@@ -4557,9 +7170,9 @@
           "proj": 28.5,
           "line": 26.5,
           "book": "DraftKings",
-          "over": -110,
-          "under": -120,
-          "p_over": 0.489,
+          "over": -111,
+          "under": -118,
+          "p_over": 0.492,
           "call": null,
           "edge": 0.0
         }
@@ -4600,6 +7213,58 @@
           "ast": 6,
           "pra": 17
         }
+      ],
+      "l10": [
+        [
+          9,
+          7,
+          10
+        ],
+        [
+          6,
+          5,
+          5
+        ],
+        [
+          2,
+          7,
+          6
+        ],
+        [
+          6,
+          4,
+          9
+        ],
+        [
+          9,
+          8,
+          10
+        ],
+        [
+          11,
+          1,
+          4
+        ],
+        [
+          10,
+          8,
+          11
+        ],
+        [
+          13,
+          4,
+          5
+        ],
+        [
+          13,
+          4,
+          10
+        ],
+        [
+          10,
+          1,
+          6
+        ]
       ]
     },
     {
@@ -4626,9 +7291,9 @@
           "proj": 5.7,
           "line": 4.5,
           "book": "DraftKings",
-          "over": -149,
-          "under": 113,
-          "p_over": 0.571,
+          "over": -147,
+          "under": 112,
+          "p_over": 0.569,
           "call": null,
           "edge": 0.0
         },
@@ -4641,10 +7306,13 @@
         },
         "pra": {
           "proj": 19.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
+          "line": 16.5,
+          "book": "DraftKings",
+          "over": -116,
+          "under": -113,
+          "p_over": 0.511,
+          "call": null,
+          "edge": 0.0
         }
       },
       "last5": [
@@ -4683,6 +7351,58 @@
           "ast": 1,
           "pra": 21
         }
+      ],
+      "l10": [
+        [
+          8,
+          8,
+          2
+        ],
+        [
+          15,
+          10,
+          2
+        ],
+        [
+          8,
+          5,
+          4
+        ],
+        [
+          6,
+          4,
+          2
+        ],
+        [
+          8,
+          6,
+          2
+        ],
+        [
+          9,
+          4,
+          0
+        ],
+        [
+          6,
+          2,
+          1
+        ],
+        [
+          9,
+          6,
+          2
+        ],
+        [
+          13,
+          5,
+          3
+        ],
+        [
+          11,
+          9,
+          1
+        ]
       ]
     },
     {
@@ -4719,9 +7439,9 @@
           "proj": 2.0,
           "line": 2.5,
           "book": "DraftKings",
-          "over": 133,
-          "under": -177,
-          "p_over": 0.377,
+          "over": 141,
+          "under": -186,
+          "p_over": 0.366,
           "call": null,
           "edge": 0.0
         },
@@ -4772,6 +7492,58 @@
           "ast": 4,
           "pra": 19
         }
+      ],
+      "l10": [
+        [
+          17,
+          6,
+          1
+        ],
+        [
+          4,
+          4,
+          1
+        ],
+        [
+          6,
+          6,
+          2
+        ],
+        [
+          19,
+          11,
+          3
+        ],
+        [
+          8,
+          8,
+          2
+        ],
+        [
+          22,
+          9,
+          3
+        ],
+        [
+          16,
+          4,
+          0
+        ],
+        [
+          12,
+          4,
+          1
+        ],
+        [
+          11,
+          5,
+          4
+        ],
+        [
+          8,
+          7,
+          4
+        ]
       ]
     },
     {
@@ -4788,9 +7560,9 @@
           "proj": 11.5,
           "line": 10.5,
           "book": "DraftKings",
-          "over": -124,
-          "under": -103,
-          "p_over": 0.514,
+          "over": -127,
+          "under": -101,
+          "p_over": 0.519,
           "call": null,
           "edge": 0.0
         },
@@ -4798,9 +7570,9 @@
           "proj": 5.3,
           "line": 4.5,
           "book": "DraftKings",
-          "over": 120,
-          "under": -158,
-          "p_over": 0.433,
+          "over": 119,
+          "under": -157,
+          "p_over": 0.435,
           "call": null,
           "edge": 0.0
         },
@@ -4808,9 +7580,9 @@
           "proj": 2.9,
           "line": 2.5,
           "book": "DraftKings",
-          "over": 113,
-          "under": -150,
-          "p_over": 0.442,
+          "over": 118,
+          "under": -155,
+          "p_over": 0.433,
           "call": null,
           "edge": 0.0
         },
@@ -4818,9 +7590,9 @@
           "proj": 19.2,
           "line": 17.5,
           "book": "DraftKings",
-          "over": -118,
-          "under": -112,
-          "p_over": 0.503,
+          "over": -119,
+          "under": -111,
+          "p_over": 0.505,
           "call": null,
           "edge": 0.0
         }
@@ -4861,6 +7633,58 @@
           "ast": 5,
           "pra": 19
         }
+      ],
+      "l10": [
+        [
+          5,
+          4,
+          2
+        ],
+        [
+          20,
+          8,
+          1
+        ],
+        [
+          6,
+          8,
+          0
+        ],
+        [
+          9,
+          3,
+          2
+        ],
+        [
+          8,
+          2,
+          1
+        ],
+        [
+          5,
+          4,
+          3
+        ],
+        [
+          13,
+          7,
+          6
+        ],
+        [
+          5,
+          2,
+          2
+        ],
+        [
+          11,
+          4,
+          6
+        ],
+        [
+          9,
+          5,
+          5
+        ]
       ]
     },
     {
@@ -4871,15 +7695,15 @@
       "home": true,
       "time_et": "5:00 PM",
       "status": null,
-      "minutes": 30.9,
+      "minutes": 30.7,
       "stats": {
         "points": {
           "proj": 10.8,
-          "line": 9.5,
+          "line": 8.5,
           "book": "DraftKings",
-          "over": -106,
-          "under": -121,
-          "p_over": 0.482,
+          "over": -127,
+          "under": 100,
+          "p_over": 0.533,
           "call": null,
           "edge": 0.0
         },
@@ -4887,9 +7711,9 @@
           "proj": 11.3,
           "line": 11.5,
           "book": "DraftKings",
-          "over": -118,
-          "under": -111,
-          "p_over": 0.495,
+          "over": -109,
+          "under": -121,
+          "p_over": 0.476,
           "call": null,
           "edge": 0.0
         },
@@ -4944,6 +7768,58 @@
           "ast": 0,
           "pra": 19
         }
+      ],
+      "l10": [
+        [
+          0,
+          3,
+          0
+        ],
+        [
+          5,
+          15,
+          1
+        ],
+        [
+          14,
+          9,
+          1
+        ],
+        [
+          8,
+          13,
+          0
+        ],
+        [
+          5,
+          20,
+          2
+        ],
+        [
+          1,
+          4,
+          1
+        ],
+        [
+          9,
+          13,
+          4
+        ],
+        [
+          10,
+          10,
+          1
+        ],
+        [
+          8,
+          11,
+          2
+        ],
+        [
+          8,
+          11,
+          0
+        ]
       ]
     },
     {
@@ -4980,9 +7856,9 @@
           "proj": 4.0,
           "line": 4.5,
           "book": "DraftKings",
-          "over": 117,
-          "under": -154,
-          "p_over": 0.412,
+          "over": 100,
+          "under": -131,
+          "p_over": 0.447,
           "call": null,
           "edge": 0.0
         },
@@ -4990,9 +7866,9 @@
           "proj": 22.4,
           "line": 21.5,
           "book": "DraftKings",
-          "over": -122,
-          "under": -108,
-          "p_over": 0.506,
+          "over": -129,
+          "under": -102,
+          "p_over": 0.519,
           "call": null,
           "edge": 0.0
         }
@@ -5033,6 +7909,58 @@
           "ast": 3,
           "pra": 31
         }
+      ],
+      "l10": [
+        [
+          6,
+          7,
+          5
+        ],
+        [
+          10,
+          9,
+          4
+        ],
+        [
+          5,
+          7,
+          0
+        ],
+        [
+          11,
+          11,
+          5
+        ],
+        [
+          4,
+          3,
+          5
+        ],
+        [
+          11,
+          6,
+          2
+        ],
+        [
+          7,
+          9,
+          8
+        ],
+        [
+          11,
+          8,
+          6
+        ],
+        [
+          14,
+          6,
+          4
+        ],
+        [
+          11,
+          17,
+          3
+        ]
       ]
     },
     {
@@ -5049,9 +7977,9 @@
           "proj": 10.4,
           "line": 12.5,
           "book": "DraftKings",
-          "over": -120,
-          "under": -106,
-          "p_over": 0.482,
+          "over": -123,
+          "under": -104,
+          "p_over": 0.486,
           "call": null,
           "edge": 0.0
         },
@@ -5079,9 +8007,9 @@
           "proj": 21.0,
           "line": 25.5,
           "book": "DraftKings",
-          "over": -105,
-          "under": -125,
-          "p_over": 0.444,
+          "over": -106,
+          "under": -124,
+          "p_over": 0.446,
           "call": null,
           "edge": 0.0
         }
@@ -5122,6 +8050,58 @@
           "ast": 2,
           "pra": 30
         }
+      ],
+      "l10": [
+        [
+          26,
+          9,
+          1
+        ],
+        [
+          22,
+          8,
+          3
+        ],
+        [
+          2,
+          7,
+          0
+        ],
+        [
+          13,
+          8,
+          0
+        ],
+        [
+          11,
+          9,
+          1
+        ],
+        [
+          10,
+          13,
+          2
+        ],
+        [
+          16,
+          15,
+          1
+        ],
+        [
+          15,
+          15,
+          2
+        ],
+        [
+          15,
+          8,
+          0
+        ],
+        [
+          16,
+          12,
+          2
+        ]
       ]
     },
     {
@@ -5138,9 +8118,9 @@
           "proj": 10.2,
           "line": 8.5,
           "book": "DraftKings",
-          "over": -129,
-          "under": 101,
-          "p_over": 0.53,
+          "over": -124,
+          "under": -103,
+          "p_over": 0.522,
           "call": null,
           "edge": 0.0
         },
@@ -5158,9 +8138,9 @@
           "proj": 4.8,
           "line": 3.5,
           "book": "DraftKings",
-          "over": -101,
-          "under": -131,
-          "p_over": 0.489,
+          "over": 100,
+          "under": -132,
+          "p_over": 0.487,
           "call": null,
           "edge": 0.0
         },
@@ -5168,9 +8148,9 @@
           "proj": 23.4,
           "line": 20.5,
           "book": "DraftKings",
-          "over": -115,
-          "under": -114,
-          "p_over": 0.505,
+          "over": -111,
+          "under": -118,
+          "p_over": 0.497,
           "call": null,
           "edge": 0.0
         }
@@ -5211,6 +8191,58 @@
           "ast": 13,
           "pra": 35
         }
+      ],
+      "l10": [
+        [
+          19,
+          5,
+          2
+        ],
+        [
+          8,
+          8,
+          3
+        ],
+        [
+          7,
+          8,
+          1
+        ],
+        [
+          11,
+          4,
+          1
+        ],
+        [
+          4,
+          6,
+          0
+        ],
+        [
+          3,
+          7,
+          1
+        ],
+        [
+          15,
+          13,
+          4
+        ],
+        [
+          4,
+          6,
+          3
+        ],
+        [
+          5,
+          5,
+          8
+        ],
+        [
+          12,
+          10,
+          13
+        ]
       ]
     },
     {
@@ -5247,9 +8279,9 @@
           "proj": 4.6,
           "line": 4.5,
           "book": "DraftKings",
-          "over": -111,
-          "under": -119,
-          "p_over": 0.483,
+          "over": -132,
+          "under": 100,
+          "p_over": 0.521,
           "call": null,
           "edge": 0.0
         },
@@ -5257,9 +8289,9 @@
           "proj": 20.8,
           "line": 17.5,
           "book": "DraftKings",
-          "over": -108,
-          "under": -122,
-          "p_over": 0.493,
+          "over": -117,
+          "under": -113,
+          "p_over": 0.511,
           "call": null,
           "edge": 0.0
         }
@@ -5300,15 +8332,87 @@
           "ast": 3,
           "pra": 13
         }
+      ],
+      "l10": [
+        [
+          4,
+          1,
+          3
+        ],
+        [
+          7,
+          3,
+          10
+        ],
+        [
+          7,
+          5,
+          7
+        ],
+        [
+          7,
+          5,
+          5
+        ],
+        [
+          15,
+          4,
+          6
+        ],
+        [
+          5,
+          3,
+          3
+        ],
+        [
+          5,
+          5,
+          7
+        ],
+        [
+          12,
+          2,
+          4
+        ],
+        [
+          12,
+          4,
+          1
+        ],
+        [
+          5,
+          5,
+          3
+        ]
       ]
     }
   ],
   "injury_check": {
-    "checked_at": "2026-11-08T14:43:34Z",
+    "checked_at": "2026-11-08T17:13:20Z",
     "since": "2026-11-08T06:06:20Z",
     "since_label": "last night's board",
-    "status_changes": [],
+    "status_changes": [
+      {
+        "player_id": "2595516",
+        "player": "Norman Powell",
+        "team": "CHI",
+        "game_id": "401909945",
+        "from": "active",
+        "to": "day-to-day"
+      },
+      {
+        "player_id": "4433627",
+        "player": "Keyonte George",
+        "team": "UTA",
+        "game_id": "401909947",
+        "from": "active",
+        "to": "day-to-day"
+      }
+    ],
     "moves": [],
-    "games_affected": []
+    "games_affected": [
+      "401909945",
+      "401909947"
+    ]
   }
 }
