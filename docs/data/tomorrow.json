@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T18:17:39Z",
+  "generated_at": "2026-11-08T18:33:36Z",
   "date": "2026-11-09",
   "early_look": true,
   "model": "lightgbm",
@@ -7,135 +7,6 @@
   "lines_fetched_at": null,
   "unmatched_lines": [],
   "players": [
-    {
-      "player": "Luka Doncic",
-      "player_id": "3945274",
-      "team": "LAL",
-      "opp": "ATL",
-      "home": false,
-      "time_et": "5:00 PM",
-      "status": "day-to-day",
-      "minutes": 32.2,
-      "stats": {
-        "points": {
-          "proj": 31.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 6.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 6.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 46.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-30",
-          "pts": 37,
-          "reb": 7,
-          "ast": 5,
-          "pra": 49
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 45,
-          "reb": 15,
-          "ast": 6,
-          "pra": 66
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 42,
-          "reb": 7,
-          "ast": 13,
-          "pra": 62
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 40,
-          "reb": 9,
-          "ast": 7,
-          "pra": 56
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 53,
-          "reb": 5,
-          "ast": 5,
-          "pra": 63
-        }
-      ],
-      "l10": [
-        [
-          12,
-          4,
-          7
-        ],
-        [
-          28,
-          8,
-          7
-        ],
-        [
-          23,
-          6,
-          7
-        ],
-        [
-          52,
-          8,
-          10
-        ],
-        [
-          41,
-          5,
-          9
-        ],
-        [
-          37,
-          7,
-          5
-        ],
-        [
-          45,
-          15,
-          6
-        ],
-        [
-          42,
-          7,
-          13
-        ],
-        [
-          40,
-          9,
-          7
-        ],
-        [
-          53,
-          5,
-          5
-        ]
-      ]
-    },
     {
       "player": "Stephen Curry",
       "player_id": "3975",
@@ -1541,6 +1412,135 @@
       ]
     },
     {
+      "player": "Austin Reaves",
+      "player_id": "4066457",
+      "team": "LAL",
+      "opp": "ATL",
+      "home": false,
+      "time_et": "5:00 PM",
+      "status": null,
+      "minutes": 35.4,
+      "stats": {
+        "points": {
+          "proj": 23.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 4.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 5.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 32.0,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-30",
+          "pts": 21,
+          "reb": 4,
+          "ast": 5,
+          "pra": 30
+        },
+        {
+          "date": "2026-11-01",
+          "pts": 19,
+          "reb": 3,
+          "ast": 4,
+          "pra": 26
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 27,
+          "reb": 2,
+          "ast": 5,
+          "pra": 34
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 21,
+          "reb": 3,
+          "ast": 4,
+          "pra": 28
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 25,
+          "reb": 3,
+          "ast": 2,
+          "pra": 30
+        }
+      ],
+      "l10": [
+        [
+          23,
+          4,
+          6
+        ],
+        [
+          28,
+          2,
+          9
+        ],
+        [
+          29,
+          1,
+          4
+        ],
+        [
+          26,
+          4,
+          7
+        ],
+        [
+          16,
+          6,
+          1
+        ],
+        [
+          21,
+          4,
+          5
+        ],
+        [
+          19,
+          3,
+          4
+        ],
+        [
+          27,
+          2,
+          5
+        ],
+        [
+          21,
+          3,
+          4
+        ],
+        [
+          25,
+          3,
+          2
+        ]
+      ]
+    },
+    {
       "player": "Scottie Barnes",
       "player_id": "4433134",
       "team": "TOR",
@@ -2569,135 +2569,6 @@
           30,
           7,
           6
-        ]
-      ]
-    },
-    {
-      "player": "Austin Reaves",
-      "player_id": "4066457",
-      "team": "LAL",
-      "opp": "ATL",
-      "home": false,
-      "time_et": "5:00 PM",
-      "status": null,
-      "minutes": 31.7,
-      "stats": {
-        "points": {
-          "proj": 20.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 3.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 4.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 28.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-30",
-          "pts": 21,
-          "reb": 4,
-          "ast": 5,
-          "pra": 30
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 19,
-          "reb": 3,
-          "ast": 4,
-          "pra": 26
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 27,
-          "reb": 2,
-          "ast": 5,
-          "pra": 34
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 21,
-          "reb": 3,
-          "ast": 4,
-          "pra": 28
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 25,
-          "reb": 3,
-          "ast": 2,
-          "pra": 30
-        }
-      ],
-      "l10": [
-        [
-          23,
-          4,
-          6
-        ],
-        [
-          28,
-          2,
-          9
-        ],
-        [
-          29,
-          1,
-          4
-        ],
-        [
-          26,
-          4,
-          7
-        ],
-        [
-          16,
-          6,
-          1
-        ],
-        [
-          21,
-          4,
-          5
-        ],
-        [
-          19,
-          3,
-          4
-        ],
-        [
-          27,
-          2,
-          5
-        ],
-        [
-          21,
-          3,
-          4
-        ],
-        [
-          25,
-          3,
-          2
         ]
       ]
     },
@@ -6021,6 +5892,135 @@
       ]
     },
     {
+      "player": "Aaron Nesmith",
+      "player_id": "4396909",
+      "team": "IND",
+      "opp": "DAL",
+      "home": false,
+      "time_et": "6:00 PM",
+      "status": null,
+      "minutes": 28.3,
+      "stats": {
+        "points": {
+          "proj": 14.6,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 3.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 2.2,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 20.8,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-28",
+          "pts": 18,
+          "reb": 2,
+          "ast": 1,
+          "pra": 21
+        },
+        {
+          "date": "2026-10-30",
+          "pts": 9,
+          "reb": 3,
+          "ast": 2,
+          "pra": 14
+        },
+        {
+          "date": "2026-11-01",
+          "pts": 11,
+          "reb": 3,
+          "ast": 4,
+          "pra": 18
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 16,
+          "reb": 1,
+          "ast": 2,
+          "pra": 19
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 8,
+          "reb": 5,
+          "ast": 1,
+          "pra": 14
+        }
+      ],
+      "l10": [
+        [
+          14,
+          3,
+          1
+        ],
+        [
+          26,
+          7,
+          2
+        ],
+        [
+          9,
+          4,
+          1
+        ],
+        [
+          13,
+          1,
+          2
+        ],
+        [
+          13,
+          0,
+          1
+        ],
+        [
+          18,
+          2,
+          1
+        ],
+        [
+          9,
+          3,
+          2
+        ],
+        [
+          11,
+          3,
+          4
+        ],
+        [
+          16,
+          1,
+          2
+        ],
+        [
+          8,
+          5,
+          1
+        ]
+      ]
+    },
+    {
       "player": "Onyeka Okongwu",
       "player_id": "4431680",
       "team": "ATL",
@@ -6404,6 +6404,135 @@
           10,
           9,
           0
+        ]
+      ]
+    },
+    {
+      "player": "Walker Kessler",
+      "player_id": "4433136",
+      "team": "LAL",
+      "opp": "ATL",
+      "home": false,
+      "time_et": "5:00 PM",
+      "status": null,
+      "minutes": 31.4,
+      "stats": {
+        "points": {
+          "proj": 13.2,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 11.8,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 1.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 27.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-30",
+          "pts": 10,
+          "reb": 13,
+          "ast": 2,
+          "pra": 25
+        },
+        {
+          "date": "2026-11-01",
+          "pts": 16,
+          "reb": 15,
+          "ast": 1,
+          "pra": 32
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 15,
+          "reb": 15,
+          "ast": 2,
+          "pra": 32
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 15,
+          "reb": 8,
+          "ast": 0,
+          "pra": 23
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 16,
+          "reb": 12,
+          "ast": 2,
+          "pra": 30
+        }
+      ],
+      "l10": [
+        [
+          26,
+          9,
+          1
+        ],
+        [
+          22,
+          8,
+          3
+        ],
+        [
+          2,
+          7,
+          0
+        ],
+        [
+          13,
+          8,
+          0
+        ],
+        [
+          11,
+          9,
+          1
+        ],
+        [
+          10,
+          13,
+          2
+        ],
+        [
+          16,
+          15,
+          1
+        ],
+        [
+          15,
+          15,
+          2
+        ],
+        [
+          15,
+          8,
+          0
+        ],
+        [
+          16,
+          12,
+          2
         ]
       ]
     },
@@ -7178,135 +7307,6 @@
           10,
           12,
           5
-        ]
-      ]
-    },
-    {
-      "player": "Walker Kessler",
-      "player_id": "4433136",
-      "team": "LAL",
-      "opp": "ATL",
-      "home": false,
-      "time_et": "5:00 PM",
-      "status": null,
-      "minutes": 28.0,
-      "stats": {
-        "points": {
-          "proj": 11.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 10.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 1.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 23.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-30",
-          "pts": 10,
-          "reb": 13,
-          "ast": 2,
-          "pra": 25
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 16,
-          "reb": 15,
-          "ast": 1,
-          "pra": 32
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 15,
-          "reb": 15,
-          "ast": 2,
-          "pra": 32
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 15,
-          "reb": 8,
-          "ast": 0,
-          "pra": 23
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 16,
-          "reb": 12,
-          "ast": 2,
-          "pra": 30
-        }
-      ],
-      "l10": [
-        [
-          26,
-          9,
-          1
-        ],
-        [
-          22,
-          8,
-          3
-        ],
-        [
-          2,
-          7,
-          0
-        ],
-        [
-          13,
-          8,
-          0
-        ],
-        [
-          11,
-          9,
-          1
-        ],
-        [
-          10,
-          13,
-          2
-        ],
-        [
-          16,
-          15,
-          1
-        ],
-        [
-          15,
-          15,
-          2
-        ],
-        [
-          15,
-          8,
-          0
-        ],
-        [
-          16,
-          12,
-          2
         ]
       ]
     },
