@@ -1,16 +1,24 @@
 {
-  "generated_at": "2026-11-08T02:38:19Z",
+  "generated_at": "2026-11-08T06:06:20Z",
   "note": "Season summary, recent games and the model call come from Jokic's real ESPN game log. The market price is the best triple-double Yes price we have: DraftKings' from ESPN (refreshed every run, free) or FanDuel's from the morning odds pull. Prices move during the day, so check yours.",
   "season_summary": {
     "season_label": "2026-27",
-    "games_played": 7,
+    "games_played": 8,
     "triple_doubles": 3,
-    "hit_rate": 0.429,
-    "ppg": 23.4,
-    "rpg": 9.7,
-    "apg": 9.3
+    "hit_rate": 0.375,
+    "ppg": 22.9,
+    "rpg": 10.1,
+    "apg": 9.1
   },
   "recent_games": [
+    {
+      "date": "2026-11-07",
+      "opp": "vs IND",
+      "pts": 19,
+      "reb": 13,
+      "ast": 8,
+      "triple_double": false
+    },
     {
       "date": "2026-11-04",
       "opp": "vs TOR",
@@ -69,20 +77,13 @@
     }
   ],
   "tonight": {
-    "opp": "@ IND",
-    "time_et": "3:00 PM",
-    "call": "yes",
+    "opp": null,
+    "time_et": null,
+    "call": "no",
     "td_projection": {
-      "model_prob": 0.5,
-      "note": "His chance is halfway between his triple-double rate over his last 80 games and 50%. We tested fancier versions (the PRA model's rebound and assist projections, recent-form blends) on the last two seasons and none predicted his nightly triple-doubles better than a coin flip, so his long-run rate pulled toward 50/50 is the honest number. The best Yes price (+110 DraftKings) needs 48% to break even, so the call is YES.",
-      "break_even": 0.476
+      "model_prob": 0.497,
+      "note": "His chance is halfway between his triple-double rate over his last 80 games and 50%. We tested fancier versions (the PRA model's rebound and assist projections, recent-form blends) on the last two seasons and none predicted his nightly triple-doubles better than a coin flip, so his long-run rate pulled toward 50/50 is the honest number. No Yes price today, so the call is just whether his chance is above 50%."
     },
-    "market": {
-      "side": "yes",
-      "odds": 110,
-      "book": "DraftKings",
-      "at": "2026-11-08T02:38:19Z",
-      "others": []
-    }
+    "market": null
   }
 }

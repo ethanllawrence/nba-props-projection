@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-08T01:03:41Z",
-  "date": "2026-11-08",
+  "generated_at": "2026-11-08T06:08:46Z",
+  "date": "2026-11-09",
   "early_look": true,
   "model": "lightgbm",
   "note": "Projections come from the PRA model (LightGBM trained on three seasons: recent form, minutes, opponent, pace and spread, rest, and teammates out). Early look: projections from today's rosters and injury reports, before any sportsbook lines exist. Expect changes as injury news comes in; the Today board takes over at 8 PM Arizona time the night before.",
@@ -11,35 +11,35 @@
       "player": "Luka Doncic",
       "player_id": "3945274",
       "team": "LAL",
-      "opp": "DET",
+      "opp": "ATL",
       "home": false,
-      "time_et": "6:00 PM",
+      "time_et": "5:00 PM",
       "status": "day-to-day",
-      "minutes": 32.4,
+      "minutes": 32.2,
       "stats": {
         "points": {
-          "proj": 30.7,
+          "proj": 31.9,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 6.3,
+          "proj": 6.5,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 6.3,
+          "proj": 6.8,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 44.6,
+          "proj": 46.2,
           "line": null,
           "book": null,
           "over": null,
@@ -85,94 +85,17 @@
       ]
     },
     {
-      "player": "Tyrese Maxey",
-      "player_id": "4431678",
-      "team": "PHI",
-      "opp": "CHI",
-      "home": false,
-      "time_et": "3:30 PM",
-      "status": null,
-      "minutes": 36.3,
-      "stats": {
-        "points": {
-          "proj": 27.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 4.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 5.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 36.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-30",
-          "pts": 27,
-          "reb": 4,
-          "ast": 4,
-          "pra": 35
-        },
-        {
-          "date": "2026-10-31",
-          "pts": 38,
-          "reb": 4,
-          "ast": 4,
-          "pra": 46
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 26,
-          "reb": 4,
-          "ast": 11,
-          "pra": 41
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 19,
-          "reb": 1,
-          "ast": 7,
-          "pra": 27
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 17,
-          "reb": 3,
-          "ast": 4,
-          "pra": 24
-        }
-      ]
-    },
-    {
-      "player": "Darius Acuff Jr.",
-      "player_id": "5142620",
-      "team": "SAC",
-      "opp": "MIA",
+      "player": "Stephen Curry",
+      "player_id": "3975",
+      "team": "GSW",
+      "opp": "NOP",
       "home": true,
-      "time_et": "9:00 PM",
+      "time_et": "8:00 PM",
       "status": null,
-      "minutes": 37.0,
+      "minutes": 33.1,
       "stats": {
         "points": {
-          "proj": 27.2,
+          "proj": 30.8,
           "line": null,
           "book": null,
           "over": null,
@@ -186,14 +109,14 @@
           "under": null
         },
         "assists": {
-          "proj": 8.1,
+          "proj": 5.6,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 38.5,
+          "proj": 40.0,
           "line": null,
           "book": null,
           "over": null,
@@ -202,193 +125,116 @@
       },
       "last5": [
         {
-          "date": "2026-10-29",
-          "pts": 34,
-          "reb": 6,
-          "ast": 14,
-          "pra": 54
-        },
-        {
-          "date": "2026-10-31",
-          "pts": 38,
-          "reb": 5,
-          "ast": 5,
-          "pra": 48
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 25,
-          "reb": 5,
+          "date": "2026-10-28",
+          "pts": 44,
+          "reb": 8,
           "ast": 6,
-          "pra": 36
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 22,
-          "reb": 3,
-          "ast": 12,
-          "pra": 37
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 22,
-          "reb": 3,
-          "ast": 8,
-          "pra": 33
-        }
-      ]
-    },
-    {
-      "player": "Jaylen Brown",
-      "player_id": "3917376",
-      "team": "PHI",
-      "opp": "CHI",
-      "home": false,
-      "time_et": "3:30 PM",
-      "status": null,
-      "minutes": 36.3,
-      "stats": {
-        "points": {
-          "proj": 26.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 6.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 4.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 37.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-28",
-          "pts": 20,
-          "reb": 10,
-          "ast": 2,
-          "pra": 32
-        },
-        {
-          "date": "2026-10-31",
-          "pts": 16,
-          "reb": 4,
-          "ast": 4,
-          "pra": 24
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 25,
-          "reb": 11,
-          "ast": 5,
-          "pra": 41
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 30,
-          "reb": 7,
-          "ast": 1,
-          "pra": 38
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 20,
-          "reb": 5,
-          "ast": 5,
-          "pra": 30
-        }
-      ]
-    },
-    {
-      "player": "Giannis Antetokounmpo",
-      "player_id": "3032977",
-      "team": "MIA",
-      "opp": "SAC",
-      "home": false,
-      "time_et": "9:00 PM",
-      "status": null,
-      "minutes": 29.2,
-      "stats": {
-        "points": {
-          "proj": 26.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 10.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 5.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 41.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-28",
-          "pts": 24,
-          "reb": 18,
-          "ast": 3,
-          "pra": 45
+          "pra": 58
         },
         {
           "date": "2026-10-30",
           "pts": 31,
-          "reb": 18,
-          "ast": 10,
-          "pra": 59
+          "reb": 4,
+          "ast": 6,
+          "pra": 41
         },
         {
           "date": "2026-11-02",
-          "pts": 30,
-          "reb": 12,
+          "pts": 34,
+          "reb": 6,
           "ast": 7,
-          "pra": 49
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 27,
-          "reb": 14,
-          "ast": 6,
           "pra": 47
         },
         {
           "date": "2026-11-05",
-          "pts": 20,
-          "reb": 14,
+          "pts": 29,
+          "reb": 1,
           "ast": 4,
-          "pra": 38
+          "pra": 34
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 41,
+          "reb": 6,
+          "ast": 6,
+          "pra": 53
+        }
+      ]
+    },
+    {
+      "player": "Victor Wembanyama",
+      "player_id": "5104157",
+      "team": "SAS",
+      "opp": "PHX",
+      "home": false,
+      "time_et": "7:00 PM",
+      "status": null,
+      "minutes": 32.2,
+      "stats": {
+        "points": {
+          "proj": 27.5,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 12.0,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 3.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 42.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-31",
+          "pts": 43,
+          "reb": 7,
+          "ast": 4,
+          "pra": 54
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 12,
+          "reb": 11,
+          "ast": 5,
+          "pra": 28
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 52,
+          "reb": 24,
+          "ast": 2,
+          "pra": 78
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 30,
+          "reb": 14,
+          "ast": 2,
+          "pra": 46
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 29,
+          "reb": 7,
+          "ast": 3,
+          "pra": 39
         }
       ]
     },
@@ -396,35 +242,35 @@
       "player": "Cade Cunningham",
       "player_id": "4432166",
       "team": "DET",
-      "opp": "LAL",
+      "opp": "WAS",
       "home": true,
-      "time_et": "6:00 PM",
+      "time_et": "5:00 PM",
       "status": null,
-      "minutes": 37.2,
+      "minutes": 35.9,
       "stats": {
         "points": {
-          "proj": 25.8,
+          "proj": 27.2,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 5.3,
+          "proj": 5.6,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 7.8,
+          "proj": 8.6,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 38.8,
+          "proj": 40.5,
           "line": null,
           "book": null,
           "over": null,
@@ -470,38 +316,192 @@
       ]
     },
     {
-      "player": "Joel Embiid",
-      "player_id": "3059318",
-      "team": "PHI",
-      "opp": "CHI",
-      "home": false,
-      "time_et": "3:30 PM",
-      "status": "day-to-day",
-      "minutes": 32.9,
+      "player": "Devin Booker",
+      "player_id": "3136193",
+      "team": "PHX",
+      "opp": "SAS",
+      "home": true,
+      "time_et": "7:00 PM",
+      "status": null,
+      "minutes": 35.9,
       "stats": {
         "points": {
-          "proj": 25.3,
+          "proj": 26.3,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 9.4,
+          "proj": 3.4,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 4.8,
+          "proj": 5.4,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 39.0,
+          "proj": 34.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-30",
+          "pts": 20,
+          "reb": 2,
+          "ast": 5,
+          "pra": 27
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 26,
+          "reb": 3,
+          "ast": 5,
+          "pra": 34
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 33,
+          "reb": 1,
+          "ast": 2,
+          "pra": 36
+        },
+        {
+          "date": "2026-11-05",
+          "pts": 30,
+          "reb": 1,
+          "ast": 8,
+          "pra": 39
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 24,
+          "reb": 2,
+          "ast": 3,
+          "pra": 29
+        }
+      ]
+    },
+    {
+      "player": "Donovan Mitchell",
+      "player_id": "3908809",
+      "team": "CLE",
+      "opp": "CHA",
+      "home": false,
+      "time_et": "5:00 PM",
+      "status": null,
+      "minutes": 36.4,
+      "stats": {
+        "points": {
+          "proj": 26.0,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 4.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 5.2,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 35.2,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-31",
+          "pts": 15,
+          "reb": 4,
+          "ast": 3,
+          "pra": 22
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 17,
+          "reb": 5,
+          "ast": 11,
+          "pra": 33
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 27,
+          "reb": 3,
+          "ast": 6,
+          "pra": 36
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 23,
+          "reb": 7,
+          "ast": 8,
+          "pra": 38
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 37,
+          "reb": 4,
+          "ast": 4,
+          "pra": 45
+        }
+      ]
+    },
+    {
+      "player": "Nikola Jokic",
+      "player_id": "3112335",
+      "team": "DEN",
+      "opp": "HOU",
+      "home": false,
+      "time_et": "6:30 PM",
+      "status": null,
+      "minutes": 36.2,
+      "stats": {
+        "points": {
+          "proj": 25.6,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 10.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 8.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 46.5,
           "line": null,
           "book": null,
           "over": null,
@@ -512,37 +512,37 @@
         {
           "date": "2026-10-28",
           "pts": 21,
-          "reb": 11,
-          "ast": 2,
-          "pra": 34
+          "reb": 13,
+          "ast": 10,
+          "pra": 44
         },
         {
           "date": "2026-10-30",
-          "pts": 10,
+          "pts": 18,
           "reb": 7,
-          "ast": 7,
-          "pra": 24
+          "ast": 10,
+          "pra": 35
         },
         {
           "date": "2026-11-02",
-          "pts": 15,
-          "reb": 8,
-          "ast": 3,
-          "pra": 26
-        },
-        {
-          "date": "2026-11-04",
           "pts": 26,
-          "reb": 15,
-          "ast": 2,
+          "reb": 9,
+          "ast": 8,
           "pra": 43
         },
         {
-          "date": "2026-11-06",
-          "pts": 6,
-          "reb": 7,
-          "ast": 1,
-          "pra": 14
+          "date": "2026-11-04",
+          "pts": 32,
+          "reb": 10,
+          "ast": 11,
+          "pra": 53
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 19,
+          "reb": 13,
+          "ast": 8,
+          "pra": 40
         }
       ]
     },
@@ -550,21 +550,21 @@
       "player": "Cooper Flagg",
       "player_id": "5041939",
       "team": "DAL",
-      "opp": "BKN",
+      "opp": "IND",
       "home": true,
-      "time_et": "7:30 PM",
+      "time_et": "6:00 PM",
       "status": null,
-      "minutes": 36.8,
+      "minutes": 36.6,
       "stats": {
         "points": {
-          "proj": 25.2,
+          "proj": 25.4,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 7.4,
+          "proj": 7.5,
           "line": null,
           "book": null,
           "over": null,
@@ -578,7 +578,7 @@
           "under": null
         },
         "pra": {
-          "proj": 37.1,
+          "proj": 38.9,
           "line": null,
           "book": null,
           "over": null,
@@ -624,115 +624,38 @@
       ]
     },
     {
-      "player": "Jayson Tatum",
-      "player_id": "4065648",
-      "team": "BOS",
-      "opp": "MIL",
+      "player": "Jamal Murray",
+      "player_id": "3936299",
+      "team": "DEN",
+      "opp": "HOU",
       "home": false,
-      "time_et": "8:00 PM",
+      "time_et": "6:30 PM",
       "status": null,
-      "minutes": 30.4,
+      "minutes": 36.4,
       "stats": {
         "points": {
-          "proj": 24.4,
+          "proj": 24.3,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 7.7,
+          "proj": 4.7,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 6.9,
+          "proj": 6.2,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 39.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-27",
-          "pts": 40,
-          "reb": 5,
-          "ast": 8,
-          "pra": 53
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 26,
-          "reb": 7,
-          "ast": 7,
-          "pra": 40
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 32,
-          "reb": 4,
-          "ast": 7,
-          "pra": 43
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 19,
-          "reb": 6,
-          "ast": 9,
-          "pra": 34
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 34,
-          "reb": 8,
-          "ast": 9,
-          "pra": 51
-        }
-      ]
-    },
-    {
-      "player": "Keyonte George",
-      "player_id": "4433627",
-      "team": "UTA",
-      "opp": "MIN",
-      "home": false,
-      "time_et": "7:00 PM",
-      "status": null,
-      "minutes": 33.0,
-      "stats": {
-        "points": {
-          "proj": 24.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 4.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 5.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 33.6,
+          "proj": 35.1,
           "line": null,
           "book": null,
           "over": null,
@@ -742,137 +665,60 @@
       "last5": [
         {
           "date": "2026-10-28",
-          "pts": 31,
-          "reb": 4,
-          "ast": 3,
-          "pra": 38
-        },
-        {
-          "date": "2026-10-31",
-          "pts": 8,
-          "reb": 3,
-          "ast": 4,
-          "pra": 15
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 7,
-          "reb": 7,
-          "ast": 0,
-          "pra": 14
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 39,
-          "reb": 2,
-          "ast": 9,
-          "pra": 50
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 16,
-          "reb": 6,
-          "ast": 9,
-          "pra": 31
-        }
-      ]
-    },
-    {
-      "player": "Michael Porter Jr.",
-      "player_id": "4278104",
-      "team": "BKN",
-      "opp": "DAL",
-      "home": false,
-      "time_et": "7:30 PM",
-      "status": null,
-      "minutes": 34.5,
-      "stats": {
-        "points": {
-          "proj": 23.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 7.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 2.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 32.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-27",
-          "pts": 27,
-          "reb": 12,
-          "ast": 2,
-          "pra": 41
+          "pts": 23,
+          "reb": 1,
+          "ast": 6,
+          "pra": 30
         },
         {
           "date": "2026-10-30",
-          "pts": 13,
-          "reb": 7,
-          "ast": 1,
-          "pra": 21
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 23,
-          "reb": 9,
-          "ast": 3,
-          "pra": 35
+          "pts": 39,
+          "reb": 8,
+          "ast": 5,
+          "pra": 52
         },
         {
           "date": "2026-11-02",
-          "pts": 18,
+          "pts": 35,
           "reb": 5,
-          "ast": 2,
-          "pra": 25
+          "ast": 6,
+          "pra": 46
         },
         {
           "date": "2026-11-04",
-          "pts": 26,
-          "reb": 10,
-          "ast": 0,
-          "pra": 36
+          "pts": 14,
+          "reb": 5,
+          "ast": 7,
+          "pra": 26
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 16,
+          "reb": 6,
+          "ast": 8,
+          "pra": 30
         }
       ]
     },
     {
-      "player": "Kyrie Irving",
-      "player_id": "6442",
-      "team": "DAL",
-      "opp": "BKN",
+      "player": "RJ Barrett",
+      "player_id": "4395625",
+      "team": "TOR",
+      "opp": "MEM",
       "home": true,
-      "time_et": "7:30 PM",
+      "time_et": "5:30 PM",
       "status": null,
-      "minutes": 33.7,
+      "minutes": 33.9,
       "stats": {
         "points": {
-          "proj": 22.9,
+          "proj": 24.1,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 4.5,
+          "proj": 6.2,
           "line": null,
           "book": null,
           "over": null,
@@ -886,7 +732,161 @@
           "under": null
         },
         "pra": {
-          "proj": 33.4,
+          "proj": 34.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-30",
+          "pts": 9,
+          "reb": 3,
+          "ast": 5,
+          "pra": 17
+        },
+        {
+          "date": "2026-11-01",
+          "pts": 22,
+          "reb": 10,
+          "ast": 5,
+          "pra": 37
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 26,
+          "reb": 6,
+          "ast": 3,
+          "pra": 35
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 22,
+          "reb": 5,
+          "ast": 3,
+          "pra": 30
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 27,
+          "reb": 7,
+          "ast": 4,
+          "pra": 38
+        }
+      ]
+    },
+    {
+      "player": "Pascal Siakam",
+      "player_id": "3149673",
+      "team": "IND",
+      "opp": "DAL",
+      "home": false,
+      "time_et": "6:00 PM",
+      "status": null,
+      "minutes": 33.7,
+      "stats": {
+        "points": {
+          "proj": 23.5,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 6.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 4.4,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 34.2,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-28",
+          "pts": 26,
+          "reb": 11,
+          "ast": 3,
+          "pra": 40
+        },
+        {
+          "date": "2026-10-30",
+          "pts": 13,
+          "reb": 5,
+          "ast": 4,
+          "pra": 22
+        },
+        {
+          "date": "2026-11-01",
+          "pts": 17,
+          "reb": 5,
+          "ast": 5,
+          "pra": 27
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 20,
+          "reb": 5,
+          "ast": 2,
+          "pra": 27
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 23,
+          "reb": 2,
+          "ast": 5,
+          "pra": 30
+        }
+      ]
+    },
+    {
+      "player": "Kyrie Irving",
+      "player_id": "6442",
+      "team": "DAL",
+      "opp": "IND",
+      "home": true,
+      "time_et": "6:00 PM",
+      "status": null,
+      "minutes": 33.5,
+      "stats": {
+        "points": {
+          "proj": 23.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 4.5,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 4.4,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 33.3,
           "line": null,
           "book": null,
           "over": null,
@@ -932,31 +932,185 @@
       ]
     },
     {
-      "player": "LaMelo Ball",
-      "player_id": "4432816",
-      "team": "MIN",
-      "opp": "UTA",
+      "player": "Scottie Barnes",
+      "player_id": "4433134",
+      "team": "TOR",
+      "opp": "MEM",
       "home": true,
-      "time_et": "7:00 PM",
-      "status": null,
-      "minutes": 31.5,
+      "time_et": "5:30 PM",
+      "status": "day-to-day",
+      "minutes": 34.1,
       "stats": {
         "points": {
-          "proj": 22.4,
+          "proj": 23.2,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 4.6,
+          "proj": 7.4,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 6.8,
+          "proj": 6.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 37.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-28",
+          "pts": 28,
+          "reb": 6,
+          "ast": 4,
+          "pra": 38
+        },
+        {
+          "date": "2026-10-30",
+          "pts": 41,
+          "reb": 5,
+          "ast": 5,
+          "pra": 51
+        },
+        {
+          "date": "2026-11-01",
+          "pts": 29,
+          "reb": 6,
+          "ast": 5,
+          "pra": 40
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 22,
+          "reb": 15,
+          "ast": 8,
+          "pra": 45
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 17,
+          "reb": 6,
+          "ast": 6,
+          "pra": 29
+        }
+      ]
+    },
+    {
+      "player": "Yaxel Lendeborg",
+      "player_id": "5175737",
+      "team": "GSW",
+      "opp": "NOP",
+      "home": true,
+      "time_et": "8:00 PM",
+      "status": null,
+      "minutes": 33.7,
+      "stats": {
+        "points": {
+          "proj": 22.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 7.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 4.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 35.2,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-30",
+          "pts": 6,
+          "reb": 1,
+          "ast": 0,
+          "pra": 7
+        },
+        {
+          "date": "2026-11-01",
+          "pts": 37,
+          "reb": 4,
+          "ast": 6,
+          "pra": 47
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 16,
+          "reb": 5,
+          "ast": 5,
+          "pra": 26
+        },
+        {
+          "date": "2026-11-05",
+          "pts": 17,
+          "reb": 8,
+          "ast": 6,
+          "pra": 31
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 23,
+          "reb": 8,
+          "ast": 3,
+          "pra": 34
+        }
+      ]
+    },
+    {
+      "player": "Kevin Durant",
+      "player_id": "3202",
+      "team": "HOU",
+      "opp": "DEN",
+      "home": true,
+      "time_et": "6:30 PM",
+      "status": null,
+      "minutes": 35.8,
+      "stats": {
+        "points": {
+          "proj": 22.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 5.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 4.4,
           "line": null,
           "book": null,
           "over": null,
@@ -973,74 +1127,74 @@
       "last5": [
         {
           "date": "2026-10-30",
-          "pts": 24,
-          "reb": 4,
-          "ast": 7,
-          "pra": 35
+          "pts": 28,
+          "reb": 5,
+          "ast": 1,
+          "pra": 34
         },
         {
           "date": "2026-10-31",
-          "pts": 10,
-          "reb": 8,
+          "pts": 14,
+          "reb": 3,
           "ast": 4,
-          "pra": 22
+          "pra": 21
         },
         {
           "date": "2026-11-02",
-          "pts": 34,
-          "reb": 6,
+          "pts": 12,
+          "reb": 3,
           "ast": 3,
-          "pra": 43
+          "pra": 18
         },
         {
           "date": "2026-11-04",
-          "pts": 20,
-          "reb": 2,
-          "ast": 6,
+          "pts": 21,
+          "reb": 5,
+          "ast": 2,
           "pra": 28
         },
         {
-          "date": "2026-11-06",
-          "pts": 22,
-          "reb": 2,
-          "ast": 8,
-          "pra": 32
+          "date": "2026-11-07",
+          "pts": 21,
+          "reb": 10,
+          "ast": 3,
+          "pra": 34
         }
       ]
     },
     {
-      "player": "Lauri Markkanen",
-      "player_id": "4066336",
-      "team": "UTA",
-      "opp": "MIN",
-      "home": false,
-      "time_et": "7:00 PM",
-      "status": "day-to-day",
-      "minutes": 34.8,
+      "player": "Alperen Sengun",
+      "player_id": "4871144",
+      "team": "HOU",
+      "opp": "DEN",
+      "home": true,
+      "time_et": "6:30 PM",
+      "status": null,
+      "minutes": 35.4,
       "stats": {
         "points": {
-          "proj": 22.4,
+          "proj": 21.0,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 6.8,
+          "proj": 9.3,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 2.0,
+          "proj": 6.9,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 31.7,
+          "proj": 37.5,
           "line": null,
           "book": null,
           "over": null,
@@ -1050,74 +1204,74 @@
       "last5": [
         {
           "date": "2026-10-26",
-          "pts": 2,
-          "reb": 0,
-          "ast": 0,
-          "pra": 2
+          "pts": 29,
+          "reb": 9,
+          "ast": 9,
+          "pra": 47
         },
         {
           "date": "2026-10-31",
-          "pts": 13,
-          "reb": 6,
-          "ast": 1,
-          "pra": 20
+          "pts": 16,
+          "reb": 9,
+          "ast": 9,
+          "pra": 34
         },
         {
           "date": "2026-11-02",
-          "pts": 22,
-          "reb": 8,
-          "ast": 3,
-          "pra": 33
+          "pts": 26,
+          "reb": 7,
+          "ast": 10,
+          "pra": 43
         },
         {
           "date": "2026-11-04",
-          "pts": 21,
-          "reb": 10,
-          "ast": 4,
-          "pra": 35
+          "pts": 17,
+          "reb": 12,
+          "ast": 10,
+          "pra": 39
         },
         {
-          "date": "2026-11-06",
-          "pts": 24,
-          "reb": 8,
-          "ast": 1,
-          "pra": 33
+          "date": "2026-11-07",
+          "pts": 15,
+          "reb": 6,
+          "ast": 5,
+          "pra": 26
         }
       ]
     },
     {
-      "player": "Darius Garland",
-      "player_id": "4396907",
-      "team": "LAC",
-      "opp": "NOP",
-      "home": true,
-      "time_et": "9:00 PM",
+      "player": "Ty Jerome",
+      "player_id": "4065733",
+      "team": "MEM",
+      "opp": "TOR",
+      "home": false,
+      "time_et": "5:30 PM",
       "status": null,
-      "minutes": 33.8,
+      "minutes": 30.1,
       "stats": {
         "points": {
-          "proj": 21.1,
+          "proj": 21.0,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 2.9,
+          "proj": 3.0,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 7.3,
+          "proj": 5.1,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 31.0,
+          "proj": 29.7,
           "line": null,
           "book": null,
           "over": null,
@@ -1126,54 +1280,54 @@
       },
       "last5": [
         {
-          "date": "2026-10-28",
-          "pts": 14,
-          "reb": 1,
-          "ast": 5,
-          "pra": 20
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 24,
-          "reb": 2,
-          "ast": 5,
-          "pra": 31
-        },
-        {
-          "date": "2026-11-01",
+          "date": "2026-10-26",
           "pts": 15,
-          "reb": 0,
-          "ast": 7,
-          "pra": 22
+          "reb": 1,
+          "ast": 8,
+          "pra": 24
+        },
+        {
+          "date": "2026-10-29",
+          "pts": 10,
+          "reb": 2,
+          "ast": 3,
+          "pra": 15
         },
         {
           "date": "2026-11-02",
-          "pts": 16,
-          "reb": 4,
-          "ast": 8,
-          "pra": 28
+          "pts": 40,
+          "reb": 5,
+          "ast": 5,
+          "pra": 50
         },
         {
           "date": "2026-11-04",
-          "pts": 26,
-          "reb": 1,
-          "ast": 7,
-          "pra": 34
+          "pts": 23,
+          "reb": 4,
+          "ast": 3,
+          "pra": 30
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 21,
+          "reb": 2,
+          "ast": 5,
+          "pra": 28
         }
       ]
     },
     {
-      "player": "Zach LaVine",
-      "player_id": "3064440",
-      "team": "SAC",
-      "opp": "MIA",
+      "player": "Nickeil Alexander-Walker",
+      "player_id": "4278039",
+      "team": "ATL",
+      "opp": "LAL",
       "home": true,
-      "time_et": "9:00 PM",
+      "time_et": "5:00 PM",
       "status": null,
-      "minutes": 33.2,
+      "minutes": 31.7,
       "stats": {
         "points": {
-          "proj": 21.1,
+          "proj": 20.9,
           "line": null,
           "book": null,
           "over": null,
@@ -1187,14 +1341,14 @@
           "under": null
         },
         "assists": {
-          "proj": 3.0,
+          "proj": 2.6,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 27.4,
+          "proj": 26.6,
           "line": null,
           "book": null,
           "over": null,
@@ -1202,230 +1356,76 @@
         }
       },
       "last5": [
-        {
-          "date": "2026-10-29",
-          "pts": 21,
-          "reb": 3,
-          "ast": 5,
-          "pra": 29
-        },
         {
           "date": "2026-10-31",
-          "pts": 11,
-          "reb": 0,
+          "pts": 12,
+          "reb": 2,
           "ast": 1,
-          "pra": 12
+          "pra": 15
         },
         {
           "date": "2026-11-02",
-          "pts": 23,
+          "pts": 34,
           "reb": 4,
-          "ast": 1,
-          "pra": 28
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 21,
-          "reb": 4,
-          "ast": 1,
-          "pra": 26
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 14,
-          "reb": 4,
-          "ast": 3,
-          "pra": 21
-        }
-      ]
-    },
-    {
-      "player": "LeBron James",
-      "player_id": "1966",
-      "team": "PHI",
-      "opp": "CHI",
-      "home": false,
-      "time_et": "3:30 PM",
-      "status": null,
-      "minutes": 34.4,
-      "stats": {
-        "points": {
-          "proj": 20.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 7.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 7.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 35.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-28",
-          "pts": 13,
-          "reb": 5,
-          "ast": 10,
-          "pra": 28
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 20,
-          "reb": 9,
-          "ast": 8,
-          "pra": 37
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 15,
-          "reb": 7,
-          "ast": 9,
-          "pra": 31
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 13,
-          "reb": 10,
-          "ast": 8,
-          "pra": 31
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 8,
-          "reb": 7,
-          "ast": 3,
-          "pra": 18
-        }
-      ]
-    },
-    {
-      "player": "Julius Randle",
-      "player_id": "3064514",
-      "team": "BKN",
-      "opp": "DAL",
-      "home": false,
-      "time_et": "7:30 PM",
-      "status": null,
-      "minutes": 34.0,
-      "stats": {
-        "points": {
-          "proj": 20.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 6.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 4.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 31.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-27",
-          "pts": 24,
-          "reb": 9,
           "ast": 4,
-          "pra": 37
+          "pra": 42
         },
         {
-          "date": "2026-10-30",
-          "pts": 15,
-          "reb": 8,
-          "ast": 3,
-          "pra": 26
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 20,
-          "reb": 5,
-          "ast": 6,
-          "pra": 31
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 21,
-          "reb": 11,
+          "date": "2026-11-04",
+          "pts": 26,
+          "reb": 4,
           "ast": 2,
-          "pra": 34
+          "pra": 32
         },
         {
-          "date": "2026-11-04",
-          "pts": 22,
+          "date": "2026-11-06",
+          "pts": 28,
+          "reb": 2,
+          "ast": 2,
+          "pra": 32
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 20,
           "reb": 3,
-          "ast": 4,
-          "pra": 29
+          "ast": 1,
+          "pra": 24
         }
       ]
     },
     {
-      "player": "Caleb Wilson",
-      "player_id": "5095151",
-      "team": "CHI",
-      "opp": "PHI",
+      "player": "Jalen Johnson",
+      "player_id": "4701230",
+      "team": "ATL",
+      "opp": "LAL",
       "home": true,
-      "time_et": "3:30 PM",
+      "time_et": "5:00 PM",
       "status": null,
-      "minutes": 32.3,
+      "minutes": 35.6,
       "stats": {
         "points": {
-          "proj": 20.1,
+          "proj": 20.7,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 6.4,
+          "proj": 8.4,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 2.5,
+          "proj": 7.1,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 28.1,
+          "proj": 37.2,
           "line": null,
           "book": null,
           "over": null,
@@ -1435,115 +1435,38 @@
       "last5": [
         {
           "date": "2026-10-26",
-          "pts": 17,
-          "reb": 5,
+          "pts": 21,
+          "reb": 9,
           "ast": 3,
-          "pra": 25
+          "pra": 33
         },
         {
           "date": "2026-10-28",
-          "pts": 20,
-          "reb": 6,
-          "ast": 4,
-          "pra": 30
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 23,
-          "reb": 5,
-          "ast": 4,
+          "pts": 12,
+          "reb": 9,
+          "ast": 11,
           "pra": 32
         },
         {
-          "date": "2026-11-02",
-          "pts": 24,
+          "date": "2026-10-29",
+          "pts": 17,
+          "reb": 8,
+          "ast": 7,
+          "pra": 32
+        },
+        {
+          "date": "2026-10-31",
+          "pts": 13,
           "reb": 7,
           "ast": 4,
-          "pra": 35
+          "pra": 24
         },
         {
-          "date": "2026-11-04",
-          "pts": 5,
-          "reb": 5,
-          "ast": 0,
-          "pra": 10
-        }
-      ]
-    },
-    {
-      "player": "Bam Adebayo",
-      "player_id": "4066261",
-      "team": "MIA",
-      "opp": "SAC",
-      "home": false,
-      "time_et": "9:00 PM",
-      "status": null,
-      "minutes": 30.3,
-      "stats": {
-        "points": {
-          "proj": 19.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 9.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 3.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 31.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-28",
-          "pts": 24,
-          "reb": 9,
-          "ast": 3,
-          "pra": 36
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 27,
-          "reb": 9,
-          "ast": 3,
-          "pra": 39
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 16,
-          "reb": 9,
-          "ast": 4,
-          "pra": 29
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 35,
-          "reb": 10,
-          "ast": 4,
-          "pra": 49
-        },
-        {
-          "date": "2026-11-05",
-          "pts": 18,
-          "reb": 10,
-          "ast": 0,
-          "pra": 28
+          "date": "2026-11-07",
+          "pts": 30,
+          "reb": 7,
+          "ast": 6,
+          "pra": 43
         }
       ]
     },
@@ -1551,35 +1474,35 @@
       "player": "Austin Reaves",
       "player_id": "4066457",
       "team": "LAL",
-      "opp": "DET",
+      "opp": "ATL",
       "home": false,
-      "time_et": "6:00 PM",
+      "time_et": "5:00 PM",
       "status": null,
-      "minutes": 32.0,
+      "minutes": 31.7,
       "stats": {
         "points": {
-          "proj": 19.2,
+          "proj": 20.2,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 3.4,
+          "proj": 3.6,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 4.1,
+          "proj": 4.5,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 26.4,
+          "proj": 28.2,
           "line": null,
           "book": null,
           "over": null,
@@ -1625,17 +1548,94 @@
       ]
     },
     {
+      "player": "Trae Young",
+      "player_id": "4277905",
+      "team": "WAS",
+      "opp": "DET",
+      "home": false,
+      "time_et": "5:00 PM",
+      "status": null,
+      "minutes": 33.3,
+      "stats": {
+        "points": {
+          "proj": 19.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 3.4,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 7.5,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 32.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-30",
+          "pts": 21,
+          "reb": 6,
+          "ast": 9,
+          "pra": 36
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 15,
+          "reb": 3,
+          "ast": 9,
+          "pra": 27
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 18,
+          "reb": 2,
+          "ast": 6,
+          "pra": 26
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 23,
+          "reb": 2,
+          "ast": 10,
+          "pra": 35
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 4,
+          "reb": 5,
+          "ast": 3,
+          "pra": 12
+        }
+      ]
+    },
+    {
       "player": "Zion Williamson",
       "player_id": "4395628",
       "team": "NOP",
-      "opp": "LAC",
+      "opp": "GSW",
       "home": false,
-      "time_et": "9:00 PM",
+      "time_et": "8:00 PM",
       "status": null,
-      "minutes": 32.4,
+      "minutes": 32.2,
       "stats": {
         "points": {
-          "proj": 19.0,
+          "proj": 19.1,
           "line": null,
           "book": null,
           "over": null,
@@ -1649,14 +1649,14 @@
           "under": null
         },
         "assists": {
-          "proj": 3.0,
+          "proj": 3.1,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 28.0,
+          "proj": 28.3,
           "line": null,
           "book": null,
           "over": null,
@@ -1702,38 +1702,38 @@
       ]
     },
     {
-      "player": "Norman Powell",
-      "player_id": "2595516",
-      "team": "CHI",
-      "opp": "PHI",
+      "player": "Brandon Miller",
+      "player_id": "4433287",
+      "team": "CHA",
+      "opp": "CLE",
       "home": true,
-      "time_et": "3:30 PM",
-      "status": null,
-      "minutes": 28.8,
+      "time_et": "5:00 PM",
+      "status": "day-to-day",
+      "minutes": 30.4,
       "stats": {
         "points": {
-          "proj": 18.8,
+          "proj": 19.1,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 2.9,
+          "proj": 4.6,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 1.9,
+          "proj": 2.6,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 23.7,
+          "proj": 24.9,
           "line": null,
           "book": null,
           "over": null,
@@ -1742,51 +1742,128 @@
       },
       "last5": [
         {
-          "date": "2026-10-26",
-          "pts": 20,
-          "reb": 1,
+          "date": "2026-10-30",
+          "pts": 19,
+          "reb": 7,
           "ast": 2,
-          "pra": 23
+          "pra": 28
         },
         {
-          "date": "2026-10-28",
-          "pts": 30,
-          "reb": 2,
-          "ast": 2,
+          "date": "2026-10-31",
+          "pts": 24,
+          "reb": 5,
+          "ast": 5,
           "pra": 34
         },
         {
-          "date": "2026-10-30",
-          "pts": 16,
-          "reb": 2,
-          "ast": 3,
-          "pra": 21
-        },
-        {
           "date": "2026-11-02",
-          "pts": 18,
-          "reb": 3,
-          "ast": 0,
-          "pra": 21
+          "pts": 17,
+          "reb": 1,
+          "ast": 4,
+          "pra": 22
         },
         {
           "date": "2026-11-04",
-          "pts": 12,
-          "reb": 1,
+          "pts": 10,
+          "reb": 4,
           "ast": 1,
-          "pra": 14
+          "pra": 15
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 8,
+          "reb": 2,
+          "ast": 1,
+          "pra": 11
         }
       ]
     },
     {
-      "player": "Ayo Dosunmu",
-      "player_id": "4397002",
-      "team": "MIN",
-      "opp": "UTA",
-      "home": true,
-      "time_et": "7:00 PM",
+      "player": "Andrew Nembhard",
+      "player_id": "4395712",
+      "team": "IND",
+      "opp": "DAL",
+      "home": false,
+      "time_et": "6:00 PM",
       "status": null,
-      "minutes": 33.5,
+      "minutes": 33.8,
+      "stats": {
+        "points": {
+          "proj": 19.0,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 3.0,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 7.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 29.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-28",
+          "pts": 18,
+          "reb": 3,
+          "ast": 14,
+          "pra": 35
+        },
+        {
+          "date": "2026-10-30",
+          "pts": 22,
+          "reb": 2,
+          "ast": 9,
+          "pra": 33
+        },
+        {
+          "date": "2026-11-01",
+          "pts": 23,
+          "reb": 3,
+          "ast": 4,
+          "pra": 30
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 22,
+          "reb": 2,
+          "ast": 4,
+          "pra": 28
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 9,
+          "reb": 1,
+          "ast": 8,
+          "pra": 18
+        }
+      ]
+    },
+    {
+      "player": "Kyshawn George",
+      "player_id": "5174563",
+      "team": "WAS",
+      "opp": "DET",
+      "home": false,
+      "time_et": "5:00 PM",
+      "status": null,
+      "minutes": 34.5,
       "stats": {
         "points": {
           "proj": 18.4,
@@ -1803,14 +1880,14 @@
           "under": null
         },
         "assists": {
-          "proj": 5.1,
+          "proj": 4.7,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 27.9,
+          "proj": 28.3,
           "line": null,
           "book": null,
           "over": null,
@@ -1820,50 +1897,50 @@
       "last5": [
         {
           "date": "2026-10-30",
-          "pts": 15,
-          "reb": 7,
-          "ast": 2,
-          "pra": 24
-        },
-        {
-          "date": "2026-10-31",
-          "pts": 27,
-          "reb": 9,
+          "pts": 12,
+          "reb": 3,
           "ast": 3,
-          "pra": 39
+          "pra": 18
         },
         {
           "date": "2026-11-02",
-          "pts": 19,
-          "reb": 12,
-          "ast": 8,
-          "pra": 39
+          "pts": 22,
+          "reb": 4,
+          "ast": 5,
+          "pra": 31
         },
         {
           "date": "2026-11-04",
-          "pts": 21,
-          "reb": 1,
-          "ast": 6,
-          "pra": 28
+          "pts": 25,
+          "reb": 4,
+          "ast": 7,
+          "pra": 36
         },
         {
           "date": "2026-11-06",
-          "pts": 26,
-          "reb": 2,
-          "ast": 4,
-          "pra": 32
+          "pts": 33,
+          "reb": 4,
+          "ast": 8,
+          "pra": 45
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 14,
+          "reb": 7,
+          "ast": 6,
+          "pra": 27
         }
       ]
     },
     {
-      "player": "Jaden McDaniels",
-      "player_id": "4431671",
-      "team": "MIN",
-      "opp": "UTA",
-      "home": true,
-      "time_et": "7:00 PM",
+      "player": "Jeremiah Fears",
+      "player_id": "5144091",
+      "team": "NOP",
+      "opp": "GSW",
+      "home": false,
+      "time_et": "8:00 PM",
       "status": null,
-      "minutes": 35.0,
+      "minutes": 31.9,
       "stats": {
         "points": {
           "proj": 18.4,
@@ -1873,14 +1950,14 @@
           "under": null
         },
         "rebounds": {
-          "proj": 5.8,
+          "proj": 4.3,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 3.5,
+          "proj": 4.9,
           "line": null,
           "book": null,
           "over": null,
@@ -1888,160 +1965,6 @@
         },
         "pra": {
           "proj": 27.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-30",
-          "pts": 23,
-          "reb": 6,
-          "ast": 7,
-          "pra": 36
-        },
-        {
-          "date": "2026-10-31",
-          "pts": 19,
-          "reb": 3,
-          "ast": 3,
-          "pra": 25
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 13,
-          "reb": 6,
-          "ast": 3,
-          "pra": 22
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 14,
-          "reb": 8,
-          "ast": 4,
-          "pra": 26
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 23,
-          "reb": 6,
-          "ast": 5,
-          "pra": 34
-        }
-      ]
-    },
-    {
-      "player": "Rui Hachimura",
-      "player_id": "4066648",
-      "team": "LAC",
-      "opp": "NOP",
-      "home": true,
-      "time_et": "9:00 PM",
-      "status": null,
-      "minutes": 34.5,
-      "stats": {
-        "points": {
-          "proj": 18.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 5.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 2.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 25.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-23",
-          "pts": 16,
-          "reb": 6,
-          "ast": 1,
-          "pra": 23
-        },
-        {
-          "date": "2026-10-25",
-          "pts": 5,
-          "reb": 4,
-          "ast": 0,
-          "pra": 9
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 12,
-          "reb": 5,
-          "ast": 0,
-          "pra": 17
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 24,
-          "reb": 7,
-          "ast": 0,
-          "pra": 31
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 21,
-          "reb": 9,
-          "ast": 7,
-          "pra": 37
-        }
-      ]
-    },
-    {
-      "player": "Jeremiah Fears",
-      "player_id": "5144091",
-      "team": "NOP",
-      "opp": "LAC",
-      "home": false,
-      "time_et": "9:00 PM",
-      "status": null,
-      "minutes": 32.2,
-      "stats": {
-        "points": {
-          "proj": 17.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 4.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 5.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 27.3,
           "line": null,
           "book": null,
           "over": null,
@@ -2087,24 +2010,101 @@
       ]
     },
     {
-      "player": "Paul George",
-      "player_id": "4251",
-      "team": "BOS",
-      "opp": "MIL",
-      "home": false,
-      "time_et": "8:00 PM",
+      "player": "Dillon Brooks",
+      "player_id": "3155526",
+      "team": "PHX",
+      "opp": "SAS",
+      "home": true,
+      "time_et": "7:00 PM",
       "status": null,
-      "minutes": 27.6,
+      "minutes": 33.7,
       "stats": {
         "points": {
-          "proj": 17.5,
+          "proj": 18.4,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 4.4,
+          "proj": 4.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 2.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 24.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-30",
+          "pts": 22,
+          "reb": 1,
+          "ast": 2,
+          "pra": 25
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 18,
+          "reb": 8,
+          "ast": 4,
+          "pra": 30
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 15,
+          "reb": 6,
+          "ast": 2,
+          "pra": 23
+        },
+        {
+          "date": "2026-11-05",
+          "pts": 24,
+          "reb": 1,
+          "ast": 1,
+          "pra": 26
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 11,
+          "reb": 4,
+          "ast": 1,
+          "pra": 16
+        }
+      ]
+    },
+    {
+      "player": "Brandin Podziemski",
+      "player_id": "4709138",
+      "team": "GSW",
+      "opp": "NOP",
+      "home": true,
+      "time_et": "8:00 PM",
+      "status": null,
+      "minutes": 34.0,
+      "stats": {
+        "points": {
+          "proj": 17.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 5.6,
           "line": null,
           "book": null,
           "over": null,
@@ -2118,7 +2118,7 @@
           "under": null
         },
         "pra": {
-          "proj": 26.0,
+          "proj": 27.1,
           "line": null,
           "book": null,
           "over": null,
@@ -2127,39 +2127,270 @@
       },
       "last5": [
         {
-          "date": "2026-10-27",
-          "pts": 20,
-          "reb": 7,
-          "ast": 7,
-          "pra": 34
-        },
-        {
           "date": "2026-10-30",
-          "pts": 18,
-          "reb": 6,
-          "ast": 8,
+          "pts": 21,
+          "reb": 5,
+          "ast": 6,
           "pra": 32
         },
         {
           "date": "2026-11-01",
+          "pts": 17,
+          "reb": 8,
+          "ast": 8,
+          "pra": 33
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 20,
+          "reb": 3,
+          "ast": 2,
+          "pra": 25
+        },
+        {
+          "date": "2026-11-05",
+          "pts": 9,
+          "reb": 6,
+          "ast": 3,
+          "pra": 18
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 15,
+          "reb": 7,
+          "ast": 1,
+          "pra": 23
+        }
+      ]
+    },
+    {
+      "player": "James Harden",
+      "player_id": "3992",
+      "team": "CLE",
+      "opp": "CHA",
+      "home": false,
+      "time_et": "5:00 PM",
+      "status": null,
+      "minutes": 35.9,
+      "stats": {
+        "points": {
+          "proj": 17.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 4.8,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 5.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 27.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-31",
+          "pts": 13,
+          "reb": 6,
+          "ast": 7,
+          "pra": 26
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 14,
+          "reb": 4,
+          "ast": 6,
+          "pra": 24
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 19,
+          "reb": 9,
+          "ast": 6,
+          "pra": 34
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 17,
+          "reb": 6,
+          "ast": 3,
+          "pra": 26
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 7,
+          "reb": 2,
+          "ast": 5,
+          "pra": 14
+        }
+      ]
+    },
+    {
+      "player": "Dylan Harper",
+      "player_id": "5037871",
+      "team": "SAS",
+      "opp": "PHX",
+      "home": false,
+      "time_et": "7:00 PM",
+      "status": null,
+      "minutes": 31.4,
+      "stats": {
+        "points": {
+          "proj": 17.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 5.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 3.8,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 27.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-31",
+          "pts": 25,
+          "reb": 7,
+          "ast": 6,
+          "pra": 38
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 17,
+          "reb": 7,
+          "ast": 8,
+          "pra": 32
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 21,
+          "reb": 5,
+          "ast": 0,
+          "pra": 26
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 19,
+          "reb": 2,
+          "ast": 3,
+          "pra": 24
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 13,
+          "reb": 7,
+          "ast": 3,
+          "pra": 23
+        }
+      ]
+    },
+    {
+      "player": "Immanuel Quickley",
+      "player_id": "4395724",
+      "team": "TOR",
+      "opp": "MEM",
+      "home": true,
+      "time_et": "5:30 PM",
+      "status": "day-to-day",
+      "minutes": 31.7,
+      "stats": {
+        "points": {
+          "proj": 17.6,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 3.8,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 5.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 26.5,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-28",
+          "pts": 16,
+          "reb": 3,
+          "ast": 7,
+          "pra": 26
+        },
+        {
+          "date": "2026-10-30",
           "pts": 17,
           "reb": 6,
           "ast": 8,
           "pra": 31
         },
         {
-          "date": "2026-11-04",
-          "pts": 25,
-          "reb": 3,
-          "ast": 5,
+          "date": "2026-11-01",
+          "pts": 12,
+          "reb": 6,
+          "ast": 7,
+          "pra": 25
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 27,
+          "reb": 4,
+          "ast": 2,
           "pra": 33
         },
         {
-          "date": "2026-11-06",
-          "pts": 8,
-          "reb": 5,
-          "ast": 1,
-          "pra": 14
+          "date": "2026-11-04",
+          "pts": 13,
+          "reb": 1,
+          "ast": 7,
+          "pra": 21
         }
       ]
     },
@@ -2167,14 +2398,14 @@
       "player": "Dejounte Murray",
       "player_id": "3907497",
       "team": "NOP",
-      "opp": "LAC",
+      "opp": "GSW",
       "home": false,
-      "time_et": "9:00 PM",
+      "time_et": "8:00 PM",
       "status": null,
-      "minutes": 32.9,
+      "minutes": 32.8,
       "stats": {
         "points": {
-          "proj": 17.1,
+          "proj": 17.5,
           "line": null,
           "book": null,
           "over": null,
@@ -2188,14 +2419,14 @@
           "under": null
         },
         "assists": {
-          "proj": 6.2,
+          "proj": 6.1,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 29.3,
+          "proj": 29.6,
           "line": null,
           "book": null,
           "over": null,
@@ -2241,38 +2472,192 @@
       ]
     },
     {
-      "player": "Trey Murphy III",
-      "player_id": "4397688",
-      "team": "NOP",
-      "opp": "LAC",
-      "home": false,
-      "time_et": "9:00 PM",
+      "player": "Amen Thompson",
+      "player_id": "4684740",
+      "team": "HOU",
+      "opp": "DEN",
+      "home": true,
+      "time_et": "6:30 PM",
       "status": null,
-      "minutes": 33.6,
+      "minutes": 35.3,
       "stats": {
         "points": {
-          "proj": 17.1,
+          "proj": 17.5,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 5.2,
+          "proj": 6.9,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 3.6,
+          "proj": 3.7,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 25.2,
+          "proj": 27.8,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-30",
+          "pts": 15,
+          "reb": 3,
+          "ast": 6,
+          "pra": 24
+        },
+        {
+          "date": "2026-10-31",
+          "pts": 8,
+          "reb": 3,
+          "ast": 1,
+          "pra": 12
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 14,
+          "reb": 3,
+          "ast": 3,
+          "pra": 20
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 11,
+          "reb": 8,
+          "ast": 1,
+          "pra": 20
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 17,
+          "reb": 7,
+          "ast": 0,
+          "pra": 24
+        }
+      ]
+    },
+    {
+      "player": "AJ Dybantsa",
+      "player_id": "5142718",
+      "team": "WAS",
+      "opp": "DET",
+      "home": false,
+      "time_et": "5:00 PM",
+      "status": null,
+      "minutes": 34.7,
+      "stats": {
+        "points": {
+          "proj": 17.5,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 6.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 2.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 26.6,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-30",
+          "pts": 17,
+          "reb": 7,
+          "ast": 1,
+          "pra": 25
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 21,
+          "reb": 5,
+          "ast": 2,
+          "pra": 28
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 9,
+          "reb": 6,
+          "ast": 3,
+          "pra": 18
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 11,
+          "reb": 9,
+          "ast": 3,
+          "pra": 23
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 19,
+          "reb": 6,
+          "ast": 3,
+          "pra": 28
+        }
+      ]
+    },
+    {
+      "player": "Trey Murphy III",
+      "player_id": "4397688",
+      "team": "NOP",
+      "opp": "GSW",
+      "home": false,
+      "time_et": "8:00 PM",
+      "status": null,
+      "minutes": 33.6,
+      "stats": {
+        "points": {
+          "proj": 17.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 5.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 3.8,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 25.6,
           "line": null,
           "book": null,
           "over": null,
@@ -2318,14 +2703,245 @@
       ]
     },
     {
-      "player": "Tyler Herro",
-      "player_id": "4395725",
-      "team": "MIL",
-      "opp": "BOS",
+      "player": "Jalen Green",
+      "player_id": "4437244",
+      "team": "PHX",
+      "opp": "SAS",
       "home": true,
-      "time_et": "8:00 PM",
+      "time_et": "7:00 PM",
       "status": null,
-      "minutes": 28.7,
+      "minutes": 31.9,
+      "stats": {
+        "points": {
+          "proj": 17.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 3.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 3.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 24.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-30",
+          "pts": 2,
+          "reb": 2,
+          "ast": 2,
+          "pra": 6
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 11,
+          "reb": 8,
+          "ast": 8,
+          "pra": 27
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 22,
+          "reb": 2,
+          "ast": 2,
+          "pra": 26
+        },
+        {
+          "date": "2026-11-05",
+          "pts": 6,
+          "reb": 0,
+          "ast": 3,
+          "pra": 9
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 16,
+          "reb": 3,
+          "ast": 6,
+          "pra": 25
+        }
+      ]
+    },
+    {
+      "player": "Cameron Boozer",
+      "player_id": "5041935",
+      "team": "MEM",
+      "opp": "TOR",
+      "home": false,
+      "time_et": "5:30 PM",
+      "status": null,
+      "minutes": 33.1,
+      "stats": {
+        "points": {
+          "proj": 17.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 9.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 5.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 30.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-29",
+          "pts": 18,
+          "reb": 12,
+          "ast": 12,
+          "pra": 42
+        },
+        {
+          "date": "2026-10-31",
+          "pts": 27,
+          "reb": 9,
+          "ast": 3,
+          "pra": 39
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 18,
+          "reb": 9,
+          "ast": 5,
+          "pra": 32
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 10,
+          "reb": 6,
+          "ast": 4,
+          "pra": 20
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 8,
+          "reb": 12,
+          "ast": 4,
+          "pra": 24
+        }
+      ]
+    },
+    {
+      "player": "Evan Mobley",
+      "player_id": "4432158",
+      "team": "CLE",
+      "opp": "CHA",
+      "home": false,
+      "time_et": "5:00 PM",
+      "status": null,
+      "minutes": 34.6,
+      "stats": {
+        "points": {
+          "proj": 17.0,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 7.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 3.5,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 29.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-31",
+          "pts": 27,
+          "reb": 5,
+          "ast": 3,
+          "pra": 35
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 16,
+          "reb": 7,
+          "ast": 4,
+          "pra": 27
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 16,
+          "reb": 10,
+          "ast": 3,
+          "pra": 29
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 22,
+          "reb": 6,
+          "ast": 4,
+          "pra": 32
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 12,
+          "reb": 9,
+          "ast": 5,
+          "pra": 26
+        }
+      ]
+    },
+    {
+      "player": "Stephon Castle",
+      "player_id": "4845367",
+      "team": "SAS",
+      "opp": "PHX",
+      "home": false,
+      "time_et": "7:00 PM",
+      "status": null,
+      "minutes": 31.1,
       "stats": {
         "points": {
           "proj": 16.9,
@@ -2335,21 +2951,21 @@
           "under": null
         },
         "rebounds": {
-          "proj": 4.3,
+          "proj": 5.6,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 4.4,
+          "proj": 5.4,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 25.1,
+          "proj": 28.1,
           "line": null,
           "book": null,
           "over": null,
@@ -2358,39 +2974,39 @@
       },
       "last5": [
         {
-          "date": "2026-10-28",
-          "pts": 23,
-          "reb": 3,
-          "ast": 0,
-          "pra": 26
-        },
-        {
           "date": "2026-10-31",
-          "pts": 15,
-          "reb": 3,
-          "ast": 2,
-          "pra": 20
+          "pts": 0,
+          "reb": 5,
+          "ast": 4,
+          "pra": 9
         },
         {
           "date": "2026-11-02",
-          "pts": 21,
-          "reb": 6,
+          "pts": 16,
+          "reb": 5,
+          "ast": 4,
+          "pra": 25
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 17,
+          "reb": 10,
           "ast": 3,
           "pra": 30
         },
         {
-          "date": "2026-11-04",
-          "pts": 25,
-          "reb": 5,
-          "ast": 3,
-          "pra": 33
+          "date": "2026-11-06",
+          "pts": 19,
+          "reb": 3,
+          "ast": 7,
+          "pra": 29
         },
         {
-          "date": "2026-11-06",
-          "pts": 23,
-          "reb": 5,
-          "ast": 10,
-          "pra": 38
+          "date": "2026-11-07",
+          "pts": 14,
+          "reb": 7,
+          "ast": 5,
+          "pra": 26
         }
       ]
     },
@@ -2398,21 +3014,21 @@
       "player": "P.J. Washington",
       "player_id": "4278078",
       "team": "DAL",
-      "opp": "BKN",
+      "opp": "IND",
       "home": true,
-      "time_et": "7:30 PM",
+      "time_et": "6:00 PM",
       "status": null,
-      "minutes": 34.7,
+      "minutes": 34.1,
       "stats": {
         "points": {
-          "proj": 16.6,
+          "proj": 16.7,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 7.4,
+          "proj": 7.6,
           "line": null,
           "book": null,
           "over": null,
@@ -2426,7 +3042,7 @@
           "under": null
         },
         "pra": {
-          "proj": 26.1,
+          "proj": 26.6,
           "line": null,
           "book": null,
           "over": null,
@@ -2472,14 +3088,14 @@
       ]
     },
     {
-      "player": "Domantas Sabonis",
-      "player_id": "3155942",
-      "team": "SAC",
-      "opp": "MIA",
+      "player": "Jabari Smith Jr.",
+      "player_id": "4432639",
+      "team": "HOU",
+      "opp": "DEN",
       "home": true,
-      "time_et": "9:00 PM",
+      "time_et": "6:30 PM",
       "status": null,
-      "minutes": 33.1,
+      "minutes": 36.5,
       "stats": {
         "points": {
           "proj": 16.4,
@@ -2489,84 +3105,7 @@
           "under": null
         },
         "rebounds": {
-          "proj": 12.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 5.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 35.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-29",
-          "pts": 9,
-          "reb": 15,
-          "ast": 7,
-          "pra": 31
-        },
-        {
-          "date": "2026-10-31",
-          "pts": 11,
-          "reb": 14,
-          "ast": 8,
-          "pra": 33
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 9,
-          "reb": 7,
-          "ast": 4,
-          "pra": 20
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 16,
-          "reb": 17,
-          "ast": 1,
-          "pra": 34
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 17,
-          "reb": 12,
-          "ast": 5,
-          "pra": 34
-        }
-      ]
-    },
-    {
-      "player": "De'Andre Hunter",
-      "player_id": "4065732",
-      "team": "SAC",
-      "opp": "MIA",
-      "home": true,
-      "time_et": "9:00 PM",
-      "status": "day-to-day",
-      "minutes": 32.3,
-      "stats": {
-        "points": {
-          "proj": 15.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 4.7,
+          "proj": 7.1,
           "line": null,
           "book": null,
           "over": null,
@@ -2580,315 +3119,7 @@
           "under": null
         },
         "pra": {
-          "proj": 22.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-27",
-          "pts": 24,
-          "reb": 6,
-          "ast": 2,
-          "pra": 32
-        },
-        {
-          "date": "2026-10-29",
-          "pts": 24,
-          "reb": 5,
-          "ast": 1,
-          "pra": 30
-        },
-        {
-          "date": "2026-10-31",
-          "pts": 19,
-          "reb": 3,
-          "ast": 0,
-          "pra": 22
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 6,
-          "reb": 7,
-          "ast": 2,
-          "pra": 15
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 14,
-          "reb": 2,
-          "ast": 2,
-          "pra": 18
-        }
-      ]
-    },
-    {
-      "player": "Saddiq Bey",
-      "player_id": "4397136",
-      "team": "NOP",
-      "opp": "LAC",
-      "home": false,
-      "time_et": "9:00 PM",
-      "status": null,
-      "minutes": 28.2,
-      "stats": {
-        "points": {
-          "proj": 15.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 4.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 2.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 22.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-29",
-          "pts": 10,
-          "reb": 4,
-          "ast": 3,
-          "pra": 17
-        },
-        {
-          "date": "2026-10-31",
-          "pts": 25,
-          "reb": 6,
-          "ast": 1,
-          "pra": 32
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 18,
-          "reb": 5,
-          "ast": 1,
-          "pra": 24
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 22,
-          "reb": 4,
-          "ast": 3,
-          "pra": 29
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 17,
-          "reb": 5,
-          "ast": 4,
-          "pra": 26
-        }
-      ]
-    },
-    {
-      "player": "Darryn Peterson",
-      "player_id": "5041955",
-      "team": "UTA",
-      "opp": "MIN",
-      "home": false,
-      "time_et": "7:00 PM",
-      "status": null,
-      "minutes": 32.1,
-      "stats": {
-        "points": {
-          "proj": 15.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 4.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 4.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 23.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-28",
-          "pts": 18,
-          "reb": 5,
-          "ast": 3,
-          "pra": 26
-        },
-        {
-          "date": "2026-10-31",
-          "pts": 16,
-          "reb": 4,
-          "ast": 4,
-          "pra": 24
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 14,
-          "reb": 4,
-          "ast": 6,
-          "pra": 24
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 7,
-          "reb": 2,
-          "ast": 7,
-          "pra": 16
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 21,
-          "reb": 2,
-          "ast": 5,
-          "pra": 28
-        }
-      ]
-    },
-    {
-      "player": "Ace Bailey",
-      "player_id": "4873138",
-      "team": "UTA",
-      "opp": "MIN",
-      "home": false,
-      "time_et": "7:00 PM",
-      "status": null,
-      "minutes": 31.5,
-      "stats": {
-        "points": {
-          "proj": 15.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 5.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 1.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 22.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-28",
-          "pts": 19,
-          "reb": 6,
-          "ast": 0,
-          "pra": 25
-        },
-        {
-          "date": "2026-10-31",
-          "pts": 9,
-          "reb": 7,
-          "ast": 1,
-          "pra": 17
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 5,
-          "reb": 6,
-          "ast": 2,
-          "pra": 13
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 15,
-          "reb": 5,
-          "ast": 1,
-          "pra": 21
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 12,
-          "reb": 6,
-          "ast": 0,
-          "pra": 18
-        }
-      ]
-    },
-    {
-      "player": "Jonathan Kuminga",
-      "player_id": "4433247",
-      "team": "MIN",
-      "opp": "UTA",
-      "home": true,
-      "time_et": "7:00 PM",
-      "status": null,
-      "minutes": 31.9,
-      "stats": {
-        "points": {
-          "proj": 15.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 5.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 2.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 23.8,
+          "proj": 26.0,
           "line": null,
           "book": null,
           "over": null,
@@ -2898,38 +3129,192 @@
       "last5": [
         {
           "date": "2026-10-30",
-          "pts": 5,
-          "reb": 1,
-          "ast": 0,
-          "pra": 6
+          "pts": 22,
+          "reb": 3,
+          "ast": 2,
+          "pra": 27
         },
         {
           "date": "2026-10-31",
-          "pts": 19,
-          "reb": 6,
-          "ast": 3,
-          "pra": 28
+          "pts": 30,
+          "reb": 9,
+          "ast": 5,
+          "pra": 44
         },
         {
           "date": "2026-11-02",
-          "pts": 8,
+          "pts": 14,
           "reb": 10,
+          "ast": 0,
+          "pra": 24
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 11,
+          "reb": 4,
+          "ast": 2,
+          "pra": 17
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 15,
+          "reb": 9,
+          "ast": 2,
+          "pra": 26
+        }
+      ]
+    },
+    {
+      "player": "Miles Bridges",
+      "player_id": "4066383",
+      "team": "PHX",
+      "opp": "SAS",
+      "home": true,
+      "time_et": "7:00 PM",
+      "status": null,
+      "minutes": 33.2,
+      "stats": {
+        "points": {
+          "proj": 16.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 7.4,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 3.5,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 26.2,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-30",
+          "pts": 24,
+          "reb": 10,
+          "ast": 2,
+          "pra": 36
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 21,
+          "reb": 6,
           "ast": 3,
+          "pra": 30
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 18,
+          "reb": 7,
+          "ast": 5,
+          "pra": 30
+        },
+        {
+          "date": "2026-11-05",
+          "pts": 18,
+          "reb": 13,
+          "ast": 5,
+          "pra": 36
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 13,
+          "reb": 10,
+          "ast": 7,
+          "pra": 30
+        }
+      ]
+    },
+    {
+      "player": "Naz Reid",
+      "player_id": "4396971",
+      "team": "CHA",
+      "opp": "CLE",
+      "home": true,
+      "time_et": "5:00 PM",
+      "status": null,
+      "minutes": 31.1,
+      "stats": {
+        "points": {
+          "proj": 16.2,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 7.8,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 2.2,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 25.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-30",
+          "pts": 12,
+          "reb": 11,
+          "ast": 1,
+          "pra": 24
+        },
+        {
+          "date": "2026-10-31",
+          "pts": 14,
+          "reb": 5,
+          "ast": 2,
+          "pra": 21
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 13,
+          "reb": 6,
+          "ast": 2,
           "pra": 21
         },
         {
           "date": "2026-11-04",
-          "pts": 16,
-          "reb": 8,
-          "ast": 5,
-          "pra": 29
+          "pts": 28,
+          "reb": 9,
+          "ast": 2,
+          "pra": 39
         },
         {
           "date": "2026-11-06",
-          "pts": 17,
-          "reb": 8,
-          "ast": 4,
-          "pra": 29
+          "pts": 14,
+          "reb": 6,
+          "ast": 2,
+          "pra": 22
         }
       ]
     },
@@ -2937,35 +3322,35 @@
       "player": "Duncan Robinson",
       "player_id": "3157465",
       "team": "DET",
-      "opp": "LAL",
+      "opp": "WAS",
       "home": true,
-      "time_et": "6:00 PM",
+      "time_et": "5:00 PM",
       "status": null,
-      "minutes": 33.0,
+      "minutes": 30.6,
       "stats": {
         "points": {
-          "proj": 15.3,
+          "proj": 16.0,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 2.7,
+          "proj": 2.9,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 2.4,
+          "proj": 2.6,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 21.2,
+          "proj": 22.7,
           "line": null,
           "book": null,
           "over": null,
@@ -3011,38 +3396,38 @@
       ]
     },
     {
-      "player": "Matas Buzelis",
-      "player_id": "4711294",
-      "team": "CHI",
-      "opp": "PHI",
-      "home": true,
-      "time_et": "3:30 PM",
+      "player": "Saddiq Bey",
+      "player_id": "4397136",
+      "team": "NOP",
+      "opp": "GSW",
+      "home": false,
+      "time_et": "8:00 PM",
       "status": null,
-      "minutes": 27.5,
+      "minutes": 28.5,
       "stats": {
         "points": {
-          "proj": 15.1,
+          "proj": 15.5,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 5.7,
+          "proj": 4.3,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 2.0,
+          "proj": 2.4,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 22.8,
+          "proj": 22.2,
           "line": null,
           "book": null,
           "over": null,
@@ -3051,68 +3436,145 @@
       },
       "last5": [
         {
-          "date": "2026-10-26",
-          "pts": 11,
-          "reb": 1,
-          "ast": 2,
-          "pra": 14
-        },
-        {
-          "date": "2026-10-28",
-          "pts": 17,
-          "reb": 5,
+          "date": "2026-10-29",
+          "pts": 10,
+          "reb": 4,
           "ast": 3,
-          "pra": 25
+          "pra": 17
         },
         {
-          "date": "2026-10-30",
-          "pts": 14,
-          "reb": 5,
+          "date": "2026-10-31",
+          "pts": 25,
+          "reb": 6,
           "ast": 1,
-          "pra": 20
+          "pra": 32
         },
         {
           "date": "2026-11-02",
-          "pts": 4,
-          "reb": 3,
-          "ast": 2,
-          "pra": 9
+          "pts": 18,
+          "reb": 5,
+          "ast": 1,
+          "pra": 24
         },
         {
           "date": "2026-11-04",
-          "pts": 12,
-          "reb": 5,
+          "pts": 22,
+          "reb": 4,
           "ast": 3,
-          "pra": 20
+          "pra": 29
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 17,
+          "reb": 5,
+          "ast": 4,
+          "pra": 26
         }
       ]
     },
     {
-      "player": "VJ Edgecombe",
-      "player_id": "5124612",
-      "team": "PHI",
-      "opp": "CHI",
-      "home": false,
-      "time_et": "3:30 PM",
+      "player": "Fred VanVleet",
+      "player_id": "2991230",
+      "team": "HOU",
+      "opp": "DEN",
+      "home": true,
+      "time_et": "6:30 PM",
       "status": null,
-      "minutes": 34.5,
+      "minutes": 33.3,
       "stats": {
         "points": {
-          "proj": 14.8,
+          "proj": 15.0,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 6.4,
+          "proj": 3.7,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 3.8,
+          "proj": 5.4,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 24.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-28",
+          "pts": 24,
+          "reb": 6,
+          "ast": 5,
+          "pra": 35
+        },
+        {
+          "date": "2026-10-30",
+          "pts": 16,
+          "reb": 5,
+          "ast": 6,
+          "pra": 27
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 8,
+          "reb": 2,
+          "ast": 9,
+          "pra": 19
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 18,
+          "reb": 3,
+          "ast": 3,
+          "pra": 24
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 16,
+          "reb": 3,
+          "ast": 4,
+          "pra": 23
+        }
+      ]
+    },
+    {
+      "player": "Onyeka Okongwu",
+      "player_id": "4431680",
+      "team": "ATL",
+      "opp": "LAL",
+      "home": true,
+      "time_et": "5:00 PM",
+      "status": null,
+      "minutes": 32.1,
+      "stats": {
+        "points": {
+          "proj": 13.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 7.4,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 2.6,
           "line": null,
           "book": null,
           "over": null,
@@ -3128,270 +3590,39 @@
       },
       "last5": [
         {
-          "date": "2026-10-30",
-          "pts": 13,
-          "reb": 8,
-          "ast": 2,
-          "pra": 23
-        },
-        {
           "date": "2026-10-31",
-          "pts": 10,
-          "reb": 8,
-          "ast": 3,
-          "pra": 21
+          "pts": 6,
+          "reb": 10,
+          "ast": 1,
+          "pra": 17
         },
         {
           "date": "2026-11-02",
-          "pts": 21,
-          "reb": 3,
-          "ast": 5,
-          "pra": 29
+          "pts": 13,
+          "reb": 10,
+          "ast": 3,
+          "pra": 26
         },
         {
           "date": "2026-11-04",
-          "pts": 11,
-          "reb": 6,
-          "ast": 3,
-          "pra": 20
+          "pts": 14,
+          "reb": 16,
+          "ast": 4,
+          "pra": 34
         },
         {
           "date": "2026-11-06",
-          "pts": 19,
-          "reb": 3,
-          "ast": 2,
-          "pra": 24
-        }
-      ]
-    },
-    {
-      "player": "Brook Lopez",
-      "player_id": "3448",
-      "team": "LAC",
-      "opp": "NOP",
-      "home": true,
-      "time_et": "9:00 PM",
-      "status": null,
-      "minutes": 29.4,
-      "stats": {
-        "points": {
-          "proj": 14.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 6.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 1.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 23.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-28",
-          "pts": 2,
-          "reb": 3,
-          "ast": 3,
-          "pra": 8
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 13,
-          "reb": 6,
-          "ast": 0,
-          "pra": 19
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 7,
-          "reb": 2,
-          "ast": 0,
-          "pra": 9
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 12,
-          "reb": 6,
-          "ast": 1,
-          "pra": 19
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 20,
-          "reb": 8,
-          "ast": 1,
-          "pra": 29
-        }
-      ]
-    },
-    {
-      "player": "Cormac Ryan",
-      "player_id": "4397114",
-      "team": "MIL",
-      "opp": "BOS",
-      "home": true,
-      "time_et": "8:00 PM",
-      "status": null,
-      "minutes": 29.7,
-      "stats": {
-        "points": {
-          "proj": 14.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 3.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 2.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 19.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-04-05",
-          "pts": 21,
-          "reb": 4,
-          "ast": 3,
-          "pra": 28
-        },
-        {
-          "date": "2026-04-07",
-          "pts": 14,
-          "reb": 5,
-          "ast": 2,
-          "pra": 21
-        },
-        {
-          "date": "2026-04-08",
-          "pts": 16,
-          "reb": 0,
-          "ast": 0,
-          "pra": 16
-        },
-        {
-          "date": "2026-04-10",
-          "pts": 28,
-          "reb": 5,
-          "ast": 3,
-          "pra": 36
-        },
-        {
-          "date": "2026-04-12",
           "pts": 22,
           "reb": 10,
-          "ast": 4,
-          "pra": 36
-        }
-      ]
-    },
-    {
-      "player": "Jaime Jaquez Jr.",
-      "player_id": "4432848",
-      "team": "MIL",
-      "opp": "BOS",
-      "home": true,
-      "time_et": "8:00 PM",
-      "status": null,
-      "minutes": 26.1,
-      "stats": {
-        "points": {
-          "proj": 14.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 4.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 3.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 21.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-28",
-          "pts": 19,
-          "reb": 4,
-          "ast": 2,
-          "pra": 25
+          "ast": 1,
+          "pra": 33
         },
         {
-          "date": "2026-10-31",
-          "pts": 8,
-          "reb": 7,
-          "ast": 5,
-          "pra": 20
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 19,
-          "reb": 8,
-          "ast": 2,
-          "pra": 29
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 18,
+          "date": "2026-11-07",
+          "pts": 16,
           "reb": 2,
-          "ast": 2,
-          "pra": 22
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 14,
-          "reb": 3,
-          "ast": 3,
-          "pra": 20
+          "ast": 5,
+          "pra": 23
         }
       ]
     },
@@ -3399,21 +3630,21 @@
       "player": "Naji Marshall",
       "player_id": "4278594",
       "team": "DAL",
-      "opp": "BKN",
+      "opp": "IND",
       "home": true,
-      "time_et": "7:30 PM",
+      "time_et": "6:00 PM",
       "status": null,
-      "minutes": 26.2,
+      "minutes": 26.1,
       "stats": {
         "points": {
-          "proj": 13.8,
+          "proj": 13.5,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 3.9,
+          "proj": 4.0,
           "line": null,
           "book": null,
           "over": null,
@@ -3427,7 +3658,7 @@
           "under": null
         },
         "pra": {
-          "proj": 21.8,
+          "proj": 22.1,
           "line": null,
           "book": null,
           "over": null,
@@ -3473,91 +3704,14 @@
       ]
     },
     {
-      "player": "Nolan Traore",
-      "player_id": "5279130",
-      "team": "BKN",
-      "opp": "DAL",
+      "player": "Peyton Watson",
+      "player_id": "4576087",
+      "team": "CLE",
+      "opp": "CHA",
       "home": false,
-      "time_et": "7:30 PM",
+      "time_et": "5:00 PM",
       "status": null,
-      "minutes": 26.6,
-      "stats": {
-        "points": {
-          "proj": 13.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 2.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 4.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 20.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-27",
-          "pts": 15,
-          "reb": 1,
-          "ast": 3,
-          "pra": 19
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 9,
-          "reb": 2,
-          "ast": 2,
-          "pra": 13
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 16,
-          "reb": 2,
-          "ast": 6,
-          "pra": 24
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 17,
-          "reb": 3,
-          "ast": 4,
-          "pra": 24
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 16,
-          "reb": 4,
-          "ast": 2,
-          "pra": 22
-        }
-      ]
-    },
-    {
-      "player": "Derrick White",
-      "player_id": "3078576",
-      "team": "BOS",
-      "opp": "MIL",
-      "home": false,
-      "time_et": "8:00 PM",
-      "status": null,
-      "minutes": 27.9,
+      "minutes": 29.9,
       "stats": {
         "points": {
           "proj": 13.5,
@@ -3567,21 +3721,21 @@
           "under": null
         },
         "rebounds": {
-          "proj": 3.5,
+          "proj": 5.0,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 4.8,
+          "proj": 2.6,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 21.4,
+          "proj": 21.0,
           "line": null,
           "book": null,
           "over": null,
@@ -3590,128 +3744,51 @@
       },
       "last5": [
         {
-          "date": "2026-10-30",
-          "pts": 9,
-          "reb": 2,
-          "ast": 4,
-          "pra": 15
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 12,
-          "reb": 2,
+          "date": "2026-10-28",
+          "pts": 22,
+          "reb": 6,
           "ast": 2,
-          "pra": 16
+          "pra": 30
         },
         {
-          "date": "2026-11-02",
-          "pts": 7,
-          "reb": 2,
-          "ast": 3,
-          "pra": 12
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 24,
-          "reb": 4,
-          "ast": 7,
-          "pra": 35
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 18,
-          "reb": 4,
-          "ast": 5,
-          "pra": 27
-        }
-      ]
-    },
-    {
-      "player": "Payton Pritchard",
-      "player_id": "4066354",
-      "team": "BOS",
-      "opp": "MIL",
-      "home": false,
-      "time_et": "8:00 PM",
-      "status": null,
-      "minutes": 24.4,
-      "stats": {
-        "points": {
-          "proj": 13.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 3.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 4.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 20.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-30",
-          "pts": 30,
-          "reb": 3,
-          "ast": 3,
-          "pra": 36
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 7,
-          "reb": 7,
-          "ast": 3,
-          "pra": 17
-        },
-        {
-          "date": "2026-11-02",
+          "date": "2026-10-29",
           "pts": 4,
-          "reb": 3,
+          "reb": 4,
           "ast": 3,
-          "pra": 10
+          "pra": 11
         },
         {
-          "date": "2026-11-04",
-          "pts": 10,
-          "reb": 1,
-          "ast": 5,
-          "pra": 16
+          "date": "2026-10-31",
+          "pts": 5,
+          "reb": 2,
+          "ast": 6,
+          "pra": 13
         },
         {
           "date": "2026-11-06",
+          "pts": 13,
+          "reb": 9,
+          "ast": 2,
+          "pra": 24
+        },
+        {
+          "date": "2026-11-07",
           "pts": 12,
           "reb": 6,
-          "ast": 5,
-          "pra": 23
+          "ast": 3,
+          "pra": 21
         }
       ]
     },
     {
-      "player": "Davion Mitchell",
-      "player_id": "4278053",
-      "team": "MIA",
-      "opp": "SAC",
+      "player": "Cedric Coward",
+      "player_id": "4903027",
+      "team": "MEM",
+      "opp": "TOR",
       "home": false,
-      "time_et": "9:00 PM",
+      "time_et": "5:30 PM",
       "status": null,
-      "minutes": 30.2,
+      "minutes": 28.2,
       "stats": {
         "points": {
           "proj": 13.3,
@@ -3721,21 +3798,98 @@
           "under": null
         },
         "rebounds": {
-          "proj": 2.5,
+          "proj": 6.6,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 6.8,
+          "proj": 2.4,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 21.9,
+          "proj": 23.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-29",
+          "pts": 17,
+          "reb": 7,
+          "ast": 4,
+          "pra": 28
+        },
+        {
+          "date": "2026-10-31",
+          "pts": 10,
+          "reb": 7,
+          "ast": 2,
+          "pra": 19
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 10,
+          "reb": 9,
+          "ast": 3,
+          "pra": 22
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 23,
+          "reb": 9,
+          "ast": 4,
+          "pra": 36
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 10,
+          "reb": 9,
+          "ast": 0,
+          "pra": 19
+        }
+      ]
+    },
+    {
+      "player": "Alex Sarr",
+      "player_id": "5160992",
+      "team": "WAS",
+      "opp": "DET",
+      "home": false,
+      "time_et": "5:00 PM",
+      "status": null,
+      "minutes": 29.9,
+      "stats": {
+        "points": {
+          "proj": 13.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 7.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 2.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 23.5,
           "line": null,
           "book": null,
           "over": null,
@@ -3745,50 +3899,50 @@
       "last5": [
         {
           "date": "2026-10-28",
-          "pts": 10,
-          "reb": 1,
-          "ast": 10,
-          "pra": 21
+          "pts": 18,
+          "reb": 4,
+          "ast": 2,
+          "pra": 24
         },
         {
           "date": "2026-10-30",
-          "pts": 15,
-          "reb": 6,
-          "ast": 11,
-          "pra": 32
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 15,
-          "reb": 0,
-          "ast": 7,
-          "pra": 22
+          "pts": 3,
+          "reb": 8,
+          "ast": 0,
+          "pra": 11
         },
         {
           "date": "2026-11-04",
           "pts": 11,
-          "reb": 2,
-          "ast": 10,
-          "pra": 23
+          "reb": 9,
+          "ast": 1,
+          "pra": 21
         },
         {
-          "date": "2026-11-05",
-          "pts": 22,
-          "reb": 2,
-          "ast": 8,
-          "pra": 32
+          "date": "2026-11-06",
+          "pts": 13,
+          "reb": 8,
+          "ast": 3,
+          "pra": 24
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 15,
+          "reb": 14,
+          "ast": 1,
+          "pra": 30
         }
       ]
     },
     {
-      "player": "Josh Giddey",
-      "player_id": "4871145",
-      "team": "CHI",
-      "opp": "PHI",
+      "player": "Collin Murray-Boyles",
+      "player_id": "5093267",
+      "team": "TOR",
+      "opp": "MEM",
       "home": true,
-      "time_et": "3:30 PM",
+      "time_et": "5:30 PM",
       "status": null,
-      "minutes": 30.8,
+      "minutes": 27.1,
       "stats": {
         "points": {
           "proj": 13.2,
@@ -3798,469 +3952,7 @@
           "under": null
         },
         "rebounds": {
-          "proj": 6.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 8.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 28.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-26",
-          "pts": 11,
-          "reb": 1,
-          "ast": 4,
-          "pra": 16
-        },
-        {
-          "date": "2026-10-28",
-          "pts": 10,
-          "reb": 8,
-          "ast": 11,
-          "pra": 29
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 13,
-          "reb": 4,
-          "ast": 5,
-          "pra": 22
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 13,
-          "reb": 4,
-          "ast": 10,
-          "pra": 27
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 10,
-          "reb": 1,
-          "ast": 6,
-          "pra": 17
-        }
-      ]
-    },
-    {
-      "player": "Devin Carter",
-      "player_id": "4433188",
-      "team": "BOS",
-      "opp": "MIL",
-      "home": false,
-      "time_et": "8:00 PM",
-      "status": null,
-      "minutes": 22.3,
-      "stats": {
-        "points": {
-          "proj": 13.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 4.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 4.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 21.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-04-03",
-          "pts": 9,
-          "reb": 6,
-          "ast": 3,
-          "pra": 18
-        },
-        {
-          "date": "2026-04-05",
-          "pts": 21,
-          "reb": 5,
-          "ast": 5,
-          "pra": 31
-        },
-        {
-          "date": "2026-04-07",
-          "pts": 6,
-          "reb": 3,
-          "ast": 5,
-          "pra": 14
-        },
-        {
-          "date": "2026-04-10",
-          "pts": 29,
-          "reb": 9,
-          "ast": 4,
-          "pra": 42
-        },
-        {
-          "date": "2026-04-12",
-          "pts": 8,
-          "reb": 6,
-          "ast": 8,
-          "pra": 22
-        }
-      ]
-    },
-    {
-      "player": "Derrick Jones Jr.",
-      "player_id": "3936099",
-      "team": "LAC",
-      "opp": "NOP",
-      "home": true,
-      "time_et": "9:00 PM",
-      "status": null,
-      "minutes": 31.1,
-      "stats": {
-        "points": {
-          "proj": 13.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 5.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 1.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 19.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-25",
-          "pts": 11,
-          "reb": 6,
-          "ast": 1,
-          "pra": 18
-        },
-        {
-          "date": "2026-10-28",
-          "pts": 15,
-          "reb": 5,
-          "ast": 0,
-          "pra": 20
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 10,
-          "reb": 1,
-          "ast": 1,
-          "pra": 12
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 9,
-          "reb": 7,
-          "ast": 1,
-          "pra": 17
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 12,
-          "reb": 8,
-          "ast": 1,
-          "pra": 21
-        }
-      ]
-    },
-    {
-      "player": "Precious Achiuwa",
-      "player_id": "4431679",
-      "team": "SAC",
-      "opp": "MIA",
-      "home": true,
-      "time_et": "9:00 PM",
-      "status": null,
-      "minutes": 27.3,
-      "stats": {
-        "points": {
-          "proj": 12.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 8.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 1.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 21.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-29",
-          "pts": 24,
-          "reb": 9,
-          "ast": 2,
-          "pra": 35
-        },
-        {
-          "date": "2026-10-31",
-          "pts": 6,
-          "reb": 5,
-          "ast": 1,
-          "pra": 12
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 6,
-          "reb": 10,
-          "ast": 3,
-          "pra": 19
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 7,
-          "reb": 3,
-          "ast": 1,
-          "pra": 11
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 9,
-          "reb": 4,
-          "ast": 0,
-          "pra": 13
-        }
-      ]
-    },
-    {
-      "player": "Derik Queen",
-      "player_id": "4869780",
-      "team": "NOP",
-      "opp": "LAC",
-      "home": false,
-      "time_et": "9:00 PM",
-      "status": null,
-      "minutes": 20.8,
-      "stats": {
-        "points": {
-          "proj": 11.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 6.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 2.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 21.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-29",
-          "pts": 9,
-          "reb": 2,
-          "ast": 3,
-          "pra": 14
-        },
-        {
-          "date": "2026-10-31",
-          "pts": 8,
-          "reb": 8,
-          "ast": 4,
-          "pra": 20
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 20,
-          "reb": 7,
-          "ast": 5,
-          "pra": 32
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 20,
-          "reb": 9,
-          "ast": 6,
-          "pra": 35
-        },
-        {
-          "date": "2026-11-06",
-          "pts": 6,
-          "reb": 4,
-          "ast": 1,
-          "pra": 11
-        }
-      ]
-    },
-    {
-      "player": "Keaton Wagler",
-      "player_id": "5254165",
-      "team": "LAC",
-      "opp": "NOP",
-      "home": true,
-      "time_et": "9:00 PM",
-      "status": null,
-      "minutes": 22.3,
-      "stats": {
-        "points": {
-          "proj": 11.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 4.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 3.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 19.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-10-28",
-          "pts": 21,
-          "reb": 4,
-          "ast": 2,
-          "pra": 27
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 12,
-          "reb": 6,
-          "ast": 3,
-          "pra": 21
-        },
-        {
-          "date": "2026-11-01",
-          "pts": 7,
-          "reb": 4,
-          "ast": 4,
-          "pra": 15
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 6,
-          "reb": 4,
-          "ast": 4,
-          "pra": 14
-        },
-        {
-          "date": "2026-11-04",
-          "pts": 11,
-          "reb": 2,
-          "ast": 1,
-          "pra": 14
-        }
-      ]
-    },
-    {
-      "player": "Paul Reed",
-      "player_id": "4278562",
-      "team": "DET",
-      "opp": "LAL",
-      "home": true,
-      "time_et": "6:00 PM",
-      "status": null,
-      "minutes": 27.6,
-      "stats": {
-        "points": {
-          "proj": 11.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 6.3,
+          "proj": 6.2,
           "line": null,
           "book": null,
           "over": null,
@@ -4274,7 +3966,161 @@
           "under": null
         },
         "pra": {
-          "proj": 20.6,
+          "proj": 21.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-30",
+          "pts": 15,
+          "reb": 5,
+          "ast": 1,
+          "pra": 21
+        },
+        {
+          "date": "2026-11-01",
+          "pts": 4,
+          "reb": 3,
+          "ast": 1,
+          "pra": 8
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 18,
+          "reb": 7,
+          "ast": 0,
+          "pra": 25
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 13,
+          "reb": 3,
+          "ast": 2,
+          "pra": 18
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 19,
+          "reb": 7,
+          "ast": 2,
+          "pra": 28
+        }
+      ]
+    },
+    {
+      "player": "De'Aaron Fox",
+      "player_id": "4066259",
+      "team": "SAS",
+      "opp": "PHX",
+      "home": false,
+      "time_et": "7:00 PM",
+      "status": null,
+      "minutes": 30.3,
+      "stats": {
+        "points": {
+          "proj": 13.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 3.8,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 5.4,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 23.6,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-31",
+          "pts": 22,
+          "reb": 8,
+          "ast": 7,
+          "pra": 37
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 12,
+          "reb": 2,
+          "ast": 3,
+          "pra": 17
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 10,
+          "reb": 3,
+          "ast": 4,
+          "pra": 17
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 9,
+          "reb": 2,
+          "ast": 4,
+          "pra": 15
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 8,
+          "reb": 3,
+          "ast": 6,
+          "pra": 17
+        }
+      ]
+    },
+    {
+      "player": "Paul Reed",
+      "player_id": "4278562",
+      "team": "DET",
+      "opp": "WAS",
+      "home": true,
+      "time_et": "5:00 PM",
+      "status": null,
+      "minutes": 27.4,
+      "stats": {
+        "points": {
+          "proj": 12.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 6.8,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 2.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 21.1,
           "line": null,
           "book": null,
           "over": null,
@@ -4320,38 +4166,38 @@
       ]
     },
     {
-      "player": "Rudy Gobert",
-      "player_id": "3032976",
-      "team": "MIN",
-      "opp": "UTA",
-      "home": true,
-      "time_et": "7:00 PM",
+      "player": "Derik Queen",
+      "player_id": "4869780",
+      "team": "NOP",
+      "opp": "GSW",
+      "home": false,
+      "time_et": "8:00 PM",
       "status": null,
-      "minutes": 31.2,
+      "minutes": 20.8,
       "stats": {
         "points": {
-          "proj": 10.6,
+          "proj": 12.1,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 11.3,
+          "proj": 6.7,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 1.8,
+          "proj": 2.9,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 23.7,
+          "proj": 21.2,
           "line": null,
           "book": null,
           "over": null,
@@ -4360,75 +4206,75 @@
       },
       "last5": [
         {
-          "date": "2026-10-28",
-          "pts": 1,
-          "reb": 4,
-          "ast": 1,
-          "pra": 6
+          "date": "2026-10-29",
+          "pts": 9,
+          "reb": 2,
+          "ast": 3,
+          "pra": 14
         },
         {
-          "date": "2026-10-30",
-          "pts": 9,
-          "reb": 13,
+          "date": "2026-10-31",
+          "pts": 8,
+          "reb": 8,
           "ast": 4,
-          "pra": 26
+          "pra": 20
         },
         {
           "date": "2026-11-02",
-          "pts": 10,
-          "reb": 10,
-          "ast": 1,
-          "pra": 21
+          "pts": 20,
+          "reb": 7,
+          "ast": 5,
+          "pra": 32
         },
         {
           "date": "2026-11-04",
-          "pts": 8,
-          "reb": 11,
-          "ast": 2,
-          "pra": 21
+          "pts": 20,
+          "reb": 9,
+          "ast": 6,
+          "pra": 35
         },
         {
           "date": "2026-11-06",
-          "pts": 8,
-          "reb": 11,
-          "ast": 0,
-          "pra": 19
+          "pts": 6,
+          "reb": 4,
+          "ast": 1,
+          "pra": 11
         }
       ]
     },
     {
-      "player": "Ausar Thompson",
-      "player_id": "4684742",
-      "team": "DET",
-      "opp": "LAL",
-      "home": true,
+      "player": "Ivica Zubac",
+      "player_id": "4017837",
+      "team": "IND",
+      "opp": "DAL",
+      "home": false,
       "time_et": "6:00 PM",
       "status": null,
-      "minutes": 30.1,
+      "minutes": 22.5,
       "stats": {
         "points": {
-          "proj": 10.5,
+          "proj": 12.0,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 7.7,
+          "proj": 9.8,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 4.0,
+          "proj": 2.3,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 22.6,
+          "proj": 24.1,
           "line": null,
           "book": null,
           "over": null,
@@ -4437,39 +4283,39 @@
       },
       "last5": [
         {
-          "date": "2026-10-27",
-          "pts": 11,
-          "reb": 6,
+          "date": "2026-10-21",
+          "pts": 16,
+          "reb": 15,
+          "ast": 0,
+          "pra": 31
+        },
+        {
+          "date": "2026-10-23",
+          "pts": 9,
+          "reb": 11,
           "ast": 2,
-          "pra": 19
+          "pra": 22
         },
         {
-          "date": "2026-10-28",
-          "pts": 7,
-          "reb": 9,
-          "ast": 8,
-          "pra": 24
-        },
-        {
-          "date": "2026-10-30",
-          "pts": 11,
-          "reb": 8,
-          "ast": 6,
-          "pra": 25
-        },
-        {
-          "date": "2026-11-02",
-          "pts": 14,
-          "reb": 6,
-          "ast": 4,
-          "pra": 24
+          "date": "2026-10-25",
+          "pts": 2,
+          "reb": 1,
+          "ast": 2,
+          "pra": 5
         },
         {
           "date": "2026-11-04",
-          "pts": 11,
-          "reb": 17,
-          "ast": 3,
-          "pra": 31
+          "pts": 1,
+          "reb": 4,
+          "ast": 2,
+          "pra": 7
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 10,
+          "reb": 12,
+          "ast": 5,
+          "pra": 27
         }
       ]
     },
@@ -4477,35 +4323,35 @@
       "player": "Walker Kessler",
       "player_id": "4433136",
       "team": "LAL",
-      "opp": "DET",
+      "opp": "ATL",
       "home": false,
-      "time_et": "6:00 PM",
+      "time_et": "5:00 PM",
       "status": null,
-      "minutes": 27.8,
+      "minutes": 28.0,
       "stats": {
         "points": {
-          "proj": 10.5,
+          "proj": 11.7,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 9.9,
+          "proj": 10.5,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 1.6,
+          "proj": 1.7,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 20.9,
+          "proj": 23.7,
           "line": null,
           "book": null,
           "over": null,
@@ -4551,38 +4397,38 @@
       ]
     },
     {
-      "player": "Day'Ron Sharpe",
-      "player_id": "4432194",
-      "team": "BKN",
-      "opp": "DAL",
-      "home": false,
-      "time_et": "7:30 PM",
-      "status": "day-to-day",
-      "minutes": 24.2,
+      "player": "Ausar Thompson",
+      "player_id": "4684742",
+      "team": "DET",
+      "opp": "WAS",
+      "home": true,
+      "time_et": "5:00 PM",
+      "status": null,
+      "minutes": 29.2,
       "stats": {
         "points": {
-          "proj": 8.9,
+          "proj": 11.1,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "rebounds": {
-          "proj": 7.9,
+          "proj": 8.7,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 3.2,
+          "proj": 4.5,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 21.0,
+          "proj": 24.1,
           "line": null,
           "book": null,
           "over": null,
@@ -4592,38 +4438,192 @@
       "last5": [
         {
           "date": "2026-10-27",
-          "pts": 4,
+          "pts": 11,
           "reb": 6,
-          "ast": 0,
-          "pra": 10
+          "ast": 2,
+          "pra": 19
+        },
+        {
+          "date": "2026-10-28",
+          "pts": 7,
+          "reb": 9,
+          "ast": 8,
+          "pra": 24
         },
         {
           "date": "2026-10-30",
-          "pts": 3,
-          "reb": 7,
-          "ast": 1,
-          "pra": 11
+          "pts": 11,
+          "reb": 8,
+          "ast": 6,
+          "pra": 25
         },
         {
-          "date": "2026-11-01",
-          "pts": 15,
-          "reb": 13,
+          "date": "2026-11-02",
+          "pts": 14,
+          "reb": 6,
           "ast": 4,
+          "pra": 24
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 11,
+          "reb": 17,
+          "ast": 3,
+          "pra": 31
+        }
+      ]
+    },
+    {
+      "player": "Dyson Daniels",
+      "player_id": "4869342",
+      "team": "ATL",
+      "opp": "LAL",
+      "home": true,
+      "time_et": "5:00 PM",
+      "status": null,
+      "minutes": 31.7,
+      "stats": {
+        "points": {
+          "proj": 10.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 7.2,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 5.6,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 23.4,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-31",
+          "pts": 8,
+          "reb": 4,
+          "ast": 3,
+          "pra": 15
+        },
+        {
+          "date": "2026-11-02",
+          "pts": 6,
+          "reb": 9,
+          "ast": 4,
+          "pra": 19
+        },
+        {
+          "date": "2026-11-04",
+          "pts": 8,
+          "reb": 16,
+          "ast": 8,
           "pra": 32
+        },
+        {
+          "date": "2026-11-06",
+          "pts": 13,
+          "reb": 9,
+          "ast": 12,
+          "pra": 34
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 9,
+          "reb": 10,
+          "ast": 7,
+          "pra": 26
+        }
+      ]
+    },
+    {
+      "player": "Draymond Green",
+      "player_id": "6589",
+      "team": "GSW",
+      "opp": "NOP",
+      "home": true,
+      "time_et": "8:00 PM",
+      "status": null,
+      "minutes": 30.9,
+      "stats": {
+        "points": {
+          "proj": 7.2,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 5.6,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 8.8,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 21.8,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-10-28",
+          "pts": 3,
+          "reb": 9,
+          "ast": 6,
+          "pra": 18
+        },
+        {
+          "date": "2026-10-30",
+          "pts": 2,
+          "reb": 4,
+          "ast": 9,
+          "pra": 15
         },
         {
           "date": "2026-11-02",
           "pts": 4,
-          "reb": 6,
-          "ast": 3,
-          "pra": 13
+          "reb": 4,
+          "ast": 2,
+          "pra": 10
         },
         {
-          "date": "2026-11-04",
-          "pts": 5,
+          "date": "2026-11-05",
+          "pts": 2,
           "reb": 5,
-          "ast": 8,
+          "ast": 11,
           "pra": 18
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 2,
+          "reb": 6,
+          "ast": 13,
+          "pra": 21
         }
       ]
     }
