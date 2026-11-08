@@ -2681,32 +2681,8 @@
     "method": "night",
     "picked_at": "2026-11-08T09:44:42Z",
     "missing_games": [],
-    "candidates": 19,
+    "candidates": 16,
     "legs": [
-      {
-        "player": "Darius Acuff Jr.",
-        "player_id": "5142620",
-        "game_id": "401909951",
-        "team": "SAC",
-        "opp": "MIA",
-        "home": true,
-        "time_et": "7:00 PM",
-        "stat": "pra",
-        "side": "over",
-        "line": 29.5,
-        "line_type": "alt",
-        "book_line": 33.5,
-        "proj": 38.6,
-        "prob": 0.768,
-        "book_prob": 0.67,
-        "gap": 0.098,
-        "odds": -234,
-        "book": "DraftKings",
-        "blowout_risk": "medium",
-        "minutes_confidence": "high",
-        "green": 0.1528,
-        "reasoning": "Model projects 38.6 PRA, 15% over the book's 33.5 line; this leg is 29.5 at -234 (book 67%, model 77%). Projected for 37.0 minutes; SAC +10.5 spread."
-      },
       {
         "player": "Jaylen Brown",
         "player_id": "3917376",
@@ -2722,14 +2698,40 @@
         "book_line": 32.5,
         "proj": 37.3,
         "prob": 0.731,
-        "book_prob": 0.624,
-        "gap": 0.107,
-        "odds": -187,
+        "book_prob": 0.628,
+        "gap": 0.103,
+        "odds": -191,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
         "green": 0.1468,
-        "reasoning": "Model projects 37.3 PRA, 15% over the book's 32.5 line; this leg is 29.5 at -187 (book 62%, model 73%). Projected for 35.4 minutes; PHI -9.5 spread."
+        "reasoning": "Model projects 37.3 PRA, 15% over the book's 32.5 line; this leg is 29.5 at -191 (book 63%, model 73%). Projected for 35.3 minutes; PHI -9.5 spread.",
+        "night_odds": -187
+      },
+      {
+        "player": "Darius Acuff Jr.",
+        "player_id": "5142620",
+        "game_id": "401909951",
+        "team": "SAC",
+        "opp": "MIA",
+        "home": true,
+        "time_et": "7:00 PM",
+        "stat": "pra",
+        "side": "over",
+        "line": 29.5,
+        "line_type": "alt",
+        "book_line": 34.5,
+        "proj": 38.6,
+        "prob": 0.768,
+        "book_prob": 0.679,
+        "gap": 0.089,
+        "odds": -244,
+        "book": "DraftKings",
+        "blowout_risk": "medium",
+        "minutes_confidence": "high",
+        "green": 0.1194,
+        "reasoning": "Model projects 38.6 PRA, 12% over the book's 34.5 line; this leg is 29.5 at -244 (book 68%, model 77%). Projected for 37.0 minutes; SAC +10.5 spread.",
+        "night_odds": -234
       },
       {
         "player": "Michael Porter Jr.",
@@ -2753,15 +2755,43 @@
         "blowout_risk": "medium",
         "minutes_confidence": "high",
         "green": 0.0752,
-        "reasoning": "Model projects 33.9 PRA, 8% over the book's 31.5 line; this leg is 29.5 at -152 (book 58%, model 62%). Projected for 35.0 minutes; BKN +7.5 spread."
+        "reasoning": "Model projects 33.9 PRA, 8% over the book's 31.5 line; this leg is 29.5 at -152 (book 58%, model 62%). Projected for 35.0 minutes; BKN +7.5 spread.",
+        "night_odds": -152
       }
     ],
-    "combined_odds": 263,
+    "combined_odds": 256,
     "status": "pending",
-    "checked_at": "2026-11-08T17:13:20Z"
+    "checked_at": "2026-11-08T18:15:10Z",
+    "morning_repick": true,
+    "night": {
+      "combined_odds": 263,
+      "picked_at": "2026-11-08T09:44:42Z",
+      "legs": [
+        {
+          "player": "Darius Acuff Jr.",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -234
+        },
+        {
+          "player": "Jaylen Brown",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -187
+        },
+        {
+          "player": "Michael Porter Jr.",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -152
+        }
+      ]
+    },
+    "morning_checked": "2026-11-08T18:15:10Z",
+    "changes": []
   },
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-08T17:13:20Z",
+  "generated_at": "2026-11-08T18:15:10Z",
   "early_history": [
     {
       "date": "2026-10-20",
