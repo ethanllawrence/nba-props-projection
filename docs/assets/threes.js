@@ -8,7 +8,6 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const fmtOdds = (o) => (o > 0 ? "+" + o : String(o));
 const pct = (p) => (p == null ? "–" : Math.round(p * 100) + "%");
-let sortBy = "made";
 
 /* Board-style color (Nov 8, Robin): gold when we agree with the book, then
    green (we like the over more) or red (less), full color at a 15-point gap.
@@ -90,13 +89,6 @@ function row(p) {
   </tr>`;
 }
 
-function maxGap(p) {
-  if (!p.line) return 0;
-  const n = Math.floor(p.line.line) + 1;
-  const e = [p.line.edge, (altBelow(p, n) || {}).edge, ...[n + 1, n + 2].map((k) => (ladderAt(p, k) || {}).edge)];
-  return Math.max(...e.filter((x) => x != null).map(Math.abs), 0);
-}
-
 function trackTiles(t) {
   if (!t || !t.days) {
     return `<div class="notice" style="margin:8px 0">Track record starts once the first night is graded
@@ -115,19 +107,55 @@ function trackTiles(t) {
     ${lines}</div>`;
 }
 
-function render(data) {
-  const players = (data.players || []).slice();
-  if (sortBy === "gap") {
-    players.sort((a, b) => maxGap(b) - maxGap(a));
-  } else if (sortBy === "lined") {
-    players.sort((a, b) => (b.line ? 1 : 0) - (a.line ? 1 : 0) || b.made - a.made);
+/* One table (Nov 8, Robin), sorted by tapping a header like the Today board,
+   with Today / Early look chips: threes_tomorrow.json holds the next game
+   day's projections, before the books post 3PM lines. */
+let sortState = { key: "made", dir: "desc" };
+let earlyView = false;
+const SORTS = {
+  player: (p) => p.player,
+  made: (p) => p.made,
+  line: (p) => (p.line ? p.line.line : -1),
+};
+
+function sorted(players) {
+  const f = SORTS[sortState.key] || SORTS.made;
+  const k = sortState.dir === "asc" ? 1 : -1;
+  return players.slice().sort((a, b) => {
+    const x = f(a), y = f(b);
+    return (x < y ? -1 : x > y ? 1 : 0) * k || b.made - a.made;
+  });
+}
+
+function th(key, label, num) {
+  const on = sortState.key === key ? (sortState.dir === "asc" ? " ▲" : " ▼") : "";
+  return `<th class="${num ? "num " : ""}sortable" data-key="${key}">${label}${on}</th>`;
+}
+
+function earlyRow(p) {
+  const where = p.home ? "vs" : "@";
+  const flag = p.status && p.status !== "active" ? ` · <span class="neg">${esc(p.status)}</span>` : "";
+  return `<tr>
+    <td><div class="pn">${esc(p.player)}</div>
+      <div class="pm">${esc(p.team)} ${where} ${esc(p.opp)} · ${esc(p.time_et)}${flag}</div>${last5(p)}</td>
+    <td class="num"><div class="proj3"><b>${p.made.toFixed(1)}</b></div></td>
+  </tr>`;
+}
+
+function table(data) {
+  const players = sorted(data.players || []);
+  if (earlyView) {
+    return `<div class="board-tbl threes-tbl"><table class="t">
+      <thead><tr>${th("player", "Player")}${th("made", "Proj", true)}</tr></thead>
+      <tbody>${players.map(earlyRow).join("") || '<tr><td colspan="2" class="dim">No 3PM projections for this day yet.</td></tr>'}</tbody>
+    </table></div>
+    <div class="legend" style="margin-top:8px">
+      <span>Early look: model projections only. 3PM lines arrive the morning of the games.</span>
+      <span>Proj: projected threes</span>
+      <span>L5: threes in his last 5 games</span></div>`;
   }
-  const chips = ["made", "lined", "gap"].map((k) => `<button class="chip ${sortBy === k ? "on" : ""}" data-sort="${k}">${
-    { made: "Most threes", lined: "With a line", gap: "Biggest gaps" }[k]}</button>`).join("");
-  $("#threes-body").innerHTML = `
-    <div class="chips" style="margin-bottom:10px">${chips}</div>
-    <div class="board-tbl threes-tbl"><table class="t">
-      <thead><tr><th>Player</th><th class="num">Proj</th><th class="num">Alt</th><th class="num">Line</th>
+  return `<div class="board-tbl threes-tbl"><table class="t">
+      <thead><tr>${th("player", "Player")}${th("made", "Proj", true)}<th class="num">Alt</th>${th("line", "Line", true)}
         <th class="num">+1</th><th class="num">+2</th></tr></thead>
       <tbody>${players.map(row).join("") || '<tr><td colspan="6" class="dim">No 3PM projections for this slate yet.</td></tr>'}</tbody>
     </table></div>
@@ -137,28 +165,60 @@ function render(data) {
       <span>Alt: the safest rung under the line still priced -400 or longer</span>
       <span>Line / +1 / +2: DraftKings' over price at the line and one and two threes above it</span>
       <span>L5: threes in his last 5 games (green = over tonight's line)</span>
-      <span>tap a price for both chances</span></div>
-    <h2 class="sec">Track record (beta)</h2>
-    ${trackTiles(data.track)}`;
-  document.querySelectorAll("[data-sort]").forEach((b) => b.addEventListener("click", () => {
-    sortBy = b.dataset.sort;
-    render(data);
-  }));
+      <span>tap Player, Proj or Line to sort · tap a price for both chances</span></div>`;
+}
+
+const azToday = () => new Date().toLocaleDateString("en-CA", { timeZone: "America/Phoenix" });
+const niceDate = (d) => {
+  const [y, m, day] = String(d).split("-").map(Number);
+  return new Date(y, m - 1, day).toLocaleDateString([], { weekday: "short", month: "short", day: "numeric" });
+};
+
+async function getJson(name) {
+  try {
+    return await (await fetch(`data/${name}?_=` + Date.now())).json();
+  } catch {
+    return null;
+  }
 }
 
 async function main() {
-  let data;
-  try {
-    data = await (await fetch("data/threes.json?_=" + Date.now())).json();
-  } catch {
+  const [today, early] = await Promise.all([getJson("threes.json"), getJson("threes_tomorrow.json")]);
+  if (!today && !early) {
     $("#threes-body").innerHTML = '<div class="notice">No 3PM projections yet. They appear after the next board run.</div>';
     $("#subtitle").textContent = "beta";
     return;
   }
-  const upd = new Date(data.generated_at);
-  $("#subtitle").textContent = `${data.date} · updated ${upd.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
-  // lined players first when the books have posted (the default view)
-  if ((data.players || []).some((p) => p.line)) sortBy = "lined";
-  render(data);
+  const earlyOk = !!(early && (early.players || []).length && early.date >= azToday()
+    && (!today || early.date > today.date));
+  const todayStale = !today || today.date < azToday();
+  let view = earlyOk && todayStale ? "early" : "today";
+
+  const render = () => {
+    const data = view === "early" ? early : today;
+    earlyView = view === "early";
+    const chips = earlyOk
+      ? `<div class="view-chips" style="margin-bottom:12px">
+          ${today ? `<button class="chip ${view === "today" ? "on" : ""}" data-view="today">Today · ${esc(niceDate(today.date))}</button>` : ""}
+          <button class="chip ${view === "early" ? "on" : ""}" data-view="early">Early look · ${esc(niceDate(early.date))}</button>
+        </div>` : "";
+    const upd = new Date(data.generated_at);
+    $("#subtitle").textContent = `${data.date} · updated ${upd.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })} · beta`;
+    $("#threes-body").innerHTML = `${chips}${table(data)}
+      <h2 class="sec">Track record (beta)</h2>
+      ${trackTiles(data.track)}`;
+    $("#threes-body").querySelectorAll("[data-view]").forEach((b) => b.addEventListener("click", () => {
+      view = b.dataset.view;
+      render();
+    }));
+    $("#threes-body").querySelectorAll("th[data-key]").forEach((h) => h.addEventListener("click", () => {
+      const key = h.dataset.key;
+      sortState = key === sortState.key
+        ? { key, dir: sortState.dir === "asc" ? "desc" : "asc" }
+        : { key, dir: key === "player" ? "asc" : "desc" };
+      render();
+    }));
+  };
+  render();
 }
 main();

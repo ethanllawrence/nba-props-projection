@@ -67,7 +67,10 @@ def _tipped(tipoff_utc, now):
     return t <= now
 
 
-def export_threes(con, date_s, now=None):
+def export_threes(con, date_s, now=None, early=False):
+    """early=True: the next game day's look (docs/data/threes_tomorrow.json),
+    built after the Today board from the early-look projections; it adds no
+    track-record rows (those come from the game-day runs)."""
     from ..model import live
     from ..ingest import espn_props
     from ..ingest.odds import norm_name
@@ -128,12 +131,12 @@ def export_threes(con, date_s, now=None):
                         if g["threes"] is not None]
         players.append(row)
     players.sort(key=lambda p: (-p["made"], p["player"]))
-    log = _update_log(con, date_s, players, now)
-    data = {"generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "date": date_s, "beta": True,
+    log = summarize(_load("threes_log.json").get("days", {})) if early else _update_log(con, date_s, players, now)
+    data = {"generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "date": date_s, "beta": True, "early": early,
             "lines_from": "ESPN (DraftKings)" if lines or ladders else None,
             "lines_fetched_at": (espn_props.load(date_s) or {}).get("fetched_at"),
             "players": players, "track": log}
-    _save("threes.json", data)
+    _save("threes_tomorrow.json" if early else "threes.json", data)
     return {"players": len(players), "with_line": sum(1 for p in players if p.get("line")),
             "graded_days": log.get("days", 0)}
 

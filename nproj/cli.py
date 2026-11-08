@@ -135,6 +135,11 @@ def _early_look(con, date_s):
     n = export_early_look(con, nxt)
     log = {"date": nxt, "games": slate["games"], "players": n,
            "model": "lightgbm" if live.PROJ else "baseline"}
+    try:                                   # 3PM early look (beta): never blocks the board
+        from .export.threes_export import export_threes
+        log["threes"] = export_threes(con, nxt, early=True)
+    except Exception as exc:  # noqa: BLE001
+        log["threes"] = f"failed: {exc}"
     from .model import early_parlay as _ep
     if live.PROJ and _ep.ENABLED:     # retired 2026-10-22 (see parlay.night_pick)
         from .ingest import espn_props, odds

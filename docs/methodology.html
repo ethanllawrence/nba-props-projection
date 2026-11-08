@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>PRAjections — Methodology</title>
-<link rel="stylesheet" href="assets/style.css?v=13">
+<link rel="stylesheet" href="assets/style.css?v=15">
 </head>
 <body>
 <div class="wrap">
@@ -49,7 +49,7 @@
     lines (after the day's news and money) were more accurate still. Most of the model's edge
     over opening lines came from reacting to injuries, so lines are pulled early in the day.</p>
 
-    <h2>Today board</h2>
+    <h2 id="today">Today board</h2>
     <p>Table-only by design: a full slate runs 20+ meaningfully-projected players a night, so a
     sortable table beats scrolling cards. One row per player, one column each for points,
     rebounds, assists, and PRA; tap any header to sort by that projection. Players projected for
@@ -96,7 +96,7 @@
     the book expected and lost about 7% (PRA 14%), and those players played 20 minutes where the
     model had projected 23.</p>
 
-    <h2>Parlay of the Day</h2>
+    <h2 id="parlay">Parlay of the Day</h2>
     <p>One parlay per game day: 3 PRA overs at about +100 to +300 real DraftKings/FanDuel odds. It's
     picked the night before, at about 9:45 PM Arizona time, once the books have posted the next day's
     player lines (ESPN publishes DraftKings' lines and "N+" prices for free, usually by mid-evening),
@@ -133,7 +133,7 @@
     sportsbook would do it). Opening week used earlier versions: a "most likely overs" rule on Oct 20,
     and a morning pick Oct 21.</p>
 
-    <h2>3PM model (beta)</h2>
+    <h2 id="threes">3PM model (beta)</h2>
     <p>The 3PM tab projects 3-pointers made in two parts, because they behave very differently. Attempts
     are steady: last season a player's three-point attempts per 36 minutes in half of his games
     predicted the other half almost perfectly (r = 0.97). Make rate is mostly noise: the same test on
@@ -169,9 +169,11 @@
     our chance and the book's agree, then green (we like it more) or red (less), full color at a
     15-point gap; the projection takes the main line's color. Because 3PM lines
     are small, the gap is in chance points, not projection versus line. Its track record (average miss, and each rung's predicted chance vs
-    how often it hit) is graded every morning.</p>
+    how often it hit) is graded every morning. Like the Today board, an Early look shows the next
+    game day's projections (model only, made after tonight's board) until the books post lines that morning;
+    early-look projections aren't graded, only the game-day ones are.</p>
 
-    <h2>Jokic TD tracker</h2>
+    <h2 id="jokic">Jokic TD tracker</h2>
     <p>A separate tab for Nikola Jokic's triple-double prop. It leads with one call: bet the
     triple-double Yes tonight, or don't. His chance is halfway between his triple-double rate
     over his last 80 games and 50%. The call compares that chance to the sportsbook's Yes price: Yes when the price pays
@@ -189,7 +191,7 @@
     actually happened, so that's the number shown, and the price is where any edge would be.
     The test script is in the repo (scripts/td_backtest.py) to re-run as seasons go on.</p>
 
-    <h2>Results</h2>
+    <h2 id="results">Results</h2>
     <p>Every morning, last night's board is graded against the real box scores. Two things are
     tracked. First, accuracy: how many points, rebounds, assists and PRA each projection missed
     by on average. Second, the edge calls: every green or red cell (see Edge coloring) counts as a

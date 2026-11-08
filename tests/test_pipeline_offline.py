@@ -920,6 +920,12 @@ def test_threes_model_and_export():
             tr = json.loads((_P(tmp) / "threes.json").read_text())["track"]
             assert tr["days"] == 1 and tr["player_games"] == 1 and tr["avg_miss_made"] == 2.0, tr
             assert tr["lines"]["over_hit"] == 1.0
+            # early look: its own file, no new track-record rows, same summary
+            before = (_P(tmp) / "threes_log.json").read_text()
+            X.export_threes(con, "2030-01-04", now=_dt(2030, 1, 3, 20, tzinfo=_tz.utc), early=True)
+            ea = json.loads((_P(tmp) / "threes_tomorrow.json").read_text())
+            assert ea["early"] and ea["players"] and ea["track"]["days"] == 1, ea
+            assert (_P(tmp) / "threes_log.json").read_text() == before
         finally:
             config.SITE_DATA_DIR = old_site
             os.environ.pop("NPROJ_HISTORY_DIR", None)
