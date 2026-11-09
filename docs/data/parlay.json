@@ -2802,8 +2802,33 @@
     "method": "night",
     "picked_at": "2026-11-09T16:44:09Z",
     "missing_games": [],
-    "candidates": 19,
+    "candidates": 20,
     "legs": [
+      {
+        "player": "Yaxel Lendeborg",
+        "player_id": "5175737",
+        "game_id": "401909959",
+        "team": "GSW",
+        "opp": "NOP",
+        "home": true,
+        "time_et": "8:00 PM",
+        "stat": "pra",
+        "side": "over",
+        "line": 29.5,
+        "line_type": "alt",
+        "book_line": 31.5,
+        "proj": 35.6,
+        "prob": 0.679,
+        "book_prob": 0.59,
+        "gap": 0.089,
+        "odds": -161,
+        "book": "DraftKings",
+        "blowout_risk": "medium",
+        "minutes_confidence": "high",
+        "green": 0.1295,
+        "reasoning": "Model projects 35.6 PRA, 13% over the book's 31.5 line; this leg is 29.5 at -161 (book 59%, model 68%). Projected for 33.6 minutes; GSW -11.5 spread.",
+        "night_odds": -191
+      },
       {
         "player": "Pascal Siakam",
         "player_id": "3149673",
@@ -2819,38 +2844,15 @@
         "book_line": 30.5,
         "proj": 33.8,
         "prob": 0.618,
-        "book_prob": 0.543,
-        "gap": 0.076,
-        "odds": -131,
+        "book_prob": 0.563,
+        "gap": 0.055,
+        "odds": -143,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "green": 0.1075,
-        "reasoning": "Model projects 33.8 PRA, 11% over the book's 30.5 line; this leg is 29.5 at -131 (book 54%, model 62%). Projected for 33.4 minutes; IND +3.5 spread."
-      },
-      {
-        "player": "Yaxel Lendeborg",
-        "player_id": "5175737",
-        "game_id": "401909959",
-        "team": "GSW",
-        "opp": "NOP",
-        "home": true,
-        "time_et": "8:00 PM",
-        "stat": "pra",
-        "side": "over",
-        "line": 29.5,
-        "line_type": "alt",
-        "book_line": 32.5,
-        "proj": 35.9,
-        "prob": 0.688,
-        "book_prob": 0.628,
-        "gap": 0.06,
-        "odds": -191,
-        "book": "DraftKings",
-        "blowout_risk": "medium",
-        "minutes_confidence": "high",
-        "green": 0.1035,
-        "reasoning": "Model projects 35.9 PRA, 10% over the book's 32.5 line; this leg is 29.5 at -191 (book 63%, model 69%). Projected for 33.8 minutes; GSW -9.5 spread."
+        "green": 0.1068,
+        "reasoning": "Model projects 33.8 PRA, 11% over the book's 30.5 line; this leg is 29.5 at -143 (book 56%, model 62%). Projected for 33.4 minutes; IND +4.5 spread.",
+        "night_odds": -131
       },
       {
         "player": "Donovan Mitchell",
@@ -2867,24 +2869,52 @@
         "book_line": 33.5,
         "proj": 35.1,
         "prob": 0.664,
-        "book_prob": 0.659,
-        "gap": 0.005,
-        "odds": -221,
+        "book_prob": 0.682,
+        "gap": -0.018,
+        "odds": -248,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
         "green": 0.0482,
-        "reasoning": "Model projects 35.1 PRA, 5% over the book's 33.5 line; this leg is 29.5 at -221 (book 66%, model 66%). Projected for 35.5 minutes; CLE -8.5 spread."
+        "reasoning": "Model projects 35.1 PRA, 5% over the book's 33.5 line; this leg is 29.5 at -248 (book 68%, model 66%). Projected for 35.6 minutes; CLE -8.5 spread.",
+        "night_odds": -221
       }
     ],
-    "combined_odds": 290,
+    "combined_odds": 287,
     "status": "pending",
     "first_picked_at": "2026-11-09T10:39:47Z",
     "refreshed": 2,
-    "checked_at": "2026-11-09T16:44:09Z"
+    "checked_at": "2026-11-09T22:54:20Z",
+    "morning_repick": true,
+    "night": {
+      "combined_odds": 290,
+      "picked_at": "2026-11-09T16:44:09Z",
+      "legs": [
+        {
+          "player": "Pascal Siakam",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -131
+        },
+        {
+          "player": "Yaxel Lendeborg",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -191
+        },
+        {
+          "player": "Donovan Mitchell",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -221
+        }
+      ]
+    },
+    "morning_checked": "2026-11-09T22:54:20Z",
+    "changes": []
   },
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-09T16:44:09Z",
+  "generated_at": "2026-11-09T22:54:20Z",
   "early_history": [
     {
       "date": "2026-10-20",
