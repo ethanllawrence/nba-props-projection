@@ -2925,56 +2925,8 @@
     "method": "night",
     "picked_at": "2026-11-10T15:06:56Z",
     "missing_games": [],
-    "candidates": 17,
+    "candidates": 12,
     "legs": [
-      {
-        "player": "Darius Acuff Jr.",
-        "player_id": "5142620",
-        "game_id": "401909964",
-        "team": "SAC",
-        "opp": "ORL",
-        "home": true,
-        "time_et": "8:00 PM",
-        "stat": "pra",
-        "side": "over",
-        "line": 29.5,
-        "line_type": "alt",
-        "book_line": 34.5,
-        "proj": 38.7,
-        "prob": 0.769,
-        "book_prob": 0.706,
-        "gap": 0.063,
-        "odds": -282,
-        "book": "DraftKings",
-        "blowout_risk": "low",
-        "minutes_confidence": "high",
-        "green": 0.1209,
-        "reasoning": "Model projects 38.7 PRA, 12% over the book's 34.5 line; this leg is 29.5 at -282 (book 71%, model 77%). Projected for 38.0 minutes; SAC +6.5 spread."
-      },
-      {
-        "player": "Joel Embiid",
-        "player_id": "3059318",
-        "game_id": "401909961",
-        "team": "PHI",
-        "opp": "BOS",
-        "home": true,
-        "time_et": "6:00 PM",
-        "stat": "pra",
-        "side": "over",
-        "line": 29.5,
-        "line_type": "alt",
-        "book_line": 32.5,
-        "proj": 35.7,
-        "prob": 0.684,
-        "book_prob": 0.614,
-        "gap": 0.07,
-        "odds": -179,
-        "book": "DraftKings",
-        "blowout_risk": "low",
-        "minutes_confidence": "high",
-        "green": 0.0994,
-        "reasoning": "Model projects 35.7 PRA, 10% over the book's 32.5 line; this leg is 29.5 at -179 (book 61%, model 68%). Projected for 34.2 minutes; PHI +1.5 spread."
-      },
       {
         "player": "Bam Adebayo",
         "player_id": "4066261",
@@ -2987,27 +2939,134 @@
         "side": "over",
         "line": 29.5,
         "line_type": "alt",
-        "book_line": 31.5,
-        "proj": 32.5,
-        "prob": 0.574,
-        "book_prob": 0.592,
-        "gap": -0.018,
-        "odds": -162,
+        "book_line": 30.5,
+        "proj": 32.6,
+        "prob": 0.575,
+        "book_prob": 0.557,
+        "gap": 0.019,
+        "odds": -139,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "green": 0.0325,
-        "reasoning": "Model projects 32.5 PRA, 3% over the book's 31.5 line; this leg is 29.5 at -162 (book 59%, model 57%). Projected for 30.3 minutes; MIA -8.5 spread."
+        "green": 0.0676,
+        "reasoning": "Model projects 32.6 PRA, 7% over the book's 30.5 line; this leg is 29.5 at -139 (book 56%, model 57%). Projected for 30.1 minutes; MIA -9.5 spread.",
+        "night_odds": -162
+      },
+      {
+        "player": "Tyrese Maxey",
+        "player_id": "4431678",
+        "game_id": "401909961",
+        "team": "PHI",
+        "opp": "BOS",
+        "home": true,
+        "time_et": "6:00 PM",
+        "stat": "pra",
+        "side": "over",
+        "line": 29.5,
+        "line_type": "alt",
+        "book_line": 33.5,
+        "proj": 35.4,
+        "prob": 0.672,
+        "book_prob": 0.659,
+        "gap": 0.013,
+        "odds": -221,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "green": 0.0556,
+        "reasoning": "Model projects 35.4 PRA, 6% over the book's 33.5 line; this leg is 29.5 at -221 (book 66%, model 67%). Projected for 38.3 minutes; PHI +1.5 spread."
+      },
+      {
+        "player": "Deni Avdija",
+        "player_id": "4683021",
+        "game_id": "401909965",
+        "team": "POR",
+        "opp": "OKC",
+        "home": true,
+        "time_et": "9:00 PM",
+        "stat": "pra",
+        "side": "over",
+        "line": 34.5,
+        "line_type": "alt",
+        "book_line": 36.5,
+        "proj": 36.9,
+        "prob": 0.548,
+        "book_prob": 0.604,
+        "gap": -0.056,
+        "odds": -171,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "green": 0.0111,
+        "reasoning": "Model projects 36.9 PRA, 1% over the book's 36.5 line; this leg is 34.5 at -171 (book 60%, model 55%). Projected for 34.4 minutes; POR +1.5 spread."
       }
     ],
-    "combined_odds": 241,
+    "combined_odds": 296,
     "status": "pending",
     "first_picked_at": "2026-11-10T10:39:08Z",
     "refreshed": 1,
-    "checked_at": "2026-11-10T15:06:56Z"
+    "checked_at": "2026-11-10T20:14:29Z",
+    "morning_repick": true,
+    "night": {
+      "combined_odds": 241,
+      "picked_at": "2026-11-10T15:06:56Z",
+      "legs": [
+        {
+          "player": "Darius Acuff Jr.",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -282
+        },
+        {
+          "player": "Joel Embiid",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -179
+        },
+        {
+          "player": "Bam Adebayo",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -162
+        }
+      ]
+    },
+    "morning_checked": "2026-11-10T20:14:29Z",
+    "changes": [
+      {
+        "out": {
+          "player": "Darius Acuff Jr.",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -282
+        },
+        "why": "re-picked from the morning board",
+        "in": {
+          "player": "Tyrese Maxey",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -221
+        }
+      },
+      {
+        "out": {
+          "player": "Joel Embiid",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -179
+        },
+        "why": "re-picked from the morning board",
+        "in": {
+          "player": "Deni Avdija",
+          "stat": "pra",
+          "line": 34.5,
+          "odds": -171
+        }
+      }
+    ]
   },
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-10T15:06:56Z",
+  "generated_at": "2026-11-10T20:14:29Z",
   "early_history": [
     {
       "date": "2026-10-20",
