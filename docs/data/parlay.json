@@ -3077,7 +3077,7 @@
     "method": "night",
     "picked_at": "2026-11-11T12:16:38Z",
     "missing_games": [],
-    "candidates": 28,
+    "candidates": 25,
     "legs": [
       {
         "player": "Pascal Siakam",
@@ -3094,14 +3094,15 @@
         "book_line": 32.5,
         "proj": 36.3,
         "prob": 0.703,
-        "book_prob": 0.652,
-        "gap": 0.051,
-        "odds": -214,
+        "book_prob": 0.637,
+        "gap": 0.067,
+        "odds": -199,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
         "green": 0.1182,
-        "reasoning": "Model projects 36.3 PRA, 12% over the book's 32.5 line; this leg is 29.5 at -214 (book 65%, model 70%). Projected for 33.5 minutes; IND -2.5 spread."
+        "reasoning": "Model projects 36.3 PRA, 12% over the book's 32.5 line; this leg is 29.5 at -199 (book 64%, model 70%). Projected for 33.5 minutes; IND -2.5 spread.",
+        "night_odds": -214
       },
       {
         "player": "Stephen Curry",
@@ -3116,16 +3117,17 @@
         "line": 29.5,
         "line_type": "alt",
         "book_line": 34.5,
-        "proj": 38.4,
-        "prob": 0.761,
-        "book_prob": 0.7,
-        "gap": 0.061,
-        "odds": -272,
+        "proj": 38.2,
+        "prob": 0.758,
+        "book_prob": 0.695,
+        "gap": 0.063,
+        "odds": -266,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "green": 0.1117,
-        "reasoning": "Model projects 38.4 PRA, 11% over the book's 34.5 line; this leg is 29.5 at -272 (book 70%, model 76%). Projected for 32.5 minutes; GSW +6.5 spread."
+        "green": 0.1084,
+        "reasoning": "Model projects 38.2 PRA, 11% over the book's 34.5 line; this leg is 29.5 at -266 (book 70%, model 76%). Projected for 32.2 minutes; GSW +6.5 spread.",
+        "night_odds": -272
       },
       {
         "player": "Cameron Boozer",
@@ -3142,24 +3144,52 @@
         "book_line": 31.5,
         "proj": 33.6,
         "prob": 0.614,
-        "book_prob": 0.599,
-        "gap": 0.016,
-        "odds": -167,
+        "book_prob": 0.608,
+        "gap": 0.007,
+        "odds": -174,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
         "green": 0.0681,
-        "reasoning": "Model projects 33.6 PRA, 7% over the book's 31.5 line; this leg is 29.5 at -167 (book 60%, model 61%). Projected for 33.0 minutes; MEM +3.5 spread."
+        "reasoning": "Model projects 33.6 PRA, 7% over the book's 31.5 line; this leg is 29.5 at -174 (book 61%, model 61%). Projected for 33.0 minutes; MEM +3.5 spread.",
+        "night_odds": -167
       }
     ],
-    "combined_odds": 221,
+    "combined_odds": 226,
     "status": "pending",
     "first_picked_at": "2026-11-11T10:03:32Z",
     "refreshed": 1,
-    "checked_at": "2026-11-11T14:39:05Z"
+    "checked_at": "2026-11-11T20:02:45Z",
+    "morning_repick": true,
+    "night": {
+      "combined_odds": 221,
+      "picked_at": "2026-11-11T12:16:38Z",
+      "legs": [
+        {
+          "player": "Pascal Siakam",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -214
+        },
+        {
+          "player": "Stephen Curry",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -272
+        },
+        {
+          "player": "Cameron Boozer",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -167
+        }
+      ]
+    },
+    "morning_checked": "2026-11-11T20:02:45Z",
+    "changes": []
   },
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-11T14:39:05Z",
+  "generated_at": "2026-11-11T20:02:45Z",
   "early_history": [
     {
       "date": "2026-10-20",
