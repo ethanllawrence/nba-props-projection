@@ -3200,56 +3200,8 @@
     "method": "night",
     "picked_at": "2026-11-12T15:30:42Z",
     "missing_games": [],
-    "candidates": 16,
+    "candidates": 10,
     "legs": [
-      {
-        "player": "Cooper Flagg",
-        "player_id": "5041939",
-        "game_id": "401909978",
-        "team": "DAL",
-        "opp": "MIN",
-        "home": false,
-        "time_et": "6:00 PM",
-        "stat": "pra",
-        "side": "over",
-        "line": 34.5,
-        "line_type": "alt",
-        "book_line": 36.5,
-        "proj": 40.1,
-        "prob": 0.653,
-        "book_prob": 0.59,
-        "gap": 0.063,
-        "odds": -161,
-        "book": "DraftKings",
-        "blowout_risk": "low",
-        "minutes_confidence": "high",
-        "green": 0.0983,
-        "reasoning": "Model projects 40.1 PRA, 10% over the book's 36.5 line; this leg is 34.5 at -161 (book 59%, model 65%). Projected for 36.2 minutes; DAL +5.5 spread."
-      },
-      {
-        "player": "Jaylen Brown",
-        "player_id": "3917376",
-        "game_id": "401909976",
-        "team": "PHI",
-        "opp": "TOR",
-        "home": true,
-        "time_et": "5:00 PM",
-        "stat": "pra",
-        "side": "over",
-        "line": 29.5,
-        "line_type": "alt",
-        "book_line": 32.5,
-        "proj": 35.0,
-        "prob": 0.661,
-        "book_prob": 0.64,
-        "gap": 0.02,
-        "odds": -202,
-        "book": "DraftKings",
-        "blowout_risk": "medium",
-        "minutes_confidence": "high",
-        "green": 0.0772,
-        "reasoning": "Model projects 35.0 PRA, 8% over the book's 32.5 line; this leg is 29.5 at -202 (book 64%, model 66%). Projected for 35.2 minutes; PHI -8.5 spread."
-      },
       {
         "player": "Anthony Davis",
         "player_id": "6583",
@@ -3262,27 +3214,120 @@
         "side": "over",
         "line": 29.5,
         "line_type": "alt",
-        "book_line": 35.5,
+        "book_line": 33.5,
         "proj": 37.0,
-        "prob": 0.724,
-        "book_prob": 0.71,
-        "gap": 0.014,
-        "odds": -287,
+        "prob": 0.722,
+        "book_prob": 0.67,
+        "gap": 0.052,
+        "odds": -234,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "green": 0.0432,
-        "reasoning": "Model projects 37.0 PRA, 4% over the book's 35.5 line; this leg is 29.5 at -287 (book 71%, model 72%). Projected for 33.7 minutes; WAS +10.5 spread."
+        "green": 0.1039,
+        "reasoning": "Model projects 37.0 PRA, 10% over the book's 33.5 line; this leg is 29.5 at -234 (book 67%, model 72%). Projected for 33.6 minutes; WAS +9.5 spread.",
+        "night_odds": -287
+      },
+      {
+        "player": "Cooper Flagg",
+        "player_id": "5041939",
+        "game_id": "401909978",
+        "team": "DAL",
+        "opp": "MIN",
+        "home": false,
+        "time_et": "6:00 PM",
+        "stat": "pra",
+        "side": "over",
+        "line": 34.5,
+        "line_type": "alt",
+        "book_line": 37.5,
+        "proj": 40.1,
+        "prob": 0.653,
+        "book_prob": 0.622,
+        "gap": 0.03,
+        "odds": -186,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "green": 0.069,
+        "reasoning": "Model projects 40.1 PRA, 7% over the book's 37.5 line; this leg is 34.5 at -186 (book 62%, model 65%). Projected for 36.2 minutes; DAL +5.5 spread.",
+        "night_odds": -161
+      },
+      {
+        "player": "Devin Booker",
+        "player_id": "3136193",
+        "game_id": "401909979",
+        "team": "PHX",
+        "opp": "CHA",
+        "home": true,
+        "time_et": "7:00 PM",
+        "stat": "pra",
+        "side": "over",
+        "line": 29.5,
+        "line_type": "alt",
+        "book_line": 33.5,
+        "proj": 34.4,
+        "prob": 0.64,
+        "book_prob": 0.662,
+        "gap": -0.021,
+        "odds": -224,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "green": 0.027,
+        "reasoning": "Model projects 34.4 PRA, 3% over the book's 33.5 line; this leg is 29.5 at -224 (book 66%, model 64%). Projected for 34.7 minutes; PHX -6.5 spread."
       }
     ],
-    "combined_odds": 227,
+    "combined_odds": 217,
     "status": "pending",
     "first_picked_at": "2026-11-12T10:30:12Z",
     "refreshed": 2,
-    "checked_at": "2026-11-12T15:30:42Z"
+    "checked_at": "2026-11-12T20:40:05Z",
+    "morning_repick": true,
+    "night": {
+      "combined_odds": 227,
+      "picked_at": "2026-11-12T15:30:42Z",
+      "legs": [
+        {
+          "player": "Cooper Flagg",
+          "stat": "pra",
+          "line": 34.5,
+          "odds": -161
+        },
+        {
+          "player": "Jaylen Brown",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -202
+        },
+        {
+          "player": "Anthony Davis",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -287
+        }
+      ]
+    },
+    "morning_checked": "2026-11-12T20:40:05Z",
+    "changes": [
+      {
+        "out": {
+          "player": "Jaylen Brown",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -202
+        },
+        "why": "re-picked from the morning board",
+        "in": {
+          "player": "Devin Booker",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -224
+        }
+      }
+    ]
   },
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-12T15:30:42Z",
+  "generated_at": "2026-11-12T20:40:05Z",
   "early_history": [
     {
       "date": "2026-10-20",
