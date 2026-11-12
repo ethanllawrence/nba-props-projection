@@ -1,6 +1,6 @@
 {
  "date": "2026-11-12",
- "fetched_at": "2026-11-12T10:30:10Z",
+ "fetched_at": "2026-11-12T13:20:00Z",
  "source": "ESPN (DraftKings)",
  "games": {
   "TOR @ PHI": {
@@ -24,8 +24,8 @@
   "DET @ WAS": {
    "home": "WAS",
    "away": "DET",
-   "lines": 6,
-   "ladders": 6,
+   "lines": 13,
+   "ladders": 13,
    "line_stats": [
     "assists",
     "points",
@@ -42,12 +42,20 @@
   "DAL @ MIN": {
    "home": "MIN",
    "away": "DAL",
-   "lines": 6,
-   "ladders": 0,
+   "lines": 13,
+   "ladders": 12,
    "line_stats": [
-    "points"
+    "assists",
+    "points",
+    "pra",
+    "rebounds"
    ],
-   "ladder_stats": []
+   "ladder_stats": [
+    "assists",
+    "points",
+    "pra",
+    "rebounds"
+   ]
   },
   "CHA @ PHX": {
    "home": "PHX",
@@ -72,29 +80,29 @@
   "lebron james": {
    "points": {
     "line": 16.5,
-    "over": -122,
-    "under": -104,
+    "over": -113,
+    "under": -112,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "assists": {
     "line": 6.5,
-    "over": -102,
-    "under": -129,
+    "over": -109,
+    "under": -120,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
     "line": 6.5,
-    "over": -143,
-    "under": 108,
+    "over": -150,
+    "under": 114,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "pra": {
     "line": 30.5,
     "over": -114,
-    "under": -115,
+    "under": -116,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -102,28 +110,28 @@
   "joel embiid": {
    "points": {
     "line": 19.5,
-    "over": -108,
-    "under": -118,
+    "over": -105,
+    "under": -122,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "assists": {
     "line": 3.5,
-    "over": 122,
-    "under": -162,
+    "over": 116,
+    "under": -153,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
     "line": 8.5,
-    "over": -114,
-    "under": -116,
+    "over": -116,
+    "under": -113,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "pra": {
     "line": 31.5,
-    "over": -116,
+    "over": -115,
     "under": -114,
     "book": "DraftKings",
     "source": "ESPN"
@@ -132,29 +140,29 @@
   "jakob poeltl": {
    "points": {
     "line": 10.5,
-    "over": 107,
-    "under": -137,
+    "over": -111,
+    "under": -115,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "assists": {
-    "line": 1.5,
-    "over": -185,
-    "under": 140,
+    "line": 2.5,
+    "over": 140,
+    "under": -186,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
-    "line": 8.5,
-    "over": 106,
-    "under": -140,
+    "line": 7.5,
+    "over": -137,
+    "under": 104,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "pra": {
-    "line": 20.5,
-    "over": -119,
-    "under": -111,
+    "line": 21.5,
+    "over": -105,
+    "under": -126,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -162,8 +170,8 @@
   "jaylen brown": {
    "points": {
     "line": 22.5,
-    "over": -123,
-    "under": -104,
+    "over": -118,
+    "under": -108,
     "book": "DraftKings",
     "source": "ESPN"
    },
@@ -176,15 +184,15 @@
    },
    "rebounds": {
     "line": 6.5,
-    "over": -117,
-    "under": -112,
+    "over": -106,
+    "under": -124,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "pra": {
     "line": 33.5,
-    "over": -108,
-    "under": -122,
+    "over": -106,
+    "under": -124,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -192,22 +200,22 @@
   "rj barrett": {
    "points": {
     "line": 21.5,
-    "over": -114,
-    "under": -112,
+    "over": -115,
+    "under": -111,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "assists": {
     "line": 3.5,
-    "over": -148,
-    "under": 113,
+    "over": -156,
+    "under": 118,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
     "line": 5.5,
-    "over": -141,
-    "under": 107,
+    "over": -147,
+    "under": 111,
     "book": "DraftKings",
     "source": "ESPN"
    },
@@ -221,30 +229,30 @@
   },
   "immanuel quickley": {
    "points": {
-    "line": 14.5,
-    "over": -126,
-    "under": -101,
+    "line": 15.5,
+    "over": -104,
+    "under": -122,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "assists": {
-    "line": 5.5,
-    "over": 114,
-    "under": -150,
+    "line": 4.5,
+    "over": -158,
+    "under": 120,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
     "line": 3.5,
-    "over": -108,
-    "under": -122,
+    "over": -115,
+    "under": -115,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "pra": {
     "line": 24.5,
-    "over": -106,
-    "under": -124,
+    "over": -109,
+    "under": -121,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -259,22 +267,22 @@
    },
    "assists": {
     "line": 5.5,
-    "over": -142,
-    "under": 108,
+    "over": -151,
+    "under": 114,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
     "line": 3.5,
-    "over": -121,
-    "under": -109,
+    "over": -125,
+    "under": -105,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "pra": {
     "line": 34.5,
-    "over": -105,
-    "under": -125,
+    "over": -109,
+    "under": -121,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -282,29 +290,29 @@
   "ja kobe walter": {
    "points": {
     "line": 10.5,
-    "over": -126,
-    "under": -101,
+    "over": -120,
+    "under": -107,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "assists": {
     "line": 1.5,
-    "over": -125,
-    "under": -105,
+    "over": -131,
+    "under": -101,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
     "line": 3.5,
-    "over": -149,
-    "under": 113,
+    "over": -153,
+    "under": 116,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "pra": {
     "line": 16.5,
-    "over": -126,
-    "under": -104,
+    "over": -121,
+    "under": -109,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -319,15 +327,15 @@
    },
    "assists": {
     "line": 1.5,
-    "over": -175,
-    "under": 132,
+    "over": -151,
+    "under": 114,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
-    "line": 4.5,
-    "over": -156,
-    "under": 118,
+    "line": 5.5,
+    "over": 113,
+    "under": -149,
     "book": "DraftKings",
     "source": "ESPN"
    },
@@ -349,8 +357,8 @@
    },
    "assists": {
     "line": 2.5,
-    "over": -165,
-    "under": 125,
+    "over": -172,
+    "under": 130,
     "book": "DraftKings",
     "source": "ESPN"
    },
@@ -372,29 +380,98 @@
   "anthony davis": {
    "points": {
     "line": 22.5,
-    "over": -113,
-    "under": -113,
+    "over": -108,
+    "under": -118,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "assists": {
     "line": 2.5,
-    "over": 122,
-    "under": -161,
+    "over": 147,
+    "under": -196,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
     "line": 10.5,
-    "over": -123,
-    "under": -107,
+    "over": -105,
+    "under": -126,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "pra": {
-    "line": 35.5,
+    "line": 34.5,
     "over": -123,
     "under": -107,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "duncan robinson": {
+   "points": {
+    "line": 15.5,
+    "over": -117,
+    "under": -109,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "assists": {
+    "line": 2.5,
+    "over": 116,
+    "under": -153,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 2.5,
+    "over": -101,
+    "under": -130,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "pra": {
+    "line": 20.5,
+    "over": -119,
+    "under": -110,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "john collins": {
+   "points": {
+    "line": 12.5,
+    "over": -108,
+    "under": -118,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "assists": {
+    "line": 1.5,
+    "over": 147,
+    "under": -196,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 6.5,
+    "over": -145,
+    "under": 110,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "pra": {
+    "line": 20.5,
+    "over": -124,
+    "under": -106,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "kevin huerter": {
+   "points": {
+    "line": 9.5,
+    "over": -103,
+    "under": -124,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -402,29 +479,149 @@
   "trae young": {
    "points": {
     "line": 16.5,
-    "over": -114,
-    "under": -112,
+    "over": -115,
+    "under": -111,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "assists": {
-    "line": 8.5,
-    "over": 102,
-    "under": -134,
+    "line": 7.5,
+    "over": -138,
+    "under": 105,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
     "line": 2.5,
-    "over": -127,
-    "under": -104,
+    "over": -125,
+    "under": -105,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "pra": {
     "line": 27.5,
-    "over": -122,
-    "under": -108,
+    "over": -117,
+    "under": -112,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "paul reed": {
+   "points": {
+    "line": 10.5,
+    "over": -106,
+    "under": -120,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "assists": {
+    "line": 1.5,
+    "over": -153,
+    "under": 116,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 6.5,
+    "over": -141,
+    "under": 107,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "pra": {
+    "line": 19.5,
+    "over": -115,
+    "under": -115,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "cade cunningham": {
+   "points": {
+    "line": 24.5,
+    "over": -119,
+    "under": -107,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "assists": {
+    "line": 8.5,
+    "over": -127,
+    "under": -103,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 5.5,
+    "over": -109,
+    "under": -121,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "pra": {
+    "line": 39.5,
+    "over": -113,
+    "under": -117,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "ausar thompson": {
+   "points": {
+    "line": 10.5,
+    "over": -113,
+    "under": -113,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "assists": {
+    "line": 4.5,
+    "over": 110,
+    "under": -145,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 7.5,
+    "over": 100,
+    "under": -132,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "pra": {
+    "line": 22.5,
+    "over": -118,
+    "under": -111,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "daniss jenkins": {
+   "points": {
+    "line": 14.5,
+    "over": -103,
+    "under": -124,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "assists": {
+    "line": 4.5,
+    "over": -154,
+    "under": 116,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 3.5,
+    "over": -104,
+    "under": -126,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "pra": {
+    "line": 22.5,
+    "over": -125,
+    "under": -105,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -432,29 +629,29 @@
   "aj dybantsa": {
    "points": {
     "line": 16.5,
-    "over": -109,
-    "under": -117,
+    "over": -107,
+    "under": -119,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "assists": {
     "line": 2.5,
-    "over": 121,
-    "under": -159,
+    "over": 129,
+    "under": -171,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
     "line": 5.5,
-    "over": -116,
-    "under": -114,
+    "over": -112,
+    "under": -117,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "pra": {
     "line": 24.5,
-    "over": -118,
-    "under": -112,
+    "over": -112,
+    "under": -118,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -462,29 +659,29 @@
   "alex sarr": {
    "points": {
     "line": 9.5,
-    "over": -122,
-    "under": -104,
+    "over": -111,
+    "under": -115,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "assists": {
     "line": 1.5,
-    "over": -124,
-    "under": -106,
+    "over": -123,
+    "under": -107,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
     "line": 6.5,
-    "over": -129,
-    "under": -102,
+    "over": -125,
+    "under": -105,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "pra": {
     "line": 18.5,
-    "over": -116,
-    "under": -113,
+    "over": -108,
+    "under": -122,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -492,117 +689,8 @@
   "kyshawn george": {
    "points": {
     "line": 14.5,
-    "over": -114,
-    "under": -112,
-    "book": "DraftKings",
-    "source": "ESPN"
-   },
-   "assists": {
-    "line": 4.5,
-    "over": 125,
-    "under": -165,
-    "book": "DraftKings",
-    "source": "ESPN"
-   },
-   "rebounds": {
-    "line": 4.5,
-    "over": -117,
-    "under": -113,
-    "book": "DraftKings",
-    "source": "ESPN"
-   },
-   "pra": {
-    "line": 23.5,
-    "over": -121,
-    "under": -108,
-    "book": "DraftKings",
-    "source": "ESPN"
-   }
-  },
-  "tre johnson": {
-   "points": {
-    "line": 7.5,
     "over": -111,
     "under": -115,
-    "book": "DraftKings",
-    "source": "ESPN"
-   }
-  },
-  "rudy gobert": {
-   "points": {
-    "line": 10.5,
-    "over": 101,
-    "under": -129,
-    "book": "DraftKings",
-    "source": "ESPN"
-   }
-  },
-  "ayo dosunmu": {
-   "points": {
-    "line": 17.5,
-    "over": -111,
-    "under": -115,
-    "book": "DraftKings",
-    "source": "ESPN"
-   }
-  },
-  "jaden mcdaniels": {
-   "points": {
-    "line": 17.5,
-    "over": -118,
-    "under": -108,
-    "book": "DraftKings",
-    "source": "ESPN"
-   }
-  },
-  "lamelo ball": {
-   "points": {
-    "line": 20.5,
-    "over": -107,
-    "under": -119,
-    "book": "DraftKings",
-    "source": "ESPN"
-   }
-  },
-  "terrence shannon": {
-   "points": {
-    "line": 9.5,
-    "over": -107,
-    "under": -120,
-    "book": "DraftKings",
-    "source": "ESPN"
-   }
-  },
-  "jonathan kuminga": {
-   "points": {
-    "line": 13.5,
-    "over": -119,
-    "under": -107,
-    "book": "DraftKings",
-    "source": "ESPN"
-   }
-  },
-  "royce o neale": {
-   "points": {
-    "line": 6.5,
-    "over": -120,
-    "under": -106,
-    "book": "DraftKings",
-    "source": "ESPN"
-   },
-   "rebounds": {
-    "line": 3.5,
-    "over": -106,
-    "under": -124,
-    "book": "DraftKings",
-    "source": "ESPN"
-   }
-  },
-  "grayson allen": {
-   "points": {
-    "line": 17.5,
-    "over": -110,
-    "under": -116,
     "book": "DraftKings",
     "source": "ESPN"
    },
@@ -614,46 +702,428 @@
     "source": "ESPN"
    },
    "rebounds": {
-    "line": 3.5,
-    "over": 113,
-    "under": -149,
+    "line": 4.5,
+    "over": -117,
+    "under": -112,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "pra": {
-    "line": 24.5,
-    "over": -125,
-    "under": -105,
+    "line": 23.5,
+    "over": -112,
+    "under": -117,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "tre johnson": {
+   "points": {
+    "line": 8.5,
+    "over": -113,
+    "under": -113,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "kyrie irving": {
+   "points": {
+    "line": 22.5,
+    "over": -110,
+    "under": -116,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "assists": {
+    "line": 4.5,
+    "over": 115,
+    "under": -152,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 3.5,
+    "over": -105,
+    "under": -125,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "pra": {
+    "line": 30.5,
+    "over": -110,
+    "under": -119,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "rudy gobert": {
+   "points": {
+    "line": 9.5,
+    "over": -134,
+    "under": 105,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "assists": {
+    "line": 1.5,
+    "over": 109,
+    "under": -143,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 10.5,
+    "over": -137,
+    "under": 104,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "pra": {
+    "line": 22.5,
+    "over": -116,
+    "under": -113,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "daniel gafford": {
+   "points": {
+    "line": 7.5,
+    "over": -130,
+    "under": 102,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 5.5,
+    "over": -109,
+    "under": -120,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "pra": {
+    "line": 14.5,
+    "over": -124,
+    "under": -106,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "p j washington": {
+   "points": {
+    "line": 13.5,
+    "over": -113,
+    "under": -112,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 6.5,
+    "over": -108,
+    "under": -122,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "pra": {
+    "line": 21.5,
+    "over": -119,
+    "under": -111,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "naji marshall": {
+   "points": {
+    "line": 9.5,
+    "over": -128,
+    "under": 100,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "assists": {
+    "line": 2.5,
+    "over": -149,
+    "under": 113,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 3.5,
+    "over": 124,
+    "under": -164,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "pra": {
+    "line": 16.5,
+    "over": -108,
+    "under": -122,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "ayo dosunmu": {
+   "points": {
+    "line": 17.5,
+    "over": -115,
+    "under": -111,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "assists": {
+    "line": 4.5,
+    "over": -102,
+    "under": -129,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 3.5,
+    "over": -150,
+    "under": 114,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "pra": {
+    "line": 26.5,
+    "over": -109,
+    "under": -121,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "jaden mcdaniels": {
+   "points": {
+    "line": 17.5,
+    "over": -102,
+    "under": -125,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "assists": {
+    "line": 2.5,
+    "over": -173,
+    "under": 131,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 4.5,
+    "over": -153,
+    "under": 116,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "pra": {
+    "line": 25.5,
+    "over": -117,
+    "under": -113,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "lamelo ball": {
+   "points": {
+    "line": 20.5,
+    "over": -116,
+    "under": -110,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "assists": {
+    "line": 6.5,
+    "over": -119,
+    "under": -111,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 3.5,
+    "over": -161,
+    "under": 122,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "pra": {
+    "line": 31.5,
+    "over": -118,
+    "under": -111,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "terrence shannon": {
+   "points": {
+    "line": 9.5,
+    "over": -112,
+    "under": -114,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "jonathan kuminga": {
+   "points": {
+    "line": 13.5,
+    "over": -115,
+    "under": -110,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "assists": {
+    "line": 2.5,
+    "over": -104,
+    "under": -127,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 5.5,
+    "over": -113,
+    "under": -116,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "pra": {
+    "line": 22.5,
+    "over": -104,
+    "under": -127,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "santi aldama": {
+   "points": {
+    "line": 7.5,
+    "over": -101,
+    "under": -126,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 3.5,
+    "over": -128,
+    "under": -103,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "cooper flagg": {
+   "points": {
+    "line": 23.5,
+    "over": -123,
+    "under": -104,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "assists": {
+    "line": 6.5,
+    "over": 117,
+    "under": -154,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 6.5,
+    "over": 103,
+    "under": -136,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "pra": {
+    "line": 36.5,
+    "over": -123,
+    "under": -107,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "caleb martin": {
+   "rebounds": {
+    "line": 2.5,
+    "over": 108,
+    "under": -142,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "pra": {
+    "line": 7.5,
+    "over": -132,
+    "under": 101,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "royce o neale": {
+   "points": {
+    "line": 6.5,
+    "over": -117,
+    "under": -109,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 3.5,
+    "over": -113,
+    "under": -116,
+    "book": "DraftKings",
+    "source": "ESPN"
+   }
+  },
+  "grayson allen": {
+   "points": {
+    "line": 17.5,
+    "over": -118,
+    "under": -108,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "assists": {
+    "line": 3.5,
+    "over": -150,
+    "under": 114,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "rebounds": {
+    "line": 3.5,
+    "over": 109,
+    "under": -143,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "pra": {
+    "line": 25.5,
+    "over": -111,
+    "under": -118,
     "book": "DraftKings",
     "source": "ESPN"
    }
   },
   "devin booker": {
    "points": {
-    "line": 25.5,
-    "over": -106,
-    "under": -120,
+    "line": 24.5,
+    "over": -123,
+    "under": -104,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "assists": {
     "line": 4.5,
-    "over": -128,
-    "under": -102,
+    "over": -133,
+    "under": 101,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
-    "line": 3.5,
-    "over": 126,
-    "under": -166,
+    "line": 2.5,
+    "over": -165,
+    "under": 125,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "pra": {
     "line": 33.5,
-    "over": -117,
-    "under": -112,
+    "over": -107,
+    "under": -123,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -668,15 +1138,15 @@
    },
    "assists": {
     "line": 1.5,
-    "over": -190,
-    "under": 143,
+    "over": -175,
+    "under": 132,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
     "line": 3.5,
-    "over": -117,
-    "under": -112,
+    "over": -123,
+    "under": -107,
     "book": "DraftKings",
     "source": "ESPN"
    },
@@ -691,29 +1161,29 @@
   "miles bridges": {
    "points": {
     "line": 15.5,
-    "over": -105,
-    "under": -122,
+    "over": -102,
+    "under": -125,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "assists": {
     "line": 2.5,
-    "over": -120,
-    "under": -110,
+    "over": -114,
+    "under": -115,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
     "line": 6.5,
-    "over": -128,
-    "under": -103,
+    "over": -137,
+    "under": 104,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "pra": {
     "line": 24.5,
-    "over": -126,
-    "under": -105,
+    "over": -123,
+    "under": -107,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -721,15 +1191,15 @@
   "jordan goodwin": {
    "points": {
     "line": 7.5,
-    "over": -104,
-    "under": -123,
+    "over": -105,
+    "under": -121,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
     "line": 3.5,
-    "over": 127,
-    "under": -168,
+    "over": 123,
+    "under": -162,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -737,29 +1207,29 @@
   "collin gillespie": {
    "points": {
     "line": 7.5,
-    "over": -130,
-    "under": 102,
+    "over": -128,
+    "under": 100,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "assists": {
-    "line": 2.5,
-    "over": -171,
-    "under": 130,
+    "line": 3.5,
+    "over": 123,
+    "under": -162,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
     "line": 2.5,
-    "over": -129,
-    "under": -102,
+    "over": -135,
+    "under": 102,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "pra": {
-    "line": 13.5,
-    "over": -129,
-    "under": -102,
+    "line": 14.5,
+    "over": -103,
+    "under": -128,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -781,8 +1251,8 @@
    },
    "rebounds": {
     "line": 2.5,
-    "over": -110,
-    "under": -119,
+    "over": -119,
+    "under": -111,
     "book": "DraftKings",
     "source": "ESPN"
    },
@@ -796,30 +1266,30 @@
   },
   "naz reid": {
    "points": {
-    "line": 20.5,
-    "over": -103,
-    "under": -123,
+    "line": 19.5,
+    "over": -117,
+    "under": -109,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "assists": {
     "line": 2.5,
-    "over": -113,
-    "under": -116,
+    "over": -109,
+    "under": -120,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
-    "line": 8.5,
-    "over": -108,
-    "under": -122,
+    "line": 7.5,
+    "over": -144,
+    "under": 110,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "pra": {
-    "line": 31.5,
-    "over": -117,
-    "under": -113,
+    "line": 30.5,
+    "over": -123,
+    "under": -107,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -827,15 +1297,15 @@
   "moussa diabate": {
    "points": {
     "line": 8.5,
-    "over": 101,
-    "under": -128,
+    "over": 108,
+    "under": -138,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "assists": {
     "line": 1.5,
-    "over": -157,
-    "under": 119,
+    "over": -155,
+    "under": 117,
     "book": "DraftKings",
     "source": "ESPN"
    },
@@ -848,8 +1318,8 @@
    },
    "pra": {
     "line": 19.5,
-    "over": -111,
-    "under": -119,
+    "over": -106,
+    "under": -124,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -864,15 +1334,15 @@
    },
    "assists": {
     "line": 2.5,
-    "over": -162,
-    "under": 123,
+    "over": -146,
+    "under": 111,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
     "line": 3.5,
-    "over": -139,
-    "under": 105,
+    "over": -135,
+    "under": 103,
     "book": "DraftKings",
     "source": "ESPN"
    },
@@ -887,15 +1357,15 @@
   "ryan kalkbrenner": {
    "points": {
     "line": 5.5,
-    "over": -121,
-    "under": -105,
+    "over": -116,
+    "under": -110,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
     "line": 4.5,
-    "over": -114,
-    "under": -115,
+    "over": -119,
+    "under": -111,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -903,15 +1373,15 @@
   "oso ighodaro": {
    "points": {
     "line": 6.5,
-    "over": -114,
-    "under": -112,
+    "over": -112,
+    "under": -114,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "assists": {
     "line": 2.5,
-    "over": 123,
-    "under": -163,
+    "over": 129,
+    "under": -170,
     "book": "DraftKings",
     "source": "ESPN"
    },
@@ -926,8 +1396,8 @@
   "sion james": {
    "points": {
     "line": 8.5,
-    "over": -104,
-    "under": -123,
+    "over": 100,
+    "under": -127,
     "book": "DraftKings",
     "source": "ESPN"
    },
@@ -940,8 +1410,8 @@
    },
    "rebounds": {
     "line": 3.5,
-    "over": -140,
-    "under": 106,
+    "over": -150,
+    "under": 114,
     "book": "DraftKings",
     "source": "ESPN"
    },
@@ -956,15 +1426,15 @@
   "khaman maluach": {
    "points": {
     "line": 6.5,
-    "over": -103,
-    "under": -124,
+    "over": 101,
+    "under": -129,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "rebounds": {
     "line": 5.5,
-    "over": 103,
-    "under": -135,
+    "over": 100,
+    "under": -131,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -975,51 +1445,51 @@
    "points": [
     {
      "line": 9.5,
-     "over": -950,
+     "over": -910,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": -475,
+     "over": -440,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": -198,
+     "over": -187,
      "book": "DraftKings"
     },
     {
      "line": 16.5,
-     "over": -123,
+     "over": -114,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": 104,
+     "over": 112,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 165,
+     "over": 174,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 487,
+     "over": 521,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 1380,
-     "book": "DraftKings"
-    },
-    {
-     "line": 34.5,
-     "over": 2800,
+     "over": 1460,
      "book": "DraftKings"
     }
    ],
    "assists": [
+    {
+     "line": 2.5,
+     "over": -3900,
+     "book": "DraftKings"
+    },
     {
      "line": 3.5,
      "over": -1040,
@@ -1027,79 +1497,84 @@
     },
     {
      "line": 4.5,
-     "over": -402,
+     "over": -420,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": -192,
+     "over": -209,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": -102,
+     "over": -109,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 175,
+     "over": 164,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 316,
+     "over": 283,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 570,
+     "over": 483,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": 930,
+     "over": 840,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 1500,
+     "over": 1360,
      "book": "DraftKings"
     },
     {
      "line": 12.5,
-     "over": 2200,
+     "over": 2000,
+     "book": "DraftKings"
+    },
+    {
+     "line": 13.5,
+     "over": 2800,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 3.5,
-     "over": -1400,
+     "over": -1520,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": -561,
+     "over": -582,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": -266,
+     "over": -282,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": -143,
+     "over": -151,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 121,
+     "over": 118,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 201,
+     "over": 200,
      "book": "DraftKings"
     },
     {
@@ -1109,27 +1584,27 @@
     },
     {
      "line": 10.5,
-     "over": 525,
+     "over": 532,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 870,
+     "over": 850,
      "book": "DraftKings"
     },
     {
      "line": 12.5,
-     "over": 1340,
+     "over": 1320,
      "book": "DraftKings"
     },
     {
      "line": 13.5,
-     "over": 2000,
+     "over": 1960,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 2700,
+     "over": 2600,
      "book": "DraftKings"
     }
    ],
@@ -1141,17 +1616,17 @@
     },
     {
      "line": 24.5,
-     "over": -388,
+     "over": -395,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": -135,
+     "over": -136,
      "book": "DraftKings"
     },
     {
      "line": 30.5,
-     "over": -112,
+     "over": -114,
      "book": "DraftKings"
     },
     {
@@ -1161,17 +1636,17 @@
     },
     {
      "line": 39.5,
-     "over": 435,
+     "over": 436,
      "book": "DraftKings"
     },
     {
      "line": 44.5,
-     "over": 1040,
+     "over": 1020,
      "book": "DraftKings"
     },
     {
      "line": 49.5,
-     "over": 2000,
+     "over": 1980,
      "book": "DraftKings"
     }
    ]
@@ -1180,121 +1655,121 @@
    "points": [
     {
      "line": 11.5,
-     "over": -930,
+     "over": -890,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": -375,
+     "over": -359,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": -173,
+     "over": -166,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": -108,
+     "over": -105,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 264,
+     "over": 276,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 710,
+     "over": 780,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 1840,
+     "over": 1900,
      "book": "DraftKings"
     }
    ],
    "assists": [
     {
      "line": 2.5,
-     "over": -188,
+     "over": -199,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 123,
+     "over": 117,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 262,
+     "over": 245,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 527,
+     "over": 502,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 1040,
+     "over": 960,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 1860,
+     "over": 1680,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 2900,
+     "over": 2800,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 4.5,
-     "over": -1440,
+     "over": -1520,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": -640,
+     "over": -660,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": -332,
+     "over": -343,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": -191,
+     "over": -196,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": -114,
+     "over": -116,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 141,
+     "over": 139,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": 227,
+     "over": 224,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 357,
+     "over": 346,
      "book": "DraftKings"
     },
     {
      "line": 12.5,
-     "over": 551,
+     "over": 540,
      "book": "DraftKings"
     },
     {
@@ -1304,17 +1779,17 @@
     },
     {
      "line": 14.5,
-     "over": 1280,
+     "over": 1320,
      "book": "DraftKings"
     },
     {
      "line": 15.5,
-     "over": 1920,
+     "over": 1860,
      "book": "DraftKings"
     },
     {
      "line": 16.5,
-     "over": 2600,
+     "over": 2400,
      "book": "DraftKings"
     }
    ],
@@ -1326,7 +1801,7 @@
     },
     {
      "line": 24.5,
-     "over": -453,
+     "over": -452,
      "book": "DraftKings"
     },
     {
@@ -1336,7 +1811,7 @@
     },
     {
      "line": 31.5,
-     "over": -116,
+     "over": -115,
      "book": "DraftKings"
     },
     {
@@ -1346,17 +1821,17 @@
     },
     {
      "line": 39.5,
-     "over": 347,
+     "over": 357,
      "book": "DraftKings"
     },
     {
      "line": 44.5,
-     "over": 770,
+     "over": 800,
      "book": "DraftKings"
     },
     {
      "line": 49.5,
-     "over": 1620,
+     "over": 1660,
      "book": "DraftKings"
     }
    ]
@@ -1365,183 +1840,188 @@
    "points": [
     {
      "line": 5.5,
-     "over": -730,
+     "over": -830,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": -297,
+     "over": -340,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": -143,
+     "over": -166,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": 107,
+     "over": -111,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 130,
+     "over": 110,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 326,
+     "over": 269,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": 690,
+     "over": 573,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 1160,
+     "over": 950,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 2700,
      "book": "DraftKings"
     }
    ],
    "assists": [
     {
-     "line": 1.5,
-     "over": -187,
-     "book": "DraftKings"
-    },
-    {
      "line": 2.5,
-     "over": 152,
+     "over": 139,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 381,
+     "over": 345,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 880,
+     "over": 790,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 1780,
+     "over": 1640,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 2900,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 3.5,
-     "over": -2300,
+     "over": -2200,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": -890,
+     "over": -830,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": -445,
+     "over": -411,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": -252,
+     "over": -231,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": -152,
+     "over": -141,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 106,
+     "over": 113,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 163,
+     "over": 178,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": 251,
+     "over": 273,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 380,
+     "over": 417,
      "book": "DraftKings"
     },
     {
      "line": 12.5,
-     "over": 574,
+     "over": 640,
      "book": "DraftKings"
     },
     {
      "line": 13.5,
-     "over": 870,
+     "over": 950,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 1240,
+     "over": 1420,
      "book": "DraftKings"
     },
     {
      "line": 15.5,
-     "over": 1760,
+     "over": 2000,
      "book": "DraftKings"
     },
     {
      "line": 16.5,
-     "over": 2400,
+     "over": 2700,
      "book": "DraftKings"
     }
    ],
    "pra": [
     {
      "line": 9.5,
-     "over": -4400,
+     "over": -4700,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": -523,
+     "over": -548,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": -149,
+     "over": -159,
      "book": "DraftKings"
     },
     {
-     "line": 20.5,
-     "over": -119,
+     "line": 21.5,
+     "over": -105,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 196,
+     "over": 175,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 520,
+     "over": 456,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 1320,
+     "over": 1140,
      "book": "DraftKings"
     },
     {
      "line": 39.5,
-     "over": 2600,
+     "over": 2300,
      "book": "DraftKings"
     }
    ]
@@ -1550,49 +2030,49 @@
    "points": [
     {
      "line": 14.5,
-     "over": -810,
+     "over": -730,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": -362,
+     "over": -339,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": -226,
+     "over": -216,
      "book": "DraftKings"
     },
     {
      "line": 22.5,
-     "over": -123,
+     "over": -118,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 121,
+     "over": 125,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 300,
+     "over": 320,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 740,
+     "over": 790,
      "book": "DraftKings"
     },
     {
      "line": 39.5,
-     "over": 1680,
+     "over": 1840,
      "book": "DraftKings"
     }
    ],
    "assists": [
     {
      "line": 2.5,
-     "over": -243,
+     "over": -248,
      "book": "DraftKings"
     },
     {
@@ -1602,136 +2082,136 @@
     },
     {
      "line": 4.5,
-     "over": 203,
+     "over": 202,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 410,
+     "over": 399,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 790,
+     "over": 780,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 1520,
+     "over": 1380,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 2500,
+     "over": 2400,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 2.5,
-     "over": -3400,
+     "over": -2900,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -990,
+     "over": -840,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": -418,
+     "over": -369,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": -212,
+     "over": -190,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": -117,
+     "over": -107,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 146,
+     "over": 165,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 245,
+     "over": 277,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 414,
+     "over": 454,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": 680,
+     "over": 750,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 1060,
+     "over": 1180,
      "book": "DraftKings"
     },
     {
      "line": 12.5,
-     "over": 1600,
+     "over": 1780,
      "book": "DraftKings"
     },
     {
      "line": 13.5,
-     "over": 2300,
+     "over": 2500,
      "book": "DraftKings"
     }
    ],
    "pra": [
     {
      "line": 19.5,
-     "over": -2300,
+     "over": -1980,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": -610,
+     "over": -551,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": -224,
+     "over": -208,
      "book": "DraftKings"
     },
     {
      "line": 33.5,
-     "over": -111,
+     "over": -107,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 106,
+     "over": 110,
      "book": "DraftKings"
     },
     {
      "line": 39.5,
-     "over": 237,
+     "over": 251,
      "book": "DraftKings"
     },
     {
      "line": 44.5,
-     "over": 501,
+     "over": 529,
      "book": "DraftKings"
     },
     {
      "line": 49.5,
-     "over": 1020,
+     "over": 1080,
      "book": "DraftKings"
     },
     {
      "line": 54.5,
-     "over": 1860,
+     "over": 2000,
      "book": "DraftKings"
     }
    ]
@@ -1740,42 +2220,42 @@
    "points": [
     {
      "line": 11.5,
-     "over": -1540,
+     "over": -1480,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": -574,
+     "over": -570,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": -275,
+     "over": -272,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": -176,
+     "over": -175,
      "book": "DraftKings"
     },
     {
      "line": 21.5,
-     "over": -114,
+     "over": -116,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 160,
+     "over": 159,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 415,
+     "over": 418,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 1060,
+     "over": 1040,
      "book": "DraftKings"
     },
     {
@@ -1787,89 +2267,94 @@
    "assists": [
     {
      "line": 2.5,
-     "over": -361,
+     "over": -375,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -147,
+     "over": -152,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 147,
+     "over": 142,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 294,
+     "over": 290,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 586,
+     "over": 568,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 1080,
+     "over": 1060,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 2000,
+     "over": 1900,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 2900,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 2.5,
-     "over": -1660,
+     "over": -1800,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -610,
+     "over": -620,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": -280,
+     "over": -289,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": -145,
+     "over": -150,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 125,
+     "over": 118,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 220,
+     "over": 212,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 381,
+     "over": 363,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 640,
+     "over": 610,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": 1060,
+     "over": 1020,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 1700,
+     "over": 1660,
      "book": "DraftKings"
     },
     {
@@ -1881,42 +2366,42 @@
    "pra": [
     {
      "line": 19.5,
-     "over": -1540,
+     "over": -1560,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": -457,
+     "over": -455,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": -173,
+     "over": -179,
      "book": "DraftKings"
     },
     {
      "line": 31.5,
-     "over": -121,
+     "over": -125,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 137,
+     "over": 135,
      "book": "DraftKings"
     },
     {
      "line": 39.5,
-     "over": 314,
+     "over": 311,
      "book": "DraftKings"
     },
     {
      "line": 44.5,
-     "over": 710,
+     "over": 690,
      "book": "DraftKings"
     },
     {
      "line": 49.5,
-     "over": 1520,
+     "over": 1460,
      "book": "DraftKings"
     },
     {
@@ -1930,84 +2415,89 @@
    "points": [
     {
      "line": 7.5,
-     "over": -1100,
+     "over": -1120,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": -512,
+     "over": -531,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": -281,
+     "over": -285,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": -126,
+     "over": -132,
+     "book": "DraftKings"
+    },
+    {
+     "line": 15.5,
+     "over": -104,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": 161,
+     "over": 149,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 250,
+     "over": 232,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 730,
+     "over": 660,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 1880,
+     "over": 1680,
      "book": "DraftKings"
     }
    ],
    "assists": [
     {
      "line": 2.5,
-     "over": -1020,
+     "over": -1000,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -373,
+     "over": -348,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": -172,
+     "over": -159,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 114,
+     "over": 122,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 220,
+     "over": 233,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 421,
+     "over": 423,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 740,
+     "over": 760,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 1280,
+     "over": 1300,
      "book": "DraftKings"
     },
     {
@@ -2019,32 +2509,32 @@
    "rebounds": [
     {
      "line": 2.5,
-     "over": -264,
+     "over": -274,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -110,
+     "over": -115,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 198,
+     "over": 185,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 400,
+     "over": 371,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 770,
+     "over": 740,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 1400,
+     "over": 1340,
      "book": "DraftKings"
     },
     {
@@ -2056,22 +2546,66 @@
    "pra": [
     {
      "line": 14.5,
-     "over": -1360,
+     "over": -1340,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": -305,
+     "over": -313,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": -104,
+     "over": -109,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 259,
+     "over": 239,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 600,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": 1400,
+     "book": "DraftKings"
+    },
+    {
+     "line": 44.5,
+     "over": 2500,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "tyrese maxey": {
+   "points": [
+    {
+     "line": 14.5,
+     "over": -1320,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": -534,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": -318,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": -107,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 251,
      "book": "DraftKings"
     },
     {
@@ -2081,135 +2615,96 @@
     },
     {
      "line": 39.5,
-     "over": 1460,
-     "book": "DraftKings"
-    }
-   ]
-  },
-  "tyrese maxey": {
-   "points": [
-    {
-     "line": 14.5,
-     "over": -1280,
-     "book": "DraftKings"
-    },
-    {
-     "line": 17.5,
-     "over": -506,
-     "book": "DraftKings"
-    },
-    {
-     "line": 19.5,
-     "over": -311,
-     "book": "DraftKings"
-    },
-    {
-     "line": 24.5,
-     "over": -104,
-     "book": "DraftKings"
-    },
-    {
-     "line": 29.5,
-     "over": 254,
-     "book": "DraftKings"
-    },
-    {
-     "line": 34.5,
-     "over": 670,
-     "book": "DraftKings"
-    },
-    {
-     "line": 39.5,
-     "over": 1620,
+     "over": 1560,
      "book": "DraftKings"
     }
    ],
    "assists": [
     {
      "line": 2.5,
-     "over": -2000,
+     "over": -2100,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -630,
+     "over": -700,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": -280,
+     "over": -299,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": -143,
+     "over": -150,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 130,
+     "over": 122,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 230,
+     "over": 217,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 400,
+     "over": 370,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 680,
+     "over": 630,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": 1120,
+     "over": 1060,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 1740,
+     "over": 1640,
      "book": "DraftKings"
     },
     {
      "line": 12.5,
-     "over": 2500,
+     "over": 2400,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 2.5,
-     "over": -290,
+     "over": -297,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -121,
+     "over": -124,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 176,
+     "over": 170,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 364,
+     "over": 346,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 720,
+     "over": 700,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 1360,
+     "over": 1340,
      "book": "DraftKings"
     },
     {
@@ -2220,43 +2715,38 @@
    ],
    "pra": [
     {
-     "line": 19.5,
-     "over": -4700,
-     "book": "DraftKings"
-    },
-    {
      "line": 24.5,
-     "over": -820,
+     "over": -880,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": -266,
+     "over": -278,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": -106,
+     "over": -109,
      "book": "DraftKings"
     },
     {
      "line": 39.5,
-     "over": 221,
+     "over": 211,
      "book": "DraftKings"
     },
     {
      "line": 44.5,
-     "over": 503,
+     "over": 476,
      "book": "DraftKings"
     },
     {
      "line": 49.5,
-     "over": 1100,
+     "over": 1020,
      "book": "DraftKings"
     },
     {
      "line": 54.5,
-     "over": 2100,
+     "over": 1980,
      "book": "DraftKings"
     }
    ]
@@ -2265,69 +2755,69 @@
    "points": [
     {
      "line": 5.5,
-     "over": -680,
+     "over": -650,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": -327,
+     "over": -304,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": -168,
+     "over": -159,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": -126,
+     "over": -120,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 105,
+     "over": 111,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 228,
+     "over": 237,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": 482,
+     "over": 496,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 790,
+     "over": 780,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 2200,
+     "over": 2100,
      "book": "DraftKings"
     }
    ],
    "assists": [
     {
      "line": 1.5,
-     "over": -127,
+     "over": -128,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 232,
+     "over": 234,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 600,
+     "over": 620,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 1420,
+     "over": 1480,
      "book": "DraftKings"
     },
     {
@@ -2339,32 +2829,32 @@
    "rebounds": [
     {
      "line": 2.5,
-     "over": -361,
+     "over": -370,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -152,
+     "over": -157,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 135,
+     "over": 132,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 263,
+     "over": 254,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 486,
+     "over": 483,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 890,
+     "over": 900,
      "book": "DraftKings"
     },
     {
@@ -2381,32 +2871,32 @@
    "pra": [
     {
      "line": 9.5,
-     "over": -1040,
+     "over": -970,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": -206,
+     "over": -199,
      "book": "DraftKings"
     },
     {
      "line": 16.5,
-     "over": -127,
+     "over": -122,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 161,
+     "over": 165,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 476,
+     "over": 488,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 1280,
+     "over": 1300,
      "book": "DraftKings"
     },
     {
@@ -2420,158 +2910,158 @@
    "points": [
     {
      "line": 5.5,
-     "over": -940,
+     "over": -910,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": -376,
+     "over": -363,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": -188,
+     "over": -183,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": -102,
+     "over": -101,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 221,
+     "over": 227,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": 472,
+     "over": 497,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 760,
+     "over": 800,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 2200,
+     "over": 2300,
      "book": "DraftKings"
     }
    ],
    "assists": [
     {
      "line": 1.5,
-     "over": -176,
+     "over": -151,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 167,
+     "over": 192,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 414,
+     "over": 490,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 970,
+     "over": 1160,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 2000,
+     "over": 2300,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 2.5,
-     "over": -800,
+     "over": -830,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -317,
+     "over": -330,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": -157,
+     "over": -162,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 118,
+     "over": 114,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 213,
+     "over": 201,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 368,
+     "over": 343,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 620,
+     "over": 566,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 1020,
+     "over": 930,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": 1640,
+     "over": 1460,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 2500,
+     "over": 2200,
      "book": "DraftKings"
     }
    ],
    "pra": [
     {
      "line": 9.5,
-     "over": -1860,
+     "over": -1620,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": -298,
+     "over": -295,
      "book": "DraftKings"
     },
     {
      "line": 18.5,
-     "over": -112,
+     "over": -111,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 113,
+     "over": 112,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 317,
+     "over": 326,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 850,
+     "over": 890,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 1940,
+     "over": 2000,
      "book": "DraftKings"
     }
    ]
@@ -2580,12 +3070,12 @@
    "points": [
     {
      "line": 7.5,
-     "over": -780,
+     "over": -800,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": -384,
+     "over": -390,
      "book": "DraftKings"
     },
     {
@@ -2595,27 +3085,27 @@
     },
     {
      "line": 13.5,
-     "over": -125,
+     "over": -126,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 102,
+     "over": 101,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": 206,
+     "over": 208,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 327,
+     "over": 328,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 1020,
+     "over": 1000,
      "book": "DraftKings"
     },
     {
@@ -2627,59 +3117,59 @@
    "assists": [
     {
      "line": 2.5,
-     "over": -166,
+     "over": -172,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 140,
+     "over": 136,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 299,
+     "over": 292,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 610,
+     "over": 599,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 1180,
+     "over": 1160,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 2000,
+     "over": 2100,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 2.5,
-     "over": -1580,
+     "over": -1620,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -592,
+     "over": -577,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": -274,
+     "over": -276,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": -146,
+     "over": -149,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 121,
+     "over": 120,
      "book": "DraftKings"
     },
     {
@@ -2694,17 +3184,17 @@
     },
     {
      "line": 9.5,
-     "over": 586,
+     "over": 579,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": 940,
+     "over": 910,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 1460,
+     "over": 1420,
      "book": "DraftKings"
     },
     {
@@ -2714,44 +3204,44 @@
     },
     {
      "line": 13.5,
-     "over": 2900,
+     "over": 2800,
      "book": "DraftKings"
     }
    ],
    "pra": [
     {
      "line": 14.5,
-     "over": -980,
+     "over": -970,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": -263,
+     "over": -265,
      "book": "DraftKings"
     },
     {
      "line": 23.5,
-     "over": -111,
+     "over": -114,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 110,
+     "over": 107,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 289,
+     "over": 280,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 750,
+     "over": 700,
      "book": "DraftKings"
     },
     {
      "line": 39.5,
-     "over": 1680,
+     "over": 1600,
      "book": "DraftKings"
     }
    ]
@@ -2759,593 +3249,543 @@
   "anthony davis": {
    "points": [
     {
+     "line": 11.5,
+     "over": -1860,
+     "book": "DraftKings"
+    },
+    {
      "line": 14.5,
-     "over": -740,
+     "over": -660,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": -338,
+     "over": -309,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": -215,
+     "over": -194,
      "book": "DraftKings"
     },
     {
      "line": 22.5,
-     "over": -114,
+     "over": -105,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 131,
+     "over": 140,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 340,
+     "over": 374,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 860,
+     "over": 970,
      "book": "DraftKings"
     },
     {
      "line": 39.5,
-     "over": 2000,
+     "over": 2200,
      "book": "DraftKings"
     }
    ],
    "assists": [
     {
      "line": 2.5,
-     "over": 122,
+     "over": 148,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 298,
+     "over": 375,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 680,
+     "over": 850,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 1400,
-     "book": "DraftKings"
-    },
-    {
-     "line": 6.5,
-     "over": 2500,
+     "over": 1800,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
+     "line": 4.5,
+     "over": -4100,
+     "book": "DraftKings"
+    },
+    {
      "line": 5.5,
-     "over": -1820,
+     "over": -1480,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": -890,
+     "over": -700,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": -493,
+     "over": -397,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": -294,
+     "over": -247,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": -186,
+     "over": -160,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": -123,
+     "over": -105,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 125,
+     "over": 143,
      "book": "DraftKings"
     },
     {
      "line": 12.5,
-     "over": 183,
+     "over": 215,
      "book": "DraftKings"
     },
     {
      "line": 13.5,
-     "over": 273,
+     "over": 316,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 388,
+     "over": 471,
      "book": "DraftKings"
     },
     {
      "line": 15.5,
-     "over": 572,
-     "book": "DraftKings"
-    },
-    {
-     "line": 16.5,
-     "over": 840,
-     "book": "DraftKings"
-    },
-    {
-     "line": 17.5,
-     "over": 1180,
-     "book": "DraftKings"
-    },
-    {
-     "line": 18.5,
-     "over": 1600,
-     "book": "DraftKings"
-    },
-    {
-     "line": 19.5,
-     "over": 2200,
-     "book": "DraftKings"
-    }
-   ],
-   "pra": [
-    {
-     "line": 19.5,
-     "over": -3900,
-     "book": "DraftKings"
-    },
-    {
-     "line": 24.5,
-     "over": -940,
-     "book": "DraftKings"
-    },
-    {
-     "line": 29.5,
-     "over": -342,
-     "book": "DraftKings"
-    },
-    {
-     "line": 34.5,
-     "over": -145,
-     "book": "DraftKings"
-    },
-    {
-     "line": 35.5,
-     "over": -123,
-     "book": "DraftKings"
-    },
-    {
-     "line": 39.5,
-     "over": 151,
-     "book": "DraftKings"
-    },
-    {
-     "line": 44.5,
-     "over": 320,
-     "book": "DraftKings"
-    },
-    {
-     "line": 49.5,
-     "over": 680,
-     "book": "DraftKings"
-    },
-    {
-     "line": 54.5,
-     "over": 1340,
-     "book": "DraftKings"
-    },
-    {
-     "line": 59.5,
-     "over": 2200,
-     "book": "DraftKings"
-    }
-   ]
-  },
-  "trae young": {
-   "points": [
-    {
-     "line": 7.5,
-     "over": -1760,
-     "book": "DraftKings"
-    },
-    {
-     "line": 9.5,
-     "over": -780,
-     "book": "DraftKings"
-    },
-    {
-     "line": 11.5,
-     "over": -398,
-     "book": "DraftKings"
-    },
-    {
-     "line": 14.5,
-     "over": -180,
-     "book": "DraftKings"
-    },
-    {
-     "line": 16.5,
-     "over": -114,
-     "book": "DraftKings"
-    },
-    {
-     "line": 17.5,
-     "over": 109,
-     "book": "DraftKings"
-    },
-    {
-     "line": 19.5,
-     "over": 167,
-     "book": "DraftKings"
-    },
-    {
-     "line": 24.5,
-     "over": 475,
-     "book": "DraftKings"
-    },
-    {
-     "line": 29.5,
-     "over": 1240,
-     "book": "DraftKings"
-    },
-    {
-     "line": 34.5,
-     "over": 2600,
-     "book": "DraftKings"
-    }
-   ],
-   "assists": [
-    {
-     "line": 4.5,
-     "over": -1380,
-     "book": "DraftKings"
-    },
-    {
-     "line": 5.5,
-     "over": -599,
-     "book": "DraftKings"
-    },
-    {
-     "line": 6.5,
-     "over": -300,
-     "book": "DraftKings"
-    },
-    {
-     "line": 7.5,
-     "over": -169,
-     "book": "DraftKings"
-    },
-    {
-     "line": 8.5,
-     "over": 102,
-     "book": "DraftKings"
-    },
-    {
-     "line": 9.5,
-     "over": 169,
-     "book": "DraftKings"
-    },
-    {
-     "line": 10.5,
-     "over": 276,
-     "book": "DraftKings"
-    },
-    {
-     "line": 11.5,
-     "over": 445,
-     "book": "DraftKings"
-    },
-    {
-     "line": 12.5,
-     "over": 730,
-     "book": "DraftKings"
-    },
-    {
-     "line": 13.5,
-     "over": 1140,
-     "book": "DraftKings"
-    },
-    {
-     "line": 14.5,
-     "over": 1780,
-     "book": "DraftKings"
-    },
-    {
-     "line": 15.5,
-     "over": 2400,
-     "book": "DraftKings"
-    }
-   ],
-   "rebounds": [
-    {
-     "line": 2.5,
-     "over": -125,
-     "book": "DraftKings"
-    },
-    {
-     "line": 3.5,
-     "over": 189,
-     "book": "DraftKings"
-    },
-    {
-     "line": 4.5,
-     "over": 416,
-     "book": "DraftKings"
-    },
-    {
-     "line": 5.5,
-     "over": 860,
-     "book": "DraftKings"
-    },
-    {
-     "line": 6.5,
-     "over": 1700,
-     "book": "DraftKings"
-    },
-    {
-     "line": 7.5,
-     "over": 2800,
-     "book": "DraftKings"
-    }
-   ],
-   "pra": [
-    {
-     "line": 19.5,
-     "over": -750,
-     "book": "DraftKings"
-    },
-    {
-     "line": 24.5,
-     "over": -235,
-     "book": "DraftKings"
-    },
-    {
-     "line": 27.5,
-     "over": -125,
-     "book": "DraftKings"
-    },
-    {
-     "line": 29.5,
-     "over": 118,
-     "book": "DraftKings"
-    },
-    {
-     "line": 34.5,
-     "over": 290,
-     "book": "DraftKings"
-    },
-    {
-     "line": 39.5,
      "over": 690,
      "book": "DraftKings"
     },
     {
-     "line": 44.5,
-     "over": 1500,
-     "book": "DraftKings"
-    },
-    {
-     "line": 49.5,
-     "over": 2600,
-     "book": "DraftKings"
-    }
-   ]
-  },
-  "aj dybantsa": {
-   "points": [
-    {
-     "line": 7.5,
-     "over": -1720,
-     "book": "DraftKings"
-    },
-    {
-     "line": 9.5,
-     "over": -750,
-     "book": "DraftKings"
-    },
-    {
-     "line": 11.5,
-     "over": -400,
-     "book": "DraftKings"
-    },
-    {
-     "line": 14.5,
-     "over": -176,
-     "book": "DraftKings"
-    },
-    {
      "line": 16.5,
-     "over": -109,
+     "over": 980,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": 114,
+     "over": 1400,
+     "book": "DraftKings"
+    },
+    {
+     "line": 18.5,
+     "over": 1960,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 178,
+     "over": 2500,
+     "book": "DraftKings"
+    }
+   ],
+   "pra": [
+    {
+     "line": 19.5,
+     "over": -3100,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 508,
+     "over": -740,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 1320,
+     "over": -289,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 2800,
+     "over": -124,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": 175,
+     "book": "DraftKings"
+    },
+    {
+     "line": 44.5,
+     "over": 381,
+     "book": "DraftKings"
+    },
+    {
+     "line": 49.5,
+     "over": 800,
+     "book": "DraftKings"
+    },
+    {
+     "line": 54.5,
+     "over": 1580,
+     "book": "DraftKings"
+    },
+    {
+     "line": 59.5,
+     "over": 2500,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "duncan robinson": {
+   "points": [
+    {
+     "line": 7.5,
+     "over": -1400,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": -597,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": -320,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": -150,
+     "book": "DraftKings"
+    },
+    {
+     "line": 15.5,
+     "over": -119,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": 131,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 205,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 592,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 1520,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 3000,
      "book": "DraftKings"
     }
    ],
    "assists": [
     {
      "line": 2.5,
-     "over": 119,
+     "over": 116,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 289,
+     "over": 294,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 660,
+     "over": 670,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 1380,
+     "over": 1440,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 2500,
+     "over": 2600,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 2.5,
-     "over": -1320,
+     "over": -103,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -471,
+     "over": 235,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": -222,
+     "over": 542,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": -116,
+     "over": 1160,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 153,
+     "over": 2200,
      "book": "DraftKings"
-    },
-    {
-     "line": 7.5,
-     "over": 265,
-     "book": "DraftKings"
-    },
-    {
-     "line": 8.5,
-     "over": 444,
-     "book": "DraftKings"
-    },
+    }
+   ],
+   "pra": [
     {
      "line": 9.5,
-     "over": 730,
+     "over": -4400,
      "book": "DraftKings"
     },
     {
-     "line": 10.5,
+     "line": 14.5,
+     "over": -522,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": -151,
+     "book": "DraftKings"
+    },
+    {
+     "line": 20.5,
+     "over": -121,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 190,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 511,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
      "over": 1200,
      "book": "DraftKings"
     },
     {
+     "line": 39.5,
+     "over": 2300,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "john collins": {
+   "points": [
+    {
+     "line": 5.5,
+     "over": -1460,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": -560,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": -270,
+     "book": "DraftKings"
+    },
+    {
      "line": 11.5,
-     "over": 1880,
+     "over": -146,
      "book": "DraftKings"
     },
     {
      "line": 12.5,
-     "over": 2600,
+     "over": -109,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": 153,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": 334,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 546,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 1700,
+     "book": "DraftKings"
+    }
+   ],
+   "assists": [
+    {
+     "line": 1.5,
+     "over": 148,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 480,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 1320,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 2700,
+     "book": "DraftKings"
+    }
+   ],
+   "rebounds": [
+    {
+     "line": 3.5,
+     "over": -1260,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": -519,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": -260,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": -146,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 118,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 194,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 323,
+     "book": "DraftKings"
+    },
+    {
+     "line": 10.5,
+     "over": 526,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 840,
+     "book": "DraftKings"
+    },
+    {
+     "line": 12.5,
+     "over": 1280,
+     "book": "DraftKings"
+    },
+    {
+     "line": 13.5,
+     "over": 1920,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": 2700,
      "book": "DraftKings"
     }
    ],
    "pra": [
     {
      "line": 14.5,
-     "over": -1240,
+     "over": -574,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": -329,
+     "over": -158,
+     "book": "DraftKings"
+    },
+    {
+     "line": 20.5,
+     "over": -126,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": -115,
+     "over": 190,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 218,
+     "over": 544,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 523,
-     "book": "DraftKings"
-    },
-    {
-     "line": 39.5,
-     "over": 1160,
-     "book": "DraftKings"
-    },
-    {
-     "line": 44.5,
-     "over": 2100,
+     "over": 1360,
      "book": "DraftKings"
     }
    ]
   },
-  "alex sarr": {
+  "kevin huerter": {
    "points": [
     {
      "line": 5.5,
-     "over": -517,
+     "over": -372,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": -234,
+     "over": -187,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": -123,
+     "over": -103,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 146,
+     "over": 167,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 335,
+     "over": 354,
      "book": "DraftKings"
     },
     {
@@ -3355,48 +3795,287 @@
     },
     {
      "line": 19.5,
-     "over": 1160,
+     "over": 1180,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 2900,
+     "over": 2800,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "trae young": {
+   "points": [
+    {
+     "line": 7.5,
+     "over": -1800,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": -780,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": -413,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": -182,
+     "book": "DraftKings"
+    },
+    {
+     "line": 16.5,
+     "over": -115,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": 110,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 166,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 466,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 1180,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 2600,
      "book": "DraftKings"
     }
    ],
    "assists": [
     {
-     "line": 1.5,
-     "over": -124,
-     "book": "DraftKings"
-    },
-    {
-     "line": 2.5,
-     "over": 235,
-     "book": "DraftKings"
-    },
-    {
      "line": 3.5,
-     "over": 610,
+     "over": -3400,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 1380,
+     "over": -1120,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 2500,
+     "over": -489,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": -251,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": -139,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 122,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 202,
+     "book": "DraftKings"
+    },
+    {
+     "line": 10.5,
+     "over": 335,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 549,
+     "book": "DraftKings"
+    },
+    {
+     "line": 12.5,
+     "over": 890,
+     "book": "DraftKings"
+    },
+    {
+     "line": 13.5,
+     "over": 1420,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": 2100,
+     "book": "DraftKings"
+    },
+    {
+     "line": 15.5,
+     "over": 2900,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 2.5,
-     "over": -3800,
+     "over": -126,
      "book": "DraftKings"
     },
+    {
+     "line": 3.5,
+     "over": 188,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 420,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 870,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 1720,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 2800,
+     "book": "DraftKings"
+    }
+   ],
+   "pra": [
+    {
+     "line": 14.5,
+     "over": -4300,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": -680,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": -207,
+     "book": "DraftKings"
+    },
+    {
+     "line": 27.5,
+     "over": -116,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 124,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 309,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": 740,
+     "book": "DraftKings"
+    },
+    {
+     "line": 44.5,
+     "over": 1580,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "paul reed": {
+   "points": [
+    {
+     "line": 5.5,
+     "over": -750,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": -297,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": -150,
+     "book": "DraftKings"
+    },
+    {
+     "line": 10.5,
+     "over": -106,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 123,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": 291,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": 650,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 1040,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 2800,
+     "book": "DraftKings"
+    }
+   ],
+   "assists": [
+    {
+     "line": 1.5,
+     "over": -154,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 188,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 479,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 1080,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 2200,
+     "book": "DraftKings"
+    }
+   ],
+   "rebounds": [
     {
      "line": 3.5,
      "over": -1100,
@@ -3404,226 +4083,611 @@
     },
     {
      "line": 4.5,
-     "over": -464,
+     "over": -482,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": -233,
+     "over": -255,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": -130,
+     "over": -145,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 128,
+     "over": 115,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 212,
+     "over": 186,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 339,
+     "over": 296,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": 540,
+     "over": 466,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 850,
+     "over": 730,
      "book": "DraftKings"
     },
     {
      "line": 12.5,
-     "over": 1300,
+     "over": 1140,
      "book": "DraftKings"
     },
     {
      "line": 13.5,
-     "over": 1900,
+     "over": 1720,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 2500,
+     "over": 2400,
      "book": "DraftKings"
     }
    ],
    "pra": [
     {
      "line": 9.5,
-     "over": -2200,
+     "over": -2900,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": -321,
-     "book": "DraftKings"
-    },
-    {
-     "line": 18.5,
-     "over": -117,
+     "over": -394,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 108,
-     "book": "DraftKings"
-    },
-    {
-     "line": 24.5,
-     "over": 312,
-     "book": "DraftKings"
-    },
-    {
-     "line": 29.5,
-     "over": 840,
-     "book": "DraftKings"
-    },
-    {
-     "line": 34.5,
-     "over": 1960,
-     "book": "DraftKings"
-    }
-   ]
-  },
-  "kyshawn george": {
-   "points": [
-    {
-     "line": 7.5,
-     "over": -810,
-     "book": "DraftKings"
-    },
-    {
-     "line": 9.5,
-     "over": -410,
-     "book": "DraftKings"
-    },
-    {
-     "line": 11.5,
-     "over": -237,
-     "book": "DraftKings"
-    },
-    {
-     "line": 14.5,
      "over": -115,
      "book": "DraftKings"
     },
     {
-     "line": 17.5,
-     "over": 172,
-     "book": "DraftKings"
-    },
-    {
-     "line": 19.5,
-     "over": 266,
-     "book": "DraftKings"
-    },
-    {
      "line": 24.5,
-     "over": 750,
+     "over": 254,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 1840,
+     "over": 690,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 1660,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "cade cunningham": {
+   "points": [
+    {
+     "line": 14.5,
+     "over": -1360,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": -565,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": -348,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": -118,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 215,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 543,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": 1300,
+     "book": "DraftKings"
+    },
+    {
+     "line": 44.5,
+     "over": 2600,
      "book": "DraftKings"
     }
    ],
    "assists": [
     {
-     "line": 2.5,
-     "over": -403,
-     "book": "DraftKings"
-    },
-    {
-     "line": 3.5,
-     "over": -168,
-     "book": "DraftKings"
-    },
-    {
      "line": 4.5,
-     "over": 125,
+     "over": -1980,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 242,
+     "over": -810,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 454,
+     "over": -400,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 810,
+     "over": -218,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 1420,
+     "over": -127,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
+     "over": 131,
+     "book": "DraftKings"
+    },
+    {
+     "line": 10.5,
+     "over": 217,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 358,
+     "book": "DraftKings"
+    },
+    {
+     "line": 12.5,
+     "over": 581,
+     "book": "DraftKings"
+    },
+    {
+     "line": 13.5,
+     "over": 930,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": 1420,
+     "book": "DraftKings"
+    },
+    {
+     "line": 15.5,
      "over": 2200,
+     "book": "DraftKings"
+    },
+    {
+     "line": 16.5,
+     "over": 2900,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 2.5,
-     "over": -558,
+     "over": -1400,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -244,
+     "over": -475,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": -120,
+     "over": -217,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 159,
+     "over": -111,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 283,
+     "over": 166,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 499,
+     "over": 298,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 860,
+     "over": 513,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 1440,
+     "over": 890,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
+     "over": 1460,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 2200,
+     "book": "DraftKings"
+    }
+   ],
+   "pra": [
+    {
+     "line": 24.5,
+     "over": -3000,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": -740,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": -270,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": -113,
+     "book": "DraftKings"
+    },
+    {
+     "line": 44.5,
+     "over": 200,
+     "book": "DraftKings"
+    },
+    {
+     "line": 49.5,
+     "over": 444,
+     "book": "DraftKings"
+    },
+    {
+     "line": 54.5,
+     "over": 990,
+     "book": "DraftKings"
+    },
+    {
+     "line": 59.5,
+     "over": 1940,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "ausar thompson": {
+   "points": [
+    {
+     "line": 5.5,
+     "over": -910,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": -344,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": -166,
+     "book": "DraftKings"
+    },
+    {
+     "line": 10.5,
+     "over": -114,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 115,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": 279,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": 630,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 1060,
+     "book": "DraftKings"
+    }
+   ],
+   "assists": [
+    {
+     "line": 2.5,
+     "over": -486,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -197,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 108,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 214,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 416,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 760,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 1400,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 2300,
+     "book": "DraftKings"
+    }
+   ],
+   "rebounds": [
+    {
+     "line": 3.5,
+     "over": -1440,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": -594,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": -305,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": -168,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 100,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 169,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 272,
+     "book": "DraftKings"
+    },
+    {
+     "line": 10.5,
+     "over": 437,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 690,
+     "book": "DraftKings"
+    },
+    {
+     "line": 12.5,
+     "over": 1040,
+     "book": "DraftKings"
+    },
+    {
+     "line": 13.5,
+     "over": 1600,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": 2300,
+     "book": "DraftKings"
+    }
+   ],
+   "pra": [
+    {
+     "line": 14.5,
+     "over": -1040,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": -239,
+     "book": "DraftKings"
+    },
+    {
+     "line": 22.5,
+     "over": -118,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 132,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 388,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 1060,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": 2300,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "daniss jenkins": {
+   "points": [
+    {
+     "line": 7.5,
+     "over": -920,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": -424,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": -228,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": -104,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": 196,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 305,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 900,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 2200,
+     "book": "DraftKings"
+    }
+   ],
+   "assists": [
+    {
+     "line": 2.5,
+     "over": -900,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -336,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": -154,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 128,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 234,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 424,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 760,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 1280,
+     "book": "DraftKings"
+    },
+    {
+     "line": 10.5,
+     "over": 2000,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 2900,
+     "book": "DraftKings"
+    }
+   ],
+   "rebounds": [
+    {
+     "line": 2.5,
+     "over": -249,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -106,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 196,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 385,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 730,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 1340,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
      "over": 2200,
      "book": "DraftKings"
     }
@@ -3631,37 +4695,207 @@
    "pra": [
     {
      "line": 14.5,
-     "over": -860,
+     "over": -970,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": -259,
+     "over": -247,
      "book": "DraftKings"
     },
     {
-     "line": 23.5,
-     "over": -122,
+     "line": 22.5,
+     "over": -125,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": -101,
+     "over": 120,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 244,
+     "over": 315,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 595,
+     "over": 780,
      "book": "DraftKings"
     },
     {
      "line": 39.5,
-     "over": 1320,
+     "over": 1700,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "aj dybantsa": {
+   "points": [
+    {
+     "line": 7.5,
+     "over": -1740,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": -720,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": -380,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": -168,
+     "book": "DraftKings"
+    },
+    {
+     "line": 16.5,
+     "over": -104,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": 122,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 190,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 536,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 1440,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 3000,
+     "book": "DraftKings"
+    }
+   ],
+   "assists": [
+    {
+     "line": 2.5,
+     "over": 130,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 320,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 740,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 1660,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 2800,
+     "book": "DraftKings"
+    }
+   ],
+   "rebounds": [
+    {
+     "line": 2.5,
+     "over": -1160,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -445,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": -210,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": -112,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 159,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 275,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 462,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 760,
+     "book": "DraftKings"
+    },
+    {
+     "line": 10.5,
+     "over": 1260,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 1920,
+     "book": "DraftKings"
+    },
+    {
+     "line": 12.5,
+     "over": 2700,
+     "book": "DraftKings"
+    }
+   ],
+   "pra": [
+    {
+     "line": 14.5,
+     "over": -1160,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": -308,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": -109,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 236,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 555,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": 1280,
      "book": "DraftKings"
     },
     {
@@ -3671,41 +4905,2270 @@
     }
    ]
   },
-  "tre johnson": {
+  "alex sarr": {
    "points": [
     {
      "line": 5.5,
-     "over": -216,
+     "over": -455,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": -112,
+     "over": -206,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 170,
+     "over": -108,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 299,
+     "over": 166,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 680,
+     "over": 370,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": 1380,
+     "over": 820,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
+     "over": 1300,
+     "book": "DraftKings"
+    }
+   ],
+   "assists": [
+    {
+     "line": 1.5,
+     "over": -123,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 240,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 620,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 1440,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 2600,
+     "book": "DraftKings"
+    }
+   ],
+   "rebounds": [
+    {
+     "line": 2.5,
+     "over": -3300,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -950,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": -419,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": -221,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": -125,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 132,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 214,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 342,
+     "book": "DraftKings"
+    },
+    {
+     "line": 10.5,
+     "over": 543,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 840,
+     "book": "DraftKings"
+    },
+    {
+     "line": 12.5,
+     "over": 1300,
+     "book": "DraftKings"
+    },
+    {
+     "line": 13.5,
+     "over": 1880,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": 2500,
+     "book": "DraftKings"
+    }
+   ],
+   "pra": [
+    {
+     "line": 9.5,
+     "over": -1720,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": -283,
+     "book": "DraftKings"
+    },
+    {
+     "line": 18.5,
+     "over": -105,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 118,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 347,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 930,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 2100,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "kyshawn george": {
+   "points": [
+    {
+     "line": 7.5,
+     "over": -820,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": -408,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": -232,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": -111,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": 175,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 266,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 760,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 1940,
+     "book": "DraftKings"
+    }
+   ],
+   "assists": [
+    {
+     "line": 2.5,
+     "over": -357,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -152,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 136,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 266,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 509,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 950,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 1660,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 2600,
+     "book": "DraftKings"
+    }
+   ],
+   "rebounds": [
+    {
+     "line": 2.5,
+     "over": -542,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -233,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": -115,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 164,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 295,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 528,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 920,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 1540,
+     "book": "DraftKings"
+    },
+    {
+     "line": 10.5,
+     "over": 2300,
+     "book": "DraftKings"
+    }
+   ],
+   "pra": [
+    {
+     "line": 14.5,
+     "over": -840,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": -254,
+     "book": "DraftKings"
+    },
+    {
+     "line": 23.5,
+     "over": -113,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 107,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 258,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 610,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": 1360,
+     "book": "DraftKings"
+    },
+    {
+     "line": 44.5,
+     "over": 2500,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "tre johnson": {
+   "points": [
+    {
+     "line": 5.5,
+     "over": -310,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": -157,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": -113,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 119,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 210,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": 460,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": 960,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 1460,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "kyrie irving": {
+   "points": [
+    {
+     "line": 11.5,
+     "over": -1580,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": -620,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": -299,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": -195,
+     "book": "DraftKings"
+    },
+    {
+     "line": 22.5,
+     "over": -110,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 131,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 312,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 730,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": 1660,
+     "book": "DraftKings"
+    }
+   ],
+   "assists": [
+    {
+     "line": 2.5,
+     "over": -443,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -179,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 119,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 240,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 469,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 920,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 1640,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 2500,
+     "book": "DraftKings"
+    }
+   ],
+   "rebounds": [
+    {
+     "line": 2.5,
+     "over": -252,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -105,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 206,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 414,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 810,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 1520,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 2400,
+     "book": "DraftKings"
+    }
+   ],
+   "pra": [
+    {
+     "line": 19.5,
+     "over": -1080,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": -331,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": -133,
+     "book": "DraftKings"
+    },
+    {
+     "line": 30.5,
+     "over": -112,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 175,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": 385,
+     "book": "DraftKings"
+    },
+    {
+     "line": 44.5,
+     "over": 820,
+     "book": "DraftKings"
+    },
+    {
+     "line": 49.5,
+     "over": 1680,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "rudy gobert": {
+   "points": [
+    {
+     "line": 5.5,
+     "over": -710,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": -281,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": -134,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 146,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": 386,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": 910,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 1540,
+     "book": "DraftKings"
+    }
+   ],
+   "assists": [
+    {
+     "line": 1.5,
+     "over": 108,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 334,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 890,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
      "over": 2000,
+     "book": "DraftKings"
+    }
+   ],
+   "rebounds": [
+    {
+     "line": 5.5,
+     "over": -2700,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": -1160,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": -620,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": -351,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": -219,
+     "book": "DraftKings"
+    },
+    {
+     "line": 10.5,
+     "over": -141,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 109,
+     "book": "DraftKings"
+    },
+    {
+     "line": 12.5,
+     "over": 164,
+     "book": "DraftKings"
+    },
+    {
+     "line": 13.5,
+     "over": 243,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": 359,
+     "book": "DraftKings"
+    },
+    {
+     "line": 15.5,
+     "over": 525,
+     "book": "DraftKings"
+    },
+    {
+     "line": 16.5,
+     "over": 760,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": 1060,
+     "book": "DraftKings"
+    },
+    {
+     "line": 18.5,
+     "over": 1480,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 1980,
+     "book": "DraftKings"
+    }
+   ],
+   "pra": [
+    {
+     "line": 14.5,
+     "over": -1180,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": -253,
+     "book": "DraftKings"
+    },
+    {
+     "line": 22.5,
+     "over": -120,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 131,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 398,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 1120,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": 2400,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "caleb martin": {
+   "points": [
+    {
+     "line": 3.5,
+     "over": -130,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 183,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 392,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 840,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 1600,
+     "book": "DraftKings"
+    }
+   ],
+   "assists": [
+    {
+     "line": 1.5,
+     "over": 125,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 391,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 1080,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 2500,
+     "book": "DraftKings"
+    }
+   ],
+   "rebounds": [
+    {
+     "line": 2.5,
+     "over": 109,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 273,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 620,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 1300,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 2300,
+     "book": "DraftKings"
+    }
+   ],
+   "pra": [
+    {
+     "line": 4.5,
+     "over": -594,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": -132,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 161,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": 850,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 2600,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "daniel gafford": {
+   "points": [
+    {
+     "line": 5.5,
+     "over": -291,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": -130,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 156,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 290,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": 720,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": 1540,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 2400,
+     "book": "DraftKings"
+    }
+   ],
+   "assists": [
+    {
+     "line": 1.5,
+     "over": 139,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 434,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 1160,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 2500,
+     "book": "DraftKings"
+    }
+   ],
+   "rebounds": [
+    {
+     "line": 2.5,
+     "over": -1060,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -410,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": -201,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": -108,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 160,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 274,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 457,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 770,
+     "book": "DraftKings"
+    },
+    {
+     "line": 10.5,
+     "over": 1200,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 1820,
+     "book": "DraftKings"
+    },
+    {
+     "line": 12.5,
+     "over": 2500,
+     "book": "DraftKings"
+    }
+   ],
+   "pra": [
+    {
+     "line": 9.5,
+     "over": -560,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": -122,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 274,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 820,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 2000,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "p j washington": {
+   "points": [
+    {
+     "line": 7.5,
+     "over": -750,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": -360,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": -195,
+     "book": "DraftKings"
+    },
+    {
+     "line": 13.5,
+     "over": -114,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": 113,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": 236,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 375,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 1160,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 2800,
+     "book": "DraftKings"
+    }
+   ],
+   "assists": [
+    {
+     "line": 1.5,
+     "over": 103,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 329,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 880,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 2000,
+     "book": "DraftKings"
+    }
+   ],
+   "rebounds": [
+    {
+     "line": 2.5,
+     "over": -3000,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -870,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": -376,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": -193,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": -107,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 166,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 284,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 465,
+     "book": "DraftKings"
+    },
+    {
+     "line": 10.5,
+     "over": 740,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 1160,
+     "book": "DraftKings"
+    },
+    {
+     "line": 12.5,
+     "over": 1840,
+     "book": "DraftKings"
+    },
+    {
+     "line": 13.5,
+     "over": 2600,
+     "book": "DraftKings"
+    }
+   ],
+   "pra": [
+    {
+     "line": 14.5,
+     "over": -740,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": -191,
+     "book": "DraftKings"
+    },
+    {
+     "line": 21.5,
+     "over": -121,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 155,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 425,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 1100,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": 2200,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "naji marshall": {
+   "points": [
+    {
+     "line": 5.5,
+     "over": -549,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": -247,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": -128,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 139,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": 309,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": 660,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 1060,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 2700,
+     "book": "DraftKings"
+    }
+   ],
+   "assists": [
+    {
+     "line": 2.5,
+     "over": -150,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 155,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 333,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 690,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 1340,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 2400,
+     "book": "DraftKings"
+    }
+   ],
+   "rebounds": [
+    {
+     "line": 2.5,
+     "over": -184,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 125,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 259,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 531,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 1000,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 1780,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 2800,
+     "book": "DraftKings"
+    }
+   ],
+   "pra": [
+    {
+     "line": 9.5,
+     "over": -830,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": -176,
+     "book": "DraftKings"
+    },
+    {
+     "line": 16.5,
+     "over": -108,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 181,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 536,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 1340,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "ayo dosunmu": {
+   "points": [
+    {
+     "line": 9.5,
+     "over": -1200,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": -569,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": -242,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": -116,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 136,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 394,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 1140,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 2600,
+     "book": "DraftKings"
+    }
+   ],
+   "assists": [
+    {
+     "line": 2.5,
+     "over": -583,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -222,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": -103,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 194,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 374,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 710,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 1280,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 2200,
+     "book": "DraftKings"
+    }
+   ],
+   "rebounds": [
+    {
+     "line": 2.5,
+     "over": -381,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -152,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 138,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 280,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 539,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 1000,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 1800,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 2700,
+     "book": "DraftKings"
+    }
+   ],
+   "pra": [
+    {
+     "line": 14.5,
+     "over": -3100,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": -536,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": -163,
+     "book": "DraftKings"
+    },
+    {
+     "line": 26.5,
+     "over": -109,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 164,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 417,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": 1040,
+     "book": "DraftKings"
+    },
+    {
+     "line": 44.5,
+     "over": 2100,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "jaden mcdaniels": {
+   "points": [
+    {
+     "line": 9.5,
+     "over": -910,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": -476,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": -212,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": -104,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 149,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 437,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 1240,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 2700,
+     "book": "DraftKings"
+    }
+   ],
+   "assists": [
+    {
+     "line": 2.5,
+     "over": -171,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 139,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 299,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 630,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 1220,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 2200,
+     "book": "DraftKings"
+    }
+   ],
+   "rebounds": [
+    {
+     "line": 2.5,
+     "over": -790,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -324,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": -154,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 123,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 225,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 397,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 680,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 1160,
+     "book": "DraftKings"
+    },
+    {
+     "line": 10.5,
+     "over": 1860,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 2600,
+     "book": "DraftKings"
+    }
+   ],
+   "pra": [
+    {
+     "line": 14.5,
+     "over": -1700,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": -415,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": -143,
+     "book": "DraftKings"
+    },
+    {
+     "line": 25.5,
+     "over": -118,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 179,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 457,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": 1100,
+     "book": "DraftKings"
+    },
+    {
+     "line": 44.5,
+     "over": 2200,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "lamelo ball": {
+   "points": [
+    {
+     "line": 9.5,
+     "over": -1900,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": -920,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": -412,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": -215,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": -142,
+     "book": "DraftKings"
+    },
+    {
+     "line": 20.5,
+     "over": -116,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 182,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 428,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 980,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": 2100,
+     "book": "DraftKings"
+    }
+   ],
+   "assists": [
+    {
+     "line": 2.5,
+     "over": -3500,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -990,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": -426,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": -217,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": -118,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 148,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 260,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 442,
+     "book": "DraftKings"
+    },
+    {
+     "line": 10.5,
+     "over": 740,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 1200,
+     "book": "DraftKings"
+    },
+    {
+     "line": 12.5,
+     "over": 1800,
+     "book": "DraftKings"
+    },
+    {
+     "line": 13.5,
+     "over": 2700,
+     "book": "DraftKings"
+    }
+   ],
+   "rebounds": [
+    {
+     "line": 2.5,
+     "over": -383,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -160,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 130,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 262,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 502,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 910,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 1600,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 2600,
+     "book": "DraftKings"
+    }
+   ],
+   "pra": [
+    {
+     "line": 19.5,
+     "over": -1280,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": -408,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": -167,
+     "book": "DraftKings"
+    },
+    {
+     "line": 31.5,
+     "over": -119,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 136,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": 293,
+     "book": "DraftKings"
+    },
+    {
+     "line": 44.5,
+     "over": 620,
+     "book": "DraftKings"
+    },
+    {
+     "line": 49.5,
+     "over": 1240,
+     "book": "DraftKings"
+    },
+    {
+     "line": 54.5,
+     "over": 2200,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "terrence shannon": {
+   "points": [
+    {
+     "line": 5.5,
+     "over": -433,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": -207,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": -112,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 158,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": 345,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": 750,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 1180,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 2900,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "jonathan kuminga": {
+   "points": [
+    {
+     "line": 7.5,
+     "over": -820,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": -382,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": -204,
+     "book": "DraftKings"
+    },
+    {
+     "line": 13.5,
+     "over": -118,
+     "book": "DraftKings"
+    },
+    {
+     "line": 14.5,
+     "over": 109,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": 228,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": 370,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 1180,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 2900,
+     "book": "DraftKings"
+    }
+   ],
+   "assists": [
+    {
+     "line": 2.5,
+     "over": -104,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 235,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 535,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 1180,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 2100,
+     "book": "DraftKings"
+    }
+   ],
+   "rebounds": [
+    {
+     "line": 2.5,
+     "over": -1240,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -459,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": -217,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": -111,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 163,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 285,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 495,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 830,
+     "book": "DraftKings"
+    },
+    {
+     "line": 10.5,
+     "over": 1340,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 2000,
+     "book": "DraftKings"
+    },
+    {
+     "line": 12.5,
+     "over": 2800,
+     "book": "DraftKings"
+    }
+   ],
+   "pra": [
+    {
+     "line": 14.5,
+     "over": -770,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": -202,
+     "book": "DraftKings"
+    },
+    {
+     "line": 22.5,
+     "over": -104,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": 146,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 398,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 1000,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": 2100,
+     "book": "DraftKings"
+    }
+   ]
+  },
+  "cooper flagg": {
+   "points": [
+    {
+     "line": 14.5,
+     "over": -1080,
+     "book": "DraftKings"
+    },
+    {
+     "line": 17.5,
+     "over": -459,
+     "book": "DraftKings"
+    },
+    {
+     "line": 19.5,
+     "over": -291,
+     "book": "DraftKings"
+    },
+    {
+     "line": 23.5,
+     "over": -123,
+     "book": "DraftKings"
+    },
+    {
+     "line": 24.5,
+     "over": -102,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": 253,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": 650,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": 1660,
+     "book": "DraftKings"
+    }
+   ],
+   "assists": [
+    {
+     "line": 2.5,
+     "over": -2100,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -670,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": -303,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": -156,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 117,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 199,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 337,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 578,
+     "book": "DraftKings"
+    },
+    {
+     "line": 10.5,
+     "over": 940,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 1540,
+     "book": "DraftKings"
+    },
+    {
+     "line": 12.5,
+     "over": 2300,
+     "book": "DraftKings"
+    }
+   ],
+   "rebounds": [
+    {
+     "line": 2.5,
+     "over": -2600,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -810,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": -353,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": -178,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 103,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 181,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 308,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 528,
+     "book": "DraftKings"
+    },
+    {
+     "line": 10.5,
+     "over": 860,
+     "book": "DraftKings"
+    },
+    {
+     "line": 11.5,
+     "over": 1400,
+     "book": "DraftKings"
+    },
+    {
+     "line": 12.5,
+     "over": 2100,
+     "book": "DraftKings"
+    },
+    {
+     "line": 13.5,
+     "over": 2900,
+     "book": "DraftKings"
+    }
+   ],
+   "pra": [
+    {
+     "line": 24.5,
+     "over": -1340,
+     "book": "DraftKings"
+    },
+    {
+     "line": 29.5,
+     "over": -439,
+     "book": "DraftKings"
+    },
+    {
+     "line": 34.5,
+     "over": -169,
+     "book": "DraftKings"
+    },
+    {
+     "line": 36.5,
+     "over": -122,
+     "book": "DraftKings"
+    },
+    {
+     "line": 39.5,
+     "over": 135,
+     "book": "DraftKings"
+    },
+    {
+     "line": 44.5,
+     "over": 306,
+     "book": "DraftKings"
+    },
+    {
+     "line": 49.5,
+     "over": 690,
+     "book": "DraftKings"
+    },
+    {
+     "line": 54.5,
+     "over": 1500,
+     "book": "DraftKings"
+    },
+    {
+     "line": 59.5,
+     "over": 2600,
      "book": "DraftKings"
     }
    ]
@@ -3714,7 +7177,7 @@
    "points": [
     {
      "line": 5.5,
-     "over": -199,
+     "over": -198,
      "book": "DraftKings"
     },
     {
@@ -3729,64 +7192,69 @@
     },
     {
      "line": 9.5,
-     "over": 204,
+     "over": 209,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 333,
+     "over": 334,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 730,
+     "over": 750,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": 1440,
+     "over": 1500,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 2100,
+     "over": 2200,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 2.5,
-     "over": -242,
+     "over": -257,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -106,
+     "over": -112,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 193,
+     "over": 181,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 375,
+     "over": 356,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 700,
+     "over": 680,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 1240,
+     "over": 1180,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 2000,
+     "over": 1900,
+     "book": "DraftKings"
+    },
+    {
+     "line": 9.5,
+     "over": 2700,
      "book": "DraftKings"
     }
    ]
@@ -3795,74 +7263,74 @@
    "points": [
     {
      "line": 9.5,
-     "over": -940,
+     "over": -1100,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": -483,
+     "over": -543,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": -220,
+     "over": -239,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": -109,
+     "over": -119,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 139,
+     "over": 128,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 388,
+     "over": 346,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 1000,
+     "over": 870,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 2200,
+     "over": 2000,
      "book": "DraftKings"
     }
    ],
    "assists": [
     {
      "line": 2.5,
-     "over": -389,
+     "over": -377,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -157,
+     "over": -152,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 137,
+     "over": 140,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 282,
+     "over": 283,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 540,
+     "over": 558,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 1040,
+     "over": 1060,
      "book": "DraftKings"
     },
     {
@@ -3872,39 +7340,39 @@
     },
     {
      "line": 9.5,
-     "over": 2800,
+     "over": 2900,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 2.5,
-     "over": -209,
+     "over": -220,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 113,
+     "over": 109,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 250,
+     "over": 232,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 501,
+     "over": 486,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 980,
+     "over": 960,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 1760,
+     "over": 1740,
      "book": "DraftKings"
     },
     {
@@ -3916,37 +7384,42 @@
    "pra": [
     {
      "line": 14.5,
-     "over": -1500,
+     "over": -1780,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": -359,
+     "over": -395,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": -125,
+     "over": -136,
+     "book": "DraftKings"
+    },
+    {
+     "line": 25.5,
+     "over": -112,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 200,
+     "over": 187,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 492,
+     "over": 447,
      "book": "DraftKings"
     },
     {
      "line": 39.5,
-     "over": 1140,
+     "over": 990,
      "book": "DraftKings"
     },
     {
      "line": 44.5,
-     "over": 2100,
+     "over": 2000,
      "book": "DraftKings"
     }
    ]
@@ -3955,42 +7428,37 @@
    "points": [
     {
      "line": 14.5,
-     "over": -1600,
+     "over": -1380,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": -610,
+     "over": -571,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": -375,
+     "over": -351,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": -131,
-     "book": "DraftKings"
-    },
-    {
-     "line": 25.5,
-     "over": -109,
+     "over": -123,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 197,
+     "over": 211,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 504,
+     "over": 532,
      "book": "DraftKings"
     },
     {
      "line": 39.5,
-     "over": 1240,
+     "over": 1340,
      "book": "DraftKings"
     },
     {
@@ -4002,126 +7470,126 @@
    "assists": [
     {
      "line": 2.5,
-     "over": -650,
+     "over": -690,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -262,
+     "over": -280,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": -129,
+     "over": -135,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 148,
+     "over": 140,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 273,
+     "over": 253,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 487,
+     "over": 456,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 880,
+     "over": 790,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 1480,
+     "over": 1360,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": 2300,
+     "over": 2200,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 2.5,
-     "over": -187,
+     "over": -168,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 126,
+     "over": 142,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 277,
+     "over": 313,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 588,
+     "over": 660,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 1140,
+     "over": 1320,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 2000,
+     "over": 2200,
      "book": "DraftKings"
     }
    ],
    "pra": [
     {
      "line": 19.5,
-     "over": -3100,
+     "over": -2600,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": -710,
+     "over": -640,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": -242,
+     "over": -224,
      "book": "DraftKings"
     },
     {
      "line": 33.5,
-     "over": -116,
+     "over": -107,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 104,
+     "over": 111,
      "book": "DraftKings"
     },
     {
      "line": 39.5,
-     "over": 243,
+     "over": 263,
      "book": "DraftKings"
     },
     {
      "line": 44.5,
-     "over": 585,
+     "over": 610,
      "book": "DraftKings"
     },
     {
      "line": 49.5,
-     "over": 1280,
+     "over": 1300,
      "book": "DraftKings"
     },
     {
      "line": 54.5,
-     "over": 2300,
+     "over": 2400,
      "book": "DraftKings"
     }
    ]
@@ -4130,12 +7598,12 @@
    "points": [
     {
      "line": 7.5,
-     "over": -1020,
+     "over": -970,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": -465,
+     "over": -469,
      "book": "DraftKings"
     },
     {
@@ -4145,86 +7613,86 @@
     },
     {
      "line": 14.5,
-     "over": -115,
+     "over": -116,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": 179,
+     "over": 178,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 288,
+     "over": 282,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 890,
+     "over": 840,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 2300,
+     "over": 2100,
      "book": "DraftKings"
     }
    ],
    "assists": [
     {
      "line": 1.5,
-     "over": -188,
+     "over": -176,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 158,
+     "over": 165,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 402,
+     "over": 415,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 940,
+     "over": 990,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 1960,
+     "over": 2000,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 2.5,
-     "over": -276,
+     "over": -300,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -117,
+     "over": -123,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 180,
+     "over": 169,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 360,
+     "over": 343,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 730,
+     "over": 660,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 1340,
+     "over": 1260,
      "book": "DraftKings"
     },
     {
@@ -4236,37 +7704,37 @@
    "pra": [
     {
      "line": 9.5,
-     "over": -4000,
+     "over": -3600,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": -505,
+     "over": -503,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": -142,
+     "over": -145,
      "book": "DraftKings"
     },
     {
      "line": 20.5,
-     "over": -115,
+     "over": -117,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 207,
+     "over": 201,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 575,
+     "over": 545,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 1480,
+     "over": 1360,
      "book": "DraftKings"
     }
    ]
@@ -4275,7 +7743,7 @@
    "points": [
     {
      "line": 7.5,
-     "over": -1380,
+     "over": -1320,
      "book": "DraftKings"
     },
     {
@@ -4285,12 +7753,12 @@
     },
     {
      "line": 11.5,
-     "over": -301,
+     "over": -295,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": -131,
+     "over": -129,
      "book": "DraftKings"
     },
     {
@@ -4300,17 +7768,17 @@
     },
     {
      "line": 17.5,
-     "over": 160,
+     "over": 162,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 264,
+     "over": 258,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 820,
+     "over": 830,
      "book": "DraftKings"
     },
     {
@@ -4322,79 +7790,79 @@
    "assists": [
     {
      "line": 2.5,
-     "over": -119,
+     "over": -112,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 209,
+     "over": 221,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 474,
+     "over": 508,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 1000,
+     "over": 1080,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 1980,
+     "over": 2000,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 3.5,
-     "over": -1300,
+     "over": -1360,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": -495,
+     "over": -516,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": -241,
+     "over": -254,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": -129,
+     "over": -138,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 134,
+     "over": 124,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 225,
+     "over": 211,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 373,
+     "over": 352,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": 610,
+     "over": 594,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 1020,
+     "over": 980,
      "book": "DraftKings"
     },
     {
      "line": 12.5,
-     "over": 1620,
+     "over": 1540,
      "book": "DraftKings"
     },
     {
@@ -4406,12 +7874,12 @@
    "pra": [
     {
      "line": 14.5,
-     "over": -2300,
+     "over": -2100,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": -400,
+     "over": -394,
      "book": "DraftKings"
     },
     {
@@ -4421,17 +7889,17 @@
     },
     {
      "line": 29.5,
-     "over": 234,
+     "over": 226,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 630,
+     "over": 610,
      "book": "DraftKings"
     },
     {
      "line": 39.5,
-     "over": 1520,
+     "over": 1500,
      "book": "DraftKings"
     }
    ]
@@ -4440,64 +7908,64 @@
    "points": [
     {
      "line": 5.5,
-     "over": -195,
+     "over": -193,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": -104,
+     "over": -105,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 173,
+     "over": 172,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 296,
+     "over": 290,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 620,
+     "over": 610,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": 1260,
+     "over": 1200,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 1860,
+     "over": 1720,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 2.5,
-     "over": -170,
+     "over": -176,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 127,
+     "over": 123,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 258,
+     "over": 246,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 488,
+     "over": 476,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 900,
+     "over": 880,
      "book": "DraftKings"
     },
     {
@@ -4516,27 +7984,27 @@
    "points": [
     {
      "line": 5.5,
-     "over": -246,
+     "over": -239,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": -129,
+     "over": -128,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 151,
+     "over": 148,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 256,
+     "over": 251,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 561,
+     "over": 556,
      "book": "DraftKings"
     },
     {
@@ -4546,103 +8014,103 @@
     },
     {
      "line": 19.5,
-     "over": 1720,
+     "over": 1700,
      "book": "DraftKings"
     }
    ],
    "assists": [
     {
      "line": 2.5,
-     "over": -173,
+     "over": -190,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 135,
+     "over": 123,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 287,
+     "over": 261,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 587,
+     "over": 539,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 1140,
+     "over": 1060,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 2000,
+     "over": 1900,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 2900,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 2.5,
-     "over": -129,
+     "over": -135,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 176,
+     "over": 171,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 371,
+     "over": 368,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 750,
+     "over": 720,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 1440,
+     "over": 1360,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 2500,
+     "over": 2300,
      "book": "DraftKings"
     }
    ],
    "pra": [
     {
      "line": 9.5,
-     "over": -410,
-     "book": "DraftKings"
-    },
-    {
-     "line": 13.5,
-     "over": -128,
+     "over": -417,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 100,
+     "over": -103,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 319,
+     "over": 305,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 940,
+     "over": 860,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 2100,
+     "over": 2000,
      "book": "DraftKings"
     }
    ]
@@ -4651,64 +8119,64 @@
    "points": [
     {
      "line": 5.5,
-     "over": -1700,
+     "over": -1540,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": -710,
+     "over": -660,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": -347,
+     "over": -339,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": -201,
+     "over": -196,
      "book": "DraftKings"
     },
     {
      "line": 13.5,
-     "over": -122,
+     "over": -120,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 102,
+     "over": 105,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": 198,
+     "over": 203,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 304,
+     "over": 307,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 830,
+     "over": 810,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 1960,
+     "over": 1880,
      "book": "DraftKings"
     }
    ],
    "assists": [
     {
      "line": 2.5,
-     "over": -232,
+     "over": -228,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 101,
+     "over": 102,
      "book": "DraftKings"
     },
     {
@@ -4718,7 +8186,7 @@
     },
     {
      "line": 5.5,
-     "over": 443,
+     "over": 441,
      "book": "DraftKings"
     },
     {
@@ -4728,7 +8196,7 @@
     },
     {
      "line": 7.5,
-     "over": 1520,
+     "over": 1540,
      "book": "DraftKings"
     },
     {
@@ -4740,44 +8208,44 @@
    "rebounds": [
     {
      "line": 2.5,
-     "over": -110,
+     "over": -118,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 211,
+     "over": 195,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 462,
+     "over": 418,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 920,
+     "over": 870,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 1700,
+     "over": 1640,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 2700,
+     "over": 2600,
      "book": "DraftKings"
     }
    ],
    "pra": [
     {
      "line": 9.5,
-     "over": -2400,
+     "over": -2200,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": -396,
+     "over": -392,
      "book": "DraftKings"
     },
     {
@@ -4787,22 +8255,22 @@
     },
     {
      "line": 20.5,
-     "over": -105,
+     "over": -104,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 203,
+     "over": 202,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 486,
+     "over": 474,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 1080,
+     "over": 1020,
      "book": "DraftKings"
     },
     {
@@ -4815,43 +8283,43 @@
   "naz reid": {
    "points": [
     {
+     "line": 9.5,
+     "over": -1800,
+     "book": "DraftKings"
+    },
+    {
      "line": 11.5,
-     "over": -940,
+     "over": -890,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": -398,
+     "over": -376,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": -196,
+     "over": -182,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": -127,
-     "book": "DraftKings"
-    },
-    {
-     "line": 20.5,
-     "over": -102,
+     "over": -120,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 216,
+     "over": 223,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 563,
+     "over": 579,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 1360,
+     "over": 1420,
      "book": "DraftKings"
     },
     {
@@ -4863,151 +8331,141 @@
    "assists": [
     {
      "line": 2.5,
-     "over": -112,
+     "over": -111,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 217,
+     "over": 220,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 486,
+     "over": 516,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 1020,
+     "over": 1080,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 1960,
+     "over": 2000,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 3.5,
-     "over": -3700,
+     "over": -2700,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": -1220,
+     "over": -950,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": -563,
+     "over": -466,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": -304,
+     "over": -252,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": -178,
+     "over": -145,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": -108,
+     "over": 112,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 147,
+     "over": 178,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": 229,
+     "over": 279,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 353,
+     "over": 431,
      "book": "DraftKings"
     },
     {
      "line": 12.5,
-     "over": 531,
+     "over": 670,
      "book": "DraftKings"
     },
     {
      "line": 13.5,
-     "over": 790,
+     "over": 1020,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 1180,
+     "over": 1500,
      "book": "DraftKings"
     },
     {
      "line": 15.5,
-     "over": 1680,
+     "over": 2100,
      "book": "DraftKings"
     },
     {
      "line": 16.5,
-     "over": 2300,
-     "book": "DraftKings"
-    },
-    {
-     "line": 17.5,
-     "over": 2900,
+     "over": 2700,
      "book": "DraftKings"
     }
    ],
    "pra": [
     {
      "line": 19.5,
-     "over": -1320,
+     "over": -1140,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": -414,
+     "over": -359,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": -163,
+     "over": -142,
      "book": "DraftKings"
     },
     {
-     "line": 31.5,
-     "over": -115,
+     "line": 30.5,
+     "over": -121,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 143,
+     "over": 159,
      "book": "DraftKings"
     },
     {
      "line": 39.5,
-     "over": 316,
+     "over": 364,
      "book": "DraftKings"
     },
     {
      "line": 44.5,
-     "over": 710,
+     "over": 800,
      "book": "DraftKings"
     },
     {
      "line": 49.5,
-     "over": 1420,
-     "book": "DraftKings"
-    },
-    {
-     "line": 54.5,
-     "over": 2400,
+     "over": 1600,
      "book": "DraftKings"
     }
    ]
@@ -5016,59 +8474,59 @@
    "points": [
     {
      "line": 5.5,
-     "over": -372,
+     "over": -344,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": -157,
+     "over": -147,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 101,
+     "over": 108,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 131,
+     "over": 142,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 251,
+     "over": 273,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 650,
+     "over": 720,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": 1480,
+     "over": 1580,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 2300,
+     "over": 2400,
      "book": "DraftKings"
     }
    ],
    "assists": [
     {
      "line": 1.5,
-     "over": -158,
+     "over": -156,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 190,
+     "over": 192,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 488,
+     "over": 495,
      "book": "DraftKings"
     },
     {
@@ -5085,99 +8543,99 @@
    "rebounds": [
     {
      "line": 4.5,
-     "over": -1580,
+     "over": -1600,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": -690,
+     "over": -740,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": -369,
+     "over": -390,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": -219,
+     "over": -225,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": -134,
+     "over": -138,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 118,
+     "over": 115,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": 184,
+     "over": 179,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 280,
+     "over": 272,
      "book": "DraftKings"
     },
     {
      "line": 12.5,
-     "over": 429,
+     "over": 409,
      "book": "DraftKings"
     },
     {
      "line": 13.5,
-     "over": 660,
+     "over": 610,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 970,
+     "over": 910,
      "book": "DraftKings"
     },
     {
      "line": 15.5,
-     "over": 1400,
+     "over": 1300,
      "book": "DraftKings"
     },
     {
      "line": 16.5,
-     "over": 1980,
+     "over": 1840,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": 2600,
+     "over": 2500,
      "book": "DraftKings"
     }
    ],
    "pra": [
     {
      "line": 9.5,
-     "over": -3900,
+     "over": -3300,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": -417,
+     "over": -407,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": -111,
+     "over": -106,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 283,
+     "over": 294,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 830,
+     "over": 850,
      "book": "DraftKings"
     },
     {
@@ -5191,42 +8649,42 @@
    "points": [
     {
      "line": 5.5,
-     "over": -1900,
+     "over": -1920,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": -710,
+     "over": -690,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": -347,
+     "over": -331,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": -191,
+     "over": -181,
      "book": "DraftKings"
     },
     {
      "line": 13.5,
-     "over": -110,
+     "over": -106,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 118,
+     "over": 122,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": 248,
+     "over": 260,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 405,
+     "over": 422,
      "book": "DraftKings"
     },
     {
@@ -5236,113 +8694,113 @@
     },
     {
      "line": 29.5,
-     "over": 2900,
+     "over": 3000,
      "book": "DraftKings"
     }
    ],
    "assists": [
     {
      "line": 2.5,
-     "over": -160,
+     "over": -151,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 150,
+     "over": 160,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 341,
+     "over": 364,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 730,
+     "over": 760,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 1440,
+     "over": 1480,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 2400,
+     "over": 2500,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 2.5,
-     "over": -350,
+     "over": -325,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -143,
+     "over": -136,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 148,
+     "over": 153,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 289,
+     "over": 307,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 551,
+     "over": 587,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 1020,
+     "over": 1100,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 1780,
+     "over": 1920,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 2700,
+     "over": 2900,
      "book": "DraftKings"
     }
    ],
    "pra": [
     {
      "line": 14.5,
-     "over": -521,
+     "over": -491,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": -142,
+     "over": -136,
      "book": "DraftKings"
     },
     {
      "line": 20.5,
-     "over": -112,
+     "over": -109,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 212,
+     "over": 216,
      "book": "DraftKings"
     },
     {
      "line": 29.5,
-     "over": 590,
+     "over": 610,
      "book": "DraftKings"
     },
     {
      "line": 34.5,
-     "over": 1480,
+     "over": 1520,
      "book": "DraftKings"
     }
    ]
@@ -5351,74 +8809,74 @@
    "points": [
     {
      "line": 5.5,
-     "over": -120,
+     "over": -116,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 191,
+     "over": 197,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 405,
+     "over": 413,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 790,
+     "over": 840,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 1940,
+     "over": 2100,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 2.5,
-     "over": -506,
+     "over": -547,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -224,
+     "over": -238,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": -114,
+     "over": -119,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 157,
+     "over": 154,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 272,
+     "over": 265,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 468,
+     "over": 452,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 780,
+     "over": 750,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 1260,
+     "over": 1200,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": 1880,
+     "over": 1860,
      "book": "DraftKings"
     },
     {
@@ -5432,32 +8890,32 @@
    "points": [
     {
      "line": 5.5,
-     "over": -195,
+     "over": -192,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": -113,
+     "over": -111,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 115,
+     "over": 118,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 236,
+     "over": 240,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 460,
+     "over": 463,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 1160,
+     "over": 1180,
      "book": "DraftKings"
     },
     {
@@ -5469,22 +8927,22 @@
    "assists": [
     {
      "line": 2.5,
-     "over": 124,
+     "over": 129,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 313,
+     "over": 332,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 730,
+     "over": 760,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 1540,
+     "over": 1620,
      "book": "DraftKings"
     },
     {
@@ -5496,22 +8954,22 @@
    "rebounds": [
     {
      "line": 2.5,
-     "over": -1480,
+     "over": -1580,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -536,
+     "over": -553,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": -250,
+     "over": -254,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": -132,
+     "over": -134,
      "book": "DraftKings"
     },
     {
@@ -5521,54 +8979,54 @@
     },
     {
      "line": 7.5,
-     "over": 232,
+     "over": 233,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 387,
+     "over": 390,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 640,
+     "over": 650,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": 1040,
+     "over": 1060,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 1600,
+     "over": 1660,
      "book": "DraftKings"
     },
     {
      "line": 12.5,
-     "over": 2300,
+     "over": 2400,
      "book": "DraftKings"
     }
    ],
    "pra": [
     {
      "line": 9.5,
-     "over": -680,
+     "over": -670,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": -130,
+     "over": -129,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 279,
+     "over": 282,
      "book": "DraftKings"
     },
     {
      "line": 24.5,
-     "over": 910,
+     "over": 930,
      "book": "DraftKings"
     },
     {
@@ -5582,111 +9040,111 @@
    "points": [
     {
      "line": 5.5,
-     "over": -293,
+     "over": -281,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": -148,
+     "over": -142,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": -104,
+     "over": 100,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 129,
+     "over": 134,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 235,
+     "over": 246,
      "book": "DraftKings"
     },
     {
      "line": 14.5,
-     "over": 533,
+     "over": 558,
      "book": "DraftKings"
     },
     {
      "line": 17.5,
-     "over": 1140,
+     "over": 1260,
      "book": "DraftKings"
     },
     {
      "line": 19.5,
-     "over": 1820,
+     "over": 1980,
      "book": "DraftKings"
     }
    ],
    "assists": [
     {
      "line": 2.5,
-     "over": -152,
+     "over": -149,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 158,
+     "over": 161,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 350,
+     "over": 365,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 730,
+     "over": 750,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 1440,
+     "over": 1500,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 2500,
+     "over": 2600,
      "book": "DraftKings"
     }
    ],
    "rebounds": [
     {
      "line": 2.5,
-     "over": -336,
+     "over": -353,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -141,
+     "over": -151,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 144,
+     "over": 135,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 287,
+     "over": 264,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 533,
+     "over": 511,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 970,
+     "over": 930,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 1640,
+     "over": 1600,
      "book": "DraftKings"
     },
     {
@@ -5698,7 +9156,7 @@
    "pra": [
     {
      "line": 9.5,
-     "over": -730,
+     "over": -680,
      "book": "DraftKings"
     },
     {
@@ -5713,7 +9171,7 @@
     },
     {
      "line": 19.5,
-     "over": 238,
+     "over": 247,
      "book": "DraftKings"
     },
     {
@@ -5723,7 +9181,7 @@
     },
     {
      "line": 29.5,
-     "over": 2000,
+     "over": 1960,
      "book": "DraftKings"
     }
    ]
@@ -5732,12 +9190,12 @@
    "points": [
     {
      "line": 5.5,
-     "over": -161,
+     "over": -156,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 100,
+     "over": 101,
      "book": "DraftKings"
     },
     {
@@ -5747,12 +9205,12 @@
     },
     {
      "line": 9.5,
-     "over": 276,
+     "over": 280,
      "book": "DraftKings"
     },
     {
      "line": 11.5,
-     "over": 519,
+     "over": 535,
      "book": "DraftKings"
     },
     {
@@ -5769,17 +9227,17 @@
    "rebounds": [
     {
      "line": 2.5,
-     "over": -770,
+     "over": -810,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -337,
+     "over": -343,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": -176,
+     "over": -179,
      "book": "DraftKings"
     },
     {
@@ -5789,27 +9247,27 @@
     },
     {
      "line": 6.5,
-     "over": 169,
+     "over": 170,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 283,
+     "over": 279,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 460,
+     "over": 456,
      "book": "DraftKings"
     },
     {
      "line": 9.5,
-     "over": 730,
+     "over": 720,
      "book": "DraftKings"
     },
     {
      "line": 10.5,
-     "over": 1180,
+     "over": 1140,
      "book": "DraftKings"
     },
     {
@@ -5827,11 +9285,11 @@
  },
  "td": {
   "lebron james": {
-   "odds": 1760,
+   "odds": 1540,
    "book": "DraftKings"
   },
   "joel embiid": {
-   "odds": 5600,
+   "odds": 6100,
    "book": "DraftKings"
   },
   "jaylen brown": {
@@ -5843,7 +9301,7 @@
    "book": "DraftKings"
   },
   "immanuel quickley": {
-   "odds": 7900,
+   "odds": 8200,
    "book": "DraftKings"
   },
   "tyrese maxey": {
@@ -5853,28 +9311,56 @@
   "vj edgecombe": {
    "odds": 7700,
    "book": "DraftKings"
+  },
+  "cade cunningham": {
+   "odds": 1620,
+   "book": "DraftKings"
+  },
+  "ausar thompson": {
+   "odds": 5200,
+   "book": "DraftKings"
+  },
+  "kyrie irving": {
+   "odds": 9400,
+   "book": "DraftKings"
+  },
+  "ayo dosunmu": {
+   "odds": 7900,
+   "book": "DraftKings"
+  },
+  "jaden mcdaniels": {
+   "odds": 8300,
+   "book": "DraftKings"
+  },
+  "lamelo ball": {
+   "odds": 5700,
+   "book": "DraftKings"
+  },
+  "cooper flagg": {
+   "odds": 2400,
+   "book": "DraftKings"
   }
  },
  "threes": {
   "lines": {
    "lebron james": {
     "line": 1.5,
-    "over": 134,
-    "under": -177,
+    "over": 125,
+    "under": -165,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "joel embiid": {
     "line": 0.5,
-    "over": -160,
-    "under": 121,
+    "over": -157,
+    "under": 119,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "jaylen brown": {
     "line": 1.5,
-    "over": -143,
-    "under": 109,
+    "over": -148,
+    "under": 112,
     "book": "DraftKings",
     "source": "ESPN"
    },
@@ -5887,78 +9373,127 @@
    },
    "immanuel quickley": {
     "line": 2.5,
-    "over": 110,
-    "under": -145,
+    "over": 111,
+    "under": -146,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "tyrese maxey": {
     "line": 2.5,
-    "over": -118,
-    "under": -111,
+    "over": -126,
+    "under": -105,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "ja kobe walter": {
     "line": 2.5,
-    "over": 130,
-    "under": -172,
+    "over": 136,
+    "under": -181,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "vj edgecombe": {
     "line": 1.5,
-    "over": -140,
-    "under": 107,
+    "over": -148,
+    "under": 112,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "anthony davis": {
     "line": 0.5,
-    "over": -154,
-    "under": 117,
+    "over": -153,
+    "under": 116,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "duncan robinson": {
+    "line": 3.5,
+    "over": -103,
+    "under": -127,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "john collins": {
+    "line": 0.5,
+    "over": -230,
+    "under": 172,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "kevin huerter": {
+    "line": 1.5,
+    "over": 101,
+    "under": -133,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "trae young": {
     "line": 2.5,
-    "over": 140,
-    "under": -186,
+    "over": 136,
+    "under": -180,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "cade cunningham": {
+    "line": 2.5,
+    "over": 118,
+    "under": -156,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "daniss jenkins": {
+    "line": 1.5,
+    "over": -113,
+    "under": -117,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "aj dybantsa": {
     "line": 1.5,
-    "over": 173,
-    "under": -232,
+    "over": 168,
+    "under": -224,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "alex sarr": {
     "line": 0.5,
-    "over": -172,
-    "under": 130,
+    "over": -169,
+    "under": 127,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "kyshawn george": {
     "line": 1.5,
-    "over": -182,
+    "over": -181,
     "under": 137,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "tre johnson": {
     "line": 1.5,
-    "over": 123,
-    "under": -162,
+    "over": 121,
+    "under": -159,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "kyrie irving": {
+    "line": 3.5,
+    "over": 126,
+    "under": -166,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "p j washington": {
+    "line": 1.5,
+    "over": -151,
+    "under": 114,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "ayo dosunmu": {
     "line": 1.5,
-    "over": -145,
-    "under": 110,
+    "over": -150,
+    "under": 114,
     "book": "DraftKings",
     "source": "ESPN"
    },
@@ -5971,43 +9506,50 @@
    },
    "lamelo ball": {
     "line": 3.5,
-    "over": 102,
-    "under": -134,
+    "over": -104,
+    "under": -126,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "terrence shannon": {
     "line": 1.5,
-    "over": 176,
-    "under": -235,
+    "over": 174,
+    "under": -233,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "jonathan kuminga": {
     "line": 1.5,
-    "over": 109,
-    "under": -143,
+    "over": 115,
+    "under": -152,
+    "book": "DraftKings",
+    "source": "ESPN"
+   },
+   "cooper flagg": {
+    "line": 1.5,
+    "over": 124,
+    "under": -164,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "royce o neale": {
     "line": 1.5,
-    "over": -151,
-    "under": 114,
+    "over": -148,
+    "under": 112,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "grayson allen": {
     "line": 3.5,
-    "over": -102,
-    "under": -129,
+    "over": -101,
+    "under": -131,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "devin booker": {
     "line": 1.5,
-    "over": -172,
-    "under": 130,
+    "over": -163,
+    "under": 123,
     "book": "DraftKings",
     "source": "ESPN"
    },
@@ -6020,50 +9562,50 @@
    },
    "miles bridges": {
     "line": 1.5,
-    "over": -158,
-    "under": 120,
+    "over": -153,
+    "under": 116,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "jordan goodwin": {
     "line": 1.5,
-    "over": 110,
+    "over": 109,
     "under": -144,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "collin gillespie": {
     "line": 1.5,
-    "over": -146,
-    "under": 110,
+    "over": -142,
+    "under": 108,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "coby white": {
     "line": 1.5,
-    "over": -167,
-    "under": 127,
+    "over": -175,
+    "under": 132,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "naz reid": {
     "line": 2.5,
     "over": -105,
-    "under": -126,
+    "under": -125,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "jalen green": {
     "line": 1.5,
-    "over": 107,
-    "under": -141,
+    "over": 111,
+    "under": -146,
     "book": "DraftKings",
     "source": "ESPN"
    },
    "sion james": {
     "line": 1.5,
-    "over": -105,
-    "under": -126,
+    "over": -103,
+    "under": -128,
     "book": "DraftKings",
     "source": "ESPN"
    }
@@ -6072,34 +9614,34 @@
    "lebron james": [
     {
      "line": 0.5,
-     "over": -334,
+     "over": -339,
      "book": "DraftKings"
     },
     {
      "line": 1.5,
-     "over": 134,
+     "over": 125,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 416,
+     "over": 397,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 1120,
+     "over": 1060,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 2500,
+     "over": 2200,
      "book": "DraftKings"
     }
    ],
    "joel embiid": [
     {
      "line": 0.5,
-     "over": -162,
+     "over": -158,
      "book": "DraftKings"
     },
     {
@@ -6109,12 +9651,12 @@
     },
     {
      "line": 2.5,
-     "over": 1060,
+     "over": 990,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 2600,
+     "over": 2500,
      "book": "DraftKings"
     }
    ],
@@ -6126,22 +9668,22 @@
     },
     {
      "line": 1.5,
-     "over": -144,
+     "over": -146,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 206,
+     "over": 201,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 533,
+     "over": 521,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 1260,
+     "over": 1220,
      "book": "DraftKings"
     },
     {
@@ -6158,54 +9700,54 @@
     },
     {
      "line": 1.5,
-     "over": -107,
+     "over": -105,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 284,
+     "over": 286,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 760,
+     "over": 730,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 1760,
+     "over": 1720,
      "book": "DraftKings"
     }
    ],
    "immanuel quickley": [
     {
      "line": 0.5,
-     "over": -1340,
+     "over": -1260,
      "book": "DraftKings"
     },
     {
      "line": 1.5,
-     "over": -256,
+     "over": -259,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 108,
+     "over": 111,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 255,
+     "over": 263,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 585,
+     "over": 583,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 1260,
+     "over": 1220,
      "book": "DraftKings"
     },
     {
@@ -6217,59 +9759,64 @@
    "tyrese maxey": [
     {
      "line": 0.5,
-     "over": -2000,
+     "over": -2400,
      "book": "DraftKings"
     },
     {
      "line": 1.5,
-     "over": -354,
+     "over": -379,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": -120,
+     "over": -125,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 201,
+     "over": 189,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 449,
+     "over": 432,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 960,
+     "over": 920,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 1880,
+     "over": 1800,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 2900,
      "book": "DraftKings"
     }
    ],
    "ja kobe walter": [
     {
      "line": 0.5,
-     "over": -1080,
+     "over": -980,
      "book": "DraftKings"
     },
     {
      "line": 1.5,
-     "over": -222,
+     "over": -212,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 130,
+     "over": 133,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 325,
+     "over": 329,
      "book": "DraftKings"
     },
     {
@@ -6279,7 +9826,7 @@
     },
     {
      "line": 5.5,
-     "over": 1620,
+     "over": 1540,
      "book": "DraftKings"
     },
     {
@@ -6291,27 +9838,27 @@
    "vj edgecombe": [
     {
      "line": 0.5,
-     "over": -630,
+     "over": -660,
      "book": "DraftKings"
     },
     {
      "line": 1.5,
-     "over": -139,
+     "over": -146,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 211,
+     "over": 208,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 554,
+     "over": 540,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 1340,
+     "over": 1240,
      "book": "DraftKings"
     },
     {
@@ -6323,12 +9870,12 @@
    "anthony davis": [
     {
      "line": 0.5,
-     "over": -155,
+     "over": -154,
      "book": "DraftKings"
     },
     {
      "line": 1.5,
-     "over": 302,
+     "over": 294,
      "book": "DraftKings"
     },
     {
@@ -6342,91 +9889,251 @@
      "book": "DraftKings"
     }
    ],
-   "trae young": [
-    {
-     "line": 0.5,
-     "over": -880,
-     "book": "DraftKings"
-    },
+   "duncan robinson": [
     {
      "line": 1.5,
-     "over": -192,
+     "over": -830,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 141,
+     "over": -255,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 340,
+     "over": -106,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 760,
+     "over": 201,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 1560,
+     "over": 429,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 2700,
+     "over": 840,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 1540,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 2500,
+     "book": "DraftKings"
+    }
+   ],
+   "john collins": [
+    {
+     "line": 0.5,
+     "over": -234,
+     "book": "DraftKings"
+    },
+    {
+     "line": 1.5,
+     "over": 191,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 620,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 1660,
+     "book": "DraftKings"
+    }
+   ],
+   "kevin huerter": [
+    {
+     "line": 0.5,
+     "over": -437,
+     "book": "DraftKings"
+    },
+    {
+     "line": 1.5,
+     "over": 101,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 298,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 780,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 1800,
+     "book": "DraftKings"
+    }
+   ],
+   "trae young": [
+    {
+     "line": 0.5,
+     "over": -890,
+     "book": "DraftKings"
+    },
+    {
+     "line": 1.5,
+     "over": -199,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 136,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 320,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 710,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 1480,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 2500,
+     "book": "DraftKings"
+    }
+   ],
+   "cade cunningham": [
+    {
+     "line": 0.5,
+     "over": -1180,
+     "book": "DraftKings"
+    },
+    {
+     "line": 1.5,
+     "over": -237,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 121,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 295,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 670,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 1420,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 2500,
+     "book": "DraftKings"
+    }
+   ],
+   "daniss jenkins": [
+    {
+     "line": 0.5,
+     "over": -499,
+     "book": "DraftKings"
+    },
+    {
+     "line": 1.5,
+     "over": -115,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 256,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 670,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 1520,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 2900,
      "book": "DraftKings"
     }
    ],
    "aj dybantsa": [
     {
      "line": 0.5,
-     "over": -256,
+     "over": -264,
      "book": "DraftKings"
     },
     {
      "line": 1.5,
-     "over": 173,
+     "over": 169,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 537,
+     "over": 534,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 1500,
+     "over": 1460,
      "book": "DraftKings"
     }
    ],
    "alex sarr": [
     {
      "line": 0.5,
-     "over": -177,
+     "over": -170,
      "book": "DraftKings"
     },
     {
      "line": 1.5,
-     "over": 261,
+     "over": 267,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 840,
+     "over": 870,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 2100,
+     "over": 2200,
      "book": "DraftKings"
     }
    ],
    "kyshawn george": [
     {
      "line": 0.5,
-     "over": -850,
+     "over": -840,
      "book": "DraftKings"
     },
     {
@@ -6436,22 +10143,22 @@
     },
     {
      "line": 2.5,
-     "over": 154,
+     "over": 153,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 364,
+     "over": 374,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 820,
+     "over": 840,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 1720,
+     "over": 1740,
      "book": "DraftKings"
     },
     {
@@ -6463,27 +10170,300 @@
    "tre johnson": [
     {
      "line": 0.5,
-     "over": -355,
+     "over": -352,
      "book": "DraftKings"
     },
     {
      "line": 1.5,
-     "over": 123,
+     "over": 121,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 371,
+     "over": 363,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 990,
+     "over": 950,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
      "over": 2100,
+     "book": "DraftKings"
+    }
+   ],
+   "kyrie irving": [
+    {
+     "line": 0.5,
+     "over": -3700,
+     "book": "DraftKings"
+    },
+    {
+     "line": 1.5,
+     "over": -534,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": -181,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 128,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 274,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 571,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 1140,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 2000,
+     "book": "DraftKings"
+    }
+   ],
+   "caleb martin": [
+    {
+     "line": 0.5,
+     "over": -111,
+     "book": "DraftKings"
+    },
+    {
+     "line": 1.5,
+     "over": 445,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 1480,
+     "book": "DraftKings"
+    }
+   ],
+   "p j washington": [
+    {
+     "line": 0.5,
+     "over": -720,
+     "book": "DraftKings"
+    },
+    {
+     "line": 1.5,
+     "over": -154,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 193,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 487,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 1180,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 2400,
+     "book": "DraftKings"
+    }
+   ],
+   "ayo dosunmu": [
+    {
+     "line": 0.5,
+     "over": -720,
+     "book": "DraftKings"
+    },
+    {
+     "line": 1.5,
+     "over": -150,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 197,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 515,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 1220,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 2400,
+     "book": "DraftKings"
+    }
+   ],
+   "jaden mcdaniels": [
+    {
+     "line": 0.5,
+     "over": -424,
+     "book": "DraftKings"
+    },
+    {
+     "line": 1.5,
+     "over": 101,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 307,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 790,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 1840,
+     "book": "DraftKings"
+    }
+   ],
+   "lamelo ball": [
+    {
+     "line": 1.5,
+     "over": -690,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": -234,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": -104,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 195,
+     "book": "DraftKings"
+    },
+    {
+     "line": 5.5,
+     "over": 378,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 710,
+     "book": "DraftKings"
+    },
+    {
+     "line": 7.5,
+     "over": 1260,
+     "book": "DraftKings"
+    },
+    {
+     "line": 8.5,
+     "over": 2100,
+     "book": "DraftKings"
+    }
+   ],
+   "terrence shannon": [
+    {
+     "line": 0.5,
+     "over": -243,
+     "book": "DraftKings"
+    },
+    {
+     "line": 1.5,
+     "over": 175,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 538,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 1380,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 2800,
+     "book": "DraftKings"
+    }
+   ],
+   "jonathan kuminga": [
+    {
+     "line": 0.5,
+     "over": -396,
+     "book": "DraftKings"
+    },
+    {
+     "line": 1.5,
+     "over": 114,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 354,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 960,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 2100,
+     "book": "DraftKings"
+    }
+   ],
+   "cooper flagg": [
+    {
+     "line": 0.5,
+     "over": -361,
+     "book": "DraftKings"
+    },
+    {
+     "line": 1.5,
+     "over": 122,
+     "book": "DraftKings"
+    },
+    {
+     "line": 2.5,
+     "over": 383,
+     "book": "DraftKings"
+    },
+    {
+     "line": 3.5,
+     "over": 1060,
+     "book": "DraftKings"
+    },
+    {
+     "line": 4.5,
+     "over": 2500,
      "book": "DraftKings"
     }
    ],
@@ -6495,101 +10475,101 @@
     },
     {
      "line": 1.5,
-     "over": -150,
+     "over": -149,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 190,
+     "over": 193,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 464,
+     "over": 473,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 1020,
+     "over": 1080,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 2000,
+     "over": 2100,
      "book": "DraftKings"
     }
    ],
    "grayson allen": [
     {
      "line": 1.5,
-     "over": -800,
+     "over": -750,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": -247,
+     "over": -233,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": -103,
+     "over": 101,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 207,
+     "over": 217,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 423,
+     "over": 436,
      "book": "DraftKings"
     },
     {
      "line": 6.5,
-     "over": 820,
+     "over": 850,
      "book": "DraftKings"
     },
     {
      "line": 7.5,
-     "over": 1520,
+     "over": 1600,
      "book": "DraftKings"
     },
     {
      "line": 8.5,
-     "over": 2500,
+     "over": 2600,
      "book": "DraftKings"
     }
    ],
    "devin booker": [
     {
      "line": 0.5,
-     "over": -840,
+     "over": -770,
      "book": "DraftKings"
     },
     {
      "line": 1.5,
-     "over": -173,
+     "over": -162,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 171,
+     "over": 180,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 444,
+     "over": 453,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 1060,
+     "over": 1080,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 2200,
+     "over": 2100,
      "book": "DraftKings"
     }
    ],
@@ -6606,12 +10586,12 @@
     },
     {
      "line": 2.5,
-     "over": 212,
+     "over": 216,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 554,
+     "over": 551,
      "book": "DraftKings"
     },
     {
@@ -6621,93 +10601,93 @@
     },
     {
      "line": 5.5,
-     "over": 2700,
+     "over": 2600,
      "book": "DraftKings"
     }
    ],
    "miles bridges": [
     {
      "line": 0.5,
-     "over": -790,
+     "over": -710,
      "book": "DraftKings"
     },
     {
      "line": 1.5,
-     "over": -162,
+     "over": -154,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 190,
+     "over": 198,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 486,
+     "over": 521,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 1140,
+     "over": 1260,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 2400,
+     "over": 2600,
      "book": "DraftKings"
     }
    ],
    "jordan goodwin": [
     {
      "line": 0.5,
-     "over": -343,
+     "over": -349,
      "book": "DraftKings"
     },
     {
      "line": 1.5,
-     "over": 110,
+     "over": 109,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 303,
+     "over": 290,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 730,
+     "over": 690,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 1560,
+     "over": 1480,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 2700,
+     "over": 2500,
      "book": "DraftKings"
     }
    ],
    "collin gillespie": [
     {
      "line": 0.5,
-     "over": -640,
+     "over": -620,
      "book": "DraftKings"
     },
     {
      "line": 1.5,
-     "over": -146,
+     "over": -142,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 191,
+     "over": 193,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 466,
+     "over": 468,
      "book": "DraftKings"
     },
     {
@@ -6724,7 +10704,7 @@
    "coby white": [
     {
      "line": 0.5,
-     "over": -780,
+     "over": -800,
      "book": "DraftKings"
     },
     {
@@ -6734,54 +10714,59 @@
     },
     {
      "line": 2.5,
-     "over": 162,
+     "over": 160,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 394,
+     "over": 383,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 850,
+     "over": 830,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 1760,
+     "over": 1740,
+     "book": "DraftKings"
+    },
+    {
+     "line": 6.5,
+     "over": 2900,
      "book": "DraftKings"
     }
    ],
    "naz reid": [
     {
      "line": 0.5,
-     "over": -1540,
+     "over": -1740,
      "book": "DraftKings"
     },
     {
      "line": 1.5,
-     "over": -303,
+     "over": -310,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": -106,
+     "over": -107,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 226,
+     "over": 228,
      "book": "DraftKings"
     },
     {
      "line": 4.5,
-     "over": 521,
+     "over": 519,
      "book": "DraftKings"
     },
     {
      "line": 5.5,
-     "over": 1080,
+     "over": 1100,
      "book": "DraftKings"
     },
     {
@@ -6793,22 +10778,22 @@
    "jalen green": [
     {
      "line": 0.5,
-     "over": -412,
+     "over": -398,
      "book": "DraftKings"
     },
     {
      "line": 1.5,
-     "over": 106,
+     "over": 112,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 325,
+     "over": 347,
      "book": "DraftKings"
     },
     {
      "line": 3.5,
-     "over": 860,
+     "over": 960,
      "book": "DraftKings"
     },
     {
@@ -6820,17 +10805,17 @@
    "sion james": [
     {
      "line": 0.5,
-     "over": -470,
+     "over": -458,
      "book": "DraftKings"
     },
     {
      "line": 1.5,
-     "over": -105,
+     "over": -103,
      "book": "DraftKings"
     },
     {
      "line": 2.5,
-     "over": 287,
+     "over": 291,
      "book": "DraftKings"
     },
     {
