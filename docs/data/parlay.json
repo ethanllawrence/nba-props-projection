@@ -3353,40 +3353,17 @@
         "line": 29.5,
         "line_type": "alt",
         "book_line": 34.5,
-        "proj": 38.3,
-        "prob": 0.761,
-        "book_prob": 0.694,
-        "gap": 0.067,
-        "odds": -264,
+        "proj": 38.2,
+        "prob": 0.758,
+        "book_prob": 0.696,
+        "gap": 0.062,
+        "odds": -267,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "green": 0.1111,
-        "reasoning": "Model projects 38.3 PRA, 11% over the book's 34.5 line; this leg is 29.5 at -264 (book 69%, model 76%). Projected for 37.8 minutes; SAC +9.5 spread."
-      },
-      {
-        "player": "Yaxel Lendeborg",
-        "player_id": "5175737",
-        "game_id": "401909302",
-        "team": "GSW",
-        "opp": "SAS",
-        "home": false,
-        "time_et": "7:30 PM",
-        "stat": "pra",
-        "side": "over",
-        "line": 29.5,
-        "line_type": "alt",
-        "book_line": 32.5,
-        "proj": 35.1,
-        "prob": 0.663,
-        "book_prob": 0.627,
-        "gap": 0.036,
-        "odds": -190,
-        "book": "DraftKings",
-        "blowout_risk": "medium",
-        "minutes_confidence": "high",
-        "green": 0.0789,
-        "reasoning": "Model projects 35.1 PRA, 8% over the book's 32.5 line; this leg is 29.5 at -190 (book 63%, model 66%). Projected for 35.5 minutes; GSW +11.5 spread."
+        "green": 0.1087,
+        "reasoning": "Model projects 38.2 PRA, 11% over the book's 34.5 line; this leg is 29.5 at -267 (book 70%, model 76%). Projected for 37.8 minutes; SAC +10.5 spread.",
+        "night_odds": -264
       },
       {
         "player": "Pascal Siakam",
@@ -3400,27 +3377,95 @@
         "side": "over",
         "line": 29.5,
         "line_type": "alt",
-        "book_line": 32.5,
+        "book_line": 31.5,
         "proj": 34.7,
         "prob": 0.65,
-        "book_prob": 0.621,
-        "gap": 0.029,
-        "odds": -185,
+        "book_prob": 0.583,
+        "gap": 0.067,
+        "odds": -156,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "green": 0.0675,
-        "reasoning": "Model projects 34.7 PRA, 7% over the book's 32.5 line; this leg is 29.5 at -185 (book 62%, model 65%). Projected for 34.2 minutes; IND +8.5 spread."
+        "green": 0.1014,
+        "reasoning": "Model projects 34.7 PRA, 10% over the book's 31.5 line; this leg is 29.5 at -156 (book 58%, model 65%). Projected for 34.2 minutes; IND +8.5 spread.",
+        "night_odds": -185
+      },
+      {
+        "player": "Cameron Boozer",
+        "player_id": "5041935",
+        "game_id": "401909300",
+        "team": "MEM",
+        "opp": "NOP",
+        "home": false,
+        "time_et": "6:00 PM",
+        "stat": "pra",
+        "side": "over",
+        "line": 29.5,
+        "line_type": "alt",
+        "book_line": 33.5,
+        "proj": 34.1,
+        "prob": 0.631,
+        "book_prob": 0.657,
+        "gap": -0.026,
+        "odds": -219,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "green": 0.0184,
+        "reasoning": "Model projects 34.1 PRA, 2% over the book's 33.5 line; this leg is 29.5 at -219 (book 66%, model 63%). Projected for 34.2 minutes; MEM -3.5 spread."
       }
     ],
-    "combined_odds": 224,
+    "combined_odds": 229,
     "status": "pending",
     "first_picked_at": "2026-11-13T10:22:26Z",
     "refreshed": 1,
-    "checked_at": "2026-11-13T14:48:17Z"
+    "checked_at": "2026-11-13T20:20:40Z",
+    "morning_repick": true,
+    "night": {
+      "combined_odds": 224,
+      "picked_at": "2026-11-13T14:48:17Z",
+      "legs": [
+        {
+          "player": "Darius Acuff Jr.",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -264
+        },
+        {
+          "player": "Yaxel Lendeborg",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -190
+        },
+        {
+          "player": "Pascal Siakam",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -185
+        }
+      ]
+    },
+    "morning_checked": "2026-11-13T20:20:40Z",
+    "changes": [
+      {
+        "out": {
+          "player": "Yaxel Lendeborg",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -190
+        },
+        "why": "re-picked from the morning board",
+        "in": {
+          "player": "Cameron Boozer",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -219
+        }
+      }
+    ]
   },
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-13T14:48:17Z",
+  "generated_at": "2026-11-13T20:20:40Z",
   "early_history": [
     {
       "date": "2026-10-20",
