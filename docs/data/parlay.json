@@ -3468,150 +3468,241 @@
         }
       ],
       "result": "loss"
+    },
+    {
+      "date": "2026-11-14",
+      "method": "night",
+      "picked_at": "2026-11-14T13:44:02Z",
+      "missing_games": [],
+      "candidates": 8,
+      "legs": [
+        {
+          "player": "Kyrie Irving",
+          "player_id": "6442",
+          "game_id": "401909981",
+          "team": "DAL",
+          "opp": "CLE",
+          "home": false,
+          "time_et": "5:30 PM",
+          "stat": "pra",
+          "side": "over",
+          "line": 29.5,
+          "line_type": "alt",
+          "book_line": 30.5,
+          "proj": 31.9,
+          "prob": 0.55,
+          "book_prob": 0.56,
+          "gap": -0.01,
+          "odds": -141,
+          "book": "DraftKings",
+          "blowout_risk": "low",
+          "minutes_confidence": "high",
+          "green": 0.0454,
+          "reasoning": "Model projects 31.9 PRA, 5% over the book's 30.5 line; this leg is 29.5 at -141 (book 56%, model 55%). Projected for 32.8 minutes; DAL -4.5 spread.",
+          "night_odds": -127,
+          "actual": 45,
+          "hit": true
+        },
+        {
+          "player": "Cade Cunningham",
+          "player_id": "4432166",
+          "game_id": "401909982",
+          "team": "DET",
+          "opp": "MIA",
+          "home": false,
+          "time_et": "6:00 PM",
+          "stat": "pra",
+          "side": "over",
+          "line": 34.5,
+          "line_type": "alt",
+          "book_line": 39.5,
+          "proj": 40.4,
+          "prob": 0.662,
+          "book_prob": 0.705,
+          "gap": -0.043,
+          "odds": -280,
+          "book": "DraftKings",
+          "blowout_risk": "low",
+          "minutes_confidence": "high",
+          "green": 0.0223,
+          "reasoning": "Model projects 40.4 PRA, 2% over the book's 39.5 line; this leg is 34.5 at -280 (book 70%, model 66%). Projected for 37.3 minutes; DET -3.5 spread.",
+          "actual": 46,
+          "hit": true
+        },
+        {
+          "player": "Cameron Boozer",
+          "player_id": "5041935",
+          "game_id": "401909983",
+          "team": "MEM",
+          "opp": "BKN",
+          "home": true,
+          "time_et": "6:00 PM",
+          "stat": "pra",
+          "side": "over",
+          "line": 29.5,
+          "line_type": "alt",
+          "book_line": 31.5,
+          "proj": 31.6,
+          "prob": 0.539,
+          "book_prob": 0.606,
+          "gap": -0.067,
+          "odds": -173,
+          "book": "DraftKings",
+          "blowout_risk": "low",
+          "minutes_confidence": "high",
+          "green": 0.0031,
+          "reasoning": "Model projects 31.6 PRA, 0% over the book's 31.5 line; this leg is 29.5 at -173 (book 61%, model 54%). Projected for 31.3 minutes; MEM -2.5 spread.",
+          "check": {
+            "kind": "projection",
+            "proj_from": 31.6,
+            "proj_to": 34.0,
+            "against": false
+          },
+          "actual": 28,
+          "hit": false
+        }
+      ],
+      "combined_odds": 266,
+      "status": "loss",
+      "first_picked_at": "2026-11-14T09:40:08Z",
+      "refreshed": 2,
+      "checked_at": "2026-11-15T01:28:54Z",
+      "morning_repick": true,
+      "night": {
+        "combined_odds": 130,
+        "picked_at": "2026-11-14T13:44:02Z",
+        "legs": [
+          {
+            "player": "Kyrie Irving",
+            "stat": "pra",
+            "line": 29.5,
+            "odds": -127
+          },
+          {
+            "player": "Ty Jerome",
+            "stat": "pra",
+            "line": 24.5,
+            "odds": -349
+          }
+        ]
+      },
+      "morning_checked": "2026-11-14T18:40:45Z",
+      "changes": [
+        {
+          "out": {
+            "player": "Ty Jerome",
+            "stat": "pra",
+            "line": 24.5,
+            "odds": -349
+          },
+          "why": "re-picked from the morning board",
+          "in": {
+            "player": "Cade Cunningham",
+            "stat": "pra",
+            "line": 34.5,
+            "odds": -280
+          }
+        },
+        {
+          "in": {
+            "player": "Cameron Boozer",
+            "stat": "pra",
+            "line": 29.5,
+            "odds": -173
+          },
+          "why": "re-picked from the morning board"
+        }
+      ],
+      "result": "loss"
     }
   ],
   "early": {},
   "today": {
-    "date": "2026-11-14",
+    "date": "2026-11-15",
     "method": "night",
-    "picked_at": "2026-11-14T13:44:02Z",
+    "picked_at": "2026-11-15T10:11:37Z",
     "missing_games": [],
-    "candidates": 8,
+    "candidates": 22,
     "legs": [
       {
-        "player": "Kyrie Irving",
-        "player_id": "6442",
-        "game_id": "401909981",
-        "team": "DAL",
-        "opp": "CLE",
+        "player": "Kevin Durant",
+        "player_id": "3202",
+        "game_id": "401909991",
+        "team": "HOU",
+        "opp": "WAS",
         "home": false,
-        "time_et": "5:30 PM",
-        "stat": "pra",
-        "side": "over",
-        "line": 29.5,
-        "line_type": "alt",
-        "book_line": 30.5,
-        "proj": 31.9,
-        "prob": 0.55,
-        "book_prob": 0.56,
-        "gap": -0.01,
-        "odds": -141,
-        "book": "DraftKings",
-        "blowout_risk": "low",
-        "minutes_confidence": "high",
-        "green": 0.0454,
-        "reasoning": "Model projects 31.9 PRA, 5% over the book's 30.5 line; this leg is 29.5 at -141 (book 56%, model 55%). Projected for 32.8 minutes; DAL -4.5 spread.",
-        "night_odds": -127
-      },
-      {
-        "player": "Cade Cunningham",
-        "player_id": "4432166",
-        "game_id": "401909982",
-        "team": "DET",
-        "opp": "MIA",
-        "home": false,
-        "time_et": "6:00 PM",
-        "stat": "pra",
-        "side": "over",
-        "line": 34.5,
-        "line_type": "alt",
-        "book_line": 39.5,
-        "proj": 40.4,
-        "prob": 0.662,
-        "book_prob": 0.705,
-        "gap": -0.043,
-        "odds": -280,
-        "book": "DraftKings",
-        "blowout_risk": "low",
-        "minutes_confidence": "high",
-        "green": 0.0223,
-        "reasoning": "Model projects 40.4 PRA, 2% over the book's 39.5 line; this leg is 34.5 at -280 (book 70%, model 66%). Projected for 37.3 minutes; DET -3.5 spread."
-      },
-      {
-        "player": "Cameron Boozer",
-        "player_id": "5041935",
-        "game_id": "401909983",
-        "team": "MEM",
-        "opp": "BKN",
-        "home": true,
-        "time_et": "6:00 PM",
+        "time_et": "5:00 PM",
         "stat": "pra",
         "side": "over",
         "line": 29.5,
         "line_type": "alt",
         "book_line": 31.5,
-        "proj": 31.6,
-        "prob": 0.539,
-        "book_prob": 0.606,
-        "gap": -0.067,
-        "odds": -173,
+        "proj": 35.9,
+        "prob": 0.688,
+        "book_prob": 0.587,
+        "gap": 0.101,
+        "odds": -159,
         "book": "DraftKings",
-        "blowout_risk": "low",
+        "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "green": 0.0031,
-        "reasoning": "Model projects 31.6 PRA, 0% over the book's 31.5 line; this leg is 29.5 at -173 (book 61%, model 54%). Projected for 31.3 minutes; MEM -2.5 spread.",
-        "check": {
-          "kind": "projection",
-          "proj_from": 31.6,
-          "proj_to": 34.0,
-          "against": false
-        }
-      }
-    ],
-    "combined_odds": 266,
-    "status": "pending",
-    "first_picked_at": "2026-11-14T09:40:08Z",
-    "refreshed": 2,
-    "checked_at": "2026-11-15T01:28:54Z",
-    "morning_repick": true,
-    "night": {
-      "combined_odds": 130,
-      "picked_at": "2026-11-14T13:44:02Z",
-      "legs": [
-        {
-          "player": "Kyrie Irving",
-          "stat": "pra",
-          "line": 29.5,
-          "odds": -127
-        },
-        {
-          "player": "Ty Jerome",
-          "stat": "pra",
-          "line": 24.5,
-          "odds": -349
-        }
-      ]
-    },
-    "morning_checked": "2026-11-14T18:40:45Z",
-    "changes": [
-      {
-        "out": {
-          "player": "Ty Jerome",
-          "stat": "pra",
-          "line": 24.5,
-          "odds": -349
-        },
-        "why": "re-picked from the morning board",
-        "in": {
-          "player": "Cade Cunningham",
-          "stat": "pra",
-          "line": 34.5,
-          "odds": -280
-        }
+        "green": 0.1394,
+        "reasoning": "Model projects 35.9 PRA, 14% over the book's 31.5 line; this leg is 29.5 at -159 (book 59%, model 69%). Projected for 36.0 minutes; HOU -9.5 spread."
       },
       {
-        "in": {
-          "player": "Cameron Boozer",
-          "stat": "pra",
-          "line": 29.5,
-          "odds": -173
-        },
-        "why": "re-picked from the morning board"
+        "player": "Darius Acuff Jr.",
+        "player_id": "5142620",
+        "game_id": "401909993",
+        "team": "SAC",
+        "opp": "OKC",
+        "home": true,
+        "time_et": "7:00 PM",
+        "stat": "pra",
+        "side": "over",
+        "line": 29.5,
+        "line_type": "alt",
+        "book_line": 34.5,
+        "proj": 37.7,
+        "prob": 0.742,
+        "book_prob": 0.694,
+        "gap": 0.048,
+        "odds": -264,
+        "book": "DraftKings",
+        "blowout_risk": "medium",
+        "minutes_confidence": "high",
+        "green": 0.0925,
+        "reasoning": "Model projects 37.7 PRA, 9% over the book's 34.5 line; this leg is 29.5 at -264 (book 69%, model 74%). Projected for 37.4 minutes; SAC +10.5 spread."
+      },
+      {
+        "player": "LeBron James",
+        "player_id": "1966",
+        "game_id": "401909985",
+        "team": "PHI",
+        "opp": "IND",
+        "home": true,
+        "time_et": "11:00 AM",
+        "stat": "pra",
+        "side": "over",
+        "line": 29.5,
+        "line_type": "alt",
+        "book_line": 31.5,
+        "proj": 33.6,
+        "prob": 0.61,
+        "book_prob": 0.599,
+        "gap": 0.012,
+        "odds": -167,
+        "book": "DraftKings",
+        "blowout_risk": "medium",
+        "minutes_confidence": "high",
+        "green": 0.0656,
+        "reasoning": "Model projects 33.6 PRA, 7% over the book's 31.5 line; this leg is 29.5 at -167 (book 60%, model 61%). Projected for 34.1 minutes; PHI -7.5 spread."
       }
-    ]
+    ],
+    "combined_odds": 259,
+    "status": "pending",
+    "checked_at": "2026-11-15T10:11:37Z"
   },
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-15T01:28:54Z",
+  "generated_at": "2026-11-15T10:11:37Z",
   "early_history": [
     {
       "date": "2026-10-20",
