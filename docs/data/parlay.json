@@ -3549,14 +3549,20 @@
         "blowout_risk": "low",
         "minutes_confidence": "high",
         "green": 0.0031,
-        "reasoning": "Model projects 31.6 PRA, 0% over the book's 31.5 line; this leg is 29.5 at -173 (book 61%, model 54%). Projected for 31.3 minutes; MEM -2.5 spread."
+        "reasoning": "Model projects 31.6 PRA, 0% over the book's 31.5 line; this leg is 29.5 at -173 (book 61%, model 54%). Projected for 31.3 minutes; MEM -2.5 spread.",
+        "check": {
+          "kind": "projection",
+          "proj_from": 31.6,
+          "proj_to": 34.0,
+          "against": false
+        }
       }
     ],
     "combined_odds": 266,
     "status": "pending",
     "first_picked_at": "2026-11-14T09:40:08Z",
     "refreshed": 2,
-    "checked_at": "2026-11-15T00:02:06Z",
+    "checked_at": "2026-11-15T01:28:54Z",
     "morning_repick": true,
     "night": {
       "combined_odds": 130,
@@ -3605,7 +3611,7 @@
     ]
   },
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-15T00:02:06Z",
+  "generated_at": "2026-11-15T01:28:54Z",
   "early_history": [
     {
       "date": "2026-10-20",
