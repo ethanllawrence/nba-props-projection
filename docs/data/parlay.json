@@ -3622,31 +3622,31 @@
     "method": "night",
     "picked_at": "2026-11-15T14:12:07Z",
     "missing_games": [],
-    "candidates": 20,
+    "candidates": 18,
     "legs": [
       {
-        "player": "Anthony Davis",
-        "player_id": "6583",
+        "player": "Kevin Durant",
+        "player_id": "3202",
         "game_id": "401909991",
-        "team": "WAS",
-        "opp": "HOU",
-        "home": true,
+        "team": "HOU",
+        "opp": "WAS",
+        "home": false,
         "time_et": "5:00 PM",
         "stat": "pra",
         "side": "over",
         "line": 29.5,
         "line_type": "alt",
-        "book_line": 34.5,
-        "proj": 38.4,
-        "prob": 0.762,
-        "book_prob": 0.708,
-        "gap": 0.053,
-        "odds": -285,
+        "book_line": 31.5,
+        "proj": 35.9,
+        "prob": 0.689,
+        "book_prob": 0.58,
+        "gap": 0.109,
+        "odds": -154,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "green": 0.1137,
-        "reasoning": "Model projects 38.4 PRA, 11% over the book's 34.5 line; this leg is 29.5 at -285 (book 71%, model 76%). Projected for 35.9 minutes; WAS +8.5 spread."
+        "green": 0.1401,
+        "reasoning": "Model projects 35.9 PRA, 14% over the book's 31.5 line; this leg is 29.5 at -154 (book 58%, model 69%). Projected for 35.8 minutes; HOU -8.5 spread."
       },
       {
         "player": "Darius Acuff Jr.",
@@ -3670,41 +3670,100 @@
         "blowout_risk": "medium",
         "minutes_confidence": "high",
         "green": 0.0925,
-        "reasoning": "Model projects 37.7 PRA, 9% over the book's 34.5 line; this leg is 29.5 at -257 (book 69%, model 74%). Projected for 37.4 minutes; SAC +10.5 spread."
+        "reasoning": "Model projects 37.7 PRA, 9% over the book's 34.5 line; this leg is 29.5 at -257 (book 69%, model 74%). Projected for 37.4 minutes; SAC +10.5 spread.",
+        "night_odds": -257
       },
       {
-        "player": "LeBron James",
-        "player_id": "1966",
-        "game_id": "401909985",
-        "team": "PHI",
-        "opp": "IND",
+        "player": "RJ Barrett",
+        "player_id": "4395625",
+        "game_id": "401909990",
+        "team": "TOR",
+        "opp": "NYK",
         "home": true,
-        "time_et": "11:00 AM",
+        "time_et": "4:00 PM",
         "stat": "pra",
         "side": "over",
         "line": 29.5,
         "line_type": "alt",
-        "book_line": 31.5,
-        "proj": 33.7,
-        "prob": 0.613,
-        "book_prob": 0.604,
+        "book_line": 30.5,
+        "proj": 32.7,
+        "prob": 0.578,
+        "book_prob": 0.568,
         "gap": 0.01,
-        "odds": -171,
+        "odds": -146,
         "book": "DraftKings",
-        "blowout_risk": "medium",
+        "blowout_risk": "low",
         "minutes_confidence": "high",
-        "green": 0.0683,
-        "reasoning": "Model projects 33.7 PRA, 7% over the book's 31.5 line; this leg is 29.5 at -171 (book 60%, model 61%). Projected for 34.0 minutes; PHI -7.5 spread."
+        "green": 0.0711,
+        "reasoning": "Model projects 32.7 PRA, 7% over the book's 30.5 line; this leg is 29.5 at -146 (book 57%, model 58%). Projected for 35.9 minutes; TOR +5.5 spread."
       }
     ],
-    "combined_odds": 197,
+    "combined_odds": 286,
     "status": "pending",
     "first_picked_at": "2026-11-15T10:11:37Z",
     "refreshed": 2,
-    "checked_at": "2026-11-15T14:12:07Z"
+    "checked_at": "2026-11-15T19:16:30Z",
+    "morning_repick": true,
+    "night": {
+      "combined_odds": 197,
+      "picked_at": "2026-11-15T14:12:07Z",
+      "legs": [
+        {
+          "player": "Anthony Davis",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -285
+        },
+        {
+          "player": "Darius Acuff Jr.",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -257
+        },
+        {
+          "player": "LeBron James",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -171
+        }
+      ]
+    },
+    "morning_checked": "2026-11-15T19:16:30Z",
+    "changes": [
+      {
+        "out": {
+          "player": "Anthony Davis",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -285
+        },
+        "why": "re-picked from the morning board",
+        "in": {
+          "player": "Kevin Durant",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -154
+        }
+      },
+      {
+        "out": {
+          "player": "LeBron James",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -171
+        },
+        "why": "re-picked from the morning board",
+        "in": {
+          "player": "RJ Barrett",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -146
+        }
+      }
+    ]
   },
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-15T14:12:07Z",
+  "generated_at": "2026-11-15T19:16:30Z",
   "early_history": [
     {
       "date": "2026-10-20",
