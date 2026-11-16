@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-16T22:45:47Z",
+ "generated_at": "2026-11-16T23:39:11Z",
  "date": "2026-11-16",
  "beta": true,
  "early": false,
  "lines_from": "ESPN (DraftKings)",
- "lines_fetched_at": "2026-11-16T22:45:47Z",
+ "lines_fetched_at": "2026-11-16T23:39:10Z",
  "players": [
   {
    "player": "LaMelo Ball",
@@ -30,69 +30,62 @@
    "tipped": false,
    "line": {
     "line": 3.5,
-    "over": 108,
-    "under": -142,
+    "over": -101,
+    "under": -131,
     "model_over": 0.5371,
-    "book_over": 0.4503,
-    "edge": 0.0868,
+    "book_over": 0.4698,
+    "edge": 0.0673,
     "book": "DraftKings"
    },
    "ladder": [
     {
-     "n": 1,
-     "price": -3700,
-     "model": 0.9757,
-     "book": 0.9318,
-     "edge": 0.0439
-    },
-    {
      "n": 2,
-     "price": -576,
+     "price": -650,
      "model": 0.8877,
-     "book": 0.8154,
-     "edge": 0.0724
+     "book": 0.8293,
+     "edge": 0.0584
     },
     {
      "n": 3,
-     "price": -210,
+     "price": -227,
      "model": 0.7326,
-     "book": 0.6482,
-     "edge": 0.0844
+     "book": 0.6643,
+     "edge": 0.0683
     },
     {
      "n": 4,
-     "price": 109,
+     "price": -101,
      "model": 0.5371,
-     "book": 0.4579,
-     "edge": 0.0793
+     "book": 0.4808,
+     "edge": 0.0563
     },
     {
      "n": 5,
-     "price": 220,
+     "price": 201,
      "model": 0.3301,
-     "book": 0.299,
-     "edge": 0.0311
+     "book": 0.3179,
+     "edge": 0.0122
     },
     {
      "n": 6,
-     "price": 436,
+     "price": 387,
      "model": 0.2134,
-     "book": 0.1785,
-     "edge": 0.0349
+     "book": 0.1965,
+     "edge": 0.0169
     },
     {
      "n": 7,
-     "price": 820,
+     "price": 720,
      "model": 0.1301,
-     "book": 0.104,
-     "edge": 0.0261
+     "book": 0.1167,
+     "edge": 0.0134
     },
     {
      "n": 8,
-     "price": 1460,
+     "price": 1280,
      "model": 0.0749,
-     "book": 0.0613,
-     "edge": 0.0135
+     "book": 0.0693,
+     "edge": 0.0055
     }
    ],
    "last5": [
@@ -120,6 +113,116 @@
      "date": "2026-11-14",
      "made": 4,
      "att": 19
+    }
+   ]
+  },
+  {
+   "player": "Klay Thompson",
+   "player_id": "6475",
+   "team": "MIA",
+   "opp": "HOU",
+   "home": true,
+   "game_id": "401909998",
+   "time_et": "5:30 PM",
+   "status": "active",
+   "minutes": 26.4,
+   "attempts": 9.5,
+   "p3": 0.3882,
+   "made": 3.69,
+   "rungs": [
+    0.9624,
+    0.8452,
+    0.6635,
+    0.4588,
+    0.2667,
+    0.1636
+   ],
+   "tipped": false,
+   "line": {
+    "line": 3.5,
+    "over": 103,
+    "under": -136,
+    "model_over": 0.4588,
+    "book_over": 0.4609,
+    "edge": -0.002,
+    "book": "DraftKings"
+   },
+   "ladder": [
+    {
+     "n": 2,
+     "price": -690,
+     "model": 0.8452,
+     "book": 0.8358,
+     "edge": 0.0094
+    },
+    {
+     "n": 3,
+     "price": -230,
+     "model": 0.6635,
+     "book": 0.667,
+     "edge": -0.0035
+    },
+    {
+     "n": 4,
+     "price": 104,
+     "model": 0.4588,
+     "book": 0.4691,
+     "edge": -0.0102
+    },
+    {
+     "n": 5,
+     "price": 225,
+     "model": 0.2667,
+     "book": 0.2944,
+     "edge": -0.0278
+    },
+    {
+     "n": 6,
+     "price": 465,
+     "model": 0.1636,
+     "book": 0.1694,
+     "edge": -0.0058
+    },
+    {
+     "n": 7,
+     "price": 900,
+     "model": 0.0944,
+     "book": 0.0957,
+     "edge": -0.0013
+    },
+    {
+     "n": 8,
+     "price": 1660,
+     "model": 0.0513,
+     "book": 0.0544,
+     "edge": -0.0031
+    }
+   ],
+   "last5": [
+    {
+     "date": "2026-11-04",
+     "made": 8,
+     "att": 17
+    },
+    {
+     "date": "2026-11-05",
+     "made": 2,
+     "att": 7
+    },
+    {
+     "date": "2026-11-08",
+     "made": 7,
+     "att": 13
+    },
+    {
+     "date": "2026-11-10",
+     "made": 2,
+     "att": 10
+    },
+    {
+     "date": "2026-11-14",
+     "made": 6,
+     "att": 11
     }
    ]
   },
@@ -164,45 +267,45 @@
     },
     {
      "n": 3,
-     "price": -199,
+     "price": -201,
      "model": 0.6458,
-     "book": 0.6369,
-     "edge": 0.0089
+     "book": 0.639,
+     "edge": 0.0068
     },
     {
      "n": 4,
-     "price": 118,
+     "price": 117,
      "model": 0.4398,
-     "book": 0.439,
-     "edge": 0.0008
+     "book": 0.441,
+     "edge": -0.0012
     },
     {
      "n": 5,
-     "price": 257,
+     "price": 255,
      "model": 0.2519,
-     "book": 0.268,
-     "edge": -0.0162
+     "book": 0.2696,
+     "edge": -0.0177
     },
     {
      "n": 6,
-     "price": 519,
+     "price": 529,
      "model": 0.1522,
-     "book": 0.1546,
-     "edge": -0.0024
+     "book": 0.1521,
+     "edge": 0.0001
     },
     {
      "n": 7,
-     "price": 1040,
+     "price": 1060,
      "model": 0.0864,
-     "book": 0.0839,
-     "edge": 0.0025
+     "book": 0.0825,
+     "edge": 0.0039
     },
     {
      "n": 8,
-     "price": 1860,
+     "price": 1900,
      "model": 0.0462,
-     "book": 0.0488,
-     "edge": -0.0026
+     "book": 0.0478,
+     "edge": -0.0016
     }
    ],
    "last5": [
@@ -324,17 +427,17 @@
     },
     {
      "n": 2,
-     "price": -484,
+     "price": -485,
      "model": 0.7981,
-     "book": 0.7931,
-     "edge": 0.005
+     "book": 0.7934,
+     "edge": 0.0048
     },
     {
      "n": 3,
-     "price": -168,
+     "price": -167,
      "model": 0.5937,
-     "book": 0.5999,
-     "edge": -0.0062
+     "book": 0.5985,
+     "edge": -0.0049
     },
     {
      "n": 4,
@@ -345,17 +448,17 @@
     },
     {
      "n": 5,
-     "price": 284,
+     "price": 286,
      "model": 0.2115,
-     "book": 0.2492,
-     "edge": -0.0377
+     "book": 0.2479,
+     "edge": -0.0364
     },
     {
      "n": 6,
-     "price": 574,
+     "price": 577,
      "model": 0.122,
-     "book": 0.142,
-     "edge": -0.02
+     "book": 0.1413,
+     "edge": -0.0194
     },
     {
      "n": 7,
@@ -366,10 +469,10 @@
     },
     {
      "n": 8,
-     "price": 1960,
+     "price": 1940,
      "model": 0.0334,
-     "book": 0.0465,
-     "edge": -0.0131
+     "book": 0.0469,
+     "edge": -0.0135
     }
    ],
    "last5": [
@@ -511,116 +614,6 @@
    ]
   },
   {
-   "player": "Klay Thompson",
-   "player_id": "6475",
-   "team": "MIA",
-   "opp": "HOU",
-   "home": true,
-   "game_id": "401909998",
-   "time_et": "5:30 PM",
-   "status": "active",
-   "minutes": 23.4,
-   "attempts": 8.02,
-   "p3": 0.3882,
-   "made": 3.12,
-   "rungs": [
-    0.936,
-    0.7732,
-    0.5606,
-    0.3546,
-    0.19,
-    0.1071
-   ],
-   "tipped": false,
-   "line": {
-    "line": 3.5,
-    "over": 108,
-    "under": -143,
-    "model_over": 0.3546,
-    "book_over": 0.4496,
-    "edge": -0.0951,
-    "book": "DraftKings"
-   },
-   "ladder": [
-    {
-     "n": 2,
-     "price": -680,
-     "model": 0.7732,
-     "book": 0.8343,
-     "edge": -0.0611
-    },
-    {
-     "n": 3,
-     "price": -222,
-     "model": 0.5606,
-     "book": 0.6598,
-     "edge": -0.0992
-    },
-    {
-     "n": 4,
-     "price": 106,
-     "model": 0.3546,
-     "book": 0.4645,
-     "edge": -0.11
-    },
-    {
-     "n": 5,
-     "price": 222,
-     "model": 0.19,
-     "book": 0.2972,
-     "edge": -0.1072
-    },
-    {
-     "n": 6,
-     "price": 454,
-     "model": 0.1071,
-     "book": 0.1727,
-     "edge": -0.0657
-    },
-    {
-     "n": 7,
-     "price": 870,
-     "model": 0.0565,
-     "book": 0.0987,
-     "edge": -0.0422
-    },
-    {
-     "n": 8,
-     "price": 1560,
-     "model": 0.028,
-     "book": 0.0576,
-     "edge": -0.0296
-    }
-   ],
-   "last5": [
-    {
-     "date": "2026-11-04",
-     "made": 8,
-     "att": 17
-    },
-    {
-     "date": "2026-11-05",
-     "made": 2,
-     "att": 7
-    },
-    {
-     "date": "2026-11-08",
-     "made": 7,
-     "att": 13
-    },
-    {
-     "date": "2026-11-10",
-     "made": 2,
-     "att": 10
-    },
-    {
-     "date": "2026-11-14",
-     "made": 6,
-     "att": 11
-    }
-   ]
-  },
-  {
    "player": "Donovan Mitchell",
    "player_id": "3908809",
    "team": "CLE",
@@ -644,69 +637,69 @@
    "tipped": false,
    "line": {
     "line": 2.5,
-    "over": -144,
-    "under": 109,
+    "over": -126,
+    "under": -104,
     "model_over": 0.556,
-    "book_over": 0.5523,
-    "edge": 0.0037,
+    "book_over": 0.5224,
+    "edge": 0.0336,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -2600,
+     "price": -2200,
      "model": 0.9353,
-     "book": 0.9215,
-     "edge": 0.0138
+     "book": 0.9153,
+     "edge": 0.02
     },
     {
      "n": 2,
-     "price": -416,
+     "price": -372,
      "model": 0.7705,
-     "book": 0.7715,
-     "edge": -0.001
+     "book": 0.7542,
+     "edge": 0.0163
     },
     {
      "n": 3,
-     "price": -142,
+     "price": -127,
      "model": 0.556,
-     "book": 0.5615,
-     "edge": -0.0055
+     "book": 0.5354,
+     "edge": 0.0206
     },
     {
      "n": 4,
-     "price": 164,
+     "price": 186,
      "model": 0.3493,
-     "book": 0.3625,
-     "edge": -0.0132
+     "book": 0.3346,
+     "edge": 0.0147
     },
     {
      "n": 5,
-     "price": 359,
+     "price": 414,
      "model": 0.1857,
-     "book": 0.2085,
-     "edge": -0.0228
+     "book": 0.1862,
+     "edge": -0.0005
     },
     {
      "n": 6,
-     "price": 770,
+     "price": 860,
      "model": 0.1036,
-     "book": 0.11,
-     "edge": -0.0064
+     "book": 0.0997,
+     "edge": 0.0039
     },
     {
      "n": 7,
-     "price": 1520,
+     "price": 1700,
      "model": 0.054,
-     "book": 0.0591,
-     "edge": -0.0051
+     "book": 0.0532,
+     "edge": 0.0008
     },
     {
      "n": 8,
-     "price": 2600,
+     "price": 2800,
      "model": 0.0264,
-     "book": 0.0354,
-     "edge": -0.009
+     "book": 0.033,
+     "edge": -0.0066
     }
    ],
    "last5": [
@@ -761,69 +754,62 @@
    "tipped": false,
    "line": {
     "line": 2.5,
-    "over": -135,
-    "under": 103,
+    "over": -122,
+    "under": -108,
     "model_over": 0.5302,
-    "book_over": 0.5384,
-    "edge": -0.0082,
+    "book_over": 0.5142,
+    "edge": 0.016,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -2900,
+     "price": -2100,
      "model": 0.9274,
-     "book": 0.925,
-     "edge": 0.0023
+     "book": 0.9134,
+     "edge": 0.0139
     },
     {
      "n": 2,
-     "price": -419,
+     "price": -360,
      "model": 0.7508,
-     "book": 0.7726,
-     "edge": -0.0217
+     "book": 0.7489,
+     "edge": 0.0019
     },
     {
      "n": 3,
-     "price": -136,
+     "price": -123,
      "model": 0.5302,
-     "book": 0.5515,
-     "edge": -0.0213
+     "book": 0.5278,
+     "edge": 0.0023
     },
     {
      "n": 4,
-     "price": 178,
+     "price": 200,
      "model": 0.3251,
-     "book": 0.3442,
-     "edge": -0.0192
+     "book": 0.319,
+     "edge": 0.0061
     },
     {
      "n": 5,
-     "price": 400,
+     "price": 454,
      "model": 0.1691,
-     "book": 0.1914,
-     "edge": -0.0223
+     "book": 0.1727,
+     "edge": -0.0036
     },
     {
      "n": 6,
-     "price": 870,
+     "price": 980,
      "model": 0.0921,
-     "book": 0.0987,
-     "edge": -0.0066
+     "book": 0.0886,
+     "edge": 0.0034
     },
     {
      "n": 7,
-     "price": 1700,
+     "price": 1920,
      "model": 0.0467,
-     "book": 0.0532,
-     "edge": -0.0064
-    },
-    {
-     "n": 8,
-     "price": 2800,
-     "model": 0.0222,
-     "book": 0.033,
-     "edge": -0.0108
+     "book": 0.0474,
+     "edge": -0.0006
     }
    ],
    "last5": [
@@ -863,84 +849,84 @@
    "game_id": "401909998",
    "time_et": "5:30 PM",
    "status": "active",
-   "minutes": 33.2,
-   "attempts": 7.68,
+   "minutes": 33.1,
+   "attempts": 7.69,
    "p3": 0.3722,
    "made": 2.86,
    "rungs": [
-    0.9196,
-    0.7335,
-    0.5093,
-    0.3071,
-    0.1578,
-    0.0848
+    0.9198,
+    0.7339,
+    0.5098,
+    0.3076,
+    0.1581,
+    0.0849
    ],
    "tipped": false,
    "line": {
     "line": 2.5,
-    "over": -130,
-    "under": -102,
-    "model_over": 0.5093,
-    "book_over": 0.5282,
-    "edge": -0.0188,
+    "over": -135,
+    "under": 102,
+    "model_over": 0.5098,
+    "book_over": 0.5371,
+    "edge": -0.0273,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
      "price": -2200,
-     "model": 0.9196,
+     "model": 0.9198,
      "book": 0.9153,
-     "edge": 0.0043
+     "edge": 0.0044
     },
     {
      "n": 2,
-     "price": -377,
-     "model": 0.7335,
-     "book": 0.7563,
-     "edge": -0.0229
+     "price": -381,
+     "model": 0.7339,
+     "book": 0.758,
+     "edge": -0.0241
     },
     {
      "n": 3,
      "price": -133,
-     "model": 0.5093,
+     "model": 0.5098,
      "book": 0.5462,
-     "edge": -0.0369
+     "edge": -0.0364
     },
     {
      "n": 4,
-     "price": 177,
-     "model": 0.3071,
-     "book": 0.3455,
-     "edge": -0.0383
+     "price": 175,
+     "model": 0.3076,
+     "book": 0.348,
+     "edge": -0.0404
     },
     {
      "n": 5,
-     "price": 384,
-     "model": 0.1578,
-     "book": 0.1977,
-     "edge": -0.0399
+     "price": 380,
+     "model": 0.1581,
+     "book": 0.1994,
+     "edge": -0.0413
     },
     {
      "n": 6,
-     "price": 820,
-     "model": 0.0848,
-     "book": 0.104,
-     "edge": -0.0193
+     "price": 780,
+     "model": 0.0849,
+     "book": 0.1087,
+     "edge": -0.0238
     },
     {
      "n": 7,
-     "price": 1580,
-     "model": 0.0425,
-     "book": 0.057,
-     "edge": -0.0145
+     "price": 1560,
+     "model": 0.0426,
+     "book": 0.0576,
+     "edge": -0.015
     },
     {
      "n": 8,
      "price": 2600,
      "model": 0.02,
      "book": 0.0354,
-     "edge": -0.0155
+     "edge": -0.0154
     }
    ],
    "last5": [
@@ -995,69 +981,69 @@
    "tipped": false,
    "line": {
     "line": 2.5,
-    "over": -157,
-    "under": 119,
+    "over": -162,
+    "under": 123,
     "model_over": 0.5093,
-    "book_over": 0.5723,
-    "edge": -0.0629,
+    "book_over": 0.5796,
+    "edge": -0.0703,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -3300,
+     "price": -3500,
      "model": 0.9187,
-     "book": 0.9288,
-     "edge": -0.0101
+     "book": 0.9304,
+     "edge": -0.0117
     },
     {
      "n": 2,
-     "price": -475,
+     "price": -485,
      "model": 0.7324,
-     "book": 0.7905,
-     "edge": -0.0581
+     "book": 0.7934,
+     "edge": -0.0609
     },
     {
      "n": 3,
-     "price": -161,
+     "price": -163,
      "model": 0.5093,
-     "book": 0.5903,
-     "edge": -0.0809
+     "book": 0.5931,
+     "edge": -0.0837
     },
     {
      "n": 4,
-     "price": 150,
+     "price": 147,
      "model": 0.3083,
-     "book": 0.3828,
-     "edge": -0.0745
+     "book": 0.3874,
+     "edge": -0.0791
     },
     {
      "n": 5,
-     "price": 331,
+     "price": 323,
      "model": 0.1593,
-     "book": 0.222,
-     "edge": -0.0628
+     "book": 0.2262,
+     "edge": -0.067
     },
     {
      "n": 6,
-     "price": 690,
+     "price": 660,
      "model": 0.0862,
-     "book": 0.1211,
-     "edge": -0.0349
+     "book": 0.1259,
+     "edge": -0.0397
     },
     {
      "n": 7,
-     "price": 1360,
+     "price": 1320,
      "model": 0.0437,
-     "book": 0.0655,
-     "edge": -0.0219
+     "book": 0.0674,
+     "edge": -0.0237
     },
     {
      "n": 8,
-     "price": 2400,
+     "price": 2300,
      "model": 0.0208,
-     "book": 0.0383,
-     "edge": -0.0175
+     "book": 0.0399,
+     "edge": -0.0191
     }
    ],
    "last5": [
@@ -1112,69 +1098,62 @@
    "tipped": false,
    "line": {
     "line": 2.5,
-    "over": -127,
-    "under": -103,
+    "over": -116,
+    "under": -113,
     "model_over": 0.5097,
-    "book_over": 0.5244,
-    "edge": -0.0147,
+    "book_over": 0.5031,
+    "edge": 0.0067,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -2300,
+     "price": -1960,
      "model": 0.92,
-     "book": 0.9171,
-     "edge": 0.003
+     "book": 0.9105,
+     "edge": 0.0095
     },
     {
      "n": 2,
-     "price": -365,
+     "price": -336,
      "model": 0.7341,
-     "book": 0.7511,
-     "edge": -0.017
+     "book": 0.7375,
+     "edge": -0.0034
     },
     {
      "n": 3,
-     "price": -127,
+     "price": -115,
      "model": 0.5097,
-     "book": 0.5354,
-     "edge": -0.0257
+     "book": 0.5119,
+     "edge": -0.0021
     },
     {
      "n": 4,
-     "price": 192,
+     "price": 211,
      "model": 0.3072,
-     "book": 0.3277,
-     "edge": -0.0206
+     "book": 0.3077,
+     "edge": -0.0005
     },
     {
      "n": 5,
-     "price": 445,
+     "price": 472,
      "model": 0.1576,
-     "book": 0.1756,
-     "edge": -0.018
+     "book": 0.1673,
+     "edge": -0.0097
     },
     {
      "n": 6,
-     "price": 940,
+     "price": 990,
      "model": 0.0845,
-     "book": 0.092,
-     "edge": -0.0075
+     "book": 0.0878,
+     "edge": -0.0033
     },
     {
      "n": 7,
-     "price": 1780,
+     "price": 1920,
      "model": 0.0422,
-     "book": 0.0509,
-     "edge": -0.0087
-    },
-    {
-     "n": 8,
-     "price": 2900,
-     "model": 0.0198,
-     "book": 0.0319,
-     "edge": -0.0121
+     "book": 0.0474,
+     "edge": -0.0051
     }
    ],
    "last5": [
@@ -1229,69 +1208,62 @@
    "tipped": false,
    "line": {
     "line": 2.5,
-    "over": -163,
-    "under": 124,
+    "over": -171,
+    "under": 129,
     "model_over": 0.5053,
-    "book_over": 0.5813,
-    "edge": -0.076,
+    "book_over": 0.591,
+    "edge": -0.0857,
     "book": "DraftKings"
    },
    "ladder": [
     {
-     "n": 1,
-     "price": -4200,
-     "model": 0.9175,
-     "book": 0.9347,
-     "edge": -0.0172
-    },
-    {
      "n": 2,
-     "price": -500,
+     "price": -542,
      "model": 0.7294,
-     "book": 0.7974,
-     "edge": -0.068
+     "book": 0.8079,
+     "edge": -0.0785
     },
     {
      "n": 3,
-     "price": -165,
+     "price": -175,
      "model": 0.5053,
-     "book": 0.5958,
-     "edge": -0.0905
+     "book": 0.609,
+     "edge": -0.1037
     },
     {
      "n": 4,
-     "price": 150,
+     "price": 139,
      "model": 0.3044,
-     "book": 0.3828,
-     "edge": -0.0784
+     "book": 0.4004,
+     "edge": -0.096
     },
     {
      "n": 5,
-     "price": 329,
+     "price": 305,
      "model": 0.1565,
-     "book": 0.2231,
-     "edge": -0.0665
+     "book": 0.2363,
+     "edge": -0.0798
     },
     {
      "n": 6,
-     "price": 690,
+     "price": 650,
      "model": 0.0842,
-     "book": 0.1211,
-     "edge": -0.0369
+     "book": 0.1276,
+     "edge": -0.0434
     },
     {
      "n": 7,
-     "price": 1400,
+     "price": 1340,
      "model": 0.0424,
-     "book": 0.0638,
-     "edge": -0.0214
+     "book": 0.0665,
+     "edge": -0.0241
     },
     {
      "n": 8,
-     "price": 2400,
+     "price": 2500,
      "model": 0.02,
-     "book": 0.0383,
-     "edge": -0.0182
+     "book": 0.0368,
+     "edge": -0.0168
     }
    ],
    "last5": [
@@ -1363,45 +1335,45 @@
     },
     {
      "n": 2,
-     "price": -373,
+     "price": -372,
      "model": 0.7167,
-     "book": 0.7546,
-     "edge": -0.038
+     "book": 0.7542,
+     "edge": -0.0375
     },
     {
      "n": 3,
-     "price": -125,
+     "price": -126,
      "model": 0.489,
-     "book": 0.5316,
-     "edge": -0.0427
+     "book": 0.5335,
+     "edge": -0.0446
     },
     {
      "n": 4,
-     "price": 193,
+     "price": 195,
      "model": 0.2893,
-     "book": 0.3266,
-     "edge": -0.0373
+     "book": 0.3244,
+     "edge": -0.0351
     },
     {
      "n": 5,
-     "price": 445,
+     "price": 440,
      "model": 0.1463,
-     "book": 0.1756,
-     "edge": -0.0293
+     "book": 0.1772,
+     "edge": -0.0309
     },
     {
      "n": 6,
-     "price": 970,
+     "price": 940,
      "model": 0.0771,
-     "book": 0.0894,
-     "edge": -0.0123
+     "book": 0.092,
+     "edge": -0.0149
     },
     {
      "n": 7,
-     "price": 1880,
+     "price": 1760,
      "model": 0.0379,
-     "book": 0.0483,
-     "edge": -0.0104
+     "book": 0.0514,
+     "edge": -0.0135
     }
    ],
    "last5": [
@@ -1466,52 +1438,52 @@
    "ladder": [
     {
      "n": 1,
-     "price": -1320,
+     "price": -1220,
      "model": 0.9109,
-     "book": 0.8895,
-     "edge": 0.0213
+     "book": 0.8844,
+     "edge": 0.0264
     },
     {
      "n": 2,
-     "price": -268,
+     "price": -260,
      "model": 0.7145,
-     "book": 0.6969,
-     "edge": 0.0176
+     "book": 0.6911,
+     "edge": 0.0234
     },
     {
      "n": 3,
-     "price": 104,
+     "price": 106,
      "model": 0.4871,
-     "book": 0.4691,
-     "edge": 0.018
+     "book": 0.4645,
+     "edge": 0.0225
     },
     {
      "n": 4,
-     "price": 243,
+     "price": 245,
      "model": 0.2883,
-     "book": 0.279,
-     "edge": 0.0093
+     "book": 0.2774,
+     "edge": 0.0109
     },
     {
      "n": 5,
-     "price": 525,
+     "price": 528,
      "model": 0.146,
-     "book": 0.1531,
-     "edge": -0.0071
+     "book": 0.1524,
+     "edge": -0.0064
     },
     {
      "n": 6,
-     "price": 1080,
+     "price": 1060,
      "model": 0.0772,
-     "book": 0.0811,
-     "edge": -0.0039
+     "book": 0.0825,
+     "edge": -0.0053
     },
     {
      "n": 7,
-     "price": 1940,
+     "price": 1980,
      "model": 0.0381,
-     "book": 0.0469,
-     "edge": -0.0088
+     "book": 0.046,
+     "edge": -0.0079
     }
    ],
    "last5": [
@@ -1566,62 +1538,62 @@
    "tipped": false,
    "line": {
     "line": 2.5,
-    "over": -106,
-    "under": -124,
+    "over": 100,
+    "under": -132,
     "model_over": 0.4807,
-    "book_over": 0.4817,
-    "edge": -0.001,
+    "book_over": 0.4677,
+    "edge": 0.013,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -1560,
+     "price": -1520,
      "model": 0.9084,
-     "book": 0.8993,
-     "edge": 0.0092
+     "book": 0.8979,
+     "edge": 0.0106
     },
     {
      "n": 2,
-     "price": -303,
+     "price": -289,
      "model": 0.7092,
-     "book": 0.7195,
-     "edge": -0.0103
+     "book": 0.7109,
+     "edge": -0.0018
     },
     {
      "n": 3,
-     "price": -106,
+     "price": 100,
      "model": 0.4807,
-     "book": 0.4924,
-     "edge": -0.0117
+     "book": 0.4785,
+     "edge": 0.0022
     },
     {
      "n": 4,
-     "price": 227,
+     "price": 236,
      "model": 0.2828,
-     "book": 0.2926,
-     "edge": -0.0098
+     "book": 0.2848,
+     "edge": -0.002
     },
     {
      "n": 5,
-     "price": 496,
+     "price": 527,
      "model": 0.1424,
-     "book": 0.1606,
-     "edge": -0.0181
+     "book": 0.1526,
+     "edge": -0.0102
     },
     {
      "n": 6,
-     "price": 1080,
+     "price": 1140,
      "model": 0.0748,
-     "book": 0.0811,
-     "edge": -0.0062
+     "book": 0.0772,
+     "edge": -0.0023
     },
     {
      "n": 7,
-     "price": 2000,
+     "price": 2100,
      "model": 0.0367,
-     "book": 0.0456,
-     "edge": -0.0088
+     "book": 0.0435,
+     "edge": -0.0068
     }
    ],
    "last5": [
@@ -1666,72 +1638,72 @@
    "p3": 0.3697,
    "made": 2.71,
    "rungs": [
-    0.9074,
-    0.7064,
-    0.4767,
-    0.2789,
-    0.1396,
-    0.0728
+    0.9076,
+    0.7068,
+    0.4772,
+    0.2792,
+    0.1398,
+    0.0729
    ],
    "tipped": false,
    "line": {
     "line": 2.5,
-    "over": 122,
-    "under": -161,
-    "model_over": 0.4767,
-    "book_over": 0.422,
-    "edge": 0.0547,
+    "over": 118,
+    "under": -156,
+    "model_over": 0.4772,
+    "book_over": 0.4295,
+    "edge": 0.0477,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -830,
-     "model": 0.9074,
-     "book": 0.854,
-     "edge": 0.0534
+     "price": -930,
+     "model": 0.9076,
+     "book": 0.864,
+     "edge": 0.0436
     },
     {
      "n": 2,
-     "price": -203,
-     "model": 0.7064,
-     "book": 0.6411,
-     "edge": 0.0653
+     "price": -218,
+     "model": 0.7068,
+     "book": 0.656,
+     "edge": 0.0508
     },
     {
      "n": 3,
-     "price": 125,
-     "model": 0.4767,
-     "book": 0.4253,
-     "edge": 0.0514
+     "price": 119,
+     "model": 0.4772,
+     "book": 0.437,
+     "edge": 0.0402
     },
     {
      "n": 4,
-     "price": 283,
-     "model": 0.2789,
-     "book": 0.2499,
-     "edge": 0.029
+     "price": 263,
+     "model": 0.2792,
+     "book": 0.2636,
+     "edge": 0.0156
     },
     {
      "n": 5,
-     "price": 582,
-     "model": 0.1396,
-     "book": 0.1403,
-     "edge": -0.0007
+     "price": 570,
+     "model": 0.1398,
+     "book": 0.1428,
+     "edge": -0.003
     },
     {
      "n": 6,
-     "price": 1140,
-     "model": 0.0728,
-     "book": 0.0772,
-     "edge": -0.0044
+     "price": 1160,
+     "model": 0.0729,
+     "book": 0.0759,
+     "edge": -0.003
     },
     {
      "n": 7,
-     "price": 2000,
-     "model": 0.0354,
-     "book": 0.0456,
-     "edge": -0.0102
+     "price": 1960,
+     "model": 0.0355,
+     "book": 0.0465,
+     "edge": -0.011
     }
    ],
    "last5": [
@@ -1786,55 +1758,62 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": -178,
-    "under": 134,
+    "over": -184,
+    "under": 139,
     "model_over": 0.6991,
-    "book_over": 0.5997,
-    "edge": 0.0994,
+    "book_over": 0.6076,
+    "edge": 0.0915,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -790,
+     "price": -730,
      "model": 0.9037,
-     "book": 0.8494,
-     "edge": 0.0543
+     "book": 0.8416,
+     "edge": 0.0621
     },
     {
      "n": 2,
-     "price": -180,
+     "price": -184,
      "model": 0.6991,
-     "book": 0.6152,
-     "edge": 0.0839
+     "book": 0.62,
+     "edge": 0.0791
     },
     {
      "n": 3,
-     "price": 160,
+     "price": 143,
      "model": 0.4689,
-     "book": 0.3681,
-     "edge": 0.1009
+     "book": 0.3938,
+     "edge": 0.0751
     },
     {
      "n": 4,
-     "price": 396,
+     "price": 322,
      "model": 0.2728,
-     "book": 0.1929,
-     "edge": 0.0799
+     "book": 0.2268,
+     "edge": 0.046
     },
     {
      "n": 5,
-     "price": 920,
+     "price": 690,
      "model": 0.1361,
-     "book": 0.0938,
-     "edge": 0.0423
+     "book": 0.1211,
+     "edge": 0.015
     },
     {
      "n": 6,
-     "price": 1860,
+     "price": 1420,
      "model": 0.0708,
-     "book": 0.0488,
-     "edge": 0.0219
+     "book": 0.063,
+     "edge": 0.0078
+    },
+    {
+     "n": 7,
+     "price": 2600,
+     "model": 0.0343,
+     "book": 0.0354,
+     "edge": -0.0011
     }
    ],
    "last5": [
@@ -1899,52 +1878,52 @@
    "ladder": [
     {
      "n": 1,
-     "price": -1660,
+     "price": -1820,
      "model": 0.8998,
-     "book": 0.9026,
-     "edge": -0.0028
+     "book": 0.9071,
+     "edge": -0.0073
     },
     {
      "n": 2,
-     "price": -304,
+     "price": -317,
      "model": 0.69,
-     "book": 0.7201,
-     "edge": -0.03
+     "book": 0.7275,
+     "edge": -0.0374
     },
     {
      "n": 3,
-     "price": -104,
+     "price": -106,
      "model": 0.4577,
-     "book": 0.4879,
-     "edge": -0.0302
+     "book": 0.4924,
+     "edge": -0.0347
     },
     {
      "n": 4,
-     "price": 237,
+     "price": 233,
      "model": 0.2627,
-     "book": 0.284,
-     "edge": -0.0212
+     "book": 0.2874,
+     "edge": -0.0246
     },
     {
      "n": 5,
-     "price": 543,
+     "price": 538,
      "model": 0.1295,
-     "book": 0.1488,
-     "edge": -0.0194
+     "book": 0.15,
+     "edge": -0.0205
     },
     {
      "n": 6,
-     "price": 1160,
+     "price": 1100,
      "model": 0.0662,
-     "book": 0.0759,
-     "edge": -0.0097
+     "book": 0.0797,
+     "edge": -0.0135
     },
     {
      "n": 7,
-     "price": 2200,
+     "price": 2100,
      "model": 0.0316,
-     "book": 0.0416,
-     "edge": -0.01
+     "book": 0.0435,
+     "edge": -0.0119
     }
    ],
    "last5": [
@@ -1999,62 +1978,62 @@
    "tipped": false,
    "line": {
     "line": 2.5,
-    "over": 126,
-    "under": -167,
+    "over": 120,
+    "under": -158,
     "model_over": 0.4541,
-    "book_over": 0.4143,
-    "edge": 0.0398,
+    "book_over": 0.426,
+    "edge": 0.0281,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -970,
+     "price": -1060,
      "model": 0.8986,
-     "book": 0.8675,
-     "edge": 0.0311
+     "book": 0.8744,
+     "edge": 0.0241
     },
     {
      "n": 2,
-     "price": -216,
+     "price": -232,
      "model": 0.6872,
-     "book": 0.6541,
-     "edge": 0.0331
+     "book": 0.6687,
+     "edge": 0.0185
     },
     {
      "n": 3,
-     "price": 127,
+     "price": 118,
      "model": 0.4541,
-     "book": 0.4216,
-     "edge": 0.0325
+     "book": 0.439,
+     "edge": 0.0151
     },
     {
      "n": 4,
-     "price": 306,
+     "price": 277,
      "model": 0.2595,
-     "book": 0.2357,
-     "edge": 0.0238
+     "book": 0.2538,
+     "edge": 0.0057
     },
     {
      "n": 5,
-     "price": 690,
+     "price": 610,
      "model": 0.1273,
-     "book": 0.1211,
-     "edge": 0.0061
+     "book": 0.1348,
+     "edge": -0.0075
     },
     {
      "n": 6,
-     "price": 1380,
+     "price": 1280,
      "model": 0.0647,
-     "book": 0.0647,
-     "edge": 0.0001
+     "book": 0.0693,
+     "edge": -0.0046
     },
     {
      "n": 7,
-     "price": 2500,
+     "price": 2300,
      "model": 0.0307,
-     "book": 0.0368,
-     "edge": -0.0061
+     "book": 0.0399,
+     "edge": -0.0092
     }
    ],
    "last5": [
@@ -2109,62 +2088,62 @@
    "tipped": false,
    "line": {
     "line": 2.5,
-    "over": -111,
-    "under": -118,
+    "over": -107,
+    "under": -123,
     "model_over": 0.4526,
-    "book_over": 0.4929,
-    "edge": -0.0403,
+    "book_over": 0.4838,
+    "edge": -0.0312,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -1940,
+     "price": -1980,
      "model": 0.8978,
-     "book": 0.91,
-     "edge": -0.0122
+     "book": 0.9109,
+     "edge": -0.0131
     },
     {
      "n": 2,
-     "price": -327,
+     "price": -328,
      "model": 0.6858,
-     "book": 0.7328,
-     "edge": -0.047
+     "book": 0.7334,
+     "edge": -0.0476
     },
     {
      "n": 3,
-     "price": -111,
+     "price": -109,
      "model": 0.4526,
-     "book": 0.5034,
-     "edge": -0.0508
+     "book": 0.4991,
+     "edge": -0.0465
     },
     {
      "n": 4,
-     "price": 220,
+     "price": 226,
      "model": 0.2584,
-     "book": 0.299,
-     "edge": -0.0407
+     "book": 0.2935,
+     "edge": -0.0352
     },
     {
      "n": 5,
-     "price": 506,
+     "price": 517,
      "model": 0.1266,
-     "book": 0.1579,
-     "edge": -0.0313
+     "book": 0.1551,
+     "edge": -0.0285
     },
     {
      "n": 6,
-     "price": 1060,
+     "price": 1100,
      "model": 0.0644,
-     "book": 0.0825,
-     "edge": -0.0181
+     "book": 0.0797,
+     "edge": -0.0154
     },
     {
      "n": 7,
-     "price": 1960,
+     "price": 2100,
      "model": 0.0305,
-     "book": 0.0465,
-     "edge": -0.016
+     "book": 0.0435,
+     "edge": -0.013
     }
    ],
    "last5": [
@@ -2209,72 +2188,72 @@
    "p3": 0.3517,
    "made": 2.51,
    "rungs": [
-    0.8899,
-    0.6694,
-    0.434,
-    0.243,
-    0.1171,
-    0.0583
+    0.8902,
+    0.6699,
+    0.4345,
+    0.2434,
+    0.1174,
+    0.0585
    ],
    "tipped": false,
    "line": {
-    "line": 1.5,
-    "over": -188,
-    "under": 141,
-    "model_over": 0.6694,
-    "book_over": 0.6114,
-    "edge": 0.058,
+    "line": 2.5,
+    "over": 142,
+    "under": -189,
+    "model_over": 0.4345,
+    "book_over": 0.3872,
+    "edge": 0.0473,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -890,
-     "model": 0.8899,
-     "book": 0.8603,
-     "edge": 0.0296
+     "price": -920,
+     "model": 0.8902,
+     "book": 0.8631,
+     "edge": 0.027
     },
     {
      "n": 2,
-     "price": -190,
-     "model": 0.6694,
-     "book": 0.627,
-     "edge": 0.0424
+     "price": -200,
+     "model": 0.6699,
+     "book": 0.638,
+     "edge": 0.0319
     },
     {
      "n": 3,
-     "price": 147,
-     "model": 0.434,
-     "book": 0.3874,
-     "edge": 0.0465
+     "price": 143,
+     "model": 0.4345,
+     "book": 0.3938,
+     "edge": 0.0407
     },
     {
      "n": 4,
-     "price": 366,
-     "model": 0.243,
-     "book": 0.2054,
-     "edge": 0.0376
+     "price": 349,
+     "model": 0.2434,
+     "book": 0.2131,
+     "edge": 0.0303
     },
     {
      "n": 5,
-     "price": 820,
-     "model": 0.1171,
-     "book": 0.104,
-     "edge": 0.0131
+     "price": 780,
+     "model": 0.1174,
+     "book": 0.1087,
+     "edge": 0.0086
     },
     {
      "n": 6,
-     "price": 1700,
-     "model": 0.0583,
-     "book": 0.0532,
-     "edge": 0.0052
+     "price": 1600,
+     "model": 0.0585,
+     "book": 0.0563,
+     "edge": 0.0022
     },
     {
      "n": 7,
-     "price": 2900,
-     "model": 0.027,
-     "book": 0.0319,
-     "edge": -0.0049
+     "price": 2800,
+     "model": 0.0271,
+     "book": 0.033,
+     "edge": -0.0059
     }
    ],
    "last5": [
@@ -2319,70 +2298,70 @@
    "p3": 0.3661,
    "made": 2.47,
    "rungs": [
-    0.8847,
-    0.6597,
-    0.424,
-    0.2356,
-    0.113,
-    0.056
+    0.8849,
+    0.6601,
+    0.4245,
+    0.2359,
+    0.1132,
+    0.0561
    ],
    "tipped": false,
    "line": {
     "line": 2.5,
-    "over": 135,
-    "under": -179,
-    "model_over": 0.424,
-    "book_over": 0.3988,
-    "edge": 0.0253,
+    "over": 136,
+    "under": -180,
+    "model_over": 0.4245,
+    "book_over": 0.3973,
+    "edge": 0.0272,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -830,
-     "model": 0.8847,
-     "book": 0.854,
-     "edge": 0.0307
+     "price": -850,
+     "model": 0.8849,
+     "book": 0.8562,
+     "edge": 0.0287
     },
     {
      "n": 2,
-     "price": -192,
-     "model": 0.6597,
-     "book": 0.6292,
-     "edge": 0.0305
+     "price": -197,
+     "model": 0.6601,
+     "book": 0.6347,
+     "edge": 0.0254
     },
     {
      "n": 3,
-     "price": 140,
-     "model": 0.424,
-     "book": 0.3987,
-     "edge": 0.0253
+     "price": 136,
+     "model": 0.4245,
+     "book": 0.4055,
+     "edge": 0.019
     },
     {
      "n": 4,
-     "price": 328,
-     "model": 0.2356,
-     "book": 0.2236,
-     "edge": 0.012
+     "price": 319,
+     "model": 0.2359,
+     "book": 0.2284,
+     "edge": 0.0075
     },
     {
      "n": 5,
-     "price": 710,
-     "model": 0.113,
-     "book": 0.1181,
-     "edge": -0.0052
+     "price": 670,
+     "model": 0.1132,
+     "book": 0.1243,
+     "edge": -0.0111
     },
     {
      "n": 6,
-     "price": 1400,
-     "model": 0.056,
-     "book": 0.0638,
-     "edge": -0.0078
+     "price": 1380,
+     "model": 0.0561,
+     "book": 0.0647,
+     "edge": -0.0085
     },
     {
      "n": 7,
      "price": 2400,
-     "model": 0.0258,
+     "model": 0.0259,
      "book": 0.0383,
      "edge": -0.0124
     }
@@ -2416,109 +2395,6 @@
    ]
   },
   {
-   "player": "Jaylen Wells",
-   "player_id": "5112087",
-   "team": "MEM",
-   "opp": "WAS",
-   "home": false,
-   "game_id": "401909996",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 28.7,
-   "attempts": 6.63,
-   "p3": 0.3603,
-   "made": 2.39,
-   "rungs": [
-    0.8762,
-    0.6431,
-    0.406,
-    0.2213,
-    0.1044,
-    0.0508
-   ],
-   "tipped": false,
-   "line": {
-    "line": 1.5,
-    "over": -174,
-    "under": 131,
-    "model_over": 0.6431,
-    "book_over": 0.5946,
-    "edge": 0.0484,
-    "book": "DraftKings"
-   },
-   "ladder": [
-    {
-     "n": 1,
-     "price": -840,
-     "model": 0.8762,
-     "book": 0.8551,
-     "edge": 0.021
-    },
-    {
-     "n": 2,
-     "price": -172,
-     "model": 0.6431,
-     "book": 0.6051,
-     "edge": 0.038
-    },
-    {
-     "n": 3,
-     "price": 170,
-     "model": 0.406,
-     "book": 0.3544,
-     "edge": 0.0516
-    },
-    {
-     "n": 4,
-     "price": 448,
-     "model": 0.2213,
-     "book": 0.1746,
-     "edge": 0.0466
-    },
-    {
-     "n": 5,
-     "price": 1060,
-     "model": 0.1044,
-     "book": 0.0825,
-     "edge": 0.0219
-    },
-    {
-     "n": 6,
-     "price": 2100,
-     "model": 0.0508,
-     "book": 0.0435,
-     "edge": 0.0073
-    }
-   ],
-   "last5": [
-    {
-     "date": "2026-11-06",
-     "made": 1,
-     "att": 4
-    },
-    {
-     "date": "2026-11-09",
-     "made": 4,
-     "att": 5
-    },
-    {
-     "date": "2026-11-11",
-     "made": 5,
-     "att": 10
-    },
-    {
-     "date": "2026-11-13",
-     "made": 2,
-     "att": 8
-    },
-    {
-     "date": "2026-11-14",
-     "made": 1,
-     "att": 3
-    }
-   ]
-  },
-  {
    "player": "Payton Pritchard",
    "player_id": "4066354",
    "team": "BOS",
@@ -2542,55 +2418,55 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": -169,
-    "under": 128,
+    "over": -193,
+    "under": 145,
     "model_over": 0.6413,
-    "book_over": 0.5889,
-    "edge": 0.0525,
+    "book_over": 0.6174,
+    "edge": 0.0239,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -800,
+     "price": -960,
      "model": 0.8748,
-     "book": 0.8506,
-     "edge": 0.0241
+     "book": 0.8667,
+     "edge": 0.0081
     },
     {
      "n": 2,
-     "price": -170,
+     "price": -195,
      "model": 0.6413,
-     "book": 0.6025,
-     "edge": 0.0388
+     "book": 0.6326,
+     "edge": 0.0088
     },
     {
      "n": 3,
-     "price": 172,
+     "price": 152,
      "model": 0.4051,
-     "book": 0.3518,
-     "edge": 0.0533
+     "book": 0.3797,
+     "edge": 0.0254
     },
     {
      "n": 4,
-     "price": 430,
+     "price": 382,
      "model": 0.2213,
-     "book": 0.1806,
-     "edge": 0.0407
+     "book": 0.1985,
+     "edge": 0.0227
     },
     {
      "n": 5,
-     "price": 1040,
+     "price": 880,
      "model": 0.1049,
-     "book": 0.0839,
-     "edge": 0.0209
+     "book": 0.0976,
+     "edge": 0.0072
     },
     {
      "n": 6,
-     "price": 2000,
+     "price": 1860,
      "model": 0.0512,
-     "book": 0.0456,
-     "edge": 0.0057
+     "book": 0.0488,
+     "edge": 0.0024
     }
    ],
    "last5": [
@@ -2755,55 +2631,55 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": -185,
-    "under": 139,
+    "over": -191,
+    "under": 144,
     "model_over": 0.6386,
-    "book_over": 0.6081,
-    "edge": 0.0306,
+    "book_over": 0.6156,
+    "edge": 0.023,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -880,
+     "price": -900,
      "model": 0.8741,
-     "book": 0.8593,
-     "edge": 0.0148
+     "book": 0.8612,
+     "edge": 0.0128
     },
     {
      "n": 2,
-     "price": -186,
+     "price": -192,
      "model": 0.6386,
-     "book": 0.6223,
-     "edge": 0.0163
+     "book": 0.6292,
+     "edge": 0.0094
     },
     {
      "n": 3,
-     "price": 150,
+     "price": 147,
      "model": 0.4008,
-     "book": 0.3828,
-     "edge": 0.018
+     "book": 0.3874,
+     "edge": 0.0134
     },
     {
      "n": 4,
-     "price": 368,
+     "price": 364,
      "model": 0.2169,
-     "book": 0.2045,
-     "edge": 0.0124
+     "book": 0.2062,
+     "edge": 0.0106
     },
     {
      "n": 5,
-     "price": 850,
+     "price": 860,
      "model": 0.1017,
-     "book": 0.1007,
-     "edge": 0.0009
+     "book": 0.0997,
+     "edge": 0.002
     },
     {
      "n": 6,
-     "price": 1800,
+     "price": 1740,
      "model": 0.049,
-     "book": 0.0504,
-     "edge": -0.0014
+     "book": 0.052,
+     "edge": -0.003
     }
    ],
    "last5": [
@@ -2844,76 +2720,69 @@
    "time_et": "5:00 PM",
    "status": "active",
    "minutes": 32.4,
-   "attempts": 6.38,
+   "attempts": 6.4,
    "p3": 0.3641,
-   "made": 2.32,
+   "made": 2.33,
    "rungs": [
-    0.8685,
-    0.629,
-    0.3915,
-    0.2103,
-    0.0982,
-    0.0471
+    0.8692,
+    0.6303,
+    0.3928,
+    0.2113,
+    0.0988,
+    0.0474
    ],
    "tipped": false,
    "line": {
-    "line": 2.5,
-    "over": 141,
-    "under": -187,
-    "model_over": 0.3915,
-    "book_over": 0.3891,
-    "edge": 0.0025,
+    "line": 1.5,
+    "over": -175,
+    "under": 132,
+    "model_over": 0.6303,
+    "book_over": 0.5962,
+    "edge": 0.0341,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -890,
-     "model": 0.8685,
-     "book": 0.8603,
-     "edge": 0.0083
+     "price": -760,
+     "model": 0.8692,
+     "book": 0.8457,
+     "edge": 0.0236
     },
     {
      "n": 2,
-     "price": -198,
-     "model": 0.629,
-     "book": 0.6358,
-     "edge": -0.0068
+     "price": -174,
+     "model": 0.6303,
+     "book": 0.6077,
+     "edge": 0.0226
     },
     {
      "n": 3,
-     "price": 141,
-     "model": 0.3915,
-     "book": 0.3971,
-     "edge": -0.0056
+     "price": 159,
+     "model": 0.3928,
+     "book": 0.3695,
+     "edge": 0.0234
     },
     {
      "n": 4,
-     "price": 335,
-     "model": 0.2103,
-     "book": 0.22,
-     "edge": -0.0097
+     "price": 386,
+     "model": 0.2113,
+     "book": 0.1969,
+     "edge": 0.0144
     },
     {
      "n": 5,
-     "price": 760,
-     "model": 0.0982,
-     "book": 0.1113,
-     "edge": -0.0131
+     "price": 910,
+     "model": 0.0988,
+     "book": 0.0947,
+     "edge": 0.004
     },
     {
      "n": 6,
-     "price": 1640,
-     "model": 0.0471,
-     "book": 0.055,
-     "edge": -0.0079
-    },
-    {
-     "n": 7,
-     "price": 2800,
-     "model": 0.021,
-     "book": 0.033,
-     "edge": -0.012
+     "price": 1920,
+     "model": 0.0474,
+     "book": 0.0474,
+     "edge": 0.0
     }
    ],
    "last5": [
@@ -2945,6 +2814,109 @@
    ]
   },
   {
+   "player": "Jaylen Wells",
+   "player_id": "5112087",
+   "team": "MEM",
+   "opp": "WAS",
+   "home": false,
+   "game_id": "401909996",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 28.4,
+   "attempts": 6.45,
+   "p3": 0.3603,
+   "made": 2.32,
+   "rungs": [
+    0.8687,
+    0.6292,
+    0.3916,
+    0.2102,
+    0.098,
+    0.047
+   ],
+   "tipped": false,
+   "line": {
+    "line": 1.5,
+    "over": -176,
+    "under": 133,
+    "model_over": 0.6292,
+    "book_over": 0.5977,
+    "edge": 0.0315,
+    "book": "DraftKings"
+   },
+   "ladder": [
+    {
+     "n": 1,
+     "price": -850,
+     "model": 0.8687,
+     "book": 0.8562,
+     "edge": 0.0125
+    },
+    {
+     "n": 2,
+     "price": -175,
+     "model": 0.6292,
+     "book": 0.609,
+     "edge": 0.0203
+    },
+    {
+     "n": 3,
+     "price": 167,
+     "model": 0.3916,
+     "book": 0.3584,
+     "edge": 0.0332
+    },
+    {
+     "n": 4,
+     "price": 434,
+     "model": 0.2102,
+     "book": 0.1792,
+     "edge": 0.031
+    },
+    {
+     "n": 5,
+     "price": 1080,
+     "model": 0.098,
+     "book": 0.0811,
+     "edge": 0.017
+    },
+    {
+     "n": 6,
+     "price": 2200,
+     "model": 0.047,
+     "book": 0.0416,
+     "edge": 0.0054
+    }
+   ],
+   "last5": [
+    {
+     "date": "2026-11-06",
+     "made": 1,
+     "att": 4
+    },
+    {
+     "date": "2026-11-09",
+     "made": 4,
+     "att": 5
+    },
+    {
+     "date": "2026-11-11",
+     "made": 5,
+     "att": 10
+    },
+    {
+     "date": "2026-11-13",
+     "made": 2,
+     "att": 8
+    },
+    {
+     "date": "2026-11-14",
+     "made": 1,
+     "att": 3
+    }
+   ]
+  },
+  {
    "player": "Matas Buzelis",
    "player_id": "4711294",
    "team": "CHI",
@@ -2968,62 +2940,62 @@
    "tipped": false,
    "line": {
     "line": 2.5,
-    "over": 128,
-    "under": -169,
+    "over": 143,
+    "under": -189,
     "model_over": 0.3901,
-    "book_over": 0.4111,
-    "edge": -0.0211,
+    "book_over": 0.3862,
+    "edge": 0.0038,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -1100,
+     "price": -960,
      "model": 0.8684,
-     "book": 0.8772,
-     "edge": -0.0088
+     "book": 0.8667,
+     "edge": 0.0018
     },
     {
      "n": 2,
-     "price": -219,
+     "price": -201,
      "model": 0.6282,
-     "book": 0.657,
-     "edge": -0.0287
+     "book": 0.639,
+     "edge": -0.0108
     },
     {
      "n": 3,
-     "price": 129,
+     "price": 144,
      "model": 0.3901,
-     "book": 0.4179,
-     "edge": -0.0278
+     "book": 0.3922,
+     "edge": -0.0021
     },
     {
      "n": 4,
-     "price": 318,
+     "price": 346,
      "model": 0.2088,
-     "book": 0.2289,
-     "edge": -0.0202
+     "book": 0.2146,
+     "edge": -0.0058
     },
     {
      "n": 5,
-     "price": 720,
+     "price": 790,
      "model": 0.097,
-     "book": 0.1167,
-     "edge": -0.0197
+     "book": 0.1075,
+     "edge": -0.0105
     },
     {
      "n": 6,
-     "price": 1480,
+     "price": 1640,
      "model": 0.0463,
-     "book": 0.0606,
-     "edge": -0.0143
+     "book": 0.055,
+     "edge": -0.0087
     },
     {
      "n": 7,
-     "price": 2600,
+     "price": 2900,
      "model": 0.0205,
-     "book": 0.0354,
-     "edge": -0.0149
+     "book": 0.0319,
+     "edge": -0.0114
     }
    ],
    "last5": [
@@ -3078,55 +3050,55 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": -195,
-    "under": 147,
+    "over": -193,
+    "under": 145,
     "model_over": 0.6032,
-    "book_over": 0.6202,
-    "edge": -0.017,
+    "book_over": 0.6174,
+    "edge": -0.0142,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -1000,
+     "price": -950,
      "model": 0.8534,
-     "book": 0.8699,
-     "edge": -0.0165
+     "book": 0.8658,
+     "edge": -0.0124
     },
     {
      "n": 2,
-     "price": -194,
+     "price": -195,
      "model": 0.6032,
-     "book": 0.6314,
-     "edge": -0.0283
+     "book": 0.6326,
+     "edge": -0.0294
     },
     {
      "n": 3,
-     "price": 154,
+     "price": 150,
      "model": 0.3665,
-     "book": 0.3767,
-     "edge": -0.0103
+     "book": 0.3828,
+     "edge": -0.0163
     },
     {
      "n": 4,
-     "price": 394,
+     "price": 378,
      "model": 0.1925,
-     "book": 0.1937,
-     "edge": -0.0012
+     "book": 0.2002,
+     "edge": -0.0077
     },
     {
      "n": 5,
-     "price": 920,
+     "price": 890,
      "model": 0.0885,
-     "book": 0.0938,
-     "edge": -0.0053
+     "book": 0.0967,
+     "edge": -0.0082
     },
     {
      "n": 6,
-     "price": 1960,
+     "price": 1820,
      "model": 0.0417,
-     "book": 0.0465,
-     "edge": -0.0048
+     "book": 0.0498,
+     "edge": -0.0082
     }
    ],
    "last5": [
@@ -3181,48 +3153,48 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": -172,
-    "under": 130,
+    "over": -177,
+    "under": 133,
     "model_over": 0.6064,
-    "book_over": 0.5926,
-    "edge": 0.0138,
+    "book_over": 0.5982,
+    "edge": 0.0082,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -810,
+     "price": -890,
      "model": 0.856,
-     "book": 0.8518,
-     "edge": 0.0042
+     "book": 0.8603,
+     "edge": -0.0043
     },
     {
      "n": 2,
-     "price": -173,
+     "price": -183,
      "model": 0.6064,
-     "book": 0.6064,
-     "edge": -0.0
+     "book": 0.6188,
+     "edge": -0.0124
     },
     {
      "n": 3,
-     "price": 170,
+     "price": 165,
      "model": 0.3684,
-     "book": 0.3544,
-     "edge": 0.014
+     "book": 0.3611,
+     "edge": 0.0073
     },
     {
      "n": 4,
-     "price": 444,
+     "price": 414,
      "model": 0.193,
-     "book": 0.1759,
-     "edge": 0.0171
+     "book": 0.1862,
+     "edge": 0.0068
     },
     {
      "n": 5,
-     "price": 1040,
+     "price": 1000,
      "model": 0.0882,
-     "book": 0.0839,
-     "edge": 0.0043
+     "book": 0.087,
+     "edge": 0.0012
     },
     {
      "n": 6,
@@ -3387,34 +3359,34 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": -193,
-    "under": 146,
+    "over": -186,
+    "under": 141,
     "model_over": 0.5992,
-    "book_over": 0.6184,
-    "edge": -0.0191,
+    "book_over": 0.6105,
+    "edge": -0.0112,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -950,
+     "price": -910,
      "model": 0.8513,
-     "book": 0.8658,
-     "edge": -0.0145
+     "book": 0.8622,
+     "edge": -0.0109
     },
     {
      "n": 2,
-     "price": -198,
+     "price": -190,
      "model": 0.5992,
-     "book": 0.6358,
-     "edge": -0.0366
+     "book": 0.627,
+     "edge": -0.0277
     },
     {
      "n": 3,
-     "price": 147,
+     "price": 150,
      "model": 0.3623,
-     "book": 0.3874,
-     "edge": -0.0251
+     "book": 0.3828,
+     "edge": -0.0205
     },
     {
      "n": 4,
@@ -3425,10 +3397,10 @@
     },
     {
      "n": 5,
-     "price": 840,
+     "price": 850,
      "model": 0.0865,
-     "book": 0.1018,
-     "edge": -0.0153
+     "book": 0.1007,
+     "edge": -0.0142
     },
     {
      "n": 6,
@@ -3490,55 +3462,55 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": -113,
-    "under": -117,
+    "over": -151,
+    "under": 115,
     "model_over": 0.596,
-    "book_over": 0.496,
-    "edge": 0.1001,
+    "book_over": 0.564,
+    "edge": 0.0321,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -510,
+     "price": -650,
      "model": 0.8497,
-     "book": 0.8001,
-     "edge": 0.0496
+     "book": 0.8293,
+     "edge": 0.0203
     },
     {
      "n": 2,
-     "price": -114,
+     "price": -152,
      "model": 0.596,
-     "book": 0.5098,
-     "edge": 0.0863
+     "book": 0.5772,
+     "edge": 0.0188
     },
     {
      "n": 3,
-     "price": 262,
+     "price": 175,
      "model": 0.3588,
-     "book": 0.2643,
-     "edge": 0.0944
+     "book": 0.348,
+     "edge": 0.0108
     },
     {
      "n": 4,
-     "price": 670,
+     "price": 417,
      "model": 0.1864,
-     "book": 0.1243,
-     "edge": 0.0621
+     "book": 0.1851,
+     "edge": 0.0013
     },
     {
      "n": 5,
-     "price": 1520,
+     "price": 920,
      "model": 0.0848,
-     "book": 0.0591,
-     "edge": 0.0257
+     "book": 0.0938,
+     "edge": -0.009
     },
     {
      "n": 6,
-     "price": 2800,
+     "price": 1900,
      "model": 0.0394,
-     "book": 0.033,
-     "edge": 0.0064
+     "book": 0.0478,
+     "edge": -0.0084
     }
    ],
    "last5": [
@@ -3603,31 +3575,31 @@
    "ladder": [
     {
      "n": 1,
-     "price": -1220,
+     "price": -1300,
      "model": 0.846,
-     "book": 0.8844,
-     "edge": -0.0385
+     "book": 0.8886,
+     "edge": -0.0426
     },
     {
      "n": 2,
-     "price": -238,
+     "price": -246,
      "model": 0.5898,
-     "book": 0.6738,
-     "edge": -0.084
+     "book": 0.6804,
+     "edge": -0.0906
     },
     {
      "n": 3,
-     "price": 117,
+     "price": 118,
      "model": 0.3528,
-     "book": 0.441,
-     "edge": -0.0882
+     "book": 0.439,
+     "edge": -0.0862
     },
     {
      "n": 4,
-     "price": 288,
+     "price": 286,
      "model": 0.1821,
-     "book": 0.2466,
-     "edge": -0.0645
+     "book": 0.2479,
+     "edge": -0.0658
     },
     {
      "n": 5,
@@ -3645,10 +3617,10 @@
     },
     {
      "n": 7,
-     "price": 2700,
+     "price": 2600,
      "model": 0.0164,
-     "book": 0.0342,
-     "edge": -0.0177
+     "book": 0.0354,
+     "edge": -0.019
     }
    ],
    "last5": [
@@ -3680,109 +3652,6 @@
    ]
   },
   {
-   "player": "Cedric Coward",
-   "player_id": "4903027",
-   "team": "MEM",
-   "opp": "WAS",
-   "home": false,
-   "game_id": "401909996",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 31.0,
-   "attempts": 5.91,
-   "p3": 0.3624,
-   "made": 2.14,
-   "rungs": [
-    0.8447,
-    0.587,
-    0.3495,
-    0.1793,
-    0.0807,
-    0.037
-   ],
-   "tipped": false,
-   "line": {
-    "line": 1.5,
-    "over": -156,
-    "under": 118,
-    "model_over": 0.587,
-    "book_over": 0.5705,
-    "edge": 0.0165,
-    "book": "DraftKings"
-   },
-   "ladder": [
-    {
-     "n": 1,
-     "price": -750,
-     "model": 0.8447,
-     "book": 0.8444,
-     "edge": 0.0003
-    },
-    {
-     "n": 2,
-     "price": -153,
-     "model": 0.587,
-     "book": 0.5787,
-     "edge": 0.0083
-    },
-    {
-     "n": 3,
-     "price": 195,
-     "model": 0.3495,
-     "book": 0.3244,
-     "edge": 0.0251
-    },
-    {
-     "n": 4,
-     "price": 517,
-     "model": 0.1793,
-     "book": 0.1551,
-     "edge": 0.0242
-    },
-    {
-     "n": 5,
-     "price": 1200,
-     "model": 0.0807,
-     "book": 0.0736,
-     "edge": 0.0071
-    },
-    {
-     "n": 6,
-     "price": 2500,
-     "model": 0.037,
-     "book": 0.0368,
-     "edge": 0.0002
-    }
-   ],
-   "last5": [
-    {
-     "date": "2026-11-06",
-     "made": 2,
-     "att": 5
-    },
-    {
-     "date": "2026-11-09",
-     "made": 1,
-     "att": 4
-    },
-    {
-     "date": "2026-11-11",
-     "made": 1,
-     "att": 4
-    },
-    {
-     "date": "2026-11-13",
-     "made": 0,
-     "att": 5
-    },
-    {
-     "date": "2026-11-14",
-     "made": 4,
-     "att": 6
-    }
-   ]
-  },
-  {
    "player": "Tre Johnson",
    "player_id": "5238230",
    "team": "WAS",
@@ -3792,69 +3661,69 @@
    "time_et": "5:00 PM",
    "status": "active",
    "minutes": 26.7,
-   "attempts": 6.05,
+   "attempts": 6.09,
    "p3": 0.3507,
-   "made": 2.12,
+   "made": 2.14,
    "rungs": [
-    0.8421,
-    0.5821,
-    0.3442,
-    0.1752,
-    0.0783,
-    0.0355
+    0.8444,
+    0.5859,
+    0.3479,
+    0.1778,
+    0.0797,
+    0.0363
    ],
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": -128,
-    "under": -103,
-    "model_over": 0.5821,
-    "book_over": 0.5253,
-    "edge": 0.0568,
+    "over": -118,
+    "under": -112,
+    "model_over": 0.5859,
+    "book_over": 0.5061,
+    "edge": 0.0798,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -565,
-     "model": 0.8421,
-     "book": 0.813,
-     "edge": 0.0291
+     "price": -511,
+     "model": 0.8444,
+     "book": 0.8003,
+     "edge": 0.0441
     },
     {
      "n": 2,
-     "price": -128,
-     "model": 0.5821,
-     "book": 0.5372,
-     "edge": 0.0449
+     "price": -119,
+     "model": 0.5859,
+     "book": 0.52,
+     "edge": 0.0659
     },
     {
      "n": 3,
-     "price": 226,
-     "model": 0.3442,
-     "book": 0.2935,
-     "edge": 0.0507
+     "price": 244,
+     "model": 0.3479,
+     "book": 0.2782,
+     "edge": 0.0697
     },
     {
      "n": 4,
-     "price": 581,
-     "model": 0.1752,
-     "book": 0.1405,
-     "edge": 0.0347
+     "price": 620,
+     "model": 0.1778,
+     "book": 0.1329,
+     "edge": 0.0449
     },
     {
      "n": 5,
-     "price": 1300,
-     "model": 0.0783,
-     "book": 0.0684,
-     "edge": 0.0099
+     "price": 1460,
+     "model": 0.0797,
+     "book": 0.0613,
+     "edge": 0.0183
     },
     {
      "n": 6,
-     "price": 2500,
-     "model": 0.0355,
-     "book": 0.0368,
-     "edge": -0.0013
+     "price": 2700,
+     "model": 0.0363,
+     "book": 0.0342,
+     "edge": 0.0021
     }
    ],
    "last5": [
@@ -3886,6 +3755,109 @@
    ]
   },
   {
+   "player": "Cedric Coward",
+   "player_id": "4903027",
+   "team": "MEM",
+   "opp": "WAS",
+   "home": false,
+   "game_id": "401909996",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 30.7,
+   "attempts": 5.86,
+   "p3": 0.3624,
+   "made": 2.12,
+   "rungs": [
+    0.8421,
+    0.5826,
+    0.3453,
+    0.1764,
+    0.0791,
+    0.0361
+   ],
+   "tipped": false,
+   "line": {
+    "line": 1.5,
+    "over": -159,
+    "under": 120,
+    "model_over": 0.5826,
+    "book_over": 0.5746,
+    "edge": 0.0081,
+    "book": "DraftKings"
+   },
+   "ladder": [
+    {
+     "n": 1,
+     "price": -810,
+     "model": 0.8421,
+     "book": 0.8518,
+     "edge": -0.0097
+    },
+    {
+     "n": 2,
+     "price": -163,
+     "model": 0.5826,
+     "book": 0.5931,
+     "edge": -0.0104
+    },
+    {
+     "n": 3,
+     "price": 183,
+     "model": 0.3453,
+     "book": 0.3381,
+     "edge": 0.0071
+    },
+    {
+     "n": 4,
+     "price": 471,
+     "model": 0.1764,
+     "book": 0.1676,
+     "edge": 0.0088
+    },
+    {
+     "n": 5,
+     "price": 1180,
+     "model": 0.0791,
+     "book": 0.0748,
+     "edge": 0.0043
+    },
+    {
+     "n": 6,
+     "price": 2400,
+     "model": 0.0361,
+     "book": 0.0383,
+     "edge": -0.0022
+    }
+   ],
+   "last5": [
+    {
+     "date": "2026-11-06",
+     "made": 2,
+     "att": 5
+    },
+    {
+     "date": "2026-11-09",
+     "made": 1,
+     "att": 4
+    },
+    {
+     "date": "2026-11-11",
+     "made": 1,
+     "att": 4
+    },
+    {
+     "date": "2026-11-13",
+     "made": 0,
+     "att": 5
+    },
+    {
+     "date": "2026-11-14",
+     "made": 4,
+     "att": 6
+    }
+   ]
+  },
+  {
    "player": "Devin Booker",
    "player_id": "3136193",
    "team": "PHX",
@@ -3909,55 +3881,55 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": -146,
-    "under": 110,
+    "over": -140,
+    "under": 106,
     "model_over": 0.5809,
-    "book_over": 0.5548,
-    "edge": 0.026,
+    "book_over": 0.5458,
+    "edge": 0.0351,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -680,
+     "price": -640,
      "model": 0.8416,
-     "book": 0.8343,
-     "edge": 0.0073
+     "book": 0.8276,
+     "edge": 0.0139
     },
     {
      "n": 2,
-     "price": -146,
+     "price": -144,
      "model": 0.5809,
-     "book": 0.5679,
-     "edge": 0.0129
+     "book": 0.5648,
+     "edge": 0.0161
     },
     {
      "n": 3,
-     "price": 202,
+     "price": 205,
      "model": 0.3427,
-     "book": 0.3169,
-     "edge": 0.0259
+     "book": 0.3138,
+     "edge": 0.029
     },
     {
      "n": 4,
-     "price": 510,
+     "price": 521,
      "model": 0.174,
-     "book": 0.1569,
-     "edge": 0.0171
+     "book": 0.1541,
+     "edge": 0.0199
     },
     {
      "n": 5,
-     "price": 1200,
+     "price": 1220,
      "model": 0.0775,
-     "book": 0.0736,
-     "edge": 0.0039
+     "book": 0.0725,
+     "edge": 0.005
     },
     {
      "n": 6,
-     "price": 2300,
+     "price": 2400,
      "model": 0.035,
-     "book": 0.0399,
-     "edge": -0.0048
+     "book": 0.0383,
+     "edge": -0.0032
     }
    ],
    "last5": [
@@ -4022,10 +3994,10 @@
    "ladder": [
     {
      "n": 1,
-     "price": -540,
+     "price": -539,
      "model": 0.8361,
-     "book": 0.8074,
-     "edge": 0.0287
+     "book": 0.8072,
+     "edge": 0.0289
     },
     {
      "n": 2,
@@ -4036,31 +4008,31 @@
     },
     {
      "n": 3,
-     "price": 239,
+     "price": 241,
      "model": 0.3362,
-     "book": 0.2823,
-     "edge": 0.0539
+     "book": 0.2806,
+     "edge": 0.0556
     },
     {
      "n": 4,
-     "price": 600,
+     "price": 630,
      "model": 0.1701,
-     "book": 0.1367,
-     "edge": 0.0334
+     "book": 0.1311,
+     "edge": 0.039
     },
     {
      "n": 5,
-     "price": 1420,
+     "price": 1440,
      "model": 0.0757,
-     "book": 0.063,
-     "edge": 0.0128
+     "book": 0.0621,
+     "edge": 0.0136
     },
     {
      "n": 6,
-     "price": 2600,
+     "price": 2700,
      "model": 0.0343,
-     "book": 0.0354,
-     "edge": -0.0012
+     "book": 0.0342,
+     "edge": 0.0001
     }
    ],
    "last5": [
@@ -4088,6 +4060,109 @@
      "date": "2026-11-14",
      "made": 2,
      "att": 3
+    }
+   ]
+  },
+  {
+   "player": "Davion Mitchell",
+   "player_id": "4278053",
+   "team": "MIA",
+   "opp": "HOU",
+   "home": true,
+   "game_id": "401909998",
+   "time_et": "5:30 PM",
+   "status": "active",
+   "minutes": 34.5,
+   "attempts": 5.44,
+   "p3": 0.3807,
+   "made": 2.07,
+   "rungs": [
+    0.8328,
+    0.5682,
+    0.3324,
+    0.1679,
+    0.0748,
+    0.0339
+   ],
+   "tipped": false,
+   "line": {
+    "line": 1.5,
+    "over": -166,
+    "under": 126,
+    "model_over": 0.5682,
+    "book_over": 0.5851,
+    "edge": -0.0169,
+    "book": "DraftKings"
+   },
+   "ladder": [
+    {
+     "n": 1,
+     "price": -720,
+     "model": 0.8328,
+     "book": 0.8402,
+     "edge": -0.0075
+    },
+    {
+     "n": 2,
+     "price": -165,
+     "model": 0.5682,
+     "book": 0.5958,
+     "edge": -0.0276
+    },
+    {
+     "n": 3,
+     "price": 174,
+     "model": 0.3324,
+     "book": 0.3492,
+     "edge": -0.0168
+    },
+    {
+     "n": 4,
+     "price": 432,
+     "model": 0.1679,
+     "book": 0.1799,
+     "edge": -0.012
+    },
+    {
+     "n": 5,
+     "price": 960,
+     "model": 0.0748,
+     "book": 0.0903,
+     "edge": -0.0155
+    },
+    {
+     "n": 6,
+     "price": 1920,
+     "model": 0.0339,
+     "book": 0.0474,
+     "edge": -0.0135
+    }
+   ],
+   "last5": [
+    {
+     "date": "2026-11-05",
+     "made": 4,
+     "att": 9
+    },
+    {
+     "date": "2026-11-08",
+     "made": 2,
+     "att": 6
+    },
+    {
+     "date": "2026-11-10",
+     "made": 3,
+     "att": 7
+    },
+    {
+     "date": "2026-11-13",
+     "made": 3,
+     "att": 7
+    },
+    {
+     "date": "2026-11-14",
+     "made": 3,
+     "att": 5
     }
    ]
   },
@@ -4125,10 +4200,10 @@
    "ladder": [
     {
      "n": 1,
-     "price": -640,
+     "price": -620,
      "model": 0.8332,
-     "book": 0.8276,
-     "edge": 0.0056
+     "book": 0.824,
+     "edge": 0.0091
     },
     {
      "n": 2,
@@ -4139,24 +4214,24 @@
     },
     {
      "n": 3,
-     "price": 209,
+     "price": 212,
      "model": 0.3298,
-     "book": 0.3097,
-     "edge": 0.0201
+     "book": 0.3067,
+     "edge": 0.0231
     },
     {
      "n": 4,
-     "price": 547,
+     "price": 550,
      "model": 0.165,
-     "book": 0.1479,
-     "edge": 0.0171
+     "book": 0.1472,
+     "edge": 0.0178
     },
     {
      "n": 5,
-     "price": 1260,
+     "price": 1320,
      "model": 0.0727,
-     "book": 0.0704,
-     "edge": 0.0023
+     "book": 0.0674,
+     "edge": 0.0053
     },
     {
      "n": 6,
@@ -4219,19 +4294,19 @@
    "line": {
     "line": 1.5,
     "over": -118,
-    "under": -112,
+    "under": -111,
     "model_over": 0.5626,
-    "book_over": 0.5061,
-    "edge": 0.0565,
+    "book_over": 0.5071,
+    "edge": 0.0555,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -493,
+     "price": -490,
      "model": 0.8281,
-     "book": 0.7956,
-     "edge": 0.0326
+     "book": 0.7947,
+     "edge": 0.0334
     },
     {
      "n": 2,
@@ -4242,24 +4317,24 @@
     },
     {
      "n": 3,
-     "price": 237,
+     "price": 242,
      "model": 0.3289,
-     "book": 0.284,
-     "edge": 0.0449
+     "book": 0.2798,
+     "edge": 0.0491
     },
     {
      "n": 4,
-     "price": 571,
+     "price": 578,
      "model": 0.1666,
-     "book": 0.1426,
-     "edge": 0.0239
+     "book": 0.1411,
+     "edge": 0.0254
     },
     {
      "n": 5,
-     "price": 1280,
+     "price": 1300,
      "model": 0.0747,
-     "book": 0.0693,
-     "edge": 0.0053
+     "book": 0.0684,
+     "edge": 0.0063
     },
     {
      "n": 6,
@@ -4321,48 +4396,48 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": -164,
-    "under": 124,
+    "over": -159,
+    "under": 120,
     "model_over": 0.5573,
-    "book_over": 0.5819,
-    "edge": -0.0246,
+    "book_over": 0.5746,
+    "edge": -0.0173,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -640,
+     "price": -610,
      "model": 0.8265,
-     "book": 0.8276,
-     "edge": -0.0011
+     "book": 0.8222,
+     "edge": 0.0044
     },
     {
      "n": 2,
-     "price": -165,
+     "price": -160,
      "model": 0.5573,
-     "book": 0.5958,
-     "edge": -0.0385
+     "book": 0.5889,
+     "edge": -0.0316
     },
     {
      "n": 3,
-     "price": 156,
+     "price": 164,
      "model": 0.3214,
-     "book": 0.3738,
-     "edge": -0.0524
+     "book": 0.3625,
+     "edge": -0.041
     },
     {
      "n": 4,
-     "price": 355,
+     "price": 371,
      "model": 0.1598,
-     "book": 0.2103,
-     "edge": -0.0505
+     "book": 0.2032,
+     "edge": -0.0434
     },
     {
      "n": 5,
-     "price": 760,
+     "price": 790,
      "model": 0.0702,
-     "book": 0.1113,
-     "edge": -0.0411
+     "book": 0.1075,
+     "edge": -0.0374
     },
     {
      "n": 6,
@@ -4408,315 +4483,6 @@
    ]
   },
   {
-   "player": "Cam Spencer",
-   "player_id": "4433083",
-   "team": "MEM",
-   "opp": "WAS",
-   "home": false,
-   "game_id": "401909996",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 27.5,
-   "attempts": 4.8,
-   "p3": 0.4136,
-   "made": 1.99,
-   "rungs": [
-    0.817,
-    0.5449,
-    0.3124,
-    0.1552,
-    0.0685,
-    0.0307
-   ],
-   "tipped": false,
-   "line": {
-    "line": 1.5,
-    "over": -179,
-    "under": 135,
-    "model_over": 0.5449,
-    "book_over": 0.6012,
-    "edge": -0.0563,
-    "book": "DraftKings"
-   },
-   "ladder": [
-    {
-     "n": 1,
-     "price": -850,
-     "model": 0.817,
-     "book": 0.8562,
-     "edge": -0.0392
-    },
-    {
-     "n": 2,
-     "price": -180,
-     "model": 0.5449,
-     "book": 0.6152,
-     "edge": -0.0703
-    },
-    {
-     "n": 3,
-     "price": 159,
-     "model": 0.3124,
-     "book": 0.3695,
-     "edge": -0.057
-    },
-    {
-     "n": 4,
-     "price": 401,
-     "model": 0.1552,
-     "book": 0.191,
-     "edge": -0.0358
-    },
-    {
-     "n": 5,
-     "price": 920,
-     "model": 0.0685,
-     "book": 0.0938,
-     "edge": -0.0253
-    },
-    {
-     "n": 6,
-     "price": 1920,
-     "model": 0.0307,
-     "book": 0.0474,
-     "edge": -0.0166
-    }
-   ],
-   "last5": [
-    {
-     "date": "2026-11-06",
-     "made": 1,
-     "att": 4
-    },
-    {
-     "date": "2026-11-09",
-     "made": 1,
-     "att": 2
-    },
-    {
-     "date": "2026-11-11",
-     "made": 3,
-     "att": 4
-    },
-    {
-     "date": "2026-11-13",
-     "made": 3,
-     "att": 5
-    },
-    {
-     "date": "2026-11-14",
-     "made": 3,
-     "att": 3
-    }
-   ]
-  },
-  {
-   "player": "Cameron Boozer",
-   "player_id": "5041935",
-   "team": "MEM",
-   "opp": "WAS",
-   "home": false,
-   "game_id": "401909996",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 32.1,
-   "attempts": 5.63,
-   "p3": 0.3512,
-   "made": 1.98,
-   "rungs": [
-    0.8198,
-    0.5461,
-    0.3106,
-    0.152,
-    0.0659,
-    0.0288
-   ],
-   "tipped": false,
-   "line": {
-    "line": 1.5,
-    "over": -144,
-    "under": 109,
-    "model_over": 0.5461,
-    "book_over": 0.5523,
-    "edge": -0.0062,
-    "book": "DraftKings"
-   },
-   "ladder": [
-    {
-     "n": 1,
-     "price": -660,
-     "model": 0.8198,
-     "book": 0.831,
-     "edge": -0.0112
-    },
-    {
-     "n": 2,
-     "price": -144,
-     "model": 0.5461,
-     "book": 0.5648,
-     "edge": -0.0187
-    },
-    {
-     "n": 3,
-     "price": 208,
-     "model": 0.3106,
-     "book": 0.3107,
-     "edge": -0.0001
-    },
-    {
-     "n": 4,
-     "price": 534,
-     "model": 0.152,
-     "book": 0.1509,
-     "edge": 0.0011
-    },
-    {
-     "n": 5,
-     "price": 1240,
-     "model": 0.0659,
-     "book": 0.0714,
-     "edge": -0.0055
-    },
-    {
-     "n": 6,
-     "price": 2400,
-     "model": 0.0288,
-     "book": 0.0383,
-     "edge": -0.0095
-    }
-   ],
-   "last5": [
-    {
-     "date": "2026-11-06",
-     "made": 0,
-     "att": 8
-    },
-    {
-     "date": "2026-11-09",
-     "made": 0,
-     "att": 5
-    },
-    {
-     "date": "2026-11-11",
-     "made": 2,
-     "att": 7
-    },
-    {
-     "date": "2026-11-13",
-     "made": 1,
-     "att": 2
-    },
-    {
-     "date": "2026-11-14",
-     "made": 0,
-     "att": 3
-    }
-   ]
-  },
-  {
-   "player": "Jerami Grant",
-   "player_id": "2991070",
-   "team": "MEM",
-   "opp": "WAS",
-   "home": false,
-   "game_id": "401909996",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 26.4,
-   "attempts": 5.18,
-   "p3": 0.3806,
-   "made": 1.97,
-   "rungs": [
-    0.8168,
-    0.5429,
-    0.3091,
-    0.1519,
-    0.0663,
-    0.0293
-   ],
-   "tipped": false,
-   "line": {
-    "line": 1.5,
-    "over": -161,
-    "under": 122,
-    "model_over": 0.5429,
-    "book_over": 0.578,
-    "edge": -0.035,
-    "book": "DraftKings"
-   },
-   "ladder": [
-    {
-     "n": 1,
-     "price": -760,
-     "model": 0.8168,
-     "book": 0.8457,
-     "edge": -0.0289
-    },
-    {
-     "n": 2,
-     "price": -162,
-     "model": 0.5429,
-     "book": 0.5917,
-     "edge": -0.0488
-    },
-    {
-     "n": 3,
-     "price": 178,
-     "model": 0.3091,
-     "book": 0.3442,
-     "edge": -0.0351
-    },
-    {
-     "n": 4,
-     "price": 432,
-     "model": 0.1519,
-     "book": 0.1799,
-     "edge": -0.028
-    },
-    {
-     "n": 5,
-     "price": 970,
-     "model": 0.0663,
-     "book": 0.0894,
-     "edge": -0.0232
-    },
-    {
-     "n": 6,
-     "price": 2000,
-     "model": 0.0293,
-     "book": 0.0456,
-     "edge": -0.0163
-    }
-   ],
-   "last5": [
-    {
-     "date": "2026-11-04",
-     "made": 2,
-     "att": 5
-    },
-    {
-     "date": "2026-11-06",
-     "made": 2,
-     "att": 2
-    },
-    {
-     "date": "2026-11-09",
-     "made": 3,
-     "att": 3
-    },
-    {
-     "date": "2026-11-11",
-     "made": 2,
-     "att": 3
-    },
-    {
-     "date": "2026-11-13",
-     "made": 3,
-     "att": 6
-    }
-   ]
-  },
-  {
    "player": "Jordan Poole",
    "player_id": "4277956",
    "team": "NOP",
@@ -4750,45 +4516,45 @@
    "ladder": [
     {
      "n": 1,
-     "price": -399,
+     "price": -411,
      "model": 0.8166,
-     "book": 0.7652,
-     "edge": 0.0514
+     "book": 0.7697,
+     "edge": 0.0469
     },
     {
      "n": 2,
-     "price": -108,
+     "price": -110,
      "model": 0.5413,
-     "book": 0.4969,
-     "edge": 0.0444
+     "book": 0.5013,
+     "edge": 0.04
     },
     {
      "n": 3,
-     "price": 243,
+     "price": 233,
      "model": 0.3065,
-     "book": 0.279,
-     "edge": 0.0275
+     "book": 0.2874,
+     "edge": 0.0191
     },
     {
      "n": 4,
-     "price": 586,
+     "price": 545,
      "model": 0.1494,
-     "book": 0.1395,
-     "edge": 0.0099
+     "book": 0.1484,
+     "edge": 0.001
     },
     {
      "n": 5,
-     "price": 1260,
+     "price": 1160,
      "model": 0.0646,
-     "book": 0.0704,
-     "edge": -0.0058
+     "book": 0.0759,
+     "edge": -0.0114
     },
     {
      "n": 6,
-     "price": 2300,
+     "price": 2100,
      "model": 0.0281,
-     "book": 0.0399,
-     "edge": -0.0117
+     "book": 0.0435,
+     "edge": -0.0154
     }
    ],
    "last5": [
@@ -4843,55 +4609,55 @@
    "tipped": false,
    "line": {
     "line": 2.5,
-    "over": 134,
-    "under": -177,
+    "over": 129,
+    "under": -170,
     "model_over": 0.3024,
-    "book_over": 0.4008,
-    "edge": -0.0984,
+    "book_over": 0.4095,
+    "edge": -0.1072,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -940,
+     "price": -930,
      "model": 0.8122,
-     "book": 0.8649,
-     "edge": -0.0528
+     "book": 0.864,
+     "edge": -0.0519
     },
     {
      "n": 2,
-     "price": -199,
+     "price": -209,
      "model": 0.5356,
-     "book": 0.6369,
-     "edge": -0.1013
+     "book": 0.6472,
+     "edge": -0.1116
     },
     {
      "n": 3,
-     "price": 134,
+     "price": 129,
      "model": 0.3024,
-     "book": 0.4089,
-     "edge": -0.1066
+     "book": 0.4179,
+     "edge": -0.1155
     },
     {
      "n": 4,
-     "price": 319,
+     "price": 305,
      "model": 0.1473,
-     "book": 0.2284,
-     "edge": -0.0811
+     "book": 0.2363,
+     "edge": -0.089
     },
     {
      "n": 5,
-     "price": 700,
+     "price": 670,
      "model": 0.0638,
-     "book": 0.1196,
-     "edge": -0.0559
+     "book": 0.1243,
+     "edge": -0.0605
     },
     {
      "n": 6,
-     "price": 1420,
+     "price": 1380,
      "model": 0.0279,
-     "book": 0.063,
-     "edge": -0.0351
+     "book": 0.0647,
+     "edge": -0.0368
     },
     {
      "n": 7,
@@ -4930,27 +4696,183 @@
    ]
   },
   {
-   "player": "Javon Small",
-   "player_id": "4781746",
+   "player": "Cameron Boozer",
+   "player_id": "5041935",
    "team": "MEM",
    "opp": "WAS",
    "home": false,
    "game_id": "401909996",
    "time_et": "5:00 PM",
    "status": "active",
-   "minutes": 26.5,
-   "attempts": 4.99,
-   "p3": 0.386,
-   "made": 1.93,
+   "minutes": 31.5,
+   "attempts": 5.51,
+   "p3": 0.3512,
+   "made": 1.94,
    "rungs": [
-    0.8089,
-    0.5312,
-    0.2989,
-    0.1452,
-    0.0629,
-    0.0275
+    0.8131,
+    0.5356,
+    0.3012,
+    0.1457,
+    0.0626,
+    0.0271
    ],
    "tipped": false,
+   "line": {
+    "line": 1.5,
+    "over": -144,
+    "under": 109,
+    "model_over": 0.5356,
+    "book_over": 0.5523,
+    "edge": -0.0166,
+    "book": "DraftKings"
+   },
+   "ladder": [
+    {
+     "n": 1,
+     "price": -700,
+     "model": 0.8131,
+     "book": 0.8373,
+     "edge": -0.0243
+    },
+    {
+     "n": 2,
+     "price": -147,
+     "model": 0.5356,
+     "book": 0.5695,
+     "edge": -0.0339
+    },
+    {
+     "n": 3,
+     "price": 202,
+     "model": 0.3012,
+     "book": 0.3169,
+     "edge": -0.0157
+    },
+    {
+     "n": 4,
+     "price": 518,
+     "model": 0.1457,
+     "book": 0.1548,
+     "edge": -0.0091
+    },
+    {
+     "n": 5,
+     "price": 1240,
+     "model": 0.0626,
+     "book": 0.0714,
+     "edge": -0.0088
+    },
+    {
+     "n": 6,
+     "price": 2400,
+     "model": 0.0271,
+     "book": 0.0383,
+     "edge": -0.0112
+    }
+   ],
+   "last5": [
+    {
+     "date": "2026-11-06",
+     "made": 0,
+     "att": 8
+    },
+    {
+     "date": "2026-11-09",
+     "made": 0,
+     "att": 5
+    },
+    {
+     "date": "2026-11-11",
+     "made": 2,
+     "att": 7
+    },
+    {
+     "date": "2026-11-13",
+     "made": 1,
+     "att": 2
+    },
+    {
+     "date": "2026-11-14",
+     "made": 0,
+     "att": 3
+    }
+   ]
+  },
+  {
+   "player": "Cam Spencer",
+   "player_id": "4433083",
+   "team": "MEM",
+   "opp": "WAS",
+   "home": false,
+   "game_id": "401909996",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 27.2,
+   "attempts": 4.67,
+   "p3": 0.4136,
+   "made": 1.93,
+   "rungs": [
+    0.8081,
+    0.5314,
+    0.3003,
+    0.147,
+    0.0642,
+    0.0284
+   ],
+   "tipped": false,
+   "line": {
+    "line": 2.5,
+    "over": 145,
+    "under": -192,
+    "model_over": 0.3003,
+    "book_over": 0.383,
+    "edge": -0.0827,
+    "book": "DraftKings"
+   },
+   "ladder": [
+    {
+     "n": 1,
+     "price": -990,
+     "model": 0.8081,
+     "book": 0.8691,
+     "edge": -0.0611
+    },
+    {
+     "n": 2,
+     "price": -200,
+     "model": 0.5314,
+     "book": 0.638,
+     "edge": -0.1066
+    },
+    {
+     "n": 3,
+     "price": 145,
+     "model": 0.3003,
+     "book": 0.3906,
+     "edge": -0.0903
+    },
+    {
+     "n": 4,
+     "price": 365,
+     "model": 0.147,
+     "book": 0.2058,
+     "edge": -0.0588
+    },
+    {
+     "n": 5,
+     "price": 840,
+     "model": 0.0642,
+     "book": 0.1018,
+     "edge": -0.0376
+    },
+    {
+     "n": 6,
+     "price": 1700,
+     "model": 0.0284,
+     "book": 0.0532,
+     "edge": -0.0248
+    }
+   ],
    "last5": [
     {
      "date": "2026-11-06",
@@ -4964,18 +4886,18 @@
     },
     {
      "date": "2026-11-11",
-     "made": 1,
+     "made": 3,
      "att": 4
     },
     {
      "date": "2026-11-13",
-     "made": 2,
-     "att": 2
+     "made": 3,
+     "att": 5
     },
     {
      "date": "2026-11-14",
      "made": 3,
-     "att": 7
+     "att": 3
     }
    ]
   },
@@ -5003,11 +4925,11 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": -135,
-    "under": 102,
+    "over": -132,
+    "under": 100,
     "model_over": 0.5304,
-    "book_over": 0.5371,
-    "edge": -0.0067,
+    "book_over": 0.5323,
+    "edge": -0.0019,
     "book": "DraftKings"
    },
    "ladder": [
@@ -5020,38 +4942,38 @@
     },
     {
      "n": 2,
-     "price": -136,
+     "price": -133,
      "model": 0.5304,
-     "book": 0.5515,
-     "edge": -0.0211
+     "book": 0.5462,
+     "edge": -0.0158
     },
     {
      "n": 3,
-     "price": 214,
+     "price": 224,
      "model": 0.2962,
-     "book": 0.3048,
-     "edge": -0.0085
+     "book": 0.2954,
+     "edge": 0.0009
     },
     {
      "n": 4,
-     "price": 559,
+     "price": 577,
      "model": 0.1422,
-     "book": 0.1452,
-     "edge": -0.003
+     "book": 0.1413,
+     "edge": 0.0009
     },
     {
      "n": 5,
-     "price": 1300,
+     "price": 1320,
      "model": 0.0607,
-     "book": 0.0684,
-     "edge": -0.0077
+     "book": 0.0674,
+     "edge": -0.0067
     },
     {
      "n": 6,
-     "price": 2400,
+     "price": 2500,
      "model": 0.026,
-     "book": 0.0383,
-     "edge": -0.0123
+     "book": 0.0368,
+     "edge": -0.0108
     }
    ],
    "last5": [
@@ -5083,6 +5005,159 @@
    ]
   },
   {
+   "player": "Jerami Grant",
+   "player_id": "2991070",
+   "team": "MEM",
+   "opp": "WAS",
+   "home": false,
+   "game_id": "401909996",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 26.2,
+   "attempts": 5.05,
+   "p3": 0.3806,
+   "made": 1.92,
+   "rungs": [
+    0.8086,
+    0.5303,
+    0.2979,
+    0.1444,
+    0.0623,
+    0.0272
+   ],
+   "tipped": false,
+   "line": {
+    "line": 1.5,
+    "over": -123,
+    "under": -107,
+    "model_over": 0.5303,
+    "book_over": 0.5162,
+    "edge": 0.0141,
+    "book": "DraftKings"
+   },
+   "ladder": [
+    {
+     "n": 1,
+     "price": -542,
+     "model": 0.8086,
+     "book": 0.8079,
+     "edge": 0.0007
+    },
+    {
+     "n": 2,
+     "price": -123,
+     "model": 0.5303,
+     "book": 0.5278,
+     "edge": 0.0025
+    },
+    {
+     "n": 3,
+     "price": 237,
+     "model": 0.2979,
+     "book": 0.284,
+     "edge": 0.0139
+    },
+    {
+     "n": 4,
+     "price": 620,
+     "model": 0.1444,
+     "book": 0.1329,
+     "edge": 0.0115
+    },
+    {
+     "n": 5,
+     "price": 1460,
+     "model": 0.0623,
+     "book": 0.0613,
+     "edge": 0.001
+    },
+    {
+     "n": 6,
+     "price": 2700,
+     "model": 0.0272,
+     "book": 0.0342,
+     "edge": -0.007
+    }
+   ],
+   "last5": [
+    {
+     "date": "2026-11-04",
+     "made": 2,
+     "att": 5
+    },
+    {
+     "date": "2026-11-06",
+     "made": 2,
+     "att": 2
+    },
+    {
+     "date": "2026-11-09",
+     "made": 3,
+     "att": 3
+    },
+    {
+     "date": "2026-11-11",
+     "made": 2,
+     "att": 3
+    },
+    {
+     "date": "2026-11-13",
+     "made": 3,
+     "att": 6
+    }
+   ]
+  },
+  {
+   "player": "Javon Small",
+   "player_id": "4781746",
+   "team": "MEM",
+   "opp": "WAS",
+   "home": false,
+   "game_id": "401909996",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 25.8,
+   "attempts": 4.9,
+   "p3": 0.386,
+   "made": 1.89,
+   "rungs": [
+    0.8028,
+    0.5221,
+    0.2908,
+    0.1399,
+    0.0601,
+    0.026
+   ],
+   "tipped": false,
+   "last5": [
+    {
+     "date": "2026-11-06",
+     "made": 1,
+     "att": 4
+    },
+    {
+     "date": "2026-11-09",
+     "made": 1,
+     "att": 2
+    },
+    {
+     "date": "2026-11-11",
+     "made": 1,
+     "att": 4
+    },
+    {
+     "date": "2026-11-13",
+     "made": 2,
+     "att": 2
+    },
+    {
+     "date": "2026-11-14",
+     "made": 3,
+     "att": 7
+    }
+   ]
+  },
+  {
    "player": "Bones Hyland",
    "player_id": "4592492",
    "team": "MIN",
@@ -5106,20 +5181,20 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": -138,
-    "under": 105,
+    "over": -142,
+    "under": 108,
     "model_over": 0.5192,
-    "book_over": 0.5431,
-    "edge": -0.0239,
+    "book_over": 0.5497,
+    "edge": -0.0305,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -582,
+     "price": -577,
      "model": 0.8013,
-     "book": 0.8166,
-     "edge": -0.0153
+     "book": 0.8156,
+     "edge": -0.0143
     },
     {
      "n": 2,
@@ -5130,31 +5205,31 @@
     },
     {
      "n": 3,
-     "price": 196,
+     "price": 200,
      "model": 0.2877,
-     "book": 0.3233,
-     "edge": -0.0356
+     "book": 0.319,
+     "edge": -0.0313
     },
     {
      "n": 4,
-     "price": 484,
+     "price": 492,
      "model": 0.1375,
-     "book": 0.1639,
-     "edge": -0.0264
+     "book": 0.1616,
+     "edge": -0.0241
     },
     {
      "n": 5,
-     "price": 1080,
+     "price": 1100,
      "model": 0.0587,
-     "book": 0.0811,
-     "edge": -0.0224
+     "book": 0.0797,
+     "edge": -0.0211
     },
     {
      "n": 6,
-     "price": 2000,
+     "price": 2100,
      "model": 0.0252,
-     "book": 0.0456,
-     "edge": -0.0204
+     "book": 0.0435,
+     "edge": -0.0183
     }
    ],
    "last5": [
@@ -5194,16 +5269,16 @@
    "game_id": "401909998",
    "time_et": "5:30 PM",
    "status": "active",
-   "minutes": 34.9,
-   "attempts": 4.74,
+   "minutes": 34.8,
+   "attempts": 4.75,
    "p3": 0.3961,
    "made": 1.88,
    "rungs": [
-    0.7996,
-    0.5178,
-    0.2875,
-    0.1381,
-    0.0593,
+    0.7998,
+    0.5182,
+    0.2879,
+    0.1383,
+    0.0594,
     0.0257
    ],
    "tipped": false,
@@ -5211,53 +5286,53 @@
     "line": 1.5,
     "over": -137,
     "under": 104,
-    "model_over": 0.5178,
+    "model_over": 0.5182,
     "book_over": 0.5411,
-    "edge": -0.0233,
+    "edge": -0.0229,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -650,
-     "model": 0.7996,
-     "book": 0.8293,
-     "edge": -0.0298
+     "price": -630,
+     "model": 0.7998,
+     "book": 0.8259,
+     "edge": -0.026
     },
     {
      "n": 2,
      "price": -140,
-     "model": 0.5178,
+     "model": 0.5182,
      "book": 0.5582,
-     "edge": -0.0404
+     "edge": -0.04
     },
     {
      "n": 3,
-     "price": 207,
-     "model": 0.2875,
-     "book": 0.3117,
-     "edge": -0.0242
+     "price": 211,
+     "model": 0.2879,
+     "book": 0.3077,
+     "edge": -0.0198
     },
     {
      "n": 4,
-     "price": 537,
-     "model": 0.1381,
-     "book": 0.1502,
-     "edge": -0.0122
+     "price": 534,
+     "model": 0.1383,
+     "book": 0.1509,
+     "edge": -0.0126
     },
     {
      "n": 5,
-     "price": 1300,
-     "model": 0.0593,
-     "book": 0.0684,
-     "edge": -0.0091
+     "price": 1200,
+     "model": 0.0594,
+     "book": 0.0736,
+     "edge": -0.0142
     },
     {
      "n": 6,
-     "price": 2500,
+     "price": 2400,
      "model": 0.0257,
-     "book": 0.0368,
-     "edge": -0.0111
+     "book": 0.0383,
+     "edge": -0.0125
     }
    ],
    "last5": [
@@ -5289,109 +5364,6 @@
    ]
   },
   {
-   "player": "Davion Mitchell",
-   "player_id": "4278053",
-   "team": "MIA",
-   "opp": "HOU",
-   "home": true,
-   "game_id": "401909998",
-   "time_et": "5:30 PM",
-   "status": "active",
-   "minutes": 29.4,
-   "attempts": 4.9,
-   "p3": 0.3807,
-   "made": 1.87,
-   "rungs": [
-    0.7986,
-    0.5155,
-    0.2849,
-    0.1359,
-    0.0579,
-    0.0249
-   ],
-   "tipped": false,
-   "line": {
-    "line": 1.5,
-    "over": -181,
-    "under": 137,
-    "model_over": 0.5155,
-    "book_over": 0.6042,
-    "edge": -0.0887,
-    "book": "DraftKings"
-   },
-   "ladder": [
-    {
-     "n": 1,
-     "price": -840,
-     "model": 0.7986,
-     "book": 0.8551,
-     "edge": -0.0566
-    },
-    {
-     "n": 2,
-     "price": -183,
-     "model": 0.5155,
-     "book": 0.6188,
-     "edge": -0.1033
-    },
-    {
-     "n": 3,
-     "price": 158,
-     "model": 0.2849,
-     "book": 0.3709,
-     "edge": -0.086
-    },
-    {
-     "n": 4,
-     "price": 388,
-     "model": 0.1359,
-     "book": 0.1961,
-     "edge": -0.0602
-    },
-    {
-     "n": 5,
-     "price": 870,
-     "model": 0.0579,
-     "book": 0.0987,
-     "edge": -0.0407
-    },
-    {
-     "n": 6,
-     "price": 1800,
-     "model": 0.0249,
-     "book": 0.0504,
-     "edge": -0.0255
-    }
-   ],
-   "last5": [
-    {
-     "date": "2026-11-05",
-     "made": 4,
-     "att": 9
-    },
-    {
-     "date": "2026-11-08",
-     "made": 2,
-     "att": 6
-    },
-    {
-     "date": "2026-11-10",
-     "made": 3,
-     "att": 7
-    },
-    {
-     "date": "2026-11-13",
-     "made": 3,
-     "att": 7
-    },
-    {
-     "date": "2026-11-14",
-     "made": 3,
-     "att": 5
-    }
-   ]
-  },
-  {
    "player": "Jalen Suggs",
    "player_id": "4432165",
    "team": "ORL",
@@ -5415,48 +5387,48 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": 112,
-    "under": -147,
+    "over": 120,
+    "under": -158,
     "model_over": 0.5172,
-    "book_over": 0.4421,
-    "edge": 0.075,
+    "book_over": 0.426,
+    "edge": 0.0912,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -385,
+     "price": -360,
      "model": 0.801,
-     "book": 0.7596,
-     "edge": 0.0414
+     "book": 0.7489,
+     "edge": 0.0521
     },
     {
      "n": 2,
-     "price": 113,
+     "price": 120,
      "model": 0.5172,
-     "book": 0.4493,
-     "edge": 0.0679
+     "book": 0.435,
+     "edge": 0.0822
     },
     {
      "n": 3,
-     "price": 337,
+     "price": 361,
      "model": 0.2847,
-     "book": 0.219,
-     "edge": 0.0657
+     "book": 0.2076,
+     "edge": 0.0771
     },
     {
      "n": 4,
-     "price": 880,
+     "price": 940,
      "model": 0.1347,
-     "book": 0.0976,
-     "edge": 0.0371
+     "book": 0.092,
+     "edge": 0.0427
     },
     {
      "n": 5,
-     "price": 1940,
+     "price": 2100,
      "model": 0.0569,
-     "book": 0.0469,
-     "edge": 0.0099
+     "book": 0.0435,
+     "edge": 0.0134
     }
    ],
    "last5": [
@@ -5511,55 +5483,55 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": -151,
-    "under": 115,
+    "over": -147,
+    "under": 112,
     "model_over": 0.5142,
-    "book_over": 0.564,
-    "edge": -0.0498,
+    "book_over": 0.5579,
+    "edge": -0.0436,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -700,
+     "price": -680,
      "model": 0.7985,
-     "book": 0.8373,
-     "edge": -0.0388
+     "book": 0.8343,
+     "edge": -0.0357
     },
     {
      "n": 2,
-     "price": -152,
+     "price": -151,
      "model": 0.5142,
-     "book": 0.5772,
-     "edge": -0.063
+     "book": 0.5757,
+     "edge": -0.0615
     },
     {
      "n": 3,
-     "price": 184,
+     "price": 195,
      "model": 0.2827,
-     "book": 0.3369,
-     "edge": -0.0543
+     "book": 0.3244,
+     "edge": -0.0417
     },
     {
      "n": 4,
-     "price": 450,
+     "price": 498,
      "model": 0.1338,
-     "book": 0.174,
-     "edge": -0.0402
+     "book": 0.16,
+     "edge": -0.0262
     },
     {
      "n": 5,
-     "price": 1000,
+     "price": 1140,
      "model": 0.0565,
-     "book": 0.087,
-     "edge": -0.0304
+     "book": 0.0772,
+     "edge": -0.0206
     },
     {
      "n": 6,
-     "price": 2100,
+     "price": 2200,
      "model": 0.024,
-     "book": 0.0435,
-     "edge": -0.0195
+     "book": 0.0416,
+     "edge": -0.0176
     }
    ],
    "last5": [
@@ -5614,55 +5586,55 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": -141,
-    "under": 107,
+    "over": -136,
+    "under": 104,
     "model_over": 0.5086,
-    "book_over": 0.5477,
-    "edge": -0.0391,
+    "book_over": 0.5404,
+    "edge": -0.0318,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -650,
+     "price": -640,
      "model": 0.7942,
-     "book": 0.8293,
-     "edge": -0.0351
+     "book": 0.8276,
+     "edge": -0.0334
     },
     {
      "n": 2,
-     "price": -142,
+     "price": -137,
      "model": 0.5086,
-     "book": 0.5615,
-     "edge": -0.0529
+     "book": 0.5532,
+     "edge": -0.0446
     },
     {
      "n": 3,
-     "price": 210,
+     "price": 215,
      "model": 0.2784,
-     "book": 0.3087,
-     "edge": -0.0302
+     "book": 0.3038,
+     "edge": -0.0253
     },
     {
      "n": 4,
-     "price": 552,
+     "price": 562,
      "model": 0.1314,
-     "book": 0.1468,
-     "edge": -0.0153
+     "book": 0.1446,
+     "edge": -0.0131
     },
     {
      "n": 5,
-     "price": 1260,
+     "price": 1320,
      "model": 0.0555,
-     "book": 0.0704,
-     "edge": -0.0148
+     "book": 0.0674,
+     "edge": -0.0118
     },
     {
      "n": 6,
-     "price": 2400,
+     "price": 2500,
      "model": 0.0235,
-     "book": 0.0383,
-     "edge": -0.0147
+     "book": 0.0368,
+     "edge": -0.0133
     }
    ],
    "last5": [
@@ -5702,7 +5674,7 @@
    "game_id": "401909994",
    "time_et": "5:00 PM",
    "status": "active",
-   "minutes": 35.9,
+   "minutes": 35.8,
    "attempts": 5.8,
    "p3": 0.314,
    "made": 1.82,
@@ -5717,48 +5689,48 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": -107,
-    "under": -123,
+    "over": 103,
+    "under": -136,
     "model_over": 0.5061,
-    "book_over": 0.4838,
-    "edge": 0.0224,
+    "book_over": 0.4609,
+    "edge": 0.0453,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -468,
+     "price": -419,
      "model": 0.7947,
-     "book": 0.7885,
-     "edge": 0.0062
+     "book": 0.7726,
+     "edge": 0.0221
     },
     {
      "n": 2,
-     "price": -107,
+     "price": 102,
      "model": 0.5061,
-     "book": 0.4946,
-     "edge": 0.0115
+     "book": 0.4737,
+     "edge": 0.0324
     },
     {
      "n": 3,
-     "price": 278,
+     "price": 308,
      "model": 0.2737,
-     "book": 0.2532,
-     "edge": 0.0205
+     "book": 0.2345,
+     "edge": 0.0391
     },
     {
      "n": 4,
-     "price": 720,
+     "price": 820,
      "model": 0.1267,
-     "book": 0.1167,
-     "edge": 0.01
+     "book": 0.104,
+     "edge": 0.0227
     },
     {
      "n": 5,
-     "price": 1700,
+     "price": 1840,
      "model": 0.0524,
-     "book": 0.0532,
-     "edge": -0.0008
+     "book": 0.0493,
+     "edge": 0.003
     }
    ],
    "last5": [
@@ -5813,48 +5785,48 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": 137,
-    "under": -182,
+    "over": 145,
+    "under": -193,
     "model_over": 0.5011,
-    "book_over": 0.3953,
-    "edge": 0.1058,
+    "book_over": 0.3826,
+    "edge": 0.1185,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -325,
+     "price": -290,
      "model": 0.7894,
-     "book": 0.7318,
-     "edge": 0.0576
+     "book": 0.7116,
+     "edge": 0.0778
     },
     {
      "n": 2,
-     "price": 134,
+     "price": 146,
      "model": 0.5011,
-     "book": 0.4089,
-     "edge": 0.0922
+     "book": 0.389,
+     "edge": 0.1121
     },
     {
      "n": 3,
-     "price": 415,
+     "price": 455,
      "model": 0.2716,
-     "book": 0.1858,
-     "edge": 0.0858
+     "book": 0.1724,
+     "edge": 0.0992
     },
     {
      "n": 4,
-     "price": 1120,
+     "price": 1200,
      "model": 0.1268,
-     "book": 0.0784,
-     "edge": 0.0483
+     "book": 0.0736,
+     "edge": 0.0532
     },
     {
      "n": 5,
-     "price": 2400,
+     "price": 2500,
      "model": 0.053,
-     "book": 0.0383,
-     "edge": 0.0148
+     "book": 0.0368,
+     "edge": 0.0162
     }
    ],
    "last5": [
@@ -5909,48 +5881,48 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": 108,
-    "under": -143,
+    "over": 104,
+    "under": -137,
     "model_over": 0.4988,
-    "book_over": 0.4496,
-    "edge": 0.0491,
+    "book_over": 0.4589,
+    "edge": 0.0399,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -383,
+     "price": -417,
      "model": 0.7887,
-     "book": 0.7588,
-     "edge": 0.0299
+     "book": 0.7718,
+     "edge": 0.0168
     },
     {
      "n": 2,
-     "price": 108,
+     "price": 103,
      "model": 0.4988,
-     "book": 0.4601,
-     "edge": 0.0387
+     "book": 0.4714,
+     "edge": 0.0274
     },
     {
      "n": 3,
-     "price": 321,
+     "price": 301,
      "model": 0.2685,
-     "book": 0.2273,
-     "edge": 0.0412
+     "book": 0.2386,
+     "edge": 0.0299
     },
     {
      "n": 4,
-     "price": 840,
+     "price": 770,
      "model": 0.1241,
-     "book": 0.1018,
-     "edge": 0.0223
+     "book": 0.11,
+     "edge": 0.0141
     },
     {
      "n": 5,
-     "price": 1860,
+     "price": 1800,
      "model": 0.0514,
-     "book": 0.0488,
-     "edge": 0.0026
+     "book": 0.0504,
+     "edge": 0.001
     }
    ],
    "last5": [
@@ -6015,38 +5987,45 @@
    "ladder": [
     {
      "n": 1,
-     "price": -526,
+     "price": -535,
      "model": 0.7864,
-     "book": 0.8041,
-     "edge": -0.0177
+     "book": 0.8062,
+     "edge": -0.0199
     },
     {
      "n": 2,
-     "price": -117,
+     "price": -118,
      "model": 0.4962,
-     "book": 0.516,
-     "edge": -0.0197
+     "book": 0.518,
+     "edge": -0.0218
     },
     {
      "n": 3,
-     "price": 251,
+     "price": 253,
      "model": 0.267,
-     "book": 0.2726,
-     "edge": -0.0057
-    },
-    {
-     "n": 4,
-     "price": 650,
-     "model": 0.1235,
-     "book": 0.1276,
+     "book": 0.2711,
      "edge": -0.0041
     },
     {
+     "n": 4,
+     "price": 640,
+     "model": 0.1235,
+     "book": 0.1293,
+     "edge": -0.0058
+    },
+    {
      "n": 5,
-     "price": 1600,
+     "price": 1540,
      "model": 0.0513,
-     "book": 0.0563,
-     "edge": -0.005
+     "book": 0.0583,
+     "edge": -0.0071
+    },
+    {
+     "n": 6,
+     "price": 2900,
+     "model": 0.0212,
+     "book": 0.0319,
+     "edge": -0.0107
     }
    ],
    "last5": [
@@ -6078,6 +6057,56 @@
    ]
   },
   {
+   "player": "Ryan Conwell",
+   "player_id": "5107157",
+   "team": "MIA",
+   "opp": "HOU",
+   "home": true,
+   "game_id": "401909998",
+   "time_et": "5:30 PM",
+   "status": "active",
+   "minutes": 21.1,
+   "attempts": 4.78,
+   "p3": 0.3693,
+   "made": 1.77,
+   "rungs": [
+    0.7802,
+    0.4887,
+    0.2616,
+    0.1207,
+    0.0501,
+    0.0208
+   ],
+   "tipped": false,
+   "last5": [
+    {
+     "date": "2026-11-05",
+     "made": 3,
+     "att": 6
+    },
+    {
+     "date": "2026-11-08",
+     "made": 2,
+     "att": 5
+    },
+    {
+     "date": "2026-11-10",
+     "made": 1,
+     "att": 6
+    },
+    {
+     "date": "2026-11-13",
+     "made": 4,
+     "att": 9
+    },
+    {
+     "date": "2026-11-14",
+     "made": 2,
+     "att": 7
+    }
+   ]
+  },
+  {
    "player": "Georges Niang",
    "player_id": "2990969",
    "team": "GSW",
@@ -6102,47 +6131,47 @@
    "line": {
     "line": 1.5,
     "over": 116,
-    "under": -153,
+    "under": -152,
     "model_over": 0.4821,
-    "book_over": 0.4336,
-    "edge": 0.0485,
+    "book_over": 0.4342,
+    "edge": 0.0478,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -355,
+     "price": -360,
      "model": 0.7749,
-     "book": 0.7466,
-     "edge": 0.0283
+     "book": 0.7489,
+     "edge": 0.026
     },
     {
      "n": 2,
-     "price": 117,
+     "price": 116,
      "model": 0.4821,
-     "book": 0.441,
-     "edge": 0.0411
+     "book": 0.443,
+     "edge": 0.0391
     },
     {
      "n": 3,
-     "price": 345,
+     "price": 344,
      "model": 0.2567,
-     "book": 0.215,
-     "edge": 0.0416
+     "book": 0.2155,
+     "edge": 0.0412
     },
     {
      "n": 4,
-     "price": 890,
+     "price": 920,
      "model": 0.118,
-     "book": 0.0967,
-     "edge": 0.0214
+     "book": 0.0938,
+     "edge": 0.0242
     },
     {
      "n": 5,
-     "price": 1920,
+     "price": 2100,
      "model": 0.049,
-     "book": 0.0474,
-     "edge": 0.0016
+     "book": 0.0435,
+     "edge": 0.0055
     }
    ],
    "last5": [
@@ -6183,69 +6212,69 @@
    "time_et": "5:00 PM",
    "status": "active",
    "minutes": 19.0,
-   "attempts": 4.36,
+   "attempts": 4.39,
    "p3": 0.3978,
-   "made": 1.74,
+   "made": 1.75,
    "rungs": [
-    0.7718,
-    0.4787,
-    0.2546,
-    0.1171,
-    0.0487,
-    0.0203
+    0.7738,
+    0.4815,
+    0.2569,
+    0.1186,
+    0.0495,
+    0.0206
    ],
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": -152,
-    "under": 115,
-    "model_over": 0.4787,
-    "book_over": 0.5646,
-    "edge": -0.0859,
+    "over": -163,
+    "under": 123,
+    "model_over": 0.4815,
+    "book_over": 0.5802,
+    "edge": -0.0987,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -670,
-     "model": 0.7718,
-     "book": 0.8327,
-     "edge": -0.0609
+     "price": -760,
+     "model": 0.7738,
+     "book": 0.8457,
+     "edge": -0.0718
     },
     {
      "n": 2,
-     "price": -153,
-     "model": 0.4787,
-     "book": 0.5787,
-     "edge": -0.1
+     "price": -164,
+     "model": 0.4815,
+     "book": 0.5945,
+     "edge": -0.113
     },
     {
      "n": 3,
-     "price": 193,
-     "model": 0.2546,
-     "book": 0.3266,
-     "edge": -0.072
+     "price": 174,
+     "model": 0.2569,
+     "book": 0.3492,
+     "edge": -0.0924
     },
     {
      "n": 4,
-     "price": 493,
-     "model": 0.1171,
-     "book": 0.1614,
-     "edge": -0.0442
+     "price": 432,
+     "model": 0.1186,
+     "book": 0.1799,
+     "edge": -0.0613
     },
     {
      "n": 5,
-     "price": 1140,
-     "model": 0.0487,
-     "book": 0.0772,
-     "edge": -0.0284
+     "price": 990,
+     "model": 0.0495,
+     "book": 0.0878,
+     "edge": -0.0383
     },
     {
      "n": 6,
-     "price": 2300,
-     "model": 0.0203,
-     "book": 0.0399,
-     "edge": -0.0196
+     "price": 2000,
+     "model": 0.0206,
+     "book": 0.0456,
+     "edge": -0.0249
     }
    ],
    "last5": [
@@ -6310,10 +6339,10 @@
    "ladder": [
     {
      "n": 1,
-     "price": -443,
+     "price": -427,
      "model": 0.776,
-     "book": 0.7807,
-     "edge": -0.0047
+     "book": 0.7754,
+     "edge": 0.0007
     },
     {
      "n": 2,
@@ -6331,17 +6360,17 @@
     },
     {
      "n": 4,
-     "price": 830,
+     "price": 850,
      "model": 0.115,
-     "book": 0.1029,
-     "edge": 0.0121
+     "book": 0.1007,
+     "edge": 0.0142
     },
     {
      "n": 5,
-     "price": 1880,
+     "price": 2000,
      "model": 0.0469,
-     "book": 0.0483,
-     "edge": -0.0014
+     "book": 0.0456,
+     "edge": 0.0013
     }
    ],
    "last5": [
@@ -6456,38 +6485,38 @@
    "ladder": [
     {
      "n": 1,
-     "price": -530,
+     "price": -524,
      "model": 0.7684,
-     "book": 0.805,
-     "edge": -0.0366
+     "book": 0.8036,
+     "edge": -0.0351
     },
     {
      "n": 2,
-     "price": -120,
+     "price": -118,
      "model": 0.4712,
-     "book": 0.522,
-     "edge": -0.0508
+     "book": 0.518,
+     "edge": -0.0468
     },
     {
      "n": 3,
-     "price": 244,
+     "price": 249,
      "model": 0.2461,
-     "book": 0.2782,
-     "edge": -0.0321
+     "book": 0.2742,
+     "edge": -0.0281
     },
     {
      "n": 4,
-     "price": 650,
+     "price": 660,
      "model": 0.1105,
-     "book": 0.1276,
-     "edge": -0.017
+     "book": 0.1259,
+     "edge": -0.0154
     },
     {
      "n": 5,
-     "price": 1580,
+     "price": 1640,
      "model": 0.0449,
-     "book": 0.057,
-     "edge": -0.0121
+     "book": 0.055,
+     "edge": -0.0101
     }
    ],
    "last5": [
@@ -6542,48 +6571,48 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": 122,
-    "under": -161,
+    "over": 116,
+    "under": -153,
     "model_over": 0.4687,
-    "book_over": 0.422,
-    "edge": 0.0467,
+    "book_over": 0.4336,
+    "edge": 0.0351,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -355,
+     "price": -368,
      "model": 0.7669,
-     "book": 0.7466,
-     "edge": 0.0203
+     "book": 0.7525,
+     "edge": 0.0144
     },
     {
      "n": 2,
-     "price": 124,
+     "price": 117,
      "model": 0.4687,
-     "book": 0.4272,
-     "edge": 0.0415
+     "book": 0.441,
+     "edge": 0.0278
     },
     {
      "n": 3,
-     "price": 381,
+     "price": 352,
      "model": 0.2439,
-     "book": 0.1989,
-     "edge": 0.0449
+     "book": 0.2117,
+     "edge": 0.0322
     },
     {
      "n": 4,
-     "price": 1040,
+     "price": 930,
      "model": 0.1091,
-     "book": 0.0839,
-     "edge": 0.0251
+     "book": 0.0929,
+     "edge": 0.0161
     },
     {
      "n": 5,
-     "price": 2200,
+     "price": 2100,
      "model": 0.0441,
-     "book": 0.0416,
-     "edge": 0.0025
+     "book": 0.0435,
+     "edge": 0.0006
     }
    ],
    "last5": [
@@ -6615,56 +6644,6 @@
    ]
   },
   {
-   "player": "Ryan Conwell",
-   "player_id": "5107157",
-   "team": "MIA",
-   "opp": "HOU",
-   "home": true,
-   "game_id": "401909998",
-   "time_et": "5:30 PM",
-   "status": "active",
-   "minutes": 20.3,
-   "attempts": 4.58,
-   "p3": 0.3693,
-   "made": 1.69,
-   "rungs": [
-    0.7644,
-    0.4671,
-    0.2439,
-    0.1098,
-    0.0448,
-    0.0181
-   ],
-   "tipped": false,
-   "last5": [
-    {
-     "date": "2026-11-05",
-     "made": 3,
-     "att": 6
-    },
-    {
-     "date": "2026-11-08",
-     "made": 2,
-     "att": 5
-    },
-    {
-     "date": "2026-11-10",
-     "made": 1,
-     "att": 6
-    },
-    {
-     "date": "2026-11-13",
-     "made": 4,
-     "att": 9
-    },
-    {
-     "date": "2026-11-14",
-     "made": 2,
-     "att": 7
-    }
-   ]
-  },
-  {
    "player": "Bub Carrington",
    "player_id": "4845374",
    "team": "WAS",
@@ -6673,17 +6652,17 @@
    "game_id": "401909996",
    "time_et": "5:00 PM",
    "status": "active",
-   "minutes": 22.3,
-   "attempts": 4.4,
+   "minutes": 22.5,
+   "attempts": 4.41,
    "p3": 0.3797,
    "made": 1.67,
    "rungs": [
-    0.7591,
-    0.4607,
-    0.2392,
-    0.1073,
-    0.0437,
-    0.0177
+    0.7599,
+    0.4617,
+    0.24,
+    0.1078,
+    0.0439,
+    0.0178
    ],
    "tipped": false,
    "last5": [
@@ -6738,34 +6717,34 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": 124,
-    "under": -164,
+    "over": 120,
+    "under": -158,
     "model_over": 0.4417,
-    "book_over": 0.4181,
-    "edge": 0.0235,
+    "book_over": 0.426,
+    "edge": 0.0156,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -355,
+     "price": -357,
      "model": 0.7456,
-     "book": 0.7466,
-     "edge": -0.0011
+     "book": 0.7475,
+     "edge": -0.002
     },
     {
      "n": 2,
-     "price": 123,
+     "price": 121,
      "model": 0.4417,
-     "book": 0.4291,
-     "edge": 0.0125
+     "book": 0.433,
+     "edge": 0.0087
     },
     {
      "n": 3,
-     "price": 373,
+     "price": 374,
      "model": 0.2231,
-     "book": 0.2023,
-     "edge": 0.0208
+     "book": 0.2019,
+     "edge": 0.0213
     },
     {
      "n": 4,
@@ -6834,41 +6813,41 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": 137,
-    "under": -182,
+    "over": 140,
+    "under": -185,
     "model_over": 0.4426,
-    "book_over": 0.3953,
-    "edge": 0.0473,
+    "book_over": 0.3909,
+    "edge": 0.0516,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -314,
+     "price": -312,
      "model": 0.7464,
-     "book": 0.7258,
-     "edge": 0.0206
+     "book": 0.7247,
+     "edge": 0.0217
     },
     {
      "n": 2,
-     "price": 138,
+     "price": 140,
      "model": 0.4426,
-     "book": 0.4021,
-     "edge": 0.0405
+     "book": 0.3987,
+     "edge": 0.0439
     },
     {
      "n": 3,
-     "price": 426,
+     "price": 427,
      "model": 0.2238,
-     "book": 0.1819,
-     "edge": 0.0419
+     "book": 0.1816,
+     "edge": 0.0422
     },
     {
      "n": 4,
-     "price": 1100,
+     "price": 1160,
      "model": 0.0974,
-     "book": 0.0797,
-     "edge": 0.0177
+     "book": 0.0759,
+     "edge": 0.0215
     },
     {
      "n": 5,
@@ -6930,48 +6909,48 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": 143,
-    "under": -190,
+    "over": 157,
+    "under": -209,
     "model_over": 0.4354,
-    "book_over": 0.3858,
-    "edge": 0.0496,
+    "book_over": 0.3652,
+    "edge": 0.0702,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -307,
+     "price": -271,
      "model": 0.7411,
-     "book": 0.7218,
-     "edge": 0.0192
+     "book": 0.699,
+     "edge": 0.042
     },
     {
      "n": 2,
-     "price": 142,
+     "price": 158,
      "model": 0.4354,
-     "book": 0.3954,
-     "edge": 0.0399
+     "book": 0.3709,
+     "edge": 0.0644
     },
     {
      "n": 3,
-     "price": 428,
+     "price": 480,
      "model": 0.2178,
-     "book": 0.1812,
-     "edge": 0.0366
+     "book": 0.165,
+     "edge": 0.0529
     },
     {
      "n": 4,
-     "price": 1120,
+     "price": 1260,
      "model": 0.0938,
-     "book": 0.0784,
-     "edge": 0.0153
+     "book": 0.0704,
+     "edge": 0.0234
     },
     {
      "n": 5,
-     "price": 2500,
+     "price": 2800,
      "model": 0.0369,
-     "book": 0.0368,
-     "edge": 0.0001
+     "book": 0.033,
+     "edge": 0.0039
     }
    ],
    "last5": [
@@ -7076,11 +7055,11 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": 123,
-    "under": -162,
+    "over": 117,
+    "under": -155,
     "model_over": 0.4296,
-    "book_over": 0.4204,
-    "edge": 0.0092,
+    "book_over": 0.4312,
+    "edge": -0.0016,
     "book": "DraftKings"
    },
    "ladder": [
@@ -7172,48 +7151,48 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": 117,
-    "under": -155,
+    "over": -101,
+    "under": -130,
     "model_over": 0.4262,
-    "book_over": 0.4312,
-    "edge": -0.005,
+    "book_over": 0.4706,
+    "edge": -0.0444,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -380,
+     "price": -455,
      "model": 0.732,
-     "book": 0.7576,
-     "edge": -0.0256
+     "book": 0.7845,
+     "edge": -0.0525
     },
     {
      "n": 2,
-     "price": 119,
+     "price": -101,
      "model": 0.4262,
-     "book": 0.437,
-     "edge": -0.0108
+     "book": 0.4808,
+     "edge": -0.0547
     },
     {
      "n": 3,
-     "price": 367,
+     "price": 298,
      "model": 0.2124,
-     "book": 0.2049,
-     "edge": 0.0075
+     "book": 0.2404,
+     "edge": -0.028
     },
     {
      "n": 4,
-     "price": 960,
+     "price": 790,
      "model": 0.0915,
-     "book": 0.0903,
-     "edge": 0.0012
+     "book": 0.1075,
+     "edge": -0.016
     },
     {
      "n": 5,
-     "price": 2200,
+     "price": 1840,
      "model": 0.0362,
-     "book": 0.0416,
-     "edge": -0.0054
+     "book": 0.0493,
+     "edge": -0.0131
     }
    ],
    "last5": [
@@ -7268,48 +7247,48 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": 113,
-    "under": -149,
+    "over": 121,
+    "under": -159,
     "model_over": 0.4282,
-    "book_over": 0.4396,
-    "edge": -0.0114,
+    "book_over": 0.4243,
+    "edge": 0.0039,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -391,
+     "price": -357,
      "model": 0.7353,
-     "book": 0.762,
-     "edge": -0.0268
+     "book": 0.7475,
+     "edge": -0.0123
     },
     {
      "n": 2,
-     "price": 113,
+     "price": 121,
      "model": 0.4282,
-     "book": 0.4493,
-     "edge": -0.021
+     "book": 0.433,
+     "edge": -0.0048
     },
     {
      "n": 3,
-     "price": 346,
+     "price": 389,
      "model": 0.2125,
-     "book": 0.2146,
-     "edge": -0.002
+     "book": 0.1957,
+     "edge": 0.0168
     },
     {
      "n": 4,
-     "price": 950,
+     "price": 1020,
      "model": 0.0908,
-     "book": 0.0911,
-     "edge": -0.0004
+     "book": 0.0854,
+     "edge": 0.0053
     },
     {
      "n": 5,
-     "price": 2100,
+     "price": 2200,
      "model": 0.0355,
-     "book": 0.0435,
-     "edge": -0.008
+     "book": 0.0416,
+     "edge": -0.0061
     }
    ],
    "last5": [
@@ -7354,58 +7333,58 @@
    "p3": 0.3458,
    "made": 1.55,
    "rungs": [
-    0.7331,
-    0.4255,
-    0.2104,
-    0.0895,
-    0.0349,
-    0.0133
+    0.7334,
+    0.4259,
+    0.2107,
+    0.0897,
+    0.035,
+    0.0134
    ],
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": 112,
-    "under": -147,
-    "model_over": 0.4255,
-    "book_over": 0.4421,
-    "edge": -0.0166,
+    "over": 113,
+    "under": -149,
+    "model_over": 0.4259,
+    "book_over": 0.4396,
+    "edge": -0.0138,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -366,
-     "model": 0.7331,
-     "book": 0.7516,
-     "edge": -0.0185
+     "price": -373,
+     "model": 0.7334,
+     "book": 0.7546,
+     "edge": -0.0212
     },
     {
      "n": 2,
-     "price": 112,
-     "model": 0.4255,
-     "book": 0.4514,
-     "edge": -0.0259
+     "price": 113,
+     "model": 0.4259,
+     "book": 0.4493,
+     "edge": -0.0234
     },
     {
      "n": 3,
-     "price": 321,
-     "model": 0.2104,
-     "book": 0.2273,
-     "edge": -0.0169
+     "price": 314,
+     "model": 0.2107,
+     "book": 0.2311,
+     "edge": -0.0205
     },
     {
      "n": 4,
-     "price": 810,
-     "model": 0.0895,
-     "book": 0.1052,
-     "edge": -0.0156
+     "price": 790,
+     "model": 0.0897,
+     "book": 0.1075,
+     "edge": -0.0178
     },
     {
      "n": 5,
-     "price": 1740,
-     "model": 0.0349,
-     "book": 0.052,
-     "edge": -0.0171
+     "price": 1780,
+     "model": 0.035,
+     "book": 0.0509,
+     "edge": -0.0159
     }
    ],
    "last5": [
@@ -7585,56 +7564,56 @@
    "game_id": "401909996",
    "time_et": "5:00 PM",
    "status": "active",
-   "minutes": 34.3,
-   "attempts": 4.59,
+   "minutes": 34.4,
+   "attempts": 4.6,
    "p3": 0.3303,
    "made": 1.52,
    "rungs": [
-    0.7271,
-    0.4172,
-    0.2035,
-    0.0852,
-    0.0328,
-    0.0123
+    0.728,
+    0.4182,
+    0.2043,
+    0.0857,
+    0.033,
+    0.0124
    ],
    "tipped": false,
    "line": {
-    "line": 1.5,
-    "over": 174,
-    "under": -233,
-    "model_over": 0.4172,
-    "book_over": 0.3428,
-    "edge": 0.0744,
+    "line": 0.5,
+    "over": -231,
+    "under": 173,
+    "model_over": 0.728,
+    "book_over": 0.6558,
+    "edge": 0.0722,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -265,
-     "model": 0.7271,
-     "book": 0.6948,
-     "edge": 0.0323
+     "price": -238,
+     "model": 0.728,
+     "book": 0.6738,
+     "edge": 0.0542
     },
     {
      "n": 2,
-     "price": 174,
-     "model": 0.4172,
-     "book": 0.3492,
-     "edge": 0.0679
+     "price": 187,
+     "model": 0.4182,
+     "book": 0.3334,
+     "edge": 0.0848
     },
     {
      "n": 3,
-     "price": 560,
-     "model": 0.2035,
-     "book": 0.145,
-     "edge": 0.0585
+     "price": 620,
+     "model": 0.2043,
+     "book": 0.1329,
+     "edge": 0.0713
     },
     {
      "n": 4,
-     "price": 1460,
-     "model": 0.0852,
-     "book": 0.0613,
-     "edge": 0.0239
+     "price": 1780,
+     "model": 0.0857,
+     "book": 0.0509,
+     "edge": 0.0348
     }
    ],
    "last5": [
@@ -7662,6 +7641,102 @@
      "date": "2026-11-15",
      "made": 2,
      "att": 7
+    }
+   ]
+  },
+  {
+   "player": "Alex Sarr",
+   "player_id": "5160992",
+   "team": "WAS",
+   "opp": "MEM",
+   "home": true,
+   "game_id": "401909996",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 30.0,
+   "attempts": 4.55,
+   "p3": 0.3336,
+   "made": 1.52,
+   "rungs": [
+    0.727,
+    0.4173,
+    0.2037,
+    0.0855,
+    0.0329,
+    0.0124
+   ],
+   "tipped": false,
+   "line": {
+    "line": 0.5,
+    "over": -204,
+    "under": 153,
+    "model_over": 0.727,
+    "book_over": 0.6293,
+    "edge": 0.0977,
+    "book": "DraftKings"
+   },
+   "ladder": [
+    {
+     "n": 1,
+     "price": -207,
+     "model": 0.727,
+     "book": 0.6452,
+     "edge": 0.0818
+    },
+    {
+     "n": 2,
+     "price": 182,
+     "model": 0.4173,
+     "book": 0.3393,
+     "edge": 0.078
+    },
+    {
+     "n": 3,
+     "price": 516,
+     "model": 0.2037,
+     "book": 0.1553,
+     "edge": 0.0484
+    },
+    {
+     "n": 4,
+     "price": 1260,
+     "model": 0.0855,
+     "book": 0.0704,
+     "edge": 0.0151
+    },
+    {
+     "n": 5,
+     "price": 2600,
+     "model": 0.0329,
+     "book": 0.0354,
+     "edge": -0.0025
+    }
+   ],
+   "last5": [
+    {
+     "date": "2026-11-07",
+     "made": 1,
+     "att": 9
+    },
+    {
+     "date": "2026-11-09",
+     "made": 0,
+     "att": 2
+    },
+    {
+     "date": "2026-11-11",
+     "made": 1,
+     "att": 3
+    },
+    {
+     "date": "2026-11-12",
+     "made": 4,
+     "att": 6
+    },
+    {
+     "date": "2026-11-15",
+     "made": 3,
+     "att": 6
     }
    ]
   },
@@ -7749,38 +7824,38 @@
    "ladder": [
     {
      "n": 1,
-     "price": -420,
+     "price": -426,
      "model": 0.7203,
-     "book": 0.7729,
-     "edge": -0.0526
+     "book": 0.775,
+     "edge": -0.0547
     },
     {
      "n": 2,
-     "price": 104,
+     "price": 103,
      "model": 0.4105,
-     "book": 0.4691,
-     "edge": -0.0586
+     "book": 0.4714,
+     "edge": -0.0609
     },
     {
      "n": 3,
-     "price": 319,
+     "price": 321,
      "model": 0.1997,
-     "book": 0.2284,
-     "edge": -0.0287
+     "book": 0.2273,
+     "edge": -0.0276
     },
     {
      "n": 4,
-     "price": 830,
+     "price": 860,
      "model": 0.0838,
-     "book": 0.1029,
-     "edge": -0.0191
+     "book": 0.0997,
+     "edge": -0.0159
     },
     {
      "n": 5,
-     "price": 1980,
+     "price": 1920,
      "model": 0.0324,
-     "book": 0.046,
-     "edge": -0.0136
+     "book": 0.0474,
+     "edge": -0.015
     }
    ],
    "last5": [
@@ -7808,102 +7883,6 @@
      "date": "2026-11-14",
      "made": 1,
      "att": 1
-    }
-   ]
-  },
-  {
-   "player": "Alex Sarr",
-   "player_id": "5160992",
-   "team": "WAS",
-   "opp": "MEM",
-   "home": true,
-   "game_id": "401909996",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 30.0,
-   "attempts": 4.5,
-   "p3": 0.3336,
-   "made": 1.5,
-   "rungs": [
-    0.7235,
-    0.413,
-    0.2005,
-    0.0837,
-    0.0321,
-    0.012
-   ],
-   "tipped": false,
-   "line": {
-    "line": 0.5,
-    "over": -194,
-    "under": 146,
-    "model_over": 0.7235,
-    "book_over": 0.6188,
-    "edge": 0.1047,
-    "book": "DraftKings"
-   },
-   "ladder": [
-    {
-     "n": 1,
-     "price": -196,
-     "model": 0.7235,
-     "book": 0.6336,
-     "edge": 0.0898
-    },
-    {
-     "n": 2,
-     "price": 189,
-     "model": 0.413,
-     "book": 0.3311,
-     "edge": 0.0818
-    },
-    {
-     "n": 3,
-     "price": 514,
-     "model": 0.2005,
-     "book": 0.1559,
-     "edge": 0.0446
-    },
-    {
-     "n": 4,
-     "price": 1260,
-     "model": 0.0837,
-     "book": 0.0704,
-     "edge": 0.0133
-    },
-    {
-     "n": 5,
-     "price": 2500,
-     "model": 0.0321,
-     "book": 0.0368,
-     "edge": -0.0047
-    }
-   ],
-   "last5": [
-    {
-     "date": "2026-11-07",
-     "made": 1,
-     "att": 9
-    },
-    {
-     "date": "2026-11-09",
-     "made": 0,
-     "att": 2
-    },
-    {
-     "date": "2026-11-11",
-     "made": 1,
-     "att": 3
-    },
-    {
-     "date": "2026-11-12",
-     "made": 4,
-     "att": 6
-    },
-    {
-     "date": "2026-11-15",
-     "made": 3,
-     "att": 6
     }
    ]
   },
@@ -8016,63 +7995,63 @@
    "game_id": "401909998",
    "time_et": "5:30 PM",
    "status": "active",
-   "minutes": 18.3,
-   "attempts": 3.68,
+   "minutes": 18.6,
+   "attempts": 3.67,
    "p3": 0.3896,
    "made": 1.43,
    "rungs": [
-    0.7008,
-    0.3898,
-    0.1861,
-    0.077,
+    0.7006,
+    0.3896,
+    0.1859,
+    0.0769,
     0.0296,
     0.0111
    ],
    "tipped": false,
    "line": {
-    "line": 0.5,
-    "over": -231,
-    "under": 172,
-    "model_over": 0.7008,
-    "book_over": 0.655,
-    "edge": 0.0458,
+    "line": 1.5,
+    "over": 174,
+    "under": -233,
+    "model_over": 0.3896,
+    "book_over": 0.3428,
+    "edge": 0.0468,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -234,
-     "model": 0.7008,
-     "book": 0.6704,
-     "edge": 0.0303
+     "price": -244,
+     "model": 0.7006,
+     "book": 0.6788,
+     "edge": 0.0219
     },
     {
      "n": 2,
-     "price": 177,
-     "model": 0.3898,
-     "book": 0.3455,
-     "edge": 0.0443
+     "price": 175,
+     "model": 0.3896,
+     "book": 0.348,
+     "edge": 0.0416
     },
     {
      "n": 3,
      "price": 529,
-     "model": 0.1861,
+     "model": 0.1859,
      "book": 0.1521,
-     "edge": 0.0339
+     "edge": 0.0338
     },
     {
      "n": 4,
-     "price": 1300,
-     "model": 0.077,
-     "book": 0.0684,
-     "edge": 0.0086
+     "price": 1380,
+     "model": 0.0769,
+     "book": 0.0647,
+     "edge": 0.0123
     },
     {
      "n": 5,
-     "price": 2600,
+     "price": 2700,
      "model": 0.0296,
-     "book": 0.0354,
-     "edge": -0.0058
+     "book": 0.0342,
+     "edge": -0.0046
     }
    ],
    "last5": [
@@ -8127,41 +8106,41 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": 129,
-    "under": -171,
+    "over": 143,
+    "under": -190,
     "model_over": 0.3893,
-    "book_over": 0.409,
-    "edge": -0.0197,
+    "book_over": 0.3858,
+    "edge": 0.0035,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -337,
+     "price": -302,
      "model": 0.7021,
-     "book": 0.738,
-     "edge": -0.0358
+     "book": 0.7189,
+     "edge": -0.0168
     },
     {
      "n": 2,
-     "price": 129,
+     "price": 140,
      "model": 0.3893,
-     "book": 0.4179,
-     "edge": -0.0286
+     "book": 0.3987,
+     "edge": -0.0094
     },
     {
      "n": 3,
-     "price": 397,
+     "price": 442,
      "model": 0.1844,
-     "book": 0.1925,
-     "edge": -0.0082
+     "book": 0.1766,
+     "edge": 0.0078
     },
     {
      "n": 4,
-     "price": 1060,
+     "price": 1160,
      "model": 0.0754,
-     "book": 0.0825,
-     "edge": -0.0071
+     "book": 0.0759,
+     "edge": -0.0006
     },
     {
      "n": 5,
@@ -8200,6 +8179,102 @@
    ]
   },
   {
+   "player": "Andrew Wiggins",
+   "player_id": "3059319",
+   "team": "MIA",
+   "opp": "HOU",
+   "home": true,
+   "game_id": "401909998",
+   "time_et": "5:30 PM",
+   "status": "active",
+   "minutes": 24.7,
+   "attempts": 3.76,
+   "p3": 0.3766,
+   "made": 1.42,
+   "rungs": [
+    0.6972,
+    0.3848,
+    0.182,
+    0.0745,
+    0.0284,
+    0.0105
+   ],
+   "tipped": false,
+   "line": {
+    "line": 1.5,
+    "over": 154,
+    "under": -205,
+    "model_over": 0.3848,
+    "book_over": 0.3694,
+    "edge": 0.0155,
+    "book": "DraftKings"
+   },
+   "ladder": [
+    {
+     "n": 1,
+     "price": -288,
+     "model": 0.6972,
+     "book": 0.7103,
+     "edge": -0.0132
+    },
+    {
+     "n": 2,
+     "price": 152,
+     "model": 0.3848,
+     "book": 0.3797,
+     "edge": 0.0051
+    },
+    {
+     "n": 3,
+     "price": 486,
+     "model": 0.182,
+     "book": 0.1633,
+     "edge": 0.0187
+    },
+    {
+     "n": 4,
+     "price": 1340,
+     "model": 0.0745,
+     "book": 0.0665,
+     "edge": 0.0081
+    },
+    {
+     "n": 5,
+     "price": 2900,
+     "model": 0.0284,
+     "book": 0.0319,
+     "edge": -0.0035
+    }
+   ],
+   "last5": [
+    {
+     "date": "2026-11-05",
+     "made": 0,
+     "att": 2
+    },
+    {
+     "date": "2026-11-08",
+     "made": 2,
+     "att": 4
+    },
+    {
+     "date": "2026-11-10",
+     "made": 2,
+     "att": 4
+    },
+    {
+     "date": "2026-11-13",
+     "made": 1,
+     "att": 3
+    },
+    {
+     "date": "2026-11-14",
+     "made": 0,
+     "att": 2
+    }
+   ]
+  },
+  {
    "player": "Christian Braun",
    "player_id": "4431767",
    "team": "DEN",
@@ -8233,10 +8308,10 @@
    "ladder": [
     {
      "n": 1,
-     "price": -361,
+     "price": -380,
      "model": 0.6978,
-     "book": 0.7494,
-     "edge": -0.0516
+     "book": 0.7576,
+     "edge": -0.0598
     },
     {
      "n": 2,
@@ -8247,10 +8322,10 @@
     },
     {
      "n": 3,
-     "price": 391,
+     "price": 386,
      "model": 0.1799,
-     "book": 0.1949,
-     "edge": -0.015
+     "book": 0.1969,
+     "edge": -0.017
     },
     {
      "n": 4,
@@ -8296,52 +8371,52 @@
    ]
   },
   {
-   "player": "Bogdan Bogdanovic",
-   "player_id": "3037789",
-   "team": "HOU",
-   "opp": "MIA",
-   "home": false,
+   "player": "Tim Hardaway Jr.",
+   "player_id": "2528210",
+   "team": "MIA",
+   "opp": "HOU",
+   "home": true,
    "game_id": "401909998",
    "time_et": "5:30 PM",
    "status": "active",
-   "minutes": 16.3,
-   "attempts": 3.75,
-   "p3": 0.3731,
-   "made": 1.4,
+   "minutes": 16.2,
+   "attempts": 3.79,
+   "p3": 0.373,
+   "made": 1.41,
    "rungs": [
-    0.6926,
-    0.3795,
-    0.1781,
-    0.0723,
-    0.0274,
-    0.0101
+    0.6971,
+    0.3846,
+    0.1817,
+    0.0743,
+    0.0283,
+    0.0105
    ],
    "tipped": false,
    "last5": [
     {
-     "date": "2026-11-07",
+     "date": "2026-11-02",
+     "made": 3,
+     "att": 7
+    },
+    {
+     "date": "2026-11-04",
+     "made": 0,
+     "att": 2
+    },
+    {
+     "date": "2026-11-05",
+     "made": 0,
+     "att": 3
+    },
+    {
+     "date": "2026-11-08",
      "made": 0,
      "att": 1
     },
     {
-     "date": "2026-11-09",
-     "made": 2,
-     "att": 2
-    },
-    {
-     "date": "2026-11-11",
-     "made": 0,
-     "att": 0
-    },
-    {
      "date": "2026-11-13",
-     "made": 3,
-     "att": 4
-    },
-    {
-     "date": "2026-11-15",
-     "made": 2,
-     "att": 4
+     "made": 0,
+     "att": 2
     }
    ]
   },
@@ -8367,6 +8442,43 @@
     0.0098
    ],
    "tipped": false,
+   "ladder": [
+    {
+     "n": 1,
+     "price": -279,
+     "model": 0.6947,
+     "book": 0.7044,
+     "edge": -0.0098
+    },
+    {
+     "n": 2,
+     "price": 148,
+     "model": 0.3804,
+     "book": 0.3859,
+     "edge": -0.0054
+    },
+    {
+     "n": 3,
+     "price": 443,
+     "model": 0.1778,
+     "book": 0.1762,
+     "edge": 0.0016
+    },
+    {
+     "n": 4,
+     "price": 1120,
+     "model": 0.0717,
+     "book": 0.0784,
+     "edge": -0.0067
+    },
+    {
+     "n": 5,
+     "price": 2300,
+     "model": 0.0269,
+     "book": 0.0399,
+     "edge": -0.013
+    }
+   ],
    "last5": [
     {
      "date": "2026-11-05",
@@ -8396,98 +8508,52 @@
    ]
   },
   {
-   "player": "Andrew Wiggins",
-   "player_id": "3059319",
-   "team": "MIA",
-   "opp": "HOU",
-   "home": true,
+   "player": "Bogdan Bogdanovic",
+   "player_id": "3037789",
+   "team": "HOU",
+   "opp": "MIA",
+   "home": false,
    "game_id": "401909998",
    "time_et": "5:30 PM",
    "status": "active",
-   "minutes": 22.9,
-   "attempts": 3.67,
-   "p3": 0.3766,
-   "made": 1.38,
+   "minutes": 16.2,
+   "attempts": 3.72,
+   "p3": 0.3731,
+   "made": 1.39,
    "rungs": [
-    0.6877,
-    0.3743,
-    0.1746,
-    0.0706,
-    0.0267,
+    0.6895,
+    0.3761,
+    0.1757,
+    0.071,
+    0.0268,
     0.0098
    ],
    "tipped": false,
-   "line": {
-    "line": 1.5,
-    "over": 149,
-    "under": -198,
-    "model_over": 0.3743,
-    "book_over": 0.3767,
-    "edge": -0.0024,
-    "book": "DraftKings"
-   },
-   "ladder": [
-    {
-     "n": 1,
-     "price": -291,
-     "model": 0.6877,
-     "book": 0.7122,
-     "edge": -0.0244
-    },
-    {
-     "n": 2,
-     "price": 152,
-     "model": 0.3743,
-     "book": 0.3797,
-     "edge": -0.0054
-    },
-    {
-     "n": 3,
-     "price": 485,
-     "model": 0.1746,
-     "book": 0.1636,
-     "edge": 0.0111
-    },
-    {
-     "n": 4,
-     "price": 1320,
-     "model": 0.0706,
-     "book": 0.0674,
-     "edge": 0.0032
-    },
-    {
-     "n": 5,
-     "price": 2700,
-     "model": 0.0267,
-     "book": 0.0342,
-     "edge": -0.0075
-    }
-   ],
    "last5": [
     {
-     "date": "2026-11-05",
+     "date": "2026-11-07",
      "made": 0,
+     "att": 1
+    },
+    {
+     "date": "2026-11-09",
+     "made": 2,
      "att": 2
     },
     {
-     "date": "2026-11-08",
-     "made": 2,
-     "att": 4
-    },
-    {
-     "date": "2026-11-10",
-     "made": 2,
-     "att": 4
+     "date": "2026-11-11",
+     "made": 0,
+     "att": 0
     },
     {
      "date": "2026-11-13",
-     "made": 1,
-     "att": 3
+     "made": 3,
+     "att": 4
     },
     {
-     "date": "2026-11-14",
-     "made": 0,
-     "att": 2
+     "date": "2026-11-15",
+     "made": 2,
+     "att": 4
     }
    ]
   },
@@ -8525,38 +8591,38 @@
    "ladder": [
     {
      "n": 1,
-     "price": -299,
+     "price": -309,
      "model": 0.6888,
-     "book": 0.7171,
-     "edge": -0.0283
+     "book": 0.723,
+     "edge": -0.0341
     },
     {
      "n": 2,
-     "price": 142,
+     "price": 141,
      "model": 0.3728,
-     "book": 0.3954,
-     "edge": -0.0227
+     "book": 0.3971,
+     "edge": -0.0243
     },
     {
      "n": 3,
-     "price": 450,
+     "price": 442,
      "model": 0.1717,
-     "book": 0.174,
-     "edge": -0.0023
+     "book": 0.1766,
+     "edge": -0.0049
     },
     {
      "n": 4,
-     "price": 1240,
+     "price": 1180,
      "model": 0.0681,
-     "book": 0.0714,
-     "edge": -0.0034
+     "book": 0.0748,
+     "edge": -0.0067
     },
     {
      "n": 5,
-     "price": 2700,
+     "price": 2600,
      "model": 0.0252,
-     "book": 0.0342,
-     "edge": -0.009
+     "book": 0.0354,
+     "edge": -0.0103
     }
    ],
    "last5": [
@@ -8596,15 +8662,15 @@
    "game_id": "401909998",
    "time_et": "5:30 PM",
    "status": "suspension",
-   "minutes": 20.3,
+   "minutes": 20.2,
    "attempts": 3.92,
    "p3": 0.3502,
    "made": 1.37,
    "rungs": [
-    0.6875,
-    0.3724,
-    0.1722,
-    0.0687,
+    0.6878,
+    0.3727,
+    0.1724,
+    0.0688,
     0.0256,
     0.0092
    ],
@@ -8711,48 +8777,48 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": 135,
-    "under": -179,
+    "over": 140,
+    "under": -186,
     "model_over": 0.3663,
-    "book_over": 0.3988,
-    "edge": -0.0325,
+    "book_over": 0.3905,
+    "edge": -0.0242,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -327,
+     "price": -311,
      "model": 0.6826,
-     "book": 0.7328,
-     "edge": -0.0503
+     "book": 0.7241,
+     "edge": -0.0415
     },
     {
      "n": 2,
-     "price": 136,
+     "price": 141,
      "model": 0.3663,
-     "book": 0.4055,
-     "edge": -0.0392
+     "book": 0.3971,
+     "edge": -0.0308
     },
     {
      "n": 3,
-     "price": 434,
+     "price": 435,
      "model": 0.1676,
-     "book": 0.1792,
-     "edge": -0.0116
+     "book": 0.1789,
+     "edge": -0.0113
     },
     {
      "n": 4,
-     "price": 1180,
+     "price": 1220,
      "model": 0.0661,
-     "book": 0.0748,
-     "edge": -0.0087
+     "book": 0.0725,
+     "edge": -0.0064
     },
     {
      "n": 5,
-     "price": 2500,
+     "price": 2600,
      "model": 0.0244,
-     "book": 0.0368,
-     "edge": -0.0124
+     "book": 0.0354,
+     "edge": -0.0111
     }
    ],
    "last5": [
@@ -8778,56 +8844,6 @@
     },
     {
      "date": "2026-11-14",
-     "made": 0,
-     "att": 2
-    }
-   ]
-  },
-  {
-   "player": "Tim Hardaway Jr.",
-   "player_id": "2528210",
-   "team": "MIA",
-   "opp": "HOU",
-   "home": true,
-   "game_id": "401909998",
-   "time_et": "5:30 PM",
-   "status": "active",
-   "minutes": 15.0,
-   "attempts": 3.62,
-   "p3": 0.373,
-   "made": 1.35,
-   "rungs": [
-    0.6792,
-    0.3647,
-    0.1678,
-    0.0669,
-    0.025,
-    0.0091
-   ],
-   "tipped": false,
-   "last5": [
-    {
-     "date": "2026-11-02",
-     "made": 3,
-     "att": 7
-    },
-    {
-     "date": "2026-11-04",
-     "made": 0,
-     "att": 2
-    },
-    {
-     "date": "2026-11-05",
-     "made": 0,
-     "att": 3
-    },
-    {
-     "date": "2026-11-08",
-     "made": 0,
-     "att": 1
-    },
-    {
-     "date": "2026-11-13",
      "made": 0,
      "att": 2
     }
@@ -8867,24 +8883,24 @@
    "ladder": [
     {
      "n": 1,
-     "price": -303,
+     "price": -298,
      "model": 0.6776,
-     "book": 0.7195,
-     "edge": -0.0419
+     "book": 0.7165,
+     "edge": -0.0389
     },
     {
      "n": 2,
-     "price": 142,
+     "price": 146,
      "model": 0.3604,
-     "book": 0.3954,
-     "edge": -0.035
+     "book": 0.389,
+     "edge": -0.0286
     },
     {
      "n": 3,
-     "price": 437,
+     "price": 444,
      "model": 0.1633,
-     "book": 0.1782,
-     "edge": -0.0149
+     "book": 0.1759,
+     "edge": -0.0126
     },
     {
      "n": 4,
@@ -8895,10 +8911,10 @@
     },
     {
      "n": 5,
-     "price": 2600,
+     "price": 2400,
      "model": 0.0233,
-     "book": 0.0354,
-     "edge": -0.0122
+     "book": 0.0383,
+     "edge": -0.015
     }
    ],
    "last5": [
@@ -9003,11 +9019,11 @@
    "tipped": false,
    "line": {
     "line": 0.5,
-    "over": -229,
-    "under": 171,
+    "over": -237,
+    "under": 177,
     "model_over": 0.6674,
-    "book_over": 0.6535,
-    "edge": 0.0138,
+    "book_over": 0.6608,
+    "edge": 0.0066,
     "book": "DraftKings"
    },
    "ladder": [
@@ -9027,24 +9043,17 @@
     },
     {
      "n": 3,
-     "price": 580,
+     "price": 592,
      "model": 0.1574,
-     "book": 0.1407,
-     "edge": 0.0167
+     "book": 0.1383,
+     "edge": 0.0191
     },
     {
      "n": 4,
-     "price": 1540,
+     "price": 1600,
      "model": 0.0611,
-     "book": 0.0583,
-     "edge": 0.0027
-    },
-    {
-     "n": 5,
-     "price": 2900,
-     "model": 0.0223,
-     "book": 0.0319,
-     "edge": -0.0096
+     "book": 0.0563,
+     "edge": 0.0048
     }
    ],
    "last5": [
@@ -9126,6 +9135,56 @@
    ]
   },
   {
+   "player": "Bam Adebayo",
+   "player_id": "4066261",
+   "team": "MIA",
+   "opp": "HOU",
+   "home": true,
+   "game_id": "401909998",
+   "time_et": "5:30 PM",
+   "status": "active",
+   "minutes": 35.2,
+   "attempts": 3.83,
+   "p3": 0.3303,
+   "made": 1.26,
+   "rungs": [
+    0.6574,
+    0.3389,
+    0.1488,
+    0.0563,
+    0.0201,
+    0.0069
+   ],
+   "tipped": false,
+   "last5": [
+    {
+     "date": "2026-11-05",
+     "made": 0,
+     "att": 2
+    },
+    {
+     "date": "2026-11-08",
+     "made": 1,
+     "att": 5
+    },
+    {
+     "date": "2026-11-10",
+     "made": 0,
+     "att": 2
+    },
+    {
+     "date": "2026-11-13",
+     "made": 2,
+     "att": 3
+    },
+    {
+     "date": "2026-11-14",
+     "made": 1,
+     "att": 2
+    }
+   ]
+  },
+  {
    "player": "Jordan Hawkins",
    "player_id": "4683750",
    "team": "CHI",
@@ -9199,11 +9258,11 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": 125,
-    "under": -165,
+    "over": 129,
+    "under": -171,
     "model_over": 0.3306,
-    "book_over": 0.4165,
-    "edge": -0.0859,
+    "book_over": 0.409,
+    "edge": -0.0784,
     "book": "DraftKings"
    },
    "ladder": [
@@ -9296,31 +9355,31 @@
    "ladder": [
     {
      "n": 1,
-     "price": -126,
+     "price": -124,
      "model": 0.6401,
-     "book": 0.5335,
-     "edge": 0.1066
+     "book": 0.5297,
+     "edge": 0.1104
     },
     {
      "n": 2,
-     "price": 373,
+     "price": 371,
      "model": 0.3226,
-     "book": 0.2023,
-     "edge": 0.1203
+     "book": 0.2032,
+     "edge": 0.1194
     },
     {
      "n": 3,
-     "price": 1180,
+     "price": 1240,
      "model": 0.1392,
-     "book": 0.0748,
-     "edge": 0.0644
+     "book": 0.0714,
+     "edge": 0.0678
     },
     {
      "n": 4,
-     "price": 2700,
+     "price": 2800,
      "model": 0.052,
-     "book": 0.0342,
-     "edge": 0.0178
+     "book": 0.033,
+     "edge": 0.019
     }
    ],
    "last5": [
@@ -9375,41 +9434,41 @@
    "tipped": false,
    "line": {
     "line": 0.5,
-    "over": -236,
-    "under": 176,
+    "over": -226,
+    "under": 169,
     "model_over": 0.6407,
-    "book_over": 0.6597,
-    "edge": -0.019,
+    "book_over": 0.6509,
+    "edge": -0.0103,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -241,
+     "price": -229,
      "model": 0.6407,
-     "book": 0.6763,
-     "edge": -0.0356
+     "book": 0.6661,
+     "edge": -0.0254
     },
     {
      "n": 2,
-     "price": 179,
+     "price": 197,
      "model": 0.3234,
-     "book": 0.343,
-     "edge": -0.0196
+     "book": 0.3222,
+     "edge": 0.0012
     },
     {
      "n": 3,
-     "price": 568,
+     "price": 630,
      "model": 0.1398,
-     "book": 0.1433,
-     "edge": -0.0034
+     "book": 0.1311,
+     "edge": 0.0087
     },
     {
      "n": 4,
-     "price": 1580,
+     "price": 1680,
      "model": 0.0523,
-     "book": 0.057,
-     "edge": -0.0046
+     "book": 0.0538,
+     "edge": -0.0014
     }
    ],
    "last5": [
@@ -9464,27 +9523,27 @@
    "tipped": false,
    "line": {
     "line": 0.5,
-    "over": -170,
-    "under": 128,
+    "over": -168,
+    "under": 127,
     "model_over": 0.6407,
-    "book_over": 0.5894,
-    "edge": 0.0513,
+    "book_over": 0.5873,
+    "edge": 0.0534,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -171,
+     "price": -169,
      "model": 0.6407,
-     "book": 0.6038,
-     "edge": 0.0369
+     "book": 0.6012,
+     "edge": 0.0395
     },
     {
      "n": 2,
-     "price": 277,
+     "price": 271,
      "model": 0.3219,
-     "book": 0.2538,
-     "edge": 0.0681
+     "book": 0.2579,
+     "edge": 0.064
     },
     {
      "n": 3,
@@ -9588,17 +9647,17 @@
    "game_id": "401909996",
    "time_et": "5:00 PM",
    "status": "active",
-   "minutes": 14.0,
-   "attempts": 3.23,
+   "minutes": 14.4,
+   "attempts": 3.36,
    "p3": 0.3579,
-   "made": 1.16,
+   "made": 1.2,
    "rungs": [
-    0.6206,
-    0.304,
-    0.1279,
-    0.0467,
-    0.0164,
-    0.0055
+    0.6352,
+    0.3182,
+    0.1367,
+    0.0509,
+    0.0181,
+    0.0061
    ],
    "tipped": false,
    "last5": [
@@ -9630,52 +9689,52 @@
    ]
   },
   {
-   "player": "Bam Adebayo",
-   "player_id": "4066261",
-   "team": "MIA",
-   "opp": "HOU",
+   "player": "Bilal Coulibaly",
+   "player_id": "5104155",
+   "team": "WAS",
+   "opp": "MEM",
    "home": true,
-   "game_id": "401909998",
-   "time_et": "5:30 PM",
+   "game_id": "401909996",
+   "time_et": "5:00 PM",
    "status": "active",
-   "minutes": 30.4,
-   "attempts": 3.46,
-   "p3": 0.3303,
-   "made": 1.14,
+   "minutes": 25.0,
+   "attempts": 3.55,
+   "p3": 0.3225,
+   "made": 1.15,
    "rungs": [
-    0.6173,
-    0.2991,
-    0.1238,
-    0.0443,
-    0.0152,
+    0.6194,
+    0.3006,
+    0.1244,
+    0.0444,
+    0.0153,
     0.0049
    ],
    "tipped": false,
    "last5": [
     {
-     "date": "2026-11-05",
-     "made": 0,
-     "att": 2
-    },
-    {
-     "date": "2026-11-08",
+     "date": "2026-11-06",
      "made": 1,
-     "att": 5
-    },
-    {
-     "date": "2026-11-10",
-     "made": 0,
-     "att": 2
-    },
-    {
-     "date": "2026-11-13",
-     "made": 2,
      "att": 3
     },
     {
-     "date": "2026-11-14",
-     "made": 1,
+     "date": "2026-11-07",
+     "made": 0,
+     "att": 4
+    },
+    {
+     "date": "2026-11-11",
+     "made": 0,
+     "att": 3
+    },
+    {
+     "date": "2026-11-12",
+     "made": 0,
      "att": 2
+    },
+    {
+     "date": "2026-11-15",
+     "made": 1,
+     "att": 4
     }
    ]
   },
@@ -9730,56 +9789,6 @@
    ]
   },
   {
-   "player": "Bilal Coulibaly",
-   "player_id": "5104155",
-   "team": "WAS",
-   "opp": "MEM",
-   "home": true,
-   "game_id": "401909996",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 25.0,
-   "attempts": 3.52,
-   "p3": 0.3225,
-   "made": 1.13,
-   "rungs": [
-    0.6157,
-    0.2971,
-    0.1223,
-    0.0435,
-    0.0149,
-    0.0048
-   ],
-   "tipped": false,
-   "last5": [
-    {
-     "date": "2026-11-06",
-     "made": 1,
-     "att": 3
-    },
-    {
-     "date": "2026-11-07",
-     "made": 0,
-     "att": 4
-    },
-    {
-     "date": "2026-11-11",
-     "made": 0,
-     "att": 3
-    },
-    {
-     "date": "2026-11-12",
-     "made": 0,
-     "att": 2
-    },
-    {
-     "date": "2026-11-15",
-     "made": 1,
-     "att": 4
-    }
-   ]
-  },
-  {
    "player": "Terrence Shannon Jr.",
    "player_id": "4432847",
    "team": "MIN",
@@ -9803,48 +9812,48 @@
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": 147,
-    "under": -196,
+    "over": 132,
+    "under": -175,
     "model_over": 0.2948,
-    "book_over": 0.3794,
-    "edge": -0.0847,
+    "book_over": 0.4038,
+    "edge": -0.109,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -283,
+     "price": -313,
      "model": 0.611,
-     "book": 0.7071,
-     "edge": -0.0961
+     "book": 0.7252,
+     "edge": -0.1143
     },
     {
      "n": 2,
-     "price": 148,
+     "price": 132,
      "model": 0.2948,
-     "book": 0.3859,
-     "edge": -0.0911
+     "book": 0.4125,
+     "edge": -0.1177
     },
     {
      "n": 3,
-     "price": 454,
+     "price": 406,
      "model": 0.1221,
-     "book": 0.1727,
-     "edge": -0.0506
+     "book": 0.1891,
+     "edge": -0.067
     },
     {
      "n": 4,
-     "price": 1200,
+     "price": 1040,
      "model": 0.0439,
-     "book": 0.0736,
-     "edge": -0.0297
+     "book": 0.0839,
+     "edge": -0.04
     },
     {
      "n": 5,
-     "price": 2600,
+     "price": 2300,
      "model": 0.0153,
-     "book": 0.0354,
-     "edge": -0.0202
+     "book": 0.0399,
+     "edge": -0.0246
     }
    ],
    "last5": [
@@ -9926,102 +9935,6 @@
    ]
   },
   {
-   "player": "Taylor Hendricks",
-   "player_id": "4684806",
-   "team": "MEM",
-   "opp": "WAS",
-   "home": false,
-   "game_id": "401909996",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 21.8,
-   "attempts": 3.08,
-   "p3": 0.3585,
-   "made": 1.11,
-   "rungs": [
-    0.6025,
-    0.2871,
-    0.1176,
-    0.0419,
-    0.0145,
-    0.0047
-   ],
-   "tipped": false,
-   "line": {
-    "line": 1.5,
-    "over": 153,
-    "under": -204,
-    "model_over": 0.2871,
-    "book_over": 0.3707,
-    "edge": -0.0836,
-    "book": "DraftKings"
-   },
-   "ladder": [
-    {
-     "n": 1,
-     "price": -284,
-     "model": 0.6025,
-     "book": 0.7077,
-     "edge": -0.1053
-    },
-    {
-     "n": 2,
-     "price": 154,
-     "model": 0.2871,
-     "book": 0.3767,
-     "edge": -0.0896
-    },
-    {
-     "n": 3,
-     "price": 469,
-     "model": 0.1176,
-     "book": 0.1682,
-     "edge": -0.0505
-    },
-    {
-     "n": 4,
-     "price": 1200,
-     "model": 0.0419,
-     "book": 0.0736,
-     "edge": -0.0317
-    },
-    {
-     "n": 5,
-     "price": 2400,
-     "model": 0.0145,
-     "book": 0.0383,
-     "edge": -0.0238
-    }
-   ],
-   "last5": [
-    {
-     "date": "2026-11-06",
-     "made": 1,
-     "att": 1
-    },
-    {
-     "date": "2026-11-09",
-     "made": 1,
-     "att": 1
-    },
-    {
-     "date": "2026-11-11",
-     "made": 1,
-     "att": 1
-    },
-    {
-     "date": "2026-11-13",
-     "made": 2,
-     "att": 3
-    },
-    {
-     "date": "2026-11-14",
-     "made": 0,
-     "att": 2
-    }
-   ]
-  },
-  {
    "player": "Trey Lyles",
    "player_id": "3136196",
    "team": "MIN",
@@ -10068,6 +9981,95 @@
      "date": "2026-11-14",
      "made": 0,
      "att": 3
+    }
+   ]
+  },
+  {
+   "player": "Taylor Hendricks",
+   "player_id": "4684806",
+   "team": "MEM",
+   "opp": "WAS",
+   "home": false,
+   "game_id": "401909996",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 21.2,
+   "attempts": 3.04,
+   "p3": 0.3585,
+   "made": 1.09,
+   "rungs": [
+    0.5975,
+    0.2826,
+    0.115,
+    0.0407,
+    0.014,
+    0.0045
+   ],
+   "tipped": false,
+   "line": {
+    "line": 0.5,
+    "over": -205,
+    "under": 154,
+    "model_over": 0.5975,
+    "book_over": 0.6306,
+    "edge": -0.0331,
+    "book": "DraftKings"
+   },
+   "ladder": [
+    {
+     "n": 1,
+     "price": -208,
+     "model": 0.5975,
+     "book": 0.6462,
+     "edge": -0.0487
+    },
+    {
+     "n": 2,
+     "price": 212,
+     "model": 0.2826,
+     "book": 0.3067,
+     "edge": -0.0241
+    },
+    {
+     "n": 3,
+     "price": 670,
+     "model": 0.115,
+     "book": 0.1243,
+     "edge": -0.0093
+    },
+    {
+     "n": 4,
+     "price": 1760,
+     "model": 0.0407,
+     "book": 0.0514,
+     "edge": -0.0108
+    }
+   ],
+   "last5": [
+    {
+     "date": "2026-11-06",
+     "made": 1,
+     "att": 1
+    },
+    {
+     "date": "2026-11-09",
+     "made": 1,
+     "att": 1
+    },
+    {
+     "date": "2026-11-11",
+     "made": 1,
+     "att": 1
+    },
+    {
+     "date": "2026-11-13",
+     "made": 2,
+     "att": 3
+    },
+    {
+     "date": "2026-11-14",
+     "made": 0,
+     "att": 2
     }
    ]
   },
@@ -10161,31 +10163,36 @@
    ]
   },
   {
-   "player": "Pelle Larsson",
-   "player_id": "4601025",
-   "team": "MIA",
-   "opp": "HOU",
-   "home": true,
-   "game_id": "401909998",
-   "time_et": "5:30 PM",
-   "status": "day-to-day",
-   "minutes": 26.2,
-   "attempts": 3.08,
-   "p3": 0.3395,
-   "made": 1.04,
+   "player": "Quinten Post",
+   "player_id": "4593016",
+   "team": "MEM",
+   "opp": "WAS",
+   "home": false,
+   "game_id": "401909996",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 12.3,
+   "attempts": 2.85,
+   "p3": 0.3577,
+   "made": 1.02,
    "rungs": [
-    0.5821,
-    0.2676,
-    0.1056,
-    0.0362,
-    0.0121,
-    0.0038
+    0.5718,
+    0.2598,
+    0.1018,
+    0.0348,
+    0.0117,
+    0.0037
    ],
    "tipped": false,
    "last5": [
     {
-     "date": "2026-11-02",
-     "made": 1,
+     "date": "2026-10-26",
+     "made": 2,
+     "att": 3
+    },
+    {
+     "date": "2026-10-29",
+     "made": 2,
      "att": 3
     },
     {
@@ -10194,19 +10201,14 @@
      "att": 2
     },
     {
-     "date": "2026-11-05",
-     "made": 3,
+     "date": "2026-11-06",
+     "made": 0,
      "att": 5
     },
     {
-     "date": "2026-11-08",
-     "made": 3,
-     "att": 4
-    },
-    {
-     "date": "2026-11-10",
-     "made": 2,
-     "att": 3
+     "date": "2026-11-09",
+     "made": 0,
+     "att": 0
     }
    ]
   },
@@ -10234,41 +10236,34 @@
    "tipped": false,
    "line": {
     "line": 0.5,
-    "over": -129,
-    "under": -102,
+    "over": -133,
+    "under": 101,
     "model_over": 0.5635,
-    "book_over": 0.5273,
-    "edge": 0.0362,
+    "book_over": 0.5343,
+    "edge": 0.0292,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -132,
+     "price": -133,
      "model": 0.5635,
-     "book": 0.5445,
-     "edge": 0.019
+     "book": 0.5462,
+     "edge": 0.0172
     },
     {
      "n": 2,
-     "price": 358,
+     "price": 372,
      "model": 0.2505,
-     "book": 0.2089,
-     "edge": 0.0416
+     "book": 0.2027,
+     "edge": 0.0478
     },
     {
      "n": 3,
-     "price": 1220,
+     "price": 1280,
      "model": 0.0955,
-     "book": 0.0725,
-     "edge": 0.023
-    },
-    {
-     "n": 4,
-     "price": 2900,
-     "model": 0.0316,
-     "book": 0.0319,
-     "edge": -0.0003
+     "book": 0.0693,
+     "edge": 0.0261
     }
    ],
    "last5": [
@@ -10350,6 +10345,56 @@
    ]
   },
   {
+   "player": "Will Riley",
+   "player_id": "5144126",
+   "team": "WAS",
+   "opp": "MEM",
+   "home": true,
+   "game_id": "401909996",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 16.6,
+   "attempts": 2.86,
+   "p3": 0.3395,
+   "made": 0.97,
+   "rungs": [
+    0.5534,
+    0.2431,
+    0.0919,
+    0.0303,
+    0.0099,
+    0.003
+   ],
+   "tipped": false,
+   "last5": [
+    {
+     "date": "2026-11-06",
+     "made": 1,
+     "att": 1
+    },
+    {
+     "date": "2026-11-07",
+     "made": 0,
+     "att": 3
+    },
+    {
+     "date": "2026-11-09",
+     "made": 0,
+     "att": 0
+    },
+    {
+     "date": "2026-11-12",
+     "made": 1,
+     "att": 1
+    },
+    {
+     "date": "2026-11-15",
+     "made": 2,
+     "att": 3
+    }
+   ]
+  },
+  {
    "player": "Devin Carter",
    "player_id": "4433188",
    "team": "BOS",
@@ -10400,46 +10445,46 @@
    ]
   },
   {
-   "player": "Will Riley",
-   "player_id": "5144126",
+   "player": "Khris Middleton",
+   "player_id": "6609",
    "team": "WAS",
    "opp": "MEM",
    "home": true,
    "game_id": "401909996",
    "time_et": "5:00 PM",
    "status": "active",
-   "minutes": 16.4,
-   "attempts": 2.83,
-   "p3": 0.3395,
+   "minutes": 18.4,
+   "attempts": 2.65,
+   "p3": 0.3626,
    "made": 0.96,
    "rungs": [
-    0.5494,
-    0.2399,
-    0.0902,
-    0.0296,
-    0.0096,
-    0.0029
+    0.5489,
+    0.2409,
+    0.0915,
+    0.0304,
+    0.0101,
+    0.0031
    ],
    "tipped": false,
    "last5": [
     {
-     "date": "2026-11-06",
-     "made": 1,
-     "att": 1
-    },
-    {
-     "date": "2026-11-07",
+     "date": "2026-10-23",
      "made": 0,
-     "att": 3
+     "att": 2
     },
     {
-     "date": "2026-11-09",
+     "date": "2026-10-26",
      "made": 0,
      "att": 0
     },
     {
-     "date": "2026-11-12",
+     "date": "2026-10-28",
      "made": 1,
+     "att": 2
+    },
+    {
+     "date": "2026-10-30",
+     "made": 0,
      "att": 1
     },
     {
@@ -10496,56 +10541,6 @@
      "date": "2026-11-15",
      "made": 2,
      "att": 5
-    }
-   ]
-  },
-  {
-   "player": "Khris Middleton",
-   "player_id": "6609",
-   "team": "WAS",
-   "opp": "MEM",
-   "home": true,
-   "game_id": "401909996",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 18.2,
-   "attempts": 2.59,
-   "p3": 0.3626,
-   "made": 0.94,
-   "rungs": [
-    0.54,
-    0.2337,
-    0.0876,
-    0.0288,
-    0.0094,
-    0.0029
-   ],
-   "tipped": false,
-   "last5": [
-    {
-     "date": "2026-10-23",
-     "made": 0,
-     "att": 2
-    },
-    {
-     "date": "2026-10-26",
-     "made": 0,
-     "att": 0
-    },
-    {
-     "date": "2026-10-28",
-     "made": 1,
-     "att": 2
-    },
-    {
-     "date": "2026-10-30",
-     "made": 0,
-     "att": 1
-    },
-    {
-     "date": "2026-11-15",
-     "made": 2,
-     "att": 3
     }
    ]
   },
@@ -10630,6 +10625,56 @@
    ]
   },
   {
+   "player": "Simone Fontecchio",
+   "player_id": "3899664",
+   "team": "MIA",
+   "opp": "HOU",
+   "home": true,
+   "game_id": "401909998",
+   "time_et": "5:30 PM",
+   "status": "active",
+   "minutes": 11.8,
+   "attempts": 2.48,
+   "p3": 0.3732,
+   "made": 0.93,
+   "rungs": [
+    0.5338,
+    0.2294,
+    0.0857,
+    0.0281,
+    0.0092,
+    0.0028
+   ],
+   "tipped": false,
+   "last5": [
+    {
+     "date": "2026-10-30",
+     "made": 1,
+     "att": 2
+    },
+    {
+     "date": "2026-11-04",
+     "made": 0,
+     "att": 2
+    },
+    {
+     "date": "2026-11-10",
+     "made": 0,
+     "att": 2
+    },
+    {
+     "date": "2026-11-13",
+     "made": 0,
+     "att": 0
+    },
+    {
+     "date": "2026-11-14",
+     "made": 1,
+     "att": 2
+    }
+   ]
+  },
+  {
    "player": "Nikola Vucevic",
    "player_id": "6478",
    "team": "ORL",
@@ -10676,106 +10721,6 @@
      "date": "2026-11-13",
      "made": 0,
      "att": 3
-    }
-   ]
-  },
-  {
-   "player": "Olivier-Maxence Prosper",
-   "player_id": "4595400",
-   "team": "MEM",
-   "opp": "WAS",
-   "home": false,
-   "game_id": "401909996",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 16.9,
-   "attempts": 2.52,
-   "p3": 0.3594,
-   "made": 0.91,
-   "rungs": [
-    0.5263,
-    0.2227,
-    0.0817,
-    0.0263,
-    0.0085,
-    0.0025
-   ],
-   "tipped": false,
-   "last5": [
-    {
-     "date": "2026-11-04",
-     "made": 0,
-     "att": 1
-    },
-    {
-     "date": "2026-11-06",
-     "made": 0,
-     "att": 2
-    },
-    {
-     "date": "2026-11-09",
-     "made": 0,
-     "att": 0
-    },
-    {
-     "date": "2026-11-13",
-     "made": 0,
-     "att": 0
-    },
-    {
-     "date": "2026-11-14",
-     "made": 2,
-     "att": 2
-    }
-   ]
-  },
-  {
-   "player": "Simone Fontecchio",
-   "player_id": "3899664",
-   "team": "MIA",
-   "opp": "HOU",
-   "home": true,
-   "game_id": "401909998",
-   "time_et": "5:30 PM",
-   "status": "active",
-   "minutes": 10.0,
-   "attempts": 2.43,
-   "p3": 0.3732,
-   "made": 0.91,
-   "rungs": [
-    0.5249,
-    0.2225,
-    0.082,
-    0.0266,
-    0.0087,
-    0.0026
-   ],
-   "tipped": false,
-   "last5": [
-    {
-     "date": "2026-10-30",
-     "made": 1,
-     "att": 2
-    },
-    {
-     "date": "2026-11-04",
-     "made": 0,
-     "att": 2
-    },
-    {
-     "date": "2026-11-10",
-     "made": 0,
-     "att": 2
-    },
-    {
-     "date": "2026-11-13",
-     "made": 0,
-     "att": 0
-    },
-    {
-     "date": "2026-11-14",
-     "made": 1,
-     "att": 2
     }
    ]
   },
@@ -10876,6 +10821,56 @@
      "date": "2026-11-14",
      "made": 0,
      "att": 0
+    }
+   ]
+  },
+  {
+   "player": "Olivier-Maxence Prosper",
+   "player_id": "4595400",
+   "team": "MEM",
+   "opp": "WAS",
+   "home": false,
+   "game_id": "401909996",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 16.6,
+   "attempts": 2.45,
+   "p3": 0.3594,
+   "made": 0.88,
+   "rungs": [
+    0.5151,
+    0.214,
+    0.0772,
+    0.0245,
+    0.0079,
+    0.0023
+   ],
+   "tipped": false,
+   "last5": [
+    {
+     "date": "2026-11-04",
+     "made": 0,
+     "att": 1
+    },
+    {
+     "date": "2026-11-06",
+     "made": 0,
+     "att": 2
+    },
+    {
+     "date": "2026-11-09",
+     "made": 0,
+     "att": 0
+    },
+    {
+     "date": "2026-11-13",
+     "made": 0,
+     "att": 0
+    },
+    {
+     "date": "2026-11-14",
+     "made": 2,
+     "att": 2
     }
    ]
   },
@@ -11013,24 +11008,24 @@
    "ladder": [
     {
      "n": 1,
-     "price": -119,
+     "price": -121,
      "model": 0.5057,
-     "book": 0.52,
-     "edge": -0.0143
+     "book": 0.5239,
+     "edge": -0.0182
     },
     {
      "n": 2,
-     "price": 401,
+     "price": 400,
      "model": 0.2055,
-     "book": 0.191,
-     "edge": 0.0145
+     "book": 0.1914,
+     "edge": 0.0141
     },
     {
      "n": 3,
-     "price": 1420,
+     "price": 1440,
      "model": 0.0723,
-     "book": 0.063,
-     "edge": 0.0093
+     "book": 0.0621,
+     "edge": 0.0101
     }
    ],
    "last5": [
@@ -11121,25 +11116,25 @@
    "time_et": "5:00 PM",
    "status": "active",
    "minutes": 14.3,
-   "attempts": 2.22,
+   "attempts": 2.21,
    "p3": 0.3739,
    "made": 0.83,
    "rungs": [
-    0.4924,
-    0.1981,
-    0.0697,
-    0.0217,
-    0.0069,
+    0.4912,
+    0.1972,
+    0.0693,
+    0.0215,
+    0.0068,
     0.002
    ],
    "tipped": false,
    "line": {
     "line": 1.5,
-    "over": 139,
-    "under": -184,
-    "model_over": 0.1981,
-    "book_over": 0.3924,
-    "edge": -0.1943,
+    "over": 138,
+    "under": -183,
+    "model_over": 0.1972,
+    "book_over": 0.3939,
+    "edge": -0.1966,
     "book": "DraftKings"
    },
    "last5": [
@@ -11471,6 +11466,56 @@
    ]
   },
   {
+   "player": "Myron Gardner",
+   "player_id": "4431772",
+   "team": "MIA",
+   "opp": "HOU",
+   "home": true,
+   "game_id": "401909998",
+   "time_et": "5:30 PM",
+   "status": "active",
+   "minutes": 17.1,
+   "attempts": 2.08,
+   "p3": 0.3568,
+   "made": 0.74,
+   "rungs": [
+    0.4543,
+    0.1705,
+    0.0561,
+    0.0164,
+    0.005,
+    0.0014
+   ],
+   "tipped": false,
+   "last5": [
+    {
+     "date": "2026-11-02",
+     "made": 0,
+     "att": 0
+    },
+    {
+     "date": "2026-11-05",
+     "made": 0,
+     "att": 0
+    },
+    {
+     "date": "2026-11-10",
+     "made": 0,
+     "att": 1
+    },
+    {
+     "date": "2026-11-13",
+     "made": 0,
+     "att": 3
+    },
+    {
+     "date": "2026-11-14",
+     "made": 1,
+     "att": 5
+    }
+   ]
+  },
+  {
    "player": "Ron Harper Jr.",
    "player_id": "4397251",
    "team": "BOS",
@@ -11480,15 +11525,15 @@
    "time_et": "5:00 PM",
    "status": "active",
    "minutes": 9.0,
-   "attempts": 2.04,
+   "attempts": 2.02,
    "p3": 0.3655,
-   "made": 0.75,
+   "made": 0.74,
    "rungs": [
-    0.4549,
-    0.1714,
-    0.0567,
-    0.0167,
-    0.0051,
+    0.4516,
+    0.1693,
+    0.0558,
+    0.0163,
+    0.005,
     0.0014
    ],
    "tipped": false,
@@ -11671,106 +11716,6 @@
    ]
   },
   {
-   "player": "Jahmai Mashack",
-   "player_id": "4683934",
-   "team": "MEM",
-   "opp": "WAS",
-   "home": false,
-   "game_id": "401909996",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 11.7,
-   "attempts": 2.19,
-   "p3": 0.3241,
-   "made": 0.71,
-   "rungs": [
-    0.4403,
-    0.1594,
-    0.0503,
-    0.014,
-    0.0041,
-    0.0011
-   ],
-   "tipped": false,
-   "last5": [
-    {
-     "date": "2026-04-10",
-     "made": 0,
-     "att": 2
-    },
-    {
-     "date": "2026-04-12",
-     "made": 2,
-     "att": 9
-    },
-    {
-     "date": "2026-10-31",
-     "made": 0,
-     "att": 0
-    },
-    {
-     "date": "2026-11-06",
-     "made": 0,
-     "att": 0
-    },
-    {
-     "date": "2026-11-14",
-     "made": 0,
-     "att": 0
-    }
-   ]
-  },
-  {
-   "player": "Myron Gardner",
-   "player_id": "4431772",
-   "team": "MIA",
-   "opp": "HOU",
-   "home": true,
-   "game_id": "401909998",
-   "time_et": "5:30 PM",
-   "status": "active",
-   "minutes": 13.0,
-   "attempts": 1.99,
-   "p3": 0.3568,
-   "made": 0.71,
-   "rungs": [
-    0.4386,
-    0.1602,
-    0.0515,
-    0.0147,
-    0.0044,
-    0.0012
-   ],
-   "tipped": false,
-   "last5": [
-    {
-     "date": "2026-11-02",
-     "made": 0,
-     "att": 0
-    },
-    {
-     "date": "2026-11-05",
-     "made": 0,
-     "att": 0
-    },
-    {
-     "date": "2026-11-10",
-     "made": 0,
-     "att": 1
-    },
-    {
-     "date": "2026-11-13",
-     "made": 0,
-     "att": 3
-    },
-    {
-     "date": "2026-11-14",
-     "made": 1,
-     "att": 5
-    }
-   ]
-  },
-  {
    "player": "Noa Essengue",
    "player_id": "5242496",
    "team": "CHI",
@@ -11871,6 +11816,56 @@
    ]
   },
   {
+   "player": "Jahmai Mashack",
+   "player_id": "4683934",
+   "team": "MEM",
+   "opp": "WAS",
+   "home": false,
+   "game_id": "401909996",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 11.5,
+   "attempts": 2.12,
+   "p3": 0.3241,
+   "made": 0.69,
+   "rungs": [
+    0.4306,
+    0.1532,
+    0.0476,
+    0.0131,
+    0.0038,
+    0.001
+   ],
+   "tipped": false,
+   "last5": [
+    {
+     "date": "2026-04-10",
+     "made": 0,
+     "att": 2
+    },
+    {
+     "date": "2026-04-12",
+     "made": 2,
+     "att": 9
+    },
+    {
+     "date": "2026-10-31",
+     "made": 0,
+     "att": 0
+    },
+    {
+     "date": "2026-11-06",
+     "made": 0,
+     "att": 0
+    },
+    {
+     "date": "2026-11-14",
+     "made": 0,
+     "att": 0
+    }
+   ]
+  },
+  {
    "player": "Mike Conley",
    "player_id": "3195",
    "team": "BOS",
@@ -11880,15 +11875,15 @@
    "time_et": "5:00 PM",
    "status": "active",
    "minutes": 13.2,
-   "attempts": 1.78,
+   "attempts": 1.77,
    "p3": 0.3886,
    "made": 0.69,
    "rungs": [
-    0.4283,
-    0.1555,
-    0.0502,
-    0.0145,
-    0.0044,
+    0.4252,
+    0.1535,
+    0.0493,
+    0.0142,
+    0.0043,
     0.0012
    ],
    "tipped": false,
@@ -11971,56 +11966,6 @@
    ]
   },
   {
-   "player": "Nikola Jovic",
-   "player_id": "4997528",
-   "team": "MIA",
-   "opp": "HOU",
-   "home": true,
-   "game_id": "401909998",
-   "time_et": "5:30 PM",
-   "status": "day-to-day",
-   "minutes": 10.7,
-   "attempts": 1.95,
-   "p3": 0.3464,
-   "made": 0.68,
-   "rungs": [
-    0.4234,
-    0.15,
-    0.0467,
-    0.013,
-    0.0038,
-    0.001
-   ],
-   "tipped": false,
-   "last5": [
-    {
-     "date": "2026-10-28",
-     "made": 1,
-     "att": 1
-    },
-    {
-     "date": "2026-10-30",
-     "made": 0,
-     "att": 2
-    },
-    {
-     "date": "2026-11-02",
-     "made": 0,
-     "att": 2
-    },
-    {
-     "date": "2026-11-05",
-     "made": 0,
-     "att": 2
-    },
-    {
-     "date": "2026-11-14",
-     "made": 0,
-     "att": 1
-    }
-   ]
-  },
-  {
    "player": "Anthony Davis",
    "player_id": "6583",
    "team": "WAS",
@@ -12030,39 +11975,46 @@
    "time_et": "5:00 PM",
    "status": "active",
    "minutes": 34.6,
-   "attempts": 2.13,
+   "attempts": 2.18,
    "p3": 0.3133,
-   "made": 0.67,
+   "made": 0.68,
    "rungs": [
-    0.4209,
-    0.1465,
-    0.0445,
-    0.012,
-    0.0034,
+    0.429,
+    0.1515,
+    0.0466,
+    0.0127,
+    0.0036,
     0.0009
    ],
    "tipped": false,
    "ladder": [
     {
      "n": 1,
-     "price": -102,
-     "model": 0.4209,
-     "book": 0.4832,
-     "edge": -0.0623
+     "price": -144,
+     "model": 0.429,
+     "book": 0.5648,
+     "edge": -0.1357
     },
     {
      "n": 2,
-     "price": 478,
-     "model": 0.1465,
-     "book": 0.1656,
-     "edge": -0.0191
+     "price": 326,
+     "model": 0.1515,
+     "book": 0.2246,
+     "edge": -0.0731
     },
     {
      "n": 3,
-     "price": 1680,
-     "model": 0.0445,
-     "book": 0.0538,
-     "edge": -0.0093
+     "price": 1120,
+     "model": 0.0466,
+     "book": 0.0784,
+     "edge": -0.0318
+    },
+    {
+     "n": 4,
+     "price": 2600,
+     "model": 0.0127,
+     "book": 0.0354,
+     "edge": -0.0228
     }
    ],
    "last5": [
@@ -12144,56 +12096,6 @@
    ]
   },
   {
-   "player": "Kris Murray",
-   "player_id": "4594326",
-   "team": "MEM",
-   "opp": "WAS",
-   "home": false,
-   "game_id": "401909996",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 17.8,
-   "attempts": 2.24,
-   "p3": 0.3005,
-   "made": 0.67,
-   "rungs": [
-    0.4253,
-    0.1484,
-    0.045,
-    0.012,
-    0.0034,
-    0.0008
-   ],
-   "tipped": false,
-   "last5": [
-    {
-     "date": "2026-11-04",
-     "made": 1,
-     "att": 3
-    },
-    {
-     "date": "2026-11-06",
-     "made": 0,
-     "att": 3
-    },
-    {
-     "date": "2026-11-09",
-     "made": 0,
-     "att": 0
-    },
-    {
-     "date": "2026-11-13",
-     "made": 0,
-     "att": 0
-    },
-    {
-     "date": "2026-11-14",
-     "made": 1,
-     "att": 4
-    }
-   ]
-  },
-  {
    "player": "Rayan Rupert",
    "player_id": "5099752",
    "team": "PHI",
@@ -12240,6 +12142,56 @@
      "date": "2026-11-10",
      "made": 0,
      "att": 2
+    }
+   ]
+  },
+  {
+   "player": "Kris Murray",
+   "player_id": "4594326",
+   "team": "MEM",
+   "opp": "WAS",
+   "home": false,
+   "game_id": "401909996",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 18.2,
+   "attempts": 2.17,
+   "p3": 0.3005,
+   "made": 0.65,
+   "rungs": [
+    0.4137,
+    0.1413,
+    0.042,
+    0.0111,
+    0.0031,
+    0.0008
+   ],
+   "tipped": false,
+   "last5": [
+    {
+     "date": "2026-11-04",
+     "made": 1,
+     "att": 3
+    },
+    {
+     "date": "2026-11-06",
+     "made": 0,
+     "att": 3
+    },
+    {
+     "date": "2026-11-09",
+     "made": 0,
+     "att": 0
+    },
+    {
+     "date": "2026-11-13",
+     "made": 0,
+     "att": 0
+    },
+    {
+     "date": "2026-11-14",
+     "made": 1,
+     "att": 4
     }
    ]
   },
@@ -12357,10 +12309,10 @@
    "p3": 0.2965,
    "made": 0.62,
    "rungs": [
-    0.3978,
-    0.1316,
+    0.398,
+    0.1318,
     0.038,
-    0.0097,
+    0.0098,
     0.0027,
     0.0006
    ],
@@ -12369,32 +12321,32 @@
     "line": 0.5,
     "over": -102,
     "under": -130,
-    "model_over": 0.3978,
+    "model_over": 0.398,
     "book_over": 0.4718,
-    "edge": -0.0741,
+    "edge": -0.0738,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": 101,
-     "model": 0.3978,
-     "book": 0.4761,
-     "edge": -0.0783
+     "price": -102,
+     "model": 0.398,
+     "book": 0.4832,
+     "edge": -0.0852
     },
     {
      "n": 2,
-     "price": 489,
-     "model": 0.1316,
-     "book": 0.1625,
-     "edge": -0.0308
+     "price": 483,
+     "model": 0.1318,
+     "book": 0.1641,
+     "edge": -0.0324
     },
     {
      "n": 3,
-     "price": 1720,
+     "price": 1640,
      "model": 0.038,
-     "book": 0.0526,
-     "edge": -0.0146
+     "book": 0.055,
+     "edge": -0.0169
     }
    ],
    "last5": [
@@ -12551,6 +12503,88 @@
     {
      "date": "2026-11-09",
      "made": 0,
+     "att": 2
+    }
+   ]
+  },
+  {
+   "player": "Giannis Antetokounmpo",
+   "player_id": "3032977",
+   "team": "MIA",
+   "opp": "HOU",
+   "home": true,
+   "game_id": "401909998",
+   "time_et": "5:30 PM",
+   "status": "active",
+   "minutes": 33.9,
+   "attempts": 2.07,
+   "p3": 0.2842,
+   "made": 0.59,
+   "rungs": [
+    0.3829,
+    0.1224,
+    0.0341,
+    0.0084,
+    0.0023,
+    0.0005
+   ],
+   "tipped": false,
+   "line": {
+    "line": 0.5,
+    "over": 123,
+    "under": -162,
+    "model_over": 0.3829,
+    "book_over": 0.4204,
+    "edge": -0.0375,
+    "book": "DraftKings"
+   },
+   "ladder": [
+    {
+     "n": 1,
+     "price": 123,
+     "model": 0.3829,
+     "book": 0.4291,
+     "edge": -0.0462
+    },
+    {
+     "n": 2,
+     "price": 650,
+     "model": 0.1224,
+     "book": 0.1276,
+     "edge": -0.0052
+    },
+    {
+     "n": 3,
+     "price": 2200,
+     "model": 0.0341,
+     "book": 0.0416,
+     "edge": -0.0075
+    }
+   ],
+   "last5": [
+    {
+     "date": "2026-11-05",
+     "made": 1,
+     "att": 5
+    },
+    {
+     "date": "2026-11-08",
+     "made": 0,
+     "att": 1
+    },
+    {
+     "date": "2026-11-10",
+     "made": 1,
+     "att": 2
+    },
+    {
+     "date": "2026-11-13",
+     "made": 1,
+     "att": 2
+    },
+    {
+     "date": "2026-11-14",
+     "made": 1,
      "att": 2
     }
    ]
@@ -12856,88 +12890,6 @@
    ]
   },
   {
-   "player": "Giannis Antetokounmpo",
-   "player_id": "3032977",
-   "team": "MIA",
-   "opp": "HOU",
-   "home": true,
-   "game_id": "401909998",
-   "time_et": "5:30 PM",
-   "status": "active",
-   "minutes": 29.2,
-   "attempts": 1.89,
-   "p3": 0.2842,
-   "made": 0.54,
-   "rungs": [
-    0.3539,
-    0.1067,
-    0.0282,
-    0.0067,
-    0.0017,
-    0.0004
-   ],
-   "tipped": false,
-   "line": {
-    "line": 0.5,
-    "over": 126,
-    "under": -166,
-    "model_over": 0.3539,
-    "book_over": 0.4149,
-    "edge": -0.061,
-    "book": "DraftKings"
-   },
-   "ladder": [
-    {
-     "n": 1,
-     "price": 126,
-     "model": 0.3539,
-     "book": 0.4234,
-     "edge": -0.0696
-    },
-    {
-     "n": 2,
-     "price": 660,
-     "model": 0.1067,
-     "book": 0.1259,
-     "edge": -0.0192
-    },
-    {
-     "n": 3,
-     "price": 2200,
-     "model": 0.0282,
-     "book": 0.0416,
-     "edge": -0.0134
-    }
-   ],
-   "last5": [
-    {
-     "date": "2026-11-05",
-     "made": 1,
-     "att": 5
-    },
-    {
-     "date": "2026-11-08",
-     "made": 0,
-     "att": 1
-    },
-    {
-     "date": "2026-11-10",
-     "made": 1,
-     "att": 2
-    },
-    {
-     "date": "2026-11-13",
-     "made": 1,
-     "att": 2
-    },
-    {
-     "date": "2026-11-14",
-     "made": 1,
-     "att": 2
-    }
-   ]
-  },
-  {
    "player": "Derik Queen",
    "player_id": "4869780",
    "team": "NOP",
@@ -13011,27 +12963,27 @@
    "tipped": false,
    "line": {
     "line": 0.5,
-    "over": 202,
-    "under": -273,
+    "over": 220,
+    "under": -300,
     "model_over": 0.2561,
-    "book_over": 0.3115,
-    "edge": -0.0554,
+    "book_over": 0.2941,
+    "edge": -0.038,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": 202,
+     "price": 221,
      "model": 0.2561,
-     "book": 0.3169,
-     "edge": -0.0608
+     "book": 0.2981,
+     "edge": -0.042
     },
     {
      "n": 2,
-     "price": 1200,
+     "price": 1320,
      "model": 0.0619,
-     "book": 0.0736,
-     "edge": -0.0117
+     "book": 0.0674,
+     "edge": -0.0055
     }
    ],
    "last5": [
