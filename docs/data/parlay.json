@@ -3774,7 +3774,7 @@
     "method": "night",
     "picked_at": "2026-11-16T16:13:30Z",
     "missing_games": [],
-    "candidates": 31,
+    "candidates": 28,
     "legs": [
       {
         "player": "Kevin Durant",
@@ -3789,16 +3789,17 @@
         "line": 29.5,
         "line_type": "alt",
         "book_line": 31.5,
-        "proj": 34.8,
-        "prob": 0.651,
-        "book_prob": 0.58,
-        "gap": 0.071,
-        "odds": -154,
+        "proj": 35.5,
+        "prob": 0.674,
+        "book_prob": 0.597,
+        "gap": 0.076,
+        "odds": -166,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "green": 0.1042,
-        "reasoning": "Model projects 34.8 PRA, 10% over the book's 31.5 line; this leg is 29.5 at -154 (book 58%, model 65%). Projected for 32.9 minutes; HOU -2.5 spread."
+        "green": 0.1258,
+        "reasoning": "Model projects 35.5 PRA, 13% over the book's 31.5 line; this leg is 29.5 at -166 (book 60%, model 67%). Projected for 34.9 minutes; HOU -1.5 spread.",
+        "night_odds": -154
       },
       {
         "player": "Jaylen Brown",
@@ -3812,51 +3813,95 @@
         "side": "over",
         "line": 29.5,
         "line_type": "alt",
-        "book_line": 32.5,
-        "proj": 35.3,
-        "prob": 0.668,
-        "book_prob": 0.625,
-        "gap": 0.043,
-        "odds": -188,
+        "book_line": 33.5,
+        "proj": 35.4,
+        "prob": 0.67,
+        "book_prob": 0.675,
+        "gap": -0.005,
+        "odds": -240,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "green": 0.0855,
-        "reasoning": "Model projects 35.3 PRA, 9% over the book's 32.5 line; this leg is 29.5 at -188 (book 62%, model 67%). Projected for 34.6 minutes; PHI -5.5 spread."
+        "green": 0.0557,
+        "reasoning": "Model projects 35.4 PRA, 6% over the book's 33.5 line; this leg is 29.5 at -240 (book 68%, model 67%). Projected for 34.9 minutes; PHI -4.5 spread.",
+        "night_odds": -188
       },
       {
-        "player": "Yaxel Lendeborg",
-        "player_id": "5175737",
-        "game_id": "401910000",
-        "team": "GSW",
-        "opp": "NOP",
+        "player": "Franz Wagner",
+        "player_id": "4566434",
+        "game_id": "401909994",
+        "team": "ORL",
+        "opp": "BOS",
         "home": false,
-        "time_et": "6:00 PM",
+        "time_et": "5:00 PM",
         "stat": "pra",
         "side": "over",
         "line": 29.5,
         "line_type": "alt",
-        "book_line": 33.5,
-        "proj": 35.8,
-        "prob": 0.684,
-        "book_prob": 0.686,
-        "gap": -0.002,
-        "odds": -253,
+        "book_line": 34.5,
+        "proj": 36.4,
+        "prob": 0.702,
+        "book_prob": 0.705,
+        "gap": -0.003,
+        "odds": -280,
         "book": "DraftKings",
-        "blowout_risk": "low",
+        "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "green": 0.0686,
-        "reasoning": "Model projects 35.8 PRA, 7% over the book's 33.5 line; this leg is 29.5 at -253 (book 69%, model 68%). Projected for 32.3 minutes; GSW -3.5 spread."
+        "green": 0.0541,
+        "reasoning": "Model projects 36.4 PRA, 5% over the book's 34.5 line; this leg is 29.5 at -280 (book 70%, model 70%). Projected for 35.9 minutes; ORL +9.5 spread."
       }
     ],
-    "combined_odds": 253,
+    "combined_odds": 208,
     "status": "pending",
     "first_picked_at": "2026-11-16T10:23:56Z",
     "refreshed": 2,
-    "checked_at": "2026-11-16T16:13:30Z"
+    "checked_at": "2026-11-16T22:45:48Z",
+    "morning_repick": true,
+    "night": {
+      "combined_odds": 253,
+      "picked_at": "2026-11-16T16:13:30Z",
+      "legs": [
+        {
+          "player": "Kevin Durant",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -154
+        },
+        {
+          "player": "Jaylen Brown",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -188
+        },
+        {
+          "player": "Yaxel Lendeborg",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -253
+        }
+      ]
+    },
+    "morning_checked": "2026-11-16T22:45:48Z",
+    "changes": [
+      {
+        "out": {
+          "player": "Yaxel Lendeborg",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -253
+        },
+        "why": "re-picked from the morning board",
+        "in": {
+          "player": "Franz Wagner",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -280
+        }
+      }
+    ]
   },
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-16T16:13:30Z",
+  "generated_at": "2026-11-16T22:45:48Z",
   "early_history": [
     {
       "date": "2026-10-20",

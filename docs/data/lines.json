@@ -1,66 +1,60 @@
 {
-  "date": "2026-11-15",
-  "fetched_at": "2026-11-15T19:16:30Z",
-  "allowance": 21,
+  "date": "2026-11-16",
+  "fetched_at": "2026-11-16T22:45:47Z",
+  "allowance": 22,
   "early_reserve": 0,
   "events": [
     {
-      "event_id": "29b8bbf05645162d89780189eed390c2",
-      "home": "PHX",
-      "away": "LAL",
-      "commence_time": "2026-11-15T21:10:00Z"
+      "event_id": "c2c9d9729305c19d4a453f92c83feae8",
+      "home": "DEN",
+      "away": "PHX",
+      "commence_time": "2026-11-17T02:10:00Z"
     },
     {
-      "event_id": "b2ffb781fe21df092fae2cff6c4c8c89",
-      "home": "UTA",
-      "away": "SAS",
-      "commence_time": "2026-11-15T22:10:00Z"
-    },
-    {
-      "event_id": "f8334b355cf9346d423fa9eb93b425f0",
-      "home": "SAC",
-      "away": "OKC",
-      "commence_time": "2026-11-16T02:10:00Z"
-    },
-    {
-      "event_id": "488c2bc1e099361f06015cf126f95fd6",
-      "home": "WAS",
+      "event_id": "11be2fc6d73e2a4e187a643b4c051093",
+      "home": "MIA",
       "away": "HOU",
-      "commence_time": "2026-11-16T00:10:00Z"
+      "commence_time": "2026-11-17T00:40:00Z"
     },
     {
-      "event_id": "b931a21d34e414ee92b1a4b8e63774aa",
-      "home": "MIL",
-      "away": "ATL",
-      "commence_time": "2026-11-16T01:10:00Z"
-    },
-    {
-      "event_id": "956532b58659658093d93e24e83f5213",
+      "event_id": "7c2ac54a119f461bf8fc1a23da536f29",
       "home": "BOS",
-      "away": "DAL",
-      "commence_time": "2026-11-15T23:10:00Z"
+      "away": "ORL",
+      "commence_time": "2026-11-17T00:10:00Z"
     },
     {
-      "event_id": "de475830b5df0d1aae4fcd8f9bbaead9",
-      "home": "PHI",
-      "away": "IND",
-      "commence_time": "2026-11-15T18:12:00Z"
+      "event_id": "a613d212acef6f86d71b6ef99049fb7b",
+      "home": "WAS",
+      "away": "MEM",
+      "commence_time": "2026-11-17T00:10:00Z"
     },
     {
-      "event_id": "78f61a78b70b9d79f38eb7648eac1a08",
-      "home": "TOR",
-      "away": "NYK",
-      "commence_time": "2026-11-15T23:10:00Z"
+      "event_id": "b9dd15890ac45468b3e3ec1092f67c18",
+      "home": "MIN",
+      "away": "POR",
+      "commence_time": "2026-11-17T01:10:00Z"
     },
     {
-      "event_id": "db26abc3cfd070ab012227413abafeb2",
-      "home": "LAC",
-      "away": "CHA",
-      "commence_time": "2026-11-15T21:40:00Z"
+      "event_id": "efd4d1a289cc2aca91d30116e3629d1f",
+      "home": "BKN",
+      "away": "PHI",
+      "commence_time": "2026-11-17T00:40:00Z"
+    },
+    {
+      "event_id": "39dbdb7fdc78bd01ceac2fc7048bc1fd",
+      "home": "CLE",
+      "away": "CHI",
+      "commence_time": "2026-11-17T00:10:00Z"
+    },
+    {
+      "event_id": "77094bf6e4d9bf58f3cb98b6a4fb3b22",
+      "home": "NOP",
+      "away": "GSW",
+      "commence_time": "2026-11-17T01:10:00Z"
     }
   ],
-  "games_on_slate": 9,
-  "games_fetched": 9,
+  "games_on_slate": 8,
+  "games_fetched": 8,
   "markets": [
     "player_points_rebounds_assists",
     "player_points",
@@ -68,55 +62,49 @@
     "player_assists"
   ],
   "markets_by_game": {
-    "LAL @ PHX": [
+    "PHX @ DEN": [
       "assists",
       "points",
       "pra",
       "rebounds"
     ],
-    "SAS @ UTA": [
+    "HOU @ MIA": [
       "assists",
       "points",
       "pra",
       "rebounds"
     ],
-    "OKC @ SAC": [
+    "ORL @ BOS": [
       "assists",
       "points",
       "pra",
       "rebounds"
     ],
-    "HOU @ WAS": [
+    "MEM @ WAS": [
       "assists",
       "points",
       "pra",
       "rebounds"
     ],
-    "ATL @ MIL": [
+    "POR @ MIN": [
       "assists",
       "points",
       "pra",
       "rebounds"
     ],
-    "DAL @ BOS": [
+    "PHI @ BKN": [
       "assists",
       "points",
       "pra",
       "rebounds"
     ],
-    "IND @ PHI": [
+    "CHI @ CLE": [
       "assists",
       "points",
       "pra",
       "rebounds"
     ],
-    "NYK @ TOR": [
-      "assists",
-      "points",
-      "pra",
-      "rebounds"
-    ],
-    "CHA @ LAC": [
+    "GSW @ NOP": [
       "assists",
       "points",
       "pra",
@@ -125,1540 +113,104 @@
   },
   "ladder_events": [],
   "free_ladder_events": [
-    "29b8bbf05645162d89780189eed390c2",
-    "488c2bc1e099361f06015cf126f95fd6",
-    "78f61a78b70b9d79f38eb7648eac1a08",
-    "956532b58659658093d93e24e83f5213",
-    "b2ffb781fe21df092fae2cff6c4c8c89",
-    "b931a21d34e414ee92b1a4b8e63774aa",
-    "db26abc3cfd070ab012227413abafeb2",
-    "de475830b5df0d1aae4fcd8f9bbaead9",
-    "f8334b355cf9346d423fa9eb93b425f0"
+    "11be2fc6d73e2a4e187a643b4c051093",
+    "39dbdb7fdc78bd01ceac2fc7048bc1fd",
+    "77094bf6e4d9bf58f3cb98b6a4fb3b22",
+    "7c2ac54a119f461bf8fc1a23da536f29",
+    "a613d212acef6f86d71b6ef99049fb7b",
+    "b9dd15890ac45468b3e3ec1092f67c18",
+    "c2c9d9729305c19d4a453f92c83feae8",
+    "efd4d1a289cc2aca91d30116e3629d1f"
   ],
   "credits_spent": 0,
   "credits_remaining": 489,
   "lines": {
-    "lebron james": {
+    "paul george": {
       "points": {
-        "line": 18.5,
-        "over": -104,
-        "under": -122,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 6.5,
-        "over": -139,
-        "under": 105,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 6.5,
-        "over": -134,
-        "under": 102,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 32.5,
-        "over": -113,
-        "under": -116,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "kentavious caldwell pope": {
-      "points": {
-        "line": 5.5,
-        "over": -123,
-        "under": -103,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 2.5,
-        "over": 108,
-        "under": -142,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "kelly oubre": {
-      "points": {
-        "line": 12.5,
-        "over": -112,
-        "under": -114,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": -124,
+        "line": 17.5,
+        "over": -121,
         "under": -106,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": -158,
-        "under": 120,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 18.5,
-        "over": -115,
-        "under": -114,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "pascal siakam": {
-      "points": {
-        "line": 21.5,
-        "over": -105,
-        "under": -121,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 4.5,
-        "over": 119,
-        "under": -157,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 5.5,
-        "over": -150,
-        "under": 114,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 31.5,
-        "over": -118,
-        "under": -112,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "dean wade": {
-      "points": {
-        "line": 5.5,
-        "over": -113,
-        "under": -113,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": -110,
-        "under": -119,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 4.5,
-        "over": -119,
-        "under": -111,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 12.5,
-        "over": -106,
-        "under": -124,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "jaylen brown": {
-      "points": {
-        "line": 23.5,
-        "over": -111,
-        "under": -115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 3.5,
-        "over": -141,
-        "under": 107,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 6.5,
-        "over": -129,
-        "under": -102,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 34.5,
-        "over": -112,
-        "under": -117,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "ivica zubac": {
-      "points": {
-        "line": 13.5,
-        "over": -106,
-        "under": -121,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": -182,
-        "under": 137,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 10.5,
-        "over": -101,
-        "under": -130,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 25.5,
-        "over": -126,
-        "under": -104,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "obi toppin": {
-      "points": {
-        "line": 10.5,
-        "over": -105,
-        "under": -121,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": 105,
-        "under": -139,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": -132,
-        "under": 101,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 15.5,
-        "over": -120,
-        "under": -109,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "anfernee simons": {
-      "points": {
-        "line": 11.5,
-        "over": 100,
-        "under": -127,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": -111,
-        "under": -119,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 2.5,
-        "over": 127,
-        "under": -168,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 15.5,
-        "over": -104,
-        "under": -127,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "andrew nembhard": {
-      "points": {
-        "line": 15.5,
-        "over": -110,
-        "under": -115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 7.5,
-        "over": 108,
-        "under": -142,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 2.5,
-        "over": -103,
-        "under": -128,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 25.5,
-        "over": -113,
-        "under": -116,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "aaron nesmith": {
-      "points": {
-        "line": 13.5,
-        "over": -111,
-        "under": -115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": -104,
-        "under": -127,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": -102,
-        "under": -129,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 18.5,
-        "over": -115,
-        "under": -114,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "tyrese maxey": {
-      "points": {
-        "line": 26.5,
-        "over": -108,
-        "under": -118,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 5.5,
-        "over": 117,
-        "under": -154,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": -114,
-        "under": -115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 35.5,
-        "over": -107,
-        "under": -122,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "jabari walker": {
-      "points": {
-        "line": 8.5,
-        "over": 100,
-        "under": -127,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 6.5,
-        "over": 106,
-        "under": -140,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "quenton jackson": {
-      "points": {
-        "line": 11.5,
-        "over": -106,
-        "under": -120,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": -114,
-        "under": -115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "vj edgecombe": {
-      "points": {
-        "line": 12.5,
-        "over": -129,
-        "under": 101,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "assists": {
         "line": 3.5,
         "over": 112,
-        "under": -147,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 6.5,
-        "over": 105,
-        "under": -138,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 23.5,
-        "over": -104,
-        "under": -127,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "devin booker": {
-      "points": {
-        "line": 24.5,
-        "over": -116,
-        "under": -110,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 5.5,
-        "over": 112,
-        "under": -147,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": 132,
-        "under": -174,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 33.5,
-        "over": -111,
-        "under": -118,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "dillon brooks": {
-      "points": {
-        "line": 15.5,
-        "over": -108,
-        "under": -118,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": -159,
-        "under": 121,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": 106,
-        "under": -139,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 20.5,
-        "over": -126,
-        "under": -104,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "luka doncic": {
-      "points": {
-        "line": 35.5,
-        "over": -110,
-        "under": -116,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 8.5,
-        "over": 103,
-        "under": -135,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 7.5,
-        "over": -118,
-        "under": -112,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 51.5,
-        "over": -121,
-        "under": -109,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "miles bridges": {
-      "points": {
-        "line": 13.5,
-        "over": -124,
-        "under": -103,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 2.5,
-        "over": -107,
-        "under": -123,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 5.5,
-        "over": -134,
-        "under": 102,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 22.5,
-        "over": -115,
-        "under": -115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "collin sexton": {
-      "points": {
-        "line": 13.5,
-        "over": -109,
-        "under": -117,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 2.5,
-        "over": -110,
-        "under": -120,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "sandro mamukelashvili": {
-      "points": {
-        "line": 11.5,
-        "over": -109,
-        "under": -117,
+        "under": -148,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "rebounds": {
         "line": 4.5,
-        "over": -131,
-        "under": 100,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "collin gillespie": {
-      "points": {
-        "line": 8.5,
-        "over": -128,
-        "under": 101,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 3.5,
-        "over": -132,
-        "under": 101,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 2.5,
-        "over": -117,
-        "under": -113,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 15.5,
-        "over": -109,
-        "under": -121,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "quentin grimes": {
-      "points": {
-        "line": 12.5,
-        "over": -112,
-        "under": -113,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 2.5,
-        "over": -127,
-        "under": -104,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": 129,
-        "under": -170,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 18.5,
         "over": -112,
         "under": -117,
         "book": "DraftKings",
         "source": "ESPN"
-      }
-    },
-    "walker kessler": {
-      "points": {
-        "line": 13.5,
-        "over": -106,
-        "under": -120,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": -121,
-        "under": -109,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 11.5,
-        "over": 103,
-        "under": -135,
-        "book": "DraftKings",
-        "source": "ESPN"
       },
       "pra": {
-        "line": 26.5,
-        "over": -113,
-        "under": -116,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "jalen green": {
-      "points": {
-        "line": 12.5,
-        "over": -110,
-        "under": -115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 2.5,
+        "line": 25.5,
         "over": -125,
-        "under": -106,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": 130,
-        "under": -173,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 18.5,
-        "over": -117,
-        "under": -112,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "jake laravia": {
-      "points": {
-        "line": 6.5,
-        "over": -130,
-        "under": 102,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 4.5,
-        "over": 115,
-        "under": -152,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "oso ighodaro": {
-      "points": {
-        "line": 6.5,
-        "over": 101,
-        "under": -129,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 2.5,
-        "over": -138,
-        "under": 105,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 5.5,
-        "over": 109,
-        "under": -143,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 14.5,
-        "over": -120,
-        "under": -110,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "khaman maluach": {
-      "points": {
-        "line": 6.5,
-        "over": -118,
-        "under": -108,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 5.5,
-        "over": -113,
-        "under": -116,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "matisse thybulle": {
-      "rebounds": {
-        "line": 2.5,
-        "over": 110,
-        "under": -145,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "brook lopez": {
-      "points": {
-        "line": 12.5,
-        "over": 100,
-        "under": -128,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": 126,
-        "under": -166,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 4.5,
-        "over": -139,
-        "under": 106,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 18.5,
-        "over": -116,
-        "under": -114,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "kris dunn": {
-      "points": {
-        "line": 6.5,
-        "over": -116,
-        "under": -110,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 3.5,
-        "over": 109,
-        "under": -143,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": 118,
-        "under": -155,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 13.5,
-        "over": -109,
-        "under": -120,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "grayson allen": {
-      "points": {
-        "line": 14.5,
-        "over": -104,
-        "under": -123,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 3.5,
-        "over": 122,
-        "under": -161,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 2.5,
-        "over": -165,
-        "under": 125,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 20.5,
-        "over": -120,
-        "under": -110,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "derrick jones": {
-      "points": {
-        "line": 10.5,
-        "over": -124,
-        "under": -103,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": 148,
-        "under": -197,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": -161,
-        "under": 122,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 16.5,
-        "over": -108,
-        "under": -121,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "max strus": {
-      "points": {
-        "line": 8.5,
-        "over": -107,
-        "under": -119,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 2.5,
-        "over": 102,
-        "under": -134,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": 105,
-        "under": -138,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 14.5,
-        "over": -113,
-        "under": -116,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "rui hachimura": {
-      "points": {
-        "line": 14.5,
-        "over": -103,
-        "under": -123,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": 144,
-        "under": -192,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 4.5,
-        "over": -130,
-        "under": -101,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 20.5,
-        "over": -114,
-        "under": -116,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "coby white": {
-      "points": {
-        "line": 14.5,
-        "over": -105,
-        "under": -122,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 3.5,
-        "over": 102,
-        "under": -135,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 2.5,
-        "over": -135,
-        "under": 102,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 20.5,
-        "over": -117,
-        "under": -112,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "darius garland": {
-      "points": {
-        "line": 21.5,
-        "over": -110,
-        "under": -115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 7.5,
-        "over": 110,
-        "under": -145,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 2.5,
-        "over": 125,
-        "under": -165,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "naz reid": {
-      "points": {
-        "line": 17.5,
-        "over": -106,
-        "under": -120,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": -190,
-        "under": 143,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 7.5,
-        "over": -137,
-        "under": 104,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 27.5,
-        "over": -117,
-        "under": -112,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "moussa diabate": {
-      "points": {
-        "line": 8.5,
-        "over": -114,
-        "under": -112,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": -165,
-        "under": 125,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 9.5,
-        "over": -114,
-        "under": -115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 20.5,
-        "over": -113,
-        "under": -117,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "brandon miller": {
-      "points": {
-        "line": 21.5,
-        "over": -109,
-        "under": -117,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 2.5,
-        "over": -135,
-        "under": 103,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 4.5,
-        "over": -137,
-        "under": 104,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 29.5,
-        "over": -112,
-        "under": -118,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "ryan kalkbrenner": {
-      "points": {
-        "line": 4.5,
-        "over": -118,
-        "under": -108,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 4.5,
-        "over": 113,
-        "under": -149,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "sion james": {
-      "points": {
-        "line": 6.5,
-        "over": -102,
-        "under": -124,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": -108,
-        "under": -122,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "gradey dick": {
-      "points": {
-        "line": 6.5,
-        "over": -120,
-        "under": -106,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 2.5,
-        "over": 125,
-        "under": -165,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "keaton wagler": {
-      "points": {
-        "line": 10.5,
-        "over": -101,
-        "under": -126,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 2.5,
-        "over": 103,
-        "under": -136,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 2.5,
-        "over": -122,
-        "under": -108,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 15.5,
-        "over": -114,
-        "under": -115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "josh okogie": {
-      "points": {
-        "line": 4.5,
-        "over": -125,
-        "under": -102,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 2.5,
-        "over": -163,
-        "under": 124,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "de aaron fox": {
-      "points": {
-        "line": 13.5,
-        "over": -119,
-        "under": -107,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 5.5,
-        "over": -102,
-        "under": -129,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": -110,
-        "under": -120,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 22.5,
-        "over": -128,
-        "under": -103,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "devin vassell": {
-      "points": {
-        "line": 11.5,
-        "over": -111,
-        "under": -115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 2.5,
-        "over": 115,
-        "under": -151,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": -118,
-        "under": -111,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 17.5,
-        "over": -118,
-        "under": -111,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "keldon johnson": {
-      "points": {
-        "line": 9.5,
-        "over": -122,
-        "under": -104,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 5.5,
-        "over": 115,
-        "under": -151,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "keyonte george": {
-      "points": {
-        "line": 20.5,
-        "over": -112,
-        "under": -113,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 5.5,
-        "over": -117,
-        "under": -113,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": -151,
-        "under": 115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 30.5,
-        "over": -111,
-        "under": -119,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "julian champagnie": {
-      "points": {
-        "line": 9.5,
-        "over": -119,
-        "under": -107,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 4.5,
-        "over": 104,
-        "under": -136,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "stephon castle": {
-      "points": {
-        "line": 15.5,
-        "over": -110,
-        "under": -115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 5.5,
-        "over": -112,
-        "under": -118,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 4.5,
-        "over": -150,
-        "under": 114,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 26.5,
-        "over": -114,
-        "under": -116,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "ace bailey": {
-      "points": {
-        "line": 13.5,
-        "over": -124,
-        "under": -102,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 5.5,
-        "over": 111,
-        "under": -147,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "dylan harper": {
-      "points": {
-        "line": 17.5,
-        "over": -117,
-        "under": -109,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 4.5,
-        "over": -117,
-        "under": -113,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 4.5,
-        "over": -151,
-        "under": 115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 27.5,
-        "over": -115,
-        "under": -114,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "darryn peterson": {
-      "points": {
-        "line": 18.5,
-        "over": -116,
-        "under": -110,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 3.5,
-        "over": -153,
-        "under": 116,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 4.5,
-        "over": 122,
-        "under": -162,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 27.5,
-        "over": -107,
-        "under": -123,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "victor wembanyama": {
-      "points": {
-        "line": 26.5,
-        "over": -118,
-        "under": -108,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 2.5,
-        "over": -134,
-        "under": 102,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 11.5,
-        "over": 104,
-        "under": -137,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 41.5,
-        "over": -106,
-        "under": -124,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "kyrie irving": {
-      "points": {
-        "line": 19.5,
-        "over": -115,
-        "under": -111,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 3.5,
-        "over": -119,
-        "under": -111,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": 103,
-        "under": -135,
+        "under": -105,
         "book": "DraftKings",
         "source": "ESPN"
       }
     },
     "derrick white": {
       "points": {
-        "line": 14.5,
-        "over": -103,
-        "under": -124,
+        "line": 12.5,
+        "over": -129,
+        "under": 101,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "assists": {
         "line": 4.5,
-        "over": -151,
-        "under": 114,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": 115,
-        "under": -152,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 22.5,
-        "over": -117,
-        "under": -113,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "caleb martin": {
-      "points": {
-        "line": 5.5,
-        "over": -110,
+        "over": -113,
         "under": -116,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "rebounds": {
         "line": 3.5,
-        "over": 103,
-        "under": -135,
+        "over": 112,
+        "under": -148,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 21.5,
+        "over": -105,
+        "under": -126,
         "book": "DraftKings",
         "source": "ESPN"
       }
     },
     "jayson tatum": {
       "points": {
-        "line": 25.5,
-        "over": -122,
-        "under": -105,
+        "line": 26.5,
+        "over": -114,
+        "under": -111,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "assists": {
         "line": 6.5,
-        "over": -114,
-        "under": -115,
+        "over": -104,
+        "under": -126,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "rebounds": {
         "line": 7.5,
-        "over": 113,
-        "under": -149,
+        "over": 108,
+        "under": -142,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "pra": {
         "line": 40.5,
-        "over": -106,
-        "under": -124,
+        "over": -115,
+        "under": -115,
         "book": "DraftKings",
         "source": "ESPN"
       }
@@ -1666,15 +218,45 @@
     "sam hauser": {
       "points": {
         "line": 6.5,
-        "over": -114,
+        "over": -113,
         "under": -112,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "rebounds": {
+        "line": 3.5,
+        "over": 115,
+        "under": -152,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "desmond bane": {
+      "points": {
+        "line": 17.5,
+        "over": -108,
+        "under": -118,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
         "line": 2.5,
-        "over": -137,
-        "under": 104,
+        "over": -149,
+        "under": 113,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": 122,
+        "under": -161,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 24.5,
+        "over": -116,
+        "under": -113,
         "book": "DraftKings",
         "source": "ESPN"
       }
@@ -1682,701 +264,8 @@
     "payton pritchard": {
       "points": {
         "line": 13.5,
-        "over": -125,
-        "under": -102,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 3.5,
-        "over": -152,
-        "under": 115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 2.5,
-        "over": -172,
-        "under": 130,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 21.5,
-        "over": -112,
-        "under": -118,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "p j washington": {
-      "points": {
-        "line": 11.5,
-        "over": -125,
-        "under": -102,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 6.5,
-        "over": -108,
-        "under": -122,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "naji marshall": {
-      "points": {
-        "line": 10.5,
-        "over": -117,
-        "under": -109,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 3.5,
-        "over": 105,
-        "under": -139,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": -108,
-        "under": -122,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 17.5,
-        "over": -122,
-        "under": -108,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "neemias queta": {
-      "points": {
-        "line": 9.5,
-        "over": -107,
-        "under": -119,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": -108,
-        "under": -122,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 7.5,
-        "over": -108,
-        "under": -122,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 18.5,
-        "over": -117,
-        "under": -112,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "morez johnson": {
-      "points": {
-        "line": 6.5,
-        "over": -118,
-        "under": -108,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 4.5,
-        "over": -131,
-        "under": -101,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "cooper flagg": {
-      "points": {
-        "line": 22.5,
-        "over": -106,
-        "under": -120,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 5.5,
-        "over": -127,
-        "under": -103,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 6.5,
-        "over": 106,
-        "under": -140,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 34.5,
-        "over": -118,
-        "under": -111,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "zaccharie risacher": {
-      "points": {
-        "line": 7.5,
-        "over": -104,
-        "under": -122,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": 107,
-        "under": -141,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "paul george": {
-      "assists": {
-        "line": 3.5,
-        "over": 108,
-        "under": -142,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 4.5,
-        "over": -107,
-        "under": -123,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 27.5,
-        "over": -108,
-        "under": -122,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "josh hart": {
-      "points": {
-        "line": 8.5,
-        "over": -119,
-        "under": -107,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 3.5,
-        "over": -111,
-        "under": -119,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 6.5,
-        "over": -119,
-        "under": -110,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 19.5,
-        "over": -107,
-        "under": -123,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "jakob poeltl": {
-      "points": {
-        "line": 8.5,
-        "over": -113,
-        "under": -112,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 6.5,
-        "over": -131,
-        "under": 100,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "karl anthony towns": {
-      "points": {
-        "line": 19.5,
-        "over": -116,
-        "under": -109,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 3.5,
-        "over": 113,
-        "under": -149,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 12.5,
-        "over": -124,
-        "under": -106,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 36.5,
-        "over": -113,
-        "under": -117,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "mikal bridges": {
-      "points": {
-        "line": 8.5,
-        "over": -127,
-        "under": 100,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": -140,
-        "under": 106,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 2.5,
-        "over": -101,
-        "under": -130,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 12.5,
-        "over": -120,
-        "under": -110,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "landry shamet": {
-      "points": {
-        "line": 8.5,
-        "over": -105,
-        "under": -121,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "jalen brunson": {
-      "points": {
-        "line": 25.5,
         "over": -120,
         "under": -106,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 5.5,
-        "over": -155,
-        "under": 118,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 2.5,
-        "over": -136,
-        "under": 103,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 35.5,
-        "over": -106,
-        "under": -124,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "og anunoby": {
-      "points": {
-        "line": 17.5,
-        "over": -107,
-        "under": -119,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": -139,
-        "under": 105,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 5.5,
-        "over": 119,
-        "under": -157,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 24.5,
-        "over": -115,
-        "under": -115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "rj barrett": {
-      "points": {
-        "line": 20.5,
-        "over": -113,
-        "under": -112,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 4.5,
-        "over": 115,
-        "under": -151,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 5.5,
-        "over": -131,
-        "under": -101,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 30.5,
-        "over": -122,
-        "under": -108,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "immanuel quickley": {
-      "points": {
-        "line": 15.5,
-        "over": -120,
-        "under": -106,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 4.5,
-        "over": -140,
-        "under": 106,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": 100,
-        "under": -131,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 24.5,
-        "over": -111,
-        "under": -118,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "miles mcbride": {
-      "points": {
-        "line": 7.5,
-        "over": -106,
-        "under": -120,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "scottie barnes": {
-      "points": {
-        "line": 18.5,
-        "over": -105,
-        "under": -121,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 4.5,
-        "over": -154,
-        "under": 117,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 6.5,
-        "over": 106,
-        "under": -139,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 29.5,
-        "over": -121,
-        "under": -109,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "ja kobe walter": {
-      "points": {
-        "line": 11.5,
-        "over": 102,
-        "under": -130,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": 100,
-        "under": -132,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": -123,
-        "under": -107,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 16.5,
-        "over": -114,
-        "under": -115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "andre drummond": {
-      "rebounds": {
-        "line": 6.5,
-        "over": -103,
-        "under": -128,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "kevin durant": {
-      "points": {
-        "line": 21.5,
-        "over": -118,
-        "under": -108,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 3.5,
-        "over": -151,
-        "under": 114,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 5.5,
-        "over": 111,
-        "under": -147,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 31.5,
-        "over": -105,
-        "under": -126,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "anthony davis": {
-      "points": {
-        "line": 22.5,
-        "over": -110,
-        "under": -116,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 2.5,
-        "over": 126,
-        "under": -166,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 9.5,
-        "over": -140,
-        "under": 106,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 34.5,
-        "over": -124,
-        "under": -106,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "bogdan bogdanovic": {
-      "points": {
-        "line": 6.5,
-        "over": -116,
-        "under": -110,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "trae young": {
-      "points": {
-        "line": 18.5,
-        "over": -106,
-        "under": -120,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 8.5,
-        "over": -101,
-        "under": -130,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 2.5,
-        "over": 101,
-        "under": -133,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 29.5,
-        "over": -111,
-        "under": -119,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "jabari smith": {
-      "points": {
-        "line": 14.5,
-        "over": -126,
-        "under": -101,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": -128,
-        "under": -102,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 6.5,
-        "over": -106,
-        "under": -124,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 23.5,
-        "over": -118,
-        "under": -111,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "tari eason": {
-      "points": {
-        "line": 11.5,
-        "over": -118,
-        "under": -108,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": -103,
-        "under": -128,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 6.5,
-        "over": 112,
-        "under": -148,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 19.5,
-        "over": -118,
-        "under": -111,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "amen thompson": {
-      "points": {
-        "line": 17.5,
-        "over": -108,
-        "under": -119,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 4.5,
-        "over": -109,
-        "under": -121,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 7.5,
-        "over": 106,
-        "under": -139,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 29.5,
-        "over": -114,
-        "under": -116,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "reed sheppard": {
-      "points": {
-        "line": 14.5,
-        "over": -102,
-        "under": -126,
         "book": "DraftKings",
         "source": "ESPN"
       },
@@ -2388,16 +277,1497 @@
         "source": "ESPN"
       },
       "rebounds": {
+        "line": 2.5,
+        "over": -172,
+        "under": 130,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 20.5,
+        "over": -125,
+        "under": -105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "wendell carter": {
+      "points": {
+        "line": 10.5,
+        "over": -105,
+        "under": -121,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 1.5,
+        "over": -115,
+        "under": -114,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 7.5,
+        "over": -136,
+        "under": 103,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 20.5,
+        "over": -108,
+        "under": -122,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "mitchell robinson": {
+      "points": {
+        "line": 4.5,
+        "over": -119,
+        "under": -107,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 5.5,
+        "over": -139,
+        "under": 105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "jalen suggs": {
+      "points": {
+        "line": 8.5,
+        "over": -105,
+        "under": -122,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
         "line": 3.5,
+        "over": -116,
+        "under": -113,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 2.5,
+        "over": -160,
+        "under": 121,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 15.5,
+        "over": -106,
+        "under": -124,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "franz wagner": {
+      "points": {
+        "line": 21.5,
+        "over": -107,
+        "under": -120,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 6.5,
+        "over": -125,
+        "under": -105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 6.5,
+        "over": 108,
+        "under": -142,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 34.5,
+        "over": -116,
+        "under": -113,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "tristan da silva": {
+      "points": {
+        "line": 12.5,
+        "over": -102,
+        "under": -125,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 1.5,
+        "over": -128,
+        "under": -103,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
         "over": 111,
-        "under": -147,
+        "under": -146,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 18.5,
+        "over": -109,
+        "under": -120,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "luka garza": {
+      "assists": {
+        "line": 1.5,
+        "over": -124,
+        "under": -106,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": -126,
+        "under": -104,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 14.5,
+        "over": -121,
+        "under": -108,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "anthony black": {
+      "assists": {
+        "line": 4.5,
+        "over": 100,
+        "under": -132,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": -122,
+        "under": -108,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 23.5,
+        "over": -110,
+        "under": -120,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "james harden": {
+      "points": {
+        "line": 17.5,
+        "over": -118,
+        "under": -108,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 6.5,
+        "over": -132,
+        "under": 100,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": -104,
+        "under": -126,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 29.5,
+        "over": -110,
+        "under": -120,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "norman powell": {
+      "points": {
+        "line": 22.5,
+        "over": -110,
+        "under": -116,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 2.5,
+        "over": -157,
+        "under": 119,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 27.5,
+        "over": -117,
+        "under": -112,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "donovan mitchell": {
+      "points": {
+        "line": 26.5,
+        "over": -104,
+        "under": -123,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 5.5,
+        "over": -102,
+        "under": -128,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": -113,
+        "under": -116,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 36.5,
+        "over": -113,
+        "under": -117,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "jarrett allen": {
+      "points": {
+        "line": 14.5,
+        "over": -119,
+        "under": -107,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 8.5,
+        "over": -142,
+        "under": 108,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 25.5,
+        "over": -121,
+        "under": -109,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "tre jones": {
+      "points": {
+        "line": 10.5,
+        "over": -126,
+        "under": -101,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 3.5,
+        "over": -105,
+        "under": -125,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 2.5,
+        "over": -111,
+        "under": -119,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 17.5,
+        "over": -109,
+        "under": -121,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "jalen smith": {
+      "points": {
+        "line": 12.5,
+        "over": -128,
+        "under": 100,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 1.5,
+        "over": -125,
+        "under": -106,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 8.5,
+        "over": 108,
+        "under": -143,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 23.5,
+        "over": -107,
+        "under": -123,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "isaac okoro": {
+      "points": {
+        "line": 8.5,
+        "over": 103,
+        "under": -132,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 1.5,
+        "over": -124,
+        "under": -106,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 2.5,
+        "over": -113,
+        "under": -116,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 12.5,
+        "over": -118,
+        "under": -112,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "peyton watson": {
+      "points": {
+        "line": 13.5,
+        "over": -108,
+        "under": -118,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 2.5,
+        "over": 131,
+        "under": -174,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": -121,
+        "under": -108,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 20.5,
+        "over": -119,
+        "under": -111,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "matas buzelis": {
+      "points": {
+        "line": 15.5,
+        "over": -112,
+        "under": -113,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 2.5,
+        "over": 138,
+        "under": -183,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 5.5,
+        "over": -127,
+        "under": -103,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 23.5,
+        "over": -118,
+        "under": -112,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "josh giddey": {
+      "points": {
+        "line": 12.5,
+        "over": -106,
+        "under": -120,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 8.5,
+        "over": -106,
+        "under": -124,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 6.5,
+        "over": -126,
+        "under": -104,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 27.5,
+        "over": -124,
+        "under": -106,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "tyrese proctor": {
+      "points": {
+        "line": 10.5,
+        "over": -129,
+        "under": 101,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": -125,
+        "under": -106,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "meleek thomas": {
+      "points": {
+        "line": 12.5,
+        "over": -121,
+        "under": -105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "anthony davis": {
+      "points": {
+        "line": 23.5,
+        "over": -119,
+        "under": -107,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 2.5,
+        "over": 110,
+        "under": -145,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 10.5,
+        "over": -132,
+        "under": 101,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 37.5,
+        "over": -106,
+        "under": -124,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "jerami grant": {
+      "points": {
+        "line": 13.5,
+        "over": -114,
+        "under": -112,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 2.5,
+        "over": -124,
+        "under": -106,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "trae young": {
+      "points": {
+        "line": 19.5,
+        "over": -106,
+        "under": -120,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 8.5,
+        "over": -117,
+        "under": -112,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 2.5,
+        "over": -116,
+        "under": -113,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 30.5,
+        "over": -125,
+        "under": -105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "cam spencer": {
+      "points": {
+        "line": 13.5,
+        "over": -110,
+        "under": -116,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 7.5,
+        "over": -127,
+        "under": -103,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": 113,
+        "under": -149,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 24.5,
+        "over": -121,
+        "under": -109,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "zach edey": {
+      "points": {
+        "line": 8.5,
+        "over": -123,
+        "under": -104,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 7.5,
+        "over": 108,
+        "under": -143,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 17.5,
+        "over": -111,
+        "under": -118,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "taylor hendricks": {
+      "points": {
+        "line": 8.5,
+        "over": -123,
+        "under": -104,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": -131,
+        "under": 100,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "cedric coward": {
+      "points": {
+        "line": 15.5,
+        "over": -127,
+        "under": 100,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 3.5,
+        "over": -108,
+        "under": -122,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 7.5,
+        "over": -127,
+        "under": -103,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 27.5,
+        "over": -120,
+        "under": -109,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "cameron boozer": {
+      "points": {
+        "line": 19.5,
+        "over": -106,
+        "under": -120,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 4.5,
+        "over": -149,
+        "under": 113,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 8.5,
+        "over": -133,
+        "under": 101,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 33.5,
+        "over": -117,
+        "under": -113,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "bilal coulibaly": {
+      "points": {
+        "line": 6.5,
+        "over": -122,
+        "under": -104,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": -109,
+        "under": -121,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "jaylen wells": {
+      "points": {
+        "line": 12.5,
+        "over": 100,
+        "under": -128,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 2.5,
+        "over": -144,
+        "under": 109,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 16.5,
+        "over": -121,
+        "under": -109,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "aj dybantsa": {
+      "points": {
+        "line": 16.5,
+        "over": -115,
+        "under": -111,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 2.5,
+        "over": 126,
+        "under": -166,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 5.5,
+        "over": 107,
+        "under": -141,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 24.5,
+        "over": -111,
+        "under": -118,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "alex sarr": {
+      "points": {
+        "line": 11.5,
+        "over": -102,
+        "under": -124,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 6.5,
+        "over": -130,
+        "under": -101,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 20.5,
+        "over": -111,
+        "under": -118,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "kyshawn george": {
+      "points": {
+        "line": 15.5,
+        "over": -121,
+        "under": -105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 4.5,
+        "over": 108,
+        "under": -142,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": 104,
+        "under": -137,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 24.5,
+        "over": -123,
+        "under": -107,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "tre johnson": {
+      "points": {
+        "line": 9.5,
+        "over": -107,
+        "under": -120,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "joel embiid": {
+      "points": {
+        "line": 21.5,
+        "over": -123,
+        "under": -104,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 3.5,
+        "over": -142,
+        "under": 108,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 7.5,
+        "over": -127,
+        "under": -103,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 34.5,
+        "over": -106,
+        "under": -124,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "julius randle": {
+      "points": {
+        "line": 19.5,
+        "over": -110,
+        "under": -116,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 4.5,
+        "over": -138,
+        "under": 105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 6.5,
+        "over": -112,
+        "under": -117,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 31.5,
+        "over": -110,
+        "under": -119,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "dean wade": {
+      "points": {
+        "line": 5.5,
+        "over": -120,
+        "under": -106,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": -135,
+        "under": 103,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "jaylen brown": {
+      "points": {
+        "line": 22.5,
+        "over": -123,
+        "under": -103,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 4.5,
+        "over": 116,
+        "under": -153,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 6.5,
+        "over": 105,
+        "under": -138,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 33.5,
+        "over": -117,
+        "under": -112,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "michael porter": {
+      "points": {
+        "line": 22.5,
+        "over": -107,
+        "under": -119,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 1.5,
+        "over": -154,
+        "under": 117,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 6.5,
+        "over": -128,
+        "under": -103,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 31.5,
+        "over": -110,
+        "under": -119,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "anfernee simons": {
+      "points": {
+        "line": 10.5,
+        "over": -115,
+        "under": -111,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 14.5,
+        "over": -115,
+        "under": -114,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "tyrese maxey": {
+      "points": {
+        "line": 26.5,
+        "over": -105,
+        "under": -122,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 5.5,
+        "over": -129,
+        "under": -102,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": -120,
+        "under": -109,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 35.5,
+        "over": -121,
+        "under": -109,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "day ron sharpe": {
+      "points": {
+        "line": 8.5,
+        "over": -126,
+        "under": -101,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 3.5,
+        "over": -123,
+        "under": -107,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 8.5,
+        "over": 104,
+        "under": -137,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "pra": {
         "line": 21.5,
+        "over": -108,
+        "under": -121,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "noah clowney": {
+      "points": {
+        "line": 6.5,
+        "over": -111,
+        "under": -115,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": -130,
+        "under": -101,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "mikel brown": {
+      "points": {
+        "line": 10.5,
+        "over": -129,
+        "under": 101,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 3.5,
+        "over": 109,
+        "under": -144,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 2.5,
+        "over": 107,
+        "under": -141,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 17.5,
+        "over": -104,
+        "under": -127,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "danny wolf": {
+      "points": {
+        "line": 8.5,
+        "over": -126,
+        "under": -101,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 2.5,
+        "over": 114,
+        "under": -151,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 5.5,
+        "over": -134,
+        "under": 102,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 17.5,
+        "over": -109,
+        "under": -120,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "vj edgecombe": {
+      "points": {
+        "line": 13.5,
+        "over": -126,
+        "under": -101,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 3.5,
+        "over": -115,
+        "under": -114,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 6.5,
+        "over": 115,
+        "under": -152,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 23.5,
+        "over": -128,
+        "under": -103,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "egor demin": {
+      "points": {
+        "line": 9.5,
+        "over": -127,
+        "under": -101,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 2.5,
+        "over": -133,
+        "under": 101,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 2.5,
+        "over": -134,
+        "under": 101,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 15.5,
+        "over": -118,
+        "under": -112,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "kevin durant": {
+      "points": {
+        "line": 22.5,
+        "over": -108,
+        "under": -118,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 3.5,
+        "over": -148,
+        "under": 112,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 5.5,
+        "over": 110,
+        "under": -145,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 31.5,
+        "over": -118,
+        "under": -112,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "klay thompson": {
+      "points": {
+        "line": 13.5,
+        "over": -106,
+        "under": -120,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "fred vanvleet": {
+      "points": {
+        "line": 13.5,
+        "over": -112,
+        "under": -114,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 5.5,
+        "over": -106,
+        "under": -125,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": 132,
+        "under": -175,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 22.5,
+        "over": -110,
+        "under": -120,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "giannis antetokounmpo": {
+      "points": {
+        "line": 28.5,
+        "over": -121,
+        "under": -106,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 5.5,
+        "over": 119,
+        "under": -157,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 10.5,
+        "over": -122,
+        "under": -108,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 45.5,
+        "over": -110,
+        "under": -120,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "andrew wiggins": {
+      "points": {
+        "line": 9.5,
+        "over": -105,
+        "under": -121,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 1.5,
+        "over": 105,
+        "under": -138,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 2.5,
+        "over": -159,
+        "under": 120,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 13.5,
+        "over": -127,
+        "under": -104,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "bobby portis": {
+      "points": {
+        "line": 6.5,
+        "over": -122,
+        "under": -105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": 108,
+        "under": -143,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "bam adebayo": {
+      "points": {
+        "line": 18.5,
+        "over": -116,
+        "under": -110,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 3.5,
+        "over": 114,
+        "under": -150,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 8.5,
+        "over": -115,
+        "under": -115,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 30.5,
+        "over": -121,
+        "under": -109,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "davion mitchell": {
+      "points": {
+        "line": 14.5,
+        "over": -106,
+        "under": -120,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 7.5,
+        "over": -140,
+        "under": 106,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 2.5,
+        "over": 121,
+        "under": -159,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 24.5,
+        "over": -120,
+        "under": -110,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "jabari smith": {
+      "points": {
+        "line": 15.5,
+        "over": -111,
+        "under": -115,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 6.5,
+        "over": -111,
+        "under": -118,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 23.5,
+        "over": -124,
+        "under": -106,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "tari eason": {
+      "points": {
+        "line": 11.5,
+        "over": -127,
+        "under": -101,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 6.5,
+        "over": -126,
+        "under": -105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 20.5,
+        "over": -122,
+        "under": -107,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "amen thompson": {
+      "points": {
+        "line": 15.5,
+        "over": -106,
+        "under": -120,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 3.5,
+        "over": -131,
+        "under": 100,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 7.5,
+        "over": 104,
+        "under": -136,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 26.5,
         "over": -117,
         "under": -113,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "reed sheppard": {
+      "points": {
+        "line": 10.5,
+        "over": -111,
+        "under": -115,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 2.5,
+        "over": 100,
+        "under": -131,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 15.5,
+        "over": -111,
+        "under": -118,
         "book": "DraftKings",
         "source": "ESPN"
       }
@@ -2411,62 +1781,92 @@
         "source": "ESPN"
       },
       "assists": {
-        "line": 7.5,
-        "over": 107,
-        "under": -141,
+        "line": 6.5,
+        "over": -143,
+        "under": 109,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "rebounds": {
         "line": 9.5,
-        "over": 104,
-        "under": -137,
+        "over": -111,
+        "under": -118,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "pra": {
-        "line": 36.5,
-        "over": -121,
-        "under": -108,
+        "line": 37.5,
+        "over": -108,
+        "under": -121,
         "book": "DraftKings",
         "source": "ESPN"
       }
     },
-    "aj dybantsa": {
+    "jrue holiday": {
       "points": {
-        "line": 15.5,
-        "over": -104,
-        "under": -122,
+        "line": 12.5,
+        "over": -118,
+        "under": -108,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "assists": {
-        "line": 2.5,
-        "over": 134,
-        "under": -177,
+        "line": 3.5,
+        "over": -158,
+        "under": 119,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "rebounds": {
-        "line": 5.5,
-        "over": -106,
-        "under": -124,
+        "line": 3.5,
+        "over": -133,
+        "under": 101,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "pra": {
-        "line": 23.5,
-        "over": -106,
-        "under": -124,
+        "line": 20.5,
+        "over": -112,
+        "under": -117,
         "book": "DraftKings",
         "source": "ESPN"
       }
     },
-    "alex sarr": {
+    "damian lillard": {
       "points": {
-        "line": 10.5,
-        "over": -111,
-        "under": -115,
+        "line": 21.5,
+        "over": -103,
+        "under": -123,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 4.5,
+        "over": 114,
+        "under": -151,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": 115,
+        "under": -152,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 28.5,
+        "over": -124,
+        "under": -106,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "rudy gobert": {
+      "points": {
+        "line": 8.5,
+        "over": -126,
+        "under": -101,
         "book": "DraftKings",
         "source": "ESPN"
       },
@@ -2478,23 +1878,55 @@
         "source": "ESPN"
       },
       "rebounds": {
-        "line": 6.5,
-        "over": -136,
-        "under": 103,
+        "line": 10.5,
+        "over": -132,
+        "under": 100,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "pra": {
-        "line": 19.5,
-        "over": -110,
-        "under": -119,
+        "line": 21.5,
+        "over": -109,
+        "under": -121,
         "book": "DraftKings",
         "source": "ESPN"
       }
     },
-    "kyshawn george": {
+    "trey lyles": {
       "points": {
-        "line": 14.5,
+        "line": 5.5,
+        "over": -114,
+        "under": -112,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": -154,
+        "under": 117,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "robert williams": {
+      "points": {
+        "line": 6.5,
+        "over": -117,
+        "under": -109,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 6.5,
+        "over": 110,
+        "under": -145,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "ayo dosunmu": {
+      "points": {
+        "line": 17.5,
         "over": -113,
         "under": -113,
         "book": "DraftKings",
@@ -2502,15 +1934,837 @@
       },
       "assists": {
         "line": 3.5,
-        "over": -160,
-        "under": 121,
+        "over": 127,
+        "under": -168,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": -152,
+        "under": 115,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 24.5,
+        "over": -127,
+        "under": -104,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "jaden mcdaniels": {
+      "points": {
+        "line": 16.5,
+        "over": -112,
+        "under": -113,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 3.5,
+        "over": 132,
+        "under": -175,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 5.5,
+        "over": -101,
+        "under": -131,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 25.5,
+        "over": -114,
+        "under": -115,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "toumani camara": {
+      "points": {
+        "line": 11.5,
+        "over": -117,
+        "under": -109,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 1.5,
+        "over": -104,
+        "under": -126,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "rebounds": {
         "line": 4.5,
+        "over": 123,
+        "under": -162,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 17.5,
+        "over": -115,
+        "under": -114,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "lamelo ball": {
+      "points": {
+        "line": 20.5,
+        "over": -112,
+        "under": -114,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 5.5,
+        "over": -144,
+        "under": 110,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": -156,
+        "under": 118,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "terrence shannon": {
+      "points": {
+        "line": 10.5,
+        "over": -121,
+        "under": -105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 2.5,
+        "over": -146,
+        "under": 111,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "jonathan kuminga": {
+      "points": {
+        "line": 12.5,
+        "over": -123,
+        "under": -104,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 2.5,
+        "over": -116,
+        "under": -114,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 5.5,
+        "over": 101,
+        "under": -133,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 21.5,
+        "over": -103,
+        "under": -127,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "bones hyland": {
+      "points": {
+        "line": 10.5,
+        "over": -124,
+        "under": -103,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "deni avdija": {
+      "points": {
+        "line": 23.5,
+        "over": -117,
+        "under": -109,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 5.5,
+        "over": -151,
+        "under": 115,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 6.5,
+        "over": 115,
+        "under": -151,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 36.5,
+        "over": -111,
+        "under": -118,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "scoot henderson": {
+      "points": {
+        "line": 10.5,
+        "over": -108,
+        "under": -118,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "sidy cissoko": {
+      "points": {
+        "line": 7.5,
+        "over": -104,
+        "under": -123,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 1.5,
+        "over": -141,
+        "under": 107,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": 123,
+        "under": -162,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 12.5,
+        "over": -115,
+        "under": -115,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "donovan clingan": {
+      "points": {
+        "line": 10.5,
+        "over": -125,
+        "under": -102,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 1.5,
+        "over": -154,
+        "under": 117,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 10.5,
+        "over": -134,
+        "under": 102,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 24.5,
+        "over": -105,
+        "under": -125,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "draymond green": {
+      "points": {
+        "line": 5.5,
+        "over": -127,
+        "under": 100,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 5.5,
+        "over": -127,
+        "under": -103,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": -148,
+        "under": 112,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 16.5,
+        "over": -130,
+        "under": -101,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "georges niang": {
+      "points": {
+        "line": 8.5,
+        "over": -111,
+        "under": -115,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 2.5,
+        "over": -126,
+        "under": -105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "de anthony melton": {
+      "points": {
+        "line": 13.5,
+        "over": -104,
+        "under": -122,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 3.5,
+        "over": 120,
+        "under": -159,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": -161,
+        "under": 122,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 20.5,
+        "over": -124,
+        "under": -106,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "herbert jones": {
+      "points": {
+        "line": 7.5,
+        "over": -131,
+        "under": 103,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 1.5,
+        "over": -165,
+        "under": 125,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": 116,
+        "under": -153,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 13.5,
+        "over": -114,
+        "under": -116,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "jordan poole": {
+      "points": {
+        "line": 11.5,
+        "over": -101,
+        "under": -127,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 3.5,
+        "over": 114,
+        "under": -150,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 16.5,
+        "over": -123,
+        "under": -107,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "zion williamson": {
+      "points": {
+        "line": 22.5,
+        "over": -108,
+        "under": -118,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 3.5,
+        "over": 134,
+        "under": -177,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 5.5,
+        "over": -125,
+        "under": -105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 31.5,
+        "over": -116,
+        "under": -114,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "saddiq bey": {
+      "points": {
+        "line": 17.5,
+        "over": -116,
+        "under": -110,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 2.5,
+        "over": -107,
+        "under": -123,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 5.5,
+        "over": 101,
+        "under": -133,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 25.5,
+        "over": -123,
+        "under": -107,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "brandin podziemski": {
+      "points": {
+        "line": 18.5,
+        "over": -109,
+        "under": -116,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 4.5,
+        "over": 107,
+        "under": -141,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 5.5,
+        "over": -115,
+        "under": -115,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 28.5,
+        "over": -119,
+        "under": -111,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "derik queen": {
+      "points": {
+        "line": 10.5,
+        "over": -108,
+        "under": -118,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 2.5,
         "over": 103,
-        "under": -135,
+        "under": -136,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 5.5,
+        "over": -147,
+        "under": 112,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 19.5,
+        "over": -104,
+        "under": -126,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "will richard": {
+      "points": {
+        "line": 6.5,
+        "over": -124,
+        "under": -103,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 2.5,
+        "over": -119,
+        "under": -110,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "gui santos": {
+      "points": {
+        "line": 6.5,
+        "over": -124,
+        "under": -103,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": 117,
+        "under": -154,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "yves missi": {
+      "points": {
+        "line": 6.5,
+        "over": -116,
+        "under": -110,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 1.5,
+        "over": 118,
+        "under": -155,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 6.5,
+        "over": -131,
+        "under": 100,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 15.5,
+        "over": -112,
+        "under": -118,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "jeremiah fears": {
+      "points": {
+        "line": 17.5,
+        "over": -107,
+        "under": -119,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 6.5,
+        "over": 107,
+        "under": -141,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": -130,
+        "under": -101,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 28.5,
+        "over": -122,
+        "under": -108,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "yaxel lendeborg": {
+      "points": {
+        "line": 23.5,
+        "over": -111,
+        "under": -114,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 3.5,
+        "over": -164,
+        "under": 124,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 7.5,
+        "over": -101,
+        "under": -130,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 35.5,
+        "over": -113,
+        "under": -117,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "demar derozan": {
+      "points": {
+        "line": 9.5,
+        "over": -128,
+        "under": 100,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "aaron gordon": {
+      "points": {
+        "line": 13.5,
+        "over": -120,
+        "under": -106,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 2.5,
+        "over": 111,
+        "under": -146,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 5.5,
+        "over": 114,
+        "under": -150,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 21.5,
+        "over": -114,
+        "under": -115,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "nikola jokic": {
+      "points": {
+        "line": 24.5,
+        "over": -121,
+        "under": -105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 9.5,
+        "over": -126,
+        "under": -104,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 11.5,
+        "over": -127,
+        "under": -104,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "devin booker": {
+      "points": {
+        "line": 22.5,
+        "over": -118,
+        "under": -108,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 5.5,
+        "over": -110,
+        "under": -119,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 2.5,
+        "over": -173,
+        "under": 131,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "cameron johnson": {
+      "points": {
+        "line": 12.5,
+        "over": -117,
+        "under": -109,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 1.5,
+        "over": -173,
+        "under": 131,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": -131,
+        "under": 100,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 18.5,
+        "over": -118,
+        "under": -111,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "dillon brooks": {
+      "points": {
+        "line": 14.5,
+        "over": -126,
+        "under": -101,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 2.5,
+        "over": 147,
+        "under": -196,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 3.5,
+        "over": -102,
+        "under": -129,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 20.5,
+        "over": -126,
+        "under": -105,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "luke kennard": {
+      "points": {
+        "line": 7.5,
+        "over": -116,
+        "under": -110,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "jamal murray": {
+      "points": {
+        "line": 24.5,
+        "over": -106,
+        "under": -120,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 6.5,
+        "over": -102,
+        "under": -129,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": 114,
+        "under": -150,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 35.5,
+        "over": -111,
+        "under": -119,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "miles bridges": {
+      "points": {
+        "line": 14.5,
+        "over": -109,
+        "under": -117,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "assists": {
+        "line": 2.5,
+        "over": -134,
+        "under": 102,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 5.5,
+        "over": -136,
+        "under": 103,
         "book": "DraftKings",
         "source": "ESPN"
       },
@@ -2522,705 +2776,147 @@
         "source": "ESPN"
       }
     },
-    "tre johnson": {
+    "jordan goodwin": {
+      "points": {
+        "line": 9.5,
+        "over": 101,
+        "under": -128,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "rebounds": {
+        "line": 4.5,
+        "over": 110,
+        "under": -145,
+        "book": "DraftKings",
+        "source": "ESPN"
+      }
+    },
+    "collin gillespie": {
       "points": {
         "line": 10.5,
-        "over": -104,
+        "over": -105,
         "under": -122,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "assists": {
-        "line": 1.5,
-        "over": 113,
-        "under": -149,
+        "line": 3.5,
+        "over": -148,
+        "under": 112,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "rebounds": {
         "line": 2.5,
-        "over": 133,
-        "under": -176,
+        "over": -172,
+        "under": 130,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "pra": {
-        "line": 13.5,
-        "over": -128,
-        "under": -102,
+        "line": 17.5,
+        "over": -115,
+        "under": -114,
         "book": "DraftKings",
         "source": "ESPN"
       }
     },
-    "cj mccollum": {
+    "christian braun": {
       "points": {
-        "line": 15.5,
-        "over": -127,
-        "under": -101,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 4.5,
-        "over": 108,
-        "under": -143,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": 129,
-        "under": -171,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 23.5,
-        "over": -120,
-        "under": -109,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "myles turner": {
-      "points": {
-        "line": 9.5,
+        "line": 11.5,
         "over": -124,
         "under": -103,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "assists": {
-        "line": 1.5,
-        "over": -184,
-        "under": 139,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 5.5,
-        "over": -150,
-        "under": 114,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 18.5,
-        "over": -110,
-        "under": -120,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "kyle kuzma": {
-      "points": {
-        "line": 11.5,
-        "over": -129,
-        "under": 101,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
         "line": 2.5,
-        "over": -121,
-        "under": -108,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 5.5,
         "over": 112,
         "under": -148,
         "book": "DraftKings",
         "source": "ESPN"
       },
-      "pra": {
-        "line": 20.5,
-        "over": -106,
-        "under": -124,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "nickeil alexander walker": {
-      "points": {
-        "line": 22.5,
-        "over": -105,
-        "under": -121,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 2.5,
-        "over": -152,
-        "under": 116,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": 101,
-        "under": -133,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 28.5,
-        "over": -118,
-        "under": -111,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "tyler herro": {
-      "points": {
-        "line": 21.5,
-        "over": -110,
-        "under": -116,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 4.5,
-        "over": -151,
-        "under": 114,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
       "rebounds": {
         "line": 4.5,
-        "over": -101,
-        "under": -130,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 31.5,
-        "over": -106,
-        "under": -124,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "luguentz dort": {
-      "points": {
-        "line": 8.5,
-        "over": 103,
-        "under": -131,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "aaron wiggins": {
-      "points": {
-        "line": 12.5,
-        "over": -109,
-        "under": -117,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 2.5,
-        "over": 109,
-        "under": -143,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": -121,
-        "under": -109,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 18.5,
-        "over": -118,
-        "under": -112,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "onyeka okongwu": {
-      "points": {
-        "line": 13.5,
-        "over": -113,
-        "under": -113,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 2.5,
-        "over": -139,
-        "under": 106,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 7.5,
-        "over": -119,
-        "under": -111,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 24.5,
-        "over": -113,
-        "under": -117,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "jaime jaquez": {
-      "points": {
-        "line": 14.5,
-        "over": -127,
-        "under": 100,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 3.5,
-        "over": -109,
-        "under": -121,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 5.5,
         "over": 106,
         "under": -140,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "pra": {
-        "line": 24.5,
-        "over": -107,
-        "under": -123,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "ryan rollins": {
-      "points": {
-        "line": 10.5,
-        "over": -127,
-        "under": 100,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "jalen johnson": {
-      "points": {
-        "line": 21.5,
-        "over": -121,
-        "under": -105,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 7.5,
-        "over": -101,
-        "under": -131,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 9.5,
-        "over": -128,
-        "under": -103,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 39.5,
-        "over": -112,
-        "under": -117,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "dyson daniels": {
-      "points": {
-        "line": 9.5,
-        "over": -131,
-        "under": 103,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 5.5,
-        "over": -123,
-        "under": -107,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 6.5,
-        "over": -141,
-        "under": 107,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 22.5,
-        "over": -128,
-        "under": -103,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "brayden burries": {
-      "points": {
-        "line": 11.5,
-        "over": -118,
-        "under": -108,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 2.5,
-        "over": -159,
-        "under": 120,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 5.5,
-        "over": 104,
-        "under": -137,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 20.5,
-        "over": -109,
-        "under": -120,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "nate ament": {
-      "points": {
-        "line": 8.5,
-        "over": -113,
-        "under": -113,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": -104,
-        "under": -126,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "zach lavine": {
-      "points": {
-        "line": 19.5,
-        "over": -111,
-        "under": -115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 2.5,
-        "over": 104,
-        "under": -137,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": 113,
-        "under": -149,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 25.5,
-        "over": -111,
-        "under": -118,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "kenrich williams": {
-      "points": {
-        "line": 8.5,
-        "over": -123,
-        "under": -104,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": -138,
-        "under": 105,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 4.5,
-        "over": -129,
-        "under": -102,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 15.5,
-        "over": -117,
-        "under": -112,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "domantas sabonis": {
-      "points": {
-        "line": 13.5,
-        "over": -116,
-        "under": -110,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 5.5,
-        "over": 109,
-        "under": -144,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 12.5,
-        "over": -103,
-        "under": -128,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 31.5,
-        "over": -116,
-        "under": -113,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "de andre hunter": {
-      "points": {
-        "line": 14.5,
-        "over": -101,
-        "under": -126,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 1.5,
-        "over": 115,
-        "under": -152,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 4.5,
-        "over": 113,
-        "under": -149,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 19.5,
+        "line": 18.5,
         "over": -122,
         "under": -107,
         "book": "DraftKings",
         "source": "ESPN"
       }
     },
-    "isaiah hartenstein": {
-      "points": {
-        "line": 9.5,
-        "over": -136,
-        "under": 107,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 4.5,
-        "over": 125,
-        "under": -165,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 10.5,
-        "over": -109,
-        "under": -120,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 24.5,
-        "over": -125,
-        "under": -106,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "shai gilgeous alexander": {
-      "points": {
-        "line": 32.5,
-        "over": -104,
-        "under": -123,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 5.5,
-        "over": 108,
-        "under": -143,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": -165,
-        "under": 125,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 41.5,
-        "over": -119,
-        "under": -110,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "keegan murray": {
+    "jalen green": {
       "points": {
         "line": 11.5,
-        "over": -116,
-        "under": -110,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 4.5,
-        "over": -104,
-        "under": -127,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "jared mccain": {
-      "points": {
-        "line": 15.5,
-        "over": -118,
-        "under": -108,
+        "over": -112,
+        "under": -114,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "assists": {
         "line": 2.5,
         "over": 118,
-        "under": -156,
+        "under": -155,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "rebounds": {
-        "line": 3.5,
-        "over": -101,
-        "under": -130,
+        "line": 2.5,
+        "over": -169,
+        "under": 128,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "pra": {
-        "line": 21.5,
-        "over": -116,
-        "under": -113,
+        "line": 17.5,
+        "over": -103,
+        "under": -128,
         "book": "DraftKings",
         "source": "ESPN"
       }
     },
-    "ajay mitchell": {
+    "oso ighodaro": {
       "points": {
-        "line": 17.5,
-        "over": -121,
-        "under": -105,
+        "line": 5.5,
+        "over": -115,
+        "under": -111,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "assists": {
-        "line": 3.5,
+        "line": 2.5,
+        "over": -137,
+        "under": 104,
+        "book": "DraftKings",
+        "source": "ESPN"
+      },
+      "pra": {
+        "line": 13.5,
         "over": -109,
         "under": -121,
         "book": "DraftKings",
         "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 3.5,
-        "over": 103,
-        "under": -135,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 25.5,
-        "over": -103,
-        "under": -127,
-        "book": "DraftKings",
-        "source": "ESPN"
       }
     },
-    "darius acuff": {
+    "trevon brazile": {
       "points": {
-        "line": 23.5,
-        "over": -121,
-        "under": -106,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "assists": {
-        "line": 6.5,
-        "over": -105,
-        "under": -125,
+        "line": 4.5,
+        "over": -119,
+        "under": -107,
         "book": "DraftKings",
         "source": "ESPN"
       },
       "rebounds": {
         "line": 3.5,
-        "over": -122,
-        "under": -108,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 34.5,
-        "over": -115,
-        "under": -115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      }
-    },
-    "aday mara": {
-      "points": {
-        "line": 9.5,
-        "over": -111,
-        "under": -115,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "rebounds": {
-        "line": 6.5,
-        "over": 109,
-        "under": -144,
-        "book": "DraftKings",
-        "source": "ESPN"
-      },
-      "pra": {
-        "line": 17.5,
-        "over": -109,
-        "under": -120,
+        "over": -152,
+        "under": 116,
         "book": "DraftKings",
         "source": "ESPN"
       }
@@ -3228,23 +2924,23 @@
   },
   "jokic_td": null,
   "spreads": {
-    "PHX": 3.5,
-    "LAL": -3.5,
-    "LAC": 1.5,
-    "CHA": -1.5,
-    "UTA": 15.5,
-    "SAS": -15.5,
-    "BOS": -14.5,
-    "DAL": 14.5,
-    "TOR": 5.5,
-    "NYK": -5.5,
-    "WAS": 8.5,
-    "HOU": -8.5,
-    "MIL": 8.5,
-    "ATL": -8.5,
-    "SAC": 10.5,
-    "OKC": -10.5
+    "BOS": -9.5,
+    "ORL": 9.5,
+    "CLE": -8.5,
+    "CHI": 8.5,
+    "WAS": 3.5,
+    "MEM": -3.5,
+    "BKN": 4.5,
+    "PHI": -4.5,
+    "MIA": 1.5,
+    "HOU": -1.5,
+    "MIN": -2.5,
+    "POR": 2.5,
+    "NOP": 3.5,
+    "GSW": -3.5,
+    "DEN": -9.5,
+    "PHX": 9.5
   },
   "alts": {},
-  "alts_fetched_at": "2026-11-15T19:16:30Z"
+  "alts_fetched_at": "2026-11-16T22:45:48Z"
 }
