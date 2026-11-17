@@ -3912,7 +3912,7 @@
     "method": "night",
     "picked_at": "2026-11-17T16:19:55Z",
     "missing_games": [],
-    "candidates": 10,
+    "candidates": 13,
     "legs": [
       {
         "player": "Keyonte George",
@@ -3929,14 +3929,39 @@
         "book_line": 32.5,
         "proj": 35.3,
         "prob": 0.669,
-        "book_prob": 0.625,
-        "gap": 0.045,
-        "odds": -188,
+        "book_prob": 0.624,
+        "gap": 0.046,
+        "odds": -187,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
         "green": 0.0869,
-        "reasoning": "Model projects 35.3 PRA, 9% over the book's 32.5 line; this leg is 29.5 at -188 (book 62%, model 67%). Projected for 34.1 minutes; UTA +6.5 spread."
+        "reasoning": "Model projects 35.3 PRA, 9% over the book's 32.5 line; this leg is 29.5 at -187 (book 62%, model 67%). Projected for 34.1 minutes; UTA +6.5 spread.",
+        "night_odds": -188
+      },
+      {
+        "player": "RJ Barrett",
+        "player_id": "4395625",
+        "game_id": "401910002",
+        "team": "TOR",
+        "opp": "NYK",
+        "home": true,
+        "time_et": "5:30 PM",
+        "stat": "pra",
+        "side": "over",
+        "line": 29.5,
+        "line_type": "alt",
+        "book_line": 30.5,
+        "proj": 32.1,
+        "prob": 0.555,
+        "book_prob": 0.539,
+        "gap": 0.016,
+        "odds": -129,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "green": 0.051,
+        "reasoning": "Model projects 32.1 PRA, 5% over the book's 30.5 line; this leg is 29.5 at -129 (book 54%, model 56%). Projected for 35.0 minutes; TOR +4.5 spread."
       },
       {
         "player": "Cade Cunningham",
@@ -3950,51 +3975,71 @@
         "side": "over",
         "line": 34.5,
         "line_type": "alt",
-        "book_line": 38.5,
+        "book_line": 39.5,
         "proj": 40.7,
         "prob": 0.671,
-        "book_prob": 0.657,
-        "gap": 0.014,
-        "odds": -219,
+        "book_prob": 0.68,
+        "gap": -0.009,
+        "odds": -245,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "green": 0.0575,
-        "reasoning": "Model projects 40.7 PRA, 6% over the book's 38.5 line; this leg is 34.5 at -219 (book 66%, model 67%). Projected for 37.8 minutes; DET +9.5 spread."
-      },
-      {
-        "player": "Scottie Barnes",
-        "player_id": "4433134",
-        "game_id": "401910002",
-        "team": "TOR",
-        "opp": "NYK",
-        "home": true,
-        "time_et": "5:30 PM",
-        "stat": "pra",
-        "side": "over",
-        "line": 29.5,
-        "line_type": "alt",
-        "book_line": 34.5,
-        "proj": 35.1,
-        "prob": 0.664,
-        "book_prob": 0.7,
-        "gap": -0.037,
-        "odds": -273,
-        "book": "DraftKings",
-        "blowout_risk": "low",
-        "minutes_confidence": "high",
-        "green": 0.0188,
-        "reasoning": "Model projects 35.1 PRA, 2% over the book's 34.5 line; this leg is 29.5 at -273 (book 70%, model 66%). Projected for 34.7 minutes; TOR +2.5 spread."
+        "green": 0.0308,
+        "reasoning": "Model projects 40.7 PRA, 3% over the book's 39.5 line; this leg is 34.5 at -245 (book 68%, model 67%). Projected for 38.1 minutes; DET +9.5 spread.",
+        "night_odds": -219
       }
     ],
-    "combined_odds": 205,
+    "combined_odds": 284,
     "status": "pending",
     "first_picked_at": "2026-11-17T11:21:54Z",
     "refreshed": 2,
-    "checked_at": "2026-11-17T16:19:55Z"
+    "checked_at": "2026-11-17T21:32:01Z",
+    "morning_repick": true,
+    "night": {
+      "combined_odds": 205,
+      "picked_at": "2026-11-17T16:19:55Z",
+      "legs": [
+        {
+          "player": "Keyonte George",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -188
+        },
+        {
+          "player": "Cade Cunningham",
+          "stat": "pra",
+          "line": 34.5,
+          "odds": -219
+        },
+        {
+          "player": "Scottie Barnes",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -273
+        }
+      ]
+    },
+    "morning_checked": "2026-11-17T21:32:01Z",
+    "changes": [
+      {
+        "out": {
+          "player": "Scottie Barnes",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -273
+        },
+        "why": "re-picked from the morning board",
+        "in": {
+          "player": "RJ Barrett",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -129
+        }
+      }
+    ]
   },
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-17T16:19:55Z",
+  "generated_at": "2026-11-17T21:32:01Z",
   "early_history": [
     {
       "date": "2026-10-20",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T16:22:31Z",
+  "generated_at": "2026-11-17T21:35:20Z",
   "date": "2026-11-18",
   "early_look": true,
   "model": "lightgbm",
@@ -1820,7 +1820,7 @@
       "opp": "WAS",
       "home": true,
       "time_et": "5:30 PM",
-      "status": null,
+      "status": "day-to-day",
       "minutes": 34.7,
       "stats": {
         "points": {
@@ -3104,6 +3104,135 @@
       ]
     },
     {
+      "player": "Zion Williamson",
+      "player_id": "4395628",
+      "team": "NOP",
+      "opp": "DET",
+      "home": true,
+      "time_et": "6:00 PM",
+      "status": null,
+      "minutes": 31.7,
+      "stats": {
+        "points": {
+          "proj": 21.6,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 6.0,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 2.8,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 31.2,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-11-08",
+          "pts": 25,
+          "reb": 4,
+          "ast": 2,
+          "pra": 31
+        },
+        {
+          "date": "2026-11-11",
+          "pts": 29,
+          "reb": 4,
+          "ast": 2,
+          "pra": 35
+        },
+        {
+          "date": "2026-11-13",
+          "pts": 22,
+          "reb": 5,
+          "ast": 4,
+          "pra": 31
+        },
+        {
+          "date": "2026-11-14",
+          "pts": 24,
+          "reb": 6,
+          "ast": 2,
+          "pra": 32
+        },
+        {
+          "date": "2026-11-16",
+          "pts": 16,
+          "reb": 6,
+          "ast": 2,
+          "pra": 24
+        }
+      ],
+      "l10": [
+        [
+          22,
+          6,
+          2
+        ],
+        [
+          15,
+          6,
+          4
+        ],
+        [
+          25,
+          11,
+          4
+        ],
+        [
+          23,
+          4,
+          2
+        ],
+        [
+          13,
+          8,
+          4
+        ],
+        [
+          25,
+          4,
+          2
+        ],
+        [
+          29,
+          4,
+          2
+        ],
+        [
+          22,
+          5,
+          4
+        ],
+        [
+          24,
+          6,
+          2
+        ],
+        [
+          16,
+          6,
+          2
+        ]
+      ]
+    },
+    {
       "player": "Ty Jerome",
       "player_id": "4065733",
       "team": "MEM",
@@ -3620,14 +3749,14 @@
       ]
     },
     {
-      "player": "Zion Williamson",
-      "player_id": "4395628",
-      "team": "NOP",
-      "opp": "DET",
-      "home": true,
+      "player": "Jalen Johnson",
+      "player_id": "4701230",
+      "team": "ATL",
+      "opp": "OKC",
+      "home": false,
       "time_et": "6:00 PM",
       "status": null,
-      "minutes": 31.6,
+      "minutes": 36.3,
       "stats": {
         "points": {
           "proj": 20.6,
@@ -3637,21 +3766,21 @@
           "under": null
         },
         "rebounds": {
-          "proj": 5.8,
+          "proj": 9.0,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 2.7,
+          "proj": 6.9,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 29.4,
+          "proj": 36.7,
           "line": null,
           "book": null,
           "over": null,
@@ -3660,91 +3789,91 @@
       },
       "last5": [
         {
-          "date": "2026-11-08",
-          "pts": 25,
-          "reb": 4,
-          "ast": 2,
-          "pra": 31
+          "date": "2026-10-31",
+          "pts": 13,
+          "reb": 7,
+          "ast": 4,
+          "pra": 24
         },
         {
-          "date": "2026-11-11",
-          "pts": 29,
-          "reb": 4,
-          "ast": 2,
-          "pra": 35
+          "date": "2026-11-07",
+          "pts": 30,
+          "reb": 7,
+          "ast": 6,
+          "pra": 43
+        },
+        {
+          "date": "2026-11-09",
+          "pts": 15,
+          "reb": 7,
+          "ast": 4,
+          "pra": 26
         },
         {
           "date": "2026-11-13",
-          "pts": 22,
-          "reb": 5,
-          "ast": 4,
-          "pra": 31
+          "pts": 27,
+          "reb": 11,
+          "ast": 10,
+          "pra": 48
         },
         {
-          "date": "2026-11-14",
-          "pts": 24,
-          "reb": 6,
-          "ast": 2,
-          "pra": 32
-        },
-        {
-          "date": "2026-11-16",
-          "pts": 16,
-          "reb": 6,
-          "ast": 2,
-          "pra": 24
+          "date": "2026-11-15",
+          "pts": 14,
+          "reb": 11,
+          "ast": 5,
+          "pra": 30
         }
       ],
       "l10": [
         [
-          22,
-          6,
-          2
+          19,
+          7,
+          8
         ],
         [
-          15,
-          6,
-          4
+          26,
+          9,
+          16
         ],
         [
-          25,
-          11,
-          4
+          21,
+          9,
+          3
         ],
         [
-          23,
-          4,
-          2
+          12,
+          9,
+          11
+        ],
+        [
+          17,
+          8,
+          7
         ],
         [
           13,
-          8,
+          7,
           4
         ],
         [
-          25,
-          4,
-          2
+          30,
+          7,
+          6
         ],
         [
-          29,
-          4,
-          2
-        ],
-        [
-          22,
-          5,
+          15,
+          7,
           4
         ],
         [
-          24,
-          6,
-          2
+          27,
+          11,
+          10
         ],
         [
-          16,
-          6,
-          2
+          14,
+          11,
+          5
         ]
       ]
     },
@@ -3878,14 +4007,14 @@
       ]
     },
     {
-      "player": "Jalen Johnson",
-      "player_id": "4701230",
-      "team": "ATL",
-      "opp": "OKC",
-      "home": false,
+      "player": "Saddiq Bey",
+      "player_id": "4397136",
+      "team": "NOP",
+      "opp": "DET",
+      "home": true,
       "time_et": "6:00 PM",
       "status": null,
-      "minutes": 35.1,
+      "minutes": 33.6,
       "stats": {
         "points": {
           "proj": 20.4,
@@ -3895,21 +4024,21 @@
           "under": null
         },
         "rebounds": {
-          "proj": 8.9,
+          "proj": 4.7,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "assists": {
-          "proj": 6.8,
+          "proj": 2.7,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 36.2,
+          "proj": 27.4,
           "line": null,
           "book": null,
           "over": null,
@@ -3918,91 +4047,220 @@
       },
       "last5": [
         {
-          "date": "2026-10-31",
-          "pts": 13,
-          "reb": 7,
-          "ast": 4,
-          "pra": 24
-        },
-        {
-          "date": "2026-11-07",
-          "pts": 30,
-          "reb": 7,
-          "ast": 6,
-          "pra": 43
-        },
-        {
           "date": "2026-11-09",
+          "pts": 9,
+          "reb": 0,
+          "ast": 4,
+          "pra": 13
+        },
+        {
+          "date": "2026-11-11",
           "pts": 15,
-          "reb": 7,
+          "reb": 1,
+          "ast": 2,
+          "pra": 18
+        },
+        {
+          "date": "2026-11-13",
+          "pts": 30,
+          "reb": 10,
+          "ast": 0,
+          "pra": 40
+        },
+        {
+          "date": "2026-11-14",
+          "pts": 16,
+          "reb": 6,
           "ast": 4,
           "pra": 26
         },
         {
-          "date": "2026-11-13",
-          "pts": 27,
-          "reb": 11,
-          "ast": 10,
-          "pra": 48
-        },
-        {
-          "date": "2026-11-15",
-          "pts": 14,
-          "reb": 11,
-          "ast": 5,
-          "pra": 30
+          "date": "2026-11-16",
+          "pts": 23,
+          "reb": 6,
+          "ast": 3,
+          "pra": 32
         }
       ],
       "l10": [
         [
-          19,
-          7,
-          8
+          25,
+          6,
+          1
         ],
         [
-          26,
-          9,
-          16
+          18,
+          5,
+          1
         ],
         [
-          21,
-          9,
+          22,
+          4,
           3
         ],
         [
-          12,
-          9,
-          11
+          17,
+          5,
+          4
         ],
         [
-          17,
-          8,
+          13,
+          4,
+          3
+        ],
+        [
+          9,
+          0,
+          4
+        ],
+        [
+          15,
+          1,
+          2
+        ],
+        [
+          30,
+          10,
+          0
+        ],
+        [
+          16,
+          6,
+          4
+        ],
+        [
+          23,
+          6,
+          3
+        ]
+      ]
+    },
+    {
+      "player": "Jeremiah Fears",
+      "player_id": "5144091",
+      "team": "NOP",
+      "opp": "DET",
+      "home": true,
+      "time_et": "6:00 PM",
+      "status": null,
+      "minutes": 31.8,
+      "stats": {
+        "points": {
+          "proj": 19.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 5.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 6.2,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 29.6,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-11-09",
+          "pts": 11,
+          "reb": 3,
+          "ast": 8,
+          "pra": 22
+        },
+        {
+          "date": "2026-11-11",
+          "pts": 14,
+          "reb": 4,
+          "ast": 5,
+          "pra": 23
+        },
+        {
+          "date": "2026-11-13",
+          "pts": 18,
+          "reb": 5,
+          "ast": 7,
+          "pra": 30
+        },
+        {
+          "date": "2026-11-14",
+          "pts": 13,
+          "reb": 4,
+          "ast": 7,
+          "pra": 24
+        },
+        {
+          "date": "2026-11-16",
+          "pts": 19,
+          "reb": 10,
+          "ast": 10,
+          "pra": 39
+        }
+      ],
+      "l10": [
+        [
+          20,
+          5,
+          7
+        ],
+        [
+          12,
+          4,
+          7
+        ],
+        [
+          19,
+          6,
+          2
+        ],
+        [
+          24,
+          5,
+          5
+        ],
+        [
+          25,
+          6,
+          5
+        ],
+        [
+          11,
+          3,
+          8
+        ],
+        [
+          14,
+          4,
+          5
+        ],
+        [
+          18,
+          5,
           7
         ],
         [
           13,
-          7,
-          4
+          4,
+          7
         ],
         [
-          30,
-          7,
-          6
-        ],
-        [
-          15,
-          7,
-          4
-        ],
-        [
-          27,
-          11,
+          19,
+          10,
           10
-        ],
-        [
-          14,
-          11,
-          5
         ]
       ]
     },
@@ -4132,6 +4390,135 @@
           12,
           3,
           6
+        ]
+      ]
+    },
+    {
+      "player": "Nickeil Alexander-Walker",
+      "player_id": "4278039",
+      "team": "ATL",
+      "opp": "OKC",
+      "home": false,
+      "time_et": "6:00 PM",
+      "status": null,
+      "minutes": 33.7,
+      "stats": {
+        "points": {
+          "proj": 19.8,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 3.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 3.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 26.5,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-11-06",
+          "pts": 28,
+          "reb": 2,
+          "ast": 2,
+          "pra": 32
+        },
+        {
+          "date": "2026-11-07",
+          "pts": 20,
+          "reb": 3,
+          "ast": 1,
+          "pra": 24
+        },
+        {
+          "date": "2026-11-09",
+          "pts": 20,
+          "reb": 4,
+          "ast": 4,
+          "pra": 28
+        },
+        {
+          "date": "2026-11-13",
+          "pts": 16,
+          "reb": 6,
+          "ast": 3,
+          "pra": 25
+        },
+        {
+          "date": "2026-11-15",
+          "pts": 20,
+          "reb": 5,
+          "ast": 4,
+          "pra": 29
+        }
+      ],
+      "l10": [
+        [
+          23,
+          3,
+          1
+        ],
+        [
+          25,
+          3,
+          1
+        ],
+        [
+          12,
+          2,
+          1
+        ],
+        [
+          34,
+          4,
+          4
+        ],
+        [
+          26,
+          4,
+          2
+        ],
+        [
+          28,
+          2,
+          2
+        ],
+        [
+          20,
+          3,
+          1
+        ],
+        [
+          20,
+          4,
+          4
+        ],
+        [
+          16,
+          6,
+          3
+        ],
+        [
+          20,
+          5,
+          4
         ]
       ]
     },
@@ -4394,135 +4781,6 @@
       ]
     },
     {
-      "player": "Nickeil Alexander-Walker",
-      "player_id": "4278039",
-      "team": "ATL",
-      "opp": "OKC",
-      "home": false,
-      "time_et": "6:00 PM",
-      "status": null,
-      "minutes": 32.7,
-      "stats": {
-        "points": {
-          "proj": 19.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 3.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 3.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 26.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-11-06",
-          "pts": 28,
-          "reb": 2,
-          "ast": 2,
-          "pra": 32
-        },
-        {
-          "date": "2026-11-07",
-          "pts": 20,
-          "reb": 3,
-          "ast": 1,
-          "pra": 24
-        },
-        {
-          "date": "2026-11-09",
-          "pts": 20,
-          "reb": 4,
-          "ast": 4,
-          "pra": 28
-        },
-        {
-          "date": "2026-11-13",
-          "pts": 16,
-          "reb": 6,
-          "ast": 3,
-          "pra": 25
-        },
-        {
-          "date": "2026-11-15",
-          "pts": 20,
-          "reb": 5,
-          "ast": 4,
-          "pra": 29
-        }
-      ],
-      "l10": [
-        [
-          23,
-          3,
-          1
-        ],
-        [
-          25,
-          3,
-          1
-        ],
-        [
-          12,
-          2,
-          1
-        ],
-        [
-          34,
-          4,
-          4
-        ],
-        [
-          26,
-          4,
-          2
-        ],
-        [
-          28,
-          2,
-          2
-        ],
-        [
-          20,
-          3,
-          1
-        ],
-        [
-          20,
-          4,
-          4
-        ],
-        [
-          16,
-          6,
-          3
-        ],
-        [
-          20,
-          5,
-          4
-        ]
-      ]
-    },
-    {
       "player": "Bam Adebayo",
       "player_id": "4066261",
       "team": "MIA",
@@ -4781,135 +5039,6 @@
       ]
     },
     {
-      "player": "Saddiq Bey",
-      "player_id": "4397136",
-      "team": "NOP",
-      "opp": "DET",
-      "home": true,
-      "time_et": "6:00 PM",
-      "status": null,
-      "minutes": 33.2,
-      "stats": {
-        "points": {
-          "proj": 19.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 4.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 2.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 26.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-11-09",
-          "pts": 9,
-          "reb": 0,
-          "ast": 4,
-          "pra": 13
-        },
-        {
-          "date": "2026-11-11",
-          "pts": 15,
-          "reb": 1,
-          "ast": 2,
-          "pra": 18
-        },
-        {
-          "date": "2026-11-13",
-          "pts": 30,
-          "reb": 10,
-          "ast": 0,
-          "pra": 40
-        },
-        {
-          "date": "2026-11-14",
-          "pts": 16,
-          "reb": 6,
-          "ast": 4,
-          "pra": 26
-        },
-        {
-          "date": "2026-11-16",
-          "pts": 23,
-          "reb": 6,
-          "ast": 3,
-          "pra": 32
-        }
-      ],
-      "l10": [
-        [
-          25,
-          6,
-          1
-        ],
-        [
-          18,
-          5,
-          1
-        ],
-        [
-          22,
-          4,
-          3
-        ],
-        [
-          17,
-          5,
-          4
-        ],
-        [
-          13,
-          4,
-          3
-        ],
-        [
-          9,
-          0,
-          4
-        ],
-        [
-          15,
-          1,
-          2
-        ],
-        [
-          30,
-          10,
-          0
-        ],
-        [
-          16,
-          6,
-          4
-        ],
-        [
-          23,
-          6,
-          3
-        ]
-      ]
-    },
-    {
       "player": "James Harden",
       "player_id": "3992",
       "team": "CLE",
@@ -5034,135 +5163,6 @@
         [
           9,
           4,
-          10
-        ]
-      ]
-    },
-    {
-      "player": "Jeremiah Fears",
-      "player_id": "5144091",
-      "team": "NOP",
-      "opp": "DET",
-      "home": true,
-      "time_et": "6:00 PM",
-      "status": null,
-      "minutes": 31.9,
-      "stats": {
-        "points": {
-          "proj": 19.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 5.2,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 5.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 28.7,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-11-09",
-          "pts": 11,
-          "reb": 3,
-          "ast": 8,
-          "pra": 22
-        },
-        {
-          "date": "2026-11-11",
-          "pts": 14,
-          "reb": 4,
-          "ast": 5,
-          "pra": 23
-        },
-        {
-          "date": "2026-11-13",
-          "pts": 18,
-          "reb": 5,
-          "ast": 7,
-          "pra": 30
-        },
-        {
-          "date": "2026-11-14",
-          "pts": 13,
-          "reb": 4,
-          "ast": 7,
-          "pra": 24
-        },
-        {
-          "date": "2026-11-16",
-          "pts": 19,
-          "reb": 10,
-          "ast": 10,
-          "pra": 39
-        }
-      ],
-      "l10": [
-        [
-          20,
-          5,
-          7
-        ],
-        [
-          12,
-          4,
-          7
-        ],
-        [
-          19,
-          6,
-          2
-        ],
-        [
-          24,
-          5,
-          5
-        ],
-        [
-          25,
-          6,
-          5
-        ],
-        [
-          11,
-          3,
-          8
-        ],
-        [
-          14,
-          4,
-          5
-        ],
-        [
-          18,
-          5,
-          7
-        ],
-        [
-          13,
-          4,
-          7
-        ],
-        [
-          19,
-          10,
           10
         ]
       ]
