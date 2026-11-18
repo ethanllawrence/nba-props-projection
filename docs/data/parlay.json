@@ -4050,8 +4050,32 @@
     "method": "night",
     "picked_at": "2026-11-18T15:54:33Z",
     "missing_games": [],
-    "candidates": 44,
+    "candidates": 41,
     "legs": [
+      {
+        "player": "Pascal Siakam",
+        "player_id": "3149673",
+        "game_id": "401910008",
+        "team": "IND",
+        "opp": "HOU",
+        "home": true,
+        "time_et": "5:00 PM",
+        "stat": "pra",
+        "side": "over",
+        "line": 29.5,
+        "line_type": "alt",
+        "book_line": 30.5,
+        "proj": 34.0,
+        "prob": 0.623,
+        "book_prob": 0.543,
+        "gap": 0.081,
+        "odds": -131,
+        "book": "DraftKings",
+        "blowout_risk": "medium",
+        "minutes_confidence": "high",
+        "green": 0.1143,
+        "reasoning": "Model projects 34.0 PRA, 11% over the book's 30.5 line; this leg is 29.5 at -131 (book 54%, model 62%). Projected for 34.5 minutes; IND +7.5 spread."
+      },
       {
         "player": "Tyrese Maxey",
         "player_id": "4431678",
@@ -4067,14 +4091,15 @@
         "book_line": 33.5,
         "proj": 36.5,
         "prob": 0.703,
-        "book_prob": 0.688,
-        "gap": 0.015,
-        "odds": -256,
+        "book_prob": 0.7,
+        "gap": 0.003,
+        "odds": -273,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
         "green": 0.0884,
-        "reasoning": "Model projects 36.5 PRA, 9% over the book's 33.5 line; this leg is 29.5 at -256 (book 69%, model 70%). Projected for 37.4 minutes; PHI -1.5 spread."
+        "reasoning": "Model projects 36.5 PRA, 9% over the book's 33.5 line; this leg is 29.5 at -273 (book 70%, model 70%). Projected for 37.4 minutes; PHI -1.5 spread.",
+        "night_odds": -256
       },
       {
         "player": "Jamal Murray",
@@ -4091,48 +4116,68 @@
         "book_line": 32.5,
         "proj": 35.3,
         "prob": 0.668,
-        "book_prob": 0.633,
-        "gap": 0.036,
-        "odds": -195,
+        "book_prob": 0.628,
+        "gap": 0.04,
+        "odds": -191,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
         "green": 0.0871,
-        "reasoning": "Model projects 35.3 PRA, 9% over the book's 32.5 line; this leg is 29.5 at -195 (book 63%, model 67%). Projected for 37.0 minutes; DEN +2.5 spread."
-      },
-      {
-        "player": "Scottie Barnes",
-        "player_id": "4433134",
-        "game_id": "401910012",
-        "team": "TOR",
-        "opp": "WAS",
-        "home": true,
-        "time_et": "5:30 PM",
-        "stat": "pra",
-        "side": "over",
-        "line": 29.5,
-        "line_type": "alt",
-        "book_line": 34.5,
-        "proj": 37.4,
-        "prob": 0.73,
-        "book_prob": 0.709,
-        "gap": 0.021,
-        "odds": -286,
-        "book": "DraftKings",
-        "blowout_risk": "low",
-        "minutes_confidence": "high",
-        "green": 0.0834,
-        "reasoning": "Model projects 37.4 PRA, 8% over the book's 34.5 line; this leg is 29.5 at -286 (book 71%, model 73%). Projected for 34.1 minutes; TOR -6.5 spread."
+        "reasoning": "Model projects 35.3 PRA, 9% over the book's 32.5 line; this leg is 29.5 at -191 (book 63%, model 67%). Projected for 37.0 minutes; DEN +2.5 spread.",
+        "night_odds": -195
       }
     ],
-    "combined_odds": 184,
+    "combined_odds": 267,
     "status": "pending",
     "first_picked_at": "2026-11-18T10:56:38Z",
     "refreshed": 2,
-    "checked_at": "2026-11-18T15:54:33Z"
+    "checked_at": "2026-11-18T21:07:52Z",
+    "morning_repick": true,
+    "night": {
+      "combined_odds": 184,
+      "picked_at": "2026-11-18T15:54:33Z",
+      "legs": [
+        {
+          "player": "Tyrese Maxey",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -256
+        },
+        {
+          "player": "Jamal Murray",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -195
+        },
+        {
+          "player": "Scottie Barnes",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -286
+        }
+      ]
+    },
+    "morning_checked": "2026-11-18T21:07:52Z",
+    "changes": [
+      {
+        "out": {
+          "player": "Scottie Barnes",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -286
+        },
+        "why": "re-picked from the morning board",
+        "in": {
+          "player": "Pascal Siakam",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -131
+        }
+      }
+    ]
   },
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-18T15:54:33Z",
+  "generated_at": "2026-11-18T21:07:52Z",
   "early_history": [
     {
       "date": "2026-10-20",
