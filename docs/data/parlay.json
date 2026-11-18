@@ -3904,142 +3904,236 @@
         }
       ],
       "result": "loss"
+    },
+    {
+      "date": "2026-11-17",
+      "method": "night",
+      "picked_at": "2026-11-17T16:19:55Z",
+      "missing_games": [],
+      "candidates": 13,
+      "legs": [
+        {
+          "player": "Keyonte George",
+          "player_id": "4433627",
+          "game_id": "401910006",
+          "team": "UTA",
+          "opp": "LAC",
+          "home": false,
+          "time_et": "8:30 PM",
+          "stat": "pra",
+          "side": "over",
+          "line": 29.5,
+          "line_type": "alt",
+          "book_line": 32.5,
+          "proj": 35.3,
+          "prob": 0.669,
+          "book_prob": 0.624,
+          "gap": 0.046,
+          "odds": -187,
+          "book": "DraftKings",
+          "blowout_risk": "low",
+          "minutes_confidence": "high",
+          "green": 0.0869,
+          "reasoning": "Model projects 35.3 PRA, 9% over the book's 32.5 line; this leg is 29.5 at -187 (book 62%, model 67%). Projected for 34.1 minutes; UTA +6.5 spread.",
+          "night_odds": -188,
+          "actual": 43,
+          "hit": true
+        },
+        {
+          "player": "RJ Barrett",
+          "player_id": "4395625",
+          "game_id": "401910002",
+          "team": "TOR",
+          "opp": "NYK",
+          "home": true,
+          "time_et": "5:30 PM",
+          "stat": "pra",
+          "side": "over",
+          "line": 29.5,
+          "line_type": "alt",
+          "book_line": 30.5,
+          "proj": 32.1,
+          "prob": 0.555,
+          "book_prob": 0.539,
+          "gap": 0.016,
+          "odds": -129,
+          "book": "DraftKings",
+          "blowout_risk": "low",
+          "minutes_confidence": "high",
+          "green": 0.051,
+          "reasoning": "Model projects 32.1 PRA, 5% over the book's 30.5 line; this leg is 29.5 at -129 (book 54%, model 56%). Projected for 35.0 minutes; TOR +4.5 spread.",
+          "actual": 32,
+          "hit": true
+        },
+        {
+          "player": "Cade Cunningham",
+          "player_id": "4432166",
+          "game_id": "401910004",
+          "team": "DET",
+          "opp": "SAS",
+          "home": false,
+          "time_et": "6:00 PM",
+          "stat": "pra",
+          "side": "over",
+          "line": 34.5,
+          "line_type": "alt",
+          "book_line": 39.5,
+          "proj": 40.7,
+          "prob": 0.671,
+          "book_prob": 0.68,
+          "gap": -0.009,
+          "odds": -245,
+          "book": "DraftKings",
+          "blowout_risk": "medium",
+          "minutes_confidence": "high",
+          "green": 0.0308,
+          "reasoning": "Model projects 40.7 PRA, 3% over the book's 39.5 line; this leg is 34.5 at -245 (book 68%, model 67%). Projected for 38.1 minutes; DET +9.5 spread.",
+          "night_odds": -219,
+          "actual": 38,
+          "hit": true
+        }
+      ],
+      "combined_odds": 284,
+      "status": "win",
+      "first_picked_at": "2026-11-17T11:21:54Z",
+      "refreshed": 2,
+      "checked_at": "2026-11-17T23:16:54Z",
+      "morning_repick": true,
+      "night": {
+        "combined_odds": 205,
+        "picked_at": "2026-11-17T16:19:55Z",
+        "legs": [
+          {
+            "player": "Keyonte George",
+            "stat": "pra",
+            "line": 29.5,
+            "odds": -188
+          },
+          {
+            "player": "Cade Cunningham",
+            "stat": "pra",
+            "line": 34.5,
+            "odds": -219
+          },
+          {
+            "player": "Scottie Barnes",
+            "stat": "pra",
+            "line": 29.5,
+            "odds": -273
+          }
+        ]
+      },
+      "morning_checked": "2026-11-17T21:32:01Z",
+      "changes": [
+        {
+          "out": {
+            "player": "Scottie Barnes",
+            "stat": "pra",
+            "line": 29.5,
+            "odds": -273
+          },
+          "why": "re-picked from the morning board",
+          "in": {
+            "player": "RJ Barrett",
+            "stat": "pra",
+            "line": 29.5,
+            "odds": -129
+          }
+        }
+      ],
+      "result": "win"
     }
   ],
   "early": {},
   "today": {
-    "date": "2026-11-17",
+    "date": "2026-11-18",
     "method": "night",
-    "picked_at": "2026-11-17T16:19:55Z",
-    "missing_games": [],
-    "candidates": 13,
+    "picked_at": "2026-11-18T10:56:38Z",
+    "missing_games": [
+      "GSW @ DAL",
+      "UTA @ LAL"
+    ],
+    "candidates": 38,
     "legs": [
       {
-        "player": "Keyonte George",
-        "player_id": "4433627",
-        "game_id": "401910006",
-        "team": "UTA",
-        "opp": "LAC",
-        "home": false,
-        "time_et": "8:30 PM",
-        "stat": "pra",
-        "side": "over",
-        "line": 29.5,
-        "line_type": "alt",
-        "book_line": 32.5,
-        "proj": 35.3,
-        "prob": 0.669,
-        "book_prob": 0.624,
-        "gap": 0.046,
-        "odds": -187,
-        "book": "DraftKings",
-        "blowout_risk": "low",
-        "minutes_confidence": "high",
-        "green": 0.0869,
-        "reasoning": "Model projects 35.3 PRA, 9% over the book's 32.5 line; this leg is 29.5 at -187 (book 62%, model 67%). Projected for 34.1 minutes; UTA +6.5 spread.",
-        "night_odds": -188
-      },
-      {
-        "player": "RJ Barrett",
-        "player_id": "4395625",
-        "game_id": "401910002",
-        "team": "TOR",
-        "opp": "NYK",
+        "player": "Pascal Siakam",
+        "player_id": "3149673",
+        "game_id": "401910008",
+        "team": "IND",
+        "opp": "HOU",
         "home": true,
-        "time_et": "5:30 PM",
+        "time_et": "5:00 PM",
         "stat": "pra",
         "side": "over",
         "line": 29.5,
         "line_type": "alt",
         "book_line": 30.5,
-        "proj": 32.1,
-        "prob": 0.555,
-        "book_prob": 0.539,
-        "gap": 0.016,
-        "odds": -129,
+        "proj": 34.0,
+        "prob": 0.623,
+        "book_prob": 0.562,
+        "gap": 0.062,
+        "odds": -142,
         "book": "DraftKings",
-        "blowout_risk": "low",
+        "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "green": 0.051,
-        "reasoning": "Model projects 32.1 PRA, 5% over the book's 30.5 line; this leg is 29.5 at -129 (book 54%, model 56%). Projected for 35.0 minutes; TOR +4.5 spread."
+        "green": 0.1143,
+        "reasoning": "Model projects 34.0 PRA, 11% over the book's 30.5 line; this leg is 29.5 at -142 (book 56%, model 62%). Projected for 34.5 minutes; IND +7.5 spread."
       },
       {
         "player": "Cade Cunningham",
         "player_id": "4432166",
-        "game_id": "401910004",
+        "game_id": "401910013",
         "team": "DET",
-        "opp": "SAS",
+        "opp": "NOP",
         "home": false,
         "time_et": "6:00 PM",
         "stat": "pra",
         "side": "over",
         "line": 34.5,
         "line_type": "alt",
-        "book_line": 39.5,
-        "proj": 40.7,
-        "prob": 0.671,
-        "book_prob": 0.68,
-        "gap": -0.009,
-        "odds": -245,
+        "book_line": 38.5,
+        "proj": 42.6,
+        "prob": 0.722,
+        "book_prob": 0.662,
+        "gap": 0.06,
+        "odds": -225,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "green": 0.0308,
-        "reasoning": "Model projects 40.7 PRA, 3% over the book's 39.5 line; this leg is 34.5 at -245 (book 68%, model 67%). Projected for 38.1 minutes; DET +9.5 spread.",
-        "night_odds": -219
+        "green": 0.1062,
+        "reasoning": "Model projects 42.6 PRA, 11% over the book's 38.5 line; this leg is 34.5 at -225 (book 66%, model 72%). Projected for 35.9 minutes; DET -7.5 spread."
+      },
+      {
+        "player": "Tyrese Maxey",
+        "player_id": "4431678",
+        "game_id": "401910010",
+        "team": "PHI",
+        "opp": "ORL",
+        "home": false,
+        "time_et": "5:00 PM",
+        "stat": "pra",
+        "side": "over",
+        "line": 29.5,
+        "line_type": "alt",
+        "book_line": 33.5,
+        "proj": 36.5,
+        "prob": 0.703,
+        "book_prob": 0.695,
+        "gap": 0.008,
+        "odds": -266,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "green": 0.0884,
+        "reasoning": "Model projects 36.5 PRA, 9% over the book's 33.5 line; this leg is 29.5 at -266 (book 70%, model 70%). Projected for 37.3 minutes; PHI -2.5 spread."
       }
     ],
-    "combined_odds": 284,
+    "combined_odds": 239,
     "status": "pending",
-    "first_picked_at": "2026-11-17T11:21:54Z",
-    "refreshed": 2,
-    "checked_at": "2026-11-17T23:16:54Z",
-    "morning_repick": true,
-    "night": {
-      "combined_odds": 205,
-      "picked_at": "2026-11-17T16:19:55Z",
-      "legs": [
-        {
-          "player": "Keyonte George",
-          "stat": "pra",
-          "line": 29.5,
-          "odds": -188
-        },
-        {
-          "player": "Cade Cunningham",
-          "stat": "pra",
-          "line": 34.5,
-          "odds": -219
-        },
-        {
-          "player": "Scottie Barnes",
-          "stat": "pra",
-          "line": 29.5,
-          "odds": -273
-        }
-      ]
-    },
-    "morning_checked": "2026-11-17T21:32:01Z",
-    "changes": [
-      {
-        "out": {
-          "player": "Scottie Barnes",
-          "stat": "pra",
-          "line": 29.5,
-          "odds": -273
-        },
-        "why": "re-picked from the morning board",
-        "in": {
-          "player": "RJ Barrett",
-          "stat": "pra",
-          "line": 29.5,
-          "odds": -129
-        }
-      }
-    ]
+    "checked_at": "2026-11-18T10:56:38Z"
   },
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-18T03:18:02Z",
+  "generated_at": "2026-11-18T10:56:38Z",
   "early_history": [
     {
       "date": "2026-10-20",
@@ -4274,28 +4368,5 @@
       "candidates": 7,
       "result": "win"
     }
-  ],
-  "next": {
-    "date": "2026-11-18",
-    "method": "night",
-    "picked_at": "2026-11-18T03:18:02Z",
-    "missing_games": [
-      "MEM @ CLE",
-      "HOU @ IND",
-      "MIL @ MIA",
-      "PHI @ ORL",
-      "CHI @ BKN",
-      "WAS @ TOR",
-      "DET @ NOP",
-      "ATL @ OKC",
-      "GSW @ DAL",
-      "BOS @ DEN",
-      "UTA @ LAL",
-      "PHX @ SAC"
-    ],
-    "candidates": 0,
-    "legs": [],
-    "status": "none",
-    "note": "No parlay yet: ESPN hasn't posted tomorrow's player lines."
-  }
+  ]
 }
