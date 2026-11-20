@@ -4190,7 +4190,7 @@
   ],
   "early": {},
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-20T15:41:38Z",
+  "generated_at": "2026-11-20T20:57:01Z",
   "early_history": [
     {
       "date": "2026-10-20",
@@ -4431,7 +4431,7 @@
     "method": "night",
     "picked_at": "2026-11-20T15:41:38Z",
     "missing_games": [],
-    "candidates": 21,
+    "candidates": 24,
     "legs": [
       {
         "player": "Jamal Murray",
@@ -4448,38 +4448,39 @@
         "book_line": 32.5,
         "proj": 35.5,
         "prob": 0.674,
-        "book_prob": 0.657,
-        "gap": 0.017,
-        "odds": -219,
+        "book_prob": 0.656,
+        "gap": 0.018,
+        "odds": -218,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
         "green": 0.0917,
-        "reasoning": "Model projects 35.5 PRA, 9% over the book's 32.5 line; this leg is 29.5 at -219 (book 66%, model 67%). Projected for 37.0 minutes; DEN -1.5 spread."
+        "reasoning": "Model projects 35.5 PRA, 9% over the book's 32.5 line; this leg is 29.5 at -218 (book 66%, model 67%). Projected for 37.0 minutes; DEN -1.5 spread.",
+        "night_odds": -219
       },
       {
-        "player": "Anthony Davis",
-        "player_id": "6583",
+        "player": "Josh Giddey",
+        "player_id": "4871145",
         "game_id": "401909309",
-        "team": "WAS",
-        "opp": "CHI",
-        "home": false,
+        "team": "CHI",
+        "opp": "WAS",
+        "home": true,
         "time_et": "6:00 PM",
         "stat": "pra",
         "side": "over",
-        "line": 34.5,
+        "line": 29.5,
         "line_type": "alt",
-        "book_line": 37.5,
-        "proj": 39.7,
-        "prob": 0.638,
-        "book_prob": 0.616,
-        "gap": 0.022,
-        "odds": -181,
+        "book_line": 30.5,
+        "proj": 32.6,
+        "prob": 0.573,
+        "book_prob": 0.571,
+        "gap": 0.002,
+        "odds": -148,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "green": 0.0581,
-        "reasoning": "Model projects 39.7 PRA, 6% over the book's 37.5 line; this leg is 34.5 at -181 (book 62%, model 64%). Projected for 34.6 minutes; WAS +2.5 spread."
+        "green": 0.0676,
+        "reasoning": "Model projects 32.6 PRA, 7% over the book's 30.5 line; this leg is 29.5 at -148 (book 57%, model 57%). Projected for 30.6 minutes; CHI -2.5 spread."
       },
       {
         "player": "Donovan Mitchell",
@@ -4496,20 +4497,64 @@
         "book_line": 36.5,
         "proj": 37.6,
         "prob": 0.568,
-        "book_prob": 0.594,
-        "gap": -0.026,
-        "odds": -164,
+        "book_prob": 0.604,
+        "gap": -0.035,
+        "odds": -171,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
         "green": 0.0289,
-        "reasoning": "Model projects 37.6 PRA, 3% over the book's 36.5 line; this leg is 34.5 at -164 (book 59%, model 57%). Projected for 35.4 minutes; CLE -5.5 spread."
+        "reasoning": "Model projects 37.6 PRA, 3% over the book's 36.5 line; this leg is 34.5 at -171 (book 60%, model 57%). Projected for 35.4 minutes; CLE -5.5 spread.",
+        "night_odds": -164
       }
     ],
-    "combined_odds": 264,
+    "combined_odds": 287,
     "status": "pending",
     "first_picked_at": "2026-11-20T10:46:14Z",
     "refreshed": 2,
-    "checked_at": "2026-11-20T15:41:38Z"
+    "checked_at": "2026-11-20T20:57:01Z",
+    "morning_repick": true,
+    "night": {
+      "combined_odds": 264,
+      "picked_at": "2026-11-20T15:41:38Z",
+      "legs": [
+        {
+          "player": "Jamal Murray",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -219
+        },
+        {
+          "player": "Anthony Davis",
+          "stat": "pra",
+          "line": 34.5,
+          "odds": -181
+        },
+        {
+          "player": "Donovan Mitchell",
+          "stat": "pra",
+          "line": 34.5,
+          "odds": -164
+        }
+      ]
+    },
+    "morning_checked": "2026-11-20T20:57:01Z",
+    "changes": [
+      {
+        "out": {
+          "player": "Anthony Davis",
+          "stat": "pra",
+          "line": 34.5,
+          "odds": -181
+        },
+        "why": "re-picked from the morning board",
+        "in": {
+          "player": "Josh Giddey",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -148
+        }
+      }
+    ]
   }
 }
