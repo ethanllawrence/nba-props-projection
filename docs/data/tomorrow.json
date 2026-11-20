@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T20:58:40Z",
+  "generated_at": "2026-11-20T22:08:47Z",
   "date": "2026-11-21",
   "early_look": true,
   "model": "lightgbm",
@@ -405,7 +405,7 @@
       "minutes": 36.6,
       "stats": {
         "points": {
-          "proj": 25.2,
+          "proj": 25.1,
           "line": null,
           "book": null,
           "over": null,
@@ -419,14 +419,14 @@
           "under": null
         },
         "assists": {
-          "proj": 7.1,
+          "proj": 7.0,
           "line": null,
           "book": null,
           "over": null,
           "under": null
         },
         "pra": {
-          "proj": 37.7,
+          "proj": 37.9,
           "line": null,
           "book": null,
           "over": null,
@@ -2588,135 +2588,6 @@
       ]
     },
     {
-      "player": "Zach LaVine",
-      "player_id": "3064440",
-      "team": "SAC",
-      "opp": "BOS",
-      "home": true,
-      "time_et": "8:00 PM",
-      "status": null,
-      "minutes": 32.1,
-      "stats": {
-        "points": {
-          "proj": 17.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 3.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 2.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 24.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-11-06",
-          "pts": 14,
-          "reb": 4,
-          "ast": 3,
-          "pra": 21
-        },
-        {
-          "date": "2026-11-08",
-          "pts": 15,
-          "reb": 4,
-          "ast": 2,
-          "pra": 21
-        },
-        {
-          "date": "2026-11-10",
-          "pts": 31,
-          "reb": 3,
-          "ast": 2,
-          "pra": 36
-        },
-        {
-          "date": "2026-11-13",
-          "pts": 12,
-          "reb": 3,
-          "ast": 6,
-          "pra": 21
-        },
-        {
-          "date": "2026-11-18",
-          "pts": 18,
-          "reb": 5,
-          "ast": 2,
-          "pra": 25
-        }
-      ],
-      "l10": [
-        [
-          22,
-          3,
-          3
-        ],
-        [
-          21,
-          3,
-          5
-        ],
-        [
-          11,
-          0,
-          1
-        ],
-        [
-          23,
-          4,
-          1
-        ],
-        [
-          21,
-          4,
-          1
-        ],
-        [
-          14,
-          4,
-          3
-        ],
-        [
-          15,
-          4,
-          2
-        ],
-        [
-          31,
-          3,
-          2
-        ],
-        [
-          12,
-          3,
-          6
-        ],
-        [
-          18,
-          5,
-          2
-        ]
-      ]
-    },
-    {
       "player": "Karl-Anthony Towns",
       "player_id": "3136195",
       "team": "NYK",
@@ -2842,6 +2713,135 @@
           22,
           12,
           4
+        ]
+      ]
+    },
+    {
+      "player": "Zach LaVine",
+      "player_id": "3064440",
+      "team": "SAC",
+      "opp": "BOS",
+      "home": true,
+      "time_et": "8:00 PM",
+      "status": null,
+      "minutes": 32.1,
+      "stats": {
+        "points": {
+          "proj": 17.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 3.4,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 2.8,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 24.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-11-06",
+          "pts": 14,
+          "reb": 4,
+          "ast": 3,
+          "pra": 21
+        },
+        {
+          "date": "2026-11-08",
+          "pts": 15,
+          "reb": 4,
+          "ast": 2,
+          "pra": 21
+        },
+        {
+          "date": "2026-11-10",
+          "pts": 31,
+          "reb": 3,
+          "ast": 2,
+          "pra": 36
+        },
+        {
+          "date": "2026-11-13",
+          "pts": 12,
+          "reb": 3,
+          "ast": 6,
+          "pra": 21
+        },
+        {
+          "date": "2026-11-18",
+          "pts": 18,
+          "reb": 5,
+          "ast": 2,
+          "pra": 25
+        }
+      ],
+      "l10": [
+        [
+          22,
+          3,
+          3
+        ],
+        [
+          21,
+          3,
+          5
+        ],
+        [
+          11,
+          0,
+          1
+        ],
+        [
+          23,
+          4,
+          1
+        ],
+        [
+          21,
+          4,
+          1
+        ],
+        [
+          14,
+          4,
+          3
+        ],
+        [
+          15,
+          4,
+          2
+        ],
+        [
+          31,
+          3,
+          2
+        ],
+        [
+          12,
+          3,
+          6
+        ],
+        [
+          18,
+          5,
+          2
         ]
       ]
     },
@@ -4136,13 +4136,142 @@
       ]
     },
     {
+      "player": "De'Andre Hunter",
+      "player_id": "4065732",
+      "team": "SAC",
+      "opp": "BOS",
+      "home": true,
+      "time_et": "8:00 PM",
+      "status": "day-to-day",
+      "minutes": 33.1,
+      "stats": {
+        "points": {
+          "proj": 14.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 4.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 2.0,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 21.0,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-11-04",
+          "pts": 14,
+          "reb": 2,
+          "ast": 2,
+          "pra": 18
+        },
+        {
+          "date": "2026-11-08",
+          "pts": 14,
+          "reb": 3,
+          "ast": 1,
+          "pra": 18
+        },
+        {
+          "date": "2026-11-10",
+          "pts": 15,
+          "reb": 4,
+          "ast": 2,
+          "pra": 21
+        },
+        {
+          "date": "2026-11-13",
+          "pts": 24,
+          "reb": 5,
+          "ast": 2,
+          "pra": 31
+        },
+        {
+          "date": "2026-11-18",
+          "pts": 7,
+          "reb": 1,
+          "ast": 4,
+          "pra": 12
+        }
+      ],
+      "l10": [
+        [
+          7,
+          5,
+          1
+        ],
+        [
+          24,
+          6,
+          2
+        ],
+        [
+          24,
+          5,
+          1
+        ],
+        [
+          19,
+          3,
+          0
+        ],
+        [
+          6,
+          7,
+          2
+        ],
+        [
+          14,
+          2,
+          2
+        ],
+        [
+          14,
+          3,
+          1
+        ],
+        [
+          15,
+          4,
+          2
+        ],
+        [
+          24,
+          5,
+          2
+        ],
+        [
+          7,
+          1,
+          4
+        ]
+      ]
+    },
+    {
       "player": "Kyle Kuzma",
       "player_id": "3134907",
       "team": "MIL",
       "opp": "PHI",
       "home": false,
       "time_et": "11:00 AM",
-      "status": "day-to-day",
+      "status": null,
       "minutes": 28.2,
       "stats": {
         "points": {
@@ -4261,135 +4390,6 @@
           26,
           5,
           1
-        ]
-      ]
-    },
-    {
-      "player": "De'Andre Hunter",
-      "player_id": "4065732",
-      "team": "SAC",
-      "opp": "BOS",
-      "home": true,
-      "time_et": "8:00 PM",
-      "status": "day-to-day",
-      "minutes": 32.4,
-      "stats": {
-        "points": {
-          "proj": 14.5,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 4.3,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 1.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 20.9,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-11-04",
-          "pts": 14,
-          "reb": 2,
-          "ast": 2,
-          "pra": 18
-        },
-        {
-          "date": "2026-11-08",
-          "pts": 14,
-          "reb": 3,
-          "ast": 1,
-          "pra": 18
-        },
-        {
-          "date": "2026-11-10",
-          "pts": 15,
-          "reb": 4,
-          "ast": 2,
-          "pra": 21
-        },
-        {
-          "date": "2026-11-13",
-          "pts": 24,
-          "reb": 5,
-          "ast": 2,
-          "pra": 31
-        },
-        {
-          "date": "2026-11-18",
-          "pts": 7,
-          "reb": 1,
-          "ast": 4,
-          "pra": 12
-        }
-      ],
-      "l10": [
-        [
-          7,
-          5,
-          1
-        ],
-        [
-          24,
-          6,
-          2
-        ],
-        [
-          24,
-          5,
-          1
-        ],
-        [
-          19,
-          3,
-          0
-        ],
-        [
-          6,
-          7,
-          2
-        ],
-        [
-          14,
-          2,
-          2
-        ],
-        [
-          14,
-          3,
-          1
-        ],
-        [
-          15,
-          4,
-          2
-        ],
-        [
-          24,
-          5,
-          2
-        ],
-        [
-          7,
-          1,
-          4
         ]
       ]
     },
@@ -5039,6 +5039,135 @@
       ]
     },
     {
+      "player": "Domantas Sabonis",
+      "player_id": "3155942",
+      "team": "SAC",
+      "opp": "BOS",
+      "home": true,
+      "time_et": "8:00 PM",
+      "status": null,
+      "minutes": 30.8,
+      "stats": {
+        "points": {
+          "proj": 13.1,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 11.4,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 4.7,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 30.3,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-11-06",
+          "pts": 17,
+          "reb": 12,
+          "ast": 5,
+          "pra": 34
+        },
+        {
+          "date": "2026-11-10",
+          "pts": 0,
+          "reb": 2,
+          "ast": 5,
+          "pra": 7
+        },
+        {
+          "date": "2026-11-13",
+          "pts": 21,
+          "reb": 12,
+          "ast": 5,
+          "pra": 38
+        },
+        {
+          "date": "2026-11-15",
+          "pts": 11,
+          "reb": 13,
+          "ast": 3,
+          "pra": 27
+        },
+        {
+          "date": "2026-11-18",
+          "pts": 8,
+          "reb": 13,
+          "ast": 8,
+          "pra": 29
+        }
+      ],
+      "l10": [
+        [
+          20,
+          14,
+          8
+        ],
+        [
+          9,
+          15,
+          7
+        ],
+        [
+          11,
+          14,
+          8
+        ],
+        [
+          9,
+          7,
+          4
+        ],
+        [
+          16,
+          17,
+          1
+        ],
+        [
+          17,
+          12,
+          5
+        ],
+        [
+          0,
+          2,
+          5
+        ],
+        [
+          21,
+          12,
+          5
+        ],
+        [
+          11,
+          13,
+          3
+        ],
+        [
+          8,
+          13,
+          8
+        ]
+      ]
+    },
+    {
       "player": "Derrick White",
       "player_id": "3078576",
       "team": "BOS",
@@ -5293,135 +5422,6 @@
           27,
           7,
           3
-        ]
-      ]
-    },
-    {
-      "player": "Domantas Sabonis",
-      "player_id": "3155942",
-      "team": "SAC",
-      "opp": "BOS",
-      "home": true,
-      "time_et": "8:00 PM",
-      "status": null,
-      "minutes": 30.1,
-      "stats": {
-        "points": {
-          "proj": 13.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 11.4,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 4.6,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 30.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-11-06",
-          "pts": 17,
-          "reb": 12,
-          "ast": 5,
-          "pra": 34
-        },
-        {
-          "date": "2026-11-10",
-          "pts": 0,
-          "reb": 2,
-          "ast": 5,
-          "pra": 7
-        },
-        {
-          "date": "2026-11-13",
-          "pts": 21,
-          "reb": 12,
-          "ast": 5,
-          "pra": 38
-        },
-        {
-          "date": "2026-11-15",
-          "pts": 11,
-          "reb": 13,
-          "ast": 3,
-          "pra": 27
-        },
-        {
-          "date": "2026-11-18",
-          "pts": 8,
-          "reb": 13,
-          "ast": 8,
-          "pra": 29
-        }
-      ],
-      "l10": [
-        [
-          20,
-          14,
-          8
-        ],
-        [
-          9,
-          15,
-          7
-        ],
-        [
-          11,
-          14,
-          8
-        ],
-        [
-          9,
-          7,
-          4
-        ],
-        [
-          16,
-          17,
-          1
-        ],
-        [
-          17,
-          12,
-          5
-        ],
-        [
-          0,
-          2,
-          5
-        ],
-        [
-          21,
-          12,
-          5
-        ],
-        [
-          11,
-          13,
-          3
-        ],
-        [
-          8,
-          13,
-          8
         ]
       ]
     },
@@ -5813,6 +5813,135 @@
       ]
     },
     {
+      "player": "Keegan Murray",
+      "player_id": "4594327",
+      "team": "SAC",
+      "opp": "BOS",
+      "home": true,
+      "time_et": "8:00 PM",
+      "status": null,
+      "minutes": 31.5,
+      "stats": {
+        "points": {
+          "proj": 13.0,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "rebounds": {
+          "proj": 5.2,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "assists": {
+          "proj": 1.9,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        },
+        "pra": {
+          "proj": 19.4,
+          "line": null,
+          "book": null,
+          "over": null,
+          "under": null
+        }
+      },
+      "last5": [
+        {
+          "date": "2026-11-08",
+          "pts": 10,
+          "reb": 1,
+          "ast": 2,
+          "pra": 13
+        },
+        {
+          "date": "2026-11-10",
+          "pts": 11,
+          "reb": 2,
+          "ast": 1,
+          "pra": 14
+        },
+        {
+          "date": "2026-11-13",
+          "pts": 16,
+          "reb": 7,
+          "ast": 4,
+          "pra": 27
+        },
+        {
+          "date": "2026-11-15",
+          "pts": 6,
+          "reb": 1,
+          "ast": 0,
+          "pra": 7
+        },
+        {
+          "date": "2026-11-18",
+          "pts": 12,
+          "reb": 7,
+          "ast": 3,
+          "pra": 22
+        }
+      ],
+      "l10": [
+        [
+          20,
+          2,
+          2
+        ],
+        [
+          6,
+          5,
+          5
+        ],
+        [
+          3,
+          1,
+          0
+        ],
+        [
+          2,
+          4,
+          0
+        ],
+        [
+          12,
+          2,
+          1
+        ],
+        [
+          10,
+          1,
+          2
+        ],
+        [
+          11,
+          2,
+          1
+        ],
+        [
+          16,
+          7,
+          4
+        ],
+        [
+          6,
+          1,
+          0
+        ],
+        [
+          12,
+          7,
+          3
+        ]
+      ]
+    },
+    {
       "player": "Naji Marshall",
       "player_id": "4278594",
       "team": "DAL",
@@ -5938,135 +6067,6 @@
           12,
           5,
           2
-        ]
-      ]
-    },
-    {
-      "player": "Keegan Murray",
-      "player_id": "4594327",
-      "team": "SAC",
-      "opp": "BOS",
-      "home": true,
-      "time_et": "8:00 PM",
-      "status": null,
-      "minutes": 31.2,
-      "stats": {
-        "points": {
-          "proj": 12.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "rebounds": {
-          "proj": 5.1,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "assists": {
-          "proj": 1.8,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        },
-        "pra": {
-          "proj": 19.0,
-          "line": null,
-          "book": null,
-          "over": null,
-          "under": null
-        }
-      },
-      "last5": [
-        {
-          "date": "2026-11-08",
-          "pts": 10,
-          "reb": 1,
-          "ast": 2,
-          "pra": 13
-        },
-        {
-          "date": "2026-11-10",
-          "pts": 11,
-          "reb": 2,
-          "ast": 1,
-          "pra": 14
-        },
-        {
-          "date": "2026-11-13",
-          "pts": 16,
-          "reb": 7,
-          "ast": 4,
-          "pra": 27
-        },
-        {
-          "date": "2026-11-15",
-          "pts": 6,
-          "reb": 1,
-          "ast": 0,
-          "pra": 7
-        },
-        {
-          "date": "2026-11-18",
-          "pts": 12,
-          "reb": 7,
-          "ast": 3,
-          "pra": 22
-        }
-      ],
-      "l10": [
-        [
-          20,
-          2,
-          2
-        ],
-        [
-          6,
-          5,
-          5
-        ],
-        [
-          3,
-          1,
-          0
-        ],
-        [
-          2,
-          4,
-          0
-        ],
-        [
-          12,
-          2,
-          1
-        ],
-        [
-          10,
-          1,
-          2
-        ],
-        [
-          11,
-          2,
-          1
-        ],
-        [
-          16,
-          7,
-          4
-        ],
-        [
-          6,
-          1,
-          0
-        ],
-        [
-          12,
-          7,
-          3
         ]
       ]
     },
