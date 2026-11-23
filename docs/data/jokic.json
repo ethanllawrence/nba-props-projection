@@ -1,16 +1,24 @@
 {
-  "generated_at": "2026-11-23T02:07:39Z",
+  "generated_at": "2026-11-23T11:32:39Z",
   "note": "Season summary, recent games and the model call come from Jokic's real ESPN game log. The market price is the best triple-double Yes price we have: DraftKings' from ESPN (refreshed every run, free) or FanDuel's from the morning odds pull. Prices move during the day, so check yours.",
   "season_summary": {
     "season_label": "2026-27",
-    "games_played": 14,
-    "triple_doubles": 3,
-    "hit_rate": 0.214,
-    "ppg": 24.2,
-    "rpg": 10.4,
-    "apg": 9.1
+    "games_played": 15,
+    "triple_doubles": 4,
+    "hit_rate": 0.267,
+    "ppg": 25.1,
+    "rpg": 10.9,
+    "apg": 9.2
   },
   "recent_games": [
+    {
+      "date": "2026-11-22",
+      "opp": "@ CHI",
+      "pts": 37,
+      "reb": 18,
+      "ast": 11,
+      "triple_double": true
+    },
     {
       "date": "2026-11-20",
       "opp": "vs HOU",
@@ -82,31 +90,16 @@
       "reb": 9,
       "ast": 8,
       "triple_double": false
-    },
-    {
-      "date": "2026-10-30",
-      "opp": "@ PHX",
-      "pts": 18,
-      "reb": 7,
-      "ast": 10,
-      "triple_double": false
     }
   ],
   "tonight": {
-    "opp": "@ CHI",
-    "time_et": "5:00 PM",
-    "call": "yes",
+    "opp": null,
+    "time_et": null,
+    "call": "no",
     "td_projection": {
-      "model_prob": 0.469,
-      "note": "His chance is halfway between his triple-double rate over his last 80 games and 50%. We tested fancier versions (the PRA model's rebound and assist projections, recent-form blends) on the last two seasons and none predicted his nightly triple-doubles better than a coin flip, so his long-run rate pulled toward 50/50 is the honest number. The best Yes price (+117 DraftKings) needs 46% to break even, so the call is YES.",
-      "break_even": 0.461
+      "model_prob": 0.475,
+      "note": "His chance is halfway between his triple-double rate over his last 80 games and 50%. We tested fancier versions (the PRA model's rebound and assist projections, recent-form blends) on the last two seasons and none predicted his nightly triple-doubles better than a coin flip, so his long-run rate pulled toward 50/50 is the honest number. No Yes price today, so the call is just whether his chance is above 50%."
     },
-    "market": {
-      "side": "yes",
-      "odds": 117,
-      "book": "DraftKings",
-      "at": "2026-11-23T02:07:39Z",
-      "others": []
-    }
+    "market": null
   }
 }
