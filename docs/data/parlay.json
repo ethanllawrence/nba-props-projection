@@ -4616,7 +4616,7 @@
   ],
   "early": {},
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-24T15:21:34Z",
+  "generated_at": "2026-11-24T18:01:56Z",
   "early_history": [
     {
       "date": "2026-10-20",
@@ -4855,9 +4855,9 @@
   "today": {
     "date": "2026-11-24",
     "method": "night",
-    "picked_at": "2026-11-24T13:05:50Z",
+    "picked_at": "2026-11-24T18:01:56Z",
     "missing_games": [],
-    "candidates": 4,
+    "candidates": 9,
     "legs": [
       {
         "player": "Anthony Davis",
@@ -4874,15 +4874,14 @@
         "book_line": 33.5,
         "proj": 37.0,
         "prob": 0.719,
-        "book_prob": 0.666,
-        "gap": 0.053,
-        "odds": -229,
+        "book_prob": 0.674,
+        "gap": 0.045,
+        "odds": -238,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
         "green": 0.1032,
-        "tier": 2,
-        "reasoning": "Model projects 37.0 PRA, 10% over the book's 33.5 line; this leg is 29.5 at -229 (book 67%, model 72%). Projected for 35.4 minutes; WAS +10.5 spread."
+        "reasoning": "Model projects 37.0 PRA, 10% over the book's 33.5 line; this leg is 29.5 at -238 (book 67%, model 72%). Projected for 35.4 minutes; WAS +10.5 spread."
       },
       {
         "player": "Franz Wagner",
@@ -4899,19 +4898,44 @@
         "book_line": 36.5,
         "proj": 37.7,
         "prob": 0.573,
-        "book_prob": 0.605,
-        "gap": -0.032,
-        "odds": -172,
+        "book_prob": 0.59,
+        "gap": -0.017,
+        "odds": -161,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
         "green": 0.033,
-        "tier": 2,
-        "reasoning": "Model projects 37.7 PRA, 3% over the book's 36.5 line; this leg is 34.5 at -172 (book 60%, model 57%). Projected for 36.8 minutes; ORL +2.5 spread."
+        "reasoning": "Model projects 37.7 PRA, 3% over the book's 36.5 line; this leg is 34.5 at -161 (book 59%, model 57%). Projected for 36.7 minutes; ORL +2.5 spread."
+      },
+      {
+        "player": "Kyrie Irving",
+        "player_id": "6442",
+        "game_id": "401909316",
+        "team": "DAL",
+        "opp": "DEN",
+        "home": false,
+        "time_et": "8:00 PM",
+        "stat": "pra",
+        "side": "over",
+        "line": 29.5,
+        "line_type": "alt",
+        "book_line": 31.5,
+        "proj": 32.3,
+        "prob": 0.565,
+        "book_prob": 0.606,
+        "gap": -0.042,
+        "odds": -173,
+        "book": "DraftKings",
+        "blowout_risk": "medium",
+        "minutes_confidence": "high",
+        "green": 0.0263,
+        "reasoning": "Model projects 32.3 PRA, 3% over the book's 31.5 line; this leg is 29.5 at -173 (book 61%, model 56%). Projected for 33.0 minutes; DAL +8.5 spread."
       }
     ],
-    "combined_odds": 127,
+    "combined_odds": 263,
     "status": "pending",
-    "checked_at": "2026-11-24T15:21:34Z"
+    "first_picked_at": "2026-11-24T13:05:50Z",
+    "refreshed": 1,
+    "checked_at": "2026-11-24T18:01:56Z"
   }
 }
