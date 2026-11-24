@@ -4494,7 +4494,7 @@
   ],
   "early": {},
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-23T18:35:49Z",
+  "generated_at": "2026-11-24T00:37:13Z",
   "early_history": [
     {
       "date": "2026-10-20",
@@ -4735,32 +4735,8 @@
     "method": "night",
     "picked_at": "2026-11-23T18:35:49Z",
     "missing_games": [],
-    "candidates": 10,
+    "candidates": 8,
     "legs": [
-      {
-        "player": "Darius Acuff Jr.",
-        "player_id": "5142620",
-        "game_id": "401910045",
-        "team": "SAC",
-        "opp": "SAS",
-        "home": true,
-        "time_et": "8:00 PM",
-        "stat": "pra",
-        "side": "over",
-        "line": 29.5,
-        "line_type": "alt",
-        "book_line": 33.5,
-        "proj": 37.3,
-        "prob": 0.729,
-        "book_prob": 0.654,
-        "gap": 0.075,
-        "odds": -216,
-        "book": "DraftKings",
-        "blowout_risk": "medium",
-        "minutes_confidence": "high",
-        "green": 0.1137,
-        "reasoning": "Model projects 37.3 PRA, 11% over the book's 33.5 line; this leg is 29.5 at -216 (book 65%, model 73%). Projected for 38.1 minutes; SAC +10.5 spread."
-      },
       {
         "player": "James Harden",
         "player_id": "3992",
@@ -4773,47 +4749,102 @@
         "side": "over",
         "line": 29.5,
         "line_type": "alt",
-        "book_line": 30.5,
-        "proj": 33.5,
-        "prob": 0.606,
-        "book_prob": 0.573,
-        "gap": 0.033,
-        "odds": -149,
+        "book_line": 31.5,
+        "proj": 33.4,
+        "prob": 0.604,
+        "book_prob": 0.589,
+        "gap": 0.015,
+        "odds": -160,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "green": 0.0976,
-        "reasoning": "Model projects 33.5 PRA, 10% over the book's 30.5 line; this leg is 29.5 at -149 (book 57%, model 61%). Projected for 36.0 minutes; CLE -8.5 spread."
+        "green": 0.0609,
+        "tier": 2,
+        "reasoning": "Model projects 33.4 PRA, 6% over the book's 31.5 line; this leg is 29.5 at -160 (book 59%, model 60%). Projected for 36.1 minutes; CLE -8.5 spread.",
+        "night_odds": -149
       },
       {
-        "player": "Deni Avdija",
-        "player_id": "4683021",
-        "game_id": "401910037",
-        "team": "POR",
-        "opp": "PHI",
+        "player": "Devin Booker",
+        "player_id": "3136193",
+        "game_id": "401910042",
+        "team": "PHX",
+        "opp": "NOP",
         "home": false,
-        "time_et": "5:00 PM",
+        "time_et": "6:00 PM",
         "stat": "pra",
         "side": "over",
         "line": 34.5,
         "line_type": "alt",
-        "book_line": 36.5,
-        "proj": 37.9,
-        "prob": 0.578,
-        "book_prob": 0.6,
-        "gap": -0.022,
-        "odds": -168,
+        "book_line": 35.5,
+        "proj": 35.9,
+        "prob": 0.512,
+        "book_prob": 0.57,
+        "gap": -0.057,
+        "odds": -147,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "green": 0.0371,
-        "reasoning": "Model projects 37.9 PRA, 4% over the book's 36.5 line; this leg is 34.5 at -168 (book 60%, model 58%). Projected for 34.5 minutes; POR +2.5 spread."
+        "green": 0.0124,
+        "tier": 2,
+        "reasoning": "Model projects 35.9 PRA, 1% over the book's 35.5 line; this leg is 34.5 at -147 (book 57%, model 51%). Projected for 34.5 minutes; PHX -3.5 spread."
       }
     ],
-    "combined_odds": 290,
+    "combined_odds": 173,
     "status": "pending",
     "first_picked_at": "2026-11-23T11:32:40Z",
     "refreshed": 1,
-    "checked_at": "2026-11-23T18:35:49Z"
+    "checked_at": "2026-11-24T00:37:13Z",
+    "morning_repick": true,
+    "night": {
+      "combined_odds": 290,
+      "picked_at": "2026-11-23T18:35:49Z",
+      "legs": [
+        {
+          "player": "Darius Acuff Jr.",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -216
+        },
+        {
+          "player": "James Harden",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -149
+        },
+        {
+          "player": "Deni Avdija",
+          "stat": "pra",
+          "line": 34.5,
+          "odds": -168
+        }
+      ]
+    },
+    "morning_checked": "2026-11-24T00:37:13Z",
+    "changes": [
+      {
+        "out": {
+          "player": "Darius Acuff Jr.",
+          "stat": "pra",
+          "line": 29.5,
+          "odds": -216
+        },
+        "why": "re-picked from the morning board",
+        "in": {
+          "player": "Devin Booker",
+          "stat": "pra",
+          "line": 34.5,
+          "odds": -147
+        }
+      },
+      {
+        "out": {
+          "player": "Deni Avdija",
+          "stat": "pra",
+          "line": 34.5,
+          "odds": -168
+        },
+        "why": "re-picked from the morning board"
+      }
+    ]
   }
 }
