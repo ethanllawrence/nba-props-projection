@@ -4616,7 +4616,7 @@
   ],
   "early": {},
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-25T00:16:27Z",
+  "generated_at": "2026-11-25T04:45:40Z",
   "early_history": [
     {
       "date": "2026-10-20",
@@ -4967,5 +4967,75 @@
     },
     "morning_checked": "2026-11-24T22:55:13Z",
     "changes": []
+  },
+  "next": {
+    "date": "2026-11-25",
+    "method": "night",
+    "picked_at": "2026-11-25T04:45:40Z",
+    "missing_games": [
+      "CHI @ CHA",
+      "CLE @ NYK",
+      "LAC @ MEM",
+      "BKN @ MIL",
+      "PHX @ HOU",
+      "SAC @ GSW",
+      "SAS @ POR"
+    ],
+    "candidates": 6,
+    "legs": [
+      {
+        "player": "Jaylen Brown",
+        "player_id": "3917376",
+        "game_id": "401909317",
+        "team": "PHI",
+        "opp": "MIA",
+        "home": true,
+        "time_et": "3:00 PM",
+        "stat": "pra",
+        "side": "over",
+        "line": 29.5,
+        "line_type": "alt",
+        "book_line": 32.5,
+        "proj": 35.4,
+        "prob": 0.67,
+        "book_prob": 0.619,
+        "gap": 0.051,
+        "odds": -183,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "green": 0.0879,
+        "tier": 2,
+        "reasoning": "Model projects 35.4 PRA, 9% over the book's 32.5 line; this leg is 29.5 at -183 (book 62%, model 67%). Projected for 32.9 minutes; PHI -1.5 spread."
+      },
+      {
+        "player": "Shai Gilgeous-Alexander",
+        "player_id": "4278073",
+        "game_id": "401909320",
+        "team": "OKC",
+        "opp": "MIN",
+        "home": true,
+        "time_et": "5:30 PM",
+        "stat": "pra",
+        "side": "over",
+        "line": 39.5,
+        "line_type": "alt",
+        "book_line": 41.5,
+        "proj": 44.1,
+        "prob": 0.614,
+        "book_prob": 0.594,
+        "gap": 0.019,
+        "odds": -164,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "green": 0.0632,
+        "tier": 2,
+        "reasoning": "Model projects 44.1 PRA, 6% over the book's 41.5 line; this leg is 39.5 at -164 (book 59%, model 61%). Projected for 37.3 minutes; OKC -1.5 spread."
+      }
+    ],
+    "combined_odds": 149,
+    "status": "pending",
+    "checked_at": "2026-11-25T04:45:40Z"
   }
 }
