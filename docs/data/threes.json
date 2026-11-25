@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-24T23:43:18Z",
+ "generated_at": "2026-11-25T00:16:27Z",
  "date": "2026-11-24",
  "beta": true,
  "early": false,
  "lines_from": "ESPN (DraftKings)",
- "lines_fetched_at": "2026-11-24T23:43:18Z",
+ "lines_fetched_at": "2026-11-25T00:16:27Z",
  "players": [
   {
    "player": "Desmond Bane",
@@ -15,77 +15,77 @@
    "game_id": "401909314",
    "time_et": "5:00 PM",
    "status": "active",
-   "minutes": 35.4,
-   "attempts": 9.1,
+   "minutes": 35.2,
+   "attempts": 9.05,
    "p3": 0.389,
-   "made": 3.54,
+   "made": 3.52,
    "rungs": [
-    0.9564,
-    0.828,
-    0.6379,
-    0.432,
-    0.2464,
-    0.1484
+    0.9558,
+    0.8261,
+    0.6351,
+    0.4291,
+    0.2442,
+    0.1467
    ],
-   "tipped": false,
+   "tipped": true,
    "line": {
     "line": 3.5,
     "over": 122,
     "under": -161,
-    "model_over": 0.432,
+    "model_over": 0.4291,
     "book_over": 0.422,
-    "edge": 0.0099,
+    "edge": 0.007,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 2,
      "price": -610,
-     "model": 0.828,
+     "model": 0.8261,
      "book": 0.8222,
-     "edge": 0.0058
+     "edge": 0.0039
     },
     {
      "n": 3,
      "price": -199,
-     "model": 0.6379,
+     "model": 0.6351,
      "book": 0.6369,
-     "edge": 0.001
+     "edge": -0.0018
     },
     {
      "n": 4,
-     "price": 123,
-     "model": 0.432,
-     "book": 0.4291,
-     "edge": 0.0029
+     "price": 120,
+     "model": 0.4291,
+     "book": 0.435,
+     "edge": -0.0059
     },
     {
      "n": 5,
-     "price": 269,
-     "model": 0.2464,
-     "book": 0.2593,
-     "edge": -0.0129
+     "price": 258,
+     "model": 0.2442,
+     "book": 0.2673,
+     "edge": -0.0231
     },
     {
      "n": 6,
-     "price": 553,
-     "model": 0.1484,
-     "book": 0.1465,
-     "edge": 0.0018
+     "price": 556,
+     "model": 0.1467,
+     "book": 0.1459,
+     "edge": 0.0008
     },
     {
      "n": 7,
-     "price": 1080,
-     "model": 0.084,
-     "book": 0.0811,
-     "edge": 0.0029
+     "price": 1120,
+     "model": 0.0829,
+     "book": 0.0784,
+     "edge": 0.0044
     },
     {
      "n": 8,
-     "price": 2000,
-     "model": 0.0448,
-     "book": 0.0456,
-     "edge": -0.0008
+     "price": 2100,
+     "model": 0.0441,
+     "book": 0.0435,
+     "edge": 0.0006
     }
    ],
    "last5": [
@@ -454,56 +454,6 @@
    ]
   },
   {
-   "player": "Isaiah Joe",
-   "player_id": "4395702",
-   "team": "DET",
-   "opp": "ORL",
-   "home": false,
-   "game_id": "401909314",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 26.3,
-   "attempts": 7.25,
-   "p3": 0.4013,
-   "made": 2.91,
-   "rungs": [
-    0.9215,
-    0.7393,
-    0.5183,
-    0.3167,
-    0.165,
-    0.0903
-   ],
-   "tipped": false,
-   "last5": [
-    {
-     "date": "2026-10-23",
-     "made": 1,
-     "att": 6
-    },
-    {
-     "date": "2026-10-25",
-     "made": 0,
-     "att": 0
-    },
-    {
-     "date": "2026-11-18",
-     "made": 3,
-     "att": 5
-    },
-    {
-     "date": "2026-11-20",
-     "made": 1,
-     "att": 6
-    },
-    {
-     "date": "2026-11-22",
-     "made": 3,
-     "att": 9
-    }
-   ]
-  },
-  {
    "player": "Payton Pritchard",
    "player_id": "4066354",
    "team": "BOS",
@@ -603,6 +553,123 @@
      "date": "2026-11-22",
      "made": 1,
      "att": 4
+    }
+   ]
+  },
+  {
+   "player": "Isaiah Joe",
+   "player_id": "4395702",
+   "team": "DET",
+   "opp": "ORL",
+   "home": false,
+   "game_id": "401909314",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 24.7,
+   "attempts": 6.88,
+   "p3": 0.4013,
+   "made": 2.76,
+   "rungs": [
+    0.91,
+    0.7136,
+    0.4872,
+    0.2894,
+    0.1473,
+    0.0784
+   ],
+   "tipped": true,
+   "line": {
+    "line": 2.5,
+    "over": -133,
+    "under": 101,
+    "model_over": 0.4872,
+    "book_over": 0.5343,
+    "edge": -0.0471,
+    "book": "DraftKings"
+   },
+   "ladder": [
+    {
+     "n": 1,
+     "price": -1980,
+     "model": 0.91,
+     "book": 0.9109,
+     "edge": -0.0009
+    },
+    {
+     "n": 2,
+     "price": -372,
+     "model": 0.7136,
+     "book": 0.7542,
+     "edge": -0.0405
+    },
+    {
+     "n": 3,
+     "price": -134,
+     "model": 0.4872,
+     "book": 0.548,
+     "edge": -0.0608
+    },
+    {
+     "n": 4,
+     "price": 175,
+     "model": 0.2894,
+     "book": 0.348,
+     "edge": -0.0586
+    },
+    {
+     "n": 5,
+     "price": 374,
+     "model": 0.1473,
+     "book": 0.2019,
+     "edge": -0.0546
+    },
+    {
+     "n": 6,
+     "price": 740,
+     "model": 0.0784,
+     "book": 0.1139,
+     "edge": -0.0355
+    },
+    {
+     "n": 7,
+     "price": 1460,
+     "model": 0.0391,
+     "book": 0.0613,
+     "edge": -0.0223
+    },
+    {
+     "n": 8,
+     "price": 2500,
+     "model": 0.0183,
+     "book": 0.0368,
+     "edge": -0.0185
+    }
+   ],
+   "last5": [
+    {
+     "date": "2026-10-23",
+     "made": 1,
+     "att": 6
+    },
+    {
+     "date": "2026-10-25",
+     "made": 0,
+     "att": 0
+    },
+    {
+     "date": "2026-11-18",
+     "made": 3,
+     "att": 5
+    },
+    {
+     "date": "2026-11-20",
+     "made": 1,
+     "att": 6
+    },
+    {
+     "date": "2026-11-22",
+     "made": 3,
+     "att": 9
     }
    ]
   },
@@ -1150,56 +1217,6 @@
    ]
   },
   {
-   "player": "Daniss Jenkins",
-   "player_id": "5107199",
-   "team": "DET",
-   "opp": "ORL",
-   "home": false,
-   "game_id": "401909314",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 35.9,
-   "attempts": 6.46,
-   "p3": 0.3612,
-   "made": 2.33,
-   "rungs": [
-    0.869,
-    0.6303,
-    0.3932,
-    0.2119,
-    0.0993,
-    0.0478
-   ],
-   "tipped": false,
-   "last5": [
-    {
-     "date": "2026-11-14",
-     "made": 1,
-     "att": 5
-    },
-    {
-     "date": "2026-11-17",
-     "made": 3,
-     "att": 7
-    },
-    {
-     "date": "2026-11-18",
-     "made": 3,
-     "att": 5
-    },
-    {
-     "date": "2026-11-20",
-     "made": 2,
-     "att": 4
-    },
-    {
-     "date": "2026-11-22",
-     "made": 1,
-     "att": 6
-    }
-   ]
-  },
-  {
    "player": "Tristan da Silva",
    "player_id": "4702382",
    "team": "ORL",
@@ -1208,77 +1225,77 @@
    "game_id": "401909314",
    "time_et": "5:00 PM",
    "status": "active",
-   "minutes": 28.5,
-   "attempts": 6.23,
+   "minutes": 28.4,
+   "attempts": 6.16,
    "p3": 0.3692,
-   "made": 2.3,
+   "made": 2.28,
    "rungs": [
-    0.8647,
-    0.6228,
-    0.3859,
-    0.2067,
-    0.0964,
-    0.0462
+    0.8615,
+    0.617,
+    0.38,
+    0.2023,
+    0.0939,
+    0.0448
    ],
-   "tipped": false,
+   "tipped": true,
    "line": {
     "line": 2.5,
-    "over": 133,
-    "under": -175,
-    "model_over": 0.3859,
-    "book_over": 0.4028,
-    "edge": -0.0169,
+    "over": 128,
+    "under": -170,
+    "model_over": 0.38,
+    "book_over": 0.4106,
+    "edge": -0.0305,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -1080,
-     "model": 0.8647,
-     "book": 0.8758,
-     "edge": -0.0112
+     "price": -1120,
+     "model": 0.8615,
+     "book": 0.8785,
+     "edge": -0.017
     },
     {
      "n": 2,
-     "price": -223,
-     "model": 0.6228,
-     "book": 0.6607,
-     "edge": -0.0379
+     "price": -225,
+     "model": 0.617,
+     "book": 0.6625,
+     "edge": -0.0455
     },
     {
      "n": 3,
-     "price": 130,
-     "model": 0.3859,
-     "book": 0.4161,
-     "edge": -0.0302
+     "price": 129,
+     "model": 0.38,
+     "book": 0.4179,
+     "edge": -0.0378
     },
     {
      "n": 4,
-     "price": 313,
-     "model": 0.2067,
-     "book": 0.2317,
-     "edge": -0.025
+     "price": 317,
+     "model": 0.2023,
+     "book": 0.2295,
+     "edge": -0.0272
     },
     {
      "n": 5,
-     "price": 740,
-     "model": 0.0964,
-     "book": 0.1139,
-     "edge": -0.0175
+     "price": 730,
+     "model": 0.0939,
+     "book": 0.1153,
+     "edge": -0.0214
     },
     {
      "n": 6,
-     "price": 1580,
-     "model": 0.0462,
-     "book": 0.057,
-     "edge": -0.0107
+     "price": 1540,
+     "model": 0.0448,
+     "book": 0.0583,
+     "edge": -0.0136
     },
     {
      "n": 7,
-     "price": 2800,
-     "model": 0.0207,
-     "book": 0.033,
-     "edge": -0.0123
+     "price": 2700,
+     "model": 0.0199,
+     "book": 0.0342,
+     "edge": -0.0143
     }
    ],
    "last5": [
@@ -1310,6 +1327,116 @@
    ]
   },
   {
+   "player": "Daniss Jenkins",
+   "player_id": "5107199",
+   "team": "DET",
+   "opp": "ORL",
+   "home": false,
+   "game_id": "401909314",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 35.7,
+   "attempts": 6.23,
+   "p3": 0.3612,
+   "made": 2.25,
+   "rungs": [
+    0.8588,
+    0.612,
+    0.3745,
+    0.1979,
+    0.0913,
+    0.0431
+   ],
+   "tipped": true,
+   "line": {
+    "line": 1.5,
+    "over": -169,
+    "under": 128,
+    "model_over": 0.612,
+    "book_over": 0.5889,
+    "edge": 0.0231,
+    "book": "DraftKings"
+   },
+   "ladder": [
+    {
+     "n": 1,
+     "price": -710,
+     "model": 0.8588,
+     "book": 0.8388,
+     "edge": 0.02
+    },
+    {
+     "n": 2,
+     "price": -170,
+     "model": 0.612,
+     "book": 0.6025,
+     "edge": 0.0094
+    },
+    {
+     "n": 3,
+     "price": 160,
+     "model": 0.3745,
+     "book": 0.3681,
+     "edge": 0.0065
+    },
+    {
+     "n": 4,
+     "price": 385,
+     "model": 0.1979,
+     "book": 0.1973,
+     "edge": 0.0006
+    },
+    {
+     "n": 5,
+     "price": 860,
+     "model": 0.0913,
+     "book": 0.0997,
+     "edge": -0.0084
+    },
+    {
+     "n": 6,
+     "price": 1680,
+     "model": 0.0431,
+     "book": 0.0538,
+     "edge": -0.0106
+    },
+    {
+     "n": 7,
+     "price": 2900,
+     "model": 0.019,
+     "book": 0.0319,
+     "edge": -0.0129
+    }
+   ],
+   "last5": [
+    {
+     "date": "2026-11-14",
+     "made": 1,
+     "att": 5
+    },
+    {
+     "date": "2026-11-17",
+     "made": 3,
+     "att": 7
+    },
+    {
+     "date": "2026-11-18",
+     "made": 3,
+     "att": 5
+    },
+    {
+     "date": "2026-11-20",
+     "made": 2,
+     "att": 4
+    },
+    {
+     "date": "2026-11-22",
+     "made": 1,
+     "att": 6
+    }
+   ]
+  },
+  {
    "player": "Jalen Suggs",
    "player_id": "4432165",
    "team": "ORL",
@@ -1319,69 +1446,69 @@
    "time_et": "5:00 PM",
    "status": "active",
    "minutes": 29.9,
-   "attempts": 6.17,
+   "attempts": 6.09,
    "p3": 0.3467,
-   "made": 2.14,
+   "made": 2.11,
    "rungs": [
-    0.8443,
-    0.5862,
-    0.3485,
-    0.1785,
-    0.0802,
-    0.0367
+    0.8403,
+    0.5795,
+    0.342,
+    0.1739,
+    0.0777,
+    0.0353
    ],
-   "tipped": false,
+   "tipped": true,
    "line": {
     "line": 1.5,
-    "over": -145,
-    "under": 110,
-    "model_over": 0.5862,
-    "book_over": 0.5541,
-    "edge": 0.0321,
+    "over": -144,
+    "under": 109,
+    "model_over": 0.5795,
+    "book_over": 0.5523,
+    "edge": 0.0272,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -680,
-     "model": 0.8443,
-     "book": 0.8343,
-     "edge": 0.0101
+     "price": -660,
+     "model": 0.8403,
+     "book": 0.831,
+     "edge": 0.0093
     },
     {
      "n": 2,
-     "price": -146,
-     "model": 0.5862,
-     "book": 0.5679,
-     "edge": 0.0183
+     "price": -144,
+     "model": 0.5795,
+     "book": 0.5648,
+     "edge": 0.0147
     },
     {
      "n": 3,
-     "price": 206,
-     "model": 0.3485,
-     "book": 0.3127,
-     "edge": 0.0358
+     "price": 202,
+     "model": 0.342,
+     "book": 0.3169,
+     "edge": 0.0252
     },
     {
      "n": 4,
-     "price": 529,
-     "model": 0.1785,
-     "book": 0.1521,
-     "edge": 0.0264
+     "price": 524,
+     "model": 0.1739,
+     "book": 0.1534,
+     "edge": 0.0206
     },
     {
      "n": 5,
-     "price": 1240,
-     "model": 0.0802,
-     "book": 0.0714,
-     "edge": 0.0088
+     "price": 1260,
+     "model": 0.0777,
+     "book": 0.0704,
+     "edge": 0.0073
     },
     {
      "n": 6,
-     "price": 2400,
-     "model": 0.0367,
-     "book": 0.0383,
-     "edge": -0.0016
+     "price": 2500,
+     "model": 0.0353,
+     "book": 0.0368,
+     "edge": -0.0015
     }
    ],
    "last5": [
@@ -1421,19 +1548,72 @@
    "game_id": "401909314",
    "time_et": "5:00 PM",
    "status": "active",
-   "minutes": 35.4,
-   "attempts": 6.17,
+   "minutes": 34.1,
+   "attempts": 5.98,
    "p3": 0.3463,
-   "made": 2.14,
+   "made": 2.07,
    "rungs": [
-    0.8441,
-    0.5857,
-    0.348,
-    0.1782,
-    0.08,
-    0.0366
+    0.8346,
+    0.57,
+    0.333,
+    0.1676,
+    0.0743,
+    0.0334
    ],
-   "tipped": false,
+   "tipped": true,
+   "line": {
+    "line": 1.5,
+    "over": -153,
+    "under": 116,
+    "model_over": 0.57,
+    "book_over": 0.5664,
+    "edge": 0.0036,
+    "book": "DraftKings"
+   },
+   "ladder": [
+    {
+     "n": 1,
+     "price": -720,
+     "model": 0.8346,
+     "book": 0.8402,
+     "edge": -0.0057
+    },
+    {
+     "n": 2,
+     "price": -154,
+     "model": 0.57,
+     "book": 0.5802,
+     "edge": -0.0102
+    },
+    {
+     "n": 3,
+     "price": 191,
+     "model": 0.333,
+     "book": 0.3288,
+     "edge": 0.0042
+    },
+    {
+     "n": 4,
+     "price": 492,
+     "model": 0.1676,
+     "book": 0.1616,
+     "edge": 0.006
+    },
+    {
+     "n": 5,
+     "price": 1140,
+     "model": 0.0743,
+     "book": 0.0772,
+     "edge": -0.0029
+    },
+    {
+     "n": 6,
+     "price": 2300,
+     "model": 0.0334,
+     "book": 0.0399,
+     "edge": -0.0065
+    }
+   ],
    "last5": [
     {
      "date": "2026-11-14",
@@ -1677,63 +1857,63 @@
    "game_id": "401909314",
    "time_et": "5:00 PM",
    "status": "active",
-   "minutes": 34.9,
-   "attempts": 5.27,
+   "minutes": 34.6,
+   "attempts": 5.25,
    "p3": 0.3466,
-   "made": 1.83,
+   "made": 1.82,
    "rungs": [
-    0.7929,
-    0.506,
-    0.2756,
-    0.1293,
-    0.0543,
-    0.0228
+    0.7912,
+    0.5036,
+    0.2736,
+    0.1279,
+    0.0536,
+    0.0225
    ],
-   "tipped": false,
+   "tipped": true,
    "line": {
     "line": 1.5,
     "over": 106,
     "under": -139,
-    "model_over": 0.506,
+    "model_over": 0.5036,
     "book_over": 0.4549,
-    "edge": 0.051,
+    "edge": 0.0486,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -423,
-     "model": 0.7929,
-     "book": 0.774,
-     "edge": 0.0189
+     "price": -414,
+     "model": 0.7912,
+     "book": 0.7708,
+     "edge": 0.0204
     },
     {
      "n": 2,
-     "price": 105,
-     "model": 0.506,
-     "book": 0.4668,
-     "edge": 0.0392
+     "price": 106,
+     "model": 0.5036,
+     "book": 0.4645,
+     "edge": 0.039
     },
     {
      "n": 3,
-     "price": 320,
-     "model": 0.2756,
-     "book": 0.2278,
-     "edge": 0.0478
+     "price": 329,
+     "model": 0.2736,
+     "book": 0.2231,
+     "edge": 0.0505
     },
     {
      "n": 4,
-     "price": 860,
-     "model": 0.1293,
-     "book": 0.0997,
-     "edge": 0.0296
+     "price": 880,
+     "model": 0.1279,
+     "book": 0.0976,
+     "edge": 0.0303
     },
     {
      "n": 5,
-     "price": 2000,
-     "model": 0.0543,
-     "book": 0.0456,
-     "edge": 0.0087
+     "price": 1960,
+     "model": 0.0536,
+     "book": 0.0465,
+     "edge": 0.0071
     }
    ],
    "last5": [
@@ -1868,152 +2048,6 @@
    ]
   },
   {
-   "player": "Javonte Green",
-   "player_id": "2596112",
-   "team": "DET",
-   "opp": "ORL",
-   "home": false,
-   "game_id": "401909314",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 23.7,
-   "attempts": 4.52,
-   "p3": 0.3554,
-   "made": 1.61,
-   "rungs": [
-    0.7462,
-    0.4432,
-    0.2249,
-    0.0984,
-    0.0393,
-    0.0155
-   ],
-   "tipped": false,
-   "last5": [
-    {
-     "date": "2026-11-14",
-     "made": 0,
-     "att": 0
-    },
-    {
-     "date": "2026-11-17",
-     "made": 0,
-     "att": 4
-    },
-    {
-     "date": "2026-11-18",
-     "made": 3,
-     "att": 7
-    },
-    {
-     "date": "2026-11-20",
-     "made": 3,
-     "att": 4
-    },
-    {
-     "date": "2026-11-22",
-     "made": 2,
-     "att": 5
-    }
-   ]
-  },
-  {
-   "player": "Franz Wagner",
-   "player_id": "4566434",
-   "team": "ORL",
-   "opp": "DET",
-   "home": true,
-   "game_id": "401909314",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 36.8,
-   "attempts": 4.99,
-   "p3": 0.3122,
-   "made": 1.56,
-   "rungs": [
-    0.738,
-    0.4302,
-    0.2129,
-    0.0904,
-    0.035,
-    0.0133
-   ],
-   "tipped": false,
-   "line": {
-    "line": 1.5,
-    "over": 138,
-    "under": -183,
-    "model_over": 0.4302,
-    "book_over": 0.3939,
-    "edge": 0.0363,
-    "book": "DraftKings"
-   },
-   "ladder": [
-    {
-     "n": 1,
-     "price": -324,
-     "model": 0.738,
-     "book": 0.7312,
-     "edge": 0.0068
-    },
-    {
-     "n": 2,
-     "price": 138,
-     "model": 0.4302,
-     "book": 0.4021,
-     "edge": 0.0281
-    },
-    {
-     "n": 3,
-     "price": 436,
-     "model": 0.2129,
-     "book": 0.1785,
-     "edge": 0.0344
-    },
-    {
-     "n": 4,
-     "price": 1240,
-     "model": 0.0904,
-     "book": 0.0714,
-     "edge": 0.019
-    },
-    {
-     "n": 5,
-     "price": 2700,
-     "model": 0.035,
-     "book": 0.0342,
-     "edge": 0.0009
-    }
-   ],
-   "last5": [
-    {
-     "date": "2026-11-13",
-     "made": 3,
-     "att": 8
-    },
-    {
-     "date": "2026-11-16",
-     "made": 0,
-     "att": 2
-    },
-    {
-     "date": "2026-11-18",
-     "made": 1,
-     "att": 6
-    },
-    {
-     "date": "2026-11-20",
-     "made": 2,
-     "att": 5
-    },
-    {
-     "date": "2026-11-22",
-     "made": 0,
-     "att": 3
-    }
-   ]
-  },
-  {
    "player": "Alex Sarr",
    "player_id": "5160992",
    "team": "WAS",
@@ -2106,6 +2140,152 @@
      "date": "2026-11-22",
      "made": 2,
      "att": 3
+    }
+   ]
+  },
+  {
+   "player": "Franz Wagner",
+   "player_id": "4566434",
+   "team": "ORL",
+   "opp": "DET",
+   "home": true,
+   "game_id": "401909314",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 36.4,
+   "attempts": 4.97,
+   "p3": 0.3122,
+   "made": 1.55,
+   "rungs": [
+    0.7362,
+    0.4279,
+    0.2111,
+    0.0894,
+    0.0346,
+    0.0131
+   ],
+   "tipped": true,
+   "line": {
+    "line": 1.5,
+    "over": 142,
+    "under": -189,
+    "model_over": 0.4279,
+    "book_over": 0.3872,
+    "edge": 0.0407,
+    "book": "DraftKings"
+   },
+   "ladder": [
+    {
+     "n": 1,
+     "price": -317,
+     "model": 0.7362,
+     "book": 0.7275,
+     "edge": 0.0087
+    },
+    {
+     "n": 2,
+     "price": 139,
+     "model": 0.4279,
+     "book": 0.4004,
+     "edge": 0.0275
+    },
+    {
+     "n": 3,
+     "price": 439,
+     "model": 0.2111,
+     "book": 0.1775,
+     "edge": 0.0336
+    },
+    {
+     "n": 4,
+     "price": 1200,
+     "model": 0.0894,
+     "book": 0.0736,
+     "edge": 0.0158
+    },
+    {
+     "n": 5,
+     "price": 2600,
+     "model": 0.0346,
+     "book": 0.0354,
+     "edge": -0.0009
+    }
+   ],
+   "last5": [
+    {
+     "date": "2026-11-13",
+     "made": 3,
+     "att": 8
+    },
+    {
+     "date": "2026-11-16",
+     "made": 0,
+     "att": 2
+    },
+    {
+     "date": "2026-11-18",
+     "made": 1,
+     "att": 6
+    },
+    {
+     "date": "2026-11-20",
+     "made": 2,
+     "att": 5
+    },
+    {
+     "date": "2026-11-22",
+     "made": 0,
+     "att": 3
+    }
+   ]
+  },
+  {
+   "player": "Javonte Green",
+   "player_id": "2596112",
+   "team": "DET",
+   "opp": "ORL",
+   "home": false,
+   "game_id": "401909314",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 23.1,
+   "attempts": 4.31,
+   "p3": 0.3554,
+   "made": 1.53,
+   "rungs": [
+    0.7279,
+    0.4204,
+    0.2075,
+    0.0884,
+    0.0346,
+    0.0133
+   ],
+   "tipped": true,
+   "last5": [
+    {
+     "date": "2026-11-14",
+     "made": 0,
+     "att": 0
+    },
+    {
+     "date": "2026-11-17",
+     "made": 0,
+     "att": 4
+    },
+    {
+     "date": "2026-11-18",
+     "made": 3,
+     "att": 7
+    },
+    {
+     "date": "2026-11-20",
+     "made": 3,
+     "att": 4
+    },
+    {
+     "date": "2026-11-22",
+     "made": 2,
+     "att": 5
     }
    ]
   },
@@ -2302,56 +2482,6 @@
    ]
   },
   {
-   "player": "John Collins",
-   "player_id": "3908845",
-   "team": "DET",
-   "opp": "ORL",
-   "home": false,
-   "game_id": "401909314",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 28.1,
-   "attempts": 3.88,
-   "p3": 0.3801,
-   "made": 1.48,
-   "rungs": [
-    0.7121,
-    0.4031,
-    0.1958,
-    0.0824,
-    0.0321,
-    0.0123
-   ],
-   "tipped": false,
-   "last5": [
-    {
-     "date": "2026-11-14",
-     "made": 2,
-     "att": 7
-    },
-    {
-     "date": "2026-11-17",
-     "made": 1,
-     "att": 1
-    },
-    {
-     "date": "2026-11-18",
-     "made": 4,
-     "att": 6
-    },
-    {
-     "date": "2026-11-20",
-     "made": 0,
-     "att": 2
-    },
-    {
-     "date": "2026-11-22",
-     "made": 4,
-     "att": 5
-    }
-   ]
-  },
-  {
    "player": "Max Christie",
    "player_id": "4432582",
    "team": "DAL",
@@ -2498,6 +2628,102 @@
      "date": "2026-11-22",
      "made": 2,
      "att": 4
+    }
+   ]
+  },
+  {
+   "player": "John Collins",
+   "player_id": "3908845",
+   "team": "DET",
+   "opp": "ORL",
+   "home": false,
+   "game_id": "401909314",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 27.3,
+   "attempts": 3.83,
+   "p3": 0.3801,
+   "made": 1.45,
+   "rungs": [
+    0.7066,
+    0.3966,
+    0.1911,
+    0.0798,
+    0.031,
+    0.0118
+   ],
+   "tipped": true,
+   "line": {
+    "line": 1.5,
+    "over": 147,
+    "under": -196,
+    "model_over": 0.3966,
+    "book_over": 0.3794,
+    "edge": 0.0172,
+    "book": "DraftKings"
+   },
+   "ladder": [
+    {
+     "n": 1,
+     "price": -293,
+     "model": 0.7066,
+     "book": 0.7134,
+     "edge": -0.0069
+    },
+    {
+     "n": 2,
+     "price": 148,
+     "model": 0.3966,
+     "book": 0.3859,
+     "edge": 0.0107
+    },
+    {
+     "n": 3,
+     "price": 463,
+     "model": 0.1911,
+     "book": 0.17,
+     "edge": 0.0211
+    },
+    {
+     "n": 4,
+     "price": 1280,
+     "model": 0.0798,
+     "book": 0.0693,
+     "edge": 0.0105
+    },
+    {
+     "n": 5,
+     "price": 2600,
+     "model": 0.031,
+     "book": 0.0354,
+     "edge": -0.0045
+    }
+   ],
+   "last5": [
+    {
+     "date": "2026-11-14",
+     "made": 2,
+     "att": 7
+    },
+    {
+     "date": "2026-11-17",
+     "made": 1,
+     "att": 1
+    },
+    {
+     "date": "2026-11-18",
+     "made": 4,
+     "att": 6
+    },
+    {
+     "date": "2026-11-20",
+     "made": 0,
+     "att": 2
+    },
+    {
+     "date": "2026-11-22",
+     "made": 4,
+     "att": 5
     }
    ]
   },
@@ -2790,56 +3016,6 @@
    ]
   },
   {
-   "player": "Chaz Lanier",
-   "player_id": "4700852",
-   "team": "DET",
-   "opp": "ORL",
-   "home": false,
-   "game_id": "401909314",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 15.9,
-   "attempts": 3.87,
-   "p3": 0.3578,
-   "made": 1.38,
-   "rungs": [
-    0.6894,
-    0.3757,
-    0.1753,
-    0.0708,
-    0.0267,
-    0.0098
-   ],
-   "tipped": false,
-   "last5": [
-    {
-     "date": "2026-11-02",
-     "made": 1,
-     "att": 3
-    },
-    {
-     "date": "2026-11-09",
-     "made": 0,
-     "att": 0
-    },
-    {
-     "date": "2026-11-17",
-     "made": 1,
-     "att": 4
-    },
-    {
-     "date": "2026-11-18",
-     "made": 3,
-     "att": 5
-    },
-    {
-     "date": "2026-11-20",
-     "made": 0,
-     "att": 1
-    }
-   ]
-  },
-  {
    "player": "Jevon Carter",
    "player_id": "3133635",
    "team": "ORL",
@@ -2848,19 +3024,19 @@
    "game_id": "401909314",
    "time_et": "5:00 PM",
    "status": "active",
-   "minutes": 16.9,
-   "attempts": 3.87,
+   "minutes": 17.1,
+   "attempts": 3.82,
    "p3": 0.352,
-   "made": 1.36,
+   "made": 1.34,
    "rungs": [
-    0.6836,
-    0.3689,
-    0.1703,
-    0.068,
-    0.0254,
-    0.0092
+    0.6784,
+    0.3632,
+    0.1665,
+    0.066,
+    0.0245,
+    0.0088
    ],
-   "tipped": false,
+   "tipped": true,
    "last5": [
     {
      "date": "2026-11-13",
@@ -3025,6 +3201,56 @@
      "date": "2026-11-22",
      "made": 1,
      "att": 3
+    }
+   ]
+  },
+  {
+   "player": "Chaz Lanier",
+   "player_id": "4700852",
+   "team": "DET",
+   "opp": "ORL",
+   "home": false,
+   "game_id": "401909314",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 14.9,
+   "attempts": 3.45,
+   "p3": 0.3578,
+   "made": 1.24,
+   "rungs": [
+    0.6449,
+    0.3286,
+    0.1437,
+    0.0546,
+    0.0197,
+    0.0068
+   ],
+   "tipped": true,
+   "last5": [
+    {
+     "date": "2026-11-02",
+     "made": 1,
+     "att": 3
+    },
+    {
+     "date": "2026-11-09",
+     "made": 0,
+     "att": 0
+    },
+    {
+     "date": "2026-11-17",
+     "made": 1,
+     "att": 4
+    },
+    {
+     "date": "2026-11-18",
+     "made": 3,
+     "att": 5
+    },
+    {
+     "date": "2026-11-20",
+     "made": 0,
+     "att": 1
     }
    ]
   },
@@ -3446,18 +3672,18 @@
    "time_et": "5:00 PM",
    "status": "active",
    "minutes": 18.1,
-   "attempts": 2.95,
+   "attempts": 2.89,
    "p3": 0.3525,
-   "made": 1.04,
+   "made": 1.02,
    "rungs": [
-    0.5786,
-    0.2661,
-    0.1056,
-    0.0366,
-    0.0124,
-    0.0039
+    0.5699,
+    0.2586,
+    0.1013,
+    0.0347,
+    0.0117,
+    0.0037
    ],
-   "tipped": false,
+   "tipped": true,
    "last5": [
     {
      "date": "2026-11-10",
@@ -3625,56 +3851,56 @@
    "game_id": "401909314",
    "time_et": "5:00 PM",
    "status": "active",
-   "minutes": 32.4,
-   "attempts": 2.68,
+   "minutes": 32.0,
+   "attempts": 2.67,
    "p3": 0.3244,
    "made": 0.87,
    "rungs": [
-    0.5131,
-    0.211,
-    0.075,
-    0.0233,
+    0.5117,
+    0.21,
+    0.0745,
+    0.0231,
     0.0073,
     0.0021
    ],
-   "tipped": false,
+   "tipped": true,
    "line": {
     "line": 0.5,
     "over": -150,
     "under": 113,
-    "model_over": 0.5131,
+    "model_over": 0.5117,
     "book_over": 0.561,
-    "edge": -0.0479,
+    "edge": -0.0493,
     "book": "DraftKings"
    },
    "ladder": [
     {
      "n": 1,
-     "price": -153,
-     "model": 0.5131,
-     "book": 0.5787,
-     "edge": -0.0656
+     "price": -152,
+     "model": 0.5117,
+     "book": 0.5772,
+     "edge": -0.0655
     },
     {
      "n": 2,
-     "price": 303,
-     "model": 0.211,
-     "book": 0.2375,
-     "edge": -0.0265
+     "price": 320,
+     "model": 0.21,
+     "book": 0.2278,
+     "edge": -0.0179
     },
     {
      "n": 3,
-     "price": 1060,
-     "model": 0.075,
-     "book": 0.0825,
-     "edge": -0.0075
+     "price": 1100,
+     "model": 0.0745,
+     "book": 0.0797,
+     "edge": -0.0053
     },
     {
      "n": 4,
-     "price": 2600,
-     "model": 0.0233,
-     "book": 0.0354,
-     "edge": -0.0121
+     "price": 2700,
+     "model": 0.0231,
+     "book": 0.0342,
+     "edge": -0.0111
     }
    ],
    "last5": [
@@ -3802,56 +4028,6 @@
      "date": "2026-11-22",
      "made": 0,
      "att": 1
-    }
-   ]
-  },
-  {
-   "player": "Elijah Harkless",
-   "player_id": "4397449",
-   "team": "DET",
-   "opp": "ORL",
-   "home": false,
-   "game_id": "401909314",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 19.2,
-   "attempts": 2.51,
-   "p3": 0.3284,
-   "made": 0.82,
-   "rungs": [
-    0.4929,
-    0.1963,
-    0.0678,
-    0.0206,
-    0.0064,
-    0.0018
-   ],
-   "tipped": false,
-   "last5": [
-    {
-     "date": "2026-03-28",
-     "made": 0,
-     "att": 3
-    },
-    {
-     "date": "2026-10-27",
-     "made": 0,
-     "att": 0
-    },
-    {
-     "date": "2026-11-14",
-     "made": 0,
-     "att": 0
-    },
-    {
-     "date": "2026-11-17",
-     "made": 0,
-     "att": 0
-    },
-    {
-     "date": "2026-11-18",
-     "made": 0,
-     "att": 0
     }
    ]
   },
@@ -4045,50 +4221,50 @@
    ]
   },
   {
-   "player": "Jase Richardson",
-   "player_id": "5239561",
-   "team": "ORL",
-   "opp": "DET",
-   "home": true,
+   "player": "Elijah Harkless",
+   "player_id": "4397449",
+   "team": "DET",
+   "opp": "ORL",
+   "home": false,
    "game_id": "401909314",
    "time_et": "5:00 PM",
    "status": "active",
-   "minutes": 15.2,
-   "attempts": 2.28,
-   "p3": 0.3465,
+   "minutes": 18.2,
+   "attempts": 2.42,
+   "p3": 0.3284,
    "made": 0.79,
    "rungs": [
-    0.4763,
-    0.1856,
-    0.0632,
-    0.019,
-    0.0059,
-    0.0017
+    0.4793,
+    0.1866,
+    0.0631,
+    0.0188,
+    0.0058,
+    0.0016
    ],
-   "tipped": false,
+   "tipped": true,
    "last5": [
     {
-     "date": "2026-11-05",
-     "made": 2,
-     "att": 4
-    },
-    {
-     "date": "2026-11-07",
+     "date": "2026-03-28",
      "made": 0,
-     "att": 6
+     "att": 3
     },
     {
-     "date": "2026-11-10",
+     "date": "2026-10-27",
      "made": 0,
-     "att": 1
+     "att": 0
     },
     {
-     "date": "2026-11-11",
-     "made": 1,
-     "att": 6
+     "date": "2026-11-14",
+     "made": 0,
+     "att": 0
     },
     {
-     "date": "2026-11-22",
+     "date": "2026-11-17",
+     "made": 0,
+     "att": 0
+    },
+    {
+     "date": "2026-11-18",
      "made": 0,
      "att": 0
     }
@@ -4145,6 +4321,56 @@
    ]
   },
   {
+   "player": "Jase Richardson",
+   "player_id": "5239561",
+   "team": "ORL",
+   "opp": "DET",
+   "home": true,
+   "game_id": "401909314",
+   "time_et": "5:00 PM",
+   "status": "active",
+   "minutes": 14.9,
+   "attempts": 2.23,
+   "p3": 0.3465,
+   "made": 0.77,
+   "rungs": [
+    0.4685,
+    0.1802,
+    0.0606,
+    0.0181,
+    0.0056,
+    0.0016
+   ],
+   "tipped": true,
+   "last5": [
+    {
+     "date": "2026-11-05",
+     "made": 2,
+     "att": 4
+    },
+    {
+     "date": "2026-11-07",
+     "made": 0,
+     "att": 6
+    },
+    {
+     "date": "2026-11-10",
+     "made": 0,
+     "att": 1
+    },
+    {
+     "date": "2026-11-11",
+     "made": 1,
+     "att": 6
+    },
+    {
+     "date": "2026-11-22",
+     "made": 0,
+     "att": 0
+    }
+   ]
+  },
+  {
    "player": "Jamal Cain",
    "player_id": "4278572",
    "team": "ORL",
@@ -4153,19 +4379,19 @@
    "game_id": "401909314",
    "time_et": "5:00 PM",
    "status": "active",
-   "minutes": 13.3,
-   "attempts": 2.11,
+   "minutes": 13.7,
+   "attempts": 2.12,
    "p3": 0.3484,
-   "made": 0.73,
+   "made": 0.74,
    "rungs": [
-    0.4503,
-    0.1681,
-    0.0551,
-    0.016,
+    0.4518,
+    0.169,
+    0.0555,
+    0.0162,
     0.0049,
-    0.0013
+    0.0014
    ],
-   "tipped": false,
+   "tipped": true,
    "last5": [
     {
      "date": "2026-11-10",
@@ -4345,56 +4571,6 @@
    ]
   },
   {
-   "player": "Ronald Holland II",
-   "player_id": "4683771",
-   "team": "DET",
-   "opp": "ORL",
-   "home": false,
-   "game_id": "401909314",
-   "time_et": "5:00 PM",
-   "status": "active",
-   "minutes": 16.1,
-   "attempts": 1.97,
-   "p3": 0.3116,
-   "made": 0.61,
-   "rungs": [
-    0.3923,
-    0.1299,
-    0.0379,
-    0.0099,
-    0.0028,
-    0.0007
-   ],
-   "tipped": false,
-   "last5": [
-    {
-     "date": "2026-11-08",
-     "made": 1,
-     "att": 2
-    },
-    {
-     "date": "2026-11-09",
-     "made": 0,
-     "att": 3
-    },
-    {
-     "date": "2026-11-12",
-     "made": 0,
-     "att": 2
-    },
-    {
-     "date": "2026-11-14",
-     "made": 1,
-     "att": 1
-    },
-    {
-     "date": "2026-11-22",
-     "made": 0,
-     "att": 0
-    }
-   ]
-  },
-  {
    "player": "Devin Carter",
    "player_id": "4433188",
    "team": "BOS",
@@ -4495,28 +4671,54 @@
    ]
   },
   {
-   "player": "Ugonna Onyenso",
-   "player_id": "5037878",
+   "player": "Ronald Holland II",
+   "player_id": "4683771",
    "team": "DET",
    "opp": "ORL",
    "home": false,
    "game_id": "401909314",
    "time_et": "5:00 PM",
    "status": "active",
-   "minutes": 14.6,
-   "attempts": 1.74,
-   "p3": 0.33,
+   "minutes": 15.1,
+   "attempts": 1.84,
+   "p3": 0.3116,
    "made": 0.57,
    "rungs": [
-    0.3705,
-    0.1188,
-    0.0339,
-    0.0087,
-    0.0024,
+    0.3712,
+    0.1181,
+    0.0332,
+    0.0084,
+    0.0023,
     0.0006
    ],
-   "tipped": false,
-   "last5": []
+   "tipped": true,
+   "last5": [
+    {
+     "date": "2026-11-08",
+     "made": 1,
+     "att": 2
+    },
+    {
+     "date": "2026-11-09",
+     "made": 0,
+     "att": 3
+    },
+    {
+     "date": "2026-11-12",
+     "made": 0,
+     "att": 2
+    },
+    {
+     "date": "2026-11-14",
+     "made": 1,
+     "att": 1
+    },
+    {
+     "date": "2026-11-22",
+     "made": 0,
+     "att": 0
+    }
+   ]
   },
   {
    "player": "Tyus Jones",
@@ -4627,19 +4829,19 @@
    "game_id": "401909314",
    "time_et": "5:00 PM",
    "status": "active",
-   "minutes": 16.1,
+   "minutes": 16.4,
    "attempts": 1.53,
    "p3": 0.336,
    "made": 0.51,
    "rungs": [
-    0.337,
-    0.1014,
-    0.0275,
+    0.3376,
+    0.1017,
+    0.0276,
     0.0068,
     0.0019,
     0.0004
    ],
-   "tipped": false,
+   "tipped": true,
    "last5": [
     {
      "date": "2026-11-05",
