@@ -4891,7 +4891,7 @@
   ],
   "early": {},
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-27T03:56:36Z",
+  "generated_at": "2026-11-27T11:38:07Z",
   "early_history": [
     {
       "date": "2026-10-20",
@@ -5130,9 +5130,9 @@
   "today": {
     "date": "2026-11-27",
     "method": "night",
-    "picked_at": "2026-11-27T03:56:36Z",
+    "picked_at": "2026-11-27T11:38:07Z",
     "missing_games": [],
-    "candidates": 25,
+    "candidates": 22,
     "legs": [
       {
         "player": "LeBron James",
@@ -5149,14 +5149,14 @@
         "book_line": 32.5,
         "proj": 35.4,
         "prob": 0.672,
-        "book_prob": 0.649,
-        "gap": 0.023,
-        "odds": -211,
+        "book_prob": 0.644,
+        "gap": 0.028,
+        "odds": -206,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "green": 0.0891,
-        "reasoning": "Model projects 35.4 PRA, 9% over the book's 32.5 line; this leg is 29.5 at -211 (book 65%, model 67%). Projected for 35.1 minutes; PHI -2.5 spread."
+        "green": 0.089,
+        "reasoning": "Model projects 35.4 PRA, 9% over the book's 32.5 line; this leg is 29.5 at -206 (book 64%, model 67%). Projected for 35.0 minutes; PHI -3.5 spread."
       },
       {
         "player": "Keyonte George",
@@ -5171,44 +5171,46 @@
         "line": 29.5,
         "line_type": "alt",
         "book_line": 31.5,
-        "proj": 33.2,
-        "prob": 0.595,
+        "proj": 33.1,
+        "prob": 0.594,
         "book_prob": 0.604,
-        "gap": -0.008,
+        "gap": -0.01,
         "odds": -171,
         "book": "DraftKings",
         "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "green": 0.0526,
-        "reasoning": "Model projects 33.2 PRA, 5% over the book's 31.5 line; this leg is 29.5 at -171 (book 60%, model 60%). Projected for 33.5 minutes; UTA +9.5 spread."
+        "green": 0.051,
+        "reasoning": "Model projects 33.1 PRA, 5% over the book's 31.5 line; this leg is 29.5 at -171 (book 60%, model 59%). Projected for 33.4 minutes; UTA +9.5 spread."
       },
       {
-        "player": "Victor Wembanyama",
-        "player_id": "5104157",
-        "game_id": "401909333",
-        "team": "SAS",
-        "opp": "LAL",
+        "player": "Deni Avdija",
+        "player_id": "4683021",
+        "game_id": "401909336",
+        "team": "POR",
+        "opp": "GSW",
         "home": true,
         "time_et": "7:30 PM",
         "stat": "pra",
         "side": "over",
-        "line": 44.5,
+        "line": 34.5,
         "line_type": "alt",
-        "book_line": 46.5,
-        "proj": 48.3,
-        "prob": 0.585,
-        "book_prob": 0.589,
-        "gap": -0.003,
-        "odds": -160,
+        "book_line": 37.5,
+        "proj": 39.3,
+        "prob": 0.625,
+        "book_prob": 0.618,
+        "gap": 0.008,
+        "odds": -182,
         "book": "DraftKings",
-        "blowout_risk": "low",
+        "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "green": 0.0394,
-        "reasoning": "Model projects 48.3 PRA, 4% over the book's 46.5 line; this leg is 44.5 at -160 (book 59%, model 58%). Projected for 34.4 minutes; SAS -5.5 spread."
+        "green": 0.0468,
+        "reasoning": "Model projects 39.3 PRA, 5% over the book's 37.5 line; this leg is 34.5 at -182 (book 62%, model 62%). Projected for 34.6 minutes; POR -8.5 spread."
       }
     ],
-    "combined_odds": 280,
+    "combined_odds": 265,
     "status": "pending",
-    "checked_at": "2026-11-27T03:56:36Z"
+    "first_picked_at": "2026-11-27T03:56:36Z",
+    "refreshed": 1,
+    "checked_at": "2026-11-27T11:38:07Z"
   }
 }
