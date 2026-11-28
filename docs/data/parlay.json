@@ -5029,7 +5029,7 @@
   ],
   "early": {},
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-28T13:42:14Z",
+  "generated_at": "2026-11-28T15:44:57Z",
   "early_history": [
     {
       "date": "2026-10-20",
@@ -5268,34 +5268,10 @@
   "today": {
     "date": "2026-11-28",
     "method": "night",
-    "picked_at": "2026-11-28T13:42:14Z",
+    "picked_at": "2026-11-28T15:44:57Z",
     "missing_games": [],
-    "candidates": 10,
+    "candidates": 6,
     "legs": [
-      {
-        "player": "Shai Gilgeous-Alexander",
-        "player_id": "4278073",
-        "game_id": "401910049",
-        "team": "OKC",
-        "opp": "MIL",
-        "home": false,
-        "time_et": "6:00 PM",
-        "stat": "pra",
-        "side": "over",
-        "line": 39.5,
-        "line_type": "alt",
-        "book_line": 42.5,
-        "proj": 45.7,
-        "prob": 0.66,
-        "book_prob": 0.635,
-        "gap": 0.026,
-        "odds": -197,
-        "book": "DraftKings",
-        "blowout_risk": "medium",
-        "minutes_confidence": "high",
-        "green": 0.0748,
-        "reasoning": "Model projects 45.7 PRA, 7% over the book's 42.5 line; this leg is 39.5 at -197 (book 64%, model 66%). Projected for 36.1 minutes; OKC -11.5 spread."
-      },
       {
         "player": "Julius Randle",
         "player_id": "3064514",
@@ -5309,16 +5285,17 @@
         "line": 29.5,
         "line_type": "alt",
         "book_line": 30.5,
-        "proj": 32.2,
-        "prob": 0.561,
-        "book_prob": 0.573,
-        "gap": -0.012,
-        "odds": -149,
+        "proj": 32.0,
+        "prob": 0.555,
+        "book_prob": 0.568,
+        "gap": -0.013,
+        "odds": -146,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
-        "green": 0.056,
-        "reasoning": "Model projects 32.2 PRA, 6% over the book's 30.5 line; this leg is 29.5 at -149 (book 57%, model 56%). Projected for 34.3 minutes; BKN +5.5 spread."
+        "green": 0.0507,
+        "tier": 2,
+        "reasoning": "Model projects 32.0 PRA, 5% over the book's 30.5 line; this leg is 29.5 at -146 (book 57%, model 56%). Projected for 33.9 minutes; BKN +5.5 spread."
       },
       {
         "player": "Franz Wagner",
@@ -5335,20 +5312,21 @@
         "book_line": 39.5,
         "proj": 40.9,
         "prob": 0.675,
-        "book_prob": 0.709,
-        "gap": -0.034,
-        "odds": -286,
+        "book_prob": 0.697,
+        "gap": -0.022,
+        "odds": -268,
         "book": "DraftKings",
         "blowout_risk": "low",
         "minutes_confidence": "high",
         "green": 0.0343,
-        "reasoning": "Model projects 40.9 PRA, 3% over the book's 39.5 line; this leg is 34.5 at -286 (book 71%, model 68%). Projected for 36.1 minutes; ORL -3.5 spread."
+        "tier": 2,
+        "reasoning": "Model projects 40.9 PRA, 3% over the book's 39.5 line; this leg is 34.5 at -268 (book 70%, model 68%). Projected for 36.1 minutes; ORL -3.5 spread."
       }
     ],
-    "combined_odds": 240,
+    "combined_odds": 131,
     "status": "pending",
     "first_picked_at": "2026-11-28T11:08:36Z",
-    "refreshed": 1,
-    "checked_at": "2026-11-28T13:42:14Z"
+    "refreshed": 2,
+    "checked_at": "2026-11-28T15:44:57Z"
   }
 }
