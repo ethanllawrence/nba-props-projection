@@ -4887,11 +4887,149 @@
         }
       ],
       "result": "win"
+    },
+    {
+      "date": "2026-11-27",
+      "method": "night",
+      "picked_at": "2026-11-27T16:55:04Z",
+      "missing_games": [],
+      "candidates": 24,
+      "legs": [
+        {
+          "player": "LeBron James",
+          "player_id": "1966",
+          "game_id": "401909328",
+          "team": "PHI",
+          "opp": "IND",
+          "home": false,
+          "time_et": "5:30 PM",
+          "stat": "pra",
+          "side": "over",
+          "line": 29.5,
+          "line_type": "alt",
+          "book_line": 32.5,
+          "proj": 35.3,
+          "prob": 0.667,
+          "book_prob": 0.626,
+          "gap": 0.041,
+          "odds": -189,
+          "book": "DraftKings",
+          "blowout_risk": "low",
+          "minutes_confidence": "high",
+          "green": 0.0848,
+          "reasoning": "Model projects 35.3 PRA, 8% over the book's 32.5 line; this leg is 29.5 at -189 (book 63%, model 67%). Projected for 35.0 minutes; PHI -3.5 spread.",
+          "night_odds": -210,
+          "actual": 34,
+          "hit": true
+        },
+        {
+          "player": "Victor Wembanyama",
+          "player_id": "5104157",
+          "game_id": "401909333",
+          "team": "SAS",
+          "opp": "LAL",
+          "home": true,
+          "time_et": "7:30 PM",
+          "stat": "pra",
+          "side": "over",
+          "line": 39.5,
+          "line_type": "alt",
+          "book_line": 45.5,
+          "proj": 48.3,
+          "prob": 0.731,
+          "book_prob": 0.715,
+          "gap": 0.016,
+          "odds": -296,
+          "book": "DraftKings",
+          "blowout_risk": "low",
+          "minutes_confidence": "high",
+          "green": 0.0622,
+          "reasoning": "Model projects 48.3 PRA, 6% over the book's 45.5 line; this leg is 39.5 at -296 (book 72%, model 73%). Projected for 34.4 minutes; SAS -6.5 spread.",
+          "actual": 43,
+          "hit": true
+        },
+        {
+          "player": "Deni Avdija",
+          "player_id": "4683021",
+          "game_id": "401909336",
+          "team": "POR",
+          "opp": "GSW",
+          "home": true,
+          "time_et": "7:30 PM",
+          "stat": "pra",
+          "side": "over",
+          "line": 34.5,
+          "line_type": "alt",
+          "book_line": 38.5,
+          "proj": 40.8,
+          "prob": 0.673,
+          "book_prob": 0.671,
+          "gap": 0.001,
+          "odds": -235,
+          "book": "DraftKings",
+          "blowout_risk": "medium",
+          "minutes_confidence": "high",
+          "green": 0.0594,
+          "reasoning": "Model projects 40.8 PRA, 6% over the book's 38.5 line; this leg is 34.5 at -235 (book 67%, model 67%). Projected for 34.7 minutes; POR -7.5 spread.",
+          "night_odds": -176,
+          "actual": 40,
+          "hit": true
+        }
+      ],
+      "combined_odds": 192,
+      "status": "win",
+      "first_picked_at": "2026-11-27T03:56:36Z",
+      "refreshed": 3,
+      "checked_at": "2026-11-27T23:53:26Z",
+      "morning_repick": true,
+      "night": {
+        "combined_odds": 264,
+        "picked_at": "2026-11-27T16:55:04Z",
+        "legs": [
+          {
+            "player": "LeBron James",
+            "stat": "pra",
+            "line": 29.5,
+            "odds": -210
+          },
+          {
+            "player": "Deni Avdija",
+            "stat": "pra",
+            "line": 34.5,
+            "odds": -176
+          },
+          {
+            "player": "Victor Wembanyama",
+            "stat": "pra",
+            "line": 44.5,
+            "odds": -175
+          }
+        ]
+      },
+      "morning_checked": "2026-11-27T21:51:39Z",
+      "changes": [
+        {
+          "out": {
+            "player": "Victor Wembanyama",
+            "stat": "pra",
+            "line": 44.5,
+            "odds": -175
+          },
+          "why": "re-picked from the morning board",
+          "in": {
+            "player": "Victor Wembanyama",
+            "stat": "pra",
+            "line": 39.5,
+            "odds": -296
+          }
+        }
+      ],
+      "result": "win"
     }
   ],
   "early": {},
   "note": "3 PRA overs (2 if no 3-leg parlay fits) from the greenest stars on the board (book PRA line 30.5+, our projection furthest over it), one per game, at about +100 to +300 real odds. First picked the evening before, refreshed by each run, then re-picked from the full morning board and locked. Graded the next morning. It's for fun: expect the book's cut over time.",
-  "generated_at": "2026-11-28T03:41:19Z",
+  "generated_at": "2026-11-28T11:08:36Z",
   "early_history": [
     {
       "date": "2026-10-20",
@@ -5128,149 +5266,87 @@
     }
   ],
   "today": {
-    "date": "2026-11-27",
+    "date": "2026-11-28",
     "method": "night",
-    "picked_at": "2026-11-27T16:55:04Z",
+    "picked_at": "2026-11-28T11:08:36Z",
     "missing_games": [],
-    "candidates": 24,
+    "candidates": 10,
     "legs": [
       {
-        "player": "LeBron James",
-        "player_id": "1966",
-        "game_id": "401909328",
-        "team": "PHI",
-        "opp": "IND",
+        "player": "Shai Gilgeous-Alexander",
+        "player_id": "4278073",
+        "game_id": "401910049",
+        "team": "OKC",
+        "opp": "MIL",
         "home": false,
-        "time_et": "5:30 PM",
-        "stat": "pra",
-        "side": "over",
-        "line": 29.5,
-        "line_type": "alt",
-        "book_line": 32.5,
-        "proj": 35.3,
-        "prob": 0.667,
-        "book_prob": 0.626,
-        "gap": 0.041,
-        "odds": -189,
-        "book": "DraftKings",
-        "blowout_risk": "low",
-        "minutes_confidence": "high",
-        "green": 0.0848,
-        "reasoning": "Model projects 35.3 PRA, 8% over the book's 32.5 line; this leg is 29.5 at -189 (book 63%, model 67%). Projected for 35.0 minutes; PHI -3.5 spread.",
-        "night_odds": -210
-      },
-      {
-        "player": "Victor Wembanyama",
-        "player_id": "5104157",
-        "game_id": "401909333",
-        "team": "SAS",
-        "opp": "LAL",
-        "home": true,
-        "time_et": "7:30 PM",
+        "time_et": "6:00 PM",
         "stat": "pra",
         "side": "over",
         "line": 39.5,
         "line_type": "alt",
-        "book_line": 45.5,
-        "proj": 48.3,
-        "prob": 0.731,
-        "book_prob": 0.715,
-        "gap": 0.016,
-        "odds": -296,
+        "book_line": 42.5,
+        "proj": 45.7,
+        "prob": 0.66,
+        "book_prob": 0.633,
+        "gap": 0.028,
+        "odds": -195,
         "book": "DraftKings",
-        "blowout_risk": "low",
+        "blowout_risk": "medium",
         "minutes_confidence": "high",
-        "green": 0.0622,
-        "reasoning": "Model projects 48.3 PRA, 6% over the book's 45.5 line; this leg is 39.5 at -296 (book 72%, model 73%). Projected for 34.4 minutes; SAS -6.5 spread."
+        "green": 0.0748,
+        "reasoning": "Model projects 45.7 PRA, 7% over the book's 42.5 line; this leg is 39.5 at -195 (book 63%, model 66%). Projected for 36.1 minutes; OKC -11.5 spread."
       },
       {
-        "player": "Deni Avdija",
-        "player_id": "4683021",
-        "game_id": "401909336",
-        "team": "POR",
-        "opp": "GSW",
+        "player": "Anthony Davis",
+        "player_id": "6583",
+        "game_id": "401910046",
+        "team": "WAS",
+        "opp": "ORL",
         "home": true,
-        "time_et": "7:30 PM",
+        "time_et": "3:00 PM",
         "stat": "pra",
         "side": "over",
         "line": 34.5,
         "line_type": "alt",
-        "book_line": 38.5,
-        "proj": 40.8,
-        "prob": 0.673,
-        "book_prob": 0.671,
-        "gap": 0.001,
-        "odds": -235,
+        "book_line": 35.5,
+        "proj": 37.6,
+        "prob": 0.572,
+        "book_prob": 0.568,
+        "gap": 0.004,
+        "odds": -146,
         "book": "DraftKings",
-        "blowout_risk": "medium",
+        "blowout_risk": "low",
         "minutes_confidence": "high",
-        "green": 0.0594,
-        "reasoning": "Model projects 40.8 PRA, 6% over the book's 38.5 line; this leg is 34.5 at -235 (book 67%, model 67%). Projected for 34.7 minutes; POR -7.5 spread.",
-        "night_odds": -176
-      }
-    ],
-    "combined_odds": 192,
-    "status": "pending",
-    "first_picked_at": "2026-11-27T03:56:36Z",
-    "refreshed": 3,
-    "checked_at": "2026-11-27T23:53:26Z",
-    "morning_repick": true,
-    "night": {
-      "combined_odds": 264,
-      "picked_at": "2026-11-27T16:55:04Z",
-      "legs": [
-        {
-          "player": "LeBron James",
-          "stat": "pra",
-          "line": 29.5,
-          "odds": -210
-        },
-        {
-          "player": "Deni Avdija",
-          "stat": "pra",
-          "line": 34.5,
-          "odds": -176
-        },
-        {
-          "player": "Victor Wembanyama",
-          "stat": "pra",
-          "line": 44.5,
-          "odds": -175
-        }
-      ]
-    },
-    "morning_checked": "2026-11-27T21:51:39Z",
-    "changes": [
+        "green": 0.0603,
+        "reasoning": "Model projects 37.6 PRA, 6% over the book's 35.5 line; this leg is 34.5 at -146 (book 57%, model 57%). Projected for 35.3 minutes; WAS +3.5 spread."
+      },
       {
-        "out": {
-          "player": "Victor Wembanyama",
-          "stat": "pra",
-          "line": 44.5,
-          "odds": -175
-        },
-        "why": "re-picked from the morning board",
-        "in": {
-          "player": "Victor Wembanyama",
-          "stat": "pra",
-          "line": 39.5,
-          "odds": -296
-        }
+        "player": "Pascal Siakam",
+        "player_id": "3149673",
+        "game_id": "401910048",
+        "team": "IND",
+        "opp": "CHI",
+        "home": false,
+        "time_et": "6:00 PM",
+        "stat": "pra",
+        "side": "over",
+        "line": 29.5,
+        "line_type": "alt",
+        "book_line": 33.5,
+        "proj": 34.3,
+        "prob": 0.636,
+        "book_prob": 0.668,
+        "gap": -0.032,
+        "odds": -231,
+        "book": "DraftKings",
+        "blowout_risk": "low",
+        "minutes_confidence": "high",
+        "green": 0.0241,
+        "reasoning": "Model projects 34.3 PRA, 2% over the book's 33.5 line; this leg is 29.5 at -231 (book 67%, model 64%). Projected for 33.5 minutes; IND +2.5 spread."
       }
-    ]
-  },
-  "next": {
-    "date": "2026-11-28",
-    "method": "night",
-    "picked_at": "2026-11-28T03:41:19Z",
-    "missing_games": [
-      "BKN @ CHA",
-      "IND @ CHI",
-      "OKC @ MIL",
-      "PHI @ HOU"
     ],
-    "candidates": 3,
-    "legs": [],
-    "status": "none",
-    "note": "No parlay yet: 3 green PRA legs passed the price range, but no 2- or 3-leg combination (one per game) lands at +100 to +300."
+    "combined_odds": 265,
+    "status": "pending",
+    "checked_at": "2026-11-28T11:08:36Z"
   }
 }
